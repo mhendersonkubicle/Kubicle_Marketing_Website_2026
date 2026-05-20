@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/img/shared/favicon-32x32.png"/>
+
+<title>Page Not Found | Kubicle</title>
+<meta name="description" content="The page you were looking for has moved or no longer exists. Find what you need from the Kubicle homepage, course catalogue or contact form."/>
+<meta name="robots" content="noindex"/>
+<link rel="canonical" href="https://www.kubicle.com/404"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<link rel="stylesheet" href="/shared/styles/tokens.css"/>
+<link rel="stylesheet" href="/shared/styles/typography.css"/>
+<link rel="stylesheet" href="/shared/styles/buttons.css"/>
+
+<style>
+html, body { margin: 0; padding: 0; background: var(--prussian); color: #fff; min-height: 100vh; }
+body { font-family: var(--body); display: flex; align-items: center; justify-content: center; padding: 32px; }
+.frame { max-width: 720px; text-align: center; position: relative; z-index: 2; }
+.bigcode {
+  font-family: var(--head); font-weight: 600;
+  font-size: clamp(120px, 18vw, 220px);
+  line-height: 0.9; letter-spacing: -0.05em;
+  color: var(--blue); margin: 0 0 12px;
+}
+.eyebrow {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: rgba(255,255,255,0.55);
+  margin-bottom: 12px;
+}
+h1 {
+  font-family: var(--head); font-size: clamp(28px, 4vw, 44px); font-weight: 600;
+  letter-spacing: -0.025em; line-height: 1.1; color: #fff; margin: 0 0 16px;
+}
+p {
+  color: rgba(255,255,255,0.82); font-size: 17px; line-height: 1.55;
+  max-width: 540px; margin: 0 auto 32px;
+}
+.cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+.helpful {
+  display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+  padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.12);
+}
+.helpful a {
+  font-size: 14px; color: rgba(255,255,255,0.7);
+  text-decoration: none; padding: 8px 14px;
+  border-radius: 999px; border: 1px solid rgba(255,255,255,0.14);
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.helpful a:hover {
+  color: #fff; border-color: var(--blue);
+  background: rgba(4,150,255,0.08);
+}
+.geo-arch {
+  position: absolute; pointer-events: none; z-index: 1;
+  border: 36px solid var(--blue);
+  border-radius: 50%; border-bottom-color: transparent;
+  width: 360px; height: 360px; opacity: 0.06;
+  top: -60px; right: -80px; transform: rotate(30deg);
+}
+.geo-ring {
+  position: absolute; pointer-events: none; z-index: 1;
+  border: 20px solid var(--blue);
+  border-radius: 50%;
+  width: 220px; height: 220px; opacity: 0.05;
+  bottom: -80px; left: -60px;
+}
+</style>
+</head>
+<body>
+  <div class="geo-arch"></div>
+  <div class="geo-ring"></div>
+  <main class="frame">
+    <div class="eyebrow">Page Not Found</div>
+    <div class="bigcode">404</div>
+    <h1>This page has moved or no longer exists.</h1>
+    <p>
+      It might have been renamed during our recent site update, or the link you followed
+      could be out of date. Try one of the destinations below.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary btn-lg" href="/">Back to homepage <span class="arr">&rarr;</span></a>
+      <a class="btn btn-ghost btn-lg" href="/contact" style="color: #fff; border-color: rgba(255,255,255,0.3);">Talk to us</a>
+    </div>
+    <div class="helpful">
+      <a href="/academies/">Academies</a>
+      <a href="/courses">Course catalogue</a>
+      <a href="/for-business/teams">For Business</a>
+      <a href="/individuals/">For Individuals</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/blog">Blog</a>
+      <a href="/resources/case-studies">Case studies</a>
+    </div>
+  </main>
+</body>
+</html>

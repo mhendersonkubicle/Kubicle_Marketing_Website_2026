@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<title>Course Library | Kubicle</title>
+<meta name="description" content="Every Kubicle course in one place. Browse 35 subject courses across AI, Data, Project Management, Finance and Microsoft Office, anchored in four role-mapped academies."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/courses"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:title" content="Course Library | Kubicle"/>
+<meta property="og:description" content="Every Kubicle course in one place. Browse 35 subject courses across AI, Data, Project Management, Finance and Microsoft Office."/>
+<meta property="og:url" content="https://www.kubicle.com/courses"/>
+<meta property="og:image" content="https://www.kubicle.com/img/hero-home.jpg"/>
+<meta property="og:image:width" content="1920"/>
+<meta property="og:image:height" content="1080"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Course Library | Kubicle"/>
+<meta name="twitter:description" content="Every Kubicle course in one place."/>
+<meta name="twitter:image" content="https://www.kubicle.com/img/hero-home.jpg"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Kubicle Course Library",
+  "description": "The complete catalogue of Kubicle courses across AI, Data, Project Management, Finance and Microsoft Office.",
+  "url": "https://www.kubicle.com/courses",
+  "isPartOf": { "@type": "WebSite", "name": "Kubicle", "url": "https://www.kubicle.com" }
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+body { font-family: var(--body, "Satoshi","Helvetica Neue",Arial,sans-serif); color: var(--prussian); background: #fff; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+section { padding: 96px 0; position: relative; }
+section.alice { background: var(--alice); }
+@media (max-width: 700px) { section { padding: 64px 0; } .container { padding: 0 22px; } }
+
+.sec-head { max-width: 760px; }
+.sec-head h2 { margin-top: 16px; }
+.sec-head h2 em { font-style: normal; color: var(--accent); }
+.sec-head .body-lg { margin-top: 22px; color: var(--steel); max-width: 640px; }
+
+.hero {
+  padding: 112px 0 56px;
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 30%, rgba(4,150,255,0.10), transparent 70%),
+    linear-gradient(180deg, #FBFCFD 0%, #F4F8FC 100%);
+}
+.hero .eyebrow { color: var(--accent); }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { color: var(--steel); font-size: 19px; line-height: 1.55; margin-top: 22px; max-width: 640px; }
+.hero-stats { margin-top: 32px; display: flex; gap: 32px; flex-wrap: wrap; }
+.hero-stats .stat strong {
+  font-family: var(--head); font-size: 32px; font-weight: 600;
+  color: var(--prussian); letter-spacing: -0.02em; display: block;
+}
+.hero-stats .stat span { font-size: 13px; color: var(--steel); letter-spacing: 0.05em; }
+
+/* Filters */
+.filter-bar {
+  margin-top: 48px;
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.filter-bar button {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-family: var(--head); font-size: 13.5px; font-weight: 600;
+  color: var(--prussian);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filter-bar button:hover { border-color: var(--accent); color: var(--accent-d, #0D5F96); }
+.filter-bar button.active {
+  background: var(--prussian); color: #fff; border-color: var(--prussian);
+}
+
+/* Course grid */
+.course-grid {
+  margin-top: 36px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+}
+@media (max-width: 900px) { .course-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .course-grid { grid-template-columns: 1fr; } }
+.course-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 16px;
+  padding: 22px;
+  display: flex; flex-direction: column;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+.course-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(4,150,255,0.30);
+  box-shadow: 0 18px 40px -20px rgba(11,27,43,0.18);
+}
+.course-card .c-acad {
+  display: inline-block;
+  font-family: var(--body); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 4px 9px; border-radius: 6px;
+  align-self: flex-start;
+}
+.course-card.ai      .c-acad { background: rgba(0,196,204,0.12);  color: #008B91; }
+.course-card.data    .c-acad { background: rgba(233,30,99,0.10);  color: #C2185B; }
+.course-card.pm      .c-acad { background: rgba(249,115,22,0.12); color: #C2540D; }
+.course-card.finance .c-acad { background: rgba(16,185,129,0.12); color: #047857; }
+.course-card.office  .c-acad { background: rgba(13,95,150,0.10);  color: #0D5F96; }
+.course-card.tech    .c-acad { background: rgba(99,102,241,0.10); color: #4338CA; }
+.course-card h3 {
+  margin-top: 10px;
+  font-family: var(--head); font-size: 17px; font-weight: 600;
+  color: var(--prussian); letter-spacing: -0.01em; line-height: 1.3;
+}
+.course-card .c-cta {
+  margin-top: auto; padding-top: 14px;
+  font-family: var(--head); font-size: 13px; font-weight: 600;
+  color: var(--accent-d, #0D5F96);
+}
+
+/* Final CTA */
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+}
+.final-cta .eyebrow { color: var(--accent); }
+.final-cta h2 { color: #fff; }
+.final-cta h2 em { font-style: normal; color: var(--accent); }
+.final-cta .body-lg { color: rgba(255,255,255,0.82); max-width: 760px; margin-top: 22px; }
+.final-cta .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+</style>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<div id="site-nav"></div>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Course Library</div>
+    <h1 class="h-display" style="margin-top: 14px;">Every Kubicle course, <em>one library.</em></h1>
+    <p class="hero-sub">
+      Thirty-five courses across AI, Data, Project Management, Finance and the Microsoft Office stack,
+      anchored in four role-mapped academies. Browse by category to find the right next step for your team.
+    </p>
+    <div class="hero-stats">
+      <div class="stat"><strong>35</strong><span>COURSES</span></div>
+      <div class="stat"><strong>1,000+</strong><span>VIDEO LESSONS</span></div>
+      <div class="stat"><strong>4</strong><span>ACADEMIES</span></div>
+      <div class="stat"><strong>CPD/CPE/NASBA</strong><span>ACCREDITED</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <div class="filter-bar" id="filters">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="ai">AI Literacy</button>
+      <button data-filter="data">Data Literacy</button>
+      <button data-filter="pm">Project Management</button>
+      <button data-filter="finance">Finance</button>
+      <button data-filter="office">Office &amp; Productivity</button>
+      <button data-filter="tech">Technology</button>
+    </div>
+
+    <div class="course-grid" id="grid">
+
+      <!-- AI -->
+      <a class="course-card ai" data-cat="ai" href="ai-fundamentals.html">
+        <span class="c-acad">AI Literacy</span><h3>AI Fundamentals</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card ai" data-cat="ai" href="machine-learning-python.html">
+        <span class="c-acad">AI Literacy</span><h3>Machine Learning with Python</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+
+      <!-- Data Literacy -->
+      <a class="course-card data" data-cat="data" href="data-literacy.html">
+        <span class="c-acad">Data Literacy</span><h3>Data Literacy</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card data" data-cat="data" href="data-strategy-governance.html">
+        <span class="c-acad">Data Literacy</span><h3>Data Strategy &amp; Governance</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card data" data-cat="data" href="data-ethics-risk.html">
+        <span class="c-acad">Data Literacy</span><h3>Data Ethics &amp; Risk</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card data" data-cat="data" href="data-regulation.html">
+        <span class="c-acad">Data Literacy</span><h3>Data Regulation</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card data" data-cat="data" href="data-security.html">
+        <span class="c-acad">Data Literacy</span><h3>Data Security</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card data" data-cat="data" href="data-presentation-skills.html">
+        <span class="c-acad">Data Literacy</span><h3>Data Presentation Skills</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card data" data-cat="data" href="visualization-fundamentals.html">
+        <span class="c-acad">Data Literacy</span><h3>Visualization Fundamentals</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card data" data-cat="data" href="statistical-analysis.html">
+        <span class="c-acad">Data Literacy</span><h3>Statistical Analysis</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card data" data-cat="data" href="strategic-analysis.html">
+        <span class="c-acad">Data Literacy</span><h3>Strategic Analysis</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card data" data-cat="data" href="business-analysis.html">
+        <span class="c-acad">Data Literacy</span><h3>Business Analysis</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card data" data-cat="data" href="excel.html">
+        <span class="c-acad">Data Literacy</span><h3>Excel</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card data" data-cat="data" href="sql.html">
+        <span class="c-acad">Data Literacy</span><h3>SQL</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card data" data-cat="data" href="python-fundamentals.html">
+        <span class="c-acad">Data Literacy</span><h3>Python Fundamentals</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card data" data-cat="data" href="tableau.html">
+        <span class="c-acad">Data Literacy</span><h3>Tableau</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card data" data-cat="data" href="power-bi.html">
+        <span class="c-acad">Data Literacy</span><h3>Power BI</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card data" data-cat="data" href="alteryx.html">
+        <span class="c-acad">Data Literacy</span><h3>Alteryx</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card data" data-cat="data" href="alteryx-intelligence-suite.html">
+        <span class="c-acad">Data Literacy</span><h3>Alteryx Intelligence Suite</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+
+      <!-- Project Management -->
+      <a class="course-card pm" data-cat="pm" href="project-management-fundamentals.html">
+        <span class="c-acad">Project Management</span><h3>Project Management Fundamentals</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card pm" data-cat="pm" href="adaptive-project-management.html">
+        <span class="c-acad">Project Management</span><h3>Adaptive Project Management</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+
+      <!-- Finance -->
+      <a class="course-card finance" data-cat="finance" href="finance-fundamentals.html">
+        <span class="c-acad">Finance</span><h3>Finance Fundamentals</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card finance" data-cat="finance" href="financial-modeling.html">
+        <span class="c-acad">Finance</span><h3>Financial Modeling</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+
+      <!-- Office & Productivity -->
+      <a class="course-card office" data-cat="office" href="powerpoint.html">
+        <span class="c-acad">Office</span><h3>PowerPoint</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card office" data-cat="office" href="word.html">
+        <span class="c-acad">Office</span><h3>Word</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card office" data-cat="office" href="outlook.html">
+        <span class="c-acad">Office</span><h3>Outlook</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card office" data-cat="office" href="microsoft-teams.html">
+        <span class="c-acad">Office</span><h3>Microsoft Teams</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card office" data-cat="office" href="sharepoint.html">
+        <span class="c-acad">Office</span><h3>SharePoint</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+
+      <!-- Technology -->
+      <a class="course-card tech" data-cat="tech" href="technology-fundamentals.html">
+        <span class="c-acad">Technology</span><h3>Technology Fundamentals</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card tech" data-cat="tech" href="app-development-fundamentals.html">
+        <span class="c-acad">Technology</span><h3>App Development Fundamentals</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card tech" data-cat="tech" href="apis.html">
+        <span class="c-acad">Technology</span><h3>APIs</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card tech" data-cat="tech" href="power-apps.html">
+        <span class="c-acad">Technology</span><h3>Power Apps</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card tech" data-cat="tech" href="rpa-fundamentals.html">
+        <span class="c-acad">Technology</span><h3>RPA Fundamentals</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card tech" data-cat="tech" href="rpa-power-automate.html">
+        <span class="c-acad">Technology</span><h3>RPA Power Automate</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+      <a class="course-card tech" data-cat="tech" href="rpa-uipath.html">
+        <span class="c-acad">Technology</span><h3>RPA UiPath</h3><span class="c-cta">View course &rarr;</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <div style="max-width: 920px;">
+      <div class="eyebrow">Talk to a program designer</div>
+      <h2 class="h-xl" style="margin-top: 16px;">Need a curated pathway, not a course list? <em>That's what academies are for.</em></h2>
+      <p class="body-lg">
+        Four academies stack the right courses into a role-mapped pathway. Talk to us about which mix is
+        right for your team.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="../academies/index.html">See the Academies <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost btn-lg" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script>
+(function () {
+  var buttons = document.querySelectorAll('#filters button');
+  var cards = document.querySelectorAll('#grid .course-card');
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      buttons.forEach(function (x) { x.classList.remove('active'); });
+      b.classList.add('active');
+      var f = b.getAttribute('data-filter');
+      cards.forEach(function (c) {
+        c.style.display = (f === 'all' || c.getAttribute('data-cat') === f) ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

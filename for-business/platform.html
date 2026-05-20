@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Platform &middot; The Kubicle Learning Tech Stack | Kubicle</title>
+<meta name="description" content="Everything finance and consulting L&amp;D teams need to deliver, manage and measure rigorous training at scale. Skill assessments, learning groups, custom paths, blended programs, AI grading, full reporting, ISO 27001 and GDPR compliant."/>
+<meta name="keywords" content="Kubicle platform, learning tech stack, LXP, skill assessment, custom learning paths, blended program, AI grading, learning analytics, ISO 27001, GDPR, SSO, MFA, enterprise training"/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/for-business/platform"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:url" content="https://www.kubicle.com/for-business/platform"/>
+<meta property="og:title" content="The Kubicle Learning Tech Stack"/>
+<meta property="og:description" content="Deliver, manage and measure rigorous training at scale. Skill assessments, custom paths, blended programs, AI grading, full reporting."/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@kubicle"/>
+<meta name="twitter:title" content="The Kubicle Learning Tech Stack"/>
+<meta name="twitter:description" content="Everything L&amp;D needs to deliver, manage and measure training at scale."/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Kubicle",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "url": "https://www.kubicle.com/for-business/platform",
+  "description": "Enterprise learning tech stack for finance, consulting and professional services. Skill assessment, custom paths, blended programs, AI grading and full reporting.",
+  "offers": { "@type": "Offer", "priceCurrency": "USD" },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "ratingCount": "200",
+    "bestRating": "5"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "url": "https://www.kubicle.com",
+    "logo": "https://www.kubicle.com/img/shared/6929dc95a88edc17d8e3a3e4_LOGO-FILES-LOGO-MARK-WHITE-RGB-1.png",
+    "address": { "@type": "PostalAddress", "addressLocality": "Dublin", "addressCountry": "Ireland" }
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+
+<style>
+/* ============================== LAYOUT ============================== */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+section { padding: 112px 0; position: relative; overflow: hidden; }
+section.compact { padding: 72px 0; }
+@media (max-width: 860px) {
+  .container { padding: 0 24px; }
+  section { padding: 80px 0; }
+}
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 96px 0 120px;
+  background:
+    radial-gradient(ellipse 55% 80% at 25% 50%, rgba(11,27,43,0.93), transparent 70%),
+    linear-gradient(180deg, rgba(11,27,43,0.86), rgba(11,27,43,0.94)),
+    radial-gradient(ellipse 60% 70% at 80% 20%, rgba(4,150,255,0.30), transparent 70%),
+    radial-gradient(ellipse 80% 60% at 10% 90%, rgba(4,150,255,0.18), transparent 70%),
+    url('img/hero-bg-pattern.svg') center / 820px auto repeat,
+    var(--prussian);
+  color: #fff;
+  position: relative;
+}
+.hero-content {
+  position: relative;
+  text-align: left;
+  max-width: 960px;
+}
+.hero-content h1 em { font-style: normal; color: var(--accent); }
+.hero-sub {
+  color: rgba(255,255,255,0.85);
+  max-width: 720px;
+  font-size: 20px; line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+.hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; align-items: center; }
+.hero-assurance {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  margin-top: 32px;
+  color: rgba(255,255,255,0.78);
+  font-size: 13px;
+}
+.hero-assurance span { display: flex; align-items: center; gap: 10px; }
+.hero-assurance .check {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: rgba(4,150,255,0.18);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.hero-assurance .check svg {
+  width: 12px; height: 12px;
+  fill: none; stroke: currentColor;
+  stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* Floating capability tiles in hero */
+.hero-tiles {
+  margin-top: 72px;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  position: relative; z-index: 2;
+}
+.hero-tile {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  padding: 22px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: border 0.2s, transform 0.2s, background 0.2s;
+}
+.hero-tile:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.10);
+}
+.hero-tile .ico {
+  width: 42px; height: 42px;
+  border-radius: 11px;
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-tile.t1 .ico { background: rgba(253,231,76,0.18); color: #FDE74C; }
+.hero-tile.t2 .ico { background: rgba(35,206,107,0.18); color: #23CE6B; }
+.hero-tile.t3 .ico { background: rgba(180,117,247,0.20); color: #C394FA; }
+.hero-tile.t4 .ico { background: rgba(232,81,157,0.20); color: #E8519D; }
+.hero-tile .ico svg {
+  width: 22px; height: 22px;
+  fill: none; stroke: currentColor;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.hero-tile h4 { font-family: var(--head); font-size: 17px; font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; color: #fff; }
+.hero-tile p { font-size: 13px; color: rgba(255,255,255,0.72); line-height: 1.45; }
+@media (max-width: 1000px) { .hero-tiles { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px)  { .hero-tiles { grid-template-columns: 1fr; } }
+
+/* ============================== TRUST BAR ============================== */
+.trust {
+  padding: 32px 0 28px;
+  background: var(--prussian);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+.trust-label {
+  color: rgba(255,255,255,0.45);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.marquee-track {
+  display: flex; width: max-content;
+  animation: marquee 60s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.logo-chip {
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  padding: 0 48px;
+}
+@media (max-width: 700px) { .logo-chip { padding: 0 32px; } }
+.logo-chip img {
+  height: 28px; width: auto; object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.logo-chip img.white-native { filter: brightness(1); opacity: 0.7; }
+.logo-chip:hover img { opacity: 1; }
+
+/* ============================== STAT STRIP ============================== */
+.stat-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding: 64px 0;
+  border-bottom: 1px solid var(--alice);
+}
+.stat .num {
+  font-family: var(--head); font-size: 56px; font-weight: 600;
+  line-height: 1; letter-spacing: -0.04em;
+  color: var(--prussian);
+}
+.stat .num em { font-style: normal; color: var(--accent); }
+.stat .label {
+  margin-top: 12px;
+  font-size: 14px; color: var(--steel);
+  max-width: 220px; line-height: 1.45;
+}
+@media (max-width: 900px) { .stat-strip { grid-template-columns: repeat(2, 1fr); } }
+
+/* ============================== SECTION HEAD ============================== */
+.sec-head { max-width: 760px; }
+.sec-head h2 { margin-top: 16px; }
+.sec-head .body-lg { margin-top: 24px; color: var(--steel); max-width: 640px; }
+.sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.sec-head.center .body-lg { margin-left: auto; margin-right: auto; }
+.dark .sec-head .body-lg { color: rgba(255,255,255,0.78); }
+
+/* ============================== PRODUCT DEMO ============================== */
+#demo { background: var(--alice); }
+.demo-frame {
+  margin-top: 56px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--prussian);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 40px 80px -32px rgba(11,27,43,0.30),
+    0 12px 24px -8px rgba(11,27,43,0.14);
+}
+.demo-frame iframe {
+  position: absolute; inset: 0;
+  border: 0;
+  width: 100%; height: 100%;
+  display: block;
+}
+@media (max-width: 700px) { .demo-frame { aspect-ratio: 4 / 3; } }
+
+/* ============================== FEATURES (6-up) ============================== */
+.feature-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 56px;
+}
+.feature-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 32px;
+  display: flex; flex-direction: column;
+  gap: 18px;
+  transition: border 0.18s, transform 0.18s, box-shadow 0.18s;
+}
+.feature-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 26px 48px -28px rgba(var(--accent-rgb), 0.30);
+}
+.feature-card .fi {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: var(--accent-soft);
+  color: var(--accent-d);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.feature-card .fi svg {
+  width: 26px; height: 26px;
+  fill: none; stroke: currentColor;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.feature-card h3 {
+  font-family: var(--head); font-size: 22px; font-weight: 600;
+  letter-spacing: -0.025em; line-height: 1.15;
+}
+.feature-card p { font-size: 15px; color: var(--steel); line-height: 1.55; }
+.feature-card .feat-list {
+  margin-top: auto; padding-top: 16px;
+  list-style: none; padding-left: 0;
+  display: grid; gap: 8px;
+  border-top: 1px solid var(--alice);
+}
+.feature-card .feat-list li {
+  font-size: 13px; color: var(--prussian);
+  padding-left: 22px; position: relative;
+  line-height: 1.4;
+}
+.feature-card .feat-list li::before {
+  content: "";
+  position: absolute; left: 0; top: 5px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--emerald);
+  mask: radial-gradient(circle at 50% 50%, transparent 30%, #000 31%);
+}
+@media (max-width: 1000px) { .feature-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .feature-grid { grid-template-columns: 1fr; } }
+
+/* ============================== LEARNER EXPERIENCE ============================== */
+.lxp-grid {
+  display: grid; grid-template-columns: 1.1fr 1fr;
+  gap: 64px; align-items: center;
+  margin-top: 48px;
+}
+.lxp-grid .lxp-copy ul {
+  list-style: none; padding: 0; margin: 24px 0 0;
+  display: grid; gap: 18px;
+}
+.lxp-grid .lxp-copy li {
+  display: grid; grid-template-columns: 36px 1fr;
+  gap: 14px; align-items: start;
+}
+.lxp-grid .lxp-copy li .ic {
+  width: 32px; height: 32px;
+  border-radius: 9px;
+  background: var(--accent-soft); color: var(--accent-d);
+  display: flex; align-items: center; justify-content: center;
+}
+.lxp-grid .lxp-copy li .ic svg {
+  width: 18px; height: 18px;
+  fill: none; stroke: currentColor;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.lxp-grid .lxp-copy li h4 {
+  font-family: var(--head); font-size: 17px; font-weight: 600;
+  letter-spacing: -0.02em; line-height: 1.2;
+}
+.lxp-grid .lxp-copy li p { font-size: 14.5px; color: var(--steel); line-height: 1.55; margin-top: 4px; }
+
+.lxp-media { display: flex; flex-direction: column; gap: 16px; }
+.lxp-frame {
+  background: #fff;
+  border-radius: 22px;
+  padding: 12px;
+  border: 1px solid rgba(11,27,43,0.08);
+  box-shadow: 0 32px 60px -24px rgba(11,27,43,0.30);
+}
+.lxp-video {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  background: #000;
+}
+.lxp-video iframe {
+  width: 100%; height: 100%;
+  border: 0; display: block;
+}
+.lxp-caption {
+  display: flex; align-items: baseline; gap: 8px;
+  font-family: var(--body);
+  font-size: 13px; line-height: 1.5;
+  color: var(--steel);
+  padding-left: 4px;
+}
+.lxp-caption .tag {
+  font-family: var(--head);
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent);
+}
+.lxp-caption .sep { color: rgba(11,27,43,0.25); }
+
+@media (max-width: 1000px) { .lxp-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+/* ============================== SECURITY ============================== */
+.sec-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 56px;
+}
+.sec-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 18px;
+  padding: 28px;
+  display: flex; flex-direction: column;
+  gap: 14px;
+  transition: border 0.18s, transform 0.18s;
+}
+.sec-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.sec-card .si {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--accent-soft); color: var(--accent-d);
+  display: flex; align-items: center; justify-content: center;
+}
+.sec-card .si svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.sec-card h4 { font-family: var(--head); font-size: 17px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
+.sec-card p { font-size: 13.5px; color: var(--steel); line-height: 1.5; }
+@media (max-width: 900px) { .sec-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .sec-grid { grid-template-columns: 1fr; } }
+
+/* ============================== AI ENHANCEMENTS ============================== */
+.ai-grid {
+  display: grid; grid-template-columns: 1fr 1.1fr;
+  gap: 64px; align-items: center;
+  margin-top: 48px;
+}
+.ai-grid .ai-copy h2 { color: #fff; }
+.ai-grid .ai-copy h2 em { font-style: normal; color: var(--accent); }
+.ai-grid .ai-copy p { color: rgba(255,255,255,0.78); margin-top: 24px; }
+.ai-grid .ai-copy ul { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 14px; }
+.ai-grid .ai-copy li {
+  font-size: 15px; color: rgba(255,255,255,0.85);
+  padding-left: 28px; position: relative; line-height: 1.5;
+}
+.ai-grid .ai-copy li::before {
+  content: "";
+  position: absolute; left: 0; top: 6px;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  mask: radial-gradient(circle at 50% 50%, transparent 28%, #000 29%);
+}
+#ai > .container { position: relative; z-index: 2; }
+.ai-illustration {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 50%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1;
+  pointer-events: none;
+}
+.ai-illustration img {
+  width: 100%; height: auto;
+  max-width: 620px;
+  display: block;
+}
+@media (max-width: 1000px) {
+  .ai-illustration {
+    position: relative;
+    top: auto; right: auto; bottom: auto;
+    width: auto;
+    align-items: center;
+    pointer-events: auto;
+  }
+  .ai-illustration img { max-width: 480px; margin: 0 auto; }
+}
+
+.ai-mock {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 22px;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+}
+.ai-mock::before {
+  content: "";
+  position: absolute; top: -100px; right: -80px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(4,150,255,0.30), transparent 70%);
+  pointer-events: none;
+}
+.ai-mock .ai-row {
+  display: grid; grid-template-columns: 36px 1fr;
+  gap: 14px; align-items: start;
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  margin-bottom: 10px;
+  position: relative; z-index: 1;
+}
+.ai-mock .ai-row.user { background: rgba(4,150,255,0.10); border-color: rgba(4,150,255,0.30); }
+.ai-mock .ai-row.eval { background: rgba(35,206,107,0.10); border-color: rgba(35,206,107,0.30); }
+.ai-mock .ai-row .av {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--head); font-size: 12px; font-weight: 600; color: #fff;
+}
+.ai-mock .ai-row.user .av { background: var(--accent); }
+.ai-mock .ai-row.eval .av { background: var(--emerald); }
+.ai-mock .ai-row .body-text {
+  font-size: 13px; color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+}
+.ai-mock .ai-row .body-text strong { color: #fff; display: block; font-family: var(--head); font-size: 12.5px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 4px; opacity: 0.7; }
+.ai-mock .ai-grade {
+  display: inline-flex; gap: 8px; align-items: center;
+  margin-top: 8px;
+  padding: 4px 10px;
+  background: rgba(35,206,107,0.18);
+  border-radius: 999px;
+  font-family: var(--head); font-size: 12px; font-weight: 600;
+  color: #6FE3A1;
+}
+@media (max-width: 1000px) { .ai-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+/* ============================== CUSTOMIZATION ============================== */
+.custom-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 56px;
+}
+.custom-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 20px;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: border 0.18s, transform 0.18s;
+}
+.custom-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.custom-card .ci {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+.custom-card.c1 .ci { background: rgba(4,150,255,0.10); color: var(--accent-d); }
+.custom-card.c2 .ci { background: rgba(35,206,107,0.10); color: #16864B; }
+.custom-card.c3 .ci { background: rgba(180,117,247,0.14); color: #7B45BB; }
+.custom-card.c4 .ci { background: rgba(232,81,157,0.14); color: #BF3F7B; }
+.custom-card .ci svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.custom-card h4 { font-family: var(--head); font-size: 18px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
+.custom-card p { font-size: 14px; color: var(--steel); line-height: 1.55; margin-top: 8px; }
+@media (max-width: 1000px) { .custom-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .custom-grid { grid-template-columns: 1fr; } }
+
+/* ============================== TESTIMONIAL ============================== */
+.quote-block {
+  display: grid; grid-template-columns: 1fr 1.4fr;
+  gap: 64px; align-items: center;
+  margin-top: 48px;
+}
+.quote-block blockquote {
+  margin: 0;
+  font-family: var(--head);
+  font-size: clamp(26px, 2.6vw, 36px);
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  border-left: 4px solid var(--accent);
+  padding-left: 32px;
+  color: #fff;
+}
+.quote-block .who { margin-top: 24px; font-size: 14px; color: rgba(255,255,255,0.7); padding-left: 32px; }
+.quote-block .who strong { color: #fff; font-weight: 600; }
+.quote-block .logo-side { display: flex; align-items: center; justify-content: center; }
+.quote-block .logo-side img { max-height: 100px; opacity: 0.85; }
+@media (max-width: 900px) { .quote-block { grid-template-columns: 1fr; gap: 32px; } }
+
+/* ============================== FINAL CTA ============================== */
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+  position: relative;
+  overflow: hidden;
+}
+.final-cta h2 { max-width: 900px; color: #fff; }
+.final-cta h2 em { font-style: normal; color: var(--accent); }
+.final-cta .body-lg { max-width: 640px; color: rgba(255,255,255,0.82); }
+.final-cta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 40px; }
+.final-cta .contact-row {
+  display: flex; gap: 48px; margin-top: 56px; flex-wrap: wrap;
+  padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.12);
+}
+.final-cta .contact-row .item .eyebrow { color: rgba(255,255,255,0.5); }
+.final-cta .contact-row .item .val { font-family: var(--head); font-size: 18px; margin-top: 4px; color: #fff; }
+
+/* ============================== FLOATING CTA ============================== */
+.float-cta {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  z-index: 90;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(20px);
+  box-shadow: 0 20px 50px -10px rgba(4,150,255,0.5);
+}
+.float-cta.on { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+/* ============================== UTIL ============================== */
+.center { text-align: center; }
+</style>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== NAV (shared/nav.js) ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow" style="color: var(--accent);">The Kubicle Tech Stack</div>
+      <h1 class="h-display" style="margin-top: 18px;">
+        A full learning tech stack<br/>
+        to drive and measure<br/>
+        your <em>training program.</em>
+      </h1>
+      <p class="hero-sub" style="margin-top: 24px;">
+        Everything finance and consulting L&amp;D needs to deliver, manage and measure rigorous training at scale, and with precision. Built for the rollouts your CFO actually expects to see returns from.
+      </p>
+      <div class="hero-cta-row">
+        <a class="btn btn-primary btn-lg" href="../catalog.html">Download Catalog <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost btn-lg" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+      </div>
+      <div class="hero-assurance">
+        <span><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>ISO&nbsp;27001 certified</span>
+        <span><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>GDPR compliant</span>
+        <span><span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>SSO and MFA on every plan</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================== TRUST BAR ============================== -->
+<div class="trust">
+  <div class="trust-label">The tech stack of choice for 1M+ learners</div>
+  <div class="marquee-track" id="marquee-track"></div>
+</div>
+
+<!-- ============================== STAT STRIP ============================== -->
+<section class="compact" style="padding-top: 0; padding-bottom: 0;">
+  <div class="container">
+    <div class="stat-strip">
+      <div class="stat">
+        <div class="num">1M<em>+</em></div>
+        <div class="label">Learners delivered through the Kubicle stack</div>
+      </div>
+      <div class="stat">
+        <div class="num">4.7<span class="rating-of">/5</span></div>
+        <div class="label">Average G2 rating across 200+ verified reviews</div>
+      </div>
+      <div class="stat">
+        <div class="num">80<em>%</em></div>
+        <div class="label">Course completion rate vs. 7% industry benchmark</div>
+      </div>
+      <div class="stat">
+        <div class="num">7<em> days</em></div>
+        <div class="label">From discovery call to learners in their first lesson</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PRODUCT DEMO ============================== -->
+<section id="demo">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Take a Tour</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        See the stack <span style="color: var(--accent);">in action.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 24px; color: var(--steel); max-width: 640px;">
+        An interactive walkthrough of Kubicle. Click through the persona benchmark, custom path builder, AI grading and reporting dashboards just like a learner or admin would.
+      </p>
+    </div>
+
+    <div class="demo-frame">
+      <iframe src="https://capture.navattic.com/cmgru1n5q000p04l9gu7u2iuc" style="border:none;width:100%;height:100%;" data-navattic-demo-id="cmgru1n5q000p04l9gu7u2iuc" allow="fullscreen"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FEATURES (6) ============================== -->
+<section id="features">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">The Experience Delivery Stack</div>
+      <h2 class="h-xl">
+        Six tools, <span style="color: var(--accent);">one stack.</span>
+      </h2>
+      <p class="body-lg">
+        The stack is built for L&amp;D leaders running training that has to land, not for IT to babysit. Every tool slots together so cohorts move from baseline to credential without friction.
+      </p>
+    </div>
+
+    <div class="feature-grid">
+      <!-- 1. Manage Learning Groups -->
+      <div class="feature-card">
+        <div class="fi"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15 16a4.5 4.5 0 0 1 7 2.5"/></svg></div>
+        <h3>Manage learning groups</h3>
+        <p>Organise learners by team, persona, region or grade. Assign content, run cohort campaigns and track progress from a single console.</p>
+        <ul class="feat-list">
+          <li>Bulk user import via CSV or SCIM</li>
+          <li>Cohort campaigns with reminders</li>
+          <li>Persona&#8209;tagged learner directory</li>
+        </ul>
+      </div>
+
+      <!-- 2. Skill Assessments -->
+      <div class="feature-card">
+        <div class="fi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+        <h3>Skill assessments</h3>
+        <p>Score every learner against the capability axes that matter to the role. Real&#8209;time data, no guesswork, calibration you can defend in a leadership review.</p>
+        <ul class="feat-list">
+          <li>Persona&#8209;led benchmarking</li>
+          <li>Pre&#8209; and post&#8209;program assessments</li>
+          <li>Strengths and gap diagnostics</li>
+        </ul>
+      </div>
+
+      <!-- 3. Semesterized Learning -->
+      <div class="feature-card">
+        <div class="fi"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 11h6M9 15h6M9 19h4"/></svg></div>
+        <h3>Semesterised learning</h3>
+        <p>Structured blocks instead of an infinite buffet. Each semester has a goal, a deadline and a credential, so learners know exactly what they are working toward.</p>
+        <ul class="feat-list">
+          <li>Fixed&#8209;term blocks with deadlines</li>
+          <li>Milestone&#8209;driven completion</li>
+          <li>Calendar&#8209;native scheduling</li>
+        </ul>
+      </div>
+
+      <!-- 4. Custom Path Builder -->
+      <div class="feature-card">
+        <div class="fi"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 6h3a3 3 0 0 1 3 3"/></svg></div>
+        <h3>Custom path builder</h3>
+        <p>Drag and drop courses, assessments and projects into a path tailored to the role. Save it as a template, clone it for the next cohort, version it as the role changes.</p>
+        <ul class="feat-list">
+          <li>Drag&#8209;and&#8209;drop sequencing</li>
+          <li>Reusable role templates</li>
+          <li>Versioning and rollback</li>
+        </ul>
+      </div>
+
+      <!-- 5. Blended Program Management -->
+      <div class="feature-card">
+        <div class="fi"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg></div>
+        <h3>Blended programs</h3>
+        <p>Track instructor&#8209;led sessions, virtual workshops, projects and self&#8209;paced lessons inside one program. Attendance, completion and skill gain in one report, every time.</p>
+        <ul class="feat-list">
+          <li>ILT, VILT and self&#8209;paced in one view</li>
+          <li>Attendance and engagement tracking</li>
+          <li>Project submissions and reviews</li>
+        </ul>
+      </div>
+
+      <!-- 6. Reporting & Analytics -->
+      <div class="feature-card">
+        <div class="fi"><svg viewBox="0 0 24 24"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M2 20h20"/></svg></div>
+        <h3>Reporting &amp; analytics</h3>
+        <p>The dashboards your CFO will actually open. Engagement, completion, skill gain and ROI proxies, broken down by persona, cohort and region.</p>
+        <ul class="feat-list">
+          <li>Cohort, persona and individual dashboards</li>
+          <li>Reporting API for BI exports</li>
+          <li>Scheduled email digests</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== LEARNER EXPERIENCE ============================== -->
+<section class="alice" id="learner">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Learner Experience</div>
+      <h2 class="h-xl">
+        Designed to keep<br/>
+        <span style="color: var(--accent);">working professionals shipping.</span>
+      </h2>
+      <p class="body-lg">
+        Bite&#8209;sized lessons, hands&#8209;on projects and credentialed assessments. Built for the analyst who can spare five minutes between deliverables, not a four&#8209;hour university lecture.
+      </p>
+    </div>
+
+    <div class="lxp-grid">
+      <div class="lxp-copy">
+        <ul>
+          <li>
+            <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></div>
+            <div>
+              <h4>5&#8209;minute lessons, 50&#8209;minute courses</h4>
+              <p>Each course is a single CPE credit, about fifty minutes, broken into focused five&#8209;minute lessons. Built around the cadence of consulting and finance work, not a 90&#8209;minute university lecture.</p>
+            </div>
+          </li>
+          <li>
+            <div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-9"/></svg></div>
+            <div>
+              <h4>Practice files for every lesson</h4>
+              <p>Excel workbooks, Power BI files, Python notebooks and SQL datasets, downloadable in one click and tied to the lesson scenario.</p>
+            </div>
+          </li>
+          <li>
+            <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+            <div>
+              <h4>Project&#8209;based learning</h4>
+              <p>Apply the skills inside scenarios drawn from real client engagements: dashboard audits, valuation models, risk reviews, board packs.</p>
+            </div>
+          </li>
+          <li>
+            <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></svg></div>
+            <div>
+              <h4>CPD, CPE and NASBA accredited</h4>
+              <p>Every credential learners earn counts toward continuing professional development credits and lands shareable on LinkedIn the moment it is awarded.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="lxp-media">
+        <div class="lxp-frame">
+          <div class="lxp-video">
+            <iframe
+              src="https://player.mux.com/Qj2WvQnqA73BT4S6DcMuwhWK44AywNz00009exEDCojBI"
+              title="Kubicle sample lesson"
+              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <p class="lxp-caption">
+          <span class="tag">Sample Lesson</span>
+          <span class="sep">/</span>
+          <span>A real Kubicle lesson, exactly as your learners see it.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== AI ENHANCEMENTS ============================== -->
+<section class="dark" id="ai">
+  <div style="position:absolute; inset:0; pointer-events:none; overflow:hidden;">
+    <div style="position: absolute; width: 480px; height: 480px; right: -10%; top: -10%; opacity: 0.10; border-radius: 50%; background: radial-gradient(circle, var(--accent), transparent 70%);"></div>
+    <div style="position: absolute; width: 320px; height: 320px; left: -8%; bottom: -10%; opacity: 0.10; border-radius: 50%; background: radial-gradient(circle, var(--accent), transparent 70%);"></div>
+  </div>
+  <div class="container">
+    <div class="ai-grid">
+      <div class="ai-copy">
+        <div class="eyebrow" style="color: var(--accent);">AI Enhancements</div>
+        <h2 class="h-xl" style="margin-top: 14px;">
+          Submit a project. <em>Get graded in seconds.</em>
+        </h2>
+        <p class="body-lg">
+          Real&#8209;time AI feedback inside the learning flow. Learners submit project work, get an evaluation aligned to the rubric, and iterate without waiting on a tutor or a manager review queue.
+        </p>
+        <ul>
+          <li>Instant project grading aligned to the program rubric</li>
+          <li>Targeted feedback on what to fix and what to keep</li>
+          <li>Self&#8209;directed iteration that compresses time&#8209;to&#8209;skill</li>
+          <li>Human review still available for senior credentials</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ai-illustration">
+    <img src="img/Platform/681b783176426521e60cf2e3_applied-learning.svg" alt="Kubicle AI grading: instant, rubric-aligned feedback on submitted project work"/>
+  </div>
+</section>
+
+<!-- ============================== SECURITY ============================== -->
+<section id="security">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Security &amp; Reliability</div>
+      <h2 class="h-xl">
+        Built to clear<br/>
+        <span style="color: var(--accent);">your security review.</span>
+      </h2>
+      <p class="body-lg">
+        Procurement and InfoSec teams at the firms we work with do not approve learning tools that cannot defend their architecture. We pass those reviews. Quickly.
+      </p>
+    </div>
+
+    <div class="sec-grid">
+      <div class="sec-card">
+        <div class="si"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h4>ISO 27001 certified</h4>
+        <p>Independent attestation of information security controls and risk management. Audit reports available under NDA.</p>
+      </div>
+      <div class="sec-card">
+        <div class="si"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h4>GDPR compliant</h4>
+        <p>EU data residency available. Data processing agreements signed with every enterprise customer.</p>
+      </div>
+      <div class="sec-card">
+        <div class="si"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+        <h4>Single Sign&#8209;On (SSO)</h4>
+        <p>SAML 2.0 and OIDC out of the box. Okta, Azure AD, Google, Ping and OneLogin all supported.</p>
+      </div>
+      <div class="sec-card">
+        <div class="si"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/><circle cx="18" cy="6" r="3" fill="currentColor" stroke="none"/></svg></div>
+        <h4>Multi&#8209;Factor Auth</h4>
+        <p>TOTP, push and hardware key support. Required by default on every administrator account.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CUSTOMIZATION ============================== -->
+<section class="alice" id="custom">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Full Customisation</div>
+      <h2 class="h-xl">
+        Your brand. <span style="color: var(--accent);">Your paths.</span><br/>
+        Your stack of record.
+      </h2>
+      <p class="body-lg">
+        Configure Kubicle so it looks and feels like an extension of the firm, not a third&#8209;party site learners get bounced to. White&#8209;label, role&#8209;mapped, fully supported, integrated.
+      </p>
+    </div>
+
+    <div class="custom-grid">
+      <div class="custom-card c1">
+        <div class="ci"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M4 12a8 8 0 0 1 16 0"/><path d="M12 3v18"/></svg></div>
+        <h4>Custom branding</h4>
+        <p>Logo, colours, typography and email templates configured to match the firm. White&#8209;label domain available.</p>
+      </div>
+      <div class="custom-card c2">
+        <div class="ci"><svg viewBox="0 0 24 24"><path d="M12 2v8"/><path d="M12 14v8"/><circle cx="12" cy="12" r="2"/><path d="M5 5l3 3"/><path d="M16 16l3 3"/><path d="M5 19l3-3"/><path d="M16 8l3-3"/></svg></div>
+        <h4>Role&#8209;based paths</h4>
+        <p>Tailor pathways to the personas in the firm. Analyst, associate, manager, partner, with content scoped to each.</p>
+      </div>
+      <div class="custom-card c3">
+        <div class="ci"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20v-1.6a4 4 0 0 1 4-4h5a4 4 0 0 1 4 4V20"/><circle cx="17" cy="9.5" r="2.4"/><path d="M21.5 20v-1.2a3 3 0 0 0-3-3h-1.5"/></svg></div>
+        <h4>Dedicated Customer Success</h4>
+        <p>Every program gets a named Customer Success team driving toward the outcomes you set. Discovery, deployment, measurement and quarterly reviews. A team behind every learner, working to the skill targets agreed at kickoff.</p>
+      </div>
+      <div class="custom-card c4">
+        <div class="ci"><svg viewBox="0 0 24 24"><path d="M9 2v4"/><path d="M15 2v4"/><path d="M6 6h12v4a6 6 0 0 1-12 0V6z"/><path d="M12 16v6"/></svg></div>
+        <h4>Native integrations</h4>
+        <p>SSO, LMS, LXP and HRIS connections that drop into your existing stack. Cornerstone, Degreed, Workday and Reporting API supported.</p>
+      </div>
+    </div>
+
+    <div class="center" style="margin-top: 56px;">
+      <a class="btn btn-outline-dark btn-md" href="integrations.html">See all integrations <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TESTIMONIAL ============================== -->
+<section class="dark" id="testimonial">
+  <div style="position:absolute; inset:0; pointer-events:none; overflow:hidden;">
+    <div style="position: absolute; width: 360px; height: 360px; left: -8%; top: -10%; opacity: 0.10; border-radius: 50%; background: radial-gradient(circle, var(--accent), transparent 70%);"></div>
+  </div>
+  <div class="container">
+    <div class="eyebrow" style="color: var(--accent);">Don't just take our word for it</div>
+    <div class="quote-block">
+      <div class="logo-side">
+        <img src="../img/shared/67c0476eb0f8c4d3c4354287_2dbbe09d3f0f9a37d68ccb9f9ba677aa_image-21.png" alt="Jotun" style="filter: brightness(0) invert(1);"/>
+      </div>
+      <div>
+        <blockquote>
+          &ldquo;The reporting dashboards alone changed how we run training. We see exactly which markets are moving, which roles are stuck, and where to put the next round of investment.&rdquo;
+        </blockquote>
+        <p class="who">
+          <strong>Pernille Aas</strong><br/>
+          BI Lead, Jotun
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="final-cta">
+  <div class="container">
+    <div class="eyebrow" style="color: rgba(255,255,255,0.6);">Get Started</div>
+    <h2 class="h-display" style="margin-top: 16px;">
+      See the stack <em>in 30 minutes.</em>
+    </h2>
+    <p class="body-lg" style="margin-top: 28px;">
+      Walk through your use case with a Kubicle program designer. Persona benchmark, custom path outline and a candid view of what success looks like for your team.
+    </p>
+    <div class="final-cta-row">
+      <a class="btn btn-primary btn-lg" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+      <a class="btn btn-ghost btn-lg" href="../resources/case-studies.html">Read customer stories</a>
+    </div>
+
+    <div class="contact-row">
+      <div class="item">
+        <div class="eyebrow">Visit</div>
+        <div class="val">kubicle.com</div>
+      </div>
+      <div class="item">
+        <div class="eyebrow">Email</div>
+        <div class="val">sales@kubicle.com</div>
+      </div>
+      <div class="item">
+        <div class="eyebrow">Offices</div>
+        <div class="val">Dublin, Ireland</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER (shared/footer.js) ============================== -->
+<div id="site-footer"></div>
+
+<!-- ============================== FLOATING CTA ============================== -->
+<a class="btn btn-primary btn-md float-cta" id="float-cta" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+
+
+<!-- ============================== SCRIPTS ============================== -->
+<script>
+// ============================== FLOATING CTA ==============================
+(function () {
+  var floatBtn = document.getElementById('float-cta');
+  var hero = document.getElementById('top');
+  if (!floatBtn || !hero) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting && e.boundingClientRect.top < 0) floatBtn.classList.add('on');
+      else if (e.isIntersecting) floatBtn.classList.remove('on');
+    });
+  }, { threshold: 0, rootMargin: '-100px 0px 0px 0px' });
+  io.observe(hero);
+
+  var finalCta = document.querySelector('.final-cta');
+  if (finalCta) {
+    var io2 = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) floatBtn.classList.remove('on'); });
+    }, { threshold: 0.2 });
+    io2.observe(finalCta);
+  }
+})();
+
+// ============================== MARQUEE ==============================
+(function () {
+  var logos = [
+    { src: '../img/shared/68c2caf09da428eb2dde4f9e_coca-cola-logo-white.png', alt: 'Coca-Cola', native: true },
+    { src: '../img/shared/67c0476eb0f8c4d3c435428c_6a6f1a51a10add6f2749c42cc0df7035_image-9.png', alt: 'Amazon', native: false },
+    { src: '../img/shared/68c2cad5cf0b314fbcc87474_bain-logo-white.png', alt: 'Bain & Company', native: true },
+    { src: '../img/shared/67c0476eb0f8c4d3c4354276_71a2cf3f7a67da45ac2c620241f37138_image-19.png', alt: 'Ford', native: false },
+    { src: '../img/shared/68a31c29651cb5c7de7328a0_heineken-logo-corporate-page-1.png', alt: 'Heineken', native: false },
+    { src: '../img/shared/67c0476eb0f8c4d3c4354287_2dbbe09d3f0f9a37d68ccb9f9ba677aa_image-21.png', alt: 'Jotun', native: false },
+    { src: '../img/shared/68c2caef8b6fdbbd84310a36_kpmg-logo-white.png', alt: 'KPMG', native: true },
+    { src: '../img/shared/68c2caefdc26eb4f7dceb524_lek-logo-white.png', alt: 'L.E.K. Consulting', native: true },
+    { src: '../img/shared/68c2caf00a998ed623dbf3d5_oliver-wyman-logo-white.png', alt: 'Oliver Wyman', native: true },
+    { src: '../img/shared/67c0476eb0f8c4d3c4354272_ab4654fe9cf282ba2459391b57d412b7_image-11.png', alt: 'PwC', native: false },
+    { src: '../img/shared/totalenergies-logo.png', alt: 'TotalEnergies', native: false }
+  ];
+  var track = document.getElementById('marquee-track');
+  if (!track) return;
+  var setsNeeded = Math.ceil((window.innerWidth * 2) / (logos.length * 180)) + 1;
+  var totalSets = setsNeeded * 2;
+  var html = '';
+  for (var s = 0; s < totalSets; s++) {
+    for (var i = 0; i < logos.length; i++) {
+      var l = logos[i];
+      html += '<span class="logo-chip"><img ' + (l.native ? 'class="white-native" ' : '') +
+        'src="' + l.src + '" alt="' + l.alt + '" style="height:28px;"/></span>';
+    }
+  }
+  track.innerHTML = html;
+})();
+</script>
+</body>
+</html>

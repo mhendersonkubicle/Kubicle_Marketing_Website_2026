@@ -1,0 +1,77 @@
+/* =========================================================================
+   Kubicle Typography
+   Body baseline, heading element rules, type scale classes, eyebrow,
+   and dark-section overrides.
+   Depends on tokens.css for --head / --body / color variables.
+   ========================================================================= */
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: var(--body);
+  color: var(--soft-black);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ===== Heading element baseline ========================================== */
+h1, h2, h3, h4 {
+  font-family: var(--head);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.0;
+  margin: 0;
+}
+
+/* ===== Type scale ======================================================== */
+.h-display { font-size: clamp(52px, 7vw, 92px); line-height: 0.95; letter-spacing: -0.045em; }
+.h-xl      { font-size: clamp(38px, 4.8vw, 64px); line-height: 1.0; letter-spacing: -0.04em; }
+.h-lg      { font-size: clamp(28px, 3.2vw, 44px); line-height: 1.04; }
+.h-md      { font-size: 24px; line-height: 1.15; }
+.h-sm      { font-size: 18px; line-height: 1.2; font-weight: 600; font-family: var(--head); }
+
+.body-lg   { font-size: 18px; line-height: 1.55; }
+.body      { font-size: 16px; line-height: 1.6; }
+.body-sm   { font-size: 14px; line-height: 1.55; }
+.caption   { font-size: 12px; line-height: 1.4; letter-spacing: 0.02em; color: var(--steel); }
+
+.eyebrow {
+  font-family: var(--body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+/* G2 rating /5 suffix — picks up the page's theme accent so it pops as a highlight.
+   Inside big stat-number containers (.num, .n, .stat .num), shrink to a sensible
+   sup-style size so the "/5" doesn't dominate the number. */
+.rating-of {
+  color: var(--accent);
+  font-weight: 600;
+}
+.num .rating-of,
+.n .rating-of,
+.stat-card .n .rating-of {
+  font-size: 0.55em;
+  vertical-align: 0.4em;
+  margin-left: 0.05em;
+}
+
+/* ===== Section background utilities ====================================== */
+.alice { background: var(--alice); }
+.dark  { background: var(--prussian); color: #fff; }
+
+/* ===== Dark-section text overrides ======================================= */
+.dark .eyebrow                  { color: var(--accent); }
+.dark .body, .dark .body-lg     { color: rgba(255, 255, 255, 0.82); }
+.dark .body-sm                  { color: rgba(255, 255, 255, 0.78); }
+.dark .caption                  { color: rgba(255, 255, 255, 0.6); }

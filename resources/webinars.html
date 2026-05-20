@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Webinars | Kubicle</title>
+<meta name="description" content="Live and on&#8209;demand webinars from Kubicle and the firms we work with. AI literacy, data fluency, financial modelling, project management and customer stories from finance and consulting practices."/>
+<meta name="keywords" content="Kubicle webinars, AI literacy webinar, data literacy webinar, financial modelling webinar, on-demand training, finance webinars, consulting webinars"/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/resources/webinars"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:url" content="https://www.kubicle.com/resources/webinars"/>
+<meta property="og:title" content="Webinars | Kubicle"/>
+<meta property="og:description" content="Live and on&#8209;demand webinars on AI, Data, Finance and Project Management from Kubicle and the firms we work with."/>
+<meta property="og:image" content="https://www.kubicle.com/img/hero-home.jpg"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@kubicle"/>
+<meta name="twitter:title" content="Webinars | Kubicle"/>
+<meta name="twitter:description" content="Live and on&#8209;demand webinars on AI, Data, Finance and Project Management."/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Kubicle Webinars",
+  "url": "https://www.kubicle.com/resources/webinars",
+  "description": "Live and on-demand webinars from Kubicle and the firms we work with. AI literacy, data fluency, financial modelling, project management and customer stories.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "url": "https://www.kubicle.com",
+    "logo": "img/shared/6929dc95a88edc17d8e3a3e4_LOGO-FILES-LOGO-MARK-WHITE-RGB-1.png"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+
+<style>
+/* ============================== LAYOUT ============================== */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+section { padding: 112px 0; position: relative; overflow: hidden; }
+@media (max-width: 860px) {
+  .container { padding: 0 24px; }
+  section { padding: 80px 0; }
+}
+
+/* ============================== INTRO BAND (half-height dark header) ============================== */
+.intro {
+  background:
+    radial-gradient(ellipse 60% 80% at 85% 30%, rgba(4,150,255,0.16), transparent 70%),
+    radial-gradient(ellipse 80% 60% at 5% 100%, rgba(4,150,255,0.08), transparent 70%),
+    var(--prussian);
+  color: #fff;
+  padding: 88px 0 56px;
+  position: relative;
+  overflow: hidden;
+}
+.intro::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at 70% 30%, #000 25%, transparent 75%);
+}
+.intro-grid {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1.4fr 1fr;
+  gap: 64px; align-items: end;
+}
+.intro .subject-crumb {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--body); font-size: 13px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 14px;
+}
+.intro .subject-crumb a { color: rgba(255,255,255,0.55); }
+.intro .subject-crumb a:hover { color: #fff; }
+.intro .subject-crumb .sep { opacity: 0.55; }
+.intro .subject-crumb .now { color: var(--blue); }
+.intro h1 {
+  font-family: var(--head);
+  font-size: clamp(38px, 4.4vw, 60px);
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+  color: #fff;
+  margin: 0;
+}
+.intro h1 em { font-style: normal; color: var(--blue); }
+.intro p {
+  font-size: 16.5px; line-height: 1.6;
+  color: rgba(255,255,255,0.78);
+  max-width: 460px;
+  margin: 0 0 0 auto;
+}
+@media (max-width: 900px) {
+  .intro-grid { grid-template-columns: 1fr; gap: 24px; }
+  .intro p { margin-left: 0; max-width: 600px; }
+}
+
+/* ============================== FILTER ROW ============================== */
+.filter-section {
+  background: var(--alice);
+  padding: 64px 0 32px;
+}
+.filter-head {
+  display: flex; justify-content: space-between; align-items: end;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.filter-head .eyebrow { color: var(--blue); }
+.filter-head h2 {
+  font-family: var(--head);
+  font-size: clamp(28px, 3vw, 40px);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--prussian);
+  margin-top: 8px;
+}
+.filter-head .right {
+  font-size: 13px; color: var(--steel);
+  text-align: right;
+}
+.filter-head .right strong { color: var(--prussian); }
+@media (max-width: 800px) {
+  .filter-head { flex-direction: column; align-items: flex-start; }
+  .filter-head .right { text-align: left; }
+}
+
+.filter-pills {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  align-items: center;
+}
+.filter-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px;
+  background: #fff;
+  border: 1.5px solid var(--alice);
+  border-radius: 999px;
+  font-family: var(--head); font-size: 13px; font-weight: 600;
+  color: var(--prussian); letter-spacing: -0.005em;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.filter-pill:hover { border-color: var(--prussian); }
+.filter-pill.active {
+  background: var(--prussian); color: #fff;
+  border-color: var(--prussian);
+}
+.filter-pill .count {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 22px; padding: 0 6px;
+  height: 18px;
+  background: var(--alice); color: var(--steel);
+  border-radius: 999px;
+  font-size: 11px; font-weight: 700;
+}
+.filter-pill.active .count { background: rgba(255,255,255,0.16); color: #fff; }
+.filter-pill.cat-ai      { --cat: #00A8B0; }
+.filter-pill.cat-data    { --cat: #C2185B; }
+.filter-pill.cat-finance { --cat: #047857; }
+.filter-pill.cat-pm      { --cat: #C2540D; }
+.filter-pill.cat-story   { --cat: var(--blue-d); }
+
+/* ============================== WEBINAR GRID ============================== */
+.grid-section {
+  background: var(--alice);
+  padding: 16px 0 96px;
+}
+.webinar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+@media (max-width: 1000px) { .webinar-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px)  { .webinar-grid { grid-template-columns: 1fr; } }
+
+.webinar-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.webinar-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--c, var(--blue));
+  box-shadow: 0 24px 50px -30px rgba(11,27,43,0.20);
+}
+.webinar-card.cat-ai      { --c: #00A8B0; }
+.webinar-card.cat-data    { --c: #C2185B; }
+.webinar-card.cat-finance { --c: #047857; }
+.webinar-card.cat-pm      { --c: #C2540D; }
+.webinar-card.cat-story   { --c: var(--blue-d); }
+
+/* Thumbnail */
+.thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, color-mix(in oklab, var(--c) 95%, #000) 0%, color-mix(in oklab, var(--c) 60%, #fff) 100%);
+  display: flex; align-items: center; justify-content: center;
+}
+.thumb::before {
+  content: ""; position: absolute; inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.20), transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.12), transparent 50%);
+  background-size: 100% 100%;
+}
+.thumb .play {
+  position: relative; z-index: 2;
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  border: 2px solid rgba(255,255,255,0.5);
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: background 0.18s, transform 0.18s;
+}
+.webinar-card:hover .thumb .play {
+  background: #fff;
+  transform: scale(1.08);
+}
+.thumb .play svg {
+  width: 22px; height: 22px;
+  fill: #fff;
+  margin-left: 3px;
+  transition: fill 0.18s;
+}
+.webinar-card:hover .thumb .play svg { fill: var(--c); }
+.thumb .cat-chip {
+  position: absolute; top: 14px; left: 14px;
+  z-index: 2;
+  font-family: var(--head); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: #fff;
+  background: rgba(11,27,43,0.55);
+  backdrop-filter: blur(8px);
+  padding: 6px 12px; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+.thumb .duration {
+  position: absolute; bottom: 14px; right: 14px;
+  z-index: 2;
+  font-family: var(--head); font-size: 11px; font-weight: 600;
+  color: #fff;
+  background: rgba(11,27,43,0.55);
+  backdrop-filter: blur(8px);
+  padding: 5px 10px; border-radius: 6px;
+  letter-spacing: 0.04em;
+}
+.thumb .live-pill {
+  position: absolute; top: 14px; right: 14px;
+  z-index: 2;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--head); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: #fff;
+  background: rgba(35,206,107,0.85);
+  padding: 5px 10px; border-radius: 999px;
+}
+.thumb .live-pill .live-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #fff;
+  animation: livePulse 1.6s infinite;
+}
+
+/* Body */
+.webinar-card .body {
+  padding: 22px 24px 24px;
+  display: flex; flex-direction: column; gap: 10px;
+  flex: 1;
+}
+.webinar-card .when {
+  font-family: var(--head); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--c);
+}
+.webinar-card h3 {
+  font-family: var(--head); font-size: 18px; font-weight: 600;
+  letter-spacing: -0.025em; line-height: 1.25;
+  color: var(--prussian);
+}
+.webinar-card .desc {
+  font-size: 14px; color: var(--steel); line-height: 1.55;
+}
+.webinar-card .speaker {
+  display: flex; align-items: center; gap: 10px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--alice);
+}
+.webinar-card .speaker .av {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--c) 14%, #fff);
+  color: var(--c);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--head); font-weight: 600; font-size: 12px;
+  flex-shrink: 0;
+}
+.webinar-card .speaker .meta {
+  display: flex; flex-direction: column; gap: 1px;
+  min-width: 0;
+}
+.webinar-card .speaker .name {
+  font-family: var(--head); font-size: 12.5px; font-weight: 600;
+  color: var(--prussian);
+  letter-spacing: -0.005em;
+  line-height: 1.2;
+}
+.webinar-card .speaker .role {
+  font-size: 11.5px; color: var(--steel);
+  line-height: 1.3;
+}
+
+/* ============================== TOPICS COVERED ============================== */
+.topics-section { background: #fff; }
+.topics-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 56px;
+}
+.topics-head .eyebrow { color: var(--blue); }
+.topics-head h2 {
+  font-family: var(--head);
+  font-size: clamp(36px, 4.4vw, 56px);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--prussian);
+  margin-top: 14px;
+}
+.topics-head h2 em { font-style: normal; color: var(--blue); }
+.topics-head p {
+  margin-top: 18px;
+  font-size: 17px; line-height: 1.6;
+  color: var(--steel);
+}
+.topics-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 1000px) { .topics-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px)  { .topics-grid { grid-template-columns: 1fr; } }
+.topic-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 18px;
+  padding: 24px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.topic-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--c, var(--blue));
+  box-shadow: 0 18px 40px -25px rgba(11,27,43,0.18);
+}
+.topic-card .icn {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--c) 12%, #fff);
+  color: var(--c);
+  display: flex; align-items: center; justify-content: center;
+}
+.topic-card .icn svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.topic-card h3 {
+  font-family: var(--head); font-size: 17px; font-weight: 600;
+  letter-spacing: -0.02em; color: var(--prussian);
+}
+.topic-card p {
+  font-size: 13.5px; color: var(--steel); line-height: 1.5;
+}
+.topic-card.cat-ai      { --c: #00A8B0; }
+.topic-card.cat-data    { --c: #C2185B; }
+.topic-card.cat-finance { --c: #047857; }
+.topic-card.cat-pm      { --c: #C2540D; }
+
+/* YouTube thumb image overlay */
+.thumb.is-clickable {
+  cursor: pointer;
+  padding: 0; border: 0; width: 100%;
+  font: inherit; color: inherit; text-align: left;
+}
+.thumb-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 1;
+}
+.thumb-img + .play,
+.thumb-img ~ .cat-chip,
+.thumb-img ~ .duration,
+.thumb-img ~ .live-pill { z-index: 2; }
+.thumb-img + .play { background: rgba(11,27,43,0.55); }
+.webinar-card:hover .thumb-img + .play { background: #fff; }
+
+/* Video modal */
+.video-modal {
+  position: fixed; inset: 0;
+  background: rgba(11,27,43,0.92);
+  display: none;
+  align-items: center; justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.video-modal.open { display: flex; }
+.video-modal-inner {
+  position: relative;
+  width: 100%; max-width: 1040px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.6);
+}
+.video-modal-inner iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+.video-modal-close {
+  position: absolute; top: -52px; right: -4px;
+  width: 40px; height: 40px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  font-size: 22px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s;
+}
+.video-modal-close:hover { background: rgba(255,255,255,0.20); }
+
+/* Hidden state for filtering */
+.webinar-card.is-hidden { display: none !important; }
+
+/* Empty state */
+.empty-state {
+  display: none;
+  padding: 64px 24px;
+  text-align: center;
+  color: var(--steel);
+}
+.empty-state.on { display: block; }
+.empty-state h3 {
+  font-family: var(--head); font-size: 22px; font-weight: 600;
+  color: var(--prussian); margin-bottom: 8px;
+}
+
+/* ============================== UTIL ============================== */
+.center { text-align: center; }
+</style>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== NAV ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="intro" id="top">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <div class="subject-crumb">
+          <a href="../index.html">Resources</a>
+          <span class="sep">/</span>
+          <span class="now">Webinars</span>
+        </div>
+        <h1>
+          Live and on&#8209;demand,<br/>
+          <em>the short&#8209;course version.</em>
+        </h1>
+      </div>
+      <p>
+        A standing series for finance and consulting teams. AI literacy, data fluency,
+        financial modelling, project delivery and customer stories from the firms we
+        work with. Watch live, or anytime on demand.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FILTER ROW ============================== -->
+<section class="filter-section">
+  <div class="container">
+    <div class="filter-head">
+      <div>
+        <div class="eyebrow">The Library</div>
+        <h2>Browse the catalog.</h2>
+      </div>
+      <div class="right">
+        <strong id="resultCount">11</strong> webinars on demand
+      </div>
+    </div>
+
+    <div class="filter-pills" role="tablist" aria-label="Filter webinars by category">
+      <button class="filter-pill active" data-filter="all" type="button" role="tab" aria-selected="true">All <span class="count" id="cntAll">11</span></button>
+      <button class="filter-pill cat-ai"      data-filter="cat-ai"      type="button" role="tab" aria-selected="false">AI Literacy <span class="count" id="cntAi">4</span></button>
+      <button class="filter-pill cat-data"    data-filter="cat-data"    type="button" role="tab" aria-selected="false">Data Literacy <span class="count" id="cntData">5</span></button>
+      <button class="filter-pill cat-story"   data-filter="cat-story"   type="button" role="tab" aria-selected="false">Customer Stories <span class="count" id="cntStory">2</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== WEBINAR GRID ============================== -->
+<section class="grid-section" id="upcoming">
+  <div class="container">
+    <div class="webinar-grid" id="webinarGrid">
+
+      <!-- On-demand Data (real YouTube) -->
+      <article class="webinar-card cat-data" data-youtube="62raedn1hCo">
+        <button class="thumb" type="button" aria-label="Play webinar: Solving the workforce data skills gap">
+          <img class="thumb-img" src="https://i.ytimg.com/vi/62raedn1hCo/hqdefault.jpg" alt="" loading="lazy"/>
+          <span class="cat-chip">Data Literacy</span>
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </button>
+        <div class="body">
+          <span class="when">On Demand</span>
+          <h3>Solving the workforce data skills gap.</h3>
+          <p class="desc">Why organisations and employees struggle to maximise the value of their data, and how Kubicle helps companies, teams and individuals grow the skills needed to excel in today's workforce.</p>
+          <div class="speaker">
+            <div class="av">K</div>
+            <div class="meta">
+              <span class="name">The Kubicle Team</span>
+              <span class="role">An introduction to data fluency</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2: AI Skills Gap -->
+      <article class="webinar-card cat-ai" data-youtube="-Yc5IIPPFmc">
+        <button class="thumb" type="button" aria-label="Play webinar: Bridging the AI skills gap in your organisation">
+          <img class="thumb-img" src="https://i.ytimg.com/vi/-Yc5IIPPFmc/hqdefault.jpg" alt="" loading="lazy"/>
+          <span class="cat-chip">AI Literacy</span>
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </button>
+        <div class="body">
+          <span class="when">On Demand</span>
+          <h3>Bridging the AI skills gap in your organisation.</h3>
+          <p class="desc">For decision-makers, HR leads and team managers. A practical session on how AI is reshaping industries, where the skills gap really sits today, and how to close it inside your organisation.</p>
+          <div class="speaker">
+            <div class="av">K</div>
+            <div class="meta">
+              <span class="name">The Kubicle Team</span>
+              <span class="role">For leaders, HR and team managers</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3: PwC Customer Story -->
+      <article class="webinar-card cat-story" data-youtube="Piz0_TaNOlE">
+        <button class="thumb" type="button" aria-label="Play webinar: How PwC made data training transformative">
+          <img class="thumb-img" src="https://i.ytimg.com/vi/Piz0_TaNOlE/hqdefault.jpg" alt="" loading="lazy"/>
+          <span class="cat-chip">Customer Story</span>
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </button>
+        <div class="body">
+          <span class="when">On Demand &middot; Panel Discussion</span>
+          <h3>How PwC made data training transformative.</h3>
+          <p class="desc">A panel discussion with PwC's Christina Cameron on why data literacy matters across an enterprise, and how data training has reshaped capability inside one of the world's largest professional services firms.</p>
+          <div class="speaker">
+            <div class="av">CC</div>
+            <div class="meta">
+              <span class="name">Christina Cameron &middot; PwC</span>
+              <span class="role">In conversation with Kubicle</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4: Data Literacy Full Spectrum -->
+      <article class="webinar-card cat-data" data-youtube="45GCqkK7tyM">
+        <button class="thumb" type="button" aria-label="Play webinar: Data Literacy, the full spectrum">
+          <img class="thumb-img" src="https://i.ytimg.com/vi/45GCqkK7tyM/hqdefault.jpg" alt="" loading="lazy"/>
+          <span class="cat-chip">Data Literacy</span>
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </button>
+        <div class="body">
+          <span class="when">On Demand</span>
+          <h3>Data literacy: the full spectrum.</h3>
+          <p class="desc">In an era where data is the new gold, understanding its nuances from macro to micro is critical. A practical look at the spectrum of data literacy and how professionals can harness data's full power.</p>
+          <div class="speaker">
+            <div class="av">K</div>
+            <div class="meta">
+              <span class="name">The Kubicle Team</span>
+              <span class="role">Cross-sector data literacy</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5: Generative AI Masterclass Part 1 -->
+      <article class="webinar-card cat-ai" data-youtube="KcCNRE52L_o">
+        <button class="thumb" type="button" aria-label="Play webinar: Generative AI Masterclass Part 1">
+          <img class="thumb-img" src="https://i.ytimg.com/vi/KcCNRE52L_o/hqdefault.jpg" alt="" loading="lazy"/>
+          <span class="cat-chip">AI Literacy</span>
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </button>
+        <div class="body">
+          <span class="when">On Demand &middot; Masterclass &middot; Part 1 of 3</span>
+          <h3>Generative AI Masterclass &middot; Part 1.</h3>
+          <p class="desc">The opening session in our three-part Generative AI Masterclass. Starts with the core concepts every professional needs to make sense of the GenAI landscape.</p>
+          <div class="speaker">
+            <div class="av">K</div>
+            <div class="meta">
+              <span class="name">The Kubicle Team</span>
+              <span class="role">Masterclass series host</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6: Workplace 3.0 -->
+      <article class="webinar-card cat-data" data-youtube="tUhU9D7qs-g">
+        <button class="thumb" type="button" aria-label="Play webinar: Data Literacy for Workplace 3.0">
+          <img class="thumb-img" src="https://i.ytimg.com/vi/tUhU9D7qs-g/hqdefault.jpg" alt="" loading="lazy"/>
+          <span class="cat-chip">Data Literacy</span>
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </button>
+        <div class="body">
+          <span class="when">On Demand</span>
+          <h3>Data literacy for Workplace 3.0.</h3>
+          <p class="desc">Data literacy is no longer just reading and working with data; it is increasingly about analysing it and communicating it. We cover the skills for Workplace 3.0, the evolution of the data citizen, and how to develop a data culture inside an organisation.</p>
+          <div class="speaker">
+            <div class="av">K</div>
+            <div class="meta">
+              <span class="name">The Kubicle Team</span>
+              <span class="role">Workplace 3.0 series</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7: Digital Disruption (Tony Moroney) -->
+      <article class="webinar-card cat-story" data-youtube="Lfzsb1baGKY">
+        <button class="thumb" type="button" aria-label="Play webinar: Thriving through digital disruption in 2024">
+          <img class="thumb-img" src="https://i.ytimg.com/vi/Lfzsb1baGKY/hqdefault.jpg" alt="" loading="lazy"/>
+          <span class="cat-chip">Customer Story</span>
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </button>
+        <div class="body">
+          <span class="when">On Demand &middot; Panel Discussion</span>
+          <h3>Thriving through digital disruption in 2024.</h3>
+          <p class="desc">A panel with strategy and digital transformation advisor Tony Moroney on the emerging trends shaping industries, leveraging digital transformation as a growth catalyst, and the agile strategies that keep organisations ahead of disruption.</p>
+          <div class="speaker">
+            <div class="av">TM</div>
+            <div class="meta">
+              <span class="name">Tony Moroney</span>
+              <span class="role">In conversation with Anu Bishen &amp; Ian Allen</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8: Generative AI Masterclass Part 2 (LLMs) -->
+      <article class="webinar-card cat-ai" data-youtube="p5krFR_IIoE">
+        <button class="thumb" type="button" aria-label="Play webinar: Generative AI Masterclass Part 2 LLMs explained">
+          <img class="thumb-img" src="https://i.ytimg.com/vi/p5krFR_IIoE/hqdefault.jpg" alt="" loading="lazy"/>
+          <span class="cat-chip">AI Literacy</span>
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </button>
+        <div class="body">
+          <span class="when">On Demand &middot; Masterclass &middot; Part 2 of 3</span>
+          <h3>Generative AI Masterclass &middot; Part 2: LLMs explained.</h3>
+          <p class="desc">The second session in the masterclass series. Breaks apart the core concepts behind large language models and what they mean for the way professionals work today.</p>
+          <div class="speaker">
+            <div class="av">K</div>
+            <div class="meta">
+              <span class="name">The Kubicle Team</span>
+              <span class="role">Masterclass series host</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 9: Bridging the data and digital literacy gap -->
+      <article class="webinar-card cat-data" data-youtube="tpcqxaYCTg4">
+        <button class="thumb" type="button" aria-label="Play webinar: Bridging the gap between data and digital literacy">
+          <img class="thumb-img" src="https://i.ytimg.com/vi/tpcqxaYCTg4/hqdefault.jpg" alt="" loading="lazy"/>
+          <span class="cat-chip">Data Literacy</span>
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </button>
+        <div class="body">
+          <span class="when">On Demand</span>
+          <h3>Bridging the gap between data and digital literacy.</h3>
+          <p class="desc">Data and digital literacy are often conflated, but they are not the same. A short session on the difference, why both matter to a modern workforce, and how to navigate the divide.</p>
+          <div class="speaker">
+            <div class="av">K</div>
+            <div class="meta">
+              <span class="name">The Kubicle Team</span>
+              <span class="role">Data fluency essentials</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 10: Generative AI Masterclass Part 3 -->
+      <article class="webinar-card cat-ai" data-youtube="jDcxEpEqUac">
+        <button class="thumb" type="button" aria-label="Play webinar: Generative AI Masterclass Part 3">
+          <img class="thumb-img" src="https://i.ytimg.com/vi/jDcxEpEqUac/hqdefault.jpg" alt="" loading="lazy"/>
+          <span class="cat-chip">AI Literacy</span>
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </button>
+        <div class="body">
+          <span class="when">On Demand &middot; Masterclass &middot; Part 3 of 3</span>
+          <h3>Generative AI Masterclass &middot; Part 3.</h3>
+          <p class="desc">The closing session in the Generative AI Masterclass series, building on the fundamentals and LLM concepts covered in Parts 1 and 2.</p>
+          <div class="speaker">
+            <div class="av">K</div>
+            <div class="meta">
+              <span class="name">The Kubicle Team</span>
+              <span class="role">Masterclass series host</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 11: Higher Education Data Literacy -->
+      <article class="webinar-card cat-data" data-youtube="XV9BhquLGlU">
+        <button class="thumb" type="button" aria-label="Play webinar: Why higher education needs data literacy now">
+          <img class="thumb-img" src="https://i.ytimg.com/vi/XV9BhquLGlU/hqdefault.jpg" alt="" loading="lazy"/>
+          <span class="cat-chip">Data Literacy</span>
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </button>
+        <div class="body">
+          <span class="when">On Demand &middot; For Higher Education</span>
+          <h3>Why higher education needs data literacy now.</h3>
+          <p class="desc">A recent PwC report found that 69% of employers will require data science and analytics skills from graduates. A session on what that means for universities and colleges, and how to prepare students for a data-fluent workforce.</p>
+          <div class="speaker">
+            <div class="av">K</div>
+            <div class="meta">
+              <span class="name">The Kubicle Team</span>
+              <span class="role">For universities and colleges</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="empty-state" id="emptyState">
+      <h3>No webinars in this category yet.</h3>
+      <p>More are added when they're scheduled or published. Subscribe below and we'll let you know.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TOPICS COVERED ============================== -->
+<section class="topics-section">
+  <div class="container">
+    <div class="topics-head">
+      <div class="eyebrow">What our webinars cover</div>
+      <h2>The four academies,<br/><em>plus stories from the firms we work with.</em></h2>
+      <p>Every webinar maps to one of Kubicle's four academies, or is a customer story from a real enterprise rollout.</p>
+    </div>
+
+    <div class="topics-grid">
+      <a class="topic-card cat-ai" href="../academies/ai/index.html">
+        <div class="icn"><svg viewBox="0 0 24 24"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z"/><path d="M19 14l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z"/></svg></div>
+        <h3>AI Literacy</h3>
+        <p>From Copilot fluency to AI governance and applied AI in client work.</p>
+      </a>
+      <a class="topic-card cat-data" href="../academies/data-literacy/index.html">
+        <div class="icn"><svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 3 5-7 4 4"/><path d="M3 21h18"/></svg></div>
+        <h3>Data Literacy</h3>
+        <p>Excel, Power BI, Tableau, SQL, Python and the storytelling on top.</p>
+      </a>
+      <a class="topic-card cat-finance" href="../academies/finance/index.html">
+        <div class="icn"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 8h16M9 3v18"/><path d="M13 12h4M13 16h4"/></svg></div>
+        <h3>Finance</h3>
+        <p>FMVA&#8209;aligned modelling, FP&amp;A practice, and the modern Excel-to-Python path.</p>
+      </a>
+      <a class="topic-card cat-pm" href="../academies/project-management/index.html">
+        <div class="icn"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 11h6M9 15h6M9 19h4"/></svg></div>
+        <h3>Project Management</h3>
+        <p>CAPM&#8209;aligned delivery practice, calibrated to consulting and corporate finance teams.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== VIDEO MODAL ============================== -->
+<div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Webinar video player">
+  <div class="video-modal-inner">
+    <button class="video-modal-close" type="button" aria-label="Close video">&times;</button>
+    <div id="videoModalSlot"></div>
+  </div>
+</div>
+
+<!-- ============================== FOOTER ============================== -->
+<div id="site-footer"></div>
+
+<!-- ============================== SCRIPTS ============================== -->
+<script>
+// ============================== Filter pills ==============================
+(function () {
+  var pills = document.querySelectorAll('.filter-pill');
+  var grid = document.getElementById('webinarGrid');
+  var empty = document.getElementById('emptyState');
+  var resultCount = document.getElementById('resultCount');
+  if (!pills.length || !grid) return;
+
+  pills.forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      var filter = pill.getAttribute('data-filter');
+      pills.forEach(function (p) {
+        var on = (p === pill);
+        p.classList.toggle('active', on);
+        p.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      var cards = grid.querySelectorAll('.webinar-card');
+      var visible = 0;
+      cards.forEach(function (card) {
+        var match = (filter === 'all') || card.classList.contains(filter);
+        card.classList.toggle('is-hidden', !match);
+        if (match) visible++;
+      });
+      empty.classList.toggle('on', visible === 0);
+      if (resultCount) resultCount.textContent = visible;
+    });
+  });
+})();
+
+// ============================== YouTube modal ==============================
+(function () {
+  var modal = document.getElementById('videoModal');
+  if (!modal) return;
+  var slot = document.getElementById('videoModalSlot');
+  var closeBtn = modal.querySelector('.video-modal-close');
+
+  function openModal(videoId) {
+    slot.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + videoId +
+      '?autoplay=1&rel=0&modestbranding=1&playsinline=1" ' +
+      'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+      'referrerpolicy="strict-origin-when-cross-origin" ' +
+      'allowfullscreen title="Webinar video"></iframe>';
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    slot.innerHTML = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-youtube]').forEach(function (card) {
+    var thumb = card.querySelector('.thumb');
+    if (!thumb) return;
+    thumb.classList.add('is-clickable');
+    thumb.addEventListener('click', function (e) {
+      e.preventDefault();
+      openModal(card.getAttribute('data-youtube'));
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+})();
+
+// ============================== Notify form (HubSpot) ==============================
+</script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>How to Combine Multiple Tables Vertically in Alteryx | Kubicle Blog</title>
+<meta name="description" content="One of the most common activities in Alteryx is combining datasets together. In the business world, the data you want to analyse usually comes from more than one source, and..."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/blog/how-to-combine-multiple-tables-vertically-in-alteryx"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:url" content="https://www.kubicle.com/blog/how-to-combine-multiple-tables-vertically-in-alteryx"/>
+<meta property="og:title" content="How to Combine Multiple Tables Vertically in Alteryx"/>
+<meta property="og:description" content="One of the most common activities in Alteryx is combining datasets together. In the business world, the data you want to analyse usually comes from more than one source, and..."/>
+<meta property="og:image" content="img/posts/690e247d418880763cd9f8e0_43.jpg"/>
+<meta property="article:published_time" content="2018-07-31"/>
+<meta property="article:section" content="Data Literacy"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@kubicle"/>
+<meta name="twitter:title" content="How to Combine Multiple Tables Vertically in Alteryx"/>
+<meta name="twitter:description" content="One of the most common activities in Alteryx is combining datasets together. In the business world, the data you want to analyse usually comes from more than one source, and..."/>
+<meta name="twitter:image" content="img/posts/690e247d418880763cd9f8e0_43.jpg"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Combine Multiple Tables Vertically in Alteryx",
+  "image": "img/posts/690e247d418880763cd9f8e0_43.jpg",
+  "datePublished": "2018-07-31",
+  "author": { "@type": "Organization", "name": "Kubicle", "url": "https://www.kubicle.com" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "logo": { "@type": "ImageObject", "url": "img/posts/6929dc95a88edc17d8e3a3e4_LOGO-FILES-LOGO-MARK-WHITE-RGB-1.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.kubicle.com/blog/how-to-combine-multiple-tables-vertically-in-alteryx" },
+  "articleSection": "Data Literacy"
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+<link rel="stylesheet" href="blog.css"/>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<div id="site-nav"></div>
+
+<!-- POST HEAD -->
+<section class="post-head">
+  <div class="container">
+    <div class="inner">
+      <div class="text">
+        <div class="crumb">
+          <a href="../index.html">Resources</a>
+          <span class="sep">/</span>
+          <a href="index.html">Blog</a>
+          <span class="sep">/</span>
+          <a href="topic/data-literacy.html" class="now">Data Literacy</a>
+        </div>
+        <h1>How to Combine Multiple Tables Vertically in Alteryx</h1>
+        <div class="meta">
+          <a href="topic/data-literacy.html" class="type-chip">Data Literacy</a>
+          <span>31 Jul 2018</span>
+          <span class="dot"></span>
+          <span>3 min read</span>
+        </div>
+      </div>
+      <div class="cover-frame">
+        <img src="img/posts/690e247d418880763cd9f8e0_43.jpg" alt="How to Combine Multiple Tables Vertically in Alteryx" loading="eager" decoding="async"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY + STICKY ASIDE -->
+<section class="post-body-section">
+  <div class="container">
+    <div class="post-body-layout">
+      <article class="post-body">
+<p>One of the most common activities in Alteryx is combining datasets together. In the business world, the data you want to analyse usually comes from more than one source, and you’ll want to combine them to find the insights you need.</p><p>But Alteryx provides a lot of different joint types, and it can be hard to know which one to use. In this post, we’ll look at the Union Join, a fairly simple join type that lets you vertically combine files with similar structures.</p><h2><strong>What is a union join?</strong></h2><p>The<a href="https://kubicle.com/learn/alteryx/union-joins?q=&hPP=10&idx=Lesson_production&p=0" target="_blank"> Union join</a> combines multiple data files vertically by adding rows to your data. It is used when you have multiple different tables containing the same fields, or columns, and you want to combine the records from multiple tables into a single one. The combined dataset contains the same number of columns as each of the input data sets, but contains more rows.</p><p>Combining data with a union join creates a single, longer dataset. In effect, you take one data set, and append the contents of the other data sets to create a single long, continuous data set.</p><figure class="w-richtext-figure-type-image " data-rt-type="image" data-rt-align=""><div><img alt="" src="img/posts/690e247d418880763cd9f8e4_683ed4cab33b806f8a6bdf18_Alteryx-CTA-01-1024x366.png" width="auto" height="auto" loading="auto"></div></figure><p>To understand this, we’ll consider an example. Say we have a company that records sales figures on a monthly basis. The sales figures for each month are stored in a separate file, as we can see below.</p><figure class="w-richtext-figure-type-image " data-rt-type="image" data-rt-align=""><div><img alt="Ununioned files" src="img/posts/690e247d418880763cd9f8e2_683ed4caf893e31420ef0c4d_image.jpg" width="auto" height="auto" loading="auto"></div></figure><p>We would like to combine the sales figures for January, February and March into a single file so we can easily view overall sales figures.</p><p>Importantly, each of the three files has an identical layout, meaning each file has the same set of column names. Below is a preview of the January file after we import it into Alteryx. The February and March files have the same column layout.</p><figure class="w-richtext-figure-type-image " data-rt-type="image" data-rt-align=""><div><img alt="Data preview" src="img/posts/690e247d418880763cd9f853_683ed4ca0c418caf1eee7d01_image-1.jpg" width="auto" height="auto" loading="auto"></div></figure><p>When the column names are identical, a union join is the ideal tool to use.</p><p>The union join tool is found on the join tab. When we add it to the canvas and connect our data sets to it, the canvas looks like this.</p><figure class="w-richtext-figure-type-image " data-rt-type="image" data-rt-align=""><div><img alt="Alteryx Union Tool" src="img/posts/690e247d418880763cd9f8de_683ed4ca4a13f493353f817a_image-3.jpg" width="auto" height="auto" loading="auto"></div></figure><p>Notice the double chevrons on the input node of the union tool. This indicates that we can connect multiple inputs to the union tool. Notice also that each connection to the union tool is numbered. These numbers are assigned in the order the connection were made. So here we connected March data first, then January, and finally February.</p><p>At this point we can run the workflow to combine the data sets, but first we’ll look at some of the settings you can configure when using the Union join.</p><h2>Configuring the union join</h2><p>When we add the Union tool, we have the option to configure the union automatically, either by position or column name, or to manually configure the fields. Choosing to configure manually will open a window like this.</p><figure class="w-richtext-figure-type-image " data-rt-type="image" data-rt-align=""><div><img alt="Configure Alteryx Union" src="img/posts/690e247d418880763cd9f850_683ed4ca6d791d0d8bf024cb_image-4.jpg" width="auto" height="auto" loading="auto"></div></figure><p>This tells us for instance, that column 1 of the output will contain the Customer Numbers from each of the three input files. If the columns are ordered differently in the input files, manually configuring the output can ensure that the right data is in each column of the output.</p><p>If all the input files contain the same columns, as is the case here, then there is no need for manual configuration, and you can choose one of the automatic options.</p><p>Also in the configuration window, we can adjust the order in which the output is ordered, using the window shown below</p><figure class="w-richtext-figure-type-image " data-rt-type="image" data-rt-align=""><div><img alt="Union tool output order" src="img/posts/690e247d418880763cd9f7dd_683ed4ca4da6a41b296ef83d_image-5.jpg" width="auto" height="auto" loading="auto"></div></figure><p>Remember these numbers were assigned previously when we connected the input files to the union tool. If you prefer, you can select “Set a Specific Output Order”, and you will be able to rearrange the input files in whatever order you like.</p><p>Now when we run the workflow we get a single long data set that combines the sales data from each of our three individual files. The column layout is identical to the input files, with the data for each month stacked vertically on top of each other.</p><figure class="w-richtext-figure-type-image " data-rt-type="image" data-rt-align=""><div><img alt="Union tool results" src="img/posts/690e247d418880763cd9f8dc_683ed4ca1a606ef6794ea2a4_image-6.jpg" width="auto" height="auto" loading="auto"></div></figure><h2>Conclusion</h2><p>In Alteryx, the Union tool is the best join option when you want to combine multiple data files which have the same layout into a single file. It combines multiple input files vertically, creating an output file that is the same width as each input file, but of a greater length than any of them.</p>
+      </article>
+
+      <aside class="post-aside">
+        <div class="aside-card">
+          <h3>Try it yourself.</h3>
+          <p>30+ certified Kubicle courses, free. No credit card.</p>
+          <a class="btn btn-md" href="../try-free/">Try for Free <span class="arr">&rarr;</span></a>
+          <p class="aside-proof">Used by 1M+ professionals.</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="post-foot">
+      <a class="back" href="index.html">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M11 6l-6 6 6 6"/></svg>
+        Back to all posts
+      </a>
+      <div class="share">
+        <span>Share</span>
+        <a class="btn-share" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kubicle.com/blog/how-to-combine-multiple-tables-vertically-in-alteryx" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="11" x2="8" y2="17"/><circle cx="8" cy="7.5" r="1"/><path d="M12 17v-3.5a2.5 2.5 0 0 1 5 0V17"/><line x1="12" y1="11" x2="12" y2="17"/></svg>
+        </a>
+        <a class="btn-share" href="mailto:?subject=How%20to%20Combine%20Multiple%20Tables%20Vertically%20in%20Alteryx&body=Read%20this%20on%20Kubicle:%20https://www.kubicle.com/blog/how-to-combine-multiple-tables-vertically-in-alteryx" aria-label="Share by email">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-section">
+  <div class="container">
+    <div class="related-head">
+      <div>
+        <div class="eyebrow">Keep reading</div>
+        <h2>More from the Kubicle blog.</h2>
+      </div>
+      <a href="index.html">All posts <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="posts-grid">
+      <a class="post-card type-ai" href="beyond-one-size-fits-all-a-persona-based-blueprint-for-enterprise-ai-literacy.html">
+        <div class="cover">
+          <span class="type-chip">AI</span>
+          <img src="img/posts/690e247d418880763cd9fbc3_ChatGPT-Image-Oct-29-2025-11_44_03-AM.jpg" alt="Beyond “One-Size-Fits-All”: A Persona-Based Blueprint for Enterprise AI Literacy" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="date">29 Oct 2025</span>
+            <span class="dot"></span>
+            <span>5 min read</span>
+          </div>
+          <h3>Beyond “One-Size-Fits-All”: A Persona-Based Blueprint for Enterprise AI Literacy</h3>
+          <p>This post explores why so many enterprise AI initiatives fail, and how a human-centered, persona-based approach can turn that failure into success. It unpacks the real reasons...</p>
+          <span class="read-more">Read article <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a class="post-card type-learning" href="how-to-calculate-roi-of-graduate-development-with-a-ready-to-use-calculator.html">
+        <div class="cover">
+          <span class="type-chip">Learning</span>
+          <img src="img/posts/690e247d418880763cd9fbc2_roi-calculator.jpg" alt="How to Calculate ROI of Graduate Development with a Ready-to-Use Calculator" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="date">30 Sep 2025</span>
+            <span class="dot"></span>
+            <span>5 min read</span>
+          </div>
+          <h3>How to Calculate ROI of Graduate Development with a Ready-to-Use Calculator</h3>
+          <p>Did you know that the average graduate takes over four months of training to reach full productivity? This costs firms hundreds of thousands (or more!) every year. Graduate...</p>
+          <span class="read-more">Read article <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a class="post-card type-news" href="fall-2025-celebrating-our-latest-g2-awards.html">
+        <div class="cover">
+          <span class="type-chip">News</span>
+          <img src="img/posts/690e247d418880763cd9fbc0_g2-fall-blog.jpg" alt="Fall 2025 | Celebrating Our Latest G2 Awards" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="date">17 Sep 2025</span>
+            <span class="dot"></span>
+            <span>4 min read</span>
+          </div>
+          <h3>Fall 2025 | Celebrating Our Latest G2 Awards</h3>
+          <p>We’re thrilled to share that Kubicle has once again been recognized by G2, earning a fresh set of badges that highlight the impact we’re making with learners and enterprises...</p>
+          <span class="read-more">Read article <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div id="site-footer"></div>
+
+<script>
+</script>
+</body>
+</html>

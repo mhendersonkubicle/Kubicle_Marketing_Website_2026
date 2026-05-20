@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>How Do Outer Joins Work in Alteryx? | Kubicle Blog</title>
+<meta name="description" content="In a previous post, we saw how the Join tool in Alteryx merges two tables into one. However, maybe you want to combine all the data from one of the input tables with the data in..."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/blog/how-do-outer-joins-work-in-alteryx"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:url" content="https://www.kubicle.com/blog/how-do-outer-joins-work-in-alteryx"/>
+<meta property="og:title" content="How Do Outer Joins Work in Alteryx?"/>
+<meta property="og:description" content="In a previous post, we saw how the Join tool in Alteryx merges two tables into one. However, maybe you want to combine all the data from one of the input tables with the data in..."/>
+<meta property="og:image" content="img/posts/690e247d418880763cd9f8d2_38.jpg"/>
+<meta property="article:published_time" content="2018-08-13"/>
+<meta property="article:section" content="Data Literacy"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@kubicle"/>
+<meta name="twitter:title" content="How Do Outer Joins Work in Alteryx?"/>
+<meta name="twitter:description" content="In a previous post, we saw how the Join tool in Alteryx merges two tables into one. However, maybe you want to combine all the data from one of the input tables with the data in..."/>
+<meta name="twitter:image" content="img/posts/690e247d418880763cd9f8d2_38.jpg"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How Do Outer Joins Work in Alteryx?",
+  "image": "img/posts/690e247d418880763cd9f8d2_38.jpg",
+  "datePublished": "2018-08-13",
+  "author": { "@type": "Organization", "name": "Kubicle", "url": "https://www.kubicle.com" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "logo": { "@type": "ImageObject", "url": "img/posts/6929dc95a88edc17d8e3a3e4_LOGO-FILES-LOGO-MARK-WHITE-RGB-1.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.kubicle.com/blog/how-do-outer-joins-work-in-alteryx" },
+  "articleSection": "Data Literacy"
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+<link rel="stylesheet" href="blog.css"/>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<div id="site-nav"></div>
+
+<!-- POST HEAD -->
+<section class="post-head">
+  <div class="container">
+    <div class="inner">
+      <div class="text">
+        <div class="crumb">
+          <a href="../index.html">Resources</a>
+          <span class="sep">/</span>
+          <a href="index.html">Blog</a>
+          <span class="sep">/</span>
+          <a href="topic/data-literacy.html" class="now">Data Literacy</a>
+        </div>
+        <h1>How Do Outer Joins Work in Alteryx?</h1>
+        <div class="meta">
+          <a href="topic/data-literacy.html" class="type-chip">Data Literacy</a>
+          <span>13 Aug 2018</span>
+          <span class="dot"></span>
+          <span>3 min read</span>
+        </div>
+      </div>
+      <div class="cover-frame">
+        <img src="img/posts/690e247d418880763cd9f8d2_38.jpg" alt="How Do Outer Joins Work in Alteryx?" loading="eager" decoding="async"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY + STICKY ASIDE -->
+<section class="post-body-section">
+  <div class="container">
+    <div class="post-body-layout">
+      <article class="post-body">
+<p>In a previous post, we saw how the<a href="https://kubicle.com/learn/alteryx/inner-joins"> Join tool</a> in Alteryx merges two tables into one. However, maybe you want to combine all the data from one of the input tables with the data in the inner join. An outer join lets you do this.</p><h2>Outer join example</h2><p>In our <a href="https://kubicle.com/how-to-combine-multiple-tables-horizontally-in-alteryx">previous post on the join tool</a><strong><em> </em></strong>we created the following workflow, joining three sales data sets with a customers data set. In this workflow, customer data will be distributed between the J and the R output nodes. The J node contains customers who appear in both the customers and the sales table, while the R node contains customers who do not appear in the sales table.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Alteryx Join" src="img/posts/690e247d418880763cd9f8ce_683ed1d8c926f26f8a79d9c0_image-13.jpg" width="auto" height="auto" loading="auto"></div></figure><p>Let’s assume we want to combine all information on customers into a single table. We can do this using an Outer Join. In this instance, we’ll want a Right Outer Join, which combines the data from the J and R nodes of the Join tool.</p><p>The Right Outer Join is one of three outer join types available in Alteryx:</p><ul><li>The Left Outer Join combines the data from the J output node and the L output node</li><li>The Right Outer Join combines the data from the J output node and the R output node.</li><li>The Full Outer Join combines the data from the L, J and R output nodes.</li></ul><h2>Creating the outer join</h2><p>In our example, we want to create a Right Outer Join. We create the join by adding a Union tool as we can see below and connecting the J and R nodes to it as inputs.</p><p>Note: If you’re not familiar with the Union tool, you can read more about it <a href="https://kubicle.com/how-to-combine-multiple-tables-vertically-in-alteryx">here</a>.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Alteryx Outer Join with Union tool" src="img/posts/690e247d418880763cd9f8d4_683ed1d8a9f1670e9d2326ad_image-14.jpg" width="auto" height="auto" loading="auto"></div></figure><p>Once the Union tool has been added, running the workflow will create the outer join that we want.</p><h2>Analyzing the output</h2><p>We can analyse the results of the Union tool in the Output window. All the customers that appear in both tables are featured in this output. Below we have highlighted a row where the customer has not made a purchase during the period of the sales data. As a result, all the columns from the Sales table have null values for this customer.</p><p>This customer would have come from the R node in the Join tool, while the other customers we can see would have passed through the J node.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Mismatched field Outer Join" src="img/posts/690e247d418880763cd9f8cc_683ed1d8a24df14318367ce3_image-15.jpg" width="auto" height="auto" loading="auto"></div></figure><p>Below we have highlighted a customer who has made two purchases during the period of the data. As a result, they appear twice in this joined dataset. Because some customers are duplicated like this, there are 103 rows in the output, even though there are only 80 customers in the dataset.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Outer Join duplicate record" src="img/posts/690e247d418880763cd9f8cf_683ed1d881b5b16e98dcdd71_image-17.jpg" width="auto" height="auto" loading="auto"></div></figure><p>As we can see, the outer join lets us combine the different elements of a previous join together quite easily.</p><h2>Cleaning the data</h2><p>When you create joins like this, you can sometimes end up with duplicated fields or fields that don’t have the data type you want.</p><p>Below we see the configuration window for the join we created previously. As we have highlighted, the customer number field appears twice. This is because customer numbers appeared in the sales table and the customers table, both of which were merged earlier in the workflow</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Cleaning Outer Join Result" src="img/posts/690e247d418880763cd9f76d_683ed1db9f139f52d20b2b95_image-18.jpg" width="auto" height="auto" loading="auto"></div></figure><p>We could solve this problem by deselecting the checkbox for one of these fields, so it is removed from the final output of the outer join.</p><p>You will also see in the window above that all the fields have the same type: V_String. This might not be right in reality, and there may be some fields that should be different types, such as integers. Again, you can easily make these changes in the configuration window.</p><h2>Conclusion</h2><p>The Outer Join can be used to combine two or more of the outputs from another join. In this way you can use it to combine joins to achieve more refined data connections. Using the outer join also lets you identify all the data from one of the tables used in a join, without considering whether it appears in the other joined table. With the techniques demonstrated in the last few posts, you should be able to combine data sources in Alteryx in several useful ways.</p>
+      </article>
+
+      <aside class="post-aside">
+        <div class="aside-card">
+          <h3>Try it yourself.</h3>
+          <p>30+ certified Kubicle courses, free. No credit card.</p>
+          <a class="btn btn-md" href="../try-free/">Try for Free <span class="arr">&rarr;</span></a>
+          <p class="aside-proof">Used by 1M+ professionals.</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="post-foot">
+      <a class="back" href="index.html">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M11 6l-6 6 6 6"/></svg>
+        Back to all posts
+      </a>
+      <div class="share">
+        <span>Share</span>
+        <a class="btn-share" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kubicle.com/blog/how-do-outer-joins-work-in-alteryx" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="11" x2="8" y2="17"/><circle cx="8" cy="7.5" r="1"/><path d="M12 17v-3.5a2.5 2.5 0 0 1 5 0V17"/><line x1="12" y1="11" x2="12" y2="17"/></svg>
+        </a>
+        <a class="btn-share" href="mailto:?subject=How%20Do%20Outer%20Joins%20Work%20in%20Alteryx?&body=Read%20this%20on%20Kubicle:%20https://www.kubicle.com/blog/how-do-outer-joins-work-in-alteryx" aria-label="Share by email">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-section">
+  <div class="container">
+    <div class="related-head">
+      <div>
+        <div class="eyebrow">Keep reading</div>
+        <h2>More from the Kubicle blog.</h2>
+      </div>
+      <a href="index.html">All posts <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="posts-grid">
+      <a class="post-card type-ai" href="beyond-one-size-fits-all-a-persona-based-blueprint-for-enterprise-ai-literacy.html">
+        <div class="cover">
+          <span class="type-chip">AI</span>
+          <img src="img/posts/690e247d418880763cd9fbc3_ChatGPT-Image-Oct-29-2025-11_44_03-AM.jpg" alt="Beyond “One-Size-Fits-All”: A Persona-Based Blueprint for Enterprise AI Literacy" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="date">29 Oct 2025</span>
+            <span class="dot"></span>
+            <span>5 min read</span>
+          </div>
+          <h3>Beyond “One-Size-Fits-All”: A Persona-Based Blueprint for Enterprise AI Literacy</h3>
+          <p>This post explores why so many enterprise AI initiatives fail, and how a human-centered, persona-based approach can turn that failure into success. It unpacks the real reasons...</p>
+          <span class="read-more">Read article <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a class="post-card type-learning" href="how-to-calculate-roi-of-graduate-development-with-a-ready-to-use-calculator.html">
+        <div class="cover">
+          <span class="type-chip">Learning</span>
+          <img src="img/posts/690e247d418880763cd9fbc2_roi-calculator.jpg" alt="How to Calculate ROI of Graduate Development with a Ready-to-Use Calculator" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="date">30 Sep 2025</span>
+            <span class="dot"></span>
+            <span>5 min read</span>
+          </div>
+          <h3>How to Calculate ROI of Graduate Development with a Ready-to-Use Calculator</h3>
+          <p>Did you know that the average graduate takes over four months of training to reach full productivity? This costs firms hundreds of thousands (or more!) every year. Graduate...</p>
+          <span class="read-more">Read article <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a class="post-card type-news" href="fall-2025-celebrating-our-latest-g2-awards.html">
+        <div class="cover">
+          <span class="type-chip">News</span>
+          <img src="img/posts/690e247d418880763cd9fbc0_g2-fall-blog.jpg" alt="Fall 2025 | Celebrating Our Latest G2 Awards" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="date">17 Sep 2025</span>
+            <span class="dot"></span>
+            <span>4 min read</span>
+          </div>
+          <h3>Fall 2025 | Celebrating Our Latest G2 Awards</h3>
+          <p>We’re thrilled to share that Kubicle has once again been recognized by G2, earning a fresh set of badges that highlight the impact we’re making with learners and enterprises...</p>
+          <span class="read-more">Read article <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div id="site-footer"></div>
+
+<script>
+</script>
+</body>
+</html>

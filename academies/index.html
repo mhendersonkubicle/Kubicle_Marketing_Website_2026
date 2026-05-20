@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>The Kubicle Academies | AI, Data, Project Management and Finance</title>
+<meta name="description" content="Four Kubicle academies covering AI, Data Literacy, Project Management and Finance. Role-mapped pathways built for the cross-discipline reality of modern work."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/academies"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:title" content="The Kubicle Academies"/>
+<meta property="og:description" content="Four academies. One fluent workforce. Pathways calibrated to the real roles people run today."/>
+<meta property="og:url" content="https://www.kubicle.com/academies"/>
+<meta property="og:image" content="https://www.kubicle.com/img/academies/academies-hero.webp"/>
+<meta property="og:image:width" content="1536"/>
+<meta property="og:image:height" content="1024"/>
+<meta property="og:image:alt" content="The four Kubicle academies, mapped to a fluent modern workforce"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="The Kubicle Academies"/>
+<meta name="twitter:description" content="Four academies. One fluent workforce. Pathways calibrated to the real roles people run today."/>
+<meta name="twitter:image" content="https://www.kubicle.com/img/academies/academies-hero.webp"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+
+<style>
+/* ============================== ACADEMY COLOR TOKENS ============================== */
+:root {
+  --acad-ai:      #00C4CC;
+  --acad-ai-d:    #00A8B0;
+  --acad-data:    #E91E63;
+  --acad-data-d:  #C2185B;
+  --acad-pm:      #F97316;
+  --acad-pm-d:    #C2540D;
+  --acad-fin:     #10B981;
+  --acad-fin-d:   #059669;
+}
+
+/* ============================== RESET ============================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+body {
+  font-family: var(--body, "Satoshi","Helvetica Neue",Arial,sans-serif);
+  color: var(--prussian);
+  background: #fff;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+section { padding: 96px 0; position: relative; }
+section.alice { background: var(--alice); }
+section.dark { background: var(--prussian); color: #fff; }
+@media (max-width: 700px) { section { padding: 64px 0; } .container { padding: 0 22px; } }
+
+/* ============================== SECTION HEAD ============================== */
+.sec-head { max-width: 760px; }
+.sec-head h2 { margin-top: 16px; }
+.sec-head h2 em { font-style: normal; color: var(--accent); }
+.sec-head .body-lg { margin-top: 24px; color: var(--steel); max-width: 640px; }
+.sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.sec-head.center .body-lg { margin-left: auto; margin-right: auto; }
+.dark .sec-head .body-lg { color: rgba(255,255,255,0.78); }
+.dark .sec-head h2 { color: #fff; }
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 112px 0 96px;
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 30%, rgba(4,150,255,0.10), transparent 70%),
+    linear-gradient(180deg, #FBFCFD 0%, #F4F8FC 100%);
+  color: var(--prussian);
+  position: relative;
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.hero .eyebrow { color: var(--accent); }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub {
+  color: var(--steel);
+  font-size: 19px; line-height: 1.55;
+  letter-spacing: -0.01em;
+  margin-top: 22px;
+  max-width: 560px;
+}
+.hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 32px; }
+.hero-visual {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px -36px rgba(11,27,43,0.30), 0 8px 24px -10px rgba(11,27,43,0.10);
+  background: var(--alice);
+}
+.hero-visual img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+@media (max-width: 1000px) {
+  .hero { padding: 80px 0 64px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .hero-visual { max-width: 560px; margin: 0 auto; }
+}
+
+/* ============================== ACADEMY DEEP CARDS ============================== */
+.acad-grid {
+  margin-top: 56px;
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.acad-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 32px;
+  display: grid; grid-template-rows: auto auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+}
+.acad-card::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0;
+  height: 4px; background: var(--c);
+}
+.acad-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in oklab, var(--c) 30%, var(--alice));
+  box-shadow: 0 30px 70px -30px rgba(11,27,43,0.22);
+}
+.acad-card .acad-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--c);
+}
+.acad-card .acad-eyebrow .num {
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  background: color-mix(in oklab, var(--c) 14%, #fff);
+  color: var(--c);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 10px; letter-spacing: 0;
+}
+.acad-card h3 {
+  font-family: var(--head); font-size: 28px; font-weight: 600;
+  letter-spacing: -0.02em; color: var(--prussian);
+  margin-top: 14px;
+}
+.acad-card h3 em { font-style: normal; color: var(--c); }
+.acad-card .lede { margin-top: 14px; font-size: 15px; line-height: 1.55; color: var(--steel); }
+.acad-card .future {
+  margin-top: 22px; padding-top: 18px;
+  border-top: 1px solid var(--alice);
+  font-size: 13.5px; line-height: 1.55; color: var(--prussian);
+}
+.acad-card .future strong {
+  display: block;
+  font-family: var(--body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--steel); margin-bottom: 6px;
+}
+.acad-card .tiers {
+  margin-top: 22px;
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.acad-card .tiers .tier {
+  font-family: var(--body); font-size: 11px; font-weight: 600;
+  padding: 4px 10px; border-radius: 999px;
+  background: color-mix(in oklab, var(--c) 10%, #fff);
+  color: var(--c);
+}
+.acad-card .acad-cta {
+  margin-top: 26px;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--head); font-size: 13.5px; font-weight: 600;
+  color: var(--c);
+  letter-spacing: -0.005em;
+}
+.acad-card .acad-cta:hover { gap: 12px; }
+.acad-card.ai    { --c: var(--acad-ai); }
+.acad-card.data  { --c: var(--acad-data); }
+.acad-card.pm    { --c: var(--acad-pm); }
+.acad-card.fin   { --c: var(--acad-fin); }
+@media (max-width: 880px) { .acad-grid { grid-template-columns: 1fr; gap: 18px; } }
+
+/* ============================== CROSS-DISCIPLINE ============================== */
+.cross-section {
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 25%, rgba(4,150,255,0.16), transparent 70%),
+    radial-gradient(ellipse 80% 60% at 10% 90%, rgba(4,150,255,0.10), transparent 70%),
+    var(--prussian);
+  color: #fff;
+}
+.cross-section .sec-head h2 em { color: var(--blue, #0496FF); }
+.cross-section .sec-head .body-lg { color: rgba(255,255,255,0.82); }
+.cross-stat {
+  margin-top: 22px;
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 10px 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 999px;
+  font-family: var(--body); font-size: 13px; color: rgba(255,255,255,0.85);
+}
+.cross-stat strong { color: #fff; font-family: var(--head); font-weight: 600; }
+
+/* ============================== PERSONA REEL ============================== */
+.persona-reel-wrap {
+  margin-top: 56px;
+  position: relative;
+}
+.persona-reel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-top: 8px;
+  padding-bottom: 28px;
+  padding-left: max(32px, calc((100vw - 1200px) / 2 + 32px));
+  padding-right: 32px;
+  scroll-padding-left: max(32px, calc((100vw - 1200px) / 2 + 32px));
+}
+.persona-reel::-webkit-scrollbar { display: none; }
+.reel-arrow {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.22);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+  padding: 0;
+}
+.reel-arrow:hover {
+  background: rgba(255,255,255,0.20);
+  border-color: rgba(255,255,255,0.55);
+}
+.reel-arrow:disabled { opacity: 0.35; cursor: default; }
+.reel-arrow.prev { left: 16px; }
+.reel-arrow.next { right: 16px; }
+.reel-arrow svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 700px) {
+  .persona-reel {
+    padding-top: 8px;
+    padding-bottom: 24px;
+    padding-left: 22px;
+    padding-right: 22px;
+    scroll-padding-left: 22px;
+  }
+  .reel-arrow { width: 40px; height: 40px; }
+  .reel-arrow.prev { left: 6px; }
+  .reel-arrow.next { right: 6px; }
+}
+
+.persona-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 18px;
+  padding: 24px;
+  display: flex; flex-direction: column;
+  min-width: 340px;
+  max-width: 340px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  transition: transform 0.18s, border-color 0.18s, background 0.18s;
+}
+@media (max-width: 700px) {
+  .persona-card { min-width: 280px; max-width: 280px; }
+}
+.persona-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(4,150,255,0.45);
+  background: rgba(255,255,255,0.06);
+}
+.persona-card .p-portrait {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(255,255,255,0.10);
+  margin-bottom: 16px;
+}
+.persona-card .p-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.persona-card .role-tag {
+  display: inline-block;
+  font-family: var(--body); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 6px;
+}
+.persona-card h4 {
+  font-family: var(--head); font-size: 19px; font-weight: 600;
+  color: #fff; letter-spacing: -0.015em;
+}
+.persona-card .who {
+  margin-top: 8px;
+  font-size: 13.5px; line-height: 1.55;
+  color: rgba(255,255,255,0.72);
+}
+.persona-card .stack {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: grid; gap: 8px;
+}
+.persona-card .p-row {
+  display: grid; grid-template-columns: 10px 1fr auto;
+  gap: 10px; align-items: center;
+  font-family: var(--body); font-size: 12.5px;
+  color: rgba(255,255,255,0.85);
+}
+.persona-card .p-row .p-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--c);
+}
+.persona-card .p-row .p-name { display: flex; align-items: center; gap: 6px; }
+.persona-card .p-row .p-acad {
+  font-family: var(--body); font-size: 9.5px; font-weight: 700;
+  letter-spacing: 0.10em; text-transform: uppercase;
+  color: rgba(255,255,255,0.40);
+  padding: 2px 6px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px;
+}
+.persona-card .p-row .p-tier {
+  display: inline-flex; gap: 3px; align-items: center;
+  flex-shrink: 0;
+}
+.persona-card .p-row .p-seg {
+  width: 14px; height: 5px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.18);
+}
+.persona-card .p-row .p-seg.on { background: var(--c); }
+.persona-card .p-row.ai    { --c: var(--acad-ai); }
+.persona-card .p-row.data  { --c: var(--acad-data); }
+.persona-card .p-row.pm    { --c: var(--acad-pm); }
+.persona-card .p-row.fin   { --c: var(--acad-fin); }
+
+/* ============================== INDUSTRY SECTIONS ============================== */
+.industry-block {
+  margin-top: 64px;
+  padding-top: 36px;
+  border-top: 1px solid var(--alice);
+}
+.industry-block:first-of-type { margin-top: 56px; padding-top: 0; border-top: 0; }
+.industry-head { display: block; text-align: left; }
+.industry-head .ind-num {
+  display: block;
+  font-family: var(--head); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent-d, #0D5F96);
+}
+.industry-head h3 {
+  margin-top: 10px;
+  font-family: var(--head); font-size: 28px; font-weight: 600;
+  letter-spacing: -0.02em; color: var(--prussian);
+}
+.industry-head .ind-sub {
+  margin-top: 10px;
+  font-size: 15px; color: var(--steel); line-height: 1.55;
+  max-width: 640px;
+}
+.ind-persona-grid {
+  margin-top: 22px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.ind-persona {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 18px;
+  padding: 24px;
+  display: grid; grid-template-columns: 56px 1fr; gap: 16px;
+  align-items: start;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.ind-persona:hover {
+  transform: translateY(-2px);
+  border-color: rgba(4,150,255,0.30);
+  box-shadow: 0 20px 50px -28px rgba(11,27,43,0.18);
+}
+.ind-persona .p-portrait {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--alice);
+}
+.ind-persona .p-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ind-persona .role-tag {
+  font-family: var(--body); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--steel);
+}
+.ind-persona h4 {
+  font-family: var(--head); font-size: 18px; font-weight: 600;
+  color: var(--prussian); letter-spacing: -0.01em;
+  margin-top: 4px;
+}
+.ind-persona .who {
+  font-size: 13px; line-height: 1.55;
+  color: var(--steel); margin-top: 6px;
+}
+.ind-persona .stack {
+  margin-top: 14px; padding-top: 12px;
+  border-top: 1px solid var(--alice);
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.ind-persona .pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--c) 10%, #fff);
+  color: var(--c);
+  font-family: var(--body); font-size: 11px; font-weight: 600;
+}
+.ind-persona .pill::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c);
+}
+.ind-persona .pill.ai    { --c: var(--acad-ai-d); }
+.ind-persona .pill.data  { --c: var(--acad-data-d); }
+.ind-persona .pill.pm    { --c: var(--acad-pm-d); }
+.ind-persona .pill.fin   { --c: var(--acad-fin-d); }
+@media (max-width: 760px) { .ind-persona-grid { grid-template-columns: 1fr; } }
+
+/* ============================== FINAL CTA ============================== */
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+  position: relative; overflow: hidden;
+}
+.final-cta-grid { display: block; max-width: 920px; }
+.final-cta .eyebrow { color: var(--accent); }
+.final-cta h2 { color: #fff; }
+.final-cta h2 em { font-style: normal; color: var(--accent); }
+.final-cta .body-lg { color: rgba(255,255,255,0.82); max-width: 760px; margin-top: 22px; }
+.final-cta .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+</style>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== NAV ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">The Kubicle Academies</div>
+        <h1 class="h-display" style="margin-top: 14px;">
+          Four academies,<br/>
+          one <em>fluent workforce.</em>
+        </h1>
+        <p class="hero-sub">
+          The four disciplines every modern role now depends on, packaged as role&#8209;mapped pathways
+          your people can actually finish. AI, Data, Project Management and Finance, calibrated to
+          the depth each persona needs.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary btn-lg" href="../catalog.html">Download Catalog <span class="arr">&rarr;</span></a>
+          <a class="btn btn-outline-dark btn-lg" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="../img/academies/academies-hero.webp"
+             alt="The four Kubicle academies: AI Literacy, Data Literacy, Project Management and Finance, mapped to a fluent modern workforce"
+             width="1536" height="1024" loading="eager"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== WHY THESE FOUR ============================== -->
+<section id="why-four">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" style="color: var(--accent);">Why These Four?</div>
+      <h2 class="h-xl">
+        The four disciplines<br/>
+        modern work <em>now runs on.</em>
+      </h2>
+      <p class="body-lg">
+        AI is rewriting how every analyst, manager and operator does their job. Data is the language
+        leaders argue in. Project management is how anything ships. Finance is where every decision
+        eventually lands. Treat any one of them as optional, and the skill gap shows up in the work.
+      </p>
+    </div>
+
+    <div class="acad-grid">
+
+      <!-- AI Literacy -->
+      <div class="acad-card ai">
+        <div class="acad-eyebrow"><span class="num">01</span> AI Literacy</div>
+        <h3>The new <em>operating layer</em> for every role.</h3>
+        <p class="lede">
+          From confident ChatGPT and Copilot use to building custom agents and shaping AI strategy.
+          Four personas covering everyday productivity, applied integration, technical build and
+          enterprise governance.
+        </p>
+        <div class="tiers">
+          <span class="tier">AI Apprentice</span>
+          <span class="tier">AI Navigator</span>
+          <span class="tier">AI Architect</span>
+          <span class="tier">AI Strategist</span>
+        </div>
+        <div class="future">
+          <strong>Future of work</strong>
+          AI is no longer a specialist tool. It is the operating layer underneath every analyst
+          workflow, every decision support deck and every executive briefing. Teams that can shape
+          and supervise AI output will outpace teams that can only consume it.
+        </div>
+        <a class="acad-cta" href="../academies/ai/index.html">Explore AI Literacy &rarr;</a>
+      </div>
+
+      <!-- Data Literacy -->
+      <div class="acad-card data">
+        <div class="acad-eyebrow"><span class="num">02</span> Data Literacy</div>
+        <h3>The <em>shared language</em> of modern decisions.</h3>
+        <p class="lede">
+          Reading and challenging data, working with it in Excel and BI tools, analysing it with
+          statistics, Python and SQL, and arguing with it in the room. Four personas pitched to
+          the depth each role actually needs.
+        </p>
+        <div class="tiers">
+          <span class="tier">Data Citizen</span>
+          <span class="tier">Data Associate</span>
+          <span class="tier">Data Wrangler</span>
+          <span class="tier">Data Analyst</span>
+        </div>
+        <div class="future">
+          <strong>Future of work</strong>
+          A board director who cannot read a dashboard is a board director making blind decisions.
+          A wrangler who cannot transform a dataset is a bottleneck. Data fluency at every tier is
+          now table stakes, not a specialist asset.
+        </div>
+        <a class="acad-cta" href="../academies/data-literacy/index.html">Explore Data Literacy &rarr;</a>
+      </div>
+
+      <!-- Project Management -->
+      <div class="acad-card pm">
+        <div class="acad-eyebrow"><span class="num">03</span> Project Management</div>
+        <h3>How <em>anything actually ships.</em></h3>
+        <p class="lede">
+          Predictive, agile and hybrid delivery, calibrated against PMI&rsquo;s CAPM exam domains.
+          Three personas covering project contributors, hands&#8209;on delivery leads and
+          credential&#8209;ready candidates working toward CAPM.
+        </p>
+        <div class="tiers">
+          <span class="tier">Project Member</span>
+          <span class="tier">PM Candidate</span>
+          <span class="tier">Project Champion</span>
+        </div>
+        <div class="future">
+          <strong>Future of work</strong>
+          Hybrid delivery is the default. Modern PMs are expected to run waterfall and agile in
+          parallel, coordinate AI&#8209;assisted teams, and earn credentials that match the market.
+          The discipline that turns strategy into shipped outcomes.
+        </div>
+        <a class="acad-cta" href="../academies/project-management/index.html">Explore Project Management &rarr;</a>
+      </div>
+
+      <!-- Finance -->
+      <div class="acad-card fin">
+        <div class="acad-eyebrow"><span class="num">04</span> Finance</div>
+        <h3>Where every decision <em>eventually lands.</em></h3>
+        <p class="lede">
+          Excel fluency, FP&amp;A craft, dashboarding in Power BI and Tableau, and full
+          FMVA&#8209;grade financial modeling. Three personas mapped from finance team
+          contributors through to deep modelers.
+        </p>
+        <div class="tiers">
+          <span class="tier">Finance Apprentice</span>
+          <span class="tier">Finance Analyst</span>
+          <span class="tier">Financial Modeler</span>
+        </div>
+        <div class="future">
+          <strong>Future of work</strong>
+          AI compresses modeling cycles; data tools commoditise the inputs; the human judgement is
+          where finance teams now compete. Strong financial intuition plus modern tooling is what
+          sets the next generation of finance leaders apart.
+        </div>
+        <a class="acad-cta" href="../academies/finance/index.html">Explore Finance &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CROSS-DISCIPLINE REALITY ============================== -->
+<section class="cross-section" id="cross-discipline">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" style="color: var(--blue, #0496FF);">The Cross-Discipline Reality</div>
+      <h2 class="h-xl">
+        Real roles span<br/>
+        <em>multiple academies.</em>
+      </h2>
+      <p class="body-lg">
+        Nobody stays inside a single discipline for a full week of work anymore. Every modern role
+        draws on at least two of these academies, and the senior ones draw on all four. Kubicle
+        stacks the right tier of each academy against the role, so the pathway matches the job.
+      </p>
+      <div class="cross-stat">
+        <strong>14</strong>
+        <span>credential&#8209;anchored persona pathways across the four academies</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="persona-reel-wrap">
+    <button class="reel-arrow prev" id="reel-prev" aria-label="Scroll left" type="button">
+      <svg viewBox="0 0 24 24"><polyline points="15 6 9 12 15 18"/></svg>
+    </button>
+    <button class="reel-arrow next" id="reel-next" aria-label="Scroll right" type="button">
+      <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+    </button>
+    <div class="persona-reel" id="persona-reel">
+
+      <div class="persona-card">
+        <div class="p-portrait"><img src="../img/Character_profiles/portraits/female_07.a.png" alt=""/></div>
+        <div class="role-tag">Program &middot; Entry-level</div>
+        <h4>The intern &amp; graduate</h4>
+        <p class="who">
+          The 12 months before placement and the first year of work. Baseline fluency across all
+          four academies that every entry&#8209;level role now expects on day one.
+        </p>
+        <div class="stack">
+          <div class="p-row ai"><span class="p-dot"></span><span class="p-name">AI Apprentice <span class="p-acad">AI</span></span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+          <div class="p-row data"><span class="p-dot"></span><span class="p-name">Data Citizen <span class="p-acad">Data</span></span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+          <div class="p-row pm"><span class="p-dot"></span><span class="p-name">Project Member <span class="p-acad">PM</span></span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+          <div class="p-row fin"><span class="p-dot"></span><span class="p-name">Finance Apprentice <span class="p-acad">Finance</span></span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="p-portrait"><img src="../img/Character_profiles/portraits/male_04.a.png" alt=""/></div>
+        <div class="role-tag">Year 1-2</div>
+        <h4>The early-career hire</h4>
+        <p class="who">
+          First analyst, coordinator or associate role. Needs broad fluency fast: enough AI, data,
+          project sense and finance to operate from day one.
+        </p>
+        <div class="stack">
+          <div class="p-row ai"><span class="p-dot"></span><span class="p-name">AI Navigator <span class="p-acad">AI</span></span><span class="p-tier" aria-label="Tier 2 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+          <div class="p-row data"><span class="p-dot"></span><span class="p-name">Data Associate <span class="p-acad">Data</span></span><span class="p-tier" aria-label="Tier 2 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+          <div class="p-row pm"><span class="p-dot"></span><span class="p-name">Project Member <span class="p-acad">PM</span></span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+          <div class="p-row fin"><span class="p-dot"></span><span class="p-name">Finance Apprentice <span class="p-acad">Finance</span></span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="p-portrait"><img src="../img/Character_profiles/portraits/female_03.a.png" alt=""/></div>
+        <div class="role-tag">Delivery</div>
+        <h4>The data-fluent project lead</h4>
+        <p class="who">
+          Runs delivery across hybrid teams, builds dashboards for the steering committee and uses
+          AI tooling to compress reporting cycles.
+        </p>
+        <div class="stack">
+          <div class="p-row pm"><span class="p-dot"></span><span class="p-name">PM Candidate <span class="p-acad">PM</span></span><span class="p-tier" aria-label="Tier 2 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+          <div class="p-row data"><span class="p-dot"></span><span class="p-name">Data Associate <span class="p-acad">Data</span></span><span class="p-tier" aria-label="Tier 2 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+          <div class="p-row ai"><span class="p-dot"></span><span class="p-name">AI Navigator <span class="p-acad">AI</span></span><span class="p-tier" aria-label="Tier 2 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="p-portrait"><img src="../img/Character_profiles/portraits/male_07.a.png" alt=""/></div>
+        <div class="role-tag">Finance Specialist</div>
+        <h4>The FP&amp;A analyst</h4>
+        <p class="who">
+          Lives in Excel and Power BI, owns the rolling forecast and is increasingly expected to
+          use AI for variance analysis and scenario planning.
+        </p>
+        <div class="stack">
+          <div class="p-row fin"><span class="p-dot"></span><span class="p-name">Finance Modeler <span class="p-acad">Finance</span></span><span class="p-tier" aria-label="Tier 3 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span></span></div>
+          <div class="p-row data"><span class="p-dot"></span><span class="p-name">Data Wrangler <span class="p-acad">Data</span></span><span class="p-tier" aria-label="Tier 3 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span></span></div>
+          <div class="p-row ai"><span class="p-dot"></span><span class="p-name">AI Navigator <span class="p-acad">AI</span></span><span class="p-tier" aria-label="Tier 2 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="p-portrait"><img src="../img/Character_profiles/portraits/male_01.a.png" alt=""/></div>
+        <div class="role-tag">Data Specialist</div>
+        <h4>The data scientist</h4>
+        <p class="who">
+          Owns advanced modeling, scopes projects, presents to executives and operates in
+          AI&#8209;augmented workflows.
+        </p>
+        <div class="stack">
+          <div class="p-row data"><span class="p-dot"></span><span class="p-name">Data Analyst <span class="p-acad">Data</span></span><span class="p-tier" aria-label="Tier 4 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span></span></div>
+          <div class="p-row ai"><span class="p-dot"></span><span class="p-name">AI Architect <span class="p-acad">AI</span></span><span class="p-tier" aria-label="Tier 3 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span></span></div>
+          <div class="p-row pm"><span class="p-dot"></span><span class="p-name">Project Member <span class="p-acad">PM</span></span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="p-portrait"><img src="../img/Character_profiles/portraits/female_10.a.png" alt=""/></div>
+        <div class="role-tag">Executive</div>
+        <h4>The senior leader</h4>
+        <p class="who">
+          Reads dashboards, sponsors AI initiatives, sets project priorities and signs the budget.
+          Foundational fluency across every discipline, strategy depth on AI.
+        </p>
+        <div class="stack">
+          <div class="p-row ai"><span class="p-dot"></span><span class="p-name">AI Strategist <span class="p-acad">AI</span></span><span class="p-tier" aria-label="Tier 4 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span></span></div>
+          <div class="p-row data"><span class="p-dot"></span><span class="p-name">Data Citizen <span class="p-acad">Data</span></span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+          <div class="p-row pm"><span class="p-dot"></span><span class="p-name">Project Member <span class="p-acad">PM</span></span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+          <div class="p-row fin"><span class="p-dot"></span><span class="p-name">Finance Apprentice <span class="p-acad">Finance</span></span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var reel = document.getElementById('persona-reel');
+  var prev = document.getElementById('reel-prev');
+  var next = document.getElementById('reel-next');
+  if (!reel || !prev || !next) return;
+
+  function step() { return Math.max(reel.clientWidth * 0.7, 320); }
+
+  prev.addEventListener('click', function () {
+    reel.scrollBy({ left: -step(), behavior: 'smooth' });
+  });
+  next.addEventListener('click', function () {
+    reel.scrollBy({ left: step(), behavior: 'smooth' });
+  });
+
+  function updateArrows() {
+    var max = reel.scrollWidth - reel.clientWidth - 1;
+    prev.disabled = reel.scrollLeft <= 0;
+    next.disabled = reel.scrollLeft >= max;
+  }
+  reel.addEventListener('scroll', updateArrows, { passive: true });
+  window.addEventListener('resize', updateArrows);
+  updateArrows();
+})();
+</script>
+
+<!-- ============================== INDUSTRY PERSONAS ============================== -->
+<section class="alice" id="industry-personas">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" style="color: var(--accent);">By Industry</div>
+      <h2 class="h-xl">
+        The same four academies,<br/>
+        stacked for <em>your industry.</em>
+      </h2>
+      <p class="body-lg">
+        Banking, consulting, corporate finance, financial services and education each demand a
+        different mix. Here&rsquo;s how Kubicle pathways stack against the roles that matter inside
+        each one.
+      </p>
+    </div>
+
+    <!-- Banking -->
+    <div class="industry-block">
+      <div class="industry-head">
+        <span class="ind-num">Industry 01</span>
+        <h3>Banking</h3>
+        <p class="ind-sub">Retail, commercial and investment banking teams: from relationship management through to risk and credit.</p>
+      </div>
+      <div class="ind-persona-grid">
+        <div class="ind-persona">
+          <div class="p-portrait"><img src="../img/Character_profiles/portraits/male_06.a.png" alt=""/></div>
+          <div>
+            <div class="role-tag">Relationship Manager</div>
+            <h4>Client&#8209;facing banker</h4>
+            <p class="who">Owns the relationship, reads the client&rsquo;s books, sells the next product. Needs finance fluency, data confidence and AI&#8209;assisted pitch prep.</p>
+            <div class="stack">
+              <span class="pill fin">Finance Apprentice</span>
+              <span class="pill data">Data Citizen</span>
+              <span class="pill ai">AI Navigator</span>
+            </div>
+          </div>
+        </div>
+        <div class="ind-persona">
+          <div class="p-portrait"><img src="../img/Character_profiles/portraits/female_03.a.png" alt=""/></div>
+          <div>
+            <div class="role-tag">Risk &amp; Credit Analyst</div>
+            <h4>Credit risk modeler</h4>
+            <p class="who">Builds and stress&#8209;tests credit models, wrangles risk datasets, and uses AI to triage exception reports.</p>
+            <div class="stack">
+              <span class="pill data">Data Wrangler</span>
+              <span class="pill fin">Financial Modeler</span>
+              <span class="pill ai">AI Navigator</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Management Consulting -->
+    <div class="industry-block">
+      <div class="industry-head">
+        <span class="ind-num">Industry 02</span>
+        <h3>Management Consulting</h3>
+        <p class="ind-sub">Consulting analysts through to senior managers running client engagements that depend on rapid, defensible analysis.</p>
+      </div>
+      <div class="ind-persona-grid">
+        <div class="ind-persona">
+          <div class="p-portrait"><img src="../img/Character_profiles/portraits/female_05.a.png" alt=""/></div>
+          <div>
+            <div class="role-tag">Consulting Analyst</div>
+            <h4>The first&#8209;year associate</h4>
+            <p class="who">Runs analyses, builds slides, prepares the model. Generalist who needs to be sharp across data, AI tooling and the basics of project shape.</p>
+            <div class="stack">
+              <span class="pill data">Data Associate</span>
+              <span class="pill ai">AI Navigator</span>
+              <span class="pill pm">Project Member</span>
+              <span class="pill fin">Finance Apprentice</span>
+            </div>
+          </div>
+        </div>
+        <div class="ind-persona">
+          <div class="p-portrait"><img src="../img/Character_profiles/portraits/male_09.a.png" alt=""/></div>
+          <div>
+            <div class="role-tag">Engagement Manager</div>
+            <h4>The consulting manager</h4>
+            <p class="who">Scopes the work, runs the team, presents to the client. Project shape, AI leverage and data storytelling are the day job.</p>
+            <div class="stack">
+              <span class="pill pm">PM Candidate</span>
+              <span class="pill ai">AI Navigator</span>
+              <span class="pill data">Data Associate</span>
+              <span class="pill fin">Finance Apprentice</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Corporate Finance -->
+    <div class="industry-block">
+      <div class="industry-head">
+        <span class="ind-num">Industry 03</span>
+        <h3>Corporate Finance</h3>
+        <p class="ind-sub">FP&amp;A, controllership and corporate strategy teams turning numbers into forward&#8209;looking decisions.</p>
+      </div>
+      <div class="ind-persona-grid">
+        <div class="ind-persona">
+          <div class="p-portrait"><img src="../img/Character_profiles/portraits/male_07.a.png" alt=""/></div>
+          <div>
+            <div class="role-tag">FP&amp;A Analyst</div>
+            <h4>The forecast owner</h4>
+            <p class="who">Owns the rolling forecast in Excel and Power BI. Increasingly expected to use AI for variance analysis and scenario modeling.</p>
+            <div class="stack">
+              <span class="pill fin">Financial Modeler</span>
+              <span class="pill data">Data Wrangler</span>
+              <span class="pill ai">AI Navigator</span>
+            </div>
+          </div>
+        </div>
+        <div class="ind-persona">
+          <div class="p-portrait"><img src="../img/Character_profiles/portraits/male_02.a.png" alt=""/></div>
+          <div>
+            <div class="role-tag">Controller</div>
+            <h4>The numbers steward</h4>
+            <p class="who">Closes the books, owns the controls, signs off on the dashboards. Needs financial depth plus data and project rigour to scale the function.</p>
+            <div class="stack">
+              <span class="pill fin">Financial Modeler</span>
+              <span class="pill data">Data Associate</span>
+              <span class="pill pm">Project Member</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Financial Services -->
+    <div class="industry-block">
+      <div class="industry-head">
+        <span class="ind-num">Industry 04</span>
+        <h3>Financial Services</h3>
+        <p class="ind-sub">Audit, accounting and advisory teams under pressure to deliver faster, sharper analysis with less manual lift.</p>
+      </div>
+      <div class="ind-persona-grid">
+        <div class="ind-persona">
+          <div class="p-portrait"><img src="../img/Character_profiles/portraits/female_06.a.png" alt=""/></div>
+          <div>
+            <div class="role-tag">Auditor / Accountant</div>
+            <h4>The audit senior</h4>
+            <p class="who">Tests controls, validates balances, reviews data extracts. AI&#8209;assisted sampling and data tooling are now part of the toolkit.</p>
+            <div class="stack">
+              <span class="pill fin">Finance Analyst</span>
+              <span class="pill data">Data Associate</span>
+              <span class="pill ai">AI Navigator</span>
+            </div>
+          </div>
+        </div>
+        <div class="ind-persona">
+          <div class="p-portrait"><img src="../img/Character_profiles/portraits/male_08.b.png" alt=""/></div>
+          <div>
+            <div class="role-tag">Advisory Lead</div>
+            <h4>The advisory partner</h4>
+            <p class="who">Diagnoses the client problem, scopes the team, signs off the recommendation. Storytelling, data fluency and AI strategy are the leverage points.</p>
+            <div class="stack">
+              <span class="pill ai">AI Strategist</span>
+              <span class="pill data">Data Associate</span>
+              <span class="pill fin">Finance Apprentice</span>
+              <span class="pill pm">PM Candidate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="industry-block">
+      <div class="industry-head">
+        <span class="ind-num">Industry 05</span>
+        <h3>Education</h3>
+        <p class="ind-sub">Faculty, program leads and graduate&#8209;readiness teams preparing the next generation for digital&#8209;first work.</p>
+      </div>
+      <div class="ind-persona-grid">
+        <div class="ind-persona">
+          <div class="p-portrait"><img src="../img/Character_profiles/portraits/female_09.a.png" alt=""/></div>
+          <div>
+            <div class="role-tag">Faculty Member</div>
+            <h4>The teaching lead</h4>
+            <p class="who">Brings AI&#8209;literate, data&#8209;fluent content into the classroom. Needs current craft across AI tooling, data interpretation and applied projects.</p>
+            <div class="stack">
+              <span class="pill ai">AI Navigator</span>
+              <span class="pill data">Data Citizen</span>
+              <span class="pill pm">Project Member</span>
+            </div>
+          </div>
+        </div>
+        <div class="ind-persona">
+          <div class="p-portrait"><img src="../img/Character_profiles/portraits/female_07.a.png" alt=""/></div>
+          <div>
+            <div class="role-tag">Graduate Programs Lead</div>
+            <h4>The career readiness lead</h4>
+            <p class="who">Owns graduate employability. Builds the rotation between AI, data, project sense and finance that lets students land their first analyst seat.</p>
+            <div class="stack">
+              <span class="pill pm">PM Candidate</span>
+              <span class="pill data">Data Associate</span>
+              <span class="pill ai">AI Apprentice</span>
+              <span class="pill fin">Finance Apprentice</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="final-cta" id="get-started">
+  <div class="container">
+    <div class="final-cta-grid">
+      <div class="eyebrow">Get the Catalog</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Four academies.<br/>
+        <em>One workforce, calibrated.</em>
+      </h2>
+      <p class="body-lg">
+        Download the full Kubicle catalog to see every academy, every persona pathway and every
+        course in one PDF. Or book time with one of our learning consultants for a tailored
+        recommendation.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="../catalog.html">Download Catalog <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost btn-lg" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<div id="site-footer"></div>
+
+</body>
+</html>

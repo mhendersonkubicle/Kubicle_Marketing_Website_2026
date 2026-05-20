@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Working at Kubicle | Build the thing. Grow the team.</title>
+<meta name="description" content="Working at Kubicle isn't a corporate trade. It's a small team, big ambition, and five values we actually live by. Open roles, the culture behind the work, and what it's like to ship at Kubicle."/>
+<meta name="keywords" content="Kubicle careers, working at Kubicle, Kubicle culture, learning design jobs, edtech jobs Dublin, Kubicle values, hiring Kubicle"/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/about/working-at-kubicle"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:url" content="https://www.kubicle.com/about/working-at-kubicle"/>
+<meta property="og:title" content="Working at Kubicle | Build the thing. Grow the team."/>
+<meta property="og:description" content="Small team, big ambition, and five values we actually live by. Open roles and the culture behind the work."/>
+<meta property="og:image" content="https://www.kubicle.com/about/img/team-wak-1.jpg"/>
+<meta property="og:image:alt" content="The Kubicle team at a Christmas dinner, smiling around a yellow table."/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@kubicle"/>
+<meta name="twitter:title" content="Working at Kubicle | Build the thing. Grow the team."/>
+<meta name="twitter:description" content="Small team, big ambition, five values we actually live by."/>
+<meta name="twitter:image" content="https://www.kubicle.com/about/img/team-wak-1.jpg"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Kubicle",
+  "url": "https://www.kubicle.com",
+  "logo": "https://www.kubicle.com/img/shared/6929dc95a88edc17d8e3a3e4_LOGO-FILES-LOGO-MARK-WHITE-RGB-1.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dublin",
+    "addressCountry": "Ireland"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/kubicle",
+    "https://twitter.com/kubicle",
+    "https://apply.workable.com/kubicle/"
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+
+<style>
+/* ============================== LAYOUT ============================== */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+section { padding: 120px 0; position: relative; overflow: hidden; }
+@media (max-width: 860px) {
+  .container { padding: 0 24px; }
+  section { padding: 88px 0; }
+}
+
+/* ============================== UTIL: doodles ============================== */
+.squiggle {
+  display: inline-block;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12'><path d='M2 6 Q 14 0, 26 6 T 50 6 T 74 6 T 98 6 T 118 6' fill='none' stroke='%23F97316' stroke-width='3' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 0.35em;
+  padding-bottom: 0.18em;
+}
+.squiggle.pink { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12'><path d='M2 6 Q 14 0, 26 6 T 50 6 T 74 6 T 98 6 T 118 6' fill='none' stroke='%23E91E63' stroke-width='3' stroke-linecap='round'/></svg>"); }
+.squiggle.teal { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12'><path d='M2 6 Q 14 0, 26 6 T 50 6 T 74 6 T 98 6 T 118 6' fill='none' stroke='%2300C4CC' stroke-width='3' stroke-linecap='round'/></svg>"); }
+.squiggle.green { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12'><path d='M2 6 Q 14 0, 26 6 T 50 6 T 74 6 T 98 6 T 118 6' fill='none' stroke='%2310B981' stroke-width='3' stroke-linecap='round'/></svg>"); }
+
+.star {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1em; height: 1em;
+  vertical-align: -0.05em;
+}
+
+/* Sticker badge (used in final CTA) */
+.sticker {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--head); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  background: #FFC93C;
+  color: var(--prussian);
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 2px solid var(--prussian);
+  box-shadow: 4px 4px 0 var(--prussian);
+  transform: rotate(-3deg);
+}
+.sticker .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--prussian);
+  animation: pulseDot 1.4s infinite;
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 96px 0 132px;
+  background:
+    radial-gradient(ellipse 80% 70% at 80% 0%, rgba(233,30,99,0.18), transparent 60%),
+    radial-gradient(ellipse 60% 70% at 10% 100%, rgba(0,196,204,0.18), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(4,150,255,0.10), transparent 70%),
+    var(--prussian);
+  color: #fff;
+  position: relative;
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse at 50% 50%, #000 30%, transparent 75%);
+}
+.hero-inner {
+  position: relative; z-index: 3;
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.hero h1 {
+  font-family: var(--head);
+  font-weight: 600;
+  font-size: clamp(48px, 8vw, 116px);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  color: #fff;
+  margin: 0;
+}
+.hero h1 em { font-style: normal; color: #FFC93C; }
+.hero-sub {
+  margin: 32px auto 0;
+  max-width: 720px;
+  font-size: 20px; line-height: 1.55;
+  color: rgba(255,255,255,0.82);
+  letter-spacing: -0.005em;
+}
+.hero-cta-row {
+  display: flex; gap: 14px; justify-content: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+.hero-cta-row .btn-primary {
+  background: #FFC93C; color: var(--prussian);
+  border: 2px solid var(--prussian);
+  box-shadow: 6px 6px 0 var(--prussian);
+}
+.hero-cta-row .btn-primary:hover {
+  background: #FFD862;
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--prussian);
+}
+.hero-cta-row .btn-ghost {
+  border-color: rgba(255,255,255,0.4);
+}
+
+/* Floating Kubicle diamond icons */
+.hero .float {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  display: block;
+  filter: drop-shadow(0 12px 30px rgba(0,0,0,0.35));
+  animation: floatBob 6s ease-in-out infinite;
+}
+.hero .float img { width: 100%; height: auto; display: block; }
+.hero .float.s1 { top: 8%;  left: 6%;  width: 132px; transform: rotate(-12deg); animation-delay: 0s;   }
+.hero .float.s2 { top: 14%; right: 7%; width: 104px; transform: rotate(14deg);  animation-delay: 1.2s; }
+.hero .float.s3 { bottom: 12%; left: 9%; width: 116px; transform: rotate(-6deg);  animation-delay: 2.4s; }
+.hero .float.s4 { bottom: 16%; right: 11%; width: 90px;  transform: rotate(18deg);  animation-delay: 3.6s; }
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+  50%      { transform: translateY(-12px) rotate(var(--rot, 0deg)); }
+}
+.hero .float.s1 { --rot: -12deg; }
+.hero .float.s2 { --rot: 14deg; }
+.hero .float.s3 { --rot: -6deg; }
+.hero .float.s4 { --rot: 18deg; }
+@media (max-width: 900px) {
+  .hero .float.s1 { width: 88px; }
+  .hero .float.s2 { width: 72px; }
+  .hero .float.s3 { width: 80px; }
+  .hero .float.s4 { width: 64px; }
+}
+@media (max-width: 600px) { .hero .float { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero .float { animation: none; }
+}
+
+/* ============================== VIDEO ============================== */
+.video-section {
+  background: #fff;
+  padding: 120px 0;
+}
+.video-head {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 48px;
+}
+.video-head .eyebrow {
+  font-family: var(--head); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--pink);
+}
+.video-head h2 {
+  font-family: var(--head);
+  font-size: clamp(36px, 4.5vw, 60px);
+  line-height: 1; letter-spacing: -0.04em;
+  font-weight: 600;
+  color: var(--prussian);
+  margin-top: 14px;
+}
+.video-head p {
+  margin-top: 18px;
+  font-size: 17px; line-height: 1.6;
+  color: var(--steel);
+}
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--prussian);
+  box-shadow: 0 40px 80px -30px rgba(11,27,43,0.35);
+  border: 6px solid var(--prussian);
+  transform: rotate(-0.6deg);
+}
+.video-frame iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0; display: block;
+}
+.video-frame::after {
+  content: ""; position: absolute;
+  top: -16px; right: -16px;
+  width: 80px; height: 80px;
+  background: #FFC93C;
+  border: 3px solid var(--prussian);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* ============================== VALUES (poster wall) ============================== */
+.values-section {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--alice) 0,
+      var(--alice) 1px,
+      transparent 1px,
+      transparent 80px),
+    repeating-linear-gradient(
+      0deg,
+      var(--alice) 0,
+      var(--alice) 1px,
+      transparent 1px,
+      transparent 80px),
+    #fff;
+}
+.values-head {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 48px; align-items: end;
+  margin-bottom: 64px;
+}
+.values-head .eyebrow {
+  font-family: var(--head); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--pink);
+}
+.values-head h2 {
+  font-family: var(--head);
+  font-size: clamp(40px, 5.6vw, 80px);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  color: var(--prussian);
+  margin-top: 14px;
+}
+.values-head h2 em { font-style: normal; }
+.values-head p {
+  font-size: 17px; line-height: 1.65;
+  color: var(--steel);
+  max-width: 460px;
+  margin-left: auto;
+}
+@media (max-width: 900px) {
+  .values-head { grid-template-columns: 1fr; gap: 24px; }
+  .values-head p { margin-left: 0; }
+}
+
+/* The poster wall */
+.posters {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+.poster {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--prussian);
+  box-shadow: 0 30px 60px -30px rgba(11,27,43,0.30);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+.poster img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.poster:hover {
+  transform: translateY(-6px) rotate(0deg) !important;
+  box-shadow: 0 40px 80px -30px rgba(11,27,43,0.45);
+  z-index: 5;
+}
+.poster .ribbon {
+  position: absolute;
+  top: 14px; left: 14px;
+  font-family: var(--head); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  background: #fff; color: var(--prussian);
+  padding: 6px 12px; border-radius: 999px;
+  border: 2px solid var(--prussian);
+  z-index: 2;
+}
+
+/* Tile sizes & rotations (asymmetric collage) */
+.poster.p1 { grid-column: span 5; aspect-ratio: 800/1132; transform: rotate(-2deg); }
+.poster.p2 { grid-column: span 4; aspect-ratio: 500/707; transform: rotate(1.5deg); margin-top: 56px; }
+.poster.p3 { grid-column: span 3; aspect-ratio: 500/707; transform: rotate(-1deg); margin-top: 24px; }
+.poster.p4 { grid-column: span 5; aspect-ratio: 919/1300; transform: rotate(1deg); margin-top: 32px; }
+.poster.p5 { grid-column: span 7; aspect-ratio: 920/1300; transform: rotate(-1.5deg); }
+
+@media (max-width: 1100px) {
+  .posters { grid-template-columns: repeat(6, 1fr); gap: 18px; }
+  .poster.p1 { grid-column: span 4; }
+  .poster.p2 { grid-column: span 2; margin-top: 24px; }
+  .poster.p3 { grid-column: span 3; }
+  .poster.p4 { grid-column: span 3; margin-top: 16px; }
+  .poster.p5 { grid-column: span 6; }
+}
+@media (max-width: 700px) {
+  .posters { grid-template-columns: 1fr; gap: 18px; }
+  .poster.p1, .poster.p2, .poster.p3, .poster.p4, .poster.p5 {
+    grid-column: span 1; transform: rotate(-1deg); margin-top: 0;
+  }
+  .poster.p2 { transform: rotate(1deg); }
+  .poster.p4 { transform: rotate(1deg); }
+}
+
+/* ============================== KUBICORNS (why join) ============================== */
+.kub-section {
+  background:
+    radial-gradient(ellipse 70% 60% at 90% 0%, rgba(255,201,60,0.22), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 0% 100%, rgba(0,196,204,0.18), transparent 60%),
+    #FFFAEC;
+}
+.kub-head {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 64px;
+}
+.kub-head .eyebrow {
+  font-family: var(--head); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: #F97316;
+}
+.kub-head h2 {
+  font-family: var(--head);
+  font-size: clamp(40px, 5.6vw, 80px);
+  line-height: 0.95; letter-spacing: -0.045em;
+  font-weight: 600;
+  color: var(--prussian);
+  margin-top: 14px;
+}
+.kub-head h2 em { font-style: normal; }
+.kub-head p {
+  margin-top: 18px;
+  font-size: 17px; line-height: 1.6;
+  color: var(--steel);
+  max-width: 600px; margin-left: auto; margin-right: auto;
+}
+
+.kub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+@media (max-width: 1000px) { .kub-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px)  { .kub-grid { grid-template-columns: 1fr; } }
+
+.kub-card {
+  background: #fff;
+  border: 2px solid var(--prussian);
+  border-radius: 22px;
+  padding: 30px 28px;
+  position: relative;
+  transition: transform 0.18s, box-shadow 0.18s;
+  box-shadow: 6px 6px 0 var(--prussian);
+}
+.kub-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--prussian);
+}
+.kub-card .num-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--head); font-size: 22px; font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--prussian);
+  background: var(--c, var(--blue));
+  padding: 8px 16px;
+  border: 2px solid var(--prussian);
+  border-radius: 14px;
+  box-shadow: 3px 3px 0 var(--prussian);
+  transform: rotate(-3deg);
+}
+.kub-card.k2 .num-badge,
+.kub-card.k4 .num-badge,
+.kub-card.k6 .num-badge { color: #fff; }
+.kub-card h3 {
+  font-family: var(--head); font-size: 22px; font-weight: 600;
+  letter-spacing: -0.025em; line-height: 1.15;
+  color: var(--prussian);
+  margin: 22px 0 10px;
+}
+.kub-card p {
+  font-size: 14.5px; line-height: 1.55;
+  color: var(--steel);
+}
+.kub-card.k1 { --c: #FFC93C; }
+.kub-card.k2 { --c: #E91E63; }
+.kub-card.k3 { --c: #00C4CC; }
+.kub-card.k4 { --c: #10B981; }
+.kub-card.k5 { --c: #F97316; }
+.kub-card.k6 { --c: #0496FF; }
+
+/* ============================== TEAM IRL ============================== */
+.team-section {
+  background:
+    radial-gradient(ellipse 70% 80% at 90% 10%, rgba(249,115,22,0.10), transparent 65%),
+    radial-gradient(ellipse 60% 60% at 10% 90%, rgba(233,30,99,0.10), transparent 65%),
+    var(--alice);
+}
+.team-head {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px; align-items: end;
+  margin-bottom: 56px;
+}
+.team-head .eyebrow {
+  font-family: var(--head); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: #F97316;
+}
+.team-head h2 {
+  font-family: var(--head);
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 0.95; letter-spacing: -0.04em;
+  font-weight: 600;
+  color: var(--prussian);
+  margin-top: 14px;
+}
+.team-head p {
+  font-size: 17px; line-height: 1.65;
+  color: var(--steel);
+  max-width: 460px;
+  margin-left: auto;
+}
+@media (max-width: 900px) {
+  .team-head { grid-template-columns: 1fr; gap: 24px; }
+  .team-head p { margin-left: 0; }
+}
+
+/* Polaroid grid */
+.polaroids {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.polaroid {
+  background: #fff;
+  padding: 14px 14px 56px;
+  border-radius: 6px;
+  box-shadow: 0 30px 60px -30px rgba(11,27,43,0.30);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.polaroid:hover { transform: translateY(-6px) rotate(0deg) !important; z-index: 5; }
+.polaroid img { display: block; width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; }
+.polaroid .cap {
+  position: absolute;
+  bottom: 18px; left: 18px;
+  font-family: var(--head); font-size: 14px; font-weight: 600;
+  color: var(--prussian);
+  letter-spacing: -0.005em;
+}
+/* Row 1 (5 + 4 + 3 = 12) */
+.polaroid.t1 { grid-column: span 5; transform: rotate(-2.5deg); margin-top: 20px; }
+.polaroid.t2 { grid-column: span 4; transform: rotate(1.5deg); margin-top: 80px; }
+.polaroid.t3 { grid-column: span 3; transform: rotate(-1deg); }
+
+/* Row 2 (4 + 3 + 5 = 12) */
+.polaroid.t4 { grid-column: span 4; transform: rotate(1deg); margin-top: 16px; }
+.polaroid.t5 { grid-column: span 3; transform: rotate(-2deg); margin-top: 64px; }
+.polaroid.t6 { grid-column: span 5; transform: rotate(2deg); margin-top: 0; }
+
+@media (max-width: 1000px) {
+  .polaroids { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .polaroid.t1, .polaroid.t2, .polaroid.t3,
+  .polaroid.t4, .polaroid.t5, .polaroid.t6 {
+    grid-column: span 1; margin-top: 0;
+  }
+  /* Stagger every other one for rhythm */
+  .polaroid.t2, .polaroid.t4, .polaroid.t6 { margin-top: 32px; }
+}
+@media (max-width: 600px) {
+  .polaroids { grid-template-columns: 1fr; }
+  .polaroid.t1, .polaroid.t2, .polaroid.t3,
+  .polaroid.t4, .polaroid.t5, .polaroid.t6 {
+    grid-column: span 1; transform: rotate(-1deg); margin-top: 0;
+  }
+  .polaroid.t2, .polaroid.t4, .polaroid.t6 { transform: rotate(1deg); }
+}
+
+/* Tape decoration on polaroids */
+.polaroid::before {
+  content: "";
+  position: absolute;
+  top: -10px; left: 50%; transform: translateX(-50%) rotate(-3deg);
+  width: 80px; height: 22px;
+  background: rgba(255,201,60,0.7);
+  border: 1px dashed rgba(11,27,43,0.20);
+  z-index: 3;
+}
+
+/* ============================== REVIEWS ============================== */
+.reviews-section {
+  background: #fff;
+}
+.reviews-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 56px;
+}
+.reviews-head .eyebrow {
+  font-family: var(--head); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--teal);
+}
+.reviews-head h2 {
+  font-family: var(--head);
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 0.95; letter-spacing: -0.04em;
+  font-weight: 600;
+  color: var(--prussian);
+  margin-top: 14px;
+}
+.reviews-head p {
+  margin-top: 18px;
+  font-size: 17px; line-height: 1.65;
+  color: var(--steel);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+@media (max-width: 1000px) { .reviews-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px)  { .reviews-grid { grid-template-columns: 1fr; } }
+
+.review {
+  background: #fff;
+  border: 2px solid var(--prussian);
+  border-radius: 22px;
+  padding: 28px;
+  display: flex; flex-direction: column;
+  gap: 12px;
+  position: relative;
+  transition: transform 0.18s, box-shadow 0.18s;
+  box-shadow: 6px 6px 0 var(--prussian);
+}
+.review:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--prussian);
+}
+.review .quote-mark {
+  font-family: var(--head); font-size: 64px; font-weight: 700;
+  color: var(--c, var(--blue));
+  line-height: 0.6;
+  height: 28px;
+  margin-bottom: 4px;
+}
+.review .ttl {
+  font-family: var(--head); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--c, var(--blue));
+}
+.review blockquote {
+  margin: 0;
+  font-family: var(--head); font-size: 17px; font-weight: 500;
+  color: var(--prussian);
+  letter-spacing: -0.015em;
+  line-height: 1.4;
+}
+.review .stars {
+  display: flex; gap: 3px; color: #FFB800;
+  margin-top: 4px;
+}
+.review .stars svg { width: 16px; height: 16px; fill: currentColor; }
+.review .who {
+  margin-top: auto; padding-top: 14px;
+  border-top: 1px solid var(--alice);
+  font-size: 12.5px; color: var(--steel);
+  line-height: 1.5;
+}
+.review .who strong {
+  display: block;
+  color: var(--prussian); font-weight: 600;
+  font-size: 13.5px; margin-bottom: 2px;
+}
+.review .meta {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  font-size: 11px; color: var(--steel);
+  letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600;
+  margin-top: 6px;
+}
+.review .meta .dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--silver);
+  align-self: center;
+}
+.review.r1 { --c: #FFC93C; }
+.review.r2 { --c: #E91E63; }
+.review.r3 { --c: #00C4CC; }
+.review.r4 { --c: #10B981; }
+.review.r5 { --c: #F97316; }
+.review.r6 { --c: #0496FF; }
+
+/* ============================== HIRING / FINAL CTA ============================== */
+.cta-section {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(255,201,60,0.20), transparent 70%),
+    radial-gradient(ellipse 60% 70% at 10% 90%, rgba(233,30,99,0.20), transparent 70%),
+    var(--prussian);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.cta-inner {
+  position: relative; z-index: 3;
+  text-align: center;
+  max-width: 880px;
+  margin: 0 auto;
+}
+.cta-inner h2 {
+  font-family: var(--head);
+  font-size: clamp(48px, 7vw, 104px);
+  line-height: 0.95; letter-spacing: -0.045em;
+  font-weight: 600;
+  color: #fff;
+  margin: 18px 0 0;
+}
+.cta-inner h2 em { font-style: normal; color: #FFC93C; }
+.cta-inner p {
+  margin: 28px auto 0;
+  max-width: 600px;
+  font-size: 17.5px; line-height: 1.6;
+  color: rgba(255,255,255,0.82);
+}
+.cta-inner .btn-row {
+  display: flex; gap: 14px; justify-content: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+.cta-inner .btn-primary {
+  background: #FFC93C; color: var(--prussian);
+  border: 2px solid var(--prussian);
+  box-shadow: 6px 6px 0 var(--prussian);
+}
+.cta-inner .btn-primary:hover {
+  background: #FFD862;
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--prussian);
+}
+.cta-inner .btn-ghost { border-color: rgba(255,255,255,0.5); }
+
+.cta-section .float {
+  position: absolute;
+  font-family: var(--head); font-weight: 700;
+  pointer-events: none;
+  z-index: 1;
+}
+.cta-section .float.f1 { top: 18%; left: 12%; font-size: 64px; color: #FF4F8A; transform: rotate(-10deg); opacity: 0.6; }
+.cta-section .float.f2 { bottom: 18%; right: 14%; font-size: 80px; color: #FFC93C; transform: rotate(15deg); opacity: 0.5; }
+@media (max-width: 700px) { .cta-section .float { display: none; } }
+</style>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== NAV ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <span class="float s1" aria-hidden="true"><img src="img/icon-yellow.svg" alt=""/></span>
+  <span class="float s2" aria-hidden="true"><img src="img/icon-purple.svg" alt=""/></span>
+  <span class="float s3" aria-hidden="true"><img src="img/icon-green.svg" alt=""/></span>
+  <span class="float s4" aria-hidden="true"><img src="img/icon-blue.svg" alt=""/></span>
+
+  <div class="container">
+    <div class="hero-inner">
+      <h1>
+        Work with us to<br/>
+        build something <em>amazing</em>.
+      </h1>
+      <p class="hero-sub">
+        Working at Kubicle isn't a corporate trade. It's a small team with big ambition,
+        five values we actually live by, and the kind of work you can point your friends at and say <em>I built that.</em>
+      </p>
+      <div class="hero-cta-row">
+        <a class="btn btn-primary btn-lg" href="https://apply.workable.com/kubicle/?lng=en" target="_blank" rel="noopener">See Open Roles <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost btn-lg" href="#values" style="color:#fff;">Meet the values</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== VIDEO ============================== -->
+<section class="video-section" id="video">
+  <div class="container">
+    <div class="video-head">
+      <div class="eyebrow">Take a look around</div>
+      <h2>This is what a Tuesday<br/>at Kubicle looks like.</h2>
+      <p>Honest answer: a lot of shipping, a lot of laughs, and the occasional Christmas jumper.</p>
+    </div>
+
+    <div class="video-frame">
+      <iframe
+        src="https://player.mux.com/j901LpVJnXxcdxR6aq2vQrbLnBkSpavCjvOe3mvE19Hw"
+        title="Working at Kubicle"
+        allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== VALUES (POSTER WALL) ============================== -->
+<section class="values-section" id="values">
+  <div class="container">
+    <div class="values-head">
+      <div>
+        <div class="eyebrow">The five values</div>
+        <h2>Five posters on the wall.<br/>
+          <em>The <span class="squiggle pink">actual</span> values.</em></h2>
+      </div>
+      <p>
+        Most "company values" are wallpaper. Ours are pinned to the wall (literally) and the
+        ones we hire, fire and promote against. If you can read these and nod, we should talk.
+      </p>
+    </div>
+
+    <div class="posters">
+      <a class="poster p1" href="https://apply.workable.com/kubicle/?lng=en" target="_blank" rel="noopener" aria-label="Value: Growth requires discomfort. See open roles.">
+        <span class="ribbon">Value 01</span>
+        <img src="img/value-growth-requires-discomfort.jpg" alt="Kubicle value: Growth requires discomfort. A seedling pushes through cracked tarmac."/>
+      </a>
+      <a class="poster p2" href="https://apply.workable.com/kubicle/?lng=en" target="_blank" rel="noopener" aria-label="Value: Be energised by ambiguity. See open roles.">
+        <span class="ribbon">Value 02</span>
+        <img src="img/value-be-energised-by-ambiguity.jpg" alt="Kubicle value: Be energised by ambiguity. A figure pushes a boulder up a slope."/>
+      </a>
+      <a class="poster p3" href="https://apply.workable.com/kubicle/?lng=en" target="_blank" rel="noopener" aria-label="Value: Never let the team down. See open roles.">
+        <span class="ribbon">Value 03</span>
+        <img src="img/value-never-let-the-team-down.jpg" alt="Kubicle value: Never let the team down."/>
+      </a>
+      <a class="poster p4" href="https://apply.workable.com/kubicle/?lng=en" target="_blank" rel="noopener" aria-label="Value: Attitude determines altitude. See open roles.">
+        <span class="ribbon">Value 04</span>
+        <img src="img/value-attitude-determines-altitude.jpg" alt="Kubicle value: Attitude determines altitude."/>
+      </a>
+      <a class="poster p5" href="https://apply.workable.com/kubicle/?lng=en" target="_blank" rel="noopener" aria-label="Value: Get sh!t done. See open roles.">
+        <span class="ribbon">Value 05</span>
+        <img src="img/value-get-shit-done.png" alt="Kubicle value: Get sh!t done."/>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== KUBICORNS (why join) ============================== -->
+<section class="kub-section" id="why-join">
+  <div class="container">
+    <div class="kub-head">
+      <div class="eyebrow">Why you should join us at Kubicle</div>
+      <h2>Want to become<br/><em>a <span class="squiggle pink">Kubicorn?</span></em></h2>
+      <p>Six reasons people give us when we ask why they joined. We'd be a bit suspicious if you said all six on day one, but we'd settle for two or three.</p>
+    </div>
+
+    <div class="kub-grid">
+      <div class="kub-card k1">
+        <span class="num-badge">01</span>
+        <h3>We're growing</h3>
+        <p>The team of subject&#8209;matter experts is growing all the time, and there's room to grow into the seat you take.</p>
+      </div>
+      <div class="kub-card k2">
+        <span class="num-badge">02</span>
+        <h3>We're experts in our domain</h3>
+        <p>Every course, lesson and assessment is designed and built in house. No outsourcing the craft.</p>
+      </div>
+      <div class="kub-card k3">
+        <span class="num-badge">03</span>
+        <h3>We're on a mission</h3>
+        <p>Democratising data and AI fluency, one citizen at a time. The work shows up in client board packs.</p>
+      </div>
+      <div class="kub-card k4">
+        <span class="num-badge">04</span>
+        <h3>We're in good company</h3>
+        <p>Trusted by some of the biggest, best&#8209;known firms on the planet. Names you'll spot on the trust bar at the top of this site.</p>
+      </div>
+      <div class="kub-card k5">
+        <span class="num-badge">05</span>
+        <h3>International &amp; diverse</h3>
+        <p>Our experts come from all four corners of the globe. The accents in the standup are part of the fun.</p>
+      </div>
+      <div class="kub-card k6">
+        <span class="num-badge">06</span>
+        <h3>We are our people</h3>
+        <p>Brilliant, bright and hungry data&#8209;literacy folks. The kind you'd grab a pint with after the demo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TEAM IRL ============================== -->
+<section class="team-section" id="team">
+  <div class="container">
+    <div class="team-head">
+      <div>
+        <div class="eyebrow">The team, in real life</div>
+        <h2>Small team.<br/><em>Big <span class="squiggle">night out.</span></em></h2>
+      </div>
+      <p>
+        We work hard. We also genuinely like each other. There's a Christmas jumper photo
+        somewhere on this page. We're not going to hide it.
+      </p>
+    </div>
+
+    <div class="polaroids">
+      <figure class="polaroid t1">
+        <img src="img/team-wak-1.jpg" alt="The Kubicle team gathered around a yellow table at a Christmas dinner, smiling together."/>
+        <figcaption class="cap">Christmas, on the books.</figcaption>
+      </figure>
+      <figure class="polaroid t2">
+        <img src="img/team-wak-2.jpg" alt="Kubicle team members in conversation."/>
+        <figcaption class="cap">Mid-roadmap, mid-sentence.</figcaption>
+      </figure>
+      <figure class="polaroid t3">
+        <img src="img/team-wak-3.jpg" alt="A Kubicle team gathering."/>
+        <figcaption class="cap">Off-site, on form.</figcaption>
+      </figure>
+      <figure class="polaroid t4">
+        <img src="img/team-wak-4.jpg" alt="Kubicle teammates in Christmas jumpers around a yellow pub table, drinks raised."/>
+        <figcaption class="cap">Christmas, take two.</figcaption>
+      </figure>
+      <figure class="polaroid t5">
+        <img src="img/team-wak-5.jpg" alt="Kubicle team at an industry meet&#8209;up, gathered around a small table with a plant centrepiece."/>
+        <figcaption class="cap">Out in the wild.</figcaption>
+      </figure>
+      <figure class="polaroid t6">
+        <img src="img/team-wak-6.jpg" alt="Kubicle team at a hot pot dinner in a red&#8209;walled restaurant, peace signs all round."/>
+        <figcaption class="cap">Hot pot, peace signs.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== REVIEWS ============================== -->
+<section class="reviews-section" id="reviews">
+  <div class="container">
+    <div class="reviews-head">
+      <div class="eyebrow">Don't take our word for it</div>
+      <h2>The <span class="squiggle teal">good things</span><br/>people have to say.</h2>
+      <p>Snippets from current and former Kubicle reviews. Names anonymised where they wanted them to be.</p>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review r1">
+        <div class="quote-mark">&ldquo;</div>
+        <div class="ttl">Great place to work, amazing people</div>
+        <blockquote>The company fosters a culture of transparency from leadership down, and you can always count on the support of your colleagues to help you succeed.</blockquote>
+        <div class="stars" aria-label="5 out of 5">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+        </div>
+        <div class="who">
+          <strong>Customer Success</strong>
+          Current employee
+          <div class="meta"><span>Dublin</span><span class="dot"></span><span>Sept 2024</span></div>
+        </div>
+      </div>
+
+      <div class="review r2">
+        <div class="quote-mark">&ldquo;</div>
+        <div class="ttl">Dream team</div>
+        <blockquote>Leaders are genuinely interested in their people's success and development. Which is rare.</blockquote>
+        <div class="stars" aria-label="5 out of 5">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+        </div>
+        <div class="who">
+          <strong>Anonymous</strong>
+          Former employee
+          <div class="meta"><span>2024</span></div>
+        </div>
+      </div>
+
+      <div class="review r3">
+        <div class="quote-mark">&ldquo;</div>
+        <div class="ttl">A top class company</div>
+        <blockquote>From my peers to the senior leadership team, the culture at Kubicle is brilliant. I built relationships for life.</blockquote>
+        <div class="stars" aria-label="4 out of 5">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" style="opacity: 0.25;"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+        </div>
+        <div class="who">
+          <strong>Recruitment Manager</strong>
+          Former employee, more than 1 year
+          <div class="meta"><span>Dublin</span><span class="dot"></span><span>Jun 2024</span></div>
+        </div>
+      </div>
+
+      <div class="review r4">
+        <div class="quote-mark">&ldquo;</div>
+        <div class="ttl">Solid and steady</div>
+        <blockquote>Authenticity is the value that gets delivered on. You can be your normal self at work without needing to play a character.</blockquote>
+        <div class="stars" aria-label="5 out of 5">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+        </div>
+        <div class="who">
+          <strong>Technical Writer</strong>
+          Former employee, more than 5 years
+          <div class="meta"><span>Dublin</span><span class="dot"></span><span>Mar 2024</span></div>
+        </div>
+      </div>
+
+      <div class="review r5">
+        <div class="quote-mark">&ldquo;</div>
+        <div class="ttl">All in all, a good company</div>
+        <blockquote>Good people and a lot of flexibility when you do your job well.</blockquote>
+        <div class="stars" aria-label="5 out of 5">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+        </div>
+        <div class="who">
+          <strong>Anonymous</strong>
+          Former employee
+          <div class="meta"><span>Aug 2024</span></div>
+        </div>
+      </div>
+
+      <div class="review r6">
+        <div class="quote-mark">&ldquo;</div>
+        <div class="ttl">Year on year, still tight knit</div>
+        <blockquote>Despite our year&#8209;on&#8209;year growth, the company has managed to maintain a tight&#8209;knit, collaborative environment where employees feel valued.</blockquote>
+        <div class="stars" aria-label="5 out of 5">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7L12 17.3 5.7 21l1.7-7L2 9.2l7.1-.6L12 2z"/></svg>
+        </div>
+        <div class="who">
+          <strong>Head of Business Development</strong>
+          Current employee
+          <div class="meta"><span>Dublin</span><span class="dot"></span><span>2024</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== HIRING / FINAL CTA ============================== -->
+<section class="cta-section" id="apply">
+  <span class="float f1" aria-hidden="true">*</span>
+  <span class="float f2" aria-hidden="true">!</span>
+
+  <div class="container">
+    <div class="cta-inner">
+      <h2>
+        Read the values.<br/>
+        Liked them?<br/>
+        <em>Come build with us.</em>
+      </h2>
+      <p>
+        We hire on attitude, raw ability and the willingness to ship before the slide deck is
+        perfect. No take&#8209;home tests for senior roles. Honest interviews on both sides.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary btn-lg" href="https://apply.workable.com/kubicle/?lng=en" target="_blank" rel="noopener">See Open Roles <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<div id="site-footer"></div>
+
+</body>
+</html>

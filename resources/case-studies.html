@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Case Studies &amp; White Papers | Kubicle</title>
+<meta name="description" content="How finance, consulting and professional services firms run their AI, data, finance and project management upskilling on Kubicle. Customer stories from Heineken, Jotun, Arthur D. Little, Onafriq and more, plus practitioner&#8209;grade white papers."/>
+<meta name="keywords" content="Kubicle case studies, Kubicle white papers, customer stories, enterprise training case study, AI literacy case study, data literacy rollout, Heineken Kubicle, Jotun Kubicle, Arthur D. Little Kubicle"/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/resources/case-studies"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:url" content="https://www.kubicle.com/resources/case-studies"/>
+<meta property="og:title" content="Case Studies &amp; White Papers | Kubicle"/>
+<meta property="og:description" content="Customer stories and practitioner&#8209;grade white papers from Kubicle and the firms we work with."/>
+<meta property="og:image" content="https://www.kubicle.com/img/case-studies/heineken.svg"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@kubicle"/>
+<meta name="twitter:title" content="Case Studies &amp; White Papers | Kubicle"/>
+<meta name="twitter:description" content="Customer stories and practitioner&#8209;grade white papers from Kubicle."/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Kubicle Case Studies &amp; White Papers",
+  "url": "https://www.kubicle.com/resources/case-studies",
+  "description": "Customer stories from finance, consulting and professional services firms running AI, data, finance and project management upskilling on Kubicle, plus practitioner-grade white papers.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "url": "https://www.kubicle.com",
+    "logo": "img/shared/6929dc95a88edc17d8e3a3e4_LOGO-FILES-LOGO-MARK-WHITE-RGB-1.png"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+
+<style>
+/* ============================== LAYOUT ============================== */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+section { padding: 88px 0; position: relative; overflow: hidden; }
+@media (max-width: 860px) {
+  .container { padding: 0 24px; }
+  section { padding: 64px 0; }
+}
+
+/* ============================== INTRO BAND (half-height dark header) ============================== */
+.intro {
+  background:
+    radial-gradient(ellipse 60% 80% at 85% 30%, rgba(4,150,255,0.16), transparent 70%),
+    radial-gradient(ellipse 80% 60% at 5% 100%, rgba(4,150,255,0.08), transparent 70%),
+    var(--prussian);
+  color: #fff;
+  padding: 88px 0 56px;
+  position: relative;
+  overflow: hidden;
+}
+.intro::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at 70% 30%, #000 25%, transparent 75%);
+}
+.intro-grid {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1.4fr 1fr;
+  gap: 64px; align-items: end;
+}
+.intro .subject-crumb {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--body); font-size: 13px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 14px;
+}
+.intro .subject-crumb a { color: rgba(255,255,255,0.55); }
+.intro .subject-crumb a:hover { color: #fff; }
+.intro .subject-crumb .sep { opacity: 0.55; }
+.intro .subject-crumb .now { color: var(--blue); }
+.intro h1 {
+  font-family: var(--head);
+  font-size: clamp(38px, 4.4vw, 60px);
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+  color: #fff;
+  margin: 0;
+}
+.intro h1 em { font-style: normal; color: var(--blue); }
+.intro p {
+  font-size: 16.5px; line-height: 1.6;
+  color: rgba(255,255,255,0.78);
+  max-width: 460px;
+  margin: 0 0 0 auto;
+}
+@media (max-width: 900px) {
+  .intro-grid { grid-template-columns: 1fr; gap: 24px; }
+  .intro p { margin-left: 0; max-width: 600px; }
+}
+
+/* ============================== FILTER ROW ============================== */
+.filter-section {
+  background: var(--alice);
+  padding: 24px 0 32px;
+}
+.filter-row {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 24px; flex-wrap: wrap;
+}
+.filter-pills {
+  display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+}
+.filter-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px;
+  background: #fff;
+  border: 1.5px solid var(--alice);
+  border-radius: 999px;
+  font-family: var(--head); font-size: 13px; font-weight: 600;
+  color: var(--prussian); letter-spacing: -0.005em;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.filter-pill:hover { border-color: var(--prussian); }
+.filter-pill.active {
+  background: var(--prussian); color: #fff;
+  border-color: var(--prussian);
+}
+.filter-pill .count {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 22px; padding: 0 6px;
+  height: 18px;
+  background: var(--alice); color: var(--steel);
+  border-radius: 999px;
+  font-size: 11px; font-weight: 700;
+}
+.filter-pill.active .count { background: rgba(255,255,255,0.16); color: #fff; }
+.filter-meta {
+  font-size: 13px; color: var(--steel);
+}
+.filter-meta strong { color: var(--prussian); }
+
+/* ============================== RESOURCE GRID ============================== */
+.grid-section {
+  background: var(--alice);
+  padding: 16px 0 96px;
+}
+.resource-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+@media (max-width: 1000px) { .resource-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px)  { .resource-grid { grid-template-columns: 1fr; } }
+
+/* Generic card */
+.resource-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  text-decoration: none; color: inherit;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.resource-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--c, var(--blue));
+  box-shadow: 0 24px 50px -30px rgba(11,27,43,0.20);
+}
+
+/* Tile area */
+.resource-card .tile {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--alice);
+  overflow: hidden;
+}
+.resource-card .tile img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.resource-card .type-chip {
+  position: absolute; top: 14px; left: 14px;
+  z-index: 2;
+  font-family: var(--head); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: #fff;
+  background: rgba(11,27,43,0.62);
+  backdrop-filter: blur(8px);
+  padding: 6px 12px; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+/* Body */
+.resource-card .body {
+  padding: 24px 26px 26px;
+  display: flex; flex-direction: column; gap: 10px;
+  flex: 1;
+}
+.resource-card .meta-row {
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+  font-family: var(--head); font-size: 11.5px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--steel);
+}
+.resource-card .meta-row .industry { color: var(--c, var(--blue)); }
+.resource-card .meta-row .dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--silver);
+}
+.resource-card h3 {
+  font-family: var(--head); font-size: 20px; font-weight: 600;
+  letter-spacing: -0.025em; line-height: 1.2;
+  color: var(--prussian);
+}
+.resource-card p {
+  font-size: 14px; color: var(--steel); line-height: 1.55;
+}
+.resource-card .read-more {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: auto; padding-top: 14px;
+  font-family: var(--head); font-size: 13px; font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--c, var(--blue-d));
+}
+.resource-card .read-more svg {
+  width: 14px; height: 14px;
+  stroke: currentColor; fill: none; stroke-width: 2.4;
+  stroke-linecap: round; stroke-linejoin: round;
+  transition: transform 0.18s;
+}
+.resource-card:hover .read-more svg { transform: translateX(4px); }
+
+/* Industry colour mappings */
+.resource-card.ind-consulting    { --c: var(--blue-d); }
+.resource-card.ind-finance       { --c: #047857; }
+.resource-card.ind-banking       { --c: var(--blue-d); }
+.resource-card.ind-cpg           { --c: #C2185B; }
+.resource-card.ind-fintech       { --c: #00A8B0; }
+.resource-card.ind-manufacturing { --c: #C2540D; }
+.resource-card.ind-strategy      { --c: var(--blue-d); }
+.resource-card.ind-aviation      { --c: var(--blue); }
+
+/* White paper specific */
+.resource-card.type-wp .tile {
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 20%, color-mix(in oklab, var(--c) 30%, var(--prussian)) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 70% at 20% 80%, color-mix(in oklab, var(--c) 18%, var(--prussian)) 0%, transparent 60%),
+    var(--prussian);
+  display: flex; align-items: center; justify-content: center;
+  padding: 32px;
+}
+.resource-card.type-wp .wp-stack {
+  position: relative;
+  width: 80%;
+  aspect-ratio: 4/5;
+  display: flex; align-items: center; justify-content: center;
+}
+.resource-card.type-wp .wp-doc {
+  position: absolute;
+  width: 80%; height: 100%;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 18px 40px -10px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.resource-card.type-wp .wp-doc.back-1 {
+  transform: rotate(-6deg) translate(-12%, 4%);
+  opacity: 0.5;
+  background: color-mix(in oklab, var(--c) 30%, #fff);
+}
+.resource-card.type-wp .wp-doc.back-2 {
+  transform: rotate(3deg) translate(-2%, 0);
+  opacity: 0.85;
+  background: color-mix(in oklab, var(--c) 14%, #fff);
+}
+.resource-card.type-wp .wp-doc.front {
+  transform: translate(8%, -2%);
+  background: #fff;
+  display: flex; flex-direction: column;
+  padding: 14% 12% 10%;
+  gap: 10px;
+}
+.resource-card.type-wp .wp-doc.front .wp-tag {
+  display: inline-block; align-self: flex-start;
+  font-family: var(--head); font-size: 8px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--c);
+  background: color-mix(in oklab, var(--c) 12%, #fff);
+  padding: 3px 8px; border-radius: 4px;
+}
+.resource-card.type-wp .wp-doc.front .wp-title {
+  font-family: var(--head); font-size: 11px; font-weight: 700;
+  line-height: 1.2; letter-spacing: -0.02em;
+  color: var(--prussian);
+}
+.resource-card.type-wp .wp-doc.front .wp-lines {
+  display: flex; flex-direction: column; gap: 3px;
+  margin-top: auto;
+}
+.resource-card.type-wp .wp-doc.front .wp-line {
+  height: 3px; border-radius: 2px;
+  background: var(--alice);
+}
+.resource-card.type-wp .wp-doc.front .wp-line.short { width: 60%; }
+.resource-card.type-wp .wp-doc.front .wp-bar {
+  margin-top: 8px;
+  height: 4px; border-radius: 2px;
+  background: var(--c);
+  width: 30%;
+}
+
+/* Hidden state for filtering */
+.resource-card.is-hidden { display: none !important; }
+.empty-state {
+  display: none;
+  padding: 64px 24px;
+  text-align: center;
+  color: var(--steel);
+  grid-column: 1 / -1;
+}
+.empty-state.on { display: block; }
+.empty-state h3 {
+  font-family: var(--head); font-size: 22px; font-weight: 600;
+  color: var(--prussian); margin-bottom: 8px;
+}
+
+/* ============================== FINAL CTA ============================== */
+.cta-section {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+  position: relative; overflow: hidden;
+  padding: 96px 0;
+}
+.cta-grid {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 64px; align-items: center;
+}
+.cta-grid .eyebrow { color: var(--blue); }
+.cta-grid h2 {
+  color: #fff;
+  font-family: var(--head);
+  font-size: clamp(36px, 4.6vw, 60px);
+  letter-spacing: -0.04em; line-height: 1.05;
+  margin-top: 14px;
+}
+.cta-grid h2 em { font-style: normal; color: var(--blue); }
+.cta-grid p {
+  margin-top: 18px;
+  color: rgba(255,255,255,0.82);
+  font-size: 16.5px; line-height: 1.6;
+  max-width: 520px;
+}
+.cta-grid .btn-row {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  margin-top: 28px;
+}
+.cta-grid .btn-ghost { border-color: rgba(255,255,255,0.4); color: #fff; }
+.cta-stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.cta-stat {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 18px;
+  padding: 24px;
+}
+.cta-stat .n {
+  font-family: var(--head); font-size: 40px; font-weight: 600;
+  letter-spacing: -0.04em; color: var(--blue);
+  line-height: 0.95;
+}
+.cta-stat .l {
+  font-size: 13px; color: rgba(255,255,255,0.78);
+  margin-top: 10px; line-height: 1.45;
+}
+@media (max-width: 1000px) {
+  .cta-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+</style>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== NAV ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== INTRO BAND ============================== -->
+<section class="intro" id="top">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <div class="subject-crumb">
+          <a href="../index.html">Resources</a>
+          <span class="sep">/</span>
+          <span class="now">Case Studies &amp; White Papers</span>
+        </div>
+        <h1>
+          Customer stories,<br/>
+          <em>practitioner&#8209;grade reading.</em>
+        </h1>
+      </div>
+      <p>
+        How finance, consulting and professional services firms run their AI, data, finance
+        and project management upskilling on Kubicle, plus white papers our practitioners
+        cite when they're scoping the next rollout.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FILTER ROW ============================== -->
+<section class="filter-section">
+  <div class="container">
+    <div class="filter-row">
+      <div class="filter-pills" role="tablist" aria-label="Filter resources by type">
+        <button class="filter-pill active" data-filter="all"     type="button" role="tab" aria-selected="true">All <span class="count">7</span></button>
+        <button class="filter-pill"        data-filter="type-cs" type="button" role="tab" aria-selected="false">Case Studies <span class="count">6</span></button>
+        <button class="filter-pill"        data-filter="type-wp" type="button" role="tab" aria-selected="false">White Papers <span class="count">1</span></button>
+      </div>
+      <div class="filter-meta"><strong id="resultCount">9</strong> resources &middot; updated quarterly</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== RESOURCE GRID ============================== -->
+<section class="grid-section" id="resources">
+  <div class="container">
+    <div class="resource-grid" id="resourceGrid">
+
+      <!-- 1: Heineken (Case Study, CPG) -->
+      <a class="resource-card type-cs ind-cpg" href="../Case_Study_pdfs/687cd4f809767a8b8a4c7395_heineken.pdf" target="_blank" rel="noopener">
+        <div class="tile">
+          <span class="type-chip">Case Study</span>
+          <img src="../img/case-studies/heineken.svg" alt="Heineken &times; Kubicle case study tile" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="industry">FMCG</span>
+            <span class="dot"></span>
+            <span>6 min read</span>
+          </div>
+          <h3>Streamlining skill development in a global beverage powerhouse.</h3>
+          <p>How HEINEKEN Beverages leveraged Kubicle's tailored learning solutions to unify and enhance the skills of their diverse team following a significant merger.</p>
+          <span class="read-more">Read case study <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <!-- 2: Jotun (Case Study, Manufacturing) -->
+      <a class="resource-card type-cs ind-manufacturing" href="../Case_Study_pdfs/68405fa91b15fa21731a1d7b_jotun.pdf" target="_blank" rel="noopener">
+        <div class="tile">
+          <span class="type-chip">Case Study</span>
+          <img src="../img/case-studies/jotun.svg" alt="Jotun &times; Kubicle case study tile" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="industry">Manufacturing</span>
+            <span class="dot"></span>
+            <span>5 min read</span>
+          </div>
+          <h3>Elevating data&#8209;driven decision making in Jotun.</h3>
+          <p>How Jotun is enhancing data&#8209;driven decision&#8209;making with comprehensive training from Kubicle.</p>
+          <span class="read-more">Read case study <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <!-- 3: ADL (Case Study, Strategy Consulting) -->
+      <a class="resource-card type-cs ind-strategy" href="../Case_Study_pdfs/68405f6be50890a598f4d6c2_adl.pdf" target="_blank" rel="noopener">
+        <div class="tile">
+          <span class="type-chip">Case Study</span>
+          <img src="../img/case-studies/adl.svg" alt="Arthur D. Little &times; Kubicle case study tile" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="industry">Consulting</span>
+            <span class="dot"></span>
+            <span>7 min read</span>
+          </div>
+          <h3>Elevating consulting proficiency through targeted training.</h3>
+          <p>How Arthur D. Little leveraged Kubicle to standardize skills and enhance global workforce productivity.</p>
+          <span class="read-more">Read case study <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <!-- 4: Onafriq (Case Study, Fintech) -->
+      <a class="resource-card type-cs ind-fintech" href="../Case_Study_pdfs/68405fa9531ceb79a2f80faf_onafriq.pdf" target="_blank" rel="noopener">
+        <div class="tile">
+          <span class="type-chip">Case Study</span>
+          <img src="../img/case-studies/onafriq.svg" alt="Onafriq &times; Kubicle case study tile" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="industry">Fintech</span>
+            <span class="dot"></span>
+            <span>5 min read</span>
+          </div>
+          <h3>Building consistency in organizational data skills.</h3>
+          <p>How Onafriq partnered with Kubicle to fill the skill gaps in their global finance teams and build confidence in their data proficiency.</p>
+          <span class="read-more">Read case study <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <!-- 5: Aviense (Case Study, Consulting) -->
+      <a class="resource-card type-cs ind-consulting" href="../Case_Study_pdfs/68405fa9a89ce1d885ef2555_aviense.pdf" target="_blank" rel="noopener">
+        <div class="tile">
+          <span class="type-chip">Case Study</span>
+          <img src="../img/case-studies/aviense.svg" alt="Aviense &times; Kubicle case study tile" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="industry">Consulting</span>
+            <span class="dot"></span>
+            <span>4 min read</span>
+          </div>
+          <h3>Optimizing efficiency in strategy consulting.</h3>
+          <p>How Aviense enhanced productivity and client service with targeted training from Kubicle.</p>
+          <span class="read-more">Read case study <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <!-- 6: Nurve Partners (Case Study, Boutique Consulting) -->
+      <a class="resource-card type-cs ind-consulting" href="../Case_Study_pdfs/687cd4f813e98af7bbcffa2b_nurve-partners.pdf" target="_blank" rel="noopener">
+        <div class="tile">
+          <span class="type-chip">Case Study</span>
+          <img src="../img/case-studies/nurve-partners.svg" alt="Nurve Partners &times; Kubicle case study tile" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="industry">Consulting</span>
+            <span class="dot"></span>
+            <span>5 min read</span>
+          </div>
+          <h3>Accelerating consultant training and efficiency.</h3>
+          <p>How Nurve Partners enhanced consultant skills and client experience with comprehensive training from Kubicle.</p>
+          <span class="read-more">Read case study <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <!-- 7: White Paper - AI Use Policy -->
+      <a class="resource-card type-wp ind-banking" href="../Case_Study_pdfs/689ca04497172f8f88659553_ai-use-policy-compressed.pdf" target="_blank" rel="noopener">
+        <div class="tile">
+          <span class="type-chip">White Paper</span>
+          <div class="wp-stack" aria-hidden="true">
+            <div class="wp-doc back-1"></div>
+            <div class="wp-doc back-2"></div>
+            <div class="wp-doc front">
+              <span class="wp-tag">Template</span>
+              <span class="wp-title">An Enterprise AI Use Policy</span>
+              <div class="wp-lines">
+                <div class="wp-line"></div>
+                <div class="wp-line"></div>
+                <div class="wp-line short"></div>
+              </div>
+              <div class="wp-bar"></div>
+            </div>
+          </div>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="industry">Policy Template</span>
+            <span class="dot"></span>
+            <span>Free download</span>
+          </div>
+          <h3>An enterprise AI use policy.</h3>
+          <p>A practitioner&#8209;ready AI use policy you can adapt for your organization. Covers acceptable use, data handling, model selection, prompt hygiene, oversight and review cadence.</p>
+          <span class="read-more">Download PDF <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <div class="empty-state" id="emptyState">
+        <h3>No resources match that filter yet.</h3>
+        <p>We're publishing new ones every quarter. Subscribe below and we'll send the next one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-grid">
+      <div>
+        <div class="eyebrow">Want yours next?</div>
+        <h2>
+          The next case study<br/>
+          could be <em>about your firm.</em>
+        </h2>
+        <p>
+          Every customer story on this page started with a 30&#8209;minute consultation. Tell
+          us about your team, the deliverables you're trying to lift, and we'll come back
+          with a benchmarked persona map and a sample rollout shape.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary btn-md" href="../try-free/index.html">Try for Free <span class="arr">&rarr;</span></a>
+          <a class="btn btn-ghost btn-md" href="../resources/webinars.html">Watch a Webinar</a>
+        </div>
+      </div>
+
+      <div class="cta-stats">
+        <div class="cta-stat">
+          <div class="n">300<span style="font-size: 0.55em;">+</span></div>
+          <div class="l">enterprise rollouts delivered to date</div>
+        </div>
+        <div class="cta-stat">
+          <div class="n">7<span style="font-size: 0.55em;">d</span></div>
+          <div class="l">standard time from kickoff to live program</div>
+        </div>
+        <div class="cta-stat">
+          <div class="n">80<span style="font-size: 0.55em;">%</span></div>
+          <div class="l">course completion against a 7% industry benchmark</div>
+        </div>
+        <div class="cta-stat">
+          <div class="n">4.7<span class="rating-of">/5</span></div>
+          <div class="l">average G2 rating across 45 categories</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<div id="site-footer"></div>
+
+<!-- ============================== SCRIPTS ============================== -->
+<script>
+// Filter pills
+(function () {
+  var pills = document.querySelectorAll('.filter-pill');
+  var grid  = document.getElementById('resourceGrid');
+  var empty = document.getElementById('emptyState');
+  var resultCount = document.getElementById('resultCount');
+  if (!pills.length || !grid) return;
+
+  pills.forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      var filter = pill.getAttribute('data-filter');
+      pills.forEach(function (p) {
+        var on = (p === pill);
+        p.classList.toggle('active', on);
+        p.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      var cards = grid.querySelectorAll('.resource-card');
+      var visible = 0;
+      cards.forEach(function (card) {
+        var match = (filter === 'all') || card.classList.contains(filter);
+        card.classList.toggle('is-hidden', !match);
+        if (match) visible++;
+      });
+      empty.classList.toggle('on', visible === 0);
+      if (resultCount) resultCount.textContent = visible;
+    });
+  });
+})();
+</script>
+</body>
+</html>

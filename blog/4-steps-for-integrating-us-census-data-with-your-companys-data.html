@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>4 Steps for Integrating US Census Data with Your Company’s Data | Kubicle Blog</title>
+<meta name="description" content="Using public data can help improve the quality of your data analysis. It allows you to fill in any gaps in your data or to create more insights into your company’s data. We’ll..."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/blog/4-steps-for-integrating-us-census-data-with-your-companys-data"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:url" content="https://www.kubicle.com/blog/4-steps-for-integrating-us-census-data-with-your-companys-data"/>
+<meta property="og:title" content="4 Steps for Integrating US Census Data with Your Company’s Data"/>
+<meta property="og:description" content="Using public data can help improve the quality of your data analysis. It allows you to fill in any gaps in your data or to create more insights into your company’s data. We’ll..."/>
+<meta property="og:image" content="img/posts/690e247d418880763cd9f6ce_30.jpg"/>
+<meta property="article:published_time" content="2018-09-11"/>
+<meta property="article:section" content="Data Literacy"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@kubicle"/>
+<meta name="twitter:title" content="4 Steps for Integrating US Census Data with Your Company’s Data"/>
+<meta name="twitter:description" content="Using public data can help improve the quality of your data analysis. It allows you to fill in any gaps in your data or to create more insights into your company’s data. We’ll..."/>
+<meta name="twitter:image" content="img/posts/690e247d418880763cd9f6ce_30.jpg"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "4 Steps for Integrating US Census Data with Your Company’s Data",
+  "image": "img/posts/690e247d418880763cd9f6ce_30.jpg",
+  "datePublished": "2018-09-11",
+  "author": { "@type": "Organization", "name": "Kubicle", "url": "https://www.kubicle.com" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "logo": { "@type": "ImageObject", "url": "img/posts/6929dc95a88edc17d8e3a3e4_LOGO-FILES-LOGO-MARK-WHITE-RGB-1.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.kubicle.com/blog/4-steps-for-integrating-us-census-data-with-your-companys-data" },
+  "articleSection": "Data Literacy"
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+<link rel="stylesheet" href="blog.css"/>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<div id="site-nav"></div>
+
+<!-- POST HEAD -->
+<section class="post-head">
+  <div class="container">
+    <div class="inner">
+      <div class="text">
+        <div class="crumb">
+          <a href="../index.html">Resources</a>
+          <span class="sep">/</span>
+          <a href="index.html">Blog</a>
+          <span class="sep">/</span>
+          <a href="topic/data-literacy.html" class="now">Data Literacy</a>
+        </div>
+        <h1>4 Steps for Integrating US Census Data with Your Company’s Data</h1>
+        <div class="meta">
+          <a href="topic/data-literacy.html" class="type-chip">Data Literacy</a>
+          <span>11 Sep 2018</span>
+          <span class="dot"></span>
+          <span>7 min read</span>
+        </div>
+      </div>
+      <div class="cover-frame">
+        <img src="img/posts/690e247d418880763cd9f6ce_30.jpg" alt="4 Steps for Integrating US Census Data with Your Company’s Data" loading="eager" decoding="async"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY + STICKY ASIDE -->
+<section class="post-body-section">
+  <div class="container">
+    <div class="post-body-layout">
+      <article class="post-body">
+<p>Using public data can help improve the quality of your data analysis. It allows you to fill in any gaps in your data or to create more insights into your company’s data. We’ll show you how to go about getting data from a public source, and in particular how to integrate public data with our company’s data.</p><p>In this post, we’ll demonstrate a relevant example of this. We’ll look at a company selling a software product throughout the USA, and we’ll add population data from the US census bureau to identify the parts of the country where their product is most popular. Note that we will use Power BI to create our dataset and visualizations in this post, but the principles could also be applied to other software applications.</p><h2>Step 1: Create an initial map</h2><p>The company we are focusing on is a technology company that sells a software product throughout the USA. Most of the sales are made remotely, so the company has a national reach without having a network of offices around the country. The heat map below shows the sales revenue generated by state. States shaded in red have lower revenues while green states have higher revenues.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Initial Map" src="img/posts/690e247d418880763cd9f6c8_683ecc8afb6d925e61ccb71f_image-115.jpg" width="auto" height="auto" loading="auto"></div></figure><p>By the looks of this chart, our revenues are highest in New York state. The contrast in colours suggest none of the other states has a similar level of revenue. It looks as if the states with the highest revenues are all in the eastern half of the country.</p><p>This insight is somewhat useful in itself, but we should consider do we have high revenues in New York because the people there really like the product or is it just because the state has a high population. After all, <a href="https://imgs.xkcd.com/comics/heatmap.png" target="_blank">it’s well known</a> that heat maps like this can often reflect population densities and little else. We would like to adjust our heat map to account for the population size in the areas we are making sales. We’ll do this by importing population data from the US census bureau into Power BI and incorporating it into our analysis.</p><p><strong>Step 2: Import additional data</strong></p><p>Below we can see some of the sales dataset that we used to create the map above. Although we have created our heat map showing revenue by state, we can see that our dataset actually includes more detailed address information that shows the exact address of each company that we make a sale to. We are going to identify the population for the city in each transaction and add it to this dataset.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Import US Census data into Power BI Query Editor" src="img/posts/690e247d418880763cd9f6c6_683ecc8a05e4ad450f2690a0_image-116.jpg" width="auto" height="auto" loading="auto"></div></figure><p>We can get data on population by city from the US census bureau at <a href="https://www.census.gov/data/datasets/2016/demo/popest/total-cities-and-towns.html" target="_blank">this page</a>, where we download the dataset for incorporated places for the whole United States. Our sales data is from 2016 so we want to identify population by city for this year. Population by city is only measured at the official census every 10 years, however population estimates are provided annually, which is good enough for us. In this case, the data is downloaded as a csv file from the American Fact Finder, and when we bring it into Power BI through the Query Editor, it looks like this.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Clean US Census data in Query Editor" src="img/posts/690e247d418880763cd9f6cf_683ecc8b1c966fe46d23a03d_image-117.jpg" width="auto" height="auto" loading="auto"></div></figure><p>As we can see, the city name is included in the third column, called Geography. There are then a series of columns giving population estimates for 2010 to 2016. We need to reduce this column to show only the data we are interested in. The <a href="https://kubicle.com/learn/power-bi/introduction-to-the-query-editor" target="_blank">Query Editor</a> is not the main focus of this post, so we won’t go through the steps in detail. The main steps involve removing the unnecessary columns, and splitting the geography column into a City column and a State Name column. We also remove unnecessary words like “city” and “town” that you can see in the Geography column. Finally, we removed a small number of duplicate records, where the same City and State combination appeared more than once. After these steps, the population data looks like this.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="City, States & Population US Census Data" src="img/posts/690e247d418880763cd9f5c8_683ecc8a16ceade850a4414c_image-119.jpg" width="auto" height="auto" loading="auto"></div></figure><p>We’re going to match cities from the sales data to the population data by creating a column that contains the city name and state code. However, we have an issue. While our sales data contains the common two letter US state codes, the population data contains full state names. In order to match these up, we’ll introduce a third table to the model.</p><p>This table will be downloaded from the web, specifically from <a href="https://en.wikipedia.org/wiki/List_of_U.S._state_abbreviations" target="_blank">this</a> Wikipedia page. Again, the page needs a little bit of cleaning in the Query Editor, mainly to remove unneeded rows and columns, but once that’s done, we get the table seen below.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Power BI States and Codes" src="img/posts/690e247d418880763cd9f588_683ecc890a241b5c0a00514b_image-120.jpg" width="auto" height="auto" loading="auto"></div></figure><p>Once we have these new tables, we can import them into Power BI Desktop and start creating the data model.</p><h2>Step 3: Set up the data model</h2><p>Below we see the data model after we import the three tables into Power BI Desktop. Notice that a relationship has automatically been created between the population table and the State codes table, using the State Name field. No relationship has been created to the sales table. We’ll create a column in the population table and the sales table that will be used to create a relationship between these tables.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="" src="img/posts/690e247d418880763cd9f6c7_683ecc8a8466d30e520f8f48_image-122.jpg" width="auto" height="auto" loading="auto"></div></figure><p>The City and State column is created by concatenating the city name and the state name, with a comma and space also included for formatting purposes. Below, we can see this column in the population table. Note that we also added a column containing the state codes to the population table, using the related function to get the state codes from the State Codes table.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Power Query City and State Column" src="img/posts/690e247d418880763cd9f62f_683ecc8a6e518489817da0f6_image-123.jpg" width="auto" height="auto" loading="auto"></div></figure><p>We then add a similar column to the Sales table, and use it to link the Sales table and the Population table. Once this relationship is set up, we add a new column to the sales table, that uses the related function to get the population of the relevant city. The data model will then look like the image below.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Census and Sales data relationship" src="img/posts/690e247d418880763cd9f6cd_683ecc8ad505ce2d88702c7e_image-125.jpg" width="auto" height="auto" loading="auto"></div></figure><p><strong>Step 4: Create new maps</strong></p><p>Now that we have set up the data model, we can create a measure that adjusts sales revenue according to the population of the cities where the sales were recorded. We create a measure dividing the sum of revenue by the sum of the city population column from the sales table. When we create a map for each state, we will therefore get a measure which divides the revenue for that state by the population of the cities in that state where the sales occurred.</p><p>When we create a heat map of this measure, we get the following:</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Incorrect Map" src="img/posts/690e247d418880763cd9f6cc_683ecc8a81b5b16e98d9f179_image-126.jpg" width="auto" height="auto" loading="auto"></div></figure><p>This is clearly not right. The issue is that Delaware, highlighted in green on the map above, has a value of infinity. This is because only one sales transaction took place in Delaware, and our population dataset does not have a value for the city where that one transaction took place. As a result, we add a filter that removes Delaware, and we get the following map, which is correct.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Sales by state accounting for population density" src="img/posts/690e247d418880763cd9f6cb_683ecc8aee93dad5c22bbc90_image-127.jpg" width="auto" height="auto" loading="auto"></div></figure><p>We can see here that Maryland generates the most revenues when we adjust for population size. Judging by the shading, it has a large margin over the other states in this regard. However, the general patterns we saw before seem to hold, that states in the eastern half of the country generate more revenue for the company, even when we adjust for population.</p><p>Let’s finish by visualising this in a different way. Below, we’ve created a table that ranks each state by its revenue, and by revenue adjusted by population. This will allow us to easily see which states perform differently by the two metrics.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Rank of sales by state total and population density adjusted" src="img/posts/690e247d418880763cd9f647_683ecc8a385ebc6bdcc26db9_image-128.jpg" width="auto" height="auto" loading="auto"></div></figure><p>As we can see, New York (NY) may generate the most revenue overall, but when its large population is taken into account,its rank drops considerably. In fact, the ranking of most states drops when population is accounted for. By contrast, New Jersey (NJ) remains popular using both metrics. Therefore, it’s probably reasonable to say our product is actually more popular in New Jersey than New York.</p><p><strong>Conclusion</strong></p><p>In this post, we have seen how you can broaden your analytics by adding data from public, external sources. We have seen how adding population data can lead to some notable changes to our conclusions than we arrived at initially.</p><p>In this case, we have used a relatively simple example. The US census bureau, as well as other organisations like them around the world, provide highly extensive data. To give one example, you could identify income levels in specific areas and identify income levels in the areas you are selling into. This could help you identify whether you are selling your products to the sort of customers that you are looking to reach.</p>
+      </article>
+
+      <aside class="post-aside">
+        <div class="aside-card">
+          <h3>Try it yourself.</h3>
+          <p>30+ certified Kubicle courses, free. No credit card.</p>
+          <a class="btn btn-md" href="../try-free/">Try for Free <span class="arr">&rarr;</span></a>
+          <p class="aside-proof">Used by 1M+ professionals.</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="post-foot">
+      <a class="back" href="index.html">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M11 6l-6 6 6 6"/></svg>
+        Back to all posts
+      </a>
+      <div class="share">
+        <span>Share</span>
+        <a class="btn-share" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kubicle.com/blog/4-steps-for-integrating-us-census-data-with-your-companys-data" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="11" x2="8" y2="17"/><circle cx="8" cy="7.5" r="1"/><path d="M12 17v-3.5a2.5 2.5 0 0 1 5 0V17"/><line x1="12" y1="11" x2="12" y2="17"/></svg>
+        </a>
+        <a class="btn-share" href="mailto:?subject=4%20Steps%20for%20Integrating%20US%20Census%20Data%20with%20Your%20Company’s%20Data&body=Read%20this%20on%20Kubicle:%20https://www.kubicle.com/blog/4-steps-for-integrating-us-census-data-with-your-companys-data" aria-label="Share by email">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-section">
+  <div class="container">
+    <div class="related-head">
+      <div>
+        <div class="eyebrow">Keep reading</div>
+        <h2>More from the Kubicle blog.</h2>
+      </div>
+      <a href="index.html">All posts <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="posts-grid">
+      <a class="post-card type-ai" href="beyond-one-size-fits-all-a-persona-based-blueprint-for-enterprise-ai-literacy.html">
+        <div class="cover">
+          <span class="type-chip">AI</span>
+          <img src="img/posts/690e247d418880763cd9fbc3_ChatGPT-Image-Oct-29-2025-11_44_03-AM.jpg" alt="Beyond “One-Size-Fits-All”: A Persona-Based Blueprint for Enterprise AI Literacy" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="date">29 Oct 2025</span>
+            <span class="dot"></span>
+            <span>5 min read</span>
+          </div>
+          <h3>Beyond “One-Size-Fits-All”: A Persona-Based Blueprint for Enterprise AI Literacy</h3>
+          <p>This post explores why so many enterprise AI initiatives fail, and how a human-centered, persona-based approach can turn that failure into success. It unpacks the real reasons...</p>
+          <span class="read-more">Read article <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a class="post-card type-learning" href="how-to-calculate-roi-of-graduate-development-with-a-ready-to-use-calculator.html">
+        <div class="cover">
+          <span class="type-chip">Learning</span>
+          <img src="img/posts/690e247d418880763cd9fbc2_roi-calculator.jpg" alt="How to Calculate ROI of Graduate Development with a Ready-to-Use Calculator" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="date">30 Sep 2025</span>
+            <span class="dot"></span>
+            <span>5 min read</span>
+          </div>
+          <h3>How to Calculate ROI of Graduate Development with a Ready-to-Use Calculator</h3>
+          <p>Did you know that the average graduate takes over four months of training to reach full productivity? This costs firms hundreds of thousands (or more!) every year. Graduate...</p>
+          <span class="read-more">Read article <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a class="post-card type-news" href="fall-2025-celebrating-our-latest-g2-awards.html">
+        <div class="cover">
+          <span class="type-chip">News</span>
+          <img src="img/posts/690e247d418880763cd9fbc0_g2-fall-blog.jpg" alt="Fall 2025 | Celebrating Our Latest G2 Awards" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="date">17 Sep 2025</span>
+            <span class="dot"></span>
+            <span>4 min read</span>
+          </div>
+          <h3>Fall 2025 | Celebrating Our Latest G2 Awards</h3>
+          <p>We’re thrilled to share that Kubicle has once again been recognized by G2, earning a fresh set of badges that highlight the impact we’re making with learners and enterprises...</p>
+          <span class="read-more">Read article <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div id="site-footer"></div>
+
+<script>
+</script>
+</body>
+</html>

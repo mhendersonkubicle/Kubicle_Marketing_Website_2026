@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>AI Literacy Training for Modern Workforces | Kubicle</title>
+<meta name="description" content="AI literacy training programmes for employees, managers and executives. Build confidence, cut wasted time and turn rapid change into lasting advantage. Trusted by 800+ organisations."/>
+<meta name="keywords" content="AI literacy, AI literacy training, AI training for employees, corporate AI literacy, AI literacy for executives, AI persona framework, EU AI Act training, responsible AI training"/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/specialist-programs/ai-literacy"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:url" content="https://www.kubicle.com/specialist-programs/ai-literacy"/>
+<meta property="og:title" content="AI Literacy Training for Modern Workforces | Kubicle"/>
+<meta property="og:description" content="AI literacy training for the whole organisation. Build confidence, cut wasted time and turn rapid change into lasting advantage."/>
+<meta property="og:image" content="https://www.kubicle.com/img/ai-training-for-employees/68dba25140f09875124166a9_skills-workplace-readiness.avif"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@kubicle"/>
+<meta name="twitter:title" content="AI Literacy Training for Modern Workforces | Kubicle"/>
+<meta name="twitter:description" content="AI literacy training for the whole organisation. Trusted by 800+ companies."/>
+<meta name="twitter:image" content="https://www.kubicle.com/img/ai-training-for-employees/68dba25140f09875124166a9_skills-workplace-readiness.avif"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Kubicle AI Literacy Training",
+  "description": "AI literacy training programmes for the modern workforce, covering employees, managers and executives. Built on the four-persona framework (Apprentice, Navigator, Architect, Strategist) and aligned to the EU AI Act.",
+  "url": "https://www.kubicle.com/specialist-programs/ai-literacy",
+  "provider": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "sameAs": "https://www.kubicle.com"
+  },
+  "image": "https://www.kubicle.com/img/ai-training-for-employees/68dba25140f09875124166a9_skills-workplace-readiness.avif",
+  "isPartOf": {
+    "@type": "WebPage",
+    "@id": "https://www.kubicle.com/academies/ai",
+    "name": "Kubicle AI Academy"
+  },
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Enterprise teams adopting AI literacy"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "bestRating": "5",
+    "ratingCount": "300"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+
+<style>
+/* ============================== LAYOUT ============================== */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+section { padding: 112px 0; position: relative; overflow: hidden; }
+@media (max-width: 860px) {
+  .container { padding: 0 24px; }
+  section { padding: 80px 0; }
+}
+
+/* AI accent palette (matches academies/ai/ visual identity) */
+:root {
+  --persona-apprentice: #04ADD9;
+  --persona-navigator:  #0496FF;
+  --persona-architect:  #5D4FFF;
+  --persona-strategist: #8B5CF6;
+}
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 112px 0 132px;
+  background:
+    linear-gradient(to right, rgba(11,27,43,0.96) 0%, rgba(11,27,43,0.92) 35%, rgba(11,27,43,0.78) 55%, rgba(11,27,43,0.38) 75%, rgba(11,27,43,0.08) 100%),
+    url('../img/ai-training-for-employees/68dba25140f09875124166a9_skills-workplace-readiness.avif') center right / cover no-repeat,
+    var(--prussian);
+  color: #fff;
+  position: relative;
+}
+.hero-content { position: relative; z-index: 3; max-width: 880px; }
+.hero .subject-crumb {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--body); font-size: 13px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 18px;
+}
+.hero .subject-crumb a { color: rgba(255,255,255,0.55); }
+.hero .subject-crumb a:hover { color: #fff; }
+.hero .subject-crumb .sep { opacity: 0.6; }
+.hero .subject-crumb .now { color: var(--blue); }
+.hero h1 em { font-style: normal; color: var(--blue); }
+.hero-sub {
+  color: rgba(255,255,255,0.85);
+  max-width: 700px;
+  font-size: 20px; line-height: 1.5;
+  letter-spacing: -0.01em;
+  margin-top: 28px;
+}
+.hero-cta-row {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  align-items: center;
+  margin-top: 36px;
+}
+.hero-trust {
+  margin-top: 44px;
+  display: flex; align-items: center; gap: 36px;
+  flex-wrap: wrap;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.hero-trust img { display: block; height: 36px; width: auto; }
+.hero-trust .stars { height: 22px; }
+.hero-trust .rating-val { font-family: var(--head); font-weight: 600; font-size: 15px; color: #fff; }
+.hero-trust .rating-label { font-size: 12.5px; color: rgba(255,255,255,0.65); line-height: 1.4; }
+.hero-trust .ht-item { display: flex; align-items: center; gap: 12px; }
+.hero-trust .pip {
+  display: flex; flex-direction: column;
+  border-left: 1px solid rgba(255,255,255,0.12);
+  padding-left: 36px;
+}
+.hero-trust .pip .num { font-family: var(--head); font-weight: 600; font-size: 20px; color: #fff; letter-spacing: -0.02em; }
+.hero-trust .pip .lbl { font-size: 12px; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.12em; margin-top: 4px; }
+
+/* ============================== LOGOS STRIP ============================== */
+.logos-strip {
+  background: var(--prussian);
+  color: #fff;
+  padding: 56px 0;
+  text-align: center;
+}
+.logos-strip .lead {
+  font-family: var(--head); font-size: 16px; font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.06em; text-transform: uppercase;
+  max-width: 720px; margin: 0 auto 28px;
+}
+.logos-strip .lead em { font-style: normal; color: var(--blue); }
+.logos-strip-grid {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: 20px; align-items: center;
+}
+.logos-strip-grid .logo-cell {
+  height: 80px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 8px;
+}
+.logos-strip-grid .logo-cell img {
+  max-height: 38px; max-width: 100%;
+  width: auto; object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.15s;
+}
+.logos-strip-grid .logo-cell img.invert { filter: brightness(0) invert(1); }
+.logos-strip-grid .logo-cell:hover img { opacity: 1; }
+@media (max-width: 900px) { .logos-strip-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 500px) { .logos-strip-grid { grid-template-columns: 1fr 1fr; } }
+
+/* ============================== ROMETTY QUOTE ============================== */
+.rometty {
+  background: var(--alice);
+  text-align: center;
+  padding: 80px 0;
+}
+.rometty .eyebrow {
+  font-family: var(--body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 22px;
+}
+.rometty blockquote {
+  font-family: var(--head);
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: var(--prussian);
+  max-width: 920px; margin: 0 auto;
+  line-height: 1.25;
+}
+.rometty blockquote em { font-style: normal; color: var(--blue); }
+.rometty .attrib {
+  margin-top: 24px;
+  font-family: var(--body); font-size: 14px; font-weight: 600;
+  color: var(--steel);
+  letter-spacing: 0.04em;
+}
+
+/* ============================== AUDIENCE (Who we train) ============================== */
+.audience-head { max-width: 880px; }
+.audience-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 56px;
+}
+.audience-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 28px;
+  display: flex; flex-direction: column;
+  gap: 18px;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.audience-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--blue);
+  box-shadow: 0 24px 50px -30px rgba(4,150,255,0.25);
+}
+.audience-card .img-wrap {
+  width: 100%; aspect-ratio: 4 / 3;
+  border-radius: 14px; overflow: hidden;
+  background: var(--alice);
+  display: flex; align-items: center; justify-content: center;
+}
+.audience-card .img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.audience-card h3 {
+  font-family: var(--head); font-size: 22px; font-weight: 600;
+  letter-spacing: -0.02em; color: var(--prussian);
+}
+.audience-card p {
+  font-size: 14.5px; color: var(--steel); line-height: 1.6;
+}
+.audience-card .stat-tag {
+  background: var(--blue-soft);
+  color: var(--blue-d);
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 13px; line-height: 1.5;
+  margin-top: auto;
+}
+.audience-card .stat-tag strong { font-weight: 700; }
+@media (max-width: 1000px) { .audience-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px)  { .audience-grid { grid-template-columns: 1fr; } }
+
+.audience-cta { margin-top: 56px; text-align: center; }
+
+/* ============================== PERSONA FRAMEWORK ============================== */
+.personas-sec {
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 20%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+  color: #fff;
+}
+.personas-sec .container > .copy { max-width: 880px; }
+.personas-sec .eyebrow { color: var(--blue); }
+.personas-sec h2 { color: #fff; }
+.personas-sec h2 em { font-style: normal; color: var(--blue); }
+.personas-sec .body-lg { color: rgba(255,255,255,0.78); margin-top: 22px; max-width: 720px; }
+.persona-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 56px;
+}
+.persona-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 22px;
+  padding: 24px;
+  display: flex; flex-direction: column;
+  gap: 18px;
+  transition: transform 0.18s, border-color 0.18s, background 0.18s;
+}
+.persona-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(4,150,255,0.5);
+  background: rgba(255,255,255,0.06);
+}
+.persona-card .persona-tile {
+  position: relative;
+  width: 100%; aspect-ratio: 1;
+  border-radius: 16px; overflow: hidden;
+  background: linear-gradient(135deg, var(--c), color-mix(in oklab, var(--c) 60%, var(--prussian)));
+}
+.persona-card .persona-photo {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center top;
+}
+.persona-card .persona-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(11,27,43,0.55) 100%);
+}
+.persona-card .audience-tag {
+  display: inline-block;
+  font-family: var(--body); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--c);
+}
+.persona-card h3 {
+  font-family: var(--head); font-size: 22px; font-weight: 600;
+  letter-spacing: -0.02em; color: #fff;
+}
+.persona-card p {
+  font-size: 14px; color: rgba(255,255,255,0.78); line-height: 1.6;
+}
+.persona-card.apprentice  { --c: var(--persona-apprentice); }
+.persona-card.navigator   { --c: var(--persona-navigator); }
+.persona-card.architect   { --c: var(--persona-architect); }
+.persona-card.strategist  { --c: var(--persona-strategist); }
+@media (max-width: 1100px) { .persona-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px)  { .persona-grid { grid-template-columns: 1fr; } }
+
+.persona-cta { text-align: center; margin-top: 56px; }
+
+/* ============================== WHY (mini tabs) ============================== */
+.why { background: #fff; }
+.why-head { max-width: 820px; }
+.why-layout {
+  display: grid; grid-template-columns: 380px 1fr;
+  gap: 56px;
+  margin-top: 56px;
+  align-items: start;
+}
+.why-tabs {
+  display: flex; flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(11,27,43,0.10);
+}
+.why-tab {
+  background: transparent; border: 0;
+  border-bottom: 1px solid rgba(11,27,43,0.10);
+  text-align: left;
+  padding: 22px 0;
+  font-family: var(--head);
+  font-size: 18px; font-weight: 500;
+  color: var(--steel);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; width: 100%;
+  transition: color 0.18s;
+  letter-spacing: -0.01em;
+}
+.why-tab:hover { color: var(--prussian); }
+.why-tab[aria-selected="true"] { color: var(--prussian); font-weight: 600; }
+.why-tab .indicator {
+  width: 24px; height: 24px; border-radius: 50%;
+  border: 2px solid rgba(11,27,43,0.18);
+  flex-shrink: 0;
+  transition: background 0.18s, border-color 0.18s;
+}
+.why-tab[aria-selected="true"] .indicator { background: var(--blue); border-color: var(--blue); }
+.why-panels { position: relative; min-height: 380px; }
+.why-panel { display: none; }
+.why-panel[aria-hidden="false"] { display: block; }
+.why-panel .visual {
+  background: var(--alice);
+  border-radius: 22px;
+  padding: 32px;
+  margin-bottom: 24px;
+  display: flex; align-items: center; justify-content: center;
+}
+.why-panel .visual img { max-width: 100%; max-height: 280px; border-radius: 14px; }
+.why-panel h3 {
+  font-family: var(--head); font-size: 24px; font-weight: 600;
+  letter-spacing: -0.025em; color: var(--prussian);
+  margin-bottom: 14px;
+}
+.why-panel p { font-size: 16px; color: var(--steel); line-height: 1.65; }
+@media (max-width: 900px) {
+  .why-layout { grid-template-columns: 1fr; gap: 32px; }
+  .why-panels { min-height: auto; }
+}
+
+/* ============================== RESULTS ============================== */
+.results { background: var(--alice); }
+.results-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 56px;
+}
+.result-card {
+  background: #fff;
+  border: 1px solid rgba(11,27,43,0.06);
+  border-radius: 22px;
+  padding: 28px;
+}
+.result-card .kicker {
+  font-family: var(--body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--blue);
+}
+.result-card .big {
+  font-family: var(--head); font-size: clamp(38px, 4vw, 56px);
+  font-weight: 600; letter-spacing: -0.03em; line-height: 0.95;
+  color: var(--prussian);
+  margin-top: 8px;
+}
+.result-card .big em { font-style: normal; color: var(--blue); }
+.result-card h4 {
+  font-family: var(--head); font-size: 18px; font-weight: 600;
+  letter-spacing: -0.02em; color: var(--prussian);
+  margin-top: 18px;
+}
+.result-card p { font-size: 14px; color: var(--steel); line-height: 1.6; margin-top: 8px; }
+@media (max-width: 1100px) { .results-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .results-grid { grid-template-columns: 1fr; } }
+
+/* ============================== AI LIBRARY ============================== */
+.library-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 56px;
+}
+.lib-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 28px;
+  display: flex; flex-direction: column;
+  gap: 14px;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+  position: relative;
+}
+.lib-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--blue);
+  box-shadow: 0 24px 50px -30px rgba(4,150,255,0.25);
+}
+.lib-card .lib-kicker {
+  font-family: var(--body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--blue);
+}
+.lib-card .pop {
+  position: absolute; top: 22px; right: 22px;
+  background: var(--blue);
+  color: #fff;
+  font-family: var(--body); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.lib-card h3 {
+  font-family: var(--head); font-size: 20px; font-weight: 600;
+  letter-spacing: -0.02em; color: var(--prussian);
+  line-height: 1.2;
+}
+.lib-card p { font-size: 14px; color: var(--steel); line-height: 1.55; }
+.lib-card .meta {
+  display: flex; gap: 22px; margin-top: auto; padding-top: 16px;
+  border-top: 1px solid var(--alice);
+}
+.lib-card .meta .m-item { display: flex; align-items: center; gap: 8px; }
+.lib-card .meta .m-icn {
+  width: 22px; height: 22px; flex-shrink: 0;
+  color: var(--blue-d);
+}
+.lib-card .meta .m-icn svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.lib-card .meta .m-val { font-size: 13px; font-weight: 600; color: var(--prussian); }
+@media (max-width: 1000px) { .library-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .library-grid { grid-template-columns: 1fr; } }
+
+/* ============================== EU AI ACT ============================== */
+.eu-act {
+  background:
+    radial-gradient(ellipse 60% 80% at 90% 20%, rgba(4,150,255,0.2), transparent 70%),
+    var(--prussian);
+  color: #fff;
+  position: relative; overflow: hidden;
+}
+.eu-act-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
+.eu-act .eyebrow { color: var(--blue); }
+.eu-act h2 { color: #fff; }
+.eu-act h2 em { font-style: normal; color: var(--blue); }
+.eu-act p { color: rgba(255,255,255,0.82); font-size: 16.5px; line-height: 1.65; margin-top: 18px; max-width: 620px; }
+.eu-act .cta-row { margin-top: 32px; }
+.eu-act .visual {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 22px;
+  padding: 40px;
+  text-align: center;
+}
+.eu-act .visual .euro {
+  font-family: var(--head);
+  font-size: clamp(120px, 14vw, 200px);
+  font-weight: 600;
+  line-height: 0.85;
+  color: var(--blue);
+  letter-spacing: -0.05em;
+}
+.eu-act .visual .stars {
+  display: flex; justify-content: center; gap: 6px; margin-top: 28px;
+}
+.eu-act .visual .stars svg { width: 22px; height: 22px; fill: #FFB800; }
+.eu-act .visual .meta {
+  margin-top: 14px;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+@media (max-width: 900px) {
+  .eu-act-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ============================== FEATURE CHIPS ============================== */
+.features-head { max-width: 760px; }
+.features-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 56px;
+}
+.feature-chip {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 18px;
+  padding: 22px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.feature-chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--blue);
+  box-shadow: 0 18px 30px -22px rgba(4,150,255,0.25);
+}
+.feature-chip .ic {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--blue-soft);
+  color: var(--blue-d);
+  display: flex; align-items: center; justify-content: center;
+}
+.feature-chip .ic svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.feature-chip h4 {
+  font-family: var(--head); font-size: 16px; font-weight: 600;
+  color: var(--prussian); letter-spacing: -0.01em;
+}
+.feature-chip p { font-size: 13.5px; color: var(--steel); line-height: 1.5; }
+@media (max-width: 1100px) { .features-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 700px)  { .features-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 500px)  { .features-grid { grid-template-columns: 1fr; } }
+
+/* ============================== FAQ ============================== */
+.faq-list { margin-top: 16px; border-top: 1px solid var(--alice); max-width: 920px; }
+.faq-item { border-bottom: 1px solid var(--alice); }
+.faq-q {
+  padding: 24px 0;
+  display: flex; align-items: center; justify-content: space-between;
+  cursor: pointer;
+  font-family: var(--head);
+  font-size: 20px; font-weight: 500;
+  color: var(--prussian);
+  user-select: none;
+  list-style: none;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q .plus {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--alice); color: var(--blue-d);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 400;
+  transition: transform 0.25s, background 0.2s;
+  flex-shrink: 0; margin-left: 16px;
+}
+.faq-item[open] .faq-q .plus {
+  transform: rotate(45deg);
+  background: var(--blue); color: #fff;
+}
+.faq-a { padding-bottom: 24px; color: var(--steel); font-size: 15.5px; line-height: 1.65; max-width: 800px; }
+
+/* ============================== FINAL CTA ============================== */
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+  color: #fff; position: relative; overflow: hidden;
+}
+.final-cta h2 { color: #fff; }
+.final-cta h2 em { font-style: normal; color: var(--blue); }
+.final-cta .body-lg { color: rgba(255,255,255,0.82); max-width: 720px; margin-top: 18px; }
+.final-cta .cta-row { margin-top: 32px; }
+.final-cta .assurance-list { display: grid; gap: 12px; margin-top: 28px; }
+.final-cta .assurance-list span {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14.5px; color: rgba(255,255,255,0.85);
+}
+.final-cta .assurance-list svg.tick {
+  width: 16px; height: 16px;
+  stroke: var(--blue); fill: none;
+  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+/* Geometric accents */
+.geo-arch {
+  position: absolute; pointer-events: none;
+  border: clamp(28px, 4vw, 48px) solid var(--blue);
+  border-radius: 50%;
+  border-bottom-color: transparent;
+}
+.geo-ring {
+  position: absolute; pointer-events: none;
+  border: clamp(16px, 2.5vw, 28px) solid var(--blue);
+  border-radius: 50%;
+}
+</style>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== NAV ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-content">
+      <div class="subject-crumb">
+        <a href="index.html">Specialist Programs</a>
+        <span class="sep">/</span>
+        <span class="now">AI Literacy</span>
+        <span class="sep" aria-hidden="true">&middot;</span>
+        <a href="../academies/ai/index.html" style="color: var(--blue); border-bottom: 1px dashed rgba(4,150,255,0.5);">Part of the AI Academy</a>
+      </div>
+      <h1 class="h-display">
+        AI literacy training<br/>
+        <em>for modern workforces.</em>
+      </h1>
+      <p class="hero-sub">
+        Our AI literacy training programmes for employees, managers and executives build confidence,
+        cut wasted time, and turn rapid technological change into lasting advantage.
+      </p>
+      <div class="hero-cta-row">
+        <a class="btn btn-primary btn-lg" href="../try-free/index.html">Try Our Program for Free <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost btn-lg" href="../contact.html">Book a Demo <span class="arr">&rarr;</span></a>
+      </div>
+      <div class="hero-trust">
+        <div class="ht-item">
+          <img src="../img/ai-training-for-employees/68de841728e6cb5e57c1455c_trustpilot.avif" alt="Trustpilot rating"/>
+        </div>
+        <div class="ht-item">
+          <img class="stars" src="../img/ai-training-for-employees/681b67125a763aa768234807_stars.svg" alt=""/>
+          <div>
+            <div class="rating-val">4.7 on G2</div>
+            <div class="rating-label">Verified enterprise reviews</div>
+          </div>
+        </div>
+        <div class="pip">
+          <span class="num">800+</span>
+          <span class="lbl">Organisations trained</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== LOGOS STRIP ============================== -->
+<section class="logos-strip">
+  <div class="container">
+    <p class="lead">Building <em>AI literacy</em> at companies like</p>
+    <div class="logos-strip-grid">
+      <div class="logo-cell"><img src="../img/shared/68c2cad5cf0b314fbcc87474_bain-logo-white.png" alt="Bain &amp; Company"/></div>
+      <div class="logo-cell"><img class="invert" src="../img/shared/67c0476eb0f8c4d3c4354272_ab4654fe9cf282ba2459391b57d412b7_image-11.png" alt="PwC"/></div>
+      <div class="logo-cell"><img src="../img/shared/68c2caef8b6fdbbd84310a36_kpmg-logo-white.png" alt="KPMG"/></div>
+      <div class="logo-cell"><img src="../img/shared/68c2caf00a998ed623dbf3d5_oliver-wyman-logo-white.png" alt="Oliver Wyman"/></div>
+      <div class="logo-cell"><img src="../img/shared/68c2caefdc26eb4f7dceb524_lek-logo-white.png" alt="L.E.K. Consulting"/></div>
+      <div class="logo-cell"><img class="invert" src="../img/shared/totalenergies-logo.png" alt="TotalEnergies"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ROMETTY QUOTE ============================== -->
+<section class="rometty">
+  <div class="container">
+    <div class="eyebrow">Building AI Literacy</div>
+    <blockquote>
+      "AI won't replace humans, but those who use AI <em>will replace those who don't."</em>
+    </blockquote>
+    <div class="attrib">&mdash; Ginni Rometty</div>
+  </div>
+</section>
+
+<!-- ============================== WHO WE TRAIN ============================== -->
+<section>
+  <div class="container">
+    <div class="audience-head">
+      <div class="eyebrow">Who we train</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        AI skills for the<br/>
+        <span style="color: var(--blue);">entire organisation.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 20px; color: var(--steel); max-width: 720px;">
+        To compete, organisations need AI capacity across leaders, managers, and employees.
+        Kubicle has delivered formal AI instruction to thousands of professionals in over 800
+        organisations, enabling safe and effective technology adoption. For the commercial overview
+        of how this works as
+        <a href="../ai-training-for-employees.html" style="color: var(--blue-d); font-weight: 600;">AI training programs for employees</a>,
+        start there.
+      </p>
+    </div>
+
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="img-wrap"><img src="../img/Character_profiles/portraits/female_06.a.png" alt=""/></div>
+        <h3>C-Suite Training</h3>
+        <p>
+          AI is reshaping strategy faster than most executives can respond. Kubicle's AI literacy
+          for senior leaders provides clarity, risk evaluation, and a responsible growth model
+          trusted by FTSE 100 and Fortune 500 teams.
+        </p>
+        <div class="stat-tag"><strong>99%</strong> of C-suite leaders know generative AI, but <strong>47%</strong> say progress is stalled by skill gaps. <em style="font-style:normal; color: var(--steel);">(McKinsey)</em></div>
+      </div>
+
+      <div class="audience-card">
+        <div class="img-wrap"><img src="../img/Character_profiles/portraits/male_02.a.png" alt=""/></div>
+        <h3>Manager Training</h3>
+        <p>
+          Managers sit at the frontline of AI adoption: piloting tools, supervising outputs, and
+          driving workflow change. Kubicle's AI literacy for business leaders helps managers
+          assess use cases, prevent compliance lapses, and guide their teams responsibly.
+        </p>
+        <div class="stat-tag"><strong>33%</strong> of managers now use AI frequently, double the rate of individual contributors. <em style="font-style:normal; color: var(--steel);">(Gallup &amp; Business Insider)</em></div>
+      </div>
+
+      <div class="audience-card">
+        <div class="img-wrap"><img src="../img/Character_profiles/portraits/female_03.a.png" alt=""/></div>
+        <h3>Employee Training</h3>
+        <p>
+          Employees with strong AI literacy work faster, make fewer mistakes, and feel more
+          confident. Kubicle's training builds practical skills in prompting, quality control,
+          and responsible use.
+        </p>
+        <div class="stat-tag"><strong>~70%</strong> of employees with high AI literacy expect positive outcomes, versus <strong>29%</strong> with low literacy. <em style="font-style:normal; color: var(--steel);">(SAP)</em></div>
+      </div>
+
+      <div class="audience-card">
+        <div class="img-wrap"><img src="../img/Character_profiles/portraits/male_08.b.png" alt=""/></div>
+        <h3>IT &amp; Security Training</h3>
+        <p>
+          IT and security teams must ensure standardised AI deployment. Kubicle delivers training
+          in risk evaluation, data readiness, governance, and secure workflows, so organisations
+          adopt AI responsibly without slowing progress.
+        </p>
+        <div class="stat-tag"><strong>40%</strong> of HR leaders cite low AI skills as a barrier, underscoring the need for IT-led upskilling. <em style="font-style:normal; color: var(--steel);">(Capterra)</em></div>
+      </div>
+
+      <div class="audience-card">
+        <div class="img-wrap"><img src="../img/Character_profiles/portraits/female_10.a.png" alt=""/></div>
+        <h3>Organisational AI Adoption</h3>
+        <p>
+          AI is advancing faster than most organisations can respond. Kubicle helps leaders turn
+          AI ambition into practical, measurable outcomes, with structured pathways that scale
+          across teams, regions, and operating models.
+        </p>
+        <div class="stat-tag">Trusted by FTSE 100 and Fortune 500 teams. Build literacy across every layer of your business.</div>
+      </div>
+
+      <div class="audience-card">
+        <div class="img-wrap"><img src="../img/Character_profiles/portraits/male_07.a.png" alt=""/></div>
+        <h3>Plus More</h3>
+        <p>
+          Give your organisation everything it needs to succeed with AI. Build literacy across
+          every team, improve decision quality, reduce risk, and create a confident, capable
+          workforce ready for AI-driven change.
+        </p>
+        <div class="stat-tag">Structured pathways, practical exercises and enterprise support make responsible AI adoption easy, even at scale.</div>
+      </div>
+    </div>
+
+    <div class="audience-cta">
+      <a class="btn btn-primary btn-lg" href="../academies/ai/brochure.html">Download Brochure <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PERSONA FRAMEWORK ============================== -->
+<section class="personas-sec">
+  <div class="geo-arch" style="width: 360px; height: 360px; top: -100px; right: -80px; opacity: 0.08; transform: rotate(30deg);"></div>
+  <div class="container">
+    <div class="copy">
+      <div class="eyebrow">The Kubicle AI Persona Framework</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Four levels of AI capability.<br/>
+        <em>One framework that scales.</em>
+      </h2>
+      <p class="body-lg">
+        Kubicle's four-level persona model equips learners to apply AI with confidence,
+        responsibility and strategic insight. Calibrated to your team's mix of seniority,
+        function and ambition.
+      </p>
+    </div>
+
+    <div class="persona-grid">
+      <div class="persona-card apprentice">
+        <div class="persona-tile">
+          <div class="persona-photo" style="background-image: url('../img/Character_profiles/portraits/female_05.a.png');"></div>
+          <div class="persona-overlay"></div>
+        </div>
+        <div class="audience-tag">Persona 01 &middot; Foundation</div>
+        <h3>AI Apprentice</h3>
+        <p>
+          An AI Apprentice learns basic AI concepts, understands how AI works, uses simple tools,
+          and can identify foundational business uses for AI in their day-to-day work.
+        </p>
+      </div>
+
+      <div class="persona-card navigator">
+        <div class="persona-tile">
+          <div class="persona-photo" style="background-image: url('../img/Character_profiles/portraits/male_09.a.png');"></div>
+          <div class="persona-overlay"></div>
+        </div>
+        <div class="audience-tag">Persona 02 &middot; Operator</div>
+        <h3>AI Navigator</h3>
+        <p>
+          An AI Navigator applies AI to boost productivity. They use practical tools to streamline
+          workflows, support decisions, and encourage responsible, effective adoption.
+        </p>
+      </div>
+
+      <div class="persona-card architect">
+        <div class="persona-tile">
+          <div class="persona-photo" style="background-image: url('../img/Character_profiles/portraits/male_06.a.png');"></div>
+          <div class="persona-overlay"></div>
+        </div>
+        <div class="audience-tag">Persona 03 &middot; Builder</div>
+        <h3>AI Architect</h3>
+        <p>
+          An AI Architect builds custom AI solutions and leads organisational implementation.
+          They design scalable systems, integrate data sources and orchestrate agentic workflows.
+        </p>
+      </div>
+
+      <div class="persona-card strategist">
+        <div class="persona-tile">
+          <div class="persona-photo" style="background-image: url('../img/Character_profiles/portraits/female_09.a.png');"></div>
+          <div class="persona-overlay"></div>
+        </div>
+        <div class="audience-tag">Persona 04 &middot; Leader</div>
+        <h3>AI Strategist</h3>
+        <p>
+          An AI Strategist sets organisational AI direction, oversees large-scale adoption, and
+          ensures strong governance. They align AI with business goals and shape long-term vision.
+        </p>
+      </div>
+    </div>
+
+    <div class="persona-cta">
+      <a class="btn btn-primary btn-lg" href="../academies/ai/brochure.html">Get the AI Persona Framework <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== WHY (tabs) ============================== -->
+<section class="why">
+  <div class="container">
+    <div class="why-head">
+      <div class="eyebrow">Why Choose Kubicle</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Purpose-built for enterprise teams.<br/>
+        <span style="color: var(--blue);">Accredited. Practical. Proven.</span>
+      </h2>
+    </div>
+
+    <div class="why-layout">
+      <div class="why-tabs" role="tablist">
+        <button class="why-tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">
+          Purpose-Built, Accredited Courses <span class="indicator"></span>
+        </button>
+        <button class="why-tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false">
+          Micro-Learning Modules <span class="indicator"></span>
+        </button>
+        <button class="why-tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false">
+          Persona-Based Learning Paths <span class="indicator"></span>
+        </button>
+        <button class="why-tab" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false">
+          Engagement Tracking &amp; Reporting <span class="indicator"></span>
+        </button>
+        <button class="why-tab" role="tab" id="tab-5" aria-controls="panel-5" aria-selected="false">
+          Continuously Updated Content <span class="indicator"></span>
+        </button>
+      </div>
+
+      <div class="why-panels">
+        <div class="why-panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1" aria-hidden="false">
+          <div class="visual">
+            <img src="../img/ai-training-for-employees/690b68234dd0c0881f0b564c_certs.avif" alt="Accreditation logos"/>
+          </div>
+          <h3>Purpose-Built, Accredited Courses</h3>
+          <p>
+            Kubicle's purpose-built courses are designed by subject-matter experts and accredited
+            by recognised bodies including CPD, CPE and NASBA. These credentials ensure learning
+            pathways are tailored to enterprise needs and carry professional credibility that
+            learners take with them into their roles.
+          </p>
+        </div>
+        <div class="why-panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2" aria-hidden="true">
+          <div class="visual">
+            <img src="../img/ai-training-for-employees/68dba9ebf9e3377a91047bf7_business-benefits.avif" alt="Micro-learning modules"/>
+          </div>
+          <h3>Micro-Learning Modules</h3>
+          <p>
+            Bite-sized modules break complex topics into manageable, on-demand segments. By
+            delivering focused 5&ndash;10 minute lessons that fit seamlessly into daily workflows,
+            Kubicle ensures learners grasp and retain key skills without disrupting productivity.
+          </p>
+        </div>
+        <div class="why-panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3" aria-hidden="true">
+          <div class="visual">
+            <img src="../img/ai-training-for-employees/68dba25140f09875124166a9_skills-workplace-readiness.avif" alt="Persona-based learning paths"/>
+          </div>
+          <h3>Persona-Based Learning Paths</h3>
+          <p>
+            Persona-based learning paths match content to specific roles and skill levels. From
+            beginners to business leaders, each path builds practical AI skills that help teams
+            adopt AI confidently, boost productivity, and drive real business impact.
+          </p>
+        </div>
+        <div class="why-panel" id="panel-4" role="tabpanel" aria-labelledby="tab-4" aria-hidden="true">
+          <div class="visual">
+            <img src="../img/ai-training-for-employees/69038bec4b1afbf31fe89d1c_upgrade-all-access-2.avif" alt="Engagement tracking and reporting"/>
+          </div>
+          <h3>Engagement Tracking and Reporting</h3>
+          <p>
+            Kubicle's enterprise platform offers robust engagement tracking through advanced
+            dashboards and a Reporting API, enabling automated access to participation, completion
+            and performance data. Learning leaders get real-time visibility into learner progress
+            and ROI.
+          </p>
+        </div>
+        <div class="why-panel" id="panel-5" role="tabpanel" aria-labelledby="tab-5" aria-hidden="true">
+          <div class="visual">
+            <img src="../img/ai-training-for-employees/6904a7ddeac637e67a3652db_logos-b2c-1.avif" alt="Continuously updated content"/>
+          </div>
+          <h3>Continuously Updated Content</h3>
+          <p>
+            Kubicle continuously refreshes its library to reflect the latest technologies and
+            industry best practices, including emerging areas like Generative AI, Large Language
+            Models and advanced data tools. Teams are always learning what's relevant, practical
+            and immediately applicable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== RESULTS ============================== -->
+<section class="results">
+  <div class="container">
+    <div style="max-width: 820px;">
+      <div class="eyebrow">The Results</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Proven impact from<br/>
+        <span style="color: var(--blue);">Kubicle learning.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 20px; color: var(--steel); max-width: 720px;">
+        More than 1 million learners train through Kubicle across management consulting, finance,
+        healthcare, technology and the public sector. The outcomes our customers measure:
+      </p>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="kicker">Increased Productivity</div>
+        <div class="big"><em>60%</em></div>
+        <h4>Time savings &amp; productivity</h4>
+        <p>
+          of Kubicle learners save 30 mins to 2 hours weekly by applying practical skills gained
+          through AI literacy training.
+        </p>
+      </div>
+      <div class="result-card">
+        <div class="kicker">New Skills</div>
+        <div class="big"><em>45%</em></div>
+        <h4>Daily application of skills</h4>
+        <p>
+          of learners use their Kubicle skills every day, proving how effective AI literacy is in
+          real work situations.
+        </p>
+      </div>
+      <div class="result-card">
+        <div class="kicker">Improved Performance</div>
+        <div class="big"><em>50%</em></div>
+        <h4>Enhanced workplace performance</h4>
+        <p>
+          of learners develop stronger data analysis and communication skills after completing
+          Kubicle's training.
+        </p>
+      </div>
+      <div class="result-card">
+        <div class="kicker">People Development</div>
+        <div class="big"><em>50%</em></div>
+        <h4>Career growth catalyst</h4>
+        <p>
+          of learners report increased credibility and professional advancement, demonstrating how
+          AI literacy supports long-term career growth.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== AI LIBRARY ============================== -->
+<section>
+  <div class="container">
+    <div style="max-width: 820px;">
+      <div class="eyebrow">Our AI Library</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        AI paths to<br/>
+        <span style="color: var(--blue);">level-up your skills.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 20px; color: var(--steel); max-width: 720px;">
+        Six accredited learning paths anchor the AI Literacy program. All are aligned to the
+        Kubicle persona framework so the right people learn the right material at the right depth.
+      </p>
+    </div>
+
+    <div class="library-grid">
+      <div class="lib-card">
+        <div class="lib-kicker">AI Fundamentals</div>
+        <h3>Foundations of Generative AI</h3>
+        <p>
+          Why generative AI has become so popular and how it can help your business. Broad AI
+          concepts, then how AI models handle and produce text, with a Large Language Models focus.
+          Principles-based; avoids overly technical analysis.
+        </p>
+        <div class="meta">
+          <div class="m-item">
+            <div class="m-icn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <span class="m-val">5.5 hours</span>
+          </div>
+          <div class="m-item">
+            <div class="m-icn"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <span class="m-val">4.5 CPE / CPD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-kicker">AI Fundamentals</div>
+        <h3>Getting Started with AI</h3>
+        <p>
+          Explore how artificial intelligence can transform business tasks and industries. Learn
+          fundamental AI concepts and applications in business, plus the role of natural language
+          and large language models in AI's ongoing evolution.
+        </p>
+        <div class="meta">
+          <div class="m-item">
+            <div class="m-icn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <span class="m-val">7.0 hours</span>
+          </div>
+          <div class="m-item">
+            <div class="m-icn"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <span class="m-val">7.0 CPE / CPD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-kicker">AI Fundamentals</div>
+        <h3>Foundations of Artificial Intelligence</h3>
+        <p>
+          A focused introduction to AI for business. Learn fundamental concepts and how AI is
+          applied across industries, with natural language and large language models as anchor
+          examples of where the field is heading.
+        </p>
+        <div class="meta">
+          <div class="m-item">
+            <div class="m-icn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <span class="m-val">3.0 hours</span>
+          </div>
+          <div class="m-item">
+            <div class="m-icn"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <span class="m-val">3.0 CPE / CPD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-kicker">AI Fundamentals</div>
+        <h3>AI &amp; Predictions and Patterns in Machine Learning</h3>
+        <p>
+          How AI and machine learning transform business tasks. Cover making predictions,
+          identifying patterns, and interpreting language, all explained in accessible,
+          non-technical terms.
+        </p>
+        <div class="meta">
+          <div class="m-item">
+            <div class="m-icn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <span class="m-val">7.0 hours</span>
+          </div>
+          <div class="m-item">
+            <div class="m-icn"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <span class="m-val">7.0 CPE / CPD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lib-card">
+        <span class="pop">Popular</span>
+        <div class="lib-kicker">AI Fundamentals</div>
+        <h3>Principles of Generative AI</h3>
+        <p>
+          Why generative AI has become so popular and how it can help your business. Broad AI
+          concepts, then a closer look at ChatGPT and Large Language Models. Principles-based;
+          avoids overly technical analysis.
+        </p>
+        <div class="meta">
+          <div class="m-item">
+            <div class="m-icn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <span class="m-val">6.0 hours</span>
+          </div>
+          <div class="m-item">
+            <div class="m-icn"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <span class="m-val">5.5 CPE / CPD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lib-card">
+        <span class="pop">Popular</span>
+        <div class="lib-kicker">AI Fundamentals</div>
+        <h3>AI Fundamentals</h3>
+        <p>
+          How AI and machine learning transform business tasks. Fundamental AI concepts, plus
+          applications including predictions, pattern identification, and language interpretation.
+          All explained in accessible, non-technical terms.
+        </p>
+        <div class="meta">
+          <div class="m-item">
+            <div class="m-icn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <span class="m-val">6.0 hours</span>
+          </div>
+          <div class="m-item">
+            <div class="m-icn"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <span class="m-val">6.0 CPE / CPD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== EU AI ACT ============================== -->
+<section class="eu-act">
+  <div class="geo-ring" style="width: 280px; height: 280px; bottom: -80px; left: -60px; opacity: 0.08;"></div>
+  <div class="container">
+    <div class="eu-act-grid">
+      <div>
+        <div class="eyebrow">Building AI Literacy</div>
+        <h2 class="h-xl" style="margin-top: 16px;">
+          The EU AI Act is here.<br/>
+          <em>Your teams need the skills to stay compliant.</em>
+        </h2>
+        <p>
+          The EU AI Act introduces strict requirements for how organisations design, purchase
+          and use AI, applying to any company serving EU customers or handling EU data.
+          Compliance depends as much on people as it does on technology.
+        </p>
+        <p>
+          Teams must understand AI principles, risks, safe use, and the foundations of a clear AI
+          policy. Kubicle equips organisations with practical skills to meet these expectations
+          and reduce compliance risk across every team.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary btn-lg" href="../contact.html">Upskill Your Team Now <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="visual">
+        <div class="euro">EU</div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="meta">EU AI Act Ready</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FEATURE CHIPS ============================== -->
+<section style="background: var(--alice);">
+  <div class="container">
+    <div class="features-head">
+      <div class="eyebrow">What makes us special</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        eLearning with Kubicle.<br/>
+        <span style="color: var(--blue);">Built for the way teams really work.</span>
+      </h2>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-chip">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-7"/></svg></div>
+        <h4>Data-Driven Learning</h4>
+        <p>Our platform uses learning analytics to track progress and tailor the experience.</p>
+      </div>
+      <div class="feature-chip">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M8 10h8M8 14h5"/></svg></div>
+        <h4>Micro Learning</h4>
+        <p>Bite-sized lessons designed for busy professionals.</p>
+      </div>
+      <div class="feature-chip">
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M8 13l-2 7 6-3 6 3-2-7"/></svg></div>
+        <h4>Accredited Certifications</h4>
+        <p>Earn globally recognised certifications across CPD, CPE and NASBA.</p>
+      </div>
+      <div class="feature-chip">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h16v4H4z"/><path d="M4 13h10v6H4z"/><path d="M16 13h4v6h-4z"/></svg></div>
+        <h4>Projects</h4>
+        <p>Real-world projects to apply your learning.</p>
+      </div>
+      <div class="feature-chip">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-8 0v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h4>Expert Instructors</h4>
+        <p>Courses created by industry professionals and reviewed by subject matter experts.</p>
+      </div>
+      <div class="feature-chip">
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg></div>
+        <h4>Global Reach</h4>
+        <p>Trusted by teams from startups to enterprises across every region.</p>
+      </div>
+      <div class="feature-chip">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h4>Enterprise-Ready Security</h4>
+        <p>GDPR-compliant, SOC 2-certified, and built for scale and privacy.</p>
+      </div>
+      <div class="feature-chip">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div>
+        <h4>Continuous Updates</h4>
+        <p>We keep pace with industry change. Content is updated regularly to stay relevant.</p>
+      </div>
+      <div class="feature-chip">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <h4>Modular Learning Paths</h4>
+        <p>Flexible, stackable modules let you tailor the learning journey to career goals.</p>
+      </div>
+      <div class="feature-chip">
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><path d="M3 19a6 6 0 0 1 12 0"/><circle cx="17" cy="7" r="2"/><path d="M14 13a4 4 0 0 1 7 0"/></svg></div>
+        <h4>Team Insights &amp; Management</h4>
+        <p>Managers get visibility into team progress, strengths and upskilling needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CLUSTER REEL ============================== -->
+<section style="background: #fff; padding: 96px 0;">
+  <style>
+    .cluster-reel-head { max-width: 760px; }
+    .cluster-reel-fullbleed { margin-top: 48px; width: 100%; }
+    .cluster-reel-scroll {
+      display: flex; gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-padding-left: max(48px, calc((100vw - 1280px) / 2 + 48px));
+      padding: 4px max(48px, calc((100vw - 1280px) / 2 + 48px)) 8px;
+      scrollbar-width: none; -ms-overflow-style: none;
+    }
+    .cluster-reel-scroll::-webkit-scrollbar { display: none; }
+    @media (max-width: 860px) {
+      .cluster-reel-scroll { scroll-padding-left: 24px; padding: 4px 24px 8px; }
+    }
+    .cluster-card {
+      flex: 0 0 320px;
+      scroll-snap-align: start;
+      background: #fff;
+      border: 1px solid var(--alice);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      text-decoration: none; color: inherit;
+    }
+    .cluster-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--blue);
+      box-shadow: 0 30px 60px -30px rgba(4,150,255,0.25);
+    }
+    .cluster-card .cc-img {
+      width: 100%; aspect-ratio: 16 / 10;
+      background: var(--alice); position: relative; overflow: hidden;
+    }
+    .cluster-card .cc-img img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.4s ease;
+    }
+    .cluster-card:hover .cc-img img { transform: scale(1.04); }
+    .cluster-card .cc-body {
+      padding: 20px 22px 22px;
+      display: flex; flex-direction: column;
+      gap: 10px; flex: 1;
+    }
+    .cluster-card .cc-kicker {
+      font-family: var(--body); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue);
+    }
+    .cluster-card h3 {
+      font-family: var(--head); font-size: 19px; font-weight: 600;
+      letter-spacing: -0.02em; color: var(--prussian); line-height: 1.25;
+    }
+    .cluster-card p { font-size: 13.5px; color: var(--steel); line-height: 1.5; }
+    .cluster-card .cc-go {
+      margin-top: auto; padding-top: 8px;
+      font-family: var(--head); font-size: 13px; font-weight: 600; color: var(--blue-d);
+    }
+    .cluster-card .cc-go .arr { transition: transform 0.18s; }
+    .cluster-card:hover .cc-go .arr { transform: translateX(3px); }
+
+    .cluster-reel-nav { display: flex; gap: 12px; margin-top: 24px; justify-content: flex-end; }
+    .cluster-reel-nav .scroll-btn {
+      width: 48px; height: 48px; border-radius: 50%;
+      border: 1.5px solid var(--prussian); background: #fff; color: var(--prussian);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s, color 0.15s, opacity 0.15s;
+    }
+    .cluster-reel-nav .scroll-btn svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .cluster-reel-nav .scroll-btn:hover { background: var(--prussian); color: #fff; }
+    .cluster-reel-nav .scroll-btn:disabled { opacity: 0.3; cursor: default; }
+    .cluster-reel-nav .scroll-btn:disabled:hover { background: #fff; color: var(--prussian); }
+  </style>
+  <div class="container">
+    <div class="cluster-reel-head">
+      <div class="eyebrow" style="color: var(--blue);">Continue exploring the AI cluster</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        More in the<br/>
+        <span style="color: var(--blue);">AI cluster.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 20px; color: var(--steel); max-width: 720px;">
+        Programs, resources and articles that sit alongside this page. The AI Academy is the
+        curriculum hub; everything below is calibrated to a specific audience or outcome.
+      </p>
+    </div>
+  </div>
+
+  <div class="cluster-reel-fullbleed">
+    <div class="cluster-reel-scroll" id="cluster-scroll">
+      <a class="cluster-card" href="../academies/ai/index.html">
+        <div class="cc-img"><img src="../academies/ai/img/hero-image.webp" alt="The Kubicle AI Academy" loading="lazy"/></div>
+        <div class="cc-body">
+          <div class="cc-kicker">Academy</div>
+          <h3>The Kubicle AI Academy</h3>
+          <p>The full curriculum, the four personas in depth, and the capability mix recommended for your organisation type.</p>
+          <span class="cc-go">Visit the Academy <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+      <a class="cluster-card" href="../ai-training-for-employees.html">
+        <div class="cc-img"><img src="../img/ai-training-for-employees/68dba25140f09875124166a9_skills-workplace-readiness.avif" alt="AI training programs for employees" loading="lazy"/></div>
+        <div class="cc-body">
+          <div class="cc-kicker">Program overview</div>
+          <h3>AI training programs for employees</h3>
+          <p>The same persona-based program framed for a commercial buyer. The fastest way to see what an AI literacy rollout looks like.</p>
+          <span class="cc-go">Read the overview <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+      <a class="cluster-card" href="../academies/ai/brochure.html">
+        <div class="cc-img"><img src="../img/ai-training-for-employees/69038bec4b1afbf31fe89d1c_upgrade-all-access-2.avif" alt="AI Persona Framework brochure" loading="lazy"/></div>
+        <div class="cc-body">
+          <div class="cc-kicker">Brochure</div>
+          <h3>AI Persona Framework brochure</h3>
+          <p>The persona model and recommended capability mix, formatted for sharing with L&amp;D, HR or the program-design committee.</p>
+          <span class="cc-go">Download the brochure <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+      <a class="cluster-card" href="../blog/topic/ai-literacy.html">
+        <div class="cc-img"><img src="../blog/img/posts/69ca3cba1c79128e6aa0038d_Consulting.jpg" alt="All AI literacy articles" loading="lazy"/></div>
+        <div class="cc-body">
+          <div class="cc-kicker">Article hub</div>
+          <h3>Browse all AI literacy articles</h3>
+          <p>Thinking from the Kubicle team on AI adoption, generative AI in the enterprise and the people side of the change.</p>
+          <span class="cc-go">Browse the topic <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+      <a class="cluster-card" href="../blog/eu-ai-act-summary-requirements-timeline.html">
+        <div class="cc-img"><img src="../blog/img/posts/689489a003430a12cd2d2472_countdown-to-compliance.jpg" alt="EU AI Act summary" loading="lazy"/></div>
+        <div class="cc-body">
+          <div class="cc-kicker">Article</div>
+          <h3>EU AI Act: summary, requirements, timeline</h3>
+          <p>What the EU AI Act asks of organisations, who it applies to, and the milestones to meet between now and full enforcement.</p>
+          <span class="cc-go">Read the article <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+      <a class="cluster-card" href="../blog/creating-an-ai-use-policy-a-comprehensive-guide-for-enterprises.html">
+        <div class="cc-img"><img src="../blog/img/posts/690e247d418880763cd9fbbe_product-mockup-compressed.jpg" alt="Creating an AI use policy" loading="lazy"/></div>
+        <div class="cc-body">
+          <div class="cc-kicker">Article</div>
+          <h3>Creating an AI use policy</h3>
+          <p>A practical guide to drafting a defensible AI use policy your legal, compliance and operating teams will all sign off.</p>
+          <span class="cc-go">Read the article <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+      <a class="cluster-card" href="../blog/ai-employee-training-programs.html">
+        <div class="cc-img"><img src="../blog/img/posts/691266be7a5130f9c6efe2f8_Gemini_Generated_Image_a9vbpna9vbpna9vb-1.jpg" alt="AI employee training programs" loading="lazy"/></div>
+        <div class="cc-body">
+          <div class="cc-kicker">Article</div>
+          <h3>AI employee training programs</h3>
+          <p>What good AI training looks like inside a real enterprise. The shape of the program, the cohorts, and the outcomes that matter.</p>
+          <span class="cc-go">Read the article <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+      <a class="cluster-card" href="../courses/ai-fundamentals.html">
+        <div class="cc-img"><img src="../courses/img/ai-fundamentals-hero.webp" alt="AI Fundamentals course" loading="lazy"/></div>
+        <div class="cc-body">
+          <div class="cc-kicker">Course</div>
+          <h3>AI Fundamentals</h3>
+          <p>The principles every business professional needs. What AI is, what it can do, and how to apply it responsibly inside your team.</p>
+          <span class="cc-go">View the subject <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+      <a class="cluster-card" href="../courses/machine-learning-python.html">
+        <div class="cc-img"><img src="../courses/img/machine-learning-python-hero.webp" alt="Machine Learning with Python course" loading="lazy"/></div>
+        <div class="cc-body">
+          <div class="cc-kicker">Course</div>
+          <h3>Machine Learning with Python</h3>
+          <p>Hands-on machine learning for analysts who can already script. Regression, classification, clustering and the working habits that ship.</p>
+          <span class="cc-go">View the subject <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="cluster-reel-nav">
+      <button class="scroll-btn" id="cluster-prev" aria-label="Previous related programs" disabled>
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="scroll-btn" id="cluster-next" aria-label="Next related programs">
+        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FAQ ============================== -->
+<section style="background: var(--alice);">
+  <div class="container">
+    <div style="max-width: 820px;">
+      <div class="eyebrow">Frequently asked questions</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Got a question about Kubicle?<br/>
+        <span style="color: var(--blue);">You're in the right place.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 20px; color: var(--steel); max-width: 720px;">
+        Whether you're curious about courses, certifications, pricing or platform features,
+        the most common questions are answered below. If you don't find what you're looking for,
+        the support team is always available.
+      </p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">What does the Kubicle AI Literacy program cover? <span class="plus">+</span></summary>
+        <div class="faq-a">
+          Kubicle is designed specifically for enterprise teams, offering curated learning paths
+          across AI, Excel, Power BI, SQL, financial modelling, project management and more. With
+          over 1,000 practical video lessons, real-world projects and bite-sized modules, teams
+          onboard faster, work more efficiently, and deliver strategic insights, with up to 40%
+          efficiency improvements and learning outcomes up to 10&times; faster.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Do you offer executive-level AI training? <span class="plus">+</span></summary>
+        <div class="faq-a">
+          Yes. Kubicle provides dedicated executive modules focused on oversight, informed
+          decision-making, and leading AI adoption responsibly. Aligned to the AI Strategist
+          persona in our framework.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can Kubicle support enterprise-wide rollouts across regions? <span class="plus">+</span></summary>
+        <div class="faq-a">
+          Absolutely. Kubicle supports enterprise-wide rollouts across multiple regions and
+          languages, with centralised reporting and consistent learning standards. Named regional
+          success teams support each phase.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What makes Kubicle different from generic AI courses? <span class="plus">+</span></summary>
+        <div class="faq-a">
+          A combination of hands-on projects, micro-learning, data-driven personalisation,
+          expert-led content and enterprise-grade security. Programs are persona-calibrated and
+          accredited, so the time your teams invest counts toward formal professional development.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How does AI literacy training affect day-to-day work? <span class="plus">+</span></summary>
+        <div class="faq-a">
+          It enables employees to automate routine tasks, find information faster, and improve
+          the accuracy of their outputs. Over 60% of learners save 30 minutes to 2 hours every
+          week applying the skills they pick up.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="final-cta">
+  <div class="geo-arch" style="width: 320px; height: 320px; top: -80px; right: -80px; opacity: 0.08; transform: rotate(30deg);"></div>
+  <div class="container">
+    <div style="max-width: 820px;">
+      <div class="eyebrow" style="color: var(--blue);">Ready when you are</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Build AI literacy that<br/>
+        <em>actually lasts.</em>
+      </h2>
+      <p class="body-lg">
+        Talk to one of our learning consultants about scoping an AI literacy program for your
+        organisation. A 30-minute call is the fastest way to map the right personas to your team
+        and quote indicative pricing.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="../contact.html">Book a Demo <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost btn-lg" href="../try-free/index.html" style="color: #fff; border-color: rgba(255,255,255,0.3);">Try Our Program for Free <span class="arr">&rarr;</span></a>
+      </div>
+      <div class="assurance-list">
+        <span>
+          <svg class="tick" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>
+          Persona benchmarking for your team
+        </span>
+        <span>
+          <svg class="tick" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>
+          EU AI Act-aligned, NASBA / CPE / CPD accredited
+        </span>
+        <span>
+          <svg class="tick" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>
+          Indicative pricing, scoped to your headcount
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<div id="site-footer"></div>
+
+<!-- ============================== TAB BEHAVIOR ============================== -->
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.why-tab');
+  var panels = document.querySelectorAll('.why-panel');
+  if (!tabs.length) return;
+
+  function activate(idx) {
+    tabs.forEach(function (t, i) {
+      t.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+    });
+    panels.forEach(function (p, i) {
+      p.setAttribute('aria-hidden', i === idx ? 'false' : 'true');
+    });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { activate(i); });
+  });
+})();
+
+// ============================== CLUSTER REEL ==============================
+(function () {
+  var scroller = document.getElementById('cluster-scroll');
+  var prev = document.getElementById('cluster-prev');
+  var next = document.getElementById('cluster-next');
+  if (!scroller || !prev || !next) return;
+  function step() {
+    var card = scroller.querySelector('.cluster-card');
+    if (!card) return scroller.clientWidth * 0.8;
+    var gap = parseFloat(getComputedStyle(scroller).gap) || 20;
+    return card.offsetWidth + gap;
+  }
+  function updateArrows() {
+    var max = scroller.scrollWidth - scroller.clientWidth - 1;
+    prev.disabled = scroller.scrollLeft <= 0;
+    next.disabled = scroller.scrollLeft >= max;
+  }
+  prev.addEventListener('click', function () { scroller.scrollBy({ left: -step(), behavior: 'smooth' }); });
+  next.addEventListener('click', function () { scroller.scrollBy({ left: step(), behavior: 'smooth' }); });
+  scroller.addEventListener('scroll', updateArrows, { passive: true });
+  window.addEventListener('resize', updateArrows);
+  updateArrows();
+})();
+</script>
+
+</body>
+</html>

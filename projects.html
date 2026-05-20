@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Kubicle Projects | Hands-on, Applied Learning at Scale</title>
+<meta name="description" content="Kubicle Projects turn knowledge into capability with hands-on, real-world scenarios. Workplace tasks, custom projects, and AI-guided projects that build real skills."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/projects"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:title" content="Kubicle Projects · Learn, Then Apply"/>
+<meta property="og:description" content="Hands-on projects that mirror real business challenges. Workplace tasks, custom projects and AI-guided projects in one applied-learning suite."/>
+<meta property="og:url" content="https://www.kubicle.com/projects"/>
+<meta property="og:image" content="https://www.kubicle.com/img/projects/projects-hero.webp"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Kubicle Projects · Learn, Then Apply"/>
+<meta name="twitter:description" content="Hands-on projects that mirror real business challenges."/>
+<meta name="twitter:image" content="https://www.kubicle.com/img/projects/projects-hero.webp"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="shared/styles/tokens.css"/>
+<link rel="stylesheet" href="shared/styles/typography.css"/>
+<link rel="stylesheet" href="shared/styles/buttons.css"/>
+
+<style>
+/* ============================== RESET ============================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+body {
+  font-family: var(--body, "Satoshi","Helvetica Neue",Arial,sans-serif);
+  color: var(--prussian);
+  background: #fff;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+section { padding: 96px 0; position: relative; }
+section.alice { background: var(--alice); }
+section.dark { background: var(--prussian); color: #fff; }
+@media (max-width: 700px) { section { padding: 64px 0; } .container { padding: 0 22px; } }
+
+/* ============================== SECTION HEAD ============================== */
+.sec-head { max-width: 760px; }
+.sec-head h2 { margin-top: 16px; }
+.sec-head h2 em { font-style: normal; color: var(--accent); }
+.sec-head .body-lg { margin-top: 24px; color: var(--steel); max-width: 640px; }
+.sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.sec-head.center .body-lg { margin-left: auto; margin-right: auto; }
+.dark .sec-head .body-lg { color: rgba(255,255,255,0.78); }
+.dark .sec-head h2 { color: #fff; }
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 112px 0 120px;
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 30%, rgba(4,150,255,0.10), transparent 70%),
+    linear-gradient(180deg, #FBFCFD 0%, #F4F8FC 100%);
+  color: var(--prussian);
+  position: relative; overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.hero .eyebrow { color: var(--accent); }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub {
+  color: var(--steel);
+  font-size: 19px; line-height: 1.55;
+  letter-spacing: -0.01em;
+  margin-top: 22px;
+  max-width: 560px;
+}
+.hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 32px; }
+.hero-rating {
+  margin-top: 32px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(11,27,43,0.10);
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.hero-rating .ravatars { height: 44px; width: auto; flex-shrink: 0; display: block; }
+.hero-rating .rating-meta { display: flex; flex-direction: column; gap: 4px; }
+.hero-rating .r-line {
+  font-family: var(--head); font-weight: 600; font-size: 15px;
+  color: var(--prussian); letter-spacing: -0.005em;
+}
+.hero-rating .r-stars {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; color: var(--prussian);
+}
+.hero-rating .stars { display: inline-flex; gap: 2px; }
+.hero-rating .stars svg { width: 16px; height: 16px; fill: #FDC72E; stroke: none; }
+.hero-rating strong { font-family: var(--head); font-weight: 600; }
+.hero-photo {
+  border-radius: 22px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #0B1B2B;
+  box-shadow: 0 32px 80px -24px rgba(11,27,43,0.30);
+}
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 1000px) {
+  .hero { padding: 80px 0 80px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* ============================== TRUST STRIP ============================== */
+.trust {
+  padding: 32px 0;
+  background: var(--prussian);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+.trust-label {
+  text-align: center;
+  font-family: var(--head);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 18px;
+}
+.trust-label em { font-style: normal; color: #fff; }
+.marquee { overflow: hidden; width: 100%; }
+.marquee-track { display: flex; width: max-content; animation: marq 60s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marq { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.logo-chip { display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 0 44px; }
+.logo-chip img { height: 26px; width: auto; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.55; transition: opacity 0.2s; }
+.logo-chip:hover img { opacity: 0.95; }
+
+/* ============================== VIDEO SECTION ============================== */
+.video-section { background: var(--alice); }
+.video-head { max-width: 760px; margin: 0 auto; text-align: center; }
+.video-frame {
+  margin-top: 48px;
+  background: #fff;
+  border-radius: 22px;
+  padding: 12px;
+  border: 1px solid rgba(11,27,43,0.08);
+  box-shadow: 0 32px 60px -24px rgba(11,27,43,0.30);
+  max-width: 920px; margin-left: auto; margin-right: auto;
+}
+.video-inner {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  background: #000;
+}
+.video-inner iframe { width: 100%; height: 100%; border: 0; display: block; }
+.video-caption {
+  display: flex; justify-content: center; align-items: baseline; gap: 8px;
+  margin-top: 16px;
+  font-size: 13px; color: var(--steel); line-height: 1.5;
+  text-align: center;
+}
+.video-caption .tag {
+  font-family: var(--head);
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent);
+}
+.video-caption .sep { color: rgba(11,27,43,0.25); }
+
+/* ============================== SPLIT SECTIONS ============================== */
+.split-row { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.split-row.reverse .split-text { order: 2; }
+.split-row.reverse .split-visual { order: 1; }
+.split-text .eyebrow { color: var(--accent); }
+.split-text h2 { margin-top: 14px; }
+.split-text h2 em { font-style: normal; color: var(--accent); }
+.split-text p {
+  font-size: 16px; line-height: 1.65;
+  color: var(--steel);
+  margin-top: 20px;
+  max-width: 540px;
+}
+.split-text p + p { margin-top: 14px; }
+.split-text .btn { margin-top: 28px; }
+.split-visual {
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+}
+.split-visual img {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  display: block;
+  border-radius: 22px;
+}
+@media (max-width: 1000px) {
+  .split-row { grid-template-columns: 1fr; gap: 48px; }
+  .split-row.reverse .split-text { order: 1; }
+  .split-row.reverse .split-visual { order: 2; }
+}
+
+/* ============================== SCENARIO TRIO ============================== */
+.scenarios { background: #fff; }
+.scen-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+.scen-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 28px;
+  display: flex; flex-direction: column;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.scen-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(4,150,255,0.30);
+  box-shadow: 0 24px 50px -20px rgba(11,27,43,0.18);
+}
+.scen-card .scen-img {
+  background: var(--alice);
+  border-radius: 14px;
+  aspect-ratio: 4/3;
+  display: flex; align-items: center; justify-content: center;
+  padding: 18px;
+  margin-bottom: 22px;
+}
+.scen-card .scen-img img { max-width: 100%; max-height: 100%; width: auto; height: auto; }
+.scen-card .eyebrow {
+  font-family: var(--body);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent-d);
+}
+.scen-card h3 {
+  font-family: var(--head);
+  font-size: 22px; font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--prussian);
+  margin-top: 8px;
+}
+.scen-card p {
+  margin-top: 12px;
+  font-size: 14.5px; line-height: 1.55;
+  color: var(--steel);
+}
+@media (max-width: 900px) {
+  .scen-grid { grid-template-columns: 1fr; gap: 18px; }
+}
+
+/* ============================== FINAL CTA ============================== */
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+  position: relative; overflow: hidden;
+}
+.final-cta-grid { display: block; max-width: 920px; }
+.final-cta .eyebrow { color: var(--accent); }
+.final-cta h2 { color: #fff; }
+.final-cta h2 em { font-style: normal; color: var(--accent); }
+.final-cta .body-lg { color: rgba(255,255,255,0.82); max-width: 760px; margin-top: 22px; }
+.final-cta .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+</style>
+
+<script src="shared/nav.js" defer></script>
+<script src="shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== NAV ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Kubicle Projects</div>
+        <h1 class="h-display" style="margin-top: 14px;">
+          Learn, then apply<br/>
+          <em>with Projects.</em>
+        </h1>
+        <p class="hero-sub">
+          Turn knowledge into capability with hands&#8209;on projects that mirror real business challenges.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary btn-lg" href="catalog.html">Download Catalog <span class="arr">&rarr;</span></a>
+          <a class="btn btn-outline-dark btn-lg" href="try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+        </div>
+        <div class="hero-rating" aria-label="G2 reviews">
+          <img class="ravatars" src="img/projects/g2-reviews-widget.svg" alt="" aria-hidden="true"/>
+          <div class="rating-meta">
+            <div class="r-line">200+ Reviews on G2</div>
+            <div class="r-stars">
+              <span class="stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+              </span>
+              <span><strong>4.7</strong> Rating</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <img src="img/projects/projects-hero.webp" alt="Learner working through a Kubicle project on a laptop" loading="eager"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TRUST STRIP ============================== -->
+<div class="trust">
+  <div class="trust-label">Helping to build data, tech and <em>AI skills in</em></div>
+  <div class="marquee">
+    <div class="marquee-track" id="marquee-track"></div>
+  </div>
+</div>
+
+<!-- ============================== VIDEO ============================== -->
+<section class="video-section" id="video">
+  <div class="container">
+    <div class="video-head">
+      <div class="eyebrow" style="color: var(--accent);">Inside Kubicle Projects</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Workplace tasks,<br/>
+        <em>practised in context.</em>
+      </h2>
+      <p class="body-lg" style="margin-top: 18px; color: var(--steel); max-width: 600px; margin-left: auto; margin-right: auto;">
+        A short walkthrough of how a workplace&#8209;task project unfolds inside the Kubicle platform.
+      </p>
+    </div>
+
+    <div class="video-frame">
+      <div class="video-inner">
+        <iframe
+          src="https://player.mux.com/e29hBx028NhS01aJ1ls41YjpZ7H4a2VCYQRP5bkg01yGX4"
+          title="Kubicle Projects sample workplace task"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <p class="video-caption">
+      <span class="tag">Sample Project</span>
+      <span class="sep">/</span>
+      <span>A workplace task as learners see it inside the platform.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============================== WHAT ARE KUBICLE PROJECTS? ============================== -->
+<section id="what">
+  <div class="container">
+    <div class="split-row">
+      <div class="split-text">
+        <div class="eyebrow">Kubicle Projects</div>
+        <h2 class="h-xl">
+          What are <em>Kubicle Projects?</em>
+        </h2>
+        <p>
+          Kubicle Projects are immersive, hands&#8209;on learning experiences that bridge the gap between
+          theory and real&#8209;world application. Each project places learners in a realistic business
+          scenario where they solve problems, work with data, adapt to changing priorities and apply
+          their skills in context.
+        </p>
+        <p>
+          Whether it&rsquo;s analysing financial performance, automating a workflow or building a simple
+          AI model, every project is designed to simulate the complexity and pace of actual work.
+          With guided instructions, built&#8209;in feedback and instant assessments, Projects transform
+          passive learning into active skill development, helping teams build confidence, improve
+          performance and deliver impact from day one.
+        </p>
+      </div>
+      <div class="split-visual">
+        <img src="img/projects/projects-graphic-blue.svg" alt="Illustration of a guided Kubicle project in progress" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CUSTOM PROJECTS ============================== -->
+<section class="alice" id="custom">
+  <div class="container">
+    <div class="split-row reverse">
+      <div class="split-text">
+        <div class="eyebrow">Kubicle Projects</div>
+        <h2 class="h-xl">
+          Custom <em>Projects.</em>
+        </h2>
+        <p>
+          Custom Projects give organisations the opportunity to design tailored learning experiences
+          that reflect their unique business context. Working hand&#8209;in&#8209;hand with our
+          instructional design team, customers can replicate their own data workflows, operational
+          processes or business scenarios within a guided learning environment.
+        </p>
+        <p>
+          Whether it&rsquo;s a complex reporting pipeline, a specific departmental workflow or an AI
+          use case that mirrors internal tools, Custom Projects allow teams to practise skills in
+          the exact context where they&rsquo;ll be applied. If your team would benefit from learning
+          with real&#8209;world relevance, and you have a process or dataset you&rsquo;d like to
+          bring to life, get in touch and we&rsquo;d love to help you build it.
+        </p>
+      </div>
+      <div class="split-visual">
+        <img src="img/projects/projects-graphic-green.svg" alt="Illustration of a custom Kubicle project tailored to a customer workflow" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== AI GUIDED PROJECTS ============================== -->
+<section id="ai-projects">
+  <div class="container">
+    <div class="split-row">
+      <div class="split-text">
+        <div class="eyebrow">Kubicle Projects</div>
+        <h2 class="h-xl">
+          AI&#8209;guided <em>Projects.</em>
+        </h2>
+        <p>
+          Kubicle AI&#8209;Guided Projects offer a powerful way for learners to build and validate
+          practical skills using the support of generative AI. In these projects, learners complete
+          a task, such as designing a data visualisation, telling a data&#8209;driven story or
+          preparing a business presentation, and then submit their work for evaluation.
+        </p>
+        <p>
+          A pre&#8209;trained AI assessor reviews the submission instantly and provides
+          expert&#8209;level feedback based on clear, professional criteria. This creates a scalable
+          and personalised learning experience that mirrors the benefits of one&#8209;to&#8209;one
+          coaching. Learners can practise real&#8209;world tasks, get meaningful feedback within
+          seconds and improve their performance through repeated, guided attempts.
+        </p>
+      </div>
+      <div class="split-visual">
+        <img src="img/projects/projects-graphic-purple.svg" alt="Illustration of an AI-guided project with instant feedback" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SIMULATING REAL WORLD SCENARIOS ============================== -->
+<section class="scenarios alice" id="scenarios">
+  <div class="container">
+    <div class="sec-head center">
+      <div class="eyebrow" style="color: var(--accent);">Kubicle Projects</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Simulating <em>real&#8209;world scenarios.</em>
+      </h2>
+      <p class="body-lg">
+        Every Kubicle project follows the same three&#8209;stage rhythm so learners always know
+        where they are and what comes next.
+      </p>
+    </div>
+
+    <div class="scen-grid">
+      <div class="scen-card">
+        <div class="scen-img"><img src="img/projects/project-scenario.svg" alt="Project scenario step illustration"/></div>
+        <div class="eyebrow">Step 01</div>
+        <h3>Project scenario.</h3>
+        <p>Every Kubicle project begins with a real&#8209;world scenario, whether solving a finance problem, improving operations or analysing data. Each one builds on skills from previous courses, turning learning into practice.</p>
+      </div>
+      <div class="scen-card">
+        <div class="scen-img"><img src="img/projects/applied-learning.svg" alt="Applied learning step illustration"/></div>
+        <div class="eyebrow">Step 02</div>
+        <h3>Applied learning.</h3>
+        <p>Work through structured steps using real tools and data to deepen practical know&#8209;how. Guided instructions and built&#8209;in feedback keep momentum on track.</p>
+      </div>
+      <div class="scen-card">
+        <div class="scen-img"><img src="img/projects/the-solution.svg" alt="The solution step illustration"/></div>
+        <div class="eyebrow">Step 03</div>
+        <h3>The solution.</h3>
+        <p>Review the work, reflect on progress and walk away with a certificate that proves it. Outcomes that hold up to scrutiny at performance review time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="final-cta" id="get-more-info">
+  <div class="container">
+    <div class="final-cta-grid">
+      <div class="eyebrow">Get More Info</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Help your organisation<br/>
+        <em>meet its learning objectives.</em>
+      </h2>
+      <p class="body-lg">
+        Looking to understand how Kubicle can better help your organisation meet its learning
+        objectives? Book some time with one of our consultants today.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="catalog.html">Download Catalog <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost btn-lg" href="try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<div id="site-footer"></div>
+
+<!-- ============================== SCRIPTS ============================== -->
+<script>
+// Logo marquee
+(function () {
+  var logos = [
+    { src: 'img/shared/690e247d418880763cd9f3d1_deloitte.svg', alt: 'Deloitte' },
+    { src: 'img/shared/690e247d418880763cd9f425_british-airways.svg', alt: 'British Airways' },
+    { src: 'img/shared/690e247d418880763cd9f3cd_jotun-logo.svg', alt: 'Jotun' },
+    { src: 'img/shared/690e247d418880763cd9f426_amazon.svg', alt: 'Amazon' },
+    { src: 'img/shared/690e247d418880763cd9f69f_lek.svg', alt: 'L.E.K. Consulting' },
+    { src: 'img/shared/690e247d418880763cd9f423_ford.svg', alt: 'Ford' }
+  ];
+  var track = document.getElementById('marquee-track');
+  if (!track) return;
+  var setsNeeded = Math.ceil((window.innerWidth * 2) / (logos.length * 200)) + 1;
+  var totalSets = setsNeeded * 2;
+  var html = '';
+  for (var s = 0; s < totalSets; s++) {
+    for (var i = 0; i < logos.length; i++) {
+      var l = logos[i];
+      html += '<span class="logo-chip"><img src="' + l.src + '" alt="' + l.alt + '"/></span>';
+    }
+  }
+  track.innerHTML = html;
+})();
+</script>
+
+</body>
+</html>

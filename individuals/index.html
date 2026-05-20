@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+<title>Kubicle for Individuals | Build Career-Defining Skills</title>
+<meta name="description" content="Master the high-stakes skills that drive consulting and finance careers. Join 1M+ professionals on Kubicle. 30+ certified free courses. No credit card required."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/individuals/"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:title" content="Kubicle for Individuals · Build Career-Defining Skills"/>
+<meta property="og:description" content="Master the high-stakes skills that drive consulting and finance careers. 30+ certified free courses, no credit card required."/>
+<meta property="og:url" content="https://www.kubicle.com/individuals/"/>
+<meta property="og:image" content="https://www.kubicle.com/individuals/img/hero-individuals.webp"/>
+<meta property="og:image:width" content="1717"/>
+<meta property="og:image:height" content="916"/>
+<meta property="og:image:alt" content="A professional building career skills on the Kubicle platform"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Kubicle for Individuals · Build Career-Defining Skills"/>
+<meta name="twitter:description" content="Master the high-stakes skills that drive consulting and finance careers."/>
+<meta name="twitter:image" content="https://www.kubicle.com/individuals/img/hero-individuals.webp"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Kubicle for Individuals",
+  "description": "Master the high-stakes skills that drive consulting and finance careers. 30+ certified free courses, no credit card required.",
+  "url": "https://www.kubicle.com/individuals/",
+  "primaryImageOfPage": "https://www.kubicle.com/individuals/img/hero-individuals.webp",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Kubicle",
+    "url": "https://www.kubicle.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "url": "https://www.kubicle.com"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+
+<style>
+/* ============================== PAGE-LOCAL TOKENS ============================== */
+:root {
+  --emerald-d: #0E9D6E;
+}
+
+/* ============================== LAYOUT ============================== */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+section { padding: 112px 0; position: relative; overflow: hidden; }
+section.compact { padding: 72px 0; }
+
+@media (max-width: 860px) {
+  .container { padding: 0 24px; }
+  section { padding: 80px 0; }
+}
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 96px 0 120px;
+  background:
+    linear-gradient(to right, rgba(11,27,43,0.92) 0%, rgba(11,27,43,0.75) 35%, rgba(11,27,43,0.2) 65%, rgba(11,27,43,0) 85%),
+    url('img/hero-individuals.webp') center right / cover no-repeat,
+    var(--prussian);
+  color: #fff;
+  position: relative;
+}
+.hero-grid { display: none; }
+.hero-content {
+  position: relative; z-index: 3;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub {
+  color: rgba(255,255,255,0.8);
+  max-width: 560px;
+  margin-top: 28px;
+  font-size: 20px; line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+.hero-cta-row {
+  display: flex; gap: 14px; flex-wrap: wrap;
+  margin-top: 36px;
+  align-items: center; justify-content: space-between;
+}
+.hero-cta-row .accred {
+  display: flex; align-items: center; gap: 14px;
+}
+.hero-cta-row .accred span {
+  font-size: 11px; color: rgba(255,255,255,0.5);
+  font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.hero-cta-row .accred img { height: 56px; opacity: 0.75; }
+.hero-assurance {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  margin-top: 28px;
+  color: rgba(255,255,255,0.7);
+  font-size: 13.5px;
+}
+.hero-assurance span { display: flex; align-items: center; gap: 8px; }
+.hero-assurance .check {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.hero-assurance .check svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Hero illustration (right column) */
+.hero-illustration {
+  width: 100%;
+  max-width: 520px;
+  margin-left: auto;
+}
+.hero-illustration img {
+  width: 100%; height: auto; display: block;
+  border-radius: 20px;
+}
+
+@media (max-width: 1000px) {
+  .hero-content { grid-template-columns: 1fr; gap: 64px; }
+  .hero-cta-row { flex-direction: column; align-items: flex-start; }
+  .hero-cta-row .accred { margin-top: 4px; }
+  .hero-illustration { margin: 0 auto; max-width: 420px; }
+}
+
+/* ============================== SOLUTION OVERVIEW ============================== */
+.section-head { max-width: 760px; margin: 0 auto; text-align: center; }
+.section-head .body-lg { color: var(--steel); margin-top: 20px; }
+.dark .section-head .body-lg { color: rgba(255,255,255,0.78); }
+
+.cat-grid {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  margin-top: 64px;
+}
+@media (max-width: 1100px) { .cat-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 720px)  { .cat-grid { grid-template-columns: repeat(2, 1fr); } }
+.cat-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 16px;
+  padding: 18px 16px;
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  transition: transform 0.18s, border 0.18s, box-shadow 0.18s;
+}
+.cat-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 18px 40px -20px rgba(0,0,0,0.12);
+}
+.cat-card .cat-img {
+  width: 64px; height: 64px;
+  display: flex; align-items: center; justify-content: center;
+}
+.cat-card .cat-img img { max-width: 100%; max-height: 100%; }
+.cat-card .cat-name {
+  font-family: var(--head); font-size: 14px; font-weight: 600;
+  color: var(--prussian); letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.solution-cta { text-align: center; margin-top: 56px; }
+
+/* ============================== CERT BAND ============================== */
+.cert-band {
+  background: var(--alice);
+  text-align: center;
+}
+.cert-band .badge-row {
+  margin-top: 36px;
+  display: flex; justify-content: center;
+}
+.cert-band .badge-row img { max-width: 320px; }
+
+/* ============================== WHATS INSIDE ============================== */
+.inside-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: center;
+  margin-top: 64px;
+}
+@media (max-width: 900px) { .inside-grid { grid-template-columns: 1fr; gap: 40px; } }
+.inside-img {
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--alice);
+  border: 1px solid #e5ebf0;
+}
+.inside-img img { width: 100%; display: block; }
+.inside-list { display: grid; gap: 20px; }
+.inside-card {
+  display: grid; grid-template-columns: 40px 1fr; gap: 18px;
+  align-items: flex-start;
+}
+.inside-card .ico {
+  width: 32px; height: 32px;
+  border-radius: 10px;
+  background: rgba(4,150,255,0.12);
+  color: var(--accent);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.inside-card .ico svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.inside-card h4 {
+  font-family: var(--head); font-size: 18px; font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--prussian);
+  margin-bottom: 6px; line-height: 1.25;
+}
+.inside-card p { font-size: 14.5px; color: var(--steel); line-height: 1.55; }
+
+.inside-sub {
+  text-align: center;
+  font-family: var(--head);
+  font-size: 22px; font-weight: 600;
+  color: var(--prussian);
+  margin-top: 56px;
+}
+.inside-cta { text-align: center; margin-top: 32px; }
+
+/* ============================== INDUSTRY SOLUTIONS (TABBED) ============================== */
+.tabs {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 48px;
+  padding: 6px; background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  width: fit-content; margin-left: auto; margin-right: auto;
+}
+.tab-btn {
+  font-family: var(--head); font-size: 14.5px; font-weight: 600;
+  background: transparent; color: rgba(255,255,255,0.7);
+  border: 0; cursor: pointer;
+  padding: 12px 22px; border-radius: 12px;
+  letter-spacing: -0.005em;
+  transition: background 0.15s, color 0.15s;
+}
+.tab-btn:hover { color: #fff; }
+.tab-btn.active { background: var(--accent); color: #fff; }
+
+.tab-panel {
+  display: none;
+  margin-top: 56px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
+  padding: 40px;
+}
+.tab-panel.active { display: block; }
+.tab-panel-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px; align-items: center;
+}
+@media (max-width: 900px) { .tab-panel-grid { grid-template-columns: 1fr; gap: 32px; } }
+.tab-img {
+  border-radius: 16px;
+  overflow: hidden;
+}
+.tab-img img { width: 100%; display: block; }
+.tab-content h3 {
+  font-family: var(--head);
+  font-size: 28px; font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  line-height: 1.15;
+}
+.tab-content ul {
+  list-style: none; padding: 0; margin: 0 0 32px;
+  display: grid; gap: 14px;
+}
+.tab-content li {
+  font-size: 14.5px; line-height: 1.55;
+  color: rgba(255,255,255,0.78);
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.tab-content li::before {
+  content: ""; flex-shrink: 0;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: rgba(4,150,255,0.18);
+  margin-top: 1px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%230496FF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 6.5l2 2 4-4.5'/></svg>");
+  background-repeat: no-repeat; background-position: center; background-size: 12px 12px;
+}
+
+/* ============================== TRUST / SOCIAL PROOF ============================== */
+.trust-section { background: #fff; }
+.logos-strip {
+  margin-top: 56px;
+  display: grid; grid-template-columns: repeat(7, 1fr);
+  gap: 24px;
+  align-items: center;
+  padding: 24px 0;
+  border-top: 1px solid var(--alice);
+  border-bottom: 1px solid var(--alice);
+}
+@media (max-width: 1100px) { .logos-strip { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 600px)  { .logos-strip { grid-template-columns: repeat(2, 1fr); } }
+.logo-cell { display: flex; align-items: center; justify-content: center; height: 48px; }
+.logo-cell img { max-height: 32px; max-width: 100%; opacity: 0.7; transition: opacity 0.2s; filter: grayscale(100%); }
+.logo-cell:hover img { opacity: 1; filter: grayscale(0%); }
+
+.stats-row {
+  margin-top: 64px;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+@media (max-width: 700px) { .stats-row { grid-template-columns: 1fr; gap: 32px; } }
+.stat-card .stat-num {
+  font-family: var(--head);
+  font-size: clamp(48px, 5vw, 64px);
+  font-weight: 600;
+  color: var(--prussian);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.stat-card .stat-num em { font-style: normal; color: var(--accent); }
+.stat-card .stat-label {
+  margin-top: 14px;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--steel);
+  max-width: 260px; margin-left: auto; margin-right: auto;
+  line-height: 1.4;
+}
+
+.g2-row {
+  margin-top: 64px;
+  display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+  padding-top: 40px;
+  border-top: 1px solid var(--alice);
+}
+.g2-row img { height: 96px; }
+
+/* ============================== TESTIMONIALS ============================== */
+.testi-section { background: var(--alice); }
+.testi-head-row {
+  display: flex; flex-direction: column; align-items: center; gap: 24px;
+  text-align: center;
+  margin-bottom: 56px;
+}
+.testi-head-row .testi-title { max-width: 760px; }
+.testi-meta {
+  display: flex; flex-direction: row; align-items: center; gap: 18px;
+  font-size: 13.5px; color: var(--steel);
+}
+.testi-meta strong { font-family: var(--head); font-size: 18px; color: var(--prussian); font-weight: 600; }
+.testi-meta a {
+  color: var(--accent); text-decoration: none;
+  font-weight: 600;
+}
+.testi-meta a:hover { text-decoration: underline; }
+.testi-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 1000px) { .testi-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 700px)  { .testi-grid { grid-template-columns: 1fr; } }
+.testi-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  display: flex; flex-direction: column; gap: 18px;
+  border: 1px solid #e8edf2;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.testi-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 48px -24px rgba(11,27,43,0.18);
+}
+.testi-card .stars {
+  color: #FFB800;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+.testi-card .quote {
+  font-size: 14.5px; line-height: 1.55;
+  color: var(--prussian);
+  flex: 1;
+}
+.testi-author {
+  display: flex; align-items: center; gap: 12px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--alice);
+}
+.testi-author img {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.testi-author .who {
+  font-family: var(--head); font-size: 15px; font-weight: 600;
+  color: var(--prussian);
+  letter-spacing: -0.01em;
+}
+.testi-author .role {
+  font-size: 12px; color: var(--steel);
+  margin-top: 2px;
+}
+.testi-author .tier {
+  display: inline-block;
+  font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--accent);
+  background: rgba(var(--accent-rgb),0.08);
+  padding: 2px 8px; border-radius: 999px;
+  margin-top: 4px;
+}
+.testi-date {
+  font-size: 11.5px; color: var(--steel); margin-left: auto;
+}
+
+/* ============================== PRICING (mirrors pricing.html) ============================== */
+.pricing-section { background: #fff; }
+:root {
+  --academy-ai:      #00C4CC;
+  --academy-data:    #E91E63;
+  --academy-pm:      #F97316;
+  --academy-finance: #10B981;
+}
+
+/* Free tier featured card (the individuals' headline) */
+.free-tier-card {
+  margin-top: 56px;
+  background: linear-gradient(135deg, #0D5F96 0%, #0B1B2B 100%);
+  color: #fff;
+  border-radius: 24px;
+  padding: 40px 48px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.free-tier-card::before {
+  content: ""; position: absolute;
+  top: -120px; right: -120px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(4,150,255,0.30) 0%, transparent 70%);
+  pointer-events: none;
+}
+.free-tier-card .tag {
+  display: inline-flex; align-self: flex-start;
+  background: var(--accent); color: #fff;
+  padding: 6px 14px; border-radius: 999px;
+  font-family: var(--head);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.free-tier-card h3 { font-size: 36px; color: #fff; margin-top: 12px; }
+.free-tier-card .ft-lede {
+  margin-top: 12px;
+  color: rgba(255,255,255,0.78);
+  font-size: 16px; line-height: 1.55;
+  max-width: 460px;
+}
+.free-tier-card .ft-bullets {
+  margin-top: 18px;
+  list-style: none; padding: 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px;
+}
+.free-tier-card .ft-bullets li {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.85);
+  position: relative;
+  padding-left: 22px;
+}
+.free-tier-card .ft-bullets li::before {
+  content: "";
+  position: absolute; left: 0; top: 4px;
+  width: 14px; height: 14px;
+  background: var(--accent);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
+}
+.free-tier-card .ft-priceblock {
+  position: relative; z-index: 2;
+  text-align: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  padding: 28px;
+}
+.free-tier-card .price-amount {
+  font-family: var(--head);
+  font-size: 64px; font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #fff;
+}
+.free-tier-card .price-amount .currency { font-size: 30px; vertical-align: super; }
+.free-tier-card .price-amount .period {
+  display: block;
+  font-size: 14px; font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: normal;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+.free-tier-card .free-note {
+  margin-top: 6px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+}
+.free-tier-card .btn {
+  margin-top: 20px;
+  width: 100%;
+  background: var(--accent); color: #fff;
+  box-shadow: 0 2px 0 rgba(11,27,43,0.3), 0 10px 24px -8px rgba(4,150,255,0.5);
+}
+.free-tier-card .btn:hover { background: var(--accent-d); }
+
+.upgrade-divider {
+  margin: 48px 0 0;
+  display: flex; align-items: center; gap: 16px;
+}
+.upgrade-divider span {
+  font-family: var(--head);
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--steel);
+  white-space: nowrap;
+}
+.upgrade-divider::before, .upgrade-divider::after {
+  content: ""; flex: 1; height: 1px; background: var(--alice);
+}
+
+/* Pricing controls (currency + billing toggles) */
+.pricing-controls {
+  display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;
+  margin-top: 40px;
+}
+.toggle-group {
+  display: inline-flex;
+  background: var(--alice);
+  border: 1px solid #e5ebf0;
+  border-radius: 999px;
+  padding: 4px;
+}
+.toggle-group button {
+  appearance: none; background: transparent; border: 0;
+  color: var(--steel);
+  font-family: var(--head);
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.toggle-group button:hover { color: var(--prussian); }
+.toggle-group button.active {
+  background: var(--prussian); color: #fff;
+}
+.toggle-group .save-pill {
+  display: inline-block;
+  margin-left: 6px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+/* Two-card pricing layout (Free + All Access) */
+.pricing-pair {
+  margin-top: 48px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+@media (max-width: 900px) {
+  .pricing-pair { grid-template-columns: 1fr; }
+}
+.pricing-pair .free-tier-card,
+.pricing-pair .all-access-card {
+  margin-top: 0;
+  display: flex; flex-direction: column;
+  padding: 36px 36px;
+}
+.pricing-pair .free-tier-card .ft-bullets,
+.pricing-pair .all-access-card .aa-bullets { grid-template-columns: 1fr; }
+.pricing-pair .ft-priceblock,
+.pricing-pair .aa-priceblock { margin-top: auto; }
+
+.academy-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 32px;
+}
+@media (max-width: 1080px) { .academy-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px)  { .academy-grid { grid-template-columns: 1fr; } }
+
+.acad-price-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  display: flex; flex-direction: column; gap: 14px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-top: 5px solid var(--c, var(--accent));
+  box-shadow: 0 12px 30px -16px rgba(11,27,43,0.18);
+  text-decoration: none;
+  color: var(--prussian);
+}
+.acad-price-card:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -20px rgba(11,27,43,0.30); }
+.acad-price-card.ai      { --c: var(--academy-ai); }
+.acad-price-card.data    { --c: var(--academy-data); }
+.acad-price-card.pm      { --c: var(--academy-pm); }
+.acad-price-card.finance { --c: var(--academy-finance); }
+.acad-price-card .acad-num {
+  font-family: var(--head);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--c);
+}
+.acad-price-card h3 { font-size: 22px; }
+.acad-price-card p {
+  font-size: 14px;
+  color: var(--steel);
+  line-height: 1.5;
+  min-height: 60px;
+}
+.acad-price-card .price-amount {
+  font-family: var(--head);
+  font-size: 44px; font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--prussian);
+}
+.acad-price-card .price-amount .currency { font-size: 22px; vertical-align: super; }
+.acad-price-card .price-amount .period {
+  display: block;
+  font-size: 13px; font-weight: 400;
+  color: var(--steel);
+  letter-spacing: normal;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+.acad-price-card .acad-cta {
+  margin-top: auto;
+  font-family: var(--head);
+  font-size: 14px; font-weight: 600;
+  color: var(--c);
+  display: inline-flex; align-items: center; gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--alice);
+}
+.acad-price-card .acad-cta .arr { transition: transform 0.2s; }
+.acad-price-card:hover .acad-cta .arr { transform: translateX(4px); }
+
+.all-access-card {
+  margin-top: 32px;
+  background: var(--prussian);
+  color: #fff;
+  border-radius: 24px;
+  padding: 40px 48px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.all-access-card::before {
+  content: ""; position: absolute;
+  top: -120px; right: -120px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(4,150,255,0.30) 0%, transparent 70%);
+  pointer-events: none;
+}
+.all-access-card .tag {
+  display: inline-flex; align-self: flex-start;
+  background: var(--accent); color: #fff;
+  padding: 6px 14px; border-radius: 999px;
+  font-family: var(--head);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.all-access-card h3 { font-size: 36px; color: #fff; margin-top: 12px; }
+.all-access-card .aa-lede {
+  margin-top: 12px;
+  color: rgba(255,255,255,0.78);
+  font-size: 16px; line-height: 1.55;
+  max-width: 460px;
+}
+.all-access-card .aa-bullets {
+  margin-top: 18px;
+  list-style: none; padding: 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px;
+}
+.all-access-card .aa-bullets li {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.85);
+  position: relative;
+  padding-left: 22px;
+}
+.all-access-card .aa-bullets li::before {
+  content: "";
+  position: absolute; left: 0; top: 4px;
+  width: 14px; height: 14px;
+  background: var(--accent);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
+}
+.all-access-card .aa-priceblock {
+  position: relative; z-index: 2;
+  text-align: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  padding: 28px;
+}
+.all-access-card .price-amount {
+  font-family: var(--head);
+  font-size: 64px; font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #fff;
+}
+.all-access-card .price-amount .currency { font-size: 30px; vertical-align: super; }
+.all-access-card .price-amount .period {
+  display: block;
+  font-size: 14px; font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: normal;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+.all-access-card .btn { margin-top: 20px; width: 100%; }
+@media (max-width: 880px) {
+  .free-tier-card, .all-access-card { grid-template-columns: 1fr; padding: 32px; }
+  .free-tier-card .ft-bullets, .all-access-card .aa-bullets { grid-template-columns: 1fr; }
+}
+
+/* ============================== COMPARISON TABLE (mirrors pricing.html) ============================== */
+.compare-section { background: var(--alice); }
+.compare-wrap {
+  margin-top: 56px;
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px -20px rgba(11,27,43,0.10);
+}
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.compare-table th, .compare-table td {
+  padding: 16px 20px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--alice);
+}
+.compare-table thead th {
+  background: var(--alice);
+  font-family: var(--head);
+  font-size: 13px; font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--prussian);
+  border-bottom: 2px solid #fff;
+  text-align: center;
+  vertical-align: bottom;
+}
+.compare-table thead th:first-child { text-align: left; }
+.compare-table thead .col-academy { font-size: 14px; }
+.compare-table thead .col-academy .acad-tag {
+  display: block;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  margin-bottom: 4px;
+  color: var(--c);
+}
+.compare-table thead .col-free { background: #0D5F96; color: #fff; }
+.compare-table thead .col-free .acad-tag { color: var(--accent); }
+.compare-table thead .col-aa   { background: var(--prussian); color: #fff; }
+.compare-table thead .col-aa .acad-tag { color: var(--accent); }
+.compare-table tbody td {
+  text-align: center;
+  color: var(--prussian);
+  font-weight: 500;
+}
+.compare-table tbody td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: var(--prussian);
+}
+.compare-table tbody td.col-free-cell { background: rgba(4,150,255,0.05); }
+.compare-table tbody td.col-aa-cell { background: rgba(4,150,255,0.04); }
+.compare-table tbody tr:last-child td { border-bottom: 0; }
+.compare-table .check {
+  display: inline-block;
+  width: 18px; height: 18px;
+  background: var(--accent);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
+}
+.compare-table .cross {
+  display: inline-block;
+  width: 14px; height: 14px;
+  background: var(--steel);
+  opacity: 0.5;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><line x1='6' y1='6' x2='18' y2='18'/><line x1='6' y1='18' x2='18' y2='6'/></svg>") center/contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><line x1='6' y1='6' x2='18' y2='18'/><line x1='6' y1='18' x2='18' y2='6'/></svg>") center/contain no-repeat;
+}
+.compare-table .ai      { --c: var(--academy-ai); }
+.compare-table .data    { --c: var(--academy-data); }
+.compare-table .pm      { --c: var(--academy-pm); }
+.compare-table .finance { --c: var(--academy-finance); }
+.compare-table tr.section-row td {
+  background: linear-gradient(180deg, var(--alice) 0%, #fff 100%);
+  font-family: var(--head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--honolulu);
+  padding: 14px 20px 10px;
+  text-align: left;
+}
+.compare-table tr.section-row td.col-free-cell {
+  background: linear-gradient(180deg, rgba(4,150,255,0.10) 0%, rgba(4,150,255,0.04) 100%);
+}
+.compare-table tr.section-row td.col-aa-cell {
+  background: linear-gradient(180deg, rgba(4,150,255,0.10) 0%, rgba(4,150,255,0.04) 100%);
+}
+.compare-table .extra-tag {
+  display: inline-block;
+  font-family: var(--head);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--honolulu);
+  background: var(--columbia);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+.compare-table .num-tag {
+  font-family: var(--head); font-weight: 700;
+  color: var(--prussian); font-size: 14px;
+}
+@media (max-width: 880px) {
+  .compare-wrap { overflow-x: auto; }
+  .compare-table { min-width: 880px; }
+}
+
+/* ============================== FAQ ============================== */
+.faq-section { background: #fff; }
+.faq-head-row {
+  display: grid; grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+@media (max-width: 900px) { .faq-head-row { grid-template-columns: 1fr; gap: 32px; } }
+.faq-head .body-lg { color: var(--steel); margin-top: 20px; }
+.faq-list { margin-top: 0; border-top: 1px solid var(--alice); }
+.faq-item { border-bottom: 1px solid var(--alice); }
+.faq-q {
+  padding: 22px 0;
+  display: flex; align-items: center; justify-content: space-between;
+  cursor: pointer;
+  font-family: var(--head);
+  font-size: 18px; font-weight: 600;
+  color: var(--prussian);
+  user-select: none;
+  list-style: none;
+  letter-spacing: -0.01em;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q .plus {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--alice);
+  color: var(--prussian);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0; margin-left: 16px;
+  transition: transform 0.25s, background 0.2s, color 0.2s;
+}
+.faq-item[open] .faq-q .plus {
+  transform: rotate(45deg);
+  background: var(--accent);
+  color: #fff;
+}
+.faq-a {
+  padding-bottom: 22px;
+  color: var(--steel);
+  font-size: 15px; line-height: 1.65;
+  max-width: 760px;
+}
+
+/* ============================== FINAL CTA ============================== */
+.final-cta {
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 30%, rgba(4,150,255,0.18), transparent 70%),
+    radial-gradient(ellipse 50% 50% at 90% 80%, rgba(4,150,255,0.10), transparent 70%),
+    var(--prussian);
+  text-align: center;
+}
+.final-cta h2 { color: #fff; max-width: 880px; margin: 0 auto; }
+.final-cta .body-lg {
+  max-width: 580px; margin: 24px auto 0;
+  color: rgba(255,255,255,0.78);
+}
+.final-cta .btn { margin-top: 36px; }
+
+</style>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== NAV (shared) ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div>
+        <div class="eyebrow" style="color: var(--accent);">Kubicle Free Tier</div>
+        <h1 class="h-display" style="margin-top: 18px;">
+          Master the High-Stakes Skills That Drive <em>Professional Careers</em>
+        </h1>
+        <p class="hero-sub">
+          Join 1M+ professionals using Kubicle to master the modern toolkit of Professional Services, Finance and Consulting.
+        </p>
+        <div class="hero-assurance">
+          <span><span class="check"><svg viewBox="0 0 12 12"><path d="M3 6.5l2 2 4-4.5"/></svg></span> No credit card required</span>
+          <span><span class="check"><svg viewBox="0 0 12 12"><path d="M3 6.5l2 2 4-4.5"/></svg></span> 30+ Free Certified Courses</span>
+        </div>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary btn-lg" href="../try-free/">Try for Free <span class="arr">&rarr;</span></a>
+          <div class="accred">
+            <span>Accredited by</span>
+            <img src="../img/shared/69022a93d722e08a215ad239_certs-logos.avif" alt="CPD, CPE, ISO certifications"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SOLUTION OVERVIEW ============================== -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">A Specialist Training Platform</div>
+      <h2 class="h-xl" style="margin-top: 16px;">A Specialist Training Platform Designed to <span style="color: var(--accent);">Help You Accelerate</span></h2>
+      <p class="body-lg">
+        From foundational Excel and Accounting to advanced AI and Data Strategy, we cover the entire spectrum of modern professional skills. Over 400 courses to help you accelerate your finance or consulting career.
+      </p>
+    </div>
+
+    <div class="cat-grid">
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/695d2ed0324f4cba4bcf1140_excel.avif" alt="Excel"/></div><div class="cat-name">Excel</div></div>
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/695d2ed0324f4cba4bcf1180_finance-fundamentals.avif" alt="Financial Modeling"/></div><div class="cat-name">Financial Modeling</div></div>
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/692dc2a392331558de004c66_power-bi.avif" alt="Power BI"/></div><div class="cat-name">Power BI</div></div>
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/695d2ed0324f4cba4bcf1158_tableau.avif" alt="Tableau"/></div><div class="cat-name">Tableau</div></div>
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/695d2ed0324f4cba4bcf1150_visualization-fundamentals.avif" alt="Data Visualization"/></div><div class="cat-name">Data Visualization</div></div>
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/695d2ed0324f4cba4bcf1168_powerpoint.avif" alt="PowerPoint"/></div><div class="cat-name">PowerPoint</div></div>
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/695d2ed1324f4cba4bcf11a2_ai-fundamentals.avif" alt="Artificial Intelligence"/></div><div class="cat-name">Artificial Intelligence</div></div>
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/695d2ed1324f4cba4bcf1192_python-fundamentals.avif" alt="Python"/></div><div class="cat-name">Python</div></div>
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/695d2ed1324f4cba4bcf119a_sql.avif" alt="SQL"/></div><div class="cat-name">SQL</div></div>
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/695d2ed0324f4cba4bcf1160_alteryx.avif" alt="Alteryx"/></div><div class="cat-name">Alteryx</div></div>
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/695d2ed1324f4cba4bcf118e_accounting.svg" alt="Finance Fundamentals"/></div><div class="cat-name">Finance Fundamentals</div></div>
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/695d2ed0324f4cba4bcf1178_outlook.avif" alt="Outlook"/></div><div class="cat-name">Outlook</div></div>
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/695d2ed0324f4cba4bcf1170_word.avif" alt="Word"/></div><div class="cat-name">Word</div></div>
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/695d2ed1324f4cba4bcf1188_project-management-fundamentals.avif" alt="Project Management"/></div><div class="cat-name">Project Management</div></div>
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/695d2ed0324f4cba4bcf1148_data-strategy-governance.avif" alt="Data Strategy"/></div><div class="cat-name">Data Strategy</div></div>
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/695d2ed0324f4cba4bcf1150_visualization-fundamentals.avif" alt="APIs"/></div><div class="cat-name">APIs</div></div>
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/695d2ed0324f4cba4bcf1148_data-strategy-governance.avif" alt="Data Regulation"/></div><div class="cat-name">Data Regulation</div></div>
+      <div class="cat-card"><div class="cat-img"><img src="../img/shared/696dff160d9f86b3eb1ea180_data-security.jpg" alt="Data Security"/></div><div class="cat-name">Data Security</div></div>
+    </div>
+
+    <div class="solution-cta">
+      <a class="btn btn-primary btn-md" href="../try-free/">Try for Free <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CERT BAND ============================== -->
+<section class="cert-band">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Certifications</div>
+      <h2 class="h-xl" style="margin-top: 16px;">Get the Kudos You Deserve with <span style="color: var(--accent);">Globally Recognized Certification</span></h2>
+      <p class="body-lg">
+        Earn CPE credits and CPD hours. Our high-quality material is vetted by leading accounting and professional bodies.
+      </p>
+    </div>
+    <div class="badge-row">
+      <img src="../img/shared/690e247d418880763cd9fb1e_cert-3.avif" alt="Certifications: CPE, CPD, NASBA, CAI Ireland"/>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== WHATS INSIDE ============================== -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">What's Inside?</div>
+      <h2 class="h-xl" style="margin-top: 16px;">Over 30+ Certified Free Courses. <span style="color: var(--accent);">No Credit Card Required.</span></h2>
+    </div>
+
+    <div class="inside-grid">
+      <div class="inside-img">
+        <img src="../img/shared/690e247d418880763cd9f733_graphic-4-tabs-ai-literacy.jpg" alt="Kubicle platform preview"/>
+      </div>
+      <div class="inside-list">
+        <div class="inside-card">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2 6-6 2 2-6 6-2z"/></svg></div>
+          <div>
+            <h4>Explore Our Pathways. The First Course in Every Pathway is FREE</h4>
+            <p>Gain unlimited browsing access to our full library of data and business modules. Master Spreadsheets, Financial Modeling, Data Analytics, and Artificial Intelligence through expert-led courses &amp; projects.</p>
+          </div>
+        </div>
+        <div class="inside-card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div>
+            <h4>Earn Industry-Recognized Certifications</h4>
+            <p>Complete as many free courses as you like. Our certificates are verified by global bodies including NASBA, Chartered Accountants Ireland, and the CPD Standards Office.</p>
+          </div>
+        </div>
+        <div class="inside-card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z"/></svg></div>
+          <div>
+            <h4>Identify Skill Gaps with AI Assessments</h4>
+            <p>Leverage AI-powered skill gap analysis to pinpoint your proficiency level. Every course begins with a diagnostic assessment to ensure the curriculum is perfectly matched to your existing expertise.</p>
+          </div>
+        </div>
+        <div class="inside-card">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+          <div>
+            <h4>High-Impact Learning for Finance Professionals</h4>
+            <p>Master critical business skills through a finance and consulting lens. Our micro-learning modules are specifically engineered for time-poor professionals to deliver maximum performance impact in minimal time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="inside-sub">Over 30+ Certified Free Courses. No Credit Card Required.</div>
+    <div class="inside-cta">
+      <a class="btn btn-primary btn-md" href="../try-free/">Try for Free <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== INDUSTRY SOLUTIONS ============================== -->
+<section class="dark">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Built For Your Role</div>
+      <h2 class="h-xl" style="margin-top: 16px; color: #fff;">Built for Financial and <span style="color: var(--accent);">Professional Services</span></h2>
+      <p class="body-lg">
+        Tailored specifically for the demands of finance and consulting. We respect your time by focusing on high-impact, job-relevant skills.
+      </p>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" data-tab="finance" role="tab">Finance Teams</button>
+      <button class="tab-btn" data-tab="audit" role="tab">Tax &amp; Audit</button>
+      <button class="tab-btn" data-tab="advisory" role="tab">Advisory</button>
+      <button class="tab-btn" data-tab="consulting" role="tab">Consulting</button>
+    </div>
+
+    <div class="tab-panel active" data-tab-panel="finance">
+      <div class="tab-panel-grid">
+        <div class="tab-img"><img src="../img/shared/690e247d418880763cd9fb0a_upgrade-all-access-2.avif" alt="Finance teams"/></div>
+        <div class="tab-content">
+          <h3>Strengthen Your Corporate Finance Capabilities and Support Better Business Decisions</h3>
+          <ul>
+            <li>Build core financial modeling, forecasting, and analysis skills used by high-performing corporate finance teams.</li>
+            <li>Turn financial and operational data into clear insights that inform budgeting, investment, and strategic decisions.</li>
+            <li>Improve Excel, PowerPoint, and data skills to produce accurate, decision-ready outputs at speed.</li>
+            <li>Communicate financial performance and drivers effectively to senior stakeholders across the business.</li>
+          </ul>
+          <a class="btn btn-primary btn-md" href="../try-free/">Try for Free <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" data-tab-panel="audit">
+      <div class="tab-panel-grid">
+        <div class="tab-img"><img src="../img/shared/696dff160d9f86b3eb1ea184_taxandaudit.avif" alt="Tax and audit"/></div>
+        <div class="tab-content">
+          <h3>Build Technical Confidence and Deliver Trusted Tax and Audit Outcomes</h3>
+          <ul>
+            <li>Develop strong foundations in financial reporting, accounting, and tax concepts used in audit and compliance work.</li>
+            <li>Apply structured, data-driven approaches to identify risk, validate assumptions, and support defensible conclusions.</li>
+            <li>Strengthen Excel and data skills to analyze large datasets efficiently and improve audit quality.</li>
+            <li>Communicate findings clearly and professionally to stakeholders through well-structured, client-ready outputs.</li>
+          </ul>
+          <a class="btn btn-primary btn-md" href="../try-free/">Try for Free <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" data-tab-panel="advisory">
+      <div class="tab-panel-grid">
+        <div class="tab-img"><img src="../img/shared/696dff160d9f86b3eb1ea18a_advisory.avif" alt="Advisory"/></div>
+        <div class="tab-content">
+          <h3>Elevate Your Advisory Skillset and Deliver Insight That Drives Impact</h3>
+          <ul>
+            <li>Build the core analytical and commercial skills needed for advisory roles across strategy, deals, risk, and transformation.</li>
+            <li>Develop clear, structured thinking to translate complex analysis into executive-ready recommendations.</li>
+            <li>Strengthen financial, data, and presentation capabilities to support high-stakes client engagements.</li>
+            <li>Apply real-world frameworks and tools used by top advisory teams to solve ambiguous business problems with confidence.</li>
+          </ul>
+          <a class="btn btn-primary btn-md" href="../try-free/">Try for Free <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" data-tab-panel="consulting">
+      <div class="tab-panel-grid">
+        <div class="tab-img"><img src="../img/shared/696dff160d9f86b3eb1ea191_Consulting.avif" alt="Consulting"/></div>
+        <div class="tab-content">
+          <h3>Optimize Your Consulting Toolkit and Master Your High-Stakes Presentation Skills</h3>
+          <ul>
+            <li>Focusing on PowerPoint for consultants: creating slide decks that communicate clearly and persuasively.</li>
+            <li>Structure narratives that drive executive decision-making in finance and strategy projects.</li>
+            <li>Learn advanced formatting techniques to produce client-ready deliverables in record time.</li>
+            <li>Integrate Excel data seamlessly into PowerPoint for error-free financial presentations.</li>
+          </ul>
+          <a class="btn btn-primary btn-md" href="../try-free/">Try for Free <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================== TRUST / SOCIAL PROOF ============================== -->
+<section class="trust-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Trusted by High-Performing Teams</div>
+      <h2 class="h-xl" style="margin-top: 16px;">Trusted by <span style="color: var(--accent);">High-Performing Teams</span></h2>
+      <p class="body-lg">
+        We have a deep history of serving your industry, and here&rsquo;s the proof.
+      </p>
+    </div>
+
+    <div class="logos-strip">
+      <div class="logo-cell"><img src="../img/shared/690e247d418880763cd9f3ce_adl.svg" alt="ADL"/></div>
+      <div class="logo-cell"><img src="../img/shared/690e247d418880763cd9f426_amazon.svg" alt="Amazon"/></div>
+      <div class="logo-cell"><img src="../img/shared/690e247d418880763cd9f69f_lek.svg" alt="LEK"/></div>
+      <div class="logo-cell"><img src="../img/shared/690e247d418880763cd9f423_ford.svg" alt="Ford"/></div>
+      <div class="logo-cell"><img src="../img/shared/690e247d418880763cd9f425_british-airways.svg" alt="British Airways"/></div>
+      <div class="logo-cell"><img src="../img/shared/690e247d418880763cd9f3cd_jotun-logo.svg" alt="Jotun"/></div>
+      <div class="logo-cell"><img src="../img/shared/690e247d418880763cd9f928_tjx.svg" alt="TJX"/></div>
+      <div class="logo-cell"><img src="../img/shared/690e247d418880763cd9f924_cla.svg" alt="CLA"/></div>
+      <div class="logo-cell"><img src="../img/shared/690e247d418880763cd9f3d1_deloitte.svg" alt="Deloitte"/></div>
+      <div class="logo-cell"><img src="../img/shared/690e247d418880763cd9f91f_altman-solon.svg" alt="Altman Solon"/></div>
+      <div class="logo-cell"><img src="../img/shared/690e247d418880763cd9f920_marsh.svg" alt="Marsh"/></div>
+      <div class="logo-cell"><img src="../img/shared/690e247d418880763cd9f925_capitec.svg" alt="Capitec"/></div>
+      <div class="logo-cell"><img src="../img/shared/690e247d418880763cd9f926_knight-frank.svg" alt="Knight Frank"/></div>
+      <div class="logo-cell"><img src="../img/shared/690e247d418880763cd9f927_gt.svg" alt="GT"/></div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-num">300<em>+</em></div>
+        <div class="stat-label">Companies trust Kubicle for professional development</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">1M<em>+</em></div>
+        <div class="stat-label">Learners have accelerated their careers with Kubicle</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">86<em>%</em></div>
+        <div class="stat-label">Of learners typically complete the courses they start</div>
+      </div>
+    </div>
+
+    <div class="g2-row">
+      <img src="../img/shared/684ff04b360b30a1bde1a946_OnlineCourseProviders_BestEstimatedROI_Enterprise_Roi.svg" alt="G2 Best Estimated ROI Enterprise"/>
+      <img src="../img/shared/684ff05abbf6c48ca006117d_OnlineCourseProviders_HighPerformer_Enterprise_HighPerformer.svg" alt="G2 High Performer Enterprise"/>
+      <img src="../img/shared/685077d15806e6684dd62bc7_OnlineCourseProviders_FastestImplementation_Enterprise_GoLiveTime.svg" alt="G2 Fastest Implementation Enterprise"/>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TESTIMONIALS ============================== -->
+<section class="testi-section">
+  <div class="container">
+    <div class="testi-head-row">
+      <div class="testi-title">
+        <div class="eyebrow">What our customers say</div>
+        <h2 class="h-xl" style="margin-top: 16px;">See What Our Customers Have to Say</h2>
+      </div>
+      <div class="testi-meta">
+        <strong>Used by 1M+ Employees</strong>
+        <span>&middot;</span>
+        <a href="https://www.g2.com/products/kubicle/reviews" target="_blank" rel="noopener">4.7<span class="rating-of">/5</span> Rating on G2 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">"The fact that everything is extremely detailed and makes sense. It&rsquo;s not a case of needing assistance constantly. It&rsquo;s clear to understand and have enough information to ensure success."</p>
+        <div class="testi-author">
+          <img src="../img/shared/68516a03d14f17c847851e9a_george-n.webp" alt="George N"/>
+          <div>
+            <div class="who">George N</div>
+            <div class="role">Co-Owner</div>
+            <span class="tier">Enterprise</span>
+          </div>
+          <span class="testi-date">Jun 12, 2025</span>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">"My experience with Kubicle has been highly positive and intellectually rewarding. As someone working in the IT field, I found the platform particularly valuable for enhancing my understanding of data analysis, Excel, and other technical skills that are essential in today&rsquo;s data-driven environment. The learning modules are well-structured, concise, and easy to follow."</p>
+        <div class="testi-author">
+          <img src="../img/shared/68516b3f6ed65be4c849bb43_rodney-d.jpg" alt="Rodney D"/>
+          <div>
+            <div class="who">Rodney D</div>
+            <div class="role">Customer Engineer</div>
+            <span class="tier">Enterprise</span>
+          </div>
+          <span class="testi-date">Jun 14, 2025</span>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">"We have had the pleasure of working with Kubicle for several years, and their support and professionalism have consistently been exceptional. We look forward to continuing this valuable partnership. The ever-evolving Kubicle platform has been a tremendous resource in enhancing our employees&rsquo; knowledge and skills."</p>
+        <div class="testi-author">
+          <img src="../img/shared/68516c491249a58bccd7618b_aleksandra-r.webp" alt="Aleksandra R"/>
+          <div>
+            <div class="who">Aleksandra R</div>
+            <div class="role">Manager of Human Resources</div>
+            <span class="tier">Mid-Market</span>
+          </div>
+          <span class="testi-date">Nov 15, 2024</span>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">"Kubicle allows me to build my fluency in data, the variety of courses really helped to enrich my existing knowledge pool. Whilst also building in new skills, it helped me keep my old skills sharpened through the previously mentioned courses. As a business analyst this was really useful for me."</p>
+        <div class="testi-author">
+          <img src="../img/shared/68516d585220369beac3c33e_harrison-s.jpg" alt="Harrison S"/>
+          <div>
+            <div class="who">Harrison S</div>
+            <div class="role">Business Planning Analyst</div>
+            <span class="tier">Small-Business</span>
+          </div>
+          <span class="testi-date">Nov 21, 2024</span>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">"Through Kubicle, I am able to accommodate a diverse group of students&rsquo; skills. Students can replay or slow down videos when it is necessary to solidify knowledge, just as much as they can skip concepts that they have mastered. The examples are practical and the learning efficacy works! My classes are a lot more robust and my students are ready to join the workforce at a competitive level."</p>
+        <div class="testi-author">
+          <img src="../img/shared/68516cc6204b7abe7a70c5b5_fernando-p.webp" alt="Fernando P"/>
+          <div>
+            <div class="who">Fernando P</div>
+            <div class="role">Principal Consultant</div>
+            <span class="tier">Enterprise</span>
+          </div>
+          <span class="testi-date">Jun 24, 2024</span>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="quote">"I really like how interactive and easy to use the Kubicle UI is. Ease of use and training are key to high adoption rates with any software, Kubicle excels in both areas with a vast library of content which is all NASBA &amp; CPE/CPD accredited, a very easy to navigate and understand UI/UX and a truly dedicated Customer Success team."</p>
+        <div class="testi-author">
+          <img src="../img/shared/6851687428ec98b7efe14f86_ronan-k.jpg" alt="Ronan K"/>
+          <div>
+            <div class="who">Ronan K</div>
+            <div class="role">Customer Success Manager</div>
+            <span class="tier">Small-Business</span>
+          </div>
+          <span class="testi-date">Nov 20, 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PRICING ============================== -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Pricing</div>
+      <h2 class="h-xl" style="margin-top: 16px;">Start free. <span style="color: var(--accent);">Upgrade when you&rsquo;re ready.</span></h2>
+      <p class="body-lg">
+        Begin with the Free Tier, no credit card, 30+ certified courses. Or unlock the full library with Kubicle All Access.
+      </p>
+    </div>
+
+    <div class="pricing-controls">
+      <div class="toggle-group" id="currency-toggle" role="tablist" aria-label="Currency">
+        <button data-currency="USD">USD $</button>
+        <button class="active" data-currency="EUR">EUR &euro;</button>
+        <button data-currency="GBP">GBP &pound;</button>
+      </div>
+      <div class="toggle-group" id="billing-toggle" role="tablist" aria-label="Billing">
+        <button data-billing="monthly">Monthly</button>
+        <button class="active" data-billing="annual">Annual <span class="save-pill">Save 13%</span></button>
+      </div>
+    </div>
+
+    <div class="pricing-pair">
+      <!-- Free Tier card -->
+      <div class="free-tier-card">
+        <div>
+          <span class="tag">Free Tier &middot; For Individuals</span>
+          <h3>Join Kubicle for Free</h3>
+          <p class="ft-lede">
+            Build practical, job-ready skills today. The first course in every learning path is free, and you keep certifications you earn.
+          </p>
+          <ul class="ft-bullets">
+            <li>30+ certified free courses</li>
+            <li>First course in every learning path</li>
+            <li>Earn CPE / CPD / NASBA certifications</li>
+            <li>Skill-gap diagnostic assessments</li>
+            <li>Browse the full library, free</li>
+            <li>Upgrade anytime</li>
+          </ul>
+        </div>
+        <div class="ft-priceblock">
+          <div class="price-amount">
+            <span class="currency" data-symbol>&euro;</span><span data-free>0</span>
+            <span class="period">forever, per learner</span>
+          </div>
+          <p class="free-note">No credit card required.</p>
+          <a class="btn btn-md" href="../try-free/">Try for Free <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+
+      <!-- All Access card with currency + billing toggles -->
+      <div class="all-access-card">
+        <div>
+          <span class="tag">Upgrade &middot; Full Library</span>
+          <h3>Kubicle All Access</h3>
+          <p class="aa-lede">
+            Unlock every academy, every persona pathway, and the full 400+ course library. Cancel anytime.
+          </p>
+          <ul class="aa-bullets">
+            <li>All four academies (AI, Data, PM, Finance)</li>
+            <li>14 credentialed personas</li>
+            <li>400+ courses &amp; projects</li>
+            <li>AI-assessed projects (BETA)</li>
+            <li>CPE / CPD / NASBA certifications</li>
+            <li>Full platform access</li>
+          </ul>
+        </div>
+        <div class="aa-priceblock">
+          <div class="price-amount">
+            <span class="currency" data-symbol>&euro;</span><span data-aa-price>408</span>
+            <span class="period" data-aa-period>per learner per year</span>
+          </div>
+          <p class="free-note" data-aa-note>Cancel anytime &middot; billed annually</p>
+          <a class="btn btn-primary btn-lg" href="../try-free/" style="width:100%; justify-content:center;">Try for Free <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================== COMPARISON TABLE ============================== -->
+<section class="compare-section">
+  <div class="container">
+    <div style="max-width: 760px;">
+      <div class="eyebrow">What&rsquo;s included</div>
+      <h2 class="h-xl" style="margin-top: 14px;">Compare Free Tier vs. All Access.</h2>
+      <p class="body-lg" style="margin-top: 16px; color: var(--steel); max-width: 620px;">
+        Start with the Free Tier and upgrade to All Access whenever you outgrow it.
+      </p>
+    </div>
+
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="col-academy col-free"><span class="acad-tag">For Individuals</span>Free Tier</th>
+            <th class="col-academy col-aa"><span class="acad-tag">Upgrade</span>All Access</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr class="section-row">
+            <td>Library &amp; content</td>
+            <td class="col-free-cell"></td>
+            <td class="col-aa-cell"></td>
+          </tr>
+          <tr>
+            <td>Certified courses, exercises &amp; exams</td>
+            <td class="col-free-cell"><span class="num-tag">30+</span></td>
+            <td class="col-aa-cell"><span class="num-tag">400+</span></td>
+          </tr>
+          <tr>
+            <td>First course in every learning path</td>
+            <td class="col-free-cell"><span class="check"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>Browse full library &amp; preview lessons</td>
+            <td class="col-free-cell"><span class="check"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>CPE, CPD &amp; NASBA certifications</td>
+            <td class="col-free-cell"><span class="check"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>Data sandbox projects</td>
+            <td class="col-free-cell"><span class="cross"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>AI-assessed projects (BETA)</td>
+            <td class="col-free-cell"><span class="cross"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>Pre-built eLearning academies</td>
+            <td class="col-free-cell">&ndash;</td>
+            <td class="col-aa-cell"><span class="num-tag">4</span></td>
+          </tr>
+
+          <tr class="section-row">
+            <td>Personas &amp; pathways</td>
+            <td class="col-free-cell"></td>
+            <td class="col-aa-cell"></td>
+          </tr>
+          <tr>
+            <td>Persona pathways (full access)</td>
+            <td class="col-free-cell"><span class="cross"></span></td>
+            <td class="col-aa-cell"><span class="num-tag">14</span></td>
+          </tr>
+          <tr>
+            <td>External credential alignment</td>
+            <td class="col-free-cell">&ndash;</td>
+            <td class="col-aa-cell">All four academies</td>
+          </tr>
+          <tr>
+            <td>Cross-discipline coverage</td>
+            <td class="col-free-cell"><span class="cross"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+
+          <tr class="section-row">
+            <td>Experience &amp; delivery</td>
+            <td class="col-free-cell"></td>
+            <td class="col-aa-cell"></td>
+          </tr>
+          <tr>
+            <td>Skill-gap diagnostic assessments</td>
+            <td class="col-free-cell"><span class="check"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>Learner check-ins</td>
+            <td class="col-free-cell"><span class="cross"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>Standard online support</td>
+            <td class="col-free-cell"><span class="check"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>Premium support</td>
+            <td class="col-free-cell"><span class="cross"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+
+          <tr class="section-row">
+            <td>Pricing</td>
+            <td class="col-free-cell"></td>
+            <td class="col-aa-cell"></td>
+          </tr>
+          <tr>
+            <td>Monthly billing &middot; cancel anytime</td>
+            <td class="col-free-cell">&ndash;</td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>Annual billing (save 13%)</td>
+            <td class="col-free-cell">&ndash;</td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>Starting price</td>
+            <td class="col-free-cell"><strong><span data-symbol>&euro;</span><span data-free>0</span></strong> forever</td>
+            <td class="col-aa-cell"><strong><span data-symbol>&euro;</span><span data-aa-table-price>408</span></strong> <span data-aa-table-period>per year</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FAQ ============================== -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="faq-head-row">
+      <div class="faq-head">
+        <div class="eyebrow">Got Questions?</div>
+        <h2 class="h-xl" style="margin-top: 16px;">Frequently Asked Questions</h2>
+        <p class="body-lg">
+          Got a question about Kubicle? You&rsquo;re in the right place. Whether you&rsquo;re curious about our courses, pricing, certifications, or platform features, we&rsquo;ve compiled the most common queries to help you get quick, clear answers. If you don&rsquo;t find what you&rsquo;re looking for, our support team is always here to help.
+        </p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary class="faq-q">What is Kubicle&rsquo;s Free Tier? <span class="plus">+</span></summary>
+          <p class="faq-a">Kubicle&rsquo;s free tier is designed to help early-career professionals in finance and professional services build practical, job-ready skills. It gives you a chance to experience the platform and see how our learning approach works before committing. With the free tier, you get access to the first course in every professional learning path. Furthermore you gain the ability to explore every course in our library and preview the first lesson, and the opportunity to earn CPE and CPD credits for any free course exams you pass.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Why can&rsquo;t I find any details about Kubicle&rsquo;s Free Tier on their main website? <span class="plus">+</span></summary>
+          <p class="faq-a">Kubicle&rsquo;s Free Tier is currently a beta offering. We are rolling it out gradually to a limited group of users so we can test the experience, gather feedback, and make improvements before a wider release. Because of this, you will not yet see full details of the Free Tier across our main website. If you have been invited to access it or have discovered it through limited advertising, you will see the relevant features available in your account. We plan to share more information publicly once the beta phase is complete.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">What training does Kubicle provide? <span class="plus">+</span></summary>
+          <p class="faq-a">Kubicle offers practical, skills-based training designed to help professionals build confidence in the tools and techniques used in finance and professional services. Our courses focus on real-world applications of Excel, PowerPoint, data analysis, financial modeling, reporting, and problem solving. We combine clear explanations with hands-on exercises so you can learn by doing. Whether you are just starting out or looking to level up your technical skills, Kubicle helps you develop capabilities you can apply immediately in your role.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How do I upgrade? <span class="plus">+</span></summary>
+          <p class="faq-a">At the moment, upgrades are handled directly by our team. To move to a paid plan, please reach out to a Kubicle representative through our Talk to Sales page. A member of the team will help you choose the right plan and guide you through the next steps.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How do I enquire about Kubicle&rsquo;s team training products? <span class="plus">+</span></summary>
+          <p class="faq-a">Please reach out to a Kubicle representative through our Talk to Sales page.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Is my training certified? <span class="plus">+</span></summary>
+          <p class="faq-a">Yes. Kubicle courses are eligible for Continuing Professional Education (CPE) and Continuing Professional Development (CPD) credits. Our training is recognized by bodies such as CAI Ireland and NASBA. You can earn credits by successfully completing course exams, and certificates are available to download directly from the platform.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Why does Kubicle ask for my phone number upon registration? <span class="plus">+</span></summary>
+          <p class="faq-a">We ask for a phone number to help verify accounts and ensure fair use of our Free Tier. This helps prevent the same individual from creating multiple accounts and taking advantage of the free offer, allowing us to keep the platform accessible and valuable for genuine users.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="final-cta">
+  <div class="container">
+    <div class="eyebrow" style="color: var(--accent);">Get Started</div>
+    <h2 class="h-display" style="margin-top: 18px;">Ready to upskill your future?</h2>
+    <p class="body-lg">
+      Join the community of professionals mastering Data and AI. No credit card required.
+    </p>
+    <a class="btn btn-primary btn-lg" href="../try-free/">Try for Free <span class="arr">&rarr;</span></a>
+  </div>
+</section>
+
+<!-- ============================== FOOTER (shared) ============================== -->
+<div id="site-footer"></div>
+
+<!-- ============================== SCRIPTS ============================== -->
+<script>
+// Industry Solutions tabs
+(function () {
+  var btns = document.querySelectorAll('.tab-btn');
+  var panels = document.querySelectorAll('.tab-panel');
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var key = b.getAttribute('data-tab');
+      btns.forEach(function (x) { x.classList.toggle('active', x === b); });
+      panels.forEach(function (p) {
+        p.classList.toggle('active', p.getAttribute('data-tab-panel') === key);
+      });
+    });
+  });
+})();
+
+// Pricing currency + billing toggles
+(function () {
+  // All Access prices: USD, EUR, GBP, annual and monthly
+  var PRICES = {
+    USD: { annual: 445, monthly: 42, symbol: '$' },
+    EUR: { annual: 408, monthly: 39, symbol: '€' },
+    GBP: { annual: 349, monthly: 33, symbol: '£' }
+  };
+
+  var state = { currency: 'EUR', billing: 'annual' };
+
+  function render() {
+    var p = PRICES[state.currency];
+    // Update every currency symbol on the page
+    document.querySelectorAll('[data-symbol]').forEach(function (el) { el.textContent = p.symbol; });
+
+    // All Access main card price
+    var card = document.querySelector('[data-aa-price]');
+    var period = document.querySelector('[data-aa-period]');
+    var note = document.querySelector('[data-aa-note]');
+    if (card) {
+      card.textContent = state.billing === 'annual' ? p.annual : p.monthly;
+    }
+    if (period) {
+      period.textContent = state.billing === 'annual'
+        ? 'per learner per year'
+        : 'per learner per month';
+    }
+    if (note) {
+      note.textContent = state.billing === 'annual'
+        ? 'Cancel anytime · billed annually'
+        : 'Cancel anytime · billed monthly';
+    }
+
+    // Comparison table price row
+    var tablePrice = document.querySelector('[data-aa-table-price]');
+    var tablePeriod = document.querySelector('[data-aa-table-period]');
+    if (tablePrice) {
+      tablePrice.textContent = state.billing === 'annual' ? p.annual : p.monthly;
+    }
+    if (tablePeriod) {
+      tablePeriod.textContent = state.billing === 'annual' ? 'per year' : 'per month';
+    }
+  }
+
+  // Currency toggle
+  document.querySelectorAll('#currency-toggle button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      state.currency = b.getAttribute('data-currency');
+      document.querySelectorAll('#currency-toggle button').forEach(function (x) {
+        x.classList.toggle('active', x === b);
+      });
+      render();
+    });
+  });
+
+  // Billing toggle
+  document.querySelectorAll('#billing-toggle button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      state.billing = b.getAttribute('data-billing');
+      document.querySelectorAll('#billing-toggle button').forEach(function (x) {
+        x.classList.toggle('active', x === b);
+      });
+      render();
+    });
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>

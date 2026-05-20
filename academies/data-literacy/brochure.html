@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/shared/favicon-32x32.png"/>
+<title>Kubicle Data Persona Framework | Brochure</title>
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+<style>
+:root{
+  --prussian:#0B1B2B;
+  --indigo:#0B446B;
+  --pink:#E8519D;
+  --pink-d:#B0286A;
+  --pink-soft:#FCE4EC;
+  --alice:#F4F6F8;
+  --honolulu:#1176BB;
+  --lapis:#0D5F96;
+  --columbia:#D6EEFF;
+  --steel:#8C9BAA;
+  --soft-black:#1A2433;
+  --pa:#B475F7;     /* Citizen   - purple */
+  --pn:#2EB85F;     /* Associate - green  */
+  --pw:#E8519D;     /* Wrangler  - pink   */
+  --ps:#2D7AD4;     /* Analyst   - blue   */
+  --head:"Clash Grotesk","Helvetica Neue",Arial,sans-serif;
+  --body:"Satoshi","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#5a6471;}
+body{
+  font-family:var(--body);
+  color:var(--soft-black);
+  line-height:1.45;
+  letter-spacing:-0.005em;
+  -webkit-font-smoothing:antialiased;
+}
+
+@page{ size:A4; margin:0; }
+
+/* PAGE FRAME */
+.page{
+  width:210mm;
+  height:297mm;
+  margin:14mm auto;
+  background:#fff;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 12px 40px rgba(0,0,0,0.35);
+  page-break-after:always;
+  break-after:page;
+}
+.page:last-child{ page-break-after:auto; break-after:auto; }
+.page.dark{ background:var(--prussian); color:#fff; }
+.page.alice{ background:#E9EEF3; }
+.page.indigo{ background:var(--indigo); color:#fff; }
+
+.frame{
+  position:absolute; inset:0;
+  padding:18mm 17mm;
+  display:flex; flex-direction:column;
+}
+
+/* HEADER */
+.hdr{
+  display:flex; align-items:center; justify-content:space-between;
+  font-family:var(--body); font-size:11px; font-weight:600;
+  letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--pink-d);
+}
+.dark .hdr{ color:#F8BBD0; }
+.hdr .logo{
+  width:32px; height:32px;
+  display:flex; align-items:center; justify-content:center;
+  position:relative;
+}
+.hdr .logo img{
+  width:32px; height:32px;
+  display:block;
+  filter:invert(1);
+}
+.dark .hdr .logo img{ filter:none; }
+.hdr .logo-row{ display:flex; align-items:center; gap:10px; }
+.hdr .logo-row .word{
+  color:var(--prussian); font-size:11px;
+  font-family:var(--head); font-weight:600;
+  letter-spacing:0.04em;
+}
+.dark .hdr .logo-row .word{ color:#fff; }
+.hdr .pno{ font-variant-numeric:tabular-nums; }
+
+/* FOOTER */
+.ftr{
+  margin-top:auto;
+  display:flex; align-items:center; justify-content:space-between;
+  font-family:var(--body); font-size:10px; font-weight:600;
+  letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--pink-d);
+  padding-top:14mm;
+}
+.dark .ftr{ color:rgba(255,255,255,0.55); }
+
+/* TYPE */
+.eyebrow{
+  font-family:var(--body); font-weight:700;
+  text-transform:uppercase; letter-spacing:0.14em;
+  font-size:11px; color:var(--pink-d);
+}
+.dark .eyebrow{ color:var(--pink); }
+h1,h2,h3,h4{
+  font-family:var(--head); font-weight:600;
+  letter-spacing:-0.045em; line-height:0.95;
+  margin:0; color:var(--prussian);
+}
+.dark h1,.dark h2,.dark h3,.dark h4{ color:#fff; }
+.h-cover{ font-size:64px; line-height:1.0; letter-spacing:-0.05em; }
+.h-page{ font-size:46px; line-height:1.02; letter-spacing:-0.045em; }
+.h-section{ font-size:36px; line-height:1.05; letter-spacing:-0.04em; }
+.h-card{ font-size:22px; line-height:1.1; letter-spacing:-0.025em; }
+.body-lg{ font-size:14px; line-height:1.55; color:var(--soft-black); }
+.body{ font-size:12.5px; line-height:1.55; color:var(--soft-black); }
+.body-sm{ font-size:11px; line-height:1.5; color:var(--soft-black); }
+.dark .body-lg,.dark .body{ color:rgba(255,255,255,0.78); }
+.dark .body-sm{ color:rgba(255,255,255,0.7); }
+
+/* GEO SHAPES */
+.geo-arch{
+  position:absolute; pointer-events:none;
+  border:24px solid currentColor;
+  border-radius:50%; border-bottom-color:transparent;
+  color:rgba(232,81,157,0.14);
+}
+.dark .geo-arch{ color:rgba(232,81,157,0.18); }
+.geo-ring{
+  position:absolute; pointer-events:none;
+  border:14px solid currentColor;
+  border-radius:50%;
+  color:rgba(232,81,157,0.10);
+}
+.dot-pink{
+  position:absolute; width:6px; height:6px;
+  background:var(--pink); border-radius:50%;
+}
+.dot-purple{
+  position:absolute; width:6px; height:6px;
+  background:var(--pa); border-radius:50%;
+}
+
+/* ============ PAGE 1 - COVER ============ */
+.cover-bg{
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 70% 80% at 80% 18%, rgba(232,81,157,0.22), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 12% 90%, rgba(180,117,247,0.10), transparent 60%),
+    var(--prussian);
+}
+.cover-shapes{
+  position:absolute; inset:0; overflow:hidden;
+}
+.cover-shapes::before{
+  content:""; position:absolute;
+  width:340px; height:560px;
+  right:14%; top:-40px;
+  background:rgba(232,81,157,0.08);
+  border-radius:80px 80px 60px 60px;
+  transform:rotate(-12deg);
+}
+.cover-shapes::after{
+  content:""; position:absolute;
+  width:200px; height:380px;
+  right:-2%; top:30%;
+  background:rgba(180,117,247,0.06);
+  border-radius:60px 60px 60px 60px;
+  transform:rotate(8deg);
+}
+.cover-h1{
+  font-size:60px;
+  line-height:1.0;
+  letter-spacing:-0.05em;
+  color:#fff;
+}
+.cover-h1 .accent{ color:var(--pink); }
+.cover-sub{
+  margin-top:18px;
+  font-size:13.5px;
+  line-height:1.55;
+  color:rgba(255,255,255,0.78);
+  max-width:420px;
+}
+.cover-personas-strip{
+  display:flex; gap:24px; flex-wrap:wrap;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,0.18);
+}
+.cps-item{
+  display:flex; align-items:center; gap:8px;
+  font-family:var(--body); font-size:12px; font-weight:600;
+  color:rgba(255,255,255,0.85);
+}
+.cps-dot{
+  width:8px; height:8px; border-radius:50%;
+}
+
+/* ============ PAGE 2 - WHY PERSONAS (4-up) ============ */
+.two-col{
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:36px;
+}
+.persona-thumb-grid{
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:auto;
+  padding-top:18px;
+  border-top:1px solid #D7DEE5;
+}
+.pt-card{
+  background:transparent;
+  border-radius:16px;
+}
+.pt-tile{
+  width:100%; aspect-ratio:1/1;
+  border-radius:14px;
+  position:relative; overflow:hidden;
+  margin-bottom:12px;
+}
+.pt-photo{
+  position:absolute; inset:0;
+  background-size:cover; background-position:center;
+}
+.pt-overlay{
+  position:absolute; inset:0;
+  mix-blend-mode:multiply;
+}
+.pt-tile.citizen   .pt-overlay{ background:linear-gradient(135deg, rgba(180,117,247,0.55), rgba(90,40,160,0.40)); }
+.pt-tile.associate .pt-overlay{ background:linear-gradient(135deg, rgba(46,184,95,0.55),   rgba(20,90,45,0.35));  }
+.pt-tile.wrangler  .pt-overlay{ background:linear-gradient(135deg, rgba(232,81,157,0.55),  rgba(140,30,90,0.35)); }
+.pt-tile.analyst   .pt-overlay{ background:linear-gradient(135deg, rgba(45,122,212,0.55),  rgba(11,68,107,0.35)); }
+.pt-eyebrow{
+  font-family:var(--body); font-weight:700;
+  text-transform:uppercase; letter-spacing:0.08em;
+  font-size:9px;
+}
+.pt-eyebrow.cit{ color:#7E22CE; }
+.pt-eyebrow.ass{ color:#15803D; }
+.pt-eyebrow.wra{ color:var(--pink-d); }
+.pt-eyebrow.ana{ color:#1D4ED8; }
+.pt-name{
+  font-family:var(--head); font-weight:600;
+  font-size:16px; letter-spacing:-0.03em;
+  margin-top:4px; line-height:1.05;
+  color:var(--prussian);
+}
+.pt-desc{
+  margin-top:6px;
+  font-size:10px; line-height:1.4;
+  color:#5d6b7a;
+}
+
+/* ============ PAGE 3 - MIX ============ */
+.mix-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:24px;
+  padding:24px 26px;
+  margin-top:30px;
+}
+.mix-bar{
+  display:flex; gap:6px;
+  margin-top:14px;
+  border-radius:8px;
+  overflow:hidden;
+}
+.mix-seg{
+  height:62px;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:0 14px;
+  color:#fff;
+  min-width:88px;
+}
+.mix-seg .pct{
+  font-family:var(--head); font-weight:600;
+  font-size:22px; letter-spacing:-0.03em;
+  line-height:1;
+}
+.mix-seg .lbl{
+  font-family:var(--body); font-weight:700;
+  text-transform:uppercase; letter-spacing:0.1em;
+  font-size:9.5px;
+  color:rgba(255,255,255,0.92);
+  margin-top:4px;
+}
+.three-col{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-top:36px;
+}
+.three-col h4{
+  font-family:var(--body); font-weight:700;
+  text-transform:uppercase; letter-spacing:0.12em;
+  font-size:10px; color:var(--pink);
+  margin-bottom:6px;
+}
+.three-col p{
+  font-size:11.5px; line-height:1.5;
+  color:rgba(255,255,255,0.78);
+}
+
+/* ============ PAGE 4 - COMPETENCIES ============ */
+.comp-grid{
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:24px;
+}
+.comp-card{
+  background:#fff;
+  border-radius:24px;
+  padding:22px 22px;
+  display:flex; flex-direction:column;
+  min-height:155px;
+}
+.comp-num{
+  width:46px; height:46px;
+  border-radius:12px;
+  background:var(--prussian);
+  color:#fff;
+  font-family:var(--head); font-weight:600;
+  font-size:18px; letter-spacing:-0.02em;
+  display:flex; align-items:center; justify-content:center;
+}
+.comp-num.b1{ background:#0B1B2B; }
+.comp-num.b2{ background:var(--pink-d); }
+.comp-num.b3{ background:var(--pink); }
+.comp-num.b4{ background:#F8BBD0; color:var(--pink-d); }
+.comp-head{
+  display:flex; align-items:flex-start; gap:14px;
+  margin-bottom:12px;
+}
+.comp-head h4{
+  font-family:var(--head); font-weight:500;
+  font-size:22px; letter-spacing:-0.02em;
+  line-height:1.05;
+  color:var(--prussian);
+  padding-top:4px;
+  flex:1;
+}
+.comp-card p{
+  font-size:11.5px; line-height:1.5;
+  color:#3d4956;
+}
+.comp-pct{
+  display:inline-block;
+  margin-left:auto;
+  font-family:var(--head); font-weight:600;
+  font-size:12px;
+  color:var(--pink-d);
+  background:var(--pink-soft);
+  padding:4px 10px;
+  border-radius:999px;
+  letter-spacing:-0.01em;
+  white-space:nowrap;
+}
+.shared-banner{
+  margin-top:20px;
+  background:var(--prussian);
+  border-radius:24px;
+  padding:22px 26px;
+  position:relative;
+  color:#fff;
+}
+.shared-banner::before{
+  content:""; position:absolute;
+  left:18px; top:18px; bottom:18px;
+  width:3px; border-radius:3px;
+  background:var(--pink);
+}
+.shared-banner .eyebrow{ color:var(--pink); }
+.shared-banner p{
+  margin-top:6px;
+  font-size:12px; line-height:1.55;
+  color:rgba(255,255,255,0.85);
+  padding-left:20px;
+}
+.shared-banner .eyebrow{ padding-left:20px; }
+
+/* ============ PAGE 5 - PROCESS ============ */
+.proc-row{
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-top:30px;
+  position:relative;
+}
+.proc-row::before{
+  content:""; position:absolute;
+  top:22px; left:5%; right:5%;
+  height:1.5px;
+  background:repeating-linear-gradient(to right,#C7D1DC 0 6px,transparent 6px 12px);
+  z-index:0;
+}
+.proc-cell{ position:relative; z-index:1; }
+.proc-circle{
+  width:44px; height:44px; border-radius:50%;
+  background:#fff;
+  border:2px solid var(--prussian);
+  color:var(--prussian);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--head); font-weight:600;
+  font-size:18px; margin-bottom:14px;
+}
+.proc-cell .eyebrow{ color:var(--pink-d); font-size:10px; }
+.proc-cell h4{
+  font-family:var(--head); font-weight:500;
+  font-size:18px; letter-spacing:-0.025em;
+  line-height:1.1; margin-top:6px; color:var(--prussian);
+}
+.proc-cell p{
+  font-size:10.5px; line-height:1.5;
+  margin-top:8px; color:#3d4956;
+}
+.quote-block{
+  margin-top:auto;
+  padding-top:30px;
+  border-top:1px solid #D7DEE5;
+}
+.quote-block .q{
+  font-family:var(--head); font-weight:500;
+  font-size:22px; letter-spacing:-0.025em;
+  line-height:1.25;
+  color:var(--prussian);
+  max-width:600px;
+}
+.quote-block .who{
+  margin-top:14px;
+  font-family:var(--body); font-size:11px;
+  color:#5d6b7a;
+}
+
+/* ============ PERSONA DETAIL PAGES ============ */
+.persona-head{
+  display:grid; grid-template-columns:1.4fr 1fr;
+  gap:30px;
+  align-items:flex-start;
+}
+.persona-h{
+  font-size:56px; line-height:0.95;
+  letter-spacing:-0.05em;
+  color:var(--prussian);
+}
+.share-card{
+  background:var(--prussian);
+  border-radius:22px;
+  padding:22px 24px;
+  position:relative;
+  color:#fff;
+  overflow:hidden;
+  min-height:170px;
+}
+.share-card .ribbon{
+  position:absolute; top:0; right:0;
+  width:80px; height:62px;
+  clip-path:polygon(0 0,100% 0,100% 100%,30% 100%);
+}
+.share-card .ribbon::after{
+  content:""; position:absolute; right:0; top:0;
+  width:18px; height:18px; background:rgba(0,0,0,0.4);
+  clip-path:polygon(0 0,100% 0,0 100%);
+}
+.share-card .typical{
+  font-family:var(--body); font-weight:700;
+  text-transform:uppercase; letter-spacing:0.14em;
+  font-size:11px;
+}
+.share-card .pct{
+  font-family:var(--head); font-weight:600;
+  font-size:64px; line-height:1;
+  letter-spacing:-0.05em;
+  color:#fff;
+  margin-top:14px;
+}
+.share-card .pct .pp{ font-size:0.55em; vertical-align:top; }
+.share-card .of{
+  margin-top:10px;
+  font-size:11.5px;
+  color:rgba(255,255,255,0.8);
+}
+.persona-desc{
+  margin-top:18px;
+  font-size:13px; line-height:1.55;
+  color:#3d4956;
+}
+.persona-grid{
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:22px;
+}
+.pg-card{
+  background:#fff;
+  border-radius:22px;
+  padding:22px 22px;
+}
+.pg-card .eyebrow{ font-size:10px; }
+.comp-list{ margin-top:18px; }
+.comp-row{
+  display:grid; grid-template-columns:110px 1fr 30px;
+  align-items:center;
+  gap:10px;
+  margin-bottom:11px;
+}
+.comp-row .cl-label{
+  font-family:var(--body); font-weight:700;
+  text-transform:uppercase; letter-spacing:0.06em;
+  font-size:9.5px;
+  color:var(--prussian);
+}
+.comp-row .cl-bar{
+  height:9px; border-radius:5px;
+  background:#E2E7EC;
+  overflow:hidden;
+}
+.comp-row .cl-fill{ height:100%; border-radius:5px; }
+.comp-row .cl-val{
+  font-family:var(--body); font-weight:700;
+  font-size:11px; color:#5d6b7a;
+  text-align:right;
+}
+.milestone-grid{
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:18px;
+}
+.ml{
+  background:#F4F7FA;
+  border-radius:12px;
+  padding:14px 14px;
+  font-family:var(--head); font-weight:500;
+  font-size:13px; letter-spacing:-0.01em;
+  line-height:1.2;
+  color:var(--prussian);
+}
+.ml.full{ grid-column:1 / -1; }
+.samples{
+  margin-top:auto;
+  background:#fff;
+  border-radius:22px;
+  padding:18px 22px;
+}
+.samples-tags{
+  display:flex; flex-wrap:wrap; gap:8px;
+  margin-top:12px;
+}
+.tag-chip{
+  padding:7px 13px; border-radius:999px;
+  background:#E5EDF4;
+  color:var(--prussian);
+  font-family:var(--body); font-weight:700;
+  text-transform:uppercase; letter-spacing:0.06em;
+  font-size:9.5px;
+}
+
+/* persona color variations */
+.persona-page.cit{ background:#F3E5F5; }
+.persona-page.cit .pg-card{ background:#fff; }
+.persona-page.cit .eyebrow{ color:#7E22CE; }
+.persona-page.cit .share-card{ background:#1F0E2B; }
+.persona-page.cit .share-card .ribbon{ background:var(--pa); }
+.persona-page.cit .share-card .typical{ color:#E1BEE7; }
+.persona-page.cit .ml{ background:#F3E5F5; }
+.persona-page.cit .samples{ background:#E1BEE7; }
+.persona-page.cit .tag-chip{ background:#fff; color:#7E22CE; }
+
+.persona-page.ass{ background:#E9F4EF; }
+.persona-page.ass .pg-card{ background:#fff; }
+.persona-page.ass .eyebrow{ color:#15803D; }
+.persona-page.ass .share-card{ background:#0E2A1B; }
+.persona-page.ass .share-card .ribbon{ background:var(--pn); }
+.persona-page.ass .share-card .typical{ color:#A7E5BD; }
+.persona-page.ass .ml{ background:#E8F7EE; }
+.persona-page.ass .samples{ background:#D6EFDF; }
+.persona-page.ass .tag-chip{ background:#fff; color:#15803D; }
+
+.persona-page.wra{ background:#FCE4EC; }
+.persona-page.wra .pg-card{ background:#fff; }
+.persona-page.wra .eyebrow{ color:var(--pink-d); }
+.persona-page.wra .share-card{ background:#2B0E1A; }
+.persona-page.wra .share-card .ribbon{ background:var(--pw); }
+.persona-page.wra .share-card .typical{ color:#F8BBD0; }
+.persona-page.wra .ml{ background:#FCE4EC; }
+.persona-page.wra .samples{ background:#F8BBD0; }
+.persona-page.wra .tag-chip{ background:#fff; color:var(--pink-d); }
+
+.persona-page.ana{ background:#E5F1FB; }
+.persona-page.ana .pg-card{ background:#fff; }
+.persona-page.ana .eyebrow{ color:#1D4ED8; }
+.persona-page.ana .share-card{ background:#0B1B2B; }
+.persona-page.ana .share-card .ribbon{ background:var(--ps); }
+.persona-page.ana .share-card .typical{ color:#93C5FD; }
+.persona-page.ana .ml{ background:#E5F1FB; }
+.persona-page.ana .samples{ background:#CFE5F8; }
+.persona-page.ana .tag-chip{ background:#fff; color:#1D4ED8; }
+
+/* ============ FINAL CTA ============ */
+.cta-buttons{
+  display:flex; gap:14px; margin-top:36px;
+}
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--head); font-weight:500;
+  font-size:16px; letter-spacing:-0.01em;
+  border-radius:18px;
+  padding:16px 26px;
+  text-decoration:none;
+}
+.btn-primary{
+  background:var(--pink);
+  color:#fff;
+}
+.btn-outline{
+  border:1.5px solid var(--prussian);
+  color:var(--prussian);
+}
+.contact-row{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:36px;
+  margin-top:36px;
+  padding-top:24px;
+  border-top:1px solid #D7DEE5;
+}
+.contact-row .ce{ font-size:11px; }
+.contact-row .cv{
+  font-family:var(--head); font-weight:500;
+  font-size:16px; letter-spacing:-0.02em;
+  margin-top:6px; color:var(--prussian);
+}
+.tag-card{
+  margin-top:auto;
+  background:var(--prussian);
+  border-radius:22px;
+  padding:30px 32px;
+  position:relative;
+  color:#fff;
+  overflow:hidden;
+}
+.tag-card .eyebrow{ color:var(--pink); }
+.tag-card h2{
+  font-family:var(--head); font-weight:500;
+  font-size:34px; letter-spacing:-0.04em;
+  line-height:1.05;
+  margin-top:10px;
+  color:#fff;
+}
+.tag-card .deco{
+  position:absolute; right:0; top:0; bottom:0;
+  width:280px; pointer-events:none;
+}
+.tag-card .deco .b1{
+  position:absolute; right:130px; top:30px;
+  width:80px; height:160px;
+  background:rgba(232,81,157,0.7);
+  border-radius:18px 18px 18px 18px;
+  transform:skewX(-10deg);
+}
+.tag-card .deco .b2{
+  position:absolute; right:50px; top:18px;
+  width:90px; height:180px;
+  background:rgba(180,117,247,0.85);
+  border-radius:18px;
+  transform:skewX(-10deg);
+}
+.tag-card .deco .b3{
+  position:absolute; right:8px; top:50px;
+  width:60px; height:30px;
+  background:rgba(45,122,212,0.55);
+  border-radius:8px;
+  transform:skewX(-10deg);
+}
+
+/* PRINT */
+@media print{
+  html,body{ background:#fff; }
+  .page{ margin:0; box-shadow:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ====================== PAGE 1 - COVER ====================== -->
+<section class="page dark">
+  <div class="cover-bg"></div>
+  <div class="cover-shapes"></div>
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo">
+          <img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/>
+        </div>
+      </div>
+      <div>DATA LITERACY FRAMEWORK</div>
+    </div>
+
+    <div style="margin-top:55mm;">
+      <div class="eyebrow" style="color:#fff; opacity:0.9;">TURNING DATA ANXIETY INTO EVIDENCE&#8209;BASED DECISIONS</div>
+      <h1 class="cover-h1" style="margin-top:20px;">
+        Build data fluency<br/>through a proven<br/>
+        <span class="accent">persona<br/>framework.</span>
+      </h1>
+      <p class="cover-sub">
+        Four complementary personas. Four core data capabilities. One role&#8209;calibrated
+        pathway from boardroom data fluency to deep specialist analytics, mapped to how
+        your people actually use data every day.
+      </p>
+    </div>
+
+    <div class="cover-personas-strip" style="margin-top:auto;">
+      <div class="cps-item"><span class="cps-dot" style="background:var(--pa);"></span>Data Citizen</div>
+      <div class="cps-item"><span class="cps-dot" style="background:var(--pn);"></span>Data Associate</div>
+      <div class="cps-item"><span class="cps-dot" style="background:var(--pw);"></span>Data Wrangler</div>
+      <div class="cps-item"><span class="cps-dot" style="background:var(--ps);"></span>Data Analyst</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 2 - WHY PERSONAS ====================== -->
+<section class="page">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/></div>
+      </div>
+      <div class="pno">02 / 10</div>
+    </div>
+
+    <div style="margin-top:18mm;">
+      <div class="eyebrow">WHY A PERSONA APPROACH?</div>
+      <h2 class="h-page" style="margin-top:14px;">
+        Data fluency isn&rsquo;t<br/>a single skill set.<br/>
+        <span style="color:var(--pink-d);">It&rsquo;s a balance of four.</span>
+      </h2>
+    </div>
+
+    <div class="two-col" style="margin-top:24px;">
+      <p class="body">
+        Most data literacy programs teach one tool to a mixed audience and hope it
+        sticks. It rarely does. A board director needs to <em>read</em> and challenge
+        data; a wrangler needs to <em>clean</em> and transform it. The same syllabus
+        cannot serve both.
+      </p>
+      <p class="body">
+        What matters is the right depth at the right tier. Our four
+        personas make that depth designable, so you teach foundational fluency to a
+        Citizen, applied craft to an Associate, technical build skill to a Wrangler,
+        and deep specialism to an Analyst, in one connected pathway.
+      </p>
+    </div>
+
+    <div class="persona-thumb-grid">
+      <div class="pt-card">
+        <div class="pt-tile citizen">
+          <div class="pt-photo" style="background-image:url('../../img/Character_profiles/portraits/female_07.a.png');"></div>
+        </div>
+        <div class="pt-eyebrow cit">PERSONA 01 &middot; FOUNDATION</div>
+        <div class="pt-name">Data Citizen</div>
+        <p class="pt-desc">Reads and challenges data with confidence in any meeting.</p>
+      </div>
+      <div class="pt-card">
+        <div class="pt-tile associate">
+          <div class="pt-photo" style="background-image:url('../../img/Character_profiles/portraits/male_04.a.png');"></div>
+        </div>
+        <div class="pt-eyebrow ass">PERSONA 02 &middot; OPERATOR</div>
+        <div class="pt-name">Data Associate</div>
+        <p class="pt-desc">Everyday operator. Strong with spreadsheets and presentations.</p>
+      </div>
+      <div class="pt-card">
+        <div class="pt-tile wrangler">
+          <div class="pt-photo" style="background-image:url('../../img/Character_profiles/portraits/male_01.a.png');"></div>
+        </div>
+        <div class="pt-eyebrow wra">PERSONA 03 &middot; BUILDER</div>
+        <div class="pt-name">Data Wrangler</div>
+        <p class="pt-desc">Technical builder. Cleans and shapes data with SQL and BI.</p>
+      </div>
+      <div class="pt-card">
+        <div class="pt-tile analyst">
+          <div class="pt-photo" style="background-image:url('../../img/Character_profiles/portraits/female_03.a.png');"></div>
+        </div>
+        <div class="pt-eyebrow ana">PERSONA 04 &middot; SPECIALIST</div>
+        <div class="pt-name">Data Analyst</div>
+        <p class="pt-desc">Deep specialist. Statistics, Python, ML and storytelling.</p>
+      </div>
+    </div>
+
+    <div class="ftr">
+      <div>KUBICLE &middot; DATA LITERACY FRAMEWORK</div>
+      <div>WHY A PERSONA APPROACH</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 3 - MIX ====================== -->
+<section class="page dark">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="var(--prussian)"><rect x="6" y="3" width="14" height="18" rx="2" stroke-width="2"/></svg></div>
+        <div class="word">KUBICLE</div>
+      </div>
+      <div class="pno">03 / 10</div>
+    </div>
+    <div class="geo-arch" style="width:300px; height:300px; right:-60px; top:-30px;"></div>
+    <div class="geo-ring" style="width:170px; height:170px; right:-50px; top:55%;"></div>
+
+    <div style="margin-top:18mm; max-width:520px;">
+      <div class="eyebrow">BALANCE, NOT PROGRESSION</div>
+      <h2 class="h-page" style="margin-top:14px; color:#fff;">
+        A data&#8209;fluent org<br/>needs <span style="color:var(--pink);">all four</span><br/>in the right<br/>proportions.
+      </h2>
+      <p class="body" style="margin-top:18px; color:rgba(255,255,255,0.78); max-width:560px;">
+        These aren&rsquo;t levels to climb; they&rsquo;re tiers to combine. The reality
+        in most organizations: the vast majority of your workforce sits in the Citizen
+        and Associate tiers. That&rsquo;s where the highest&#8209;leverage data
+        literacy investment lives.
+      </p>
+    </div>
+
+    <div class="mix-card">
+      <div class="eyebrow" style="color:rgba(255,255,255,0.6);">TYPICAL WORKFORCE DISTRIBUTION</div>
+      <div class="mix-bar">
+        <div class="mix-seg" style="flex:76; background:var(--pa);">
+          <div class="pct">76%</div>
+          <div class="lbl">Citizen</div>
+        </div>
+        <div class="mix-seg" style="flex:12; background:var(--pn);">
+          <div class="pct">12%</div>
+          <div class="lbl">Associate</div>
+        </div>
+        <div class="mix-seg" style="flex:8; background:var(--pw);">
+          <div class="pct">8%</div>
+          <div class="lbl">Wrangler</div>
+        </div>
+        <div class="mix-seg" style="flex:4; background:var(--ps);">
+          <div class="pct">4%</div>
+          <div class="lbl">Analyst</div>
+        </div>
+      </div>
+      <p style="margin-top:12px; color:rgba(255,255,255,0.65); font-size:10.5px; line-height:1.5;">
+        Most enterprises follow this shape: a heavy Citizen base, a modest Associate
+        layer, a small specialist build tier, and a few deep Analysts. The mix shifts
+        as data ambition matures.
+      </p>
+    </div>
+
+    <div class="three-col">
+      <div>
+        <h4>CALIBRATED</h4>
+        <p>Each persona has a distinct capability signature, different not superior, tuned to the role, not the resume.</p>
+      </div>
+      <div>
+        <h4>CUSTOMIZABLE</h4>
+        <p>We design your mix to match your data ambition, role structure, and decision&#8209;making cadence.</p>
+      </div>
+      <div>
+        <h4>MEASURABLE</h4>
+        <p>Progress is tracked per persona, making data uplift visible to leadership at every stage.</p>
+      </div>
+    </div>
+
+    <div class="ftr">
+      <div>KUBICLE &middot; DATA LITERACY FRAMEWORK</div>
+      <div>BALANCE, NOT PROGRESSION</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 4 - CAPABILITIES ====================== -->
+<section class="page alice">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/></div>
+      </div>
+      <div class="pno">04 / 10</div>
+    </div>
+
+    <div class="geo-arch" style="width:300px; height:300px; right:-60px; top:30px; color:rgba(176,40,106,0.10);"></div>
+    <div class="geo-ring" style="width:120px; height:120px; left:-30px; bottom:30%; color:rgba(176,40,106,0.08);"></div>
+
+    <div style="margin-top:14mm;">
+      <div class="eyebrow">UNDERSTANDING CAPABILITY CALIBRATION</div>
+      <h2 class="h-page" style="margin-top:14px;">
+        Four capability axes.<br/>
+        Every persona, a different mix.
+      </h2>
+      <p class="body" style="margin-top:14px; max-width:600px;">
+        We benchmark every learner across the four capabilities a data&#8209;fluent
+        professional needs: from the technical craft of <em>working with</em> data, to
+        the strategic craft of <em>arguing with</em> it.
+      </p>
+    </div>
+
+    <div class="comp-grid">
+      <div class="comp-card">
+        <div class="comp-head">
+          <div class="comp-num b1">01</div>
+          <h4>Working with Data</h4>
+        </div>
+        <p>Collecting, cleaning, blending and transforming raw data with SQL, BI tools and automation platforms so the rest of the business can move.</p>
+      </div>
+      <div class="comp-card">
+        <div class="comp-head">
+          <div class="comp-num b2">02</div>
+          <h4>Reading Data</h4>
+        </div>
+        <p>Interpreting charts, statistics and reports with confidence. Understanding what&rsquo;s being said, what isn&rsquo;t, and what to ask next.</p>
+      </div>
+      <div class="comp-card">
+        <div class="comp-head">
+          <div class="comp-num b3">03</div>
+          <h4>Analyzing Data</h4>
+        </div>
+        <p>Statistics, modeling, and machine learning that turn complex datasets into structured insight and forward&#8209;looking predictions.</p>
+      </div>
+      <div class="comp-card">
+        <div class="comp-head">
+          <div class="comp-num b4">04</div>
+          <h4>Arguing with Data</h4>
+        </div>
+        <p>Storytelling, presenting and challenging data with rigour. Turning numbers into evidence&#8209;based decisions that actually land.</p>
+      </div>
+    </div>
+
+    <div class="shared-banner">
+      <div class="eyebrow" style="color:var(--pink);">SHARED CAPABILITIES, DIFFERENT DEPTHS</div>
+      <p>Every persona is measured against the same four capabilities. What differs is the depth across each, and that signature is what makes a persona fit for purpose.</p>
+    </div>
+
+    <div class="ftr">
+      <div>KUBICLE &middot; DATA LITERACY FRAMEWORK</div>
+      <div>CAPABILITY CALIBRATION</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 5 - PROCESS ====================== -->
+<section class="page">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/></div>
+      </div>
+      <div class="pno">05 / 10</div>
+    </div>
+
+    <div style="margin-top:18mm;">
+      <div class="eyebrow">HOW WE BUILD YOUR PROGRAM</div>
+      <h2 class="h-page" style="margin-top:14px;">
+        From discovery to launch<br/>
+        in about <span style="color:var(--pink-d);">a week.</span>
+      </h2>
+    </div>
+
+    <div class="proc-row">
+      <div class="proc-cell">
+        <div class="proc-circle">1</div>
+        <div class="eyebrow">DISCOVER</div>
+        <h4>Define the business goal</h4>
+        <p>A 30&#8209;minute consultation surfaces the decisions you want to improve, the bottlenecks slowing teams down, and the success metrics leadership cares about.</p>
+      </div>
+      <div class="proc-cell">
+        <div class="proc-circle">2</div>
+        <div class="eyebrow">BENCHMARK</div>
+        <h4>Score every learner</h4>
+        <p>Our persona assessment maps your workforce across the four data capabilities, revealing the real gaps under the surface confidence.</p>
+      </div>
+      <div class="proc-cell">
+        <div class="proc-circle">3</div>
+        <div class="eyebrow">CONFIGURE</div>
+        <h4>Calibrate the pathway</h4>
+        <p>We assemble bite&#8209;sized modules into a role&#8209;calibrated path for each persona, weighted toward the tools and decisions your team owns.</p>
+      </div>
+      <div class="proc-cell">
+        <div class="proc-circle">4</div>
+        <div class="eyebrow">LAUNCH &amp; TRACK</div>
+        <h4>Deploy and iterate</h4>
+        <p>SSO, bulk user setup and LMS integration in days. Engagement, completion and skill&#8209;gain dashboards from day one. Quarterly reviews to keep momentum.</p>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <div class="q">&ldquo;I appreciate how easy it was to set up Kubicle. My learners were quickly engaged with all learning materials upon gaining access. It has effectively addressed the skill gap, especially with tools like Excel and data processing. The real&#8209;time progress tracking, leaderboard and certifications strongly influence my decision to continue using Kubicle. I would definitely recommend it.&rdquo;</div>
+      <div class="who">Validated Reviewer, TotalEnergies &middot; G2 Review, 4.7 / 5</div>
+    </div>
+
+    <div class="ftr">
+      <div>KUBICLE &middot; DATA LITERACY FRAMEWORK</div>
+      <div>PROGRAM DESIGN</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 6 - CITIZEN ====================== -->
+<section class="page persona-page cit">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/></div>
+      </div>
+      <div class="pno">06 / 10</div>
+    </div>
+
+    <div class="geo-arch" style="width:240px; height:240px; left:-50px; top:35%; color:rgba(180,117,247,0.20);"></div>
+    <div class="geo-ring" style="width:140px; height:140px; right:-30px; bottom:20%; color:rgba(180,117,247,0.14);"></div>
+
+    <div style="margin-top:14mm;">
+      <div class="eyebrow">PERSONA 01 &middot; THE FOUNDATION</div>
+      <div class="persona-head" style="margin-top:14px;">
+        <h2 class="persona-h">The Data<br/>Citizen.</h2>
+        <div class="share-card">
+          <div class="ribbon"></div>
+          <div class="typical">TYPICAL SHARE</div>
+          <div class="pct">70&ndash;80<span class="pp">%</span></div>
+          <div class="of">of a data&#8209;fluent workforce</div>
+        </div>
+      </div>
+      <p class="persona-desc">
+        The Data Citizen reads, interprets and challenges data with confidence. They
+        understand the principles and considerations behind data projects well enough
+        to contribute to intermediate&#8209;level data discourse, making them
+        invaluable in board rooms, leadership meetings and cross&#8209;functional
+        decisions, without needing to run the analysis themselves. Ideal for
+        executives, people managers and frontline staff who own decisions but not the
+        data work.
+      </p>
+    </div>
+
+    <div class="persona-grid">
+      <div class="pg-card">
+        <div class="eyebrow">CAPABILITY SIGNATURE</div>
+        <div class="comp-list">
+          <div class="comp-row">
+            <div class="cl-label">WORKING WITH</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:20%; background:var(--pa);"></div></div>
+            <div class="cl-val">1 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">READING</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:40%; background:var(--pa);"></div></div>
+            <div class="cl-val">2 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">ANALYZING</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:20%; background:var(--pa);"></div></div>
+            <div class="cl-val">1 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">ARGUING WITH</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:20%; background:var(--pa);"></div></div>
+            <div class="cl-val">1 / 5</div>
+          </div>
+        </div>
+      </div>
+      <div class="pg-card">
+        <div class="eyebrow">LEARNING MILESTONES</div>
+        <div class="milestone-grid">
+          <div class="ml">Data<br/>Literacy</div>
+          <div class="ml">Data Ethics<br/>&amp; Risk</div>
+          <div class="ml">Data Strategy<br/>&amp; Governance</div>
+          <div class="ml">Strategic<br/>Analysis</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="samples">
+      <div class="eyebrow">SAMPLE COURSES &amp; PROJECTS</div>
+      <div class="samples-tags">
+        <span class="tag-chip">DATA LITERACY</span>
+        <span class="tag-chip">DATA ETHICS &amp; RISK</span>
+        <span class="tag-chip">STRATEGY &amp; GOVERNANCE</span>
+        <span class="tag-chip">STRATEGIC ANALYSIS</span>
+        <span class="tag-chip">CHALLENGING DATA</span>
+        <span class="tag-chip">EVIDENCE-BASED DECISIONS</span>
+        <span class="tag-chip">&hellip;AND MORE</span>
+      </div>
+    </div>
+
+    <div class="ftr">
+      <div>KUBICLE &middot; DATA LITERACY FRAMEWORK</div>
+      <div>PERSONA 01, CITIZEN</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 7 - ASSOCIATE ====================== -->
+<section class="page persona-page ass">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/></div>
+      </div>
+      <div class="pno">07 / 10</div>
+    </div>
+
+    <div class="geo-arch" style="width:220px; height:220px; left:-40px; top:30%; color:rgba(46,184,95,0.20);"></div>
+    <div class="geo-ring" style="width:150px; height:150px; right:-40px; bottom:18%; color:rgba(46,184,95,0.14);"></div>
+
+    <div style="margin-top:14mm;">
+      <div class="eyebrow">PERSONA 02 &middot; THE OPERATOR</div>
+      <div class="persona-head" style="margin-top:14px;">
+        <h2 class="persona-h">The Data<br/>Associate.</h2>
+        <div class="share-card">
+          <div class="ribbon"></div>
+          <div class="typical">TYPICAL SHARE</div>
+          <div class="pct">8&ndash;15<span class="pp">%</span></div>
+          <div class="of">of a data&#8209;fluent workforce</div>
+        </div>
+      </div>
+      <p class="persona-desc">
+        The Data Associate is the everyday operator. Strong with spreadsheets,
+        presentation tools and no&#8209;code platforms, they manipulate, analyze, and
+        visualise data to turn raw numbers into insights that land with stakeholders.
+        With foundational statistics and critical thinking, they bridge the gap
+        between leaders who consume insight and the technical specialists who build
+        it.
+      </p>
+    </div>
+
+    <div class="persona-grid">
+      <div class="pg-card">
+        <div class="eyebrow">CAPABILITY SIGNATURE</div>
+        <div class="comp-list">
+          <div class="comp-row">
+            <div class="cl-label">WORKING WITH</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:60%; background:var(--pn);"></div></div>
+            <div class="cl-val">3 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">READING</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:60%; background:var(--pn);"></div></div>
+            <div class="cl-val">3 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">ANALYZING</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:20%; background:var(--pn);"></div></div>
+            <div class="cl-val">1 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">ARGUING WITH</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:20%; background:var(--pn);"></div></div>
+            <div class="cl-val">1 / 5</div>
+          </div>
+        </div>
+      </div>
+      <div class="pg-card">
+        <div class="eyebrow">LEARNING MILESTONES</div>
+        <div class="milestone-grid">
+          <div class="ml">Excel</div>
+          <div class="ml">PowerPoint</div>
+          <div class="ml">Data<br/>Presentation</div>
+          <div class="ml">Financial<br/>Modeling</div>
+          <div class="ml full">Data Literacy Foundations</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="samples">
+      <div class="eyebrow">SAMPLE COURSES &amp; PROJECTS</div>
+      <div class="samples-tags">
+        <span class="tag-chip">EXCEL</span>
+        <span class="tag-chip">POWERPOINT</span>
+        <span class="tag-chip">DATA PRESENTATION</span>
+        <span class="tag-chip">FINANCIAL MODELING</span>
+        <span class="tag-chip">DATA LITERACY</span>
+        <span class="tag-chip">CRITICAL THINKING</span>
+        <span class="tag-chip">&hellip;AND MORE</span>
+      </div>
+    </div>
+
+    <div class="ftr">
+      <div>KUBICLE &middot; DATA LITERACY FRAMEWORK</div>
+      <div>PERSONA 02, ASSOCIATE</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 8 - WRANGLER ====================== -->
+<section class="page persona-page wra">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/></div>
+      </div>
+      <div class="pno">08 / 10</div>
+    </div>
+
+    <div class="geo-arch" style="width:240px; height:240px; right:-60px; top:36%; color:rgba(232,81,157,0.20);"></div>
+    <div class="geo-ring" style="width:140px; height:140px; left:-30px; bottom:22%; color:rgba(232,81,157,0.14);"></div>
+
+    <div style="margin-top:14mm;">
+      <div class="eyebrow">PERSONA 03 &middot; THE BUILDER</div>
+      <div class="persona-head" style="margin-top:14px;">
+        <h2 class="persona-h">The Data<br/>Wrangler.</h2>
+        <div class="share-card">
+          <div class="ribbon"></div>
+          <div class="typical">TYPICAL SHARE</div>
+          <div class="pct">5&ndash;10<span class="pp">%</span></div>
+          <div class="of">of a data&#8209;fluent workforce</div>
+        </div>
+      </div>
+      <p class="persona-desc">
+        The Data Wrangler is the technical builder. They execute complex data projects
+        and lead the prep work that makes everything downstream possible: cleaning,
+        blending and transforming raw data with SQL, BI tools and automation platforms
+        so analysts and decision&#8209;makers can move at speed. Deep skills in core
+        data tech, paired with a working knowledge of the analytical tools used
+        further up the chain.
+      </p>
+    </div>
+
+    <div class="persona-grid">
+      <div class="pg-card">
+        <div class="eyebrow">CAPABILITY SIGNATURE</div>
+        <div class="comp-list">
+          <div class="comp-row">
+            <div class="cl-label">WORKING WITH</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:80%; background:var(--pw);"></div></div>
+            <div class="cl-val">4 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">READING</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:60%; background:var(--pw);"></div></div>
+            <div class="cl-val">3 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">ANALYZING</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:60%; background:var(--pw);"></div></div>
+            <div class="cl-val">3 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">ARGUING WITH</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:60%; background:var(--pw);"></div></div>
+            <div class="cl-val">3 / 5</div>
+          </div>
+        </div>
+      </div>
+      <div class="pg-card">
+        <div class="eyebrow">LEARNING MILESTONES</div>
+        <div class="milestone-grid">
+          <div class="ml">SQL</div>
+          <div class="ml">Power BI</div>
+          <div class="ml">Tableau</div>
+          <div class="ml">Alteryx</div>
+          <div class="ml">Power<br/>Apps</div>
+          <div class="ml">RPA<br/>Fundamentals</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="samples">
+      <div class="eyebrow">SAMPLE COURSES &amp; PROJECTS</div>
+      <div class="samples-tags">
+        <span class="tag-chip">SQL</span>
+        <span class="tag-chip">POWER BI</span>
+        <span class="tag-chip">TABLEAU</span>
+        <span class="tag-chip">ALTERYX</span>
+        <span class="tag-chip">POWER APPS</span>
+        <span class="tag-chip">RPA FUNDAMENTALS</span>
+        <span class="tag-chip">&hellip;AND MORE</span>
+      </div>
+    </div>
+
+    <div class="ftr">
+      <div>KUBICLE &middot; DATA LITERACY FRAMEWORK</div>
+      <div>PERSONA 03, WRANGLER</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 9 - ANALYST ====================== -->
+<section class="page persona-page ana">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/></div>
+      </div>
+      <div class="pno">09 / 10</div>
+    </div>
+
+    <div class="geo-arch" style="width:240px; height:240px; left:-60px; top:35%; color:rgba(45,122,212,0.20);"></div>
+    <div class="geo-ring" style="width:150px; height:150px; right:-40px; bottom:20%; color:rgba(45,122,212,0.12);"></div>
+
+    <div style="margin-top:14mm;">
+      <div class="eyebrow">PERSONA 04 &middot; THE SPECIALIST</div>
+      <div class="persona-head" style="margin-top:14px;">
+        <h2 class="persona-h">The Data<br/>Analyst.</h2>
+        <div class="share-card">
+          <div class="ribbon"></div>
+          <div class="typical">TYPICAL SHARE</div>
+          <div class="pct">2&ndash;6<span class="pp">%</span></div>
+          <div class="of">of a data&#8209;fluent workforce</div>
+        </div>
+      </div>
+      <p class="persona-desc">
+        The Data Analyst is the deep specialist. They collect, organize, and interpret
+        data at a level that delivers real strategic impact, combining advanced
+        statistical and analytical skills with the storytelling chops to champion
+        complex projects across the business. Focused on Python, machine learning,
+        statistical analysis, SQL and Alteryx, turning complex models into decisions
+        leadership can act on.
+      </p>
+    </div>
+
+    <div class="persona-grid">
+      <div class="pg-card">
+        <div class="eyebrow">CAPABILITY SIGNATURE</div>
+        <div class="comp-list">
+          <div class="comp-row">
+            <div class="cl-label">WORKING WITH</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:100%; background:var(--ps);"></div></div>
+            <div class="cl-val">5 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">READING</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:100%; background:var(--ps);"></div></div>
+            <div class="cl-val">5 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">ANALYZING</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:100%; background:var(--ps);"></div></div>
+            <div class="cl-val">5 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">ARGUING WITH</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:100%; background:var(--ps);"></div></div>
+            <div class="cl-val">5 / 5</div>
+          </div>
+        </div>
+      </div>
+      <div class="pg-card">
+        <div class="eyebrow">LEARNING MILESTONES</div>
+        <div class="milestone-grid">
+          <div class="ml">Python<br/>Fundamentals</div>
+          <div class="ml">Machine<br/>Learning</div>
+          <div class="ml">Statistical<br/>Analysis</div>
+          <div class="ml">Alteryx<br/>Intelligence</div>
+          <div class="ml">SQL</div>
+          <div class="ml">Data<br/>Storytelling</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="samples">
+      <div class="eyebrow">SAMPLE COURSES &amp; PROJECTS</div>
+      <div class="samples-tags">
+        <span class="tag-chip">PYTHON FUNDAMENTALS</span>
+        <span class="tag-chip">MACHINE LEARNING</span>
+        <span class="tag-chip">STATISTICAL ANALYSIS</span>
+        <span class="tag-chip">ALTERYX INTELLIGENCE</span>
+        <span class="tag-chip">SQL</span>
+        <span class="tag-chip">DATA STORYTELLING</span>
+        <span class="tag-chip">&hellip;AND MORE</span>
+      </div>
+    </div>
+
+    <div class="ftr">
+      <div>KUBICLE &middot; DATA LITERACY FRAMEWORK</div>
+      <div>PERSONA 04, ANALYST</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 10 - FINAL CTA ====================== -->
+<section class="page">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/></div>
+      </div>
+      <div class="pno">10 / 10</div>
+    </div>
+
+    <div class="geo-arch" style="width:240px; height:240px; left:-60px; top:25%; color:rgba(176,40,106,0.10);"></div>
+    <div class="dot-purple" style="right:60mm; top:38mm;"></div>
+
+    <div style="margin-top:18mm;">
+      <div class="eyebrow">YOUR NEXT STEP</div>
+      <h2 class="h-page" style="margin-top:14px;">
+        Let&rsquo;s calibrate<br/>your mix.
+      </h2>
+      <p class="body" style="margin-top:18px; max-width:520px;">
+        Every organization&rsquo;s data capability mix looks different. We&rsquo;ll
+        benchmark your team against the four personas, design the right mix, and build
+        the program: customized, outcomes&#8209;focused, and ready to deploy.
+      </p>
+    </div>
+
+    <div class="cta-buttons">
+      <a class="btn btn-primary" href="../../try-free/business.html">Talk to Sales &rarr;</a>
+    </div>
+
+    <div class="contact-row">
+      <div>
+        <div class="eyebrow ce">VISIT</div>
+        <div class="cv">kubicle.com</div>
+      </div>
+      <div>
+        <div class="eyebrow ce">EMAIL</div>
+        <div class="cv">sales@kubicle.com</div>
+      </div>
+      <div>
+        <div class="eyebrow ce">OFFICES</div>
+        <div class="cv">Dublin, Ireland</div>
+      </div>
+    </div>
+
+    <div class="tag-card">
+      <div class="deco"><div class="b1"></div><div class="b2"></div><div class="b3"></div></div>
+      <div class="eyebrow">KUBICLE &middot; DATA LITERACY FRAMEWORK</div>
+      <h2>Scalable.<br/>Customizable.<br/>Outcomes&#8209;focused.</h2>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

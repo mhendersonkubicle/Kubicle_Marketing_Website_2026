@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="img/shared/favicon-32x32.png"/>
+<title>Kubicle All Access | One Platform, Four Academies, Every Team</title>
+<meta name="description" content="One subscription unlocks all four Kubicle academies: AI, Data, Project Management and Finance. 14 persona pathways, 300+ courses, and the full credential coverage your workforce needs."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:title" content="Kubicle All Access · One Platform, Four Academies, Every Team"/>
+<meta property="og:description" content="One subscription unlocks all four Kubicle academies: AI, Data, Project Management and Finance. 14 persona pathways and 300+ courses."/>
+<meta property="og:url" content="https://www.kubicle.com/"/>
+<meta property="og:image" content="https://www.kubicle.com/img/hero-home.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Kubicle All Access · One Platform, Four Academies, Every Team"/>
+<meta name="twitter:description" content="One subscription unlocks all four Kubicle academies: AI, Data, Project Management and Finance."/>
+<meta name="twitter:image" content="https://www.kubicle.com/img/hero-home.jpg"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Kubicle",
+  "url": "https://www.kubicle.com",
+  "logo": "https://www.kubicle.com/img/shared/6831119dcb82dac9dd5aea57_logo-white.svg",
+  "description": "Kubicle delivers scalable, outcomes-focused training across four academies: AI, Data Literacy, Project Management and Finance. 14 persona pathways and 300+ courses for business teams.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dublin",
+    "addressCountry": "Ireland"
+  },
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "sales@kubicle.com",
+    "areaServed": "Worldwide",
+    "availableLanguage": ["English"]
+  }],
+  "sameAs": [
+    "https://www.linkedin.com/company/kubicle",
+    "https://www.youtube.com/@kubicle"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Kubicle",
+  "url": "https://www.kubicle.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.kubicle.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"/>
+
+<!-- Shared design system: tokens, typography, buttons -->
+<link rel="stylesheet" href="shared/styles/tokens.css"/>
+<link rel="stylesheet" href="shared/styles/typography.css"/>
+<link rel="stylesheet" href="shared/styles/buttons.css"/>
+
+<style>
+/* ============================== PAGE-LOCAL TOKENS ============================== */
+:root {
+  /* Academy colors (used by .academy-card etc.; only the home page renders these together) */
+  --academy-ai:      #00C4CC;
+  --academy-data:    #E91E63;
+  --academy-pm:      #F97316;
+  --academy-finance: #10B981;
+  --academy-ai-d:      #00A8B0;
+  --academy-data-d:    #C2185B;
+  --academy-pm-d:      #C2540D;
+  --academy-finance-d: #047857;
+}
+
+/* ============================== LAYOUT ============================== */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+section { padding: 112px 0; position: relative; overflow: hidden; }
+@media (max-width: 860px) {
+  .container { padding: 0 24px; }
+  section { padding: 80px 0; }
+}
+
+/* Nav styles are owned by shared/nav.js */
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 96px 0 120px;
+  background:
+    linear-gradient(to right, rgba(11,27,43,0.88) 0%, rgba(11,27,43,0.72) 35%, rgba(11,27,43,0.4) 65%, rgba(11,27,43,0.15) 100%),
+    url('img/hero-home.jpg') center right / cover no-repeat,
+    var(--prussian);
+  color: #fff;
+  position: relative;
+}
+
+/* Rotating word in headline */
+.rotator {
+  display: inline-block;
+  position: relative;
+  vertical-align: baseline;
+  min-width: 6ch;
+}
+.rotator em { font-style: normal; }
+.rotator .word {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(90deg, #59E1FF 0%, var(--blue) 50%, #00C4CC 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: wordCycle 12.5s infinite;
+  white-space: nowrap;
+  opacity: 0;
+  will-change: transform, opacity, filter;
+}
+.rotator .word { animation: wordCycle 7.2s infinite; }
+.rotator .word:nth-child(1) { animation-delay: 0s;    position: relative; }
+.rotator .word:nth-child(2) { animation-delay: 1.8s;  }
+.rotator .word:nth-child(3) { animation-delay: 3.6s;  }
+.rotator .word:nth-child(4) { animation-delay: 5.4s;  }
+@keyframes wordCycle {
+  0%   { opacity: 0; transform: translateY(16px); filter: blur(5px); }
+  6%, 22% { opacity: 1; transform: translateY(0);  filter: blur(0); }
+  28%, 100% { opacity: 0; transform: translateY(-16px); filter: blur(5px); }
+}
+
+/* Reduce motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .rotator .word { animation: none !important; opacity: 1; position: relative; }
+  .rotator .word + .word { display: none; }
+}
+.hero-content {
+  position: relative; z-index: 3;
+  max-width: 1000px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--blue);
+}
+.hero-sub {
+  color: rgba(255,255,255,0.85);
+  max-width: 560px;
+  font-size: 20px; line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+.hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; align-items: center; }
+.hero-creds {
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.hero-creds .creds-label {
+  font-family: var(--head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  white-space: nowrap;
+}
+.hero-creds img {
+  height: 76px;
+  width: auto;
+  display: block;
+}
+@media (max-width: 900px) {
+  .hero-creds { gap: 16px; margin-top: 28px; }
+  .hero-creds img { height: 60px; }
+}
+@media (max-width: 600px) {
+  .hero-creds img { height: 50px; }
+}
+.hero-assurance {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  margin-top: 32px;
+  color: rgba(255,255,255,0.7);
+  font-size: 13px;
+}
+.hero-assurance span { display: flex; align-items: center; gap: 8px; }
+.hero-assurance .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--emerald);
+}
+
+.form-card {
+  background: #fff;
+  color: var(--soft-black);
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.5);
+  position: relative;
+  overflow: hidden;
+}
+.form-card::before {
+  content: "";
+  position: absolute; top: -30px; right: -30px;
+  width: 120px; height: 120px;
+  background: var(--blue);
+  border-radius: 50%;
+  opacity: 0.12;
+}
+.form-card h3 { font-size: 26px; position: relative; z-index: 2; }
+.form-card .sub { color: var(--steel); margin-top: 8px; font-size: 14px; position: relative; z-index: 2; }
+.form { display: grid; gap: 12px; margin-top: 20px; position: relative; z-index: 2; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.field label {
+  display: block;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--steel); margin-bottom: 6px;
+}
+.field input, .field select, .field textarea {
+  width: 100%; font-family: var(--body); font-size: 15px; color: var(--prussian);
+  padding: 12px 14px; background: var(--alice);
+  border: 1.5px solid transparent; border-radius: 12px;
+  outline: none; transition: border 0.15s, background 0.15s;
+}
+.field input:focus, .field select:focus, .field textarea:focus { background: #fff; border-color: var(--blue); }
+.form .btn { margin-top: 6px; width: 100%; }
+/* Free CTA in nav. Secondary white-outline */
+.btn-free {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  font-weight: 500;
+}
+.btn-free:hover { background: rgba(255,255,255,0.06); border-color: #fff; }
+
+/* ============================== TRUST BAR ============================== */
+.trust {
+  padding: 32px 0 28px;
+  background: var(--prussian);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+.trust-label {
+  color: rgba(255,255,255,0.45);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.marquee-track { display: flex; width: max-content; animation: marquee 60s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marquee { 0% { transform: translateX(0);} 100% { transform: translateX(-50%);} }
+.logo-chip { display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 0 48px; }
+@media (max-width: 700px) { .logo-chip { padding: 0 32px; } }
+.logo-chip img {
+  height: 28px; width: auto; object-fit: contain;
+  filter: brightness(0) invert(1); opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.logo-chip img.white-native { filter: brightness(1); opacity: 0.7; }
+.logo-chip:hover img { opacity: 1; }
+
+/* ============================== STATS ============================== */
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 64px; margin-top: 64px;
+}
+.stat .num {
+  font-family: var(--head);
+  font-size: 68px; font-weight: 600;
+  line-height: 1; letter-spacing: -0.04em;
+  color: #fff;
+}
+.stat .num em { font-style: normal; color: var(--blue); }
+.stat .label { margin-top: 12px; font-size: 14px; color: rgba(255,255,255,0.75); max-width: 200px; line-height: 1.45; }
+@media (max-width: 900px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ============================== APPROACH ============================== */
+.split-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+@media (max-width: 900px) { .split-2 { grid-template-columns: 1fr; gap: 48px; } }
+
+.problem-list { display: grid; gap: 16px; margin-top: 32px; }
+.problem-item {
+  display: grid; grid-template-columns: 56px 1fr; gap: 20px;
+  padding: 20px; border-radius: 20px;
+  background: #fff; border: 1px solid var(--alice);
+  align-items: start;
+}
+.problem-item .icn {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: var(--alice); color: var(--honolulu);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--head); font-size: 18px; font-weight: 600;
+}
+.problem-item h4 { font-size: 18px; margin-bottom: 4px; }
+.problem-item p { font-size: 14.5px; color: var(--steel); line-height: 1.5; }
+
+.geo-arch { position: absolute; pointer-events: none; border: clamp(28px, 4vw, 48px) solid var(--blue); border-radius: 50%; border-bottom-color: transparent; }
+.geo-ring { position: absolute; pointer-events: none; border: clamp(16px, 2.5vw, 28px) solid var(--blue); border-radius: 50%; }
+.geo-pill { position: absolute; pointer-events: none; background: var(--blue); border-radius: 999px; }
+
+.photo-bg { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 0; }
+.photo-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(11,27,43,0.90) 0%, rgba(11,27,43,0.80) 100%);
+  z-index: 1;
+}
+
+/* ============================== ACADEMY GRID ============================== */
+.academies-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 24px; margin-top: 56px;
+}
+@media (max-width: 800px) { .academies-grid { grid-template-columns: 1fr; } }
+
+.academy-card {
+  display: block;
+  position: relative;
+  border-radius: 24px;
+  padding: 40px;
+  color: #fff;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.academy-card::before {
+  content: "";
+  position: absolute; top: -60px; right: -60px;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.10);
+}
+.academy-card::after {
+  content: "";
+  position: absolute; bottom: -50px; left: -50px;
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.18);
+}
+.academy-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -20px rgba(0,0,0,0.4); }
+
+.academy-card.ai      { background: linear-gradient(135deg, var(--academy-ai)      0%, var(--academy-ai-d) 100%); }
+.academy-card.data    { background: linear-gradient(135deg, var(--academy-data)    0%, var(--academy-data-d) 100%); }
+.academy-card.pm      { background: linear-gradient(135deg, var(--academy-pm)      0%, var(--academy-pm-d) 100%); }
+.academy-card.finance { background: linear-gradient(135deg, var(--academy-finance) 0%, var(--academy-finance-d) 100%); }
+
+.academy-card .academy-num {
+  font-family: var(--head); font-size: 14px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  opacity: 0.85;
+  position: relative; z-index: 2;
+}
+.academy-card h3 {
+  font-size: 42px; margin-top: 12px; color: #fff;
+  position: relative; z-index: 2;
+}
+.academy-card .academy-sub {
+  margin-top: 16px;
+  font-size: 16px; line-height: 1.5;
+  color: rgba(255,255,255,0.92);
+  max-width: 420px;
+  position: relative; z-index: 2;
+}
+.academy-card .personas-row {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 24px;
+  position: relative; z-index: 2;
+}
+.academy-card .persona-chip {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.18);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* In academy chips, the dash-bar tier indicator uses white over the chip's translucent fill */
+.academy-card .persona-chip .p-tier {
+  display: inline-flex; gap: 3px; align-items: center;
+}
+.academy-card .persona-chip .p-seg {
+  width: 14px; height: 5px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.30);
+}
+.academy-card .persona-chip .p-seg.on { background: #fff; }
+
+.academy-card .academy-foot {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  position: relative; z-index: 2;
+}
+.academy-card .academy-foot .meta {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+}
+.academy-card .academy-foot .go {
+  font-family: var(--head);
+  font-size: 16px; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+
+/* ============================== PERSONA UNIVERSE ============================== */
+.universe-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  margin-top: 56px;
+}
+.uni-col {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-top: 4px solid;
+  border-radius: 16px;
+  padding: 28px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.uni-col.ai      { border-top-color: var(--academy-ai); }
+.uni-col.data    { border-top-color: var(--academy-data); }
+.uni-col.pm      { border-top-color: var(--academy-pm); }
+.uni-col.finance { border-top-color: var(--academy-finance); }
+.uni-col .uni-academy {
+  font-family: var(--head);
+  font-size: 12px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.55);
+}
+.uni-col h4 { color: #fff; font-size: 22px; margin-top: 4px; }
+.uni-col .persona-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.uni-col .persona-row:last-child { border-bottom: 0; }
+.uni-col .persona-row .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  flex-shrink: 0;
+}
+.uni-col.ai .dot      { background: var(--academy-ai); }
+.uni-col.data .dot    { background: var(--academy-data); }
+.uni-col.pm .dot      { background: var(--academy-pm); }
+.uni-col.finance .dot { background: var(--academy-finance); }
+.uni-col .persona-row .name { font-size: 14.5px; color: #fff; font-weight: 500; flex: 1; }
+.uni-col .persona-row .p-tier {
+  display: inline-flex; gap: 3px; align-items: center;
+  flex-shrink: 0;
+}
+.uni-col .persona-row .p-seg {
+  width: 14px; height: 5px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.18);
+}
+.uni-col.ai      .persona-row .p-seg.on { background: var(--academy-ai); }
+.uni-col.data    .persona-row .p-seg.on { background: var(--academy-data); }
+.uni-col.pm      .persona-row .p-seg.on { background: var(--academy-pm); }
+.uni-col.finance .persona-row .p-seg.on { background: var(--academy-finance); }
+@media (max-width: 1000px) { .universe-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px)  { .universe-grid { grid-template-columns: 1fr; } }
+
+/* ============================== CROSS-DISCIPLINE ============================== */
+/* Carousel: prev/next arrows around a single big panel, dot indicators below */
+.cross-carousel { margin-top: 56px; position: relative; }
+
+.carousel-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  align-items: stretch;
+}
+.carousel-arrow {
+  align-self: center;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--alice);
+  cursor: pointer;
+  font-size: 22px;
+  color: var(--prussian);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s, transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 2px 8px -2px rgba(11,27,43,0.06);
+}
+.carousel-arrow:hover {
+  background: var(--prussian); color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -8px rgba(11,27,43,0.25);
+}
+.carousel-arrow:disabled {
+  opacity: 0.3; cursor: not-allowed;
+  background: #fff; color: var(--prussian);
+  transform: none; box-shadow: none;
+}
+
+.carousel-track-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+  will-change: transform;
+}
+.cross-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+.cross-panel {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 24px;
+  padding: 40px 48px 28px;
+  min-height: 360px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  box-shadow: inset 0 0 24px rgba(11,27,43,0.06), inset 0 2px 8px rgba(11,27,43,0.05);
+}
+.cross-panel .panel-left { display: flex; flex-direction: column; gap: 20px; }
+.cross-panel .panel-counter {
+  font-family: var(--head);
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--blue);
+}
+.cross-panel .panel-counter .ttl { color: var(--steel); }
+.cross-panel .panel-head {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+}
+.cross-panel .persona-portrait {
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--alice);
+  border: 3px solid #fff;
+  box-shadow: 0 12px 28px -8px rgba(11,27,43,0.22);
+}
+.cross-panel .persona-portrait img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
+}
+@media (max-width: 720px) {
+  .cross-panel .persona-portrait { width: 110px; height: 110px; }
+}
+.cross-panel h3 { font-size: 36px; line-height: 1.05; }
+.cross-panel .panel-sub {
+  font-size: 16px; color: var(--steel); line-height: 1.6;
+  margin: 0;
+}
+.cross-panel .role-tag {
+  flex-shrink: 0;
+  font-family: var(--head);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--honolulu);
+  background: var(--alice);
+  padding: 6px 10px; border-radius: 999px;
+}
+.cross-panel .stack {
+  display: grid; gap: 14px;
+  background: var(--alice);
+  border-radius: 16px;
+  padding: 24px;
+}
+.cross-panel .stack-label {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--steel);
+  margin-bottom: 4px;
+}
+
+/* Persona progression row */
+.p-row {
+  display: grid;
+  grid-template-columns: 14px 1fr 90px 90px;
+  align-items: center;
+  gap: 14px;
+}
+.p-row .p-dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  justify-self: center;
+  align-self: center;
+}
+.p-row .p-name {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--prussian);
+  letter-spacing: -0.005em;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+.p-row .p-name .p-acad {
+  display: block;
+  font-weight: 500; color: var(--steel); font-size: 11px;
+  margin-top: 2px;
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+.p-row .p-tier {
+  display: flex; gap: 3px;
+  align-items: center;
+  justify-self: start;
+}
+.p-row .p-seg {
+  width: 18px; height: 6px;
+  border-radius: 2px;
+  background: rgba(11,27,43,0.12);
+}
+.p-row .p-seg.on { background: currentColor; }
+.p-row .p-tier-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--steel);
+  white-space: nowrap;
+  text-align: left;
+}
+
+.p-row.ai      { color: var(--academy-ai); }
+.p-row.ai      .p-dot { background: var(--academy-ai); }
+.p-row.data    { color: var(--academy-data); }
+.p-row.data    .p-dot { background: var(--academy-data); }
+.p-row.pm      { color: var(--academy-pm); }
+.p-row.pm      .p-dot { background: var(--academy-pm); }
+.p-row.finance { color: var(--academy-finance); }
+.p-row.finance .p-dot { background: var(--academy-finance); }
+
+/* Indicator rail under the carousel */
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.carousel-dot {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 8px;
+  background: transparent; border: 0; cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 12px;
+  transition: background 0.15s;
+  min-width: 120px;
+}
+.carousel-dot:hover { background: var(--alice); }
+.carousel-dot .bar {
+  width: 100%; height: 3px; border-radius: 2px;
+  background: rgba(11,27,43,0.12);
+  transition: background 0.2s, height 0.2s;
+}
+.carousel-dot .label {
+  font-family: var(--head);
+  font-size: 13px; font-weight: 500;
+  color: var(--steel);
+  transition: color 0.15s;
+  line-height: 1.2;
+  text-align: center;
+}
+.carousel-dot.active .bar { background: var(--blue); height: 4px; }
+.carousel-dot.active .label { color: var(--prussian); font-weight: 600; }
+
+@media (max-width: 1180px) {
+  .cross-panel { grid-template-columns: 1fr; gap: 28px; min-height: 0; }
+}
+@media (max-width: 900px) {
+  .carousel-stage { grid-template-columns: 1fr; }
+  .carousel-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    z-index: 5;
+    width: 44px; height: 44px;
+  }
+  .carousel-arrow.prev { left: 8px; }
+  .carousel-arrow.next { right: 8px; }
+  .carousel-arrow:hover { transform: translateY(calc(-50% - 2px)); }
+  .cross-panel {
+    padding: 28px;
+  }
+  .cross-panel h3 { font-size: 28px; }
+  .carousel-nav { gap: 4px; }
+  .carousel-dot { min-width: 0; padding: 8px 10px; }
+  .carousel-dot .label { font-size: 11px; }
+}
+@media (max-width: 560px) {
+  .p-row {
+    grid-template-columns: 14px 1fr;
+    row-gap: 6px;
+  }
+  .p-row .p-tier { grid-column: 2; }
+  .p-row .p-tier-label { grid-column: 2; text-align: left; }
+}
+
+/* ============================== PROCESS ============================== */
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 56px; position: relative; }
+.process-line { position: absolute; left: 28px; right: 28px; top: 28px; height: 2px; background: rgba(255,255,255,0.14); z-index: 0; }
+.proc { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 14px; }
+.proc-num {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--blue); color: #fff;
+  font-family: var(--head); font-size: 24px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+}
+.proc .eyebrow { margin-top: 2px; }
+.proc h4 { font-family: var(--head); font-size: 20px; line-height: 1.15; }
+.proc p { font-size: 14.5px; color: rgba(255,255,255,0.72); line-height: 1.55; }
+@media (max-width: 900px) { .process-grid { grid-template-columns: repeat(2, 1fr); } .process-line { display: none; } }
+
+/* ============================== IMPACT ============================== */
+.impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 56px; }
+.impact-card {
+  background: #fff;
+  border-radius: 24px; padding: 32px;
+  border: 1px solid var(--alice);
+  display: flex; flex-direction: column; gap: 16px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: border 0.18s, transform 0.18s, box-shadow 0.18s;
+}
+.impact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: top right -40px;
+  background-size: 280px auto;
+  opacity: 0.20;
+  pointer-events: none;
+  z-index: -1;
+}
+@media (max-width: 900px) {
+  .impact-card::before {
+    background-size: 220px auto;
+    background-position: top right -30px;
+  }
+}
+.impact-card.bg-blue::before   { background-image: url('for-business/img/banking/yellow-shape-blue.svg'); }
+.impact-card.bg-green::before  { background-image: url('for-business/img/banking/yellow-shape-green.svg'); }
+.impact-card.bg-purple::before { background-image: url('for-business/img/banking/yellow-shape-purple.svg'); }
+.impact-card.bg-yellow::before { background-image: url('for-business/img/banking/68496600e4999a5a256c4579_yellow-bg-tab-with-kubicle.svg'); }
+.impact-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px -24px rgba(4,150,255,0.22);
+}
+.impact-card h3 { font-size: 30px; line-height: 1.05; }
+.impact-card .body { font-size: 15.5px; flex-grow: 1; }
+.impact-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--alice);
+}
+.impact-metric .n {
+  font-family: var(--head);
+  font-size: 64px; font-weight: 600;
+  letter-spacing: -0.04em;
+  color: var(--blue);
+  line-height: 0.95;
+  flex-shrink: 0;
+}
+.impact-metric .u {
+  font-size: 15px;
+  color: var(--steel);
+  line-height: 1.4;
+  font-weight: 500;
+  max-width: 280px;
+}
+@media (max-width: 900px) { .impact-grid { grid-template-columns: 1fr; } }
+
+/* ============================== TESTIMONIAL ============================== */
+.quote-block { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: center; margin-top: 48px; }
+.quote-block blockquote {
+  margin: 0;
+  font-family: var(--head);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  border-left: 4px solid var(--blue);
+  padding-left: 32px;
+}
+.quote-block .who { margin-top: 24px; font-size: 14px; color: rgba(255,255,255,0.7); padding-left: 32px; }
+.quote-block .who strong { color: #fff; font-weight: 600; }
+@media (max-width: 900px) { .quote-block { grid-template-columns: 1fr; } }
+
+/* ============================== PRICING ============================== */
+.pricing-cards {
+  display: grid; grid-template-columns: 1.4fr 1fr;
+  gap: 20px; margin-top: 32px;
+  max-width: 1100px; margin-left: auto; margin-right: auto;
+  align-items: stretch;
+}
+.price-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 28px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.price-card:hover { transform: translateY(-4px); box-shadow: 0 30px 50px -30px rgba(11,27,43,0.2); }
+.price-card.highlighted {
+  background: var(--prussian);
+  color: #fff;
+  border-color: var(--prussian);
+  position: relative;
+  overflow: hidden;
+}
+.price-card.highlighted::before {
+  content: "";
+  position: absolute; top: -100px; right: -100px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(4,150,255,0.25) 0%, transparent 70%);
+}
+.price-card.highlighted .body { color: rgba(255,255,255,0.82); }
+.price-card.highlighted .caption { color: rgba(255,255,255,0.65); }
+.price-card .tag {
+  display: inline-flex; align-self: flex-start;
+  padding: 6px 12px; border-radius: 999px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  background: var(--alice); color: var(--honolulu);
+}
+.price-card.highlighted .tag { background: var(--blue); color: #fff; }
+.price-card h3 { font-size: 24px; }
+.price-card .body { font-size: 14px; line-height: 1.5; }
+.price-card .price-amount {
+  font-family: var(--head);
+  font-size: 44px; font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.price-card .price-amount .currency { font-size: 22px; vertical-align: super; }
+.price-card .price-amount .period { font-size: 13px; font-weight: 400; color: var(--steel); letter-spacing: normal; display: block; margin-top: 4px;
+  line-height: 1.4;
+}
+.price-card.highlighted .price-amount .period { color: rgba(255,255,255,0.6); }
+.price-card ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.price-card li {
+  font-size: 13.5px;
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.4;
+}
+.price-card li::before {
+  content: "";
+  position: absolute; left: 0; top: 3px;
+  width: 14px; height: 14px;
+  background: var(--emerald);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
+}
+.price-card .btn { margin-top: auto; }
+@media (max-width: 800px) { .pricing-cards { grid-template-columns: 1fr; } }
+
+/* ============================== PRICING AUDIENCE TOGGLE ============================== */
+.pricing-toggle-row { margin-top: 36px; text-align: center; }
+.pricing-toggle {
+  display: inline-flex;
+  background: var(--alice);
+  border: 1px solid #e5ebf0;
+  border-radius: 999px;
+  padding: 5px;
+}
+.pt-btn {
+  appearance: none; background: transparent; border: 0;
+  font-family: var(--head);
+  font-size: 14px; font-weight: 600;
+  letter-spacing: -0.005em;
+  padding: 12px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--steel);
+  transition: background 0.15s, color 0.15s;
+}
+.pt-btn:hover { color: var(--prussian); }
+.pt-btn.active { background: var(--prussian); color: #fff; }
+.pricing-audience { display: none; }
+.pricing-audience.active { display: block; }
+
+/* Individual pricing cards */
+.indiv-pair {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 20px; align-items: stretch;
+  margin-top: 32px;
+  max-width: 1100px;
+  margin-left: auto; margin-right: auto;
+}
+@media (max-width: 800px) { .indiv-pair { grid-template-columns: 1fr; } }
+.free-tier-card,
+.indiv-aa-card {
+  border-radius: 22px;
+  padding: 26px;
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+  color: #fff;
+}
+.free-tier-card { background: linear-gradient(135deg, #0D5F96 0%, #0B1B2B 100%); }
+.indiv-aa-card  { background: var(--prussian); }
+.free-tier-card::before,
+.indiv-aa-card::before {
+  content: ""; position: absolute;
+  top: -120px; right: -120px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(4,150,255,0.30) 0%, transparent 70%);
+  pointer-events: none;
+}
+.free-tier-card .tag,
+.indiv-aa-card .tag {
+  display: inline-flex; align-self: flex-start;
+  padding: 6px 14px; border-radius: 999px;
+  font-family: var(--head);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  position: relative; z-index: 2;
+  background: var(--blue); color: #fff;
+}
+.free-tier-card h3,
+.indiv-aa-card h3 {
+  font-size: 24px; color: #fff; margin-top: 10px;
+  font-family: var(--head); font-weight: 600;
+  position: relative; z-index: 2;
+}
+.free-tier-card .lede,
+.indiv-aa-card .lede {
+  margin-top: 8px;
+  color: rgba(255,255,255,0.78);
+  font-size: 14px; line-height: 1.5;
+  position: relative; z-index: 2;
+}
+.free-tier-card ul,
+.indiv-aa-card ul {
+  margin: 12px 0 0; padding: 0;
+  list-style: none;
+  display: grid; gap: 6px;
+  position: relative; z-index: 2;
+}
+.free-tier-card li,
+.indiv-aa-card li {
+  font-size: 13.5px; color: rgba(255,255,255,0.85);
+  padding-left: 20px; position: relative;
+  line-height: 1.4;
+}
+.free-tier-card li::before,
+.indiv-aa-card li::before {
+  content: ""; position: absolute; left: 0; top: 4px;
+  width: 13px; height: 13px;
+  background: var(--emerald);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
+}
+.indiv-priceblock {
+  margin-top: 4px;
+  position: relative; z-index: 2;
+}
+.indiv-priceblock .price-amount {
+  font-family: var(--head);
+  font-size: 42px; font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #fff;
+}
+.indiv-priceblock .price-amount .currency { font-size: 20px; vertical-align: super; }
+.indiv-priceblock .price-amount .period {
+  display: block;
+  font-size: 12px; font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: normal;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+.indiv-priceblock .price-note {
+  margin-top: 4px;
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.55);
+}
+.free-tier-card > .btn,
+.indiv-aa-card > .btn {
+  margin-top: auto;
+  width: 100%;
+  position: relative; z-index: 2;
+}
+
+/* Pricing-page hyperlink under each audience panel */
+.pricing-more-link {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--steel);
+}
+.pricing-more-link a {
+  color: var(--blue);
+  font-family: var(--head);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1.5px solid rgba(4,150,255,0.35);
+  padding-bottom: 1px;
+  transition: border-color 0.15s, color 0.15s;
+}
+.pricing-more-link a:hover { color: var(--blue-d); border-color: var(--blue-d); }
+.free-tier-card .btn {
+  background: var(--blue); color: #fff;
+  box-shadow: 0 2px 0 rgba(11,27,43,0.3), 0 10px 24px -8px rgba(4,150,255,0.5);
+}
+.free-tier-card .btn:hover { background: #0387e6; }
+
+/* ============================== FAQ ============================== */
+.faq-list { margin-top: 48px; border-top: 1px solid var(--alice); }
+.faq-item { border-bottom: 1px solid var(--alice); }
+.faq-q {
+  padding: 24px 0;
+  display: flex; align-items: center; justify-content: space-between;
+  cursor: pointer;
+  font-family: var(--head);
+  font-size: 22px; font-weight: 500;
+  color: var(--prussian);
+  user-select: none; list-style: none;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q .plus {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--alice); color: var(--honolulu);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 400;
+  transition: transform 0.25s, background 0.2s;
+}
+.faq-item[open] .faq-q .plus { transform: rotate(45deg); background: var(--blue); color: #fff; }
+.faq-a { padding-bottom: 24px; color: var(--steel); font-size: 15.5px; line-height: 1.6; max-width: 800px; }
+
+/* ============================== FINAL CTA ============================== */
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(4,150,255,0.16), transparent 70%),
+    radial-gradient(ellipse 35% 50% at 10% 80%, rgba(0,196,204,0.10), transparent 60%),
+    var(--prussian);
+  position: relative;
+  overflow: hidden;
+}
+.final-cta h2 { max-width: 900px; }
+.final-cta .body-lg { max-width: 640px; color: rgba(255,255,255,0.82); }
+.final-cta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 40px; }
+.final-cta .contact-row {
+  display: flex; gap: 48px; margin-top: 56px; flex-wrap: wrap;
+  padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.12);
+}
+.final-cta .contact-row .item .eyebrow { color: rgba(255,255,255,0.5); }
+.final-cta .contact-row .item .val { font-family: var(--head); font-size: 18px; margin-top: 4px; color: #fff; }
+
+/* Footer styles are owned by shared/footer.js */
+
+/* ============================== MODAL ============================== */
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(5,36,56,0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s;
+}
+.modal-backdrop.open { opacity: 1; pointer-events: auto; }
+.modal-panel {
+  position: fixed; z-index: 210;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  background: #fff;
+  border-radius: 24px;
+  width: 90%; max-width: 520px;
+  max-height: 85vh; overflow-y: auto;
+  padding: 40px;
+  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.5);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+}
+.modal-panel.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
+.modal-close {
+  position: absolute; top: 16px; right: 16px;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--alice); border: 0; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: var(--steel);
+  transition: background 0.15s;
+}
+.modal-close:hover { background: var(--blue); color: #fff; }
+
+.float-cta {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  z-index: 90;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(20px);
+  box-shadow: 0 20px 50px -10px rgba(4,150,255,0.5);
+}
+.float-cta.on { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+.center { text-align: center; }
+
+</style>
+<script src="shared/pricing.js" defer></script>
+<script src="shared/nav.js" defer></script>
+<script src="shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== NAV (shared/nav.js) ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-content" id="consultation">
+      <div class="eyebrow">Welcome to Kubicle</div>
+      <h1 class="h-display" style="margin-top: 20px; max-width: 1100px;">
+        The skills every modern role needs.<br/>
+        Master&nbsp;<span class="rotator" aria-label="AI, Data, Projects, Finance"><em><span class="word">AI.</span><span class="word">Data.</span><span class="word">Projects.</span><span class="word">Finance.</span></em></span>
+      </h1>
+      <p class="hero-sub" style="margin-top: 28px; max-width: 780px;">
+        AI, Data, Project Management and Finance, unified on a single platform.
+        14 credential-anchored persona pathways, 300+ courses, and the cross-discipline
+        coverage modern roles actually demand.
+      </p>
+      <div class="hero-creds" aria-label="Accreditations">
+        <span class="creds-label">Accredited by</span>
+        <img src="img/shared/69022a93d722e08a215ad239_certs-logos.avif" alt="CPD, CPE, NASBA and CAI accreditation"/>
+      </div>
+      <div class="hero-cta-row">
+        <a class="btn btn-primary btn-lg" href="catalog.html">Download Catalog <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost btn-lg" href="try-free/index.html" style="border-color: #fff;">Try for Free <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat"><div class="num">400<em>+</em></div><div class="label">Enterprises served with Kubicle's market-leading training solutions</div></div>
+      <div class="stat"><div class="num">1M<em>+</em></div><div class="label">Learners trained on the Kubicle platform worldwide</div></div>
+      <div class="stat"><div class="num">300<em>+</em></div><div class="label">Bite-sized courses, refreshed continuously by our learning design team</div></div>
+      <div class="stat"><div class="num">4</div><div class="label">Academies covering AI, Data, Project Management and Finance</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TRUST BAR ============================== -->
+<div class="trust">
+  <div class="trust-label">Trusted by</div>
+  <div class="marquee-track" id="marquee-track"></div>
+</div>
+
+<!-- ============================== APPROACH ============================== -->
+<section id="approach">
+  <div class="geo-arch" style="width: 360px; height: 360px; top: -100px; right: -80px; opacity: 0.08; transform: rotate(30deg);"></div>
+  <div class="geo-ring" style="width: 200px; height: 200px; bottom: -50px; left: -60px; opacity: 0.06;"></div>
+  <div class="container">
+    <div class="split-2">
+      <div>
+        <div class="eyebrow">Why All Access?</div>
+        <h2 class="h-xl" style="margin-top: 16px;">
+          Modern roles cross disciplines.<br/>
+          <span style="color: var(--blue);">Your training should too.</span>
+        </h2>
+        <p class="body-lg" style="margin-top: 24px; color: var(--steel); max-width: 540px;">
+          One platform that meets every role where it actually sits, and grows with it.
+        </p>
+        <a class="btn btn-outline-dark btn-md" style="margin-top: 28px;" href="#academies">See the academies <span class="arr">&rarr;</span></a>
+      </div>
+
+      <div class="problem-list">
+        <div class="problem-item">
+          <div class="icn">01</div>
+          <div>
+            <h4>Unified persona benchmarking</h4>
+            <p>One assessment maps every learner across all four academies, then routes them to the right pathway.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="icn">02</div>
+          <div>
+            <h4>Cross-discipline pathways</h4>
+            <p>Combine personas across academies, calibrated to the work people actually do.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="icn">03</div>
+          <div>
+            <h4>One contract, one platform, one success team</h4>
+            <p>One contract, one learner experience, one success team that designs, deploys and reviews with you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ACADEMIES SHOWCASE ============================== -->
+<section class="dark" id="academies" style="background: var(--prussian);">
+  <div style="position:absolute; inset:0; pointer-events:none; overflow:hidden;">
+    <div class="geo-arch" style="width: 480px; height: 480px; right: -10%; top: 8%; opacity: 0.07; transform: rotate(15deg);"></div>
+    <div class="geo-ring" style="width: 320px; height: 320px; left: -6%; top: 12%; opacity: 0.06;"></div>
+  </div>
+  <div class="container">
+    <div style="max-width: 840px;">
+      <div class="eyebrow">Built on Four World-Class Academies</div>
+      <h2 class="h-xl" style="margin-top: 16px; color: #fff;">
+        Each academy is a <span style="color: var(--blue);">complete proposition.</span><br/>
+        All Access gives you all four.
+      </h2>
+      <p class="body-lg" style="margin-top: 24px; max-width: 680px; color: rgba(255,255,255,0.78);">
+        Each academy is its own framework, credential anchors and learning paths. Take all four as one subscription.
+      </p>
+    </div>
+
+    <div class="academies-grid">
+      <a href="academies/data-literacy/index.html" class="academy-card data">
+        <div>
+          <div class="academy-num">Academy 01</div>
+          <h3>Data Literacy</h3>
+          <p class="academy-sub">From foundational data citizenship to advanced Python, ML and statistical analysis.</p>
+        </div>
+        <div>
+          <div class="personas-row">
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span>Citizen</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 2 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span>Associate</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 3 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span></span>Wrangler</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 4 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span></span>Analyst</span>
+          </div>
+          <div class="academy-foot">
+            <div class="meta">4 Personas &middot; Data Fluency</div>
+            <div class="go">Visit Data Academy <span>&rarr;</span></div>
+          </div>
+        </div>
+      </a>
+
+      <a href="academies/ai/index.html" class="academy-card ai">
+        <div>
+          <div class="academy-num">Academy 02</div>
+          <h3>AI</h3>
+          <p class="academy-sub">From everyday Copilot fluency to enterprise-grade AI strategy and governance.</p>
+        </div>
+        <div>
+          <div class="personas-row">
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span>Apprentice</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 2 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span>Navigator</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 3 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span></span>Architect</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 4 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span></span>Strategist</span>
+          </div>
+          <div class="academy-foot">
+            <div class="meta">4 Personas &middot; AI Literacy</div>
+            <div class="go">Visit AI Academy <span>&rarr;</span></div>
+          </div>
+        </div>
+      </a>
+
+      <a href="academies/project-management/index.html" class="academy-card pm">
+        <div>
+          <div class="academy-num">Academy 03</div>
+          <h3>Project Management</h3>
+          <p class="academy-sub">From project member to CAPM-ready professional. PMI-aligned, with the 23-hour prerequisite covered.</p>
+        </div>
+        <div>
+          <div class="personas-row">
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 1 of 3"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span>Project Member</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 2 of 3"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span></span>PM Candidate</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 3 of 3"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span></span>Project Champion</span>
+          </div>
+          <div class="academy-foot">
+            <div class="meta">3 Personas &middot; CAPM-Aligned</div>
+            <div class="go">Visit PM Academy <span>&rarr;</span></div>
+          </div>
+        </div>
+      </a>
+
+      <a href="academies/finance/index.html" class="academy-card finance">
+        <div>
+          <div class="academy-num">Academy 04</div>
+          <h3>Finance</h3>
+          <p class="academy-sub">From Excel-literate to FMVA-grade modeler. Anchored to MOS, PL-300, Tableau Specialist and FMVA.</p>
+        </div>
+        <div>
+          <div class="personas-row">
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 1 of 3"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span>Apprentice</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 2 of 3"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span></span>Analyst</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 3 of 3"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span></span>Modeler</span>
+          </div>
+          <div class="academy-foot">
+            <div class="meta">3 Personas &middot; FMVA-Aligned</div>
+            <div class="go">Visit Finance Academy <span>&rarr;</span></div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PERSONA UNIVERSE ============================== -->
+<section class="dark" id="universe" style="background: var(--indigo);">
+  <div class="container">
+    <div style="max-width: 840px;">
+      <div class="eyebrow">The Kubicle Persona Universe</div>
+      <h2 class="h-xl" style="margin-top: 16px; color: #fff;">
+        Fourteen credential-anchored personas.<br/>
+        <span style="color: var(--blue);">One unified framework.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 24px; max-width: 680px; color: rgba(255,255,255,0.78);">
+        Every persona ladders by tier and ties to a recognized credential.
+      </p>
+    </div>
+
+    <div class="universe-grid">
+      <div class="uni-col data">
+        <div class="uni-academy">Data Academy</div>
+        <h4>Data Literacy</h4>
+        <div class="persona-row"><span class="dot"></span><span class="name">Citizen</span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+        <div class="persona-row"><span class="dot"></span><span class="name">Associate</span><span class="p-tier" aria-label="Tier 2 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+        <div class="persona-row"><span class="dot"></span><span class="name">Wrangler</span><span class="p-tier" aria-label="Tier 3 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span></span></div>
+        <div class="persona-row"><span class="dot"></span><span class="name">Analyst</span><span class="p-tier" aria-label="Tier 4 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span></span></div>
+      </div>
+
+      <div class="uni-col ai">
+        <div class="uni-academy">AI Academy</div>
+        <h4>AI Literacy</h4>
+        <div class="persona-row"><span class="dot"></span><span class="name">Apprentice</span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+        <div class="persona-row"><span class="dot"></span><span class="name">Navigator</span><span class="p-tier" aria-label="Tier 2 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+        <div class="persona-row"><span class="dot"></span><span class="name">Architect</span><span class="p-tier" aria-label="Tier 3 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span></span></div>
+        <div class="persona-row"><span class="dot"></span><span class="name">Strategist</span><span class="p-tier" aria-label="Tier 4 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span></span></div>
+      </div>
+
+      <div class="uni-col pm">
+        <div class="uni-academy">PM Academy</div>
+        <h4>Project Management</h4>
+        <div class="persona-row"><span class="dot"></span><span class="name">Project Member</span><span class="p-tier" aria-label="Tier 1 of 3"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+        <div class="persona-row"><span class="dot"></span><span class="name">PM Candidate</span><span class="p-tier" aria-label="Tier 2 of 3"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span></span></div>
+        <div class="persona-row"><span class="dot"></span><span class="name">Project Champion</span><span class="p-tier" aria-label="Tier 3 of 3"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span></span></div>
+      </div>
+
+      <div class="uni-col finance">
+        <div class="uni-academy">Finance Academy</div>
+        <h4>Finance</h4>
+        <div class="persona-row"><span class="dot"></span><span class="name">Apprentice</span><span class="p-tier" aria-label="Tier 1 of 3"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+        <div class="persona-row"><span class="dot"></span><span class="name">Analyst</span><span class="p-tier" aria-label="Tier 2 of 3"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span></span></div>
+        <div class="persona-row"><span class="dot"></span><span class="name">Modeler</span><span class="p-tier" aria-label="Tier 3 of 3"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CROSS-DISCIPLINE ============================== -->
+<section id="cross">
+  <div class="geo-arch" style="width: 280px; height: 280px; bottom: -80px; right: -60px; opacity: 0.06; transform: rotate(45deg);"></div>
+  <div class="geo-ring" style="width: 200px; height: 200px; top: -50px; left: 8%; opacity: 0.05;"></div>
+  <div class="container">
+    <div style="max-width: 840px;">
+      <div class="eyebrow">The Cross-Discipline Reality</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Real roles span <span style="color: var(--blue);">multiple academies.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 24px; color: var(--steel); max-width: 680px;">
+        Here's how a few common roles draw on all four academies.
+      </p>
+    </div>
+
+    <div class="cross-carousel" id="rolesCarousel">
+      <div class="carousel-stage">
+        <button class="carousel-arrow prev" aria-label="Previous role">&larr;</button>
+        <div class="carousel-track-wrap">
+          <div class="carousel-track">
+
+            <div class="cross-slide">
+              <div class="cross-panel">
+                <div class="panel-left">
+                  <div class="persona-portrait"><img src="img/Character_profiles/portraits/female_07.a.png" alt="Intern and graduate persona portrait" loading="lazy"/></div>
+                  <div class="panel-counter"><span class="cur">01</span> <span class="ttl">/ 06 &middot; Program</span></div>
+                  <div class="panel-head">
+                    <h3>The intern &amp; graduate</h3>
+                    <span class="role-tag">Program</span>
+                  </div>
+                  <p class="panel-sub">Pre&#8209;employment prep and the first year on the job. The 12 months before placement plus the first year of work, where graduates build the baseline fluency across all four academies that every entry&#8209;level role now expects on day one.</p>
+                </div>
+                <div class="stack">
+                  <div class="stack-label">Recommended pathway</div>
+                  <div class="p-row ai"><span class="p-dot"></span><span class="p-name">AI Apprentice <span class="p-acad">AI</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-tier-label">Apprentice</span></span></div>
+                  <div class="p-row data"><span class="p-dot"></span><span class="p-name">Data Citizen <span class="p-acad">Data</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-tier-label">Citizen</span></span></div>
+                  <div class="p-row pm"><span class="p-dot"></span><span class="p-name">Project Member <span class="p-acad">PM</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-tier-label">Member</span></span></div>
+                  <div class="p-row finance"><span class="p-dot"></span><span class="p-name">Finance Apprentice <span class="p-acad">Finance</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-tier-label">Apprentice</span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cross-slide">
+              <div class="cross-panel">
+                <div class="panel-left">
+                  <div class="persona-portrait"><img src="img/Character_profiles/portraits/male_04.a.png" alt="Early-career hire persona portrait" loading="lazy"/></div>
+                  <div class="panel-counter"><span class="cur">02</span> <span class="ttl">/ 06 &middot; Year 1-2</span></div>
+                  <div class="panel-head">
+                    <h3>The early-career hire</h3>
+                    <span class="role-tag">Year 1-2</span>
+                  </div>
+                  <p class="panel-sub">First analyst, coordinator, or associate role. Needs broad fluency fast: enough AI, data, project sense, and finance to operate from day one.</p>
+                </div>
+                <div class="stack">
+                  <div class="stack-label">Recommended pathway</div>
+                  <div class="p-row ai"><span class="p-dot"></span><span class="p-name">AI Navigator <span class="p-acad">AI</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-tier-label">Navigator</span></span></div>
+                  <div class="p-row data"><span class="p-dot"></span><span class="p-name">Data Associate <span class="p-acad">Data</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-tier-label">Associate</span></span></div>
+                  <div class="p-row pm"><span class="p-dot"></span><span class="p-name">Project Member <span class="p-acad">PM</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-tier-label">Member</span></span></div>
+                  <div class="p-row finance"><span class="p-dot"></span><span class="p-name">Finance Apprentice <span class="p-acad">Finance</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-tier-label">Apprentice</span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cross-slide">
+              <div class="cross-panel">
+                <div class="panel-left">
+                  <div class="persona-portrait"><img src="img/Character_profiles/portraits/female_03.a.png" alt="Data-fluent project lead persona portrait" loading="lazy"/></div>
+                  <div class="panel-counter"><span class="cur">03</span> <span class="ttl">/ 06 &middot; Delivery</span></div>
+                  <div class="panel-head">
+                    <h3>The data-fluent project lead</h3>
+                    <span class="role-tag">Delivery</span>
+                  </div>
+                  <p class="panel-sub">Runs delivery across hybrid teams, builds dashboards for the steering committee, and uses AI tooling to compress reporting cycles.</p>
+                </div>
+                <div class="stack">
+                  <div class="stack-label">Recommended pathway</div>
+                  <div class="p-row pm"><span class="p-dot"></span><span class="p-name">PM Candidate <span class="p-acad">PM</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-tier-label">Candidate</span></span></div>
+                  <div class="p-row data"><span class="p-dot"></span><span class="p-name">Data Associate <span class="p-acad">Data</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-tier-label">Associate</span></span></div>
+                  <div class="p-row ai"><span class="p-dot"></span><span class="p-name">AI Navigator <span class="p-acad">AI</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-tier-label">Navigator</span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cross-slide">
+              <div class="cross-panel">
+                <div class="panel-left">
+                  <div class="persona-portrait"><img src="img/Character_profiles/portraits/male_07.a.png" alt="FP&amp;A analyst persona portrait" loading="lazy"/></div>
+                  <div class="panel-counter"><span class="cur">04</span> <span class="ttl">/ 06 &middot; Specialist</span></div>
+                  <div class="panel-head">
+                    <h3>The FP&amp;A analyst</h3>
+                    <span class="role-tag">Specialist</span>
+                  </div>
+                  <p class="panel-sub">Lives in Excel and Power BI, owns the rolling forecast, and is increasingly expected to use AI for variance analysis and scenario planning.</p>
+                </div>
+                <div class="stack">
+                  <div class="stack-label">Recommended pathway</div>
+                  <div class="p-row finance"><span class="p-dot"></span><span class="p-name">Finance Modeler <span class="p-acad">Finance</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-tier-label">Modeler</span></span></div>
+                  <div class="p-row data"><span class="p-dot"></span><span class="p-name">Data Wrangler <span class="p-acad">Data</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-tier-label">Wrangler</span></span></div>
+                  <div class="p-row ai"><span class="p-dot"></span><span class="p-name">AI Navigator <span class="p-acad">AI</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-tier-label">Navigator</span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cross-slide">
+              <div class="cross-panel">
+                <div class="panel-left">
+                  <div class="persona-portrait"><img src="img/Character_profiles/portraits/male_01.a.png" alt="Data scientist persona portrait" loading="lazy"/></div>
+                  <div class="panel-counter"><span class="cur">05</span> <span class="ttl">/ 06 &middot; Specialist</span></div>
+                  <div class="panel-head">
+                    <h3>The data scientist</h3>
+                    <span class="role-tag">Specialist</span>
+                  </div>
+                  <p class="panel-sub">Owns advanced modeling, but also has to scope projects, present to executives, and operate increasingly in AI-augmented workflows.</p>
+                </div>
+                <div class="stack">
+                  <div class="stack-label">Recommended pathway</div>
+                  <div class="p-row data"><span class="p-dot"></span><span class="p-name">Data Analyst <span class="p-acad">Data</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-tier-label">Analyst</span></span></div>
+                  <div class="p-row ai"><span class="p-dot"></span><span class="p-name">AI Architect <span class="p-acad">AI</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-tier-label">Architect</span></span></div>
+                  <div class="p-row pm"><span class="p-dot"></span><span class="p-name">Project Member <span class="p-acad">PM</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-tier-label">Member</span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cross-slide">
+              <div class="cross-panel">
+                <div class="panel-left">
+                  <div class="persona-portrait"><img src="img/Character_profiles/portraits/female_10.a.png" alt="Senior leader persona portrait" loading="lazy"/></div>
+                  <div class="panel-counter"><span class="cur">06</span> <span class="ttl">/ 06 &middot; Executive</span></div>
+                  <div class="panel-head">
+                    <h3>The senior leader</h3>
+                    <span class="role-tag">Executive</span>
+                  </div>
+                  <p class="panel-sub">Reads dashboards, sponsors AI initiatives, sets project priorities, and signs the budget. Needs foundational fluency across every discipline, plus strategy depth on AI.</p>
+                </div>
+                <div class="stack">
+                  <div class="stack-label">Recommended pathway</div>
+                  <div class="p-row ai"><span class="p-dot"></span><span class="p-name">AI Strategist <span class="p-acad">AI</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-tier-label">Strategist</span></span></div>
+                  <div class="p-row data"><span class="p-dot"></span><span class="p-name">Data Citizen <span class="p-acad">Data</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-tier-label">Citizen</span></span></div>
+                  <div class="p-row pm"><span class="p-dot"></span><span class="p-name">PM Candidate <span class="p-acad">PM</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-tier-label">Candidate</span></span></div>
+                  <div class="p-row finance"><span class="p-dot"></span><span class="p-name">Finance Apprentice <span class="p-acad">Finance</span></span><span class="p-tier"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-tier-label">Apprentice</span></span></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <button class="carousel-arrow next" aria-label="Next role">&rarr;</button>
+      </div>
+
+      <div class="carousel-nav">
+        <button class="carousel-dot active" data-slide="0"><span class="bar"></span><span class="label">Intern &amp; graduate</span></button>
+        <button class="carousel-dot" data-slide="1"><span class="bar"></span><span class="label">Early-career hire</span></button>
+        <button class="carousel-dot" data-slide="2"><span class="bar"></span><span class="label">Project lead</span></button>
+        <button class="carousel-dot" data-slide="3"><span class="bar"></span><span class="label">FP&amp;A analyst</span></button>
+        <button class="carousel-dot" data-slide="4"><span class="bar"></span><span class="label">Data scientist</span></button>
+        <button class="carousel-dot" data-slide="5"><span class="bar"></span><span class="label">Senior leader</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PROCESS ============================== -->
+<section class="dark" id="process" style="position: relative;">
+  <div class="photo-bg" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80');"></div>
+  <div class="container" style="position: relative; z-index: 2;">
+    <div style="max-width: 840px;">
+      <div class="eyebrow">How We Roll It Out</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        From discovery to launch in <br/>about <span style="color: var(--blue);">a week.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 24px; max-width: 600px; color: rgba(255,255,255,0.78);">
+        Most All Access clients are live with learners inside seven business days.
+      </p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-line"></div>
+      <div class="proc">
+        <div class="proc-num">1</div>
+        <h4>Map the roles</h4>
+        <p>Surface the cross-discipline roles you run and the outcomes leadership cares about.</p>
+      </div>
+      <div class="proc">
+        <div class="proc-num">2</div>
+        <h4>Score every learner</h4>
+        <p>One assessment maps each learner across all four academies.</p>
+      </div>
+      <div class="proc">
+        <div class="proc-num">3</div>
+        <h4>Compose pathways</h4>
+        <p>Persona pathways assembled into role-calibrated learning journeys.</p>
+      </div>
+      <div class="proc">
+        <div class="proc-num">4</div>
+        <h4>Deploy and iterate</h4>
+        <p>SSO, bulk setup and LMS integration in days. Skill-gain dashboards from day one.</p>
+      </div>
+    </div>
+
+    <div class="center" style="margin-top: 72px;">
+      <a class="btn btn-primary btn-lg" href="try-free/index.html">Try for Free <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== IMPACT ============================== -->
+<section class="alice">
+  <div class="geo-arch" style="width: 440px; height: 440px; top: -140px; left: -140px; opacity: 0.06; transform: rotate(-15deg);"></div>
+  <div class="geo-ring" style="width: 260px; height: 260px; bottom: -70px; right: -50px; opacity: 0.05;"></div>
+  <div class="container">
+    <div style="max-width: 840px;">
+      <div class="eyebrow">Outcomes Across Academies</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Real skill gains, on every <br/>
+        <span style="color: var(--blue);">discipline you train on.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 24px; color: var(--steel); max-width: 600px;">
+        Platform-wide numbers, across all four academies. Accredited by CPD, CPE and NASBA.
+      </p>
+    </div>
+
+    <div class="impact-grid">
+      <div class="impact-card bg-blue">
+        <div class="eyebrow">Productivity</div>
+        <h3 class="h-md">Hours back, every week.</h3>
+        <p class="body" style="color: var(--steel);">Learners free real capacity for higher-value work, whichever academy they trained in.</p>
+        <div class="impact-metric"><div class="n">60<span style="font-size: 0.42em; vertical-align: top; margin-left: 2px; color: var(--blue); font-weight: 600;">%</span><em style="font-style: normal; margin-left: 0.04em;">+</em></div><div class="u">save 30 mins to 2 hours every week</div></div>
+      </div>
+      <div class="impact-card bg-green">
+        <div class="eyebrow">Adoption</div>
+        <h3 class="h-md">Used every single day.</h3>
+        <p class="body" style="color: var(--steel);">The difference between training that's watched and training that's worked.</p>
+        <div class="impact-metric"><div class="n">45<span style="font-size: 0.42em; vertical-align: top; margin-left: 2px; color: var(--blue); font-weight: 600;">%</span></div><div class="u">apply newly-learned skills daily in their roles</div></div>
+      </div>
+      <div class="impact-card bg-purple">
+        <div class="eyebrow">Capability</div>
+        <h3 class="h-md">Stronger numbers and narratives.</h3>
+        <p class="body" style="color: var(--steel);">Measurable gains in analytical depth and executive communication.</p>
+        <div class="impact-metric"><div class="n">75<span style="font-size: 0.42em; vertical-align: top; margin-left: 2px; color: var(--blue); font-weight: 600;">%</span><em style="font-style: normal; margin-left: 0.04em;">+</em></div><div class="u">gain stronger analysis and communication skills</div></div>
+      </div>
+      <div class="impact-card bg-yellow">
+        <div class="eyebrow">Credentials</div>
+        <h3 class="h-md">Resume-ready credentials.</h3>
+        <p class="body" style="color: var(--steel);">Every academy ties to a recognized external credential. All Access covers them all.</p>
+        <div class="impact-metric"><div class="n">14</div><div class="u">credential-anchored persona pathways</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TESTIMONIAL ============================== -->
+<section class="dark" style="position: relative;">
+  <div class="photo-bg" style="background-image: url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80');"></div>
+  <div style="position:absolute; inset:0; pointer-events:none; z-index: 2; overflow:hidden;">
+    <div class="geo-arch" style="width: 400px; height: 400px; left: -8%; top: 10%; opacity: 0.12; transform: rotate(-25deg);"></div>
+  </div>
+  <div class="container" style="position: relative; z-index: 3;">
+    <div class="eyebrow">What Our Partners Say</div>
+    <div class="quote-block">
+      <div style="display: flex; align-items: center; justify-content: center;">
+        <img src="img/shared/totalenergies-logo.png" alt="TotalEnergies" style="height: 100px; filter: brightness(0) invert(1); opacity: 0.85;"/>
+      </div>
+      <div>
+        <blockquote>
+          "Kubicle made it remarkably easy to roll out structured training across multiple
+          teams. The progress tracking, leaderboards and certifications kept learners
+          engaged, and the depth of content closed real skill gaps in Excel, data analysis
+          and project delivery. I would recommend it without hesitation."
+        </blockquote>
+        <p class="who"><strong>Validated Reviewer</strong><br/>TotalEnergies</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== VIDEO ============================== -->
+<section class="dark" style="position: relative; background: var(--prussian);">
+  <div style="position:absolute; inset:0; pointer-events:none; overflow:hidden;">
+    <div class="geo-ring" style="width: 400px; height: 400px; right: -120px; top: -100px; opacity: 0.06;"></div>
+    <div class="geo-pill" style="width: 200px; height: 48px; left: -40px; bottom: 20%; opacity: 0.05; transform: rotate(6deg);"></div>
+  </div>
+  <div class="container" style="max-width: 920px; position: relative; z-index: 2;">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <div class="eyebrow">Customer Story &middot; Jotun</div>
+      <h2 class="h-lg" style="margin-top: 16px; color: #fff;">How Jotun built lasting capability with Kubicle</h2>
+    </div>
+    <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,0.4); background: #000;">
+      <iframe
+        src="https://player.mux.com/CMdGl5tNWFF2Eiae8TQ43tu00uzVZLQ6g7uSbPt00nwc8"
+        style="width: 100%; display: block; border: none; aspect-ratio: 16/9;"
+        title="Jotun customer testimonial"
+        allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PRICING ============================== -->
+<section id="pricing">
+  <div class="geo-arch" style="width: 280px; height: 280px; bottom: -80px; right: -60px; opacity: 0.06; transform: rotate(45deg);"></div>
+  <div class="geo-ring" style="width: 200px; height: 200px; top: -50px; left: 8%; opacity: 0.05;"></div>
+  <div class="container">
+    <div style="max-width: 840px;">
+      <div class="eyebrow">Pricing</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        One platform.<br/>
+        <span style="color: var(--blue);">A plan for every learner.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 24px; color: var(--steel); max-width: 600px;">
+        Rolling out training across a team or upskilling yourself? Toggle below to see the plans for business or individual learners. Same accredited content, every academy, every credential.
+      </p>
+    </div>
+
+    <!-- Audience toggle -->
+    <div class="pricing-toggle-row">
+      <div class="pricing-toggle" role="tablist">
+        <button class="pt-btn active" data-aud="business" role="tab" aria-selected="true">For Business</button>
+        <button class="pt-btn" data-aud="individual" role="tab" aria-selected="false">For Individuals</button>
+      </div>
+    </div>
+
+    <!-- Business panel -->
+    <div class="pricing-audience active" data-aud-panel="business">
+      <div class="pricing-cards">
+        <div class="price-card highlighted">
+          <span class="tag">Recommended</span>
+          <h3>Kubicle All Access</h3>
+          <p class="body">
+            Every academy. Every persona. Every credential. For teams whose roles span more than one discipline.
+          </p>
+          <div class="price-amount" data-price="all_access">
+            <span class="currency" data-price-symbol>$</span><span data-price-value>499</span>
+            <span class="period" data-price-period="period_short">per learner per year &middot; volume discounts apply</span>
+          </div>
+          <ul style="columns: 2; column-gap: 32px;">
+            <li>All 4 academies</li>
+            <li>All 14 persona pathways</li>
+            <li>300+ courses</li>
+            <li>Cross-discipline benchmarking</li>
+            <li>Custom learning paths</li>
+            <li>CPD, CPE &amp; NASBA accredited</li>
+            <li>External credential alignment</li>
+            <li>Dedicated customer success</li>
+          </ul>
+          <a class="btn btn-primary btn-lg" href="try-free/index.html" style="width: 100%;">Try for Free <span class="arr">&rarr;</span></a>
+        </div>
+
+        <div class="price-card" style="border: 1.5px dashed var(--blue);">
+          <span class="tag">Alternative</span>
+          <h3>Single Academy</h3>
+          <p class="body" style="color: var(--steel); font-size: 14.5px;">
+            If your team only needs one capability area, pick a single academy: AI, Data,
+            Project Management or Finance.
+          </p>
+          <div class="price-amount" data-price="single_academy" style="font-size: 50px;">
+            <span class="currency" data-price-symbol style="font-size: 24px;">$</span><span data-price-value>175</span>
+            <span class="period" data-price-period="period_short">per learner per year &middot; one academy only</span>
+          </div>
+          <ul>
+            <li>One academy of your choice</li>
+            <li>Persona benchmarking within that academy</li>
+            <li>Credential anchors for that discipline</li>
+          </ul>
+          <a class="btn btn-outline-dark btn-md" href="try-free/index.html" style="width: 100%;">Try for Free <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+      <p class="pricing-more-link">Need more currencies or volume options? <a href="pricing.html">See full pricing &rarr;</a></p>
+    </div>
+
+    <!-- Individual panel -->
+    <div class="pricing-audience" data-aud-panel="individual">
+      <div class="indiv-pair">
+        <div class="free-tier-card">
+          <span class="tag">Free Tier</span>
+          <h3>Join Kubicle for Free</h3>
+          <p class="lede">Build practical, job&#8209;ready skills today. The first course in every learning path is free.</p>
+          <div class="indiv-priceblock">
+            <div class="price-amount" data-price="individual_free">
+              <span class="currency" data-price-symbol>$</span><span data-price-value>0</span>
+              <span class="period" data-price-period="period_short">forever, per learner</span>
+            </div>
+            <p class="price-note">No credit card required.</p>
+          </div>
+          <ul>
+            <li>30+ certified free courses</li>
+            <li>First course in every learning path</li>
+            <li>Earn CPE / CPD / NASBA certifications</li>
+            <li>Skill&#8209;gap diagnostic assessments</li>
+            <li>Browse the full library, free</li>
+            <li>Upgrade anytime</li>
+          </ul>
+          <a class="btn btn-md" href="try-free/index.html">Try for Free <span class="arr">&rarr;</span></a>
+        </div>
+
+        <div class="indiv-aa-card">
+          <span class="tag">Upgrade &middot; All Access</span>
+          <h3>Kubicle All Access</h3>
+          <p class="lede">Unlock every academy, every persona pathway, and the full 400+ course library. Cancel anytime.</p>
+          <div class="indiv-priceblock">
+            <div class="price-amount" data-price="individual_all_access_monthly">
+              <span class="currency" data-price-symbol>$</span><span data-price-value>42</span>
+              <span class="period" data-price-period="period_short">per learner per month</span>
+            </div>
+            <p class="price-note">Cancel anytime &middot; billed monthly</p>
+          </div>
+          <ul>
+            <li>All four academies (AI, Data, PM, Finance)</li>
+            <li>14 credentialed personas</li>
+            <li>400+ courses &amp; projects</li>
+            <li>AI&#8209;assessed projects (BETA)</li>
+            <li>CPE / CPD / NASBA certifications</li>
+            <li>Full platform access</li>
+          </ul>
+          <a class="btn btn-primary btn-md" href="try-free/index.html">Try for Free <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+      <p class="pricing-more-link">Want annual billing or different currencies? <a href="pricing.html">See full pricing &rarr;</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FAQ ============================== -->
+<section class="alice" id="faq">
+  <div class="geo-ring" style="width: 220px; height: 220px; top: -60px; right: 4%; opacity: 0.05;"></div>
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px;">
+      <div>
+        <div class="eyebrow">Frequently Asked</div>
+        <h2 class="h-xl" style="margin-top: 16px;">Answers for the questions we hear most.</h2>
+        <p class="body" style="margin-top: 20px; color: var(--steel); max-width: 340px;">
+          Still have a question? Book a consultation and one of our program designers
+          will walk you through it.
+        </p>
+        <a class="btn btn-outline-dark btn-md" style="margin-top: 24px;" href="try-free/index.html">Try for Free <span class="arr">&rarr;</span></a>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary class="faq-q">What's included in All Access? <span class="plus">+</span></summary>
+          <p class="faq-a">All four Kubicle academies (AI, Data Literacy, Project Management and Finance), every persona pathway within them, and the full library of 300+ courses. You also get unified persona benchmarking that spans the academies, custom cross-discipline learning paths, and a dedicated customer success team.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Can different teams use different academies? <span class="plus">+</span></summary>
+          <p class="faq-a">Yes. The platform routes learners into the academies and persona pathways that fit their role. Your finance team can sit primarily in the Finance Academy; your delivery team in PM. The dashboards still report cleanly by team and by academy.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How does benchmarking work across academies? <span class="plus">+</span></summary>
+          <p class="faq-a">A single assessment maps each learner across all four academies, scoring them against the relevant capability axes. The output is a per-learner profile showing where they sit on every discipline that's relevant to their role, which then drives the recommended cross-discipline pathway.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Will it integrate with our LMS and SSO? <span class="plus">+</span></summary>
+          <p class="faq-a">In short, yes. We offer off-the-shelf integrations with a handful of leading LMS platforms, and our engineering team can build a custom integration for any other system you run. SSO is supported across the board, and a Reporting API is available for automated dashboards. Or run Kubicle standalone on our platform with full engagement and skill-gain reporting baked in.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Do learners see all four academies, or only what's relevant? <span class="plus">+</span></summary>
+          <p class="faq-a">Both work. By default learners see the full library so they can explore beyond their assigned pathways. If you'd rather scope visibility to specific academies for specific cohorts, we can configure that during rollout.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How is pricing structured? <span class="plus">+</span></summary>
+          <p class="faq-a">All Access is per-learner with volume discounts that increase as your rollout grows. Standard list is $499 per learner per year. Single-academy pricing starts at $175 per learner per year if you only need one. We'll send a tailored quote after the discovery call.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="final-cta">
+  <div style="position:absolute; inset:0; pointer-events:none; overflow:hidden;">
+    <div class="geo-arch" style="width: 560px; height: 560px; right: -10%; top: -20%; opacity: 0.10; transform: rotate(-10deg);"></div>
+    <div class="geo-ring" style="width: 280px; height: 280px; left: -6%; bottom: -8%; opacity: 0.07;"></div>
+  </div>
+  <div class="container" style="position: relative; z-index: 2;">
+    <div class="eyebrow">Get Started</div>
+    <h2 class="h-display" style="margin-top: 16px; color: #fff;">
+      One platform. Four academies.<br/>
+      <span style="color: var(--blue);">Let's calibrate your team's mix.</span>
+    </h2>
+    <p class="body-lg" style="margin-top: 28px;">
+      Every workforce starts in a different place. A short consultation gives you a
+      cross-academy persona benchmark, a tailored program outline and a candid view of
+      what success looks like across your business. No obligation, no slide deck.
+    </p>
+    <div class="final-cta-row">
+      <a class="btn btn-primary btn-lg" href="try-free/index.html">Try for Free <span class="arr">&rarr;</span></a>
+      <a class="btn btn-ghost btn-lg" href="#academies">Explore the Academies</a>
+    </div>
+
+    <div class="contact-row">
+      <div class="item"><div class="eyebrow">Visit</div><div class="val">kubicle.com</div></div>
+      <div class="item"><div class="eyebrow">Email</div><div class="val">sales@kubicle.com</div></div>
+      <div class="item"><div class="eyebrow">Offices</div><div class="val">Dublin, Ireland</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER (shared/footer.js) ============================== -->
+<div id="site-footer"></div>
+
+<!-- ============================== FLOATING CTA ============================== -->
+<a class="btn btn-primary btn-md float-cta" id="float-cta" href="try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+
+
+<!-- ============================== CONSULT LIGHTBOX ============================== -->
+<!-- ============================== SCRIPTS ============================== -->
+<script>
+(function () {
+  var floatBtn = document.getElementById('float-cta');
+  var consult = document.getElementById('consultation');
+  if (!floatBtn || !consult) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting && e.boundingClientRect.top < 0) floatBtn.classList.add('on');
+      else if (e.isIntersecting) floatBtn.classList.remove('on');
+    });
+  }, { threshold: 0, rootMargin: '-100px 0px 0px 0px' });
+  io.observe(consult);
+  var finalCta = document.querySelector('.final-cta');
+  if (finalCta) {
+    var io2 = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) floatBtn.classList.remove('on'); });
+    }, { threshold: 0.2 });
+    io2.observe(finalCta);
+  }
+})();
+
+(function () {
+  var logos = [
+    { src: 'img/shared/68c2caf09da428eb2dde4f9e_coca-cola-logo-white.png', alt: 'Coca-Cola', native: true },
+    { src: 'img/shared/67c0476eb0f8c4d3c435428c_6a6f1a51a10add6f2749c42cc0df7035_image-9.png', alt: 'Amazon', native: false },
+    { src: 'img/shared/68c2cad5cf0b314fbcc87474_bain-logo-white.png', alt: 'Bain & Company', native: true },
+    { src: 'img/shared/67c0476eb0f8c4d3c4354276_71a2cf3f7a67da45ac2c620241f37138_image-19.png', alt: 'Ford', native: false },
+    { src: 'img/shared/68a31c29651cb5c7de7328a0_heineken-logo-corporate-page-1.png', alt: 'Heineken', native: false },
+    { src: 'img/shared/67c0476eb0f8c4d3c4354287_2dbbe09d3f0f9a37d68ccb9f9ba677aa_image-21.png', alt: 'Jotun', native: false },
+    { src: 'img/shared/68c2caef8b6fdbbd84310a36_kpmg-logo-white.png', alt: 'KPMG', native: true },
+    { src: 'img/shared/68c2caefdc26eb4f7dceb524_lek-logo-white.png', alt: 'L.E.K. Consulting', native: true },
+    { src: 'img/shared/68c2caf00a998ed623dbf3d5_oliver-wyman-logo-white.png', alt: 'Oliver Wyman', native: true },
+    { src: 'img/shared/67c0476eb0f8c4d3c4354272_ab4654fe9cf282ba2459391b57d412b7_image-11.png', alt: 'PwC', native: false },
+    { src: 'img/shared/totalenergies-logo.png', alt: 'TotalEnergies', native: false }
+  ];
+  var track = document.getElementById('marquee-track');
+  if (!track) return;
+  var setsNeeded = Math.ceil((window.innerWidth * 2) / (logos.length * 180)) + 1;
+  var totalSets = setsNeeded * 2;
+  var html = '';
+  for (var s = 0; s < totalSets; s++) {
+    for (var i = 0; i < logos.length; i++) {
+      var l = logos[i];
+      html += '<span class="logo-chip"><img ' + (l.native ? 'class="white-native" ' : '') +
+        'src="' + l.src + '" alt="' + l.alt + '" style="height:28px;"/></span>';
+    }
+  }
+  track.innerHTML = html;
+})();
+
+/* Nav dropdowns + Library population are owned by shared/nav.js */
+
+/* ===== Cross-discipline carousel ===== */
+(function () {
+  var root = document.getElementById('rolesCarousel');
+  if (!root) return;
+  var track = root.querySelector('.carousel-track');
+  var slides = root.querySelectorAll('.cross-slide');
+  var dots = root.querySelectorAll('.carousel-dot');
+  var prev = root.querySelector('.carousel-arrow.prev');
+  var next = root.querySelector('.carousel-arrow.next');
+  var idx = 0;
+  var total = slides.length;
+
+  function go(n) {
+    idx = Math.max(0, Math.min(total - 1, n));
+    track.style.transform = 'translateX(' + (-idx * 100) + '%)';
+    dots.forEach(function (d, i) { d.classList.toggle('active', i === idx); });
+    prev.disabled = idx === 0;
+    next.disabled = idx === total - 1;
+  }
+
+  prev.addEventListener('click', function () { go(idx - 1); });
+  next.addEventListener('click', function () { go(idx + 1); });
+  dots.forEach(function (d, i) {
+    d.addEventListener('click', function () { go(i); });
+  });
+
+  // Keyboard nav when carousel is in view
+  document.addEventListener('keydown', function (e) {
+    var rect = root.getBoundingClientRect();
+    var inView = rect.top < window.innerHeight * 0.8 && rect.bottom > window.innerHeight * 0.2;
+    if (!inView) return;
+    if (e.key === 'ArrowLeft') { go(idx - 1); }
+    else if (e.key === 'ArrowRight') { go(idx + 1); }
+  });
+
+  // Touch swipe
+  var startX = 0, dx = 0, dragging = false;
+  track.addEventListener('touchstart', function (e) {
+    startX = e.touches[0].clientX; dragging = true; dx = 0;
+  }, { passive: true });
+  track.addEventListener('touchmove', function (e) {
+    if (!dragging) return;
+    dx = e.touches[0].clientX - startX;
+  }, { passive: true });
+  track.addEventListener('touchend', function () {
+    if (!dragging) return;
+    dragging = false;
+    if (Math.abs(dx) > 50) { go(idx + (dx < 0 ? 1 : -1)); }
+  });
+
+  go(0);
+})();
+
+// ============================== PRICING AUDIENCE TOGGLE ==============================
+(function () {
+  var btns = document.querySelectorAll('.pt-btn');
+  var panels = document.querySelectorAll('.pricing-audience');
+  if (!btns.length || !panels.length) return;
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var aud = b.getAttribute('data-aud');
+      btns.forEach(function (x) {
+        var active = x.getAttribute('data-aud') === aud;
+        x.classList.toggle('active', active);
+        x.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      panels.forEach(function (p) {
+        p.classList.toggle('active', p.getAttribute('data-aud-panel') === aud);
+      });
+    });
+  });
+})();
+
+</script>
+
+</body>
+</html>

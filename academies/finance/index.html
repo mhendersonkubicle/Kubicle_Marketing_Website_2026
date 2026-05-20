@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/shared/favicon-32x32.png"/>
+<title>Finance Training for Business Teams | Kubicle Finance Academy</title>
+<meta name="description" content="From Excel-literate to financial modeler. Three personas, four credential-anchored capability axes, and the strongest credential story in the Kubicle catalog."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/academies/finance"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:title" content="The Kubicle Finance Academy"/>
+<meta property="og:description" content="From Excel-literate to financial modeler. Three personas, four credential-anchored capability axes, and the strongest credential story in the Kubicle catalog."/>
+<meta property="og:url" content="https://www.kubicle.com/academies/finance"/>
+<meta property="og:image" content="https://www.kubicle.com/academies/finance/img/hero-image.webp"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="The Kubicle Finance Academy"/>
+<meta name="twitter:description" content="From Excel-literate to financial modeler. Three personas, four credential-anchored capability axes, and the strongest credential story in the Kubicle catalog."/>
+<meta name="twitter:image" content="https://www.kubicle.com/academies/finance/img/hero-image.webp"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Finance Academy",
+  "description": "From Excel-literate to financial modeler. Three personas, four credential-anchored capability axes, and the strongest credential story in the Kubicle catalog.",
+  "url": "https://www.kubicle.com/academies/finance",
+  "provider": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "sameAs": "https://www.kubicle.com"
+  },
+  "educationalLevel": "Professional",
+  "offers": {
+    "@type": "Offer",
+    "category": "subscription",
+    "url": "https://www.kubicle.com/pricing"
+  }
+}
+</script>
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system: tokens, typography, buttons -->
+<link rel="stylesheet" href="../../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../../shared/styles/buttons.css"/>
+
+<style>
+/* ============================== PAGE-LOCAL TOKENS ============================== */
+:root {
+  --persona-apprentice: #6EE7B7;
+  --persona-analyst:    #10B981;
+  --persona-modeler:    #047857;
+}
+
+/* ============================== LAYOUT ============================== */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+section { padding: 112px 0; position: relative; overflow: hidden; }
+section.compact { padding: 72px 0; }
+
+@media (max-width: 860px) {
+  .container { padding: 0 24px; }
+  section { padding: 80px 0; }
+}
+
+/* Nav styles are owned by shared/nav.js */
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 96px 0 120px;
+  background:
+    radial-gradient(ellipse 50% 60% at 80% 15%, rgba(16,185,129,0.18), transparent 60%),
+    radial-gradient(ellipse 40% 50% at 15% 80%, rgba(16,185,129,0.10), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(26,140,255,0.06), transparent 70%),
+    var(--prussian);
+  color: #fff;
+  position: relative;
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(16,185,129,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16,185,129,0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at 60% 30%, #000 30%, transparent 75%);
+  pointer-events: none;
+}
+.hero-content {
+  position: relative; z-index: 3;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--green);
+}
+.hero-sub {
+  color: rgba(255,255,255,0.8);
+  max-width: 560px;
+  font-size: 20px; line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+.hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; }
+.hero-assurance {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  margin-top: 32px;
+  color: rgba(255,255,255,0.7);
+  font-size: 13px;
+}
+.hero-assurance span { display: flex; align-items: center; gap: 8px; }
+.hero-assurance .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--emerald);
+}
+
+/* Form card */
+.form-card {
+  background: #fff;
+  color: var(--soft-black);
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.5);
+  position: relative;
+  overflow: hidden;
+}
+.form-card::before {
+  content: "";
+  position: absolute; top: -30px; right: -30px;
+  width: 120px; height: 120px;
+  background: var(--green);
+  border-radius: 50%;
+  opacity: 0.12;
+}
+.form-card h3 {
+  font-size: 26px;
+  position: relative; z-index: 2;
+}
+.form-card .sub {
+  color: var(--steel); margin-top: 8px;
+  font-size: 14px;
+  position: relative; z-index: 2;
+}
+.form {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+  position: relative; z-index: 2;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin-bottom: 6px;
+}
+.field input, .field select, .field textarea {
+  width: 100%;
+  font-family: var(--body);
+  font-size: 15px;
+  color: var(--prussian);
+  padding: 12px 14px;
+  background: var(--alice);
+  border: 1.5px solid transparent;
+  border-radius: 12px;
+  outline: none;
+  transition: border 0.15s, background 0.15s;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  background: #fff;
+  border-color: var(--green);
+}
+.form .btn { margin-top: 6px; width: 100%; }
+
+@media (max-width: 1000px) {
+  .hero-content { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* ============================== TRUST BAR ============================== */
+.trust {
+  padding: 32px 0 28px;
+  background: var(--prussian);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+.trust-label {
+  color: rgba(255,255,255,0.45);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.marquee-track {
+  display: flex; width: max-content;
+  animation: marquee 60s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.logo-chip {
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  padding: 0 48px;
+}
+@media (max-width: 700px) { .logo-chip { padding: 0 32px; } }
+.logo-chip img {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.logo-chip img.white-native {
+  filter: brightness(1);
+  opacity: 0.7;
+}
+.logo-chip:hover img { opacity: 1; }
+
+/* ============================== STATS ============================== */
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 64px;
+  margin-top: 64px;
+}
+.stat .num {
+  font-family: var(--head);
+  font-size: 68px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+.stat .num em { font-style: normal; color: var(--green); }
+.stat .label {
+  margin-top: 12px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  max-width: 200px;
+  line-height: 1.45;
+}
+@media (max-width: 900px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ============================== APPROACH ============================== */
+.split-2 {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+@media (max-width: 900px) { .split-2 { grid-template-columns: 1fr; gap: 48px; } }
+
+.problem-list { display: grid; gap: 16px; margin-top: 32px; }
+.problem-item {
+  display: grid; grid-template-columns: 56px 1fr;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid var(--alice);
+  align-items: start;
+}
+.problem-item .icn {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--alice);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--honolulu);
+  font-family: var(--head); font-size: 18px; font-weight: 600;
+}
+.problem-item h4 { font-size: 18px; margin-bottom: 4px; }
+.problem-item p { font-size: 14.5px; color: var(--steel); line-height: 1.5; }
+
+/* Brand geometric shapes */
+.geo-arch {
+  position: absolute; pointer-events: none;
+  border: clamp(28px, 4vw, 48px) solid var(--green);
+  border-radius: 50%;
+  border-bottom-color: transparent;
+}
+.geo-ring {
+  position: absolute; pointer-events: none;
+  border: clamp(16px, 2.5vw, 28px) solid var(--green);
+  border-radius: 50%;
+}
+.geo-pill {
+  position: absolute; pointer-events: none;
+  background: var(--green);
+  border-radius: 999px;
+}
+.geo-half {
+  position: absolute; pointer-events: none;
+  background: var(--green);
+  border-radius: 999px 999px 0 0;
+}
+
+.photo-bg { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 0; }
+.photo-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(11,27,43,0.90) 0%, rgba(11,27,43,0.80) 100%);
+  z-index: 1;
+}
+
+/* ============================== PERSONAS (3-up) ============================== */
+.persona-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+.persona-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
+  padding: 28px;
+  display: flex; flex-direction: column;
+  gap: 18px;
+  transition: border 0.2s, background 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.persona-card:hover {
+  border-color: var(--green);
+  background: rgba(16,185,129,0.06);
+  transform: translateY(-4px);
+}
+.persona-tile {
+  width: 100%; height: 220px;
+  border-radius: 16px;
+  position: relative; overflow: hidden;
+  background: rgba(255,255,255,0.05);
+}
+.persona-tile .persona-photo {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center 25%;
+  z-index: 1;
+}
+.persona-tile .persona-overlay {
+  position: absolute; inset: 0;
+  z-index: 3;
+  background: linear-gradient(180deg, transparent 60%, rgba(11,27,43,0.4) 100%);
+  pointer-events: none;
+}
+.persona-icon { display: flex; gap: 3px; height: 36px; align-items: flex-end; }
+.persona-icon .trap-mini {
+  position: relative;
+  clip-path: polygon(18% 0%, 100% 0%, 82% 100%, 0% 100%);
+}
+.persona-icon .trap-mini:nth-child(1) { width: 12px; height: 24px; opacity: 0.5; }
+.persona-icon .trap-mini:nth-child(2) { width: 16px; height: 32px; }
+.persona-icon .trap-mini:nth-child(3) { width: 13px; height: 22px; opacity: 0.65; clip-path: polygon(0% 0%, 82% 0%, 100% 100%, 18% 100%); }
+.persona-share {
+  font-family: var(--head);
+  font-size: 32px; font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.03em;
+}
+.persona-share .pct { font-size: 18px; opacity: 0.7; }
+.persona-name { font-family: var(--head); font-size: 24px; font-weight: 600; color: #fff; }
+.persona-card .body-sm { color: rgba(255,255,255,0.72); }
+
+@media (max-width: 1000px) { .persona-grid { grid-template-columns: 1fr; } }
+
+/* ============================== MIX BAR ============================== */
+.mix-panel {
+  margin-top: 72px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
+  padding: 32px;
+}
+.mix-bar {
+  display: flex; height: 92px; border-radius: 14px; overflow: hidden; gap: 2px;
+  margin-top: 20px;
+}
+.mix-seg {
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 14px 16px;
+}
+.mix-seg .pc { font-family: var(--head); font-size: 26px; font-weight: 600; line-height: 1; letter-spacing: -0.02em; }
+.mix-seg .lbl {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  margin-top: 6px;
+}
+
+/* ============================== PROCESS ============================== */
+.process-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  margin-top: 56px; position: relative;
+}
+.process-line {
+  position: absolute; left: 28px; right: 28px; top: 28px;
+  height: 2px; background: var(--alice); z-index: 0;
+}
+.dark .process-line { background: rgba(255,255,255,0.14); }
+.proc { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 14px; }
+.proc-num {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--green); color: #fff;
+  font-family: var(--head); font-size: 24px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+}
+.proc .eyebrow { margin-top: 2px; }
+.proc h4 { font-family: var(--head); font-size: 20px; line-height: 1.15; }
+.proc p { font-size: 14.5px; color: var(--steel); line-height: 1.55; }
+.dark .proc p { color: rgba(255,255,255,0.72); }
+@media (max-width: 900px) {
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-line { display: none; }
+}
+
+/* ============================== CAPM DOMAIN STRIP ============================== */
+.domains-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 16px; margin-top: 48px;
+}
+.domain-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 24px;
+}
+.domain-card .pct {
+  font-family: var(--head);
+  font-size: 36px; font-weight: 600;
+  color: var(--green);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.domain-card h4 { color: #fff; font-size: 18px; margin-top: 10px; }
+.domain-card p { color: rgba(255,255,255,0.7); font-size: 13px; margin-top: 6px; line-height: 1.5; }
+@media (max-width: 700px) { .domains-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ============================== IMPACT ============================== */
+.impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 56px; }
+.impact-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 32px;
+  border: 1px solid var(--alice);
+  display: flex; flex-direction: column; gap: 16px;
+}
+.impact-card h3 { font-size: 30px; line-height: 1.05; }
+.impact-card .body { font-size: 15.5px; }
+.impact-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--alice);
+}
+.impact-card.feature .impact-metric { border-top-color: rgba(255,255,255,0.12); }
+.impact-metric .n {
+  font-family: var(--head);
+  font-size: 64px; font-weight: 600;
+  letter-spacing: -0.04em;
+  color: var(--green);
+  line-height: 0.95;
+}
+.impact-card.feature .impact-metric .n { font-size: 80px; }
+.impact-metric .u {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--steel);
+  line-height: 1.4;
+  max-width: 280px;
+}
+.impact-card.feature .impact-metric .u { color: rgba(255,255,255,0.75); }
+@media (max-width: 900px) { .impact-grid { grid-template-columns: 1fr; } }
+
+/* ============================== TESTIMONIAL ============================== */
+.quote-block {
+  display: grid; grid-template-columns: 1fr 1.4fr;
+  gap: 64px; align-items: center;
+  margin-top: 48px;
+}
+.quote-block blockquote {
+  margin: 0;
+  font-family: var(--head);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  border-left: 4px solid var(--green);
+  padding-left: 32px;
+}
+.quote-block .who { margin-top: 24px; font-size: 14px; color: rgba(255,255,255,0.7); padding-left: 32px; }
+.quote-block .who strong { color: #fff; font-weight: 600; }
+@media (max-width: 900px) { .quote-block { grid-template-columns: 1fr; } }
+
+/* ============================== PRICING ============================== */
+.pricing-toggle-wrap {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; margin-top: 40px; flex-wrap: wrap;
+}
+.pricing-toggle-wrap label {
+  font-family: var(--body);
+  font-size: 15px; font-weight: 500;
+  color: var(--steel);
+}
+.volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 320px; height: 8px;
+  background: var(--alice);
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+}
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 28px; height: 28px;
+  background: var(--green);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(16,185,129,0.4);
+  cursor: pointer;
+}
+.volume-slider::-moz-range-thumb {
+  width: 28px; height: 28px;
+  background: var(--green);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(16,185,129,0.4);
+  cursor: pointer;
+}
+.volume-display {
+  font-family: var(--head);
+  font-size: 20px; font-weight: 600;
+  color: var(--prussian);
+  min-width: 140px; text-align: center;
+  background: var(--alice);
+  padding: 8px 16px;
+  border-radius: 12px;
+}
+.discount-badge {
+  display: inline-block;
+  background: var(--emerald);
+  color: #fff;
+  font-family: var(--body);
+  font-size: 13px; font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+.pricing-cards {
+  display: grid; grid-template-columns: 2fr 1fr;
+  gap: 24px; margin-top: 32px;
+  max-width: 1060px; margin-left: auto; margin-right: auto;
+  align-items: start;
+}
+.price-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 24px;
+  padding: 36px;
+  display: flex; flex-direction: column; gap: 16px;
+  transition: border 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.price-card:hover {
+  border-color: var(--green);
+  transform: translateY(-4px);
+  box-shadow: 0 30px 50px -30px rgba(11,27,43,0.2);
+}
+.price-card.highlighted {
+  background: var(--prussian);
+  color: #fff;
+  border-color: var(--prussian);
+  position: relative;
+  overflow: hidden;
+}
+.price-card.highlighted .body { color: rgba(255,255,255,0.82); }
+.price-card.highlighted .caption { color: rgba(255,255,255,0.65); }
+.price-card .tag {
+  display: inline-flex; align-self: flex-start;
+  background: var(--alice); color: var(--honolulu);
+  padding: 6px 12px; border-radius: 999px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.price-card.highlighted .tag { background: var(--green); color: #fff; }
+.price-card h3 { font-size: 26px; }
+.price-card .price-amount {
+  font-family: var(--head);
+  font-size: 52px; font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.price-card .price-amount .currency { font-size: 28px; vertical-align: super; }
+.price-card .price-amount .period { font-size: 16px; font-weight: 400; color: var(--steel); letter-spacing: normal; display: block; margin-top: 4px;
+  line-height: 1.4;
+}
+.price-card.highlighted .price-amount .period { color: rgba(255,255,255,0.6); }
+.price-card .original-price {
+  font-family: var(--head);
+  font-size: 18px;
+  color: var(--steel);
+  text-decoration: line-through;
+  margin-top: 6px;
+  line-height: 1;
+}
+.price-card.highlighted .original-price { color: rgba(255,255,255,0.45); }
+.price-card ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.price-card li {
+  font-size: 14.5px;
+  padding-left: 24px;
+  position: relative;
+  line-height: 1.45;
+}
+.price-card li::before {
+  content: "";
+  position: absolute; left: 0; top: 7px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--emerald);
+  mask: radial-gradient(circle at 50% 50%, transparent 30%, #000 31%);
+}
+.price-card.highlighted li::before { background: var(--emerald); }
+.price-card .btn { margin-top: auto; }
+.currency-toggle {
+  display: inline-flex; border-radius: 14px; overflow: hidden;
+  border: 1.5px solid var(--alice); background: var(--alice);
+}
+.currency-toggle button {
+  font-family: var(--head); font-size: 14px; font-weight: 600;
+  padding: 8px 18px; border: 0; cursor: pointer;
+  background: transparent; color: var(--steel);
+  transition: background 0.15s, color 0.15s;
+  letter-spacing: -0.01em;
+}
+.currency-toggle button.active {
+  background: var(--green); color: #fff;
+  border-radius: 12px;
+}
+@media (max-width: 800px) {
+  .pricing-cards { grid-template-columns: 1fr; }
+  .volume-slider { width: 200px; }
+}
+
+/* ============================== FAQ ============================== */
+.faq-list { margin-top: 48px; border-top: 1px solid var(--alice); }
+.faq-item { border-bottom: 1px solid var(--alice); }
+.faq-q {
+  padding: 24px 0;
+  display: flex; align-items: center; justify-content: space-between;
+  cursor: pointer;
+  font-family: var(--head);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--prussian);
+  user-select: none;
+  list-style: none;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q .plus {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--alice);
+  color: var(--honolulu);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 400;
+  transition: transform 0.25s, background 0.2s;
+}
+.faq-item[open] .faq-q .plus {
+  transform: rotate(45deg);
+  background: var(--green);
+  color: #fff;
+}
+.faq-a {
+  padding-bottom: 24px;
+  color: var(--steel);
+  font-size: 15.5px;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+/* ============================== FINAL CTA ============================== */
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(16,185,129,0.12), transparent 70%),
+    var(--prussian);
+  position: relative;
+  overflow: hidden;
+}
+.final-cta h2 { max-width: 900px; }
+.final-cta .body-lg { max-width: 640px; color: rgba(255,255,255,0.82); }
+.final-cta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 40px; }
+.final-cta .contact-row {
+  display: flex; gap: 48px; margin-top: 56px; flex-wrap: wrap;
+  padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.12);
+}
+.final-cta .contact-row .item .eyebrow { color: rgba(255,255,255,0.5); }
+.final-cta .contact-row .item .val { font-family: var(--head); font-size: 18px; margin-top: 4px; color: #fff; }
+
+/* Footer styles are owned by shared/footer.js */
+
+/* ============================== SUBJECTS SPLASH (full-bleed scroller) ============================== */
+.subjects-head { max-width: 760px; }
+.subjects-fullbleed { margin-top: 40px; width: 100%; }
+.subjects-scroll {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-padding-left: max(48px, calc((100vw - 1280px) / 2 + 48px));
+  padding: 4px max(48px, calc((100vw - 1280px) / 2 + 48px)) 8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.subjects-scroll::-webkit-scrollbar { display: none; }
+@media (max-width: 860px) {
+  .subjects-scroll {
+    scroll-padding-left: 24px;
+    padding: 4px 24px 8px;
+  }
+}
+.subject-tile {
+  flex: 0 0 200px;
+  scroll-snap-align: start;
+  display: flex; flex-direction: column; gap: 14px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--prussian);
+  transition: border 0.18s, transform 0.18s, box-shadow 0.18s;
+}
+.subject-tile:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 30px -18px rgba(var(--accent-rgb), 0.30);
+}
+.subject-icn {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: rgba(var(--accent-rgb), 0.08);
+  color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.18s, color 0.18s;
+}
+.subject-tile:hover .subject-icn { background: var(--accent); color: #fff; }
+.subject-icn svg {
+  width: 22px; height: 22px;
+  fill: none; stroke: currentColor;
+  stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+}
+.subject-name {
+  font-family: var(--head);
+  font-size: 15px; font-weight: 600;
+  line-height: 1.2; letter-spacing: -0.01em;
+}
+.subjects-nav {
+  display: flex; gap: 12px;
+  margin-top: 24px;
+  justify-content: flex-end;
+}
+.subjects-nav .scroll-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--prussian);
+  background: transparent;
+  color: var(--prussian);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s, color 0.15s, opacity 0.15s;
+}
+.subjects-nav .scroll-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.subjects-nav .scroll-btn:hover { background: var(--prussian); color: #fff; }
+.subjects-nav .scroll-btn:disabled { opacity: 0.3; cursor: default; }
+.subjects-nav .scroll-btn:disabled:hover { background: transparent; color: var(--prussian); }
+
+/* ============================== FLOATING CTA ============================== */
+.float-cta {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  z-index: 90;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(20px);
+  box-shadow: 0 20px 50px -10px rgba(16,185,129,0.5);
+}
+.float-cta.on { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+/* ============================== UTIL ============================== */
+.center { text-align: center; }
+.hidden-mobile { display: initial; }
+@media (max-width: 700px) { .hidden-mobile { display: none; } }
+
+/* ============================== PERSONA MODAL ============================== */
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(5,36,56,0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s;
+}
+.modal-backdrop.open { opacity: 1; pointer-events: auto; }
+.modal-panel {
+  position: fixed; z-index: 210;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  background: #fff;
+  border-radius: 24px;
+  width: 90%; max-width: 560px;
+  max-height: 85vh; overflow-y: auto;
+  padding: 40px;
+  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.5);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+}
+.modal-panel.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
+.modal-close {
+  position: absolute; top: 16px; right: 16px;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--alice); border: 0; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: var(--steel);
+  transition: background 0.15s;
+}
+.modal-close:hover { background: var(--green); color: #fff; }
+.modal-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+.modal-header .persona-icon { margin: 0; }
+.modal-header h3 { font-size: 28px; }
+.modal-desc { font-size: 15px; color: var(--steel); line-height: 1.55; margin-bottom: 28px; }
+.comp-row-modal {
+  display: grid; grid-template-columns: 200px 1fr 40px;
+  gap: 12px; align-items: center;
+  margin-bottom: 14px;
+}
+.comp-label-m { font-size: 13px; font-weight: 600; color: var(--prussian); }
+.comp-bar-m {
+  height: 12px; border-radius: 6px;
+  background: var(--alice); overflow: hidden;
+}
+.comp-fill-m {
+  height: 100%; border-radius: 6px;
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  width: 0;
+}
+.comp-val-m {
+  font-family: var(--head); font-size: 14px; font-weight: 600;
+  color: var(--steel); text-align: right;
+}
+.modal-milestones {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 24px; padding-top: 20px;
+  border-top: 1px solid var(--alice);
+}
+.modal-milestones .chip-m {
+  padding: 6px 14px; border-radius: 999px;
+  background: var(--alice); color: var(--prussian);
+  font-size: 13px; font-weight: 600;
+}
+</style>
+<script src="../../shared/pricing.js" defer></script>
+<script src="../../shared/nav.js" defer></script>
+<script src="../../shared/footer.js" defer></script>
+</head>
+<body class="theme-finance">
+<!-- ============================== NAV (shared/nav.js) ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <div class="hero-grid"></div>
+  <div style="position:absolute; inset:0; pointer-events:none; overflow:hidden;">
+    <div class="geo-arch" style="width: 520px; height: 520px; right: -120px; top: -60px; opacity: 0.14; transform: rotate(-20deg);"></div>
+    <div class="geo-ring" style="width: 300px; height: 300px; left: -80px; bottom: -60px; opacity: 0.08;"></div>
+    <div class="geo-pill" style="width: 240px; height: 56px; right: 15%; bottom: 18%; opacity: 0.07; transform: rotate(-12deg);"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div>
+        <div class="eyebrow">Finance Training for Enterprises</div>
+        <h1 class="h-display" style="margin-top: 20px;">
+          From Excel&#8209;literate<br/>to <em>financial modeler.</em>
+        </h1>
+        <p class="hero-sub" style="margin-top: 28px;">
+          Three personas. Four credential-anchored capability axes. One pathway from spreadsheet fluency to FMVA-grade financial modeling, with Microsoft, PL-300 and Tableau credentials covered along the way.
+        </p>
+        <div class="hero-cta-row" style="align-items: center; justify-content: space-between;">
+          <a class="btn btn-ghost btn-lg" href="brochure.html" target="_blank" rel="noopener">Download Brochure <span class="arr">&darr;</span></a>
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <span style="font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;">Accredited by</span>
+            <img src="../../img/shared/69022a93d722e08a215ad239_certs-logos.avif" alt="CPD, CPE, ISO certifications" style="height: 56px;"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image" style="border-radius: 24px; overflow: hidden; max-width: 480px; margin-left: auto; aspect-ratio: 4/5; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.45);">
+        <img src="img/hero-image.webp" alt="Finance team reviewing models and forecasts on a laptop" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;"/>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat"><div class="num">1M<em>+</em></div><div class="label">Learners trained on the Kubicle platform</div></div>
+      <div class="stat"><div class="num">4.7<span class="rating-of">/5</span></div><div class="label">Average G2 rating across 200+ verified reviews</div></div>
+      <div class="stat"><div class="num">80<em>%</em></div><div class="label">Course completion rate, vs. 7% industry benchmark</div></div>
+      <div class="stat"><div class="num">3</div><div class="label">Industry credentials anchored across the persona tiers (Microsoft, Tableau, FMVA)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TRUST BAR ============================== -->
+<div class="trust">
+  <div class="trust-label">Trusted by</div>
+  <div class="marquee-track" id="marquee-track"></div>
+</div>
+
+<!-- ============================== APPROACH ============================== -->
+<section id="approach">
+  <div class="geo-arch" style="width: 360px; height: 360px; top: -100px; right: -80px; opacity: 0.08; transform: rotate(30deg);"></div>
+  <div class="geo-ring" style="width: 200px; height: 200px; bottom: -50px; left: -60px; opacity: 0.06;"></div>
+  <div class="container">
+    <div class="split-2">
+      <div>
+        <div class="eyebrow">Why Finance Training?</div>
+        <h2 class="h-xl" style="margin-top: 16px;">
+          Most finance training teaches Excel.<br/>
+          <span style="color: var(--green);">This builds a modeler.</span>
+        </h2>
+        <p class="body-lg" style="margin-top: 24px; color: var(--steel); max-width: 540px;">
+          Kubicle's finance pathway moves people from spreadsheet-confident to FMVA-grade modeler. Three tiers, four credential-anchored axes, and a continuous progression that ties to the certifications finance teams genuinely value: Microsoft Office Specialist, Power BI PL-300, Tableau Specialist, and FMVA-comparable modeling.
+        </p>
+        <a class="btn btn-outline-dark btn-md" style="margin-top: 28px;" href="#personas">See how we do it <span class="arr">&rarr;</span></a>
+      </div>
+
+      <div class="problem-list">
+        <div class="problem-item">
+          <div class="icn">01</div>
+          <div>
+            <h4>A three-tier career model</h4>
+            <p>Apprentice equips every finance contributor. Analyst is the FP&amp;A and dashboard builder. Modeler is the technical apex, calibrated to FMVA-grade competencies.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="icn">02</div>
+          <div>
+            <h4>Credential-anchored axes</h4>
+            <p>Four axes mapped to recognized certifications: Microsoft Excel Associate &amp; Expert, Power BI PL-300, Tableau Specialist, and FMVA-comparable modeling. Progress on Kubicle is progress toward the credential.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="icn">03</div>
+          <div>
+            <h4>The strongest credential story we ship</h4>
+            <p>Every persona ties to a globally recognized certification. The catalog has the depth: Excel, Power Pivot, Power Query, DAX, VBA, Power BI, Tableau, plus end-to-end modeling from DCF to LBO.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PERSONAS ============================== -->
+<section class="dark" id="personas" style="background: var(--prussian);">
+  <div style="position:absolute; inset:0; pointer-events:none; overflow:hidden;">
+    <div class="geo-arch" style="width: 480px; height: 480px; right: -10%; top: 8%; opacity: 0.07; transform: rotate(15deg);"></div>
+    <div class="geo-ring" style="width: 320px; height: 320px; left: -6%; top: 12%; opacity: 0.06;"></div>
+  </div>
+  <div class="container">
+    <div style="max-width: 840px;">
+      <div class="eyebrow">The Kubicle Finance Persona Framework</div>
+      <h2 class="h-xl" style="margin-top: 16px; color: #fff;">
+        Three finance personas.<br/>
+        Anchored to <span style="color: var(--green);">the credentials your team values.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 24px; max-width: 680px; color: rgba(255,255,255,0.75);">
+        Apprentice covers your Excel-literate finance contributors. Analyst is the FP&A and dashboard builder. Modeler is the technical specialist who builds DCF, LBO and M&A models. Each persona ties to a credential the market already recognizes.
+      </p>
+      <p style="display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; font-family: var(--body); font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.5); letter-spacing: 0.02em;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <a href="brochure.html" target="_blank" rel="noopener" style="color: var(--green); text-decoration: underline; cursor: pointer;">Download the Finance Persona Brochure (PDF)</a>
+      </p>
+    </div>
+
+    <div class="persona-grid">
+
+      <!-- Apprentice -->
+      <div class="persona-card" data-persona="0">
+        <div class="persona-tile">
+          <div class="persona-photo" style="background-image: url('../../img/Character_profiles/portraits/female_06.a.png');"></div>
+          <div class="persona-overlay"></div>
+        </div>
+        <div class="eyebrow" style="color: var(--persona-apprentice);">Persona 01 &middot; Foundation</div>
+        <div class="persona-icon">
+          <div class="trap-mini" style="background: var(--persona-apprentice);"></div>
+          <div class="trap-mini" style="background: var(--persona-apprentice);"></div>
+          <div class="trap-mini" style="background: var(--persona-apprentice);"></div>
+        </div>
+        <div class="persona-name">Finance Apprentice</div>
+        <p class="body-sm">
+          Excel-literate finance contributor. Confident with formulas, formatting and basic pivot work. Understands the P&amp;L, balance sheet and cash flow conceptually. Anchored to MOS Excel Associate (MO-201).
+        </p>
+        <div class="persona-share" style="margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1);">
+          50&ndash;65<span class="pct">%</span>
+          <div class="caption" style="color: rgba(255,255,255,0.55); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.1em;">Typical share</div>
+        </div>
+      </div>
+
+      <!-- Navigator -->
+      <div class="persona-card" data-persona="1">
+        <div class="persona-tile">
+          <div class="persona-photo" style="background-image: url('../../img/Character_profiles/portraits/male_02.a.png');"></div>
+          <div class="persona-overlay"></div>
+        </div>
+        <div class="eyebrow" style="color: var(--persona-analyst);">Persona 02 &middot; Operator</div>
+        <div class="persona-icon">
+          <div class="trap-mini" style="background: var(--persona-analyst);"></div>
+          <div class="trap-mini" style="background: var(--persona-analyst);"></div>
+          <div class="trap-mini" style="background: var(--persona-analyst);"></div>
+        </div>
+        <div class="persona-name">Finance Analyst</div>
+        <p class="body-sm">
+          The everyday FP&amp;A or finance analyst. Builds reports and dashboards, reads statements fluently, runs scenario analysis. Anchored to MOS Excel Expert (MO-202), Microsoft PL-300 and Tableau Specialist.
+        </p>
+        <div class="persona-share" style="margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1);">
+          25&ndash;35<span class="pct">%</span>
+          <div class="caption" style="color: rgba(255,255,255,0.55); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.1em;">Typical share</div>
+        </div>
+      </div>
+
+      <!-- Associate -->
+      <div class="persona-card" data-persona="2">
+        <div class="persona-tile">
+          <div class="persona-photo" style="background-image: url('../../img/Character_profiles/portraits/male_08.b.png');"></div>
+          <div class="persona-overlay"></div>
+        </div>
+        <div class="eyebrow" style="color: var(--persona-modeler);">Persona 03 &middot; Specialist</div>
+        <div class="persona-icon">
+          <div class="trap-mini" style="background: var(--persona-modeler);"></div>
+          <div class="trap-mini" style="background: var(--persona-modeler);"></div>
+          <div class="trap-mini" style="background: var(--persona-modeler);"></div>
+        </div>
+        <div class="persona-name">Financial Modeler</div>
+        <p class="body-sm">
+          Specialist craftsperson. Builds end-to-end models: DCF, comparables, LBO, M&amp;A, project finance. Deep DAX, statistical methods and model governance. Anchored to FMVA-comparable competencies.
+        </p>
+        <div class="persona-share" style="margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1);">
+          10&ndash;20<span class="pct">%</span>
+          <div class="caption" style="color: rgba(255,255,255,0.55); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.1em;">Typical share</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Mix bar -->
+    <div class="mix-panel">
+      <div class="eyebrow" style="color: rgba(255,255,255,0.6);">Typical Workforce Distribution</div>
+      <div class="mix-bar">
+        <div class="mix-seg" style="flex: 60; background: var(--persona-apprentice); color: #fff; border-radius: 8px 2px 2px 8px;">
+          <div class="pc">60%</div><div class="lbl">Apprentice</div>
+        </div>
+        <div class="mix-seg" style="flex: 25; background: var(--persona-analyst); color: #fff;">
+          <div class="pc">25%</div><div class="lbl">Analyst</div>
+        </div>
+        <div class="mix-seg" style="flex: 15; background: var(--persona-modeler); color: #fff; border-radius: 2px 8px 8px 2px;">
+          <div class="pc">15%</div><div class="lbl">Modeler</div>
+        </div>
+      </div>
+      <p class="caption" style="margin-top: 14px; color: rgba(255,255,255,0.6);">
+        Most finance teams sit firmly in the Apprentice and Analyst tiers. The Modeler tier is the accelerator: a small, high-leverage group of FMVA-grade specialists whose work flows downstream to the rest of the function.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CAPABILITY AXES ============================== -->
+<section class="dark" id="axes" style="background: var(--indigo);">
+  <div class="container">
+    <div style="max-width: 840px;">
+      <div class="eyebrow">Four Credential-Anchored Axes</div>
+      <h2 class="h-xl" style="margin-top: 16px; color: #fff;">
+        Every axis maps to <span style="color: var(--green);">a recognized credential.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 24px; max-width: 680px; color: rgba(255,255,255,0.78);">
+        We benchmark every learner across the four capabilities a serious finance career demands. Each one is anchored to certifications the market already recognizes, so progress on Kubicle ties directly to a credential learners can put on a resume.
+      </p>
+    </div>
+
+    <div class="domains-grid">
+      <div class="domain-card">
+        <div class="pct" style="font-size: 22px;">Fundamentals</div>
+        <h4>Finance Fundamentals</h4>
+        <p>Statements, accounting principles, time value of money, finance theory and statistics.</p>
+      </div>
+      <div class="domain-card">
+        <div class="pct" style="font-size: 22px;">MO-201/202</div>
+        <h4>Excel Mastery</h4>
+        <p>Excel proficiency through Power Pivot, Power Query, DAX, macros, VBA and SQL for finance data.</p>
+      </div>
+      <div class="domain-card">
+        <div class="pct" style="font-size: 22px;">FMVA-grade</div>
+        <h4>Modeling &amp; Valuation</h4>
+        <p>DCF, NPV, IRR, comparables, LBO, M&amp;A, project finance, scenario and sensitivity analysis.</p>
+      </div>
+      <div class="domain-card">
+        <div class="pct" style="font-size: 22px;">PL-300 + Tableau</div>
+        <h4>Data Analysis &amp; Visualization</h4>
+        <p>Power BI, Tableau, dashboards, charts, statistical analysis, and PowerPoint and Word storytelling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SUBJECTS IN THIS ACADEMY ============================== -->
+<section class="alice compact">
+  <div class="geo-pill" style="width: 80px; height: 22px; top: 18%; left: 6%; opacity: 0.06; transform: rotate(-12deg);"></div>
+  <div class="geo-ring" style="width: 180px; height: 180px; bottom: -60px; right: -50px; opacity: 0.05;"></div>
+  <div class="container">
+    <div class="subjects-head">
+      <div class="eyebrow">Inside the Academy</div>
+      <h2 class="h-lg" style="margin-top: 14px;">
+        11 subjects, calibrated to each persona.
+      </h2>
+      <p class="body" style="margin-top: 16px; color: var(--steel); max-width: 560px;">
+        Every persona pathway draws from this library, so learners only see the modules pitched to the depth their role demands.
+      </p>
+    </div>
+  </div>
+
+  <!-- Full-bleed scroller (sits outside .container so it can run to the screen edge) -->
+  <div class="subjects-fullbleed">
+    <div class="subjects-scroll" id="subjects-scroll">
+      <a class="subject-tile" href="../../courses/finance-fundamentals.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="6"/><path d="M19.5 12a6 6 0 0 1-5 5.9"/><path d="M21 15a6 6 0 0 1-5 5.9"/></svg></div>
+        <div class="subject-name">Finance Fundamentals</div>
+      </a>
+      <a class="subject-tile" href="../../courses/financial-modeling.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 8h16M9 3v18"/><path d="M13 12h4M13 16h4"/></svg></div>
+        <div class="subject-name">Financial Modeling</div>
+      </a>
+      <a class="subject-tile" href="../../courses/excel.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+        <div class="subject-name">Excel</div>
+      </a>
+      <a class="subject-tile" href="../../courses/power-bi.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M2 20h20"/></svg></div>
+        <div class="subject-name">Power BI</div>
+      </a>
+      <a class="subject-tile" href="../../courses/tableau.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M2 20h20"/></svg></div>
+        <div class="subject-name">Tableau</div>
+      </a>
+      <a class="subject-tile" href="../../courses/sql.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div>
+        <div class="subject-name">SQL</div>
+      </a>
+      <a class="subject-tile" href="../../courses/statistical-analysis.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><path d="M6 4h12l-7 8 7 8H6"/></svg></div>
+        <div class="subject-name">Statistical Analysis</div>
+      </a>
+      <a class="subject-tile" href="../../courses/visualization-fundamentals.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 3 5-7 4 4"/><path d="M3 21h18"/></svg></div>
+        <div class="subject-name">Visualization Fundamentals</div>
+      </a>
+      <a class="subject-tile" href="../../courses/data-presentation-skills.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 20l5-4 5 4"/><path d="M12 16v4"/></svg></div>
+        <div class="subject-name">Data Presentation Skills</div>
+      </a>
+      <a class="subject-tile" href="../../courses/powerpoint.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M3 9h18"/><path d="M9 21h6"/></svg></div>
+        <div class="subject-name">PowerPoint</div>
+      </a>
+      <a class="subject-tile" href="../../courses/word.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h6"/></svg></div>
+        <div class="subject-name">Word</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="subjects-nav">
+      <button class="scroll-btn" id="subjects-prev" aria-label="Previous subjects" disabled>
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="scroll-btn" id="subjects-next" aria-label="Next subjects">
+        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PROCESS ============================== -->
+<section class="dark" id="process" style="position: relative;">
+  <div class="photo-bg" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80');"></div>
+  <div class="container" style="position: relative; z-index: 2;">
+    <div style="max-width: 840px;">
+      <div class="eyebrow">How We Build Your Program</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        From discovery to launch in <br/>about <span style="color: var(--green);">a week.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 24px; max-width: 600px; color: rgba(255,255,255,0.78);">
+        Most clients are live with learners in their first lesson within seven business days. Our customer success team handles the heavy lifting end-to-end, so your finance and L&amp;D leaders stay focused on outcomes rather than setup.
+      </p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-line"></div>
+      <div class="proc">
+        <div class="proc-num">1</div>
+        <div class="eyebrow">Discover</div>
+        <h4>Define the goal</h4>
+        <p>A short consultation surfaces the finance capability gaps you need to close, the certifications you want to enable (MOS, PL-300, Tableau, FMVA-grade), and the decisions success will be measured against.</p>
+      </div>
+      <div class="proc">
+        <div class="proc-num">2</div>
+        <div class="eyebrow">Benchmark</div>
+        <h4>Score every learner</h4>
+        <p>Our persona assessment maps every learner across the four credential-anchored axes, separating Modeler-track candidates from those starting at Excel foundations.</p>
+      </div>
+      <div class="proc">
+        <div class="proc-num">3</div>
+        <div class="eyebrow">Configure</div>
+        <h4>Calibrate the pathway</h4>
+        <p>We assemble bite-sized modules into a role-calibrated path for each persona, weighted to the Excel, BI and modeling work your finance teams actually own.</p>
+      </div>
+      <div class="proc">
+        <div class="proc-num">4</div>
+        <div class="eyebrow">Launch &amp; Track</div>
+        <h4>Deploy and iterate</h4>
+        <p>SSO, bulk user setup and LMS integration in days. Engagement, completion and skill-gain dashboards from day one. Quarterly reviews to keep momentum on track.</p>
+      </div>
+    </div>
+
+    <div class="center" style="margin-top: 72px;">
+      <a class="btn btn-primary btn-lg" href="../../try-free/index.html">Try for Free <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== IMPACT ============================== -->
+<section class="alice">
+  <div class="geo-arch" style="width: 440px; height: 440px; top: -140px; left: -140px; opacity: 0.06; transform: rotate(-15deg);"></div>
+  <div class="geo-ring" style="width: 260px; height: 260px; bottom: -70px; right: -50px; opacity: 0.05;"></div>
+  <div class="container">
+    <div style="max-width: 840px;">
+      <div class="eyebrow">Outcomes, Not Hours Watched</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Finance skills your team applies<br/>
+        <span style="color: var(--green);">the same week they learn them.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 24px; color: var(--steel); max-width: 600px;">
+        Bite-sized modules. Real finance scenarios. CPD, CPE and NASBA-accredited credentials, plus clear external runways to MOS, PL-300, Tableau Specialist and FMVA-comparable. Trusted by Deloitte, Amazon, PwC, Ford, Heineken and more than a million learners worldwide.
+      </p>
+    </div>
+
+    <div class="impact-grid" style="grid-template-columns: repeat(2, 1fr);">
+      <div class="impact-card">
+        <div class="eyebrow">Hours Back, Every Week</div>
+        <h3 class="h-md">30 mins&ndash;2 hours reclaimed weekly.</h3>
+        <p class="body" style="color: var(--steel);">More than 60% of learners report saving meaningful weekly time after building their Excel and finance skills, freeing capacity for higher-value analytical work.</p>
+        <div class="impact-metric"><div class="n">60<span style="font-size: 0.5em;">%</span><em style="font-style: normal; margin-left: 0.04em;">+</em></div><div class="u">save 30 mins&ndash;2 hours every week</div></div>
+      </div>
+      <div class="impact-card">
+        <div class="eyebrow">Skills That Stick</div>
+        <h3 class="h-md">Used every single day.</h3>
+        <p class="body" style="color: var(--steel);">45% of Kubicle learners apply newly-acquired skills daily. That's the difference between training that's watched and training that's worked.</p>
+        <div class="impact-metric"><div class="n">45<span style="font-size: 0.5em;">%</span></div><div class="u">apply newly-learned skills daily in their roles</div></div>
+      </div>
+      <div class="impact-card">
+        <div class="eyebrow">Sharper Delivery, Clearer Communication</div>
+        <h3 class="h-md">Sharper analysis, clearer storytelling.</h3>
+        <p class="body" style="color: var(--steel);">75%+ of learners report measurable gains in both data analysis and the executive communication skills that turn numbers into decisions.</p>
+        <div class="impact-metric"><div class="n">75<span style="font-size: 0.5em;">%</span><em style="font-style: normal; margin-left: 0.04em;">+</em></div><div class="u">gain stronger analysis and communication skills</div></div>
+      </div>
+      <div class="impact-card">
+        <div class="eyebrow">Career Catalyst</div>
+        <h3 class="h-md">Three credentials, one pathway.</h3>
+        <p class="body" style="color: var(--steel);">Each persona ties to a credential the market recognizes: MOS Excel Associate, MOS Excel Expert + PL-300 + Tableau Specialist, and FMVA-comparable for the Modeler tier.</p>
+        <div class="impact-metric"><div class="n">3</div><div class="u">credential anchors across the persona tiers</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TESTIMONIAL ============================== -->
+<section class="dark" style="position: relative;">
+  <div class="photo-bg" style="background-image: url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80');"></div>
+  <div style="position:absolute; inset:0; pointer-events:none; z-index: 2; overflow:hidden;">
+    <div class="geo-arch" style="width: 400px; height: 400px; left: -8%; top: 10%; opacity: 0.12; transform: rotate(-25deg);"></div>
+  </div>
+  <div class="container" style="position: relative; z-index: 3;">
+    <div class="eyebrow">What Our Partners Say</div>
+    <div class="quote-block">
+      <div style="display: flex; align-items: center; justify-content: center;">
+        <img src="../../img/shared/totalenergies-logo.png" alt="TotalEnergies" style="height: 100px; filter: brightness(0) invert(1); opacity: 0.85;"/>
+      </div>
+      <div>
+        <blockquote>
+          "Kubicle made it remarkably easy to roll out structured training across our finance team. The progress tracking, leaderboards and certifications kept learners engaged, and the depth of content closed real skill gaps in Excel, Power BI and analysis. I would recommend it without hesitation."
+        </blockquote>
+        <p class="who"><strong>Validated Reviewer</strong><br/>TotalEnergies</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== VIDEO ============================== -->
+<section class="dark" style="position: relative; background: var(--prussian);">
+  <div style="position:absolute; inset:0; pointer-events:none; overflow:hidden;">
+    <div class="geo-ring" style="width: 400px; height: 400px; right: -120px; top: -100px; opacity: 0.06;"></div>
+    <div class="geo-pill" style="width: 200px; height: 48px; left: -40px; bottom: 20%; opacity: 0.05; transform: rotate(6deg);"></div>
+  </div>
+  <div class="container" style="max-width: 920px; position: relative; z-index: 2;">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <div class="eyebrow">Customer Story &middot; Jotun</div>
+      <h2 class="h-lg" style="margin-top: 16px; color: #fff;">How Jotun built finance capability with Kubicle</h2>
+    </div>
+    <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,0.4); background: #000;">
+      <iframe
+        src="https://player.mux.com/CMdGl5tNWFF2Eiae8TQ43tu00uzVZLQ6g7uSbPt00nwc8"
+        style="width: 100%; display: block; border: none; aspect-ratio: 16/9;"
+        title="Jotun customer testimonial"
+        allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PRICING ============================== -->
+<section id="pricing">
+  <div class="geo-arch" style="width: 280px; height: 280px; bottom: -80px; right: -60px; opacity: 0.06; transform: rotate(45deg);"></div>
+  <div class="geo-ring" style="width: 200px; height: 200px; top: -50px; left: 8%; opacity: 0.05;"></div>
+  <div class="container">
+    <div style="max-width: 840px;">
+      <div class="eyebrow">Pricing</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Per-learner pricing.<br/>
+        <span style="color: var(--green);">Volume discounts that scale with you.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 24px; color: var(--steel); max-width: 600px;">
+        Pick the focused Finance program, or unlock the full Kubicle library across AI, Data, Project Management, Finance and Excel. Discounts apply automatically as your rollout grows.
+      </p>
+    </div>
+
+    <div class="pricing-toggle-wrap">
+      <div class="currency-toggle" id="currency-toggle">
+        <button class="active" data-currency="USD">USD $</button>
+        <button data-currency="EUR">EUR &euro;</button>
+        <button data-currency="GBP">GBP &pound;</button>
+      </div>
+    </div>
+    <div class="pricing-toggle-wrap" style="margin-top: 16px;">
+      <label for="vol-slider">Number of licenses:</label>
+      <input type="range" id="vol-slider" data-volume-slider class="volume-slider" min="0" max="9" step="1" value="0"/>
+      <div class="volume-display" id="vol-display" data-volume-display>1 &ndash; 20</div>
+      <span class="discount-badge" id="discount-badge" data-discount-badge style="visibility: hidden;">0% off</span>
+    </div>
+
+    <div class="pricing-cards" id="pricing-cards">
+      <div class="price-card highlighted">
+        <div class="geo-arch" style="right: -50px; top: -30px; width: 200px; height: 200px; opacity: 0.10;"></div>
+        <span class="tag">Recommended</span>
+        <h3 style="font-size: 32px;">Finance Program</h3>
+        <p class="body">
+          The full three-tier pathway from Excel-confident Apprentice to FMVA-grade Modeler. Persona benchmarking, guided rollout, dedicated customer success and credential alignment to MOS, PL-300, Tableau and FMVA included.
+        </p>
+        <div class="price-amount" data-price="single_academy" style="font-size: 64px;">
+          <span class="currency" data-price-symbol>$</span><span data-price-value>175</span>
+          <span class="period" data-price-period="period_short">per learner per year</span>
+        <div class="original-price" data-price-original style="display:none;"></div></div>
+        <p class="caption" style="margin-top: -4px;">12-month license. Volume discounts apply.</p>
+        <ul style="columns: 2; column-gap: 32px;">
+          <li>Free 30-min consultation</li>
+          <li>3-persona benchmarking</li>
+          <li>3 credential anchors covered</li>
+          <li>CPD, CPE &amp; NASBA accredited</li>
+          <li>Engagement &amp; skill dashboards</li>
+          <li>Dedicated customer success</li>
+        </ul>
+        <a class="btn btn-primary btn-lg" href="../../try-free/index.html" style="width: 100%;">Try for Free <span class="arr">&rarr;</span></a>
+      </div>
+
+      <div class="price-card" style="border: 1.5px dashed var(--green);">
+        <span class="tag" style="background: var(--columbia); color: var(--lapis);">Upgrade</span>
+        <h3>All Access</h3>
+        <p class="body" style="color: var(--steel); font-size: 14.5px;">
+          Want broader reach? Unlock the full Kubicle library: 300+ courses across AI, Data, Project Management, Excel, Financial Modeling and more.
+        </p>
+        <div class="price-amount" data-price="all_access">
+          <span class="currency" data-price-symbol>$</span><span data-price-value>499</span>
+          <span class="period" data-price-period="period_short">per learner per year</span>
+        <div class="original-price" data-price-original style="display:none;"></div></div>
+        <p class="caption" style="margin-top: -4px;">Volume discounts apply.</p>
+        <ul>
+          <li>Everything in the Finance Program</li>
+          <li>300+ courses across AI, Data &amp; Tech</li>
+          <li>Full Kubicle platform access</li>
+        </ul>
+        <a class="btn btn-outline-dark btn-md" href="../../try-free/index.html" style="width: 100%;">Try for Free <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+    <p style="margin-top: 32px; text-align: center; font-size: 14px; color: var(--steel);">
+      Need more currencies or volume options? <a href="../../pricing.html" style="color: var(--green); font-family: var(--head); font-weight: 600; text-decoration: none; border-bottom: 1.5px solid rgba(35,206,107,0.35); padding-bottom: 1px;">See full pricing &rarr;</a>
+    </p>
+  </div>
+</section>
+
+<!-- ============================== FAQ ============================== -->
+<section class="alice" id="faq">
+  <div class="geo-ring" style="width: 220px; height: 220px; top: -60px; right: 4%; opacity: 0.05;"></div>
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px;">
+      <div>
+        <div class="eyebrow">Frequently Asked</div>
+        <h2 class="h-xl" style="margin-top: 16px;">Answers for the questions we hear most.</h2>
+        <p class="body" style="margin-top: 20px; color: var(--steel); max-width: 340px;">
+          Still have a question? Book a consultation and one of our program designers will walk
+          you through it.
+        </p>
+        <a class="btn btn-outline-dark btn-md" style="margin-top: 24px;" href="../../try-free/index.html">Try for Free <span class="arr">&rarr;</span></a>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary class="faq-q">Which credentials does the program prepare learners for? <span class="plus">+</span></summary>
+          <p class="faq-a">Three external anchors, one per persona tier. Apprentice prepares for Microsoft Office Specialist Excel Associate (MO-201). Analyst prepares for MOS Excel Expert (MO-202), Microsoft PL-300 Power BI Data Analyst Associate, and Tableau Specialist. Modeler is calibrated to FMVA-comparable competencies, the closest external market reference for end-to-end financial modeling.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Can different finance roles learn together, or do we need separate cohorts? <span class="plus">+</span></summary>
+          <p class="faq-a">Both work. The three personas let you mix junior accountants, FP&amp;A analysts and modeling specialists in a single program, each pulled into a pathway calibrated to their role and credential target. Hybrid cohorts are common, and the dashboards still report cleanly by persona.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Are Kubicle credentials accredited? <span class="plus">+</span></summary>
+          <p class="faq-a">Yes. Kubicle credentials are accredited by CPD, CPE and NASBA, so they apply toward continuing professional development credits for accountants and finance professionals. Certificates are shareable on LinkedIn the moment they're earned.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Will it integrate with our LMS and SSO? <span class="plus">+</span></summary>
+          <p class="faq-a">In short, yes. We offer off-the-shelf integrations with a handful of leading LMS platforms, and our engineering team can build a custom integration for any other system you run. SSO is supported across the board, and a Reporting API is available for automated dashboards. Or run Kubicle standalone on our platform with full engagement and skill-gain reporting baked in.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How does the content stay current with Excel and Power BI updates? <span class="plus">+</span></summary>
+          <p class="faq-a">Modules are continuously refreshed by our in-house learning design team to reflect new Excel features, Power BI releases, evolving Microsoft and Tableau certification objectives, and changes to financial modeling best practice. You're never paying for material that's gone stale.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How is pricing structured? <span class="plus">+</span></summary>
+          <p class="faq-a">Pricing is per-license with volume discounts that increase as your rollout grows. The Finance Program starts at $175 per learner; Kubicle All Access starts at $499 per learner per year. We'll send a tailored quote after the discovery call.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="final-cta">
+  <div style="position:absolute; inset:0; pointer-events:none; overflow:hidden;">
+    <div class="geo-arch" style="width: 560px; height: 560px; right: -10%; top: -20%; opacity: 0.10; transform: rotate(-10deg);"></div>
+    <div class="geo-ring" style="width: 280px; height: 280px; left: -6%; bottom: -8%; opacity: 0.07;"></div>
+  </div>
+  <div class="container" style="position: relative; z-index: 2;">
+    <div class="eyebrow">Get Started</div>
+    <h2 class="h-display" style="margin-top: 16px; color: #fff;">
+      Map your finance team's<br/>
+      <span style="color: var(--green);">capability in 30 minutes.</span>
+    </h2>
+    <p class="body-lg" style="margin-top: 28px;">
+      Every finance team starts in a different place. A short consultation gives you a baseline persona mix, a tailored program outline and a candid view of what credential-readiness looks like for your team. No obligation, no slide deck.
+    </p>
+    <div class="final-cta-row">
+      <a class="btn btn-primary btn-lg" href="../../try-free/index.html">Try for Free <span class="arr">&rarr;</span></a>
+      <a class="btn btn-ghost btn-lg" href="#personas">Explore the Framework</a>
+    </div>
+
+    <div class="contact-row">
+      <div class="item"><div class="eyebrow">Visit</div><div class="val">kubicle.com</div></div>
+      <div class="item"><div class="eyebrow">Email</div><div class="val">sales@kubicle.com</div></div>
+      <div class="item"><div class="eyebrow">Offices</div><div class="val">Dublin, Ireland</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER (shared/footer.js) ============================== -->
+<div id="site-footer"></div>
+
+<!-- ============================== FLOATING CTA ============================== -->
+<a class="btn btn-primary btn-md float-cta" id="float-cta" href="../../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+
+
+<!-- ============================== PERSONA MODAL ============================== -->
+<div class="modal-backdrop" id="persona-backdrop"></div>
+<div class="modal-panel" id="persona-modal">
+  <button class="modal-close" id="modal-close">&times;</button>
+  <div class="modal-header">
+    <div class="persona-icon" id="modal-icon"></div>
+    <div>
+      <div class="eyebrow" id="modal-eyebrow"></div>
+      <h3 id="modal-title"></h3>
+    </div>
+  </div>
+  <p class="modal-desc" id="modal-desc"></p>
+  <div class="eyebrow" style="margin-bottom: 16px;">Capability Signature &middot; Credential Axes</div>
+  <div id="modal-bars"></div>
+  <div class="modal-milestones" id="modal-milestones"></div>
+</div>
+
+<!-- ============================== SCRIPTS ============================== -->
+<script>
+// ============================== FLOATING CTA ==============================
+(function () {
+  var floatBtn = document.getElementById('float-cta');
+  var consult = document.getElementById('consultation');
+  if (!floatBtn || !consult) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting && e.boundingClientRect.top < 0) floatBtn.classList.add('on');
+      else if (e.isIntersecting) floatBtn.classList.remove('on');
+    });
+  }, { threshold: 0, rootMargin: '-100px 0px 0px 0px' });
+  io.observe(consult);
+  var finalCta = document.querySelector('.final-cta');
+  if (finalCta) {
+    var io2 = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) floatBtn.classList.remove('on'); });
+    }, { threshold: 0.2 });
+    io2.observe(finalCta);
+  }
+})();
+
+// ============================== SUBJECTS SCROLLER ==============================
+(function () {
+  var scroller = document.getElementById('subjects-scroll');
+  var prev = document.getElementById('subjects-prev');
+  var next = document.getElementById('subjects-next');
+  if (!scroller || !prev || !next) return;
+
+  function step() {
+    var card = scroller.querySelector('.subject-tile');
+    if (!card) return scroller.clientWidth * 0.8;
+    var gap = parseFloat(getComputedStyle(scroller).gap) || 14;
+    return (card.offsetWidth + gap) * 3;
+  }
+  function updateArrows() {
+    var max = scroller.scrollWidth - scroller.clientWidth - 1;
+    prev.disabled = scroller.scrollLeft <= 0;
+    next.disabled = scroller.scrollLeft >= max;
+  }
+  prev.addEventListener('click', function () { scroller.scrollBy({ left: -step(), behavior: 'smooth' }); });
+  next.addEventListener('click', function () { scroller.scrollBy({ left: step(), behavior: 'smooth' }); });
+  scroller.addEventListener('scroll', updateArrows, { passive: true });
+  window.addEventListener('resize', updateArrows);
+  updateArrows();
+})();
+
+// ============================== MARQUEE ==============================
+(function () {
+  var logos = [
+    { src: '../../img/shared/68c2caf09da428eb2dde4f9e_coca-cola-logo-white.png', alt: 'Coca-Cola', native: true },
+    { src: '../../img/shared/67c0476eb0f8c4d3c435428c_6a6f1a51a10add6f2749c42cc0df7035_image-9.png', alt: 'Amazon', native: false },
+    { src: '../../img/shared/68c2cad5cf0b314fbcc87474_bain-logo-white.png', alt: 'Bain & Company', native: true },
+    { src: '../../img/shared/67c0476eb0f8c4d3c4354276_71a2cf3f7a67da45ac2c620241f37138_image-19.png', alt: 'Ford', native: false },
+    { src: '../../img/shared/68a31c29651cb5c7de7328a0_heineken-logo-corporate-page-1.png', alt: 'Heineken', native: false },
+    { src: '../../img/shared/67c0476eb0f8c4d3c4354287_2dbbe09d3f0f9a37d68ccb9f9ba677aa_image-21.png', alt: 'Jotun', native: false },
+    { src: '../../img/shared/68c2caef8b6fdbbd84310a36_kpmg-logo-white.png', alt: 'KPMG', native: true },
+    { src: '../../img/shared/68c2caefdc26eb4f7dceb524_lek-logo-white.png', alt: 'L.E.K. Consulting', native: true },
+    { src: '../../img/shared/68c2caf00a998ed623dbf3d5_oliver-wyman-logo-white.png', alt: 'Oliver Wyman', native: true },
+    { src: '../../img/shared/67c0476eb0f8c4d3c4354272_ab4654fe9cf282ba2459391b57d412b7_image-11.png', alt: 'PwC', native: false },
+    { src: '../../img/shared/totalenergies-logo.png', alt: 'TotalEnergies', native: false }
+  ];
+  var track = document.getElementById('marquee-track');
+  if (!track) return;
+  var setsNeeded = Math.ceil((window.innerWidth * 2) / (logos.length * 180)) + 1;
+  var totalSets = setsNeeded * 2;
+  var html = '';
+  for (var s = 0; s < totalSets; s++) {
+    for (var i = 0; i < logos.length; i++) {
+      var l = logos[i];
+      html += '<span class="logo-chip"><img ' + (l.native ? 'class="white-native" ' : '') +
+        'src="' + l.src + '" alt="' + l.alt + '" style="height:28px;"/></span>';
+    }
+  }
+  track.innerHTML = html;
+})();
+
+// ============================== PERSONA MODAL ==============================
+(function () {
+  var personas = [
+    {
+      name: 'Finance Apprentice',
+      eyebrow: 'Persona 01 &middot; Foundation',
+      eyebrowColor: '#6EE7B7',
+      color: '#6EE7B7',
+      desc: 'The Finance Apprentice is the Excel-literate finance contributor. Confident with formulas, formatting and basic pivot work. Understands the P&L, balance sheet and cash flow conceptually. Ideal for junior accountants, finance graduates, ops support staff and anyone in a finance-adjacent role. Anchored to the Microsoft Office Specialist Excel Associate (MO-201) credential.',
+      competencies: [
+        { label: 'Finance Fundamentals',             score: 2, max: 5 },
+        { label: 'Excel Mastery',                    score: 3, max: 5 },
+        { label: 'Modeling & Valuation',             score: 1, max: 5 },
+        { label: 'Data Analysis & Visualization',    score: 2, max: 5 }
+      ],
+      milestones: ['Mastering Excel for Beginners', 'Microsoft Excel Associate', 'Essential Principles of Data Analysis', 'Data Analysis with Excel: Essentials', 'Communicating and Visualizing Data']
+    },
+    {
+      name: 'Finance Analyst',
+      eyebrow: 'Persona 02 &middot; Operator',
+      eyebrowColor: '#10B981',
+      color: '#10B981',
+      desc: 'The Finance Analyst is the everyday FP&A or finance analyst. Builds reports and dashboards, reads statements fluently, runs scenario analysis and works confidently across Power Pivot, Power BI and Tableau. Anchored to MOS Excel Expert (MO-202), Microsoft PL-300 Power BI Data Analyst Associate, and Tableau Specialist.',
+      competencies: [
+        { label: 'Finance Fundamentals',             score: 4, max: 5 },
+        { label: 'Excel Mastery',                    score: 5, max: 5 },
+        { label: 'Modeling & Valuation',             score: 2, max: 5 },
+        { label: 'Data Analysis & Visualization',    score: 5, max: 5 }
+      ],
+      milestones: ['Data Analysis with Excel: Insights', 'Advanced Excel', 'Power Pivot & Power Query', 'Macros & VBA', 'Understanding Financial Data with Excel', 'Data Preparation with SQL', 'Data Preparation with Python', 'Visualizing Data with Power BI', 'Visualizing Data with Tableau', 'Preparing Data with Tableau', 'Presenting Business Data with PowerPoint', 'Presenting Data with Word', 'Data for Finance and Accounting Academy']
+    },
+    {
+      name: 'Financial Modeler',
+      eyebrow: 'Persona 03 &middot; Specialist',
+      eyebrowColor: '#047857',
+      color: '#047857',
+      desc: 'The Financial Modeler is the specialist craftsperson. Builds end-to-end models including DCF, comparables, LBO, M&A and project finance, with deep DAX, statistical methods and model governance. The technical apex of the discipline. Calibrated to FMVA-comparable competencies, the closest external market reference for end-to-end financial modeling.',
+      competencies: [
+        { label: 'Finance Fundamentals',             score: 5, max: 5 },
+        { label: 'Excel Mastery',                    score: 5, max: 5 },
+        { label: 'Modeling & Valuation',             score: 5, max: 5 },
+        { label: 'Data Analysis & Visualization',    score: 4, max: 5 }
+      ],
+      milestones: ['Introduction to Financial Models & Valuation', 'Financial Modeling with Excel: Essentials', 'Financial Modeling with Excel: Advanced', 'Financial Modeling', 'Finance Modeling and Statistics Academy', 'Advanced Data Visualization for Finance Academy']
+    }
+  ];
+
+  var backdrop = document.getElementById('persona-backdrop');
+  var panel = document.getElementById('persona-modal');
+  var cards = document.querySelectorAll('.persona-card');
+
+  function open(idx) {
+    var p = personas[idx];
+    document.getElementById('modal-eyebrow').innerHTML = p.eyebrow;
+    document.getElementById('modal-eyebrow').style.color = p.eyebrowColor;
+    document.getElementById('modal-title').textContent = p.name;
+    document.getElementById('modal-desc').textContent = p.desc;
+
+    var iconHtml = '';
+    for (var i = 0; i < 3; i++) {
+      var op = i === 1 ? '1' : '0.55';
+      iconHtml += '<div class="trap-mini" style="background:' + p.color + ';opacity:' + op + ';"></div>';
+    }
+    document.getElementById('modal-icon').innerHTML = iconHtml;
+
+    var barsHtml = '';
+    p.competencies.forEach(function (c) {
+      var pct = (c.score / c.max) * 100;
+      barsHtml += '<div class="comp-row-modal">' +
+        '<div class="comp-label-m">' + c.label + '</div>' +
+        '<div class="comp-bar-m"><div class="comp-fill-m" data-width="' + pct + '%" style="background:' + p.color + ';"></div></div>' +
+        '<div class="comp-val-m">' + c.score + ' / ' + c.max + '</div>' +
+        '</div>';
+    });
+    document.getElementById('modal-bars').innerHTML = barsHtml;
+
+    var msHtml = '<div class="eyebrow" style="width:100%; margin-bottom: 8px;">Course Milestones</div>';
+    p.milestones.forEach(function (m) { msHtml += '<span class="chip-m">' + m + '</span>'; });
+    document.getElementById('modal-milestones').innerHTML = msHtml;
+
+    backdrop.classList.add('open');
+    panel.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        var fills = panel.querySelectorAll('.comp-fill-m');
+        fills.forEach(function (f) { f.style.width = f.getAttribute('data-width'); });
+      });
+    });
+  }
+
+  function close() {
+    backdrop.classList.remove('open');
+    panel.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  cards.forEach(function (card, i) {
+    card.addEventListener('click', function () {
+      var idx = parseInt(card.getAttribute('data-persona'), 10);
+      open(isNaN(idx) ? i : idx);
+    });
+  });
+
+  backdrop.addEventListener('click', close);
+  document.getElementById('modal-close').addEventListener('click', close);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') close();
+  });
+})();
+
+// ============================== HUBSPOT FORMS ==============================
+
+// ============================== CONSULTATION LIGHTBOX ==============================
+document.getElementById('consult-backdrop').addEventListener('click', closeConsultModal);
+document.getElementById('consult-close').addEventListener('click', closeConsultModal);
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && document.getElementById('consult-modal').classList.contains('open')) closeConsultModal();
+});
+
+</script>
+</body>
+</html>

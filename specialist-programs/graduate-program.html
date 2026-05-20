@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Graduate Development Program | Kubicle</title>
+<meta name="description" content="A 5-semester graduate development program that accelerates work-readiness across Excel, data literacy, finance, project management and visualization. Recent grads ramp 35% faster and stay longer."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/specialist-programs/graduate-program"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:title" content="Graduate Development Program that Accelerates Work-Readiness"/>
+<meta property="og:description" content="Five role-mapped semesters covering office tools, data literacy, strategy, finance and visualization. Recent graduates ramp up to 35% faster and start project work sooner."/>
+<meta property="og:url" content="https://www.kubicle.com/specialist-programs/graduate-program"/>
+<meta property="og:image" content="https://www.kubicle.com/img/grad-program/hero-graphic.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Graduate Development Program that Accelerates Work-Readiness"/>
+<meta name="twitter:description" content="Five role-mapped semesters that get recent graduates project-ready up to 35% faster."/>
+<meta name="twitter:image" content="https://www.kubicle.com/img/grad-program/hero-graphic.png"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Kubicle Graduate Development Program",
+  "description": "A 5-semester development program that accelerates work-readiness for recent graduates. Covers the modern office toolkit, data literacy, strategy and project management, business finance and statistics, and data analysis and visualization.",
+  "url": "https://www.kubicle.com/specialist-programs/graduate-program",
+  "provider": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "sameAs": "https://www.kubicle.com"
+  },
+  "educationalLevel": "Professional",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseWorkload": "PT100H"
+  },
+  "offers": {
+    "@type": "Offer",
+    "category": "subscription",
+    "url": "https://www.kubicle.com/pricing"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+
+<style>
+/* ============================== RESET ============================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+body {
+  font-family: var(--body, "Satoshi","Helvetica Neue",Arial,sans-serif);
+  color: var(--prussian);
+  background: #fff;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+section { padding: 96px 0; position: relative; }
+section.alice { background: var(--alice); }
+section.dark { background: var(--prussian); color: #fff; }
+@media (max-width: 700px) { section { padding: 64px 0; } .container { padding: 0 22px; } }
+
+/* ============================== SECTION HEAD ============================== */
+.sec-head { max-width: 760px; }
+.sec-head h2 { margin-top: 16px; }
+.sec-head h2 em { font-style: normal; color: var(--accent); }
+.sec-head .body-lg { margin-top: 24px; color: var(--steel); max-width: 640px; }
+.sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.sec-head.center .body-lg { margin-left: auto; margin-right: auto; }
+.dark .sec-head .body-lg { color: rgba(255,255,255,0.78); }
+.dark .sec-head h2 { color: #fff; }
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 112px 0 80px;
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 30%, rgba(4,150,255,0.12), transparent 70%),
+    linear-gradient(180deg, #FBFCFD 0%, #F4F8FC 100%);
+  color: var(--prussian);
+  position: relative; overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.hero .eyebrow { color: var(--accent); }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub {
+  color: var(--steel);
+  font-size: 19px; line-height: 1.55;
+  letter-spacing: -0.01em;
+  margin-top: 22px;
+  max-width: 560px;
+}
+.hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 32px; }
+.hero-rating {
+  margin-top: 32px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(11,27,43,0.10);
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.hero-rating .ravatars { height: 44px; width: auto; flex-shrink: 0; display: block; }
+.hero-rating .rating-meta { display: flex; flex-direction: column; gap: 4px; }
+.hero-rating .r-line {
+  font-family: var(--head); font-weight: 600; font-size: 15px;
+  color: var(--prussian); letter-spacing: -0.005em;
+}
+.hero-rating .r-stars {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; color: var(--prussian);
+}
+.hero-rating .stars { display: inline-flex; gap: 2px; }
+.hero-rating .stars svg { width: 16px; height: 16px; fill: #FDC72E; stroke: none; }
+.hero-rating strong { font-family: var(--head); font-weight: 600; }
+.hero-visual {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px -36px rgba(11,27,43,0.30), 0 8px 24px -10px rgba(11,27,43,0.10);
+  background: #0B1B2B;
+}
+.hero-visual iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0; display: block;
+}
+@media (max-width: 1000px) {
+  .hero { padding: 80px 0 56px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ============================== TRUST STRIP (marquee) ============================== */
+.trust {
+  padding: 32px 0;
+  background: var(--prussian);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+.trust-label {
+  text-align: center;
+  font-family: var(--head);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 18px;
+}
+.trust-label em { font-style: normal; color: #fff; }
+.marquee { overflow: hidden; width: 100%; }
+.marquee-track { display: flex; width: max-content; animation: marq 60s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marq { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.logo-chip { display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 0 44px; }
+.logo-chip img { height: 26px; width: auto; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.55; transition: opacity 0.2s; }
+.logo-chip:hover img { opacity: 0.95; }
+
+/* ============================== RESULTS BANNER ============================== */
+.results {
+  padding: 56px 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 10% 50%, rgba(4,150,255,0.30), transparent 70%),
+    var(--prussian);
+  color: #fff;
+}
+.results-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
+.results h3 {
+  font-family: var(--head); font-size: 30px; font-weight: 600;
+  letter-spacing: -0.02em; color: #fff; line-height: 1.15;
+}
+.results h3 em { font-style: normal; color: var(--accent); }
+.results .r-sub { margin-top: 14px; color: rgba(255,255,255,0.78); font-size: 16px; line-height: 1.55; max-width: 480px; }
+.results-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.r-stat {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  padding: 22px;
+}
+.r-stat strong {
+  display: block;
+  font-family: var(--head); font-size: 34px; font-weight: 600;
+  color: #fff; letter-spacing: -0.02em;
+}
+.r-stat span { display: block; margin-top: 6px; font-size: 13px; color: rgba(255,255,255,0.72); line-height: 1.45; }
+@media (max-width: 900px) { .results-grid { grid-template-columns: 1fr; } .results-stats { grid-template-columns: 1fr; } }
+
+/* ============================== DELIVER GRID ============================== */
+.deliver-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 1000px) { .deliver-grid { grid-template-columns: 1fr; } }
+.deliver-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 32px;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.deliver-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(4,150,255,0.30);
+  box-shadow: 0 24px 60px -28px rgba(11,27,43,0.18);
+}
+.deliver-card .d-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: var(--alice);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+}
+.deliver-card .d-icon img { width: 30px; height: 30px; }
+.deliver-card h3 {
+  font-family: var(--head); font-size: 20px; font-weight: 600;
+  color: var(--prussian); letter-spacing: -0.015em;
+}
+.deliver-card p { margin-top: 12px; color: var(--steel); font-size: 14.5px; line-height: 1.55; }
+
+/* ============================== PERSONA STACK ============================== */
+.persona-section { background: var(--alice); }
+.persona-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+@media (max-width: 900px) { .persona-grid { grid-template-columns: 1fr; } }
+.persona-card {
+  background: #fff;
+  border: 1px solid #E5EBF1;
+  border-radius: 22px;
+  padding: 28px;
+  display: grid; grid-template-columns: 96px 1fr; gap: 20px;
+  align-items: start;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.persona-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(4,150,255,0.30);
+  box-shadow: 0 24px 60px -28px rgba(11,27,43,0.18);
+}
+.persona-card .p-portrait {
+  width: 96px; height: 96px;
+  border-radius: 16px;
+  background: var(--alice);
+  overflow: hidden;
+}
+.persona-card .p-portrait img { width: 100%; height: 100%; object-fit: cover; }
+.persona-card .role-tag {
+  display: inline-block;
+  font-family: var(--body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent-d, #0D5F96);
+  background: var(--accent-soft, #D6EEFF);
+  padding: 4px 10px; border-radius: 999px;
+}
+.persona-card h4 {
+  margin-top: 10px;
+  font-family: var(--head); font-size: 20px; font-weight: 600;
+  letter-spacing: -0.015em; color: var(--prussian);
+}
+.persona-card .who { margin-top: 8px; font-size: 14px; line-height: 1.55; color: var(--steel); }
+.persona-card .stack { margin-top: 14px; display: grid; gap: 6px; }
+.p-row {
+  display: grid; grid-template-columns: 14px 1fr auto; gap: 10px; align-items: center;
+  padding: 6px 10px;
+  background: #F8FAFC;
+  border-radius: 8px;
+  font-size: 12.5px; color: var(--prussian);
+}
+.p-row .p-dot { width: 10px; height: 10px; border-radius: 999px; background: var(--c); }
+.p-row .p-name { font-family: var(--head); font-weight: 600; }
+.p-row .p-name .p-acad {
+  margin-left: 6px;
+  font-family: var(--body); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.10em; text-transform: uppercase;
+  color: var(--steel);
+}
+.p-row .p-tier {
+  display: inline-flex; gap: 3px; align-items: center;
+  flex-shrink: 0;
+}
+.p-row .p-seg {
+  width: 14px; height: 5px;
+  border-radius: 2px;
+  background: rgba(11,27,43,0.12);
+}
+.p-row .p-seg.on { background: var(--c); }
+.p-row.ai   { --c: #00C4CC; }
+.p-row.data { --c: #E91E63; }
+.p-row.pm   { --c: #F97316; }
+.p-row.fin  { --c: #10B981; }
+
+/* ============================== CURRICULUM TABS ============================== */
+.curriculum {
+  background:
+    radial-gradient(ellipse 60% 60% at 100% 0%, rgba(4,150,255,0.08), transparent 70%),
+    #fff;
+}
+.sem-tabs {
+  margin-top: 40px;
+  display: flex; gap: 8px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--alice);
+  padding-bottom: 0;
+}
+.sem-tab {
+  background: transparent;
+  border: 0;
+  padding: 14px 18px;
+  font-family: var(--head); font-size: 14px; font-weight: 600;
+  color: var(--steel);
+  cursor: pointer;
+  letter-spacing: -0.005em;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.sem-tab:hover { color: var(--prussian); }
+.sem-tab.active { color: var(--accent-d, #0D5F96); border-bottom-color: var(--accent, #0496FF); }
+.sem-panel { display: none; padding-top: 36px; }
+.sem-panel.active { display: block; }
+.sem-panel .sem-head {
+  display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: end;
+  padding-bottom: 28px; border-bottom: 1px solid var(--alice);
+}
+.sem-panel .sem-num {
+  font-family: var(--head); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.16em; color: var(--accent-d, #0D5F96);
+  text-transform: uppercase;
+}
+.sem-panel h3 {
+  font-family: var(--head); font-size: 30px; font-weight: 600;
+  letter-spacing: -0.02em; color: var(--prussian); line-height: 1.15;
+  margin-top: 6px;
+}
+.sem-panel .sem-tag {
+  justify-self: end;
+  font-size: 13.5px; color: var(--steel);
+  font-style: italic;
+}
+.modules-grid {
+  margin-top: 32px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+}
+@media (max-width: 1000px) { .modules-grid { grid-template-columns: 1fr; } }
+.module-card {
+  background: var(--alice);
+  border: 1px solid #E5EBF1;
+  border-radius: 16px;
+  padding: 24px;
+}
+.module-card h4 {
+  font-family: var(--head); font-size: 16px; font-weight: 600;
+  color: var(--prussian); letter-spacing: -0.005em;
+}
+.module-card p { margin-top: 10px; font-size: 14px; line-height: 1.55; color: var(--steel); }
+.module-card .courses {
+  margin-top: 14px;
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.module-card .courses a {
+  font-size: 11.5px; font-family: var(--head); font-weight: 600;
+  background: #fff; color: var(--accent-d, #0D5F96);
+  padding: 5px 10px; border-radius: 6px;
+  border: 1px solid #E5EBF1;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.module-card .courses a:hover { background: var(--accent-d, #0D5F96); color: #fff; border-color: var(--accent-d, #0D5F96); }
+
+/* ============================== VIDEO ============================== */
+.video-section .video-frame {
+  margin-top: 40px;
+  border-radius: 22px; overflow: hidden;
+  box-shadow: 0 40px 100px -36px rgba(11,27,43,0.30), 0 8px 24px -10px rgba(11,27,43,0.10);
+  background: #0B1B2B;
+}
+.video-frame iframe { width: 100%; aspect-ratio: 16 / 9; display: block; border: 0; }
+
+/* ============================== TESTIMONIAL GRID ============================== */
+.test-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+@media (max-width: 900px) { .test-grid { grid-template-columns: 1fr; } }
+.test-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 22px;
+  padding: 24px;
+  display: grid; grid-template-rows: auto auto;
+  gap: 20px;
+}
+.test-card .t-video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 20px 50px -20px rgba(0,0,0,0.5);
+}
+.test-card .t-video iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0; display: block;
+}
+.test-card .t-quote {
+  font-family: var(--head); font-size: 18px; font-weight: 500;
+  color: #fff; line-height: 1.4; letter-spacing: -0.01em;
+}
+.test-card .t-quote::before {
+  content: "\201C";
+  display: inline-block;
+  font-family: var(--head); font-weight: 600;
+  color: var(--accent); line-height: 1;
+  margin-right: 4px;
+}
+.test-card .t-attrib {
+  margin-top: 12px;
+  font-family: var(--body); font-size: 12.5px; font-weight: 600;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.10em; text-transform: uppercase;
+}
+
+/* ============================== CASE STUDIES ============================== */
+.cs-grid {
+  margin-top: 56px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+@media (max-width: 1000px) { .cs-grid { grid-template-columns: 1fr; } }
+.cs-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 28px;
+  display: flex; flex-direction: column;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.cs-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(4,150,255,0.30);
+  box-shadow: 0 24px 60px -28px rgba(11,27,43,0.18);
+}
+.cs-card .cs-logo { height: 36px; margin-bottom: 18px; display: flex; align-items: center; }
+.cs-card .cs-logo img { height: 30px; width: auto; max-width: 160px; object-fit: contain; }
+.cs-card h4 {
+  font-family: var(--head); font-size: 19px; font-weight: 600;
+  color: var(--prussian); letter-spacing: -0.01em;
+}
+.cs-card p { margin-top: 10px; font-size: 14px; line-height: 1.55; color: var(--steel); }
+.cs-card .cs-stat {
+  margin-top: 18px;
+  font-family: var(--head); font-weight: 600;
+  color: var(--accent-d, #0D5F96);
+  font-size: 13.5px; letter-spacing: 0.02em;
+}
+.cs-card .cs-cta {
+  margin-top: auto; padding-top: 18px;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--head); font-size: 13.5px; font-weight: 600;
+  color: var(--accent-d, #0D5F96);
+}
+.cs-card .cs-cta:hover { gap: 10px; }
+
+/* ============================== FAQ ============================== */
+.faq-list { margin-top: 40px; max-width: 820px; }
+.faq-item {
+  border-bottom: 1px solid var(--alice);
+}
+.faq-q {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  padding: 22px 0;
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  font-family: var(--head); font-size: 17px; font-weight: 600;
+  color: var(--prussian);
+  cursor: pointer;
+  letter-spacing: -0.005em;
+}
+.faq-q .faq-icon {
+  width: 28px; height: 28px;
+  border-radius: 999px;
+  background: var(--alice);
+  color: var(--prussian);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s, background 0.2s;
+  font-size: 16px;
+}
+.faq-item.open .faq-q .faq-icon { transform: rotate(45deg); background: var(--accent-soft, #D6EEFF); color: var(--accent-d, #0D5F96); }
+.faq-a {
+  display: none;
+  padding: 0 0 22px;
+  font-size: 15px; line-height: 1.6; color: var(--steel);
+  max-width: 760px;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* ============================== RESOURCES ============================== */
+.res-grid {
+  margin-top: 56px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+}
+@media (max-width: 900px) { .res-grid { grid-template-columns: 1fr; } }
+.res-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.res-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(4,150,255,0.30);
+  box-shadow: 0 24px 60px -28px rgba(11,27,43,0.18);
+}
+.res-card .r-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--alice);
+  position: relative;
+}
+.res-card .r-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.res-card:hover .r-thumb img { transform: scale(1.04); }
+.res-card .r-body { padding: 28px 32px 32px; display: flex; flex-direction: column; flex: 1; }
+.res-card .r-eyebrow {
+  font-family: var(--body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent-d, #0D5F96);
+}
+.res-card h4 {
+  margin-top: 10px;
+  font-family: var(--head); font-size: 22px; font-weight: 600;
+  color: var(--prussian); letter-spacing: -0.015em; line-height: 1.25;
+}
+.res-card p { margin-top: 12px; font-size: 14.5px; line-height: 1.55; color: var(--steel); }
+.res-card .r-cta {
+  margin-top: auto; padding-top: 18px;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--head); font-size: 13.5px; font-weight: 600;
+  color: var(--accent-d, #0D5F96);
+}
+.res-card .r-cta:hover { gap: 10px; }
+
+/* ============================== FINAL CTA ============================== */
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+  position: relative; overflow: hidden;
+}
+.final-cta .eyebrow { color: var(--accent); }
+.final-cta h2 { color: #fff; }
+.final-cta h2 em { font-style: normal; color: var(--accent); }
+.final-cta .body-lg { color: rgba(255,255,255,0.82); max-width: 760px; margin-top: 22px; }
+.final-cta .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+</style>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== NAV ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Specialist Programs &middot; Graduate Development</div>
+        <h1 class="h-display" style="margin-top: 14px;">
+          A graduate program that accelerates <em>work-readiness.</em>
+        </h1>
+        <p class="hero-sub">
+          Help your recent graduates develop a clear path to success with a program built around real
+          skills, practical tools, and guided projects. With Kubicle, your workforce ramps up faster,
+          retains more of what they learn, and makes an impact straight away.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary btn-lg" href="../try-free/business.html">Speak to Sales <span class="arr">&rarr;</span></a>
+          <a class="btn btn-outline-dark btn-lg" href="../try-free/index.html">Try for Free <span class="arr">&rarr;</span></a>
+        </div>
+        <div class="hero-rating" aria-label="G2 reviews">
+          <img class="ravatars" src="../img/grad-program/g2-reviews-widget.svg" alt="" aria-hidden="true"/>
+          <div class="rating-meta">
+            <div class="r-line">200+ Reviews on G2</div>
+            <div class="r-stars">
+              <span class="stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+              </span>
+              <span><strong>4.7</strong> Rating</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <iframe
+          src="https://player.mux.com/OjrBB02q4m7uYGCdIcjQHGWeSFkUVDiojvp1TPO8601xA?metadata-video-title=Kubicle+Graduate+Development+Program&primary-color=%230496FF"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          title="Kubicle Graduate Development Program">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TRUST STRIP (marquee) ============================== -->
+<div class="trust">
+  <div class="trust-label">Trusted by <em>graduate programs at</em></div>
+  <div class="marquee">
+    <div class="marquee-track" id="marquee-track"></div>
+  </div>
+</div>
+
+<!-- ============================== RESULTS BANNER ============================== -->
+<section class="results">
+  <div class="container">
+    <div class="results-grid">
+      <div>
+        <h3>Recent graduates onboarded with Kubicle stay <em>longer</em> and start project work <em>up to 35% faster.</em></h3>
+        <p class="r-sub">
+          A structured, role-mapped pathway closes the work-readiness gap weeks earlier than ad-hoc
+          training programs.
+        </p>
+      </div>
+      <div class="results-stats">
+        <div class="r-stat">
+          <strong>35%</strong>
+          <span>Faster time to first project</span>
+        </div>
+        <div class="r-stat">
+          <strong>86%</strong>
+          <span>Course completion rate</span>
+        </div>
+        <div class="r-stat">
+          <strong>10x</strong>
+          <span>Faster learning outcomes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== WHAT WE DELIVER ============================== -->
+<section id="what-we-deliver">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" style="color: var(--accent);">What We Deliver</div>
+      <h2 class="h-xl">How Kubicle beats every other graduate <em>work-readiness program.</em></h2>
+      <p class="body-lg">
+        Recent graduates often arrive eager but underprepared for the realities of the workplace. Kubicle
+        closes that gap with targeted skill-building and smart learning tools, helping your new hires
+        settle in faster and contribute sooner, while ensuring consistent results across your organization.
+      </p>
+    </div>
+
+    <div class="deliver-grid">
+      <div class="deliver-card">
+        <div class="d-icon"><img src="../img/grad-program/icon-chart-blue.svg" alt=""/></div>
+        <h3>The right skills, for the right roles</h3>
+        <p>
+          Five role-mapped semesters covering the Modern Office Toolkit, Data Literacy, Strategy and
+          Project Management, Business Finance, and Data Analysis. Built specifically for the intern,
+          graduate and early-career hire.
+        </p>
+      </div>
+      <div class="deliver-card">
+        <div class="d-icon"><img src="../img/grad-program/icon-certificate-purple.svg" alt=""/></div>
+        <h3>Skill diagnostics for recent graduates</h3>
+        <p>
+          Built-in skills assessments pinpoint the precise training each graduate requires. This targeted
+          approach reduces wasted learning time, accelerates performance, and delivers measurable value to
+          the organization.
+        </p>
+      </div>
+      <div class="deliver-card">
+        <div class="d-icon"><img src="../img/grad-program/icon-calendar-green.svg" alt=""/></div>
+        <h3>Speed and consistency in a graduate setting</h3>
+        <p>
+          A guaranteed minimum 35% reduction in ramp-up time, with consistent outcomes across cohorts,
+          regions and business units. Every grad lands with the same baseline of fluency.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PERSONA PATHWAYS ============================== -->
+<section class="persona-section" id="personas">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" style="color: var(--accent);">Who this is for</div>
+      <h2 class="h-xl">Two graduate personas, <em>four academies, one pathway.</em></h2>
+      <p class="body-lg">
+        The Kubicle Graduate Development Program is calibrated to two distinct early-career personas. Each
+        pathway stacks the right tier of AI, Data, Project Management and Finance academies against the
+        role, so new hires arrive with the exact fluency the job demands.
+      </p>
+    </div>
+
+    <div class="persona-grid">
+      <div class="persona-card">
+        <div class="p-portrait"><img src="../img/Character_profiles/portraits/female_07.a.png" alt=""/></div>
+        <div>
+          <div class="role-tag">Program &middot; Entry-level</div>
+          <h4>The intern and graduate</h4>
+          <p class="who">
+            The 12 months before placement and the first year of work. Baseline fluency across all four
+            academies that every entry-level role now expects on day one.
+          </p>
+          <div class="stack">
+            <div class="p-row ai"><span class="p-dot"></span><span class="p-name">AI Apprentice <span class="p-acad">AI</span></span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+            <div class="p-row data"><span class="p-dot"></span><span class="p-name">Data Citizen <span class="p-acad">Data</span></span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+            <div class="p-row pm"><span class="p-dot"></span><span class="p-name">Project Member <span class="p-acad">PM</span></span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+            <div class="p-row fin"><span class="p-dot"></span><span class="p-name">Finance Apprentice <span class="p-acad">Finance</span></span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="persona-card">
+        <div class="p-portrait"><img src="../img/Character_profiles/portraits/male_04.a.png" alt=""/></div>
+        <div>
+          <div class="role-tag">Year 1 to 2</div>
+          <h4>The early-career hire</h4>
+          <p class="who">
+            First analyst, coordinator or associate role. Needs broad fluency fast: enough AI, data,
+            project sense and finance to operate from day one.
+          </p>
+          <div class="stack">
+            <div class="p-row ai"><span class="p-dot"></span><span class="p-name">AI Navigator <span class="p-acad">AI</span></span><span class="p-tier" aria-label="Tier 2 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+            <div class="p-row data"><span class="p-dot"></span><span class="p-name">Data Associate <span class="p-acad">Data</span></span><span class="p-tier" aria-label="Tier 2 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+            <div class="p-row pm"><span class="p-dot"></span><span class="p-name">Project Member <span class="p-acad">PM</span></span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+            <div class="p-row fin"><span class="p-dot"></span><span class="p-name">Finance Apprentice <span class="p-acad">Finance</span></span><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CURRICULUM ============================== -->
+<section class="curriculum" id="curriculum">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" style="color: var(--accent);">Curriculum</div>
+      <h2 class="h-xl">What's included in Kubicle's <em>Graduate Development Program.</em></h2>
+      <p class="body-lg">
+        Five sequenced semesters take a new hire from spreadsheet basics through to building dashboards
+        that influence real business decisions. Each semester is anchored in Kubicle's accredited
+        subject library.
+      </p>
+    </div>
+
+    <div class="sem-tabs" role="tablist">
+      <button class="sem-tab active" data-tab="1" role="tab">Semester 1</button>
+      <button class="sem-tab" data-tab="2" role="tab">Semester 2</button>
+      <button class="sem-tab" data-tab="3" role="tab">Semester 3</button>
+      <button class="sem-tab" data-tab="4" role="tab">Semester 4</button>
+      <button class="sem-tab" data-tab="5" role="tab">Semester 5</button>
+    </div>
+
+    <!-- Semester 1 -->
+    <div class="sem-panel active" data-panel="1">
+      <div class="sem-head">
+        <div>
+          <div class="sem-num">Semester 01</div>
+          <h3>The Modern Office Toolkit</h3>
+        </div>
+        <div class="sem-tag">Day-one productivity in the tools every business uses</div>
+      </div>
+      <div class="modules-grid">
+        <div class="module-card">
+          <h4>Spreadsheet foundations</h4>
+          <p>
+            Confidence in Excel through data entry, formulas, formatting, and basic analysis. Learners
+            organize information, create charts, and turn data into insights that support everyday
+            decision-making.
+          </p>
+          <div class="courses">
+            <a href="../courses/excel.html">Excel</a>
+          </div>
+        </div>
+        <div class="module-card">
+          <h4>Presentation and document skills</h4>
+          <p>
+            The ability to produce polished reports and impactful slide decks. Learners practice
+            structuring ideas clearly, applying professional formatting, and using visuals effectively.
+          </p>
+          <div class="courses">
+            <a href="../courses/powerpoint.html">PowerPoint</a>
+            <a href="../courses/word.html">Word</a>
+            <a href="../courses/data-presentation-skills.html">Data Presentation</a>
+          </div>
+        </div>
+        <div class="module-card">
+          <h4>Professional communication</h4>
+          <p>
+            Manage Outlook emails, calendars, and contacts with confidence. Learners acquire professional
+            writing skills and learn how to find files in SharePoint, adopting habits that make
+            collaboration smoother from day one.
+          </p>
+          <div class="courses">
+            <a href="../courses/outlook.html">Outlook</a>
+            <a href="../courses/sharepoint.html">SharePoint</a>
+            <a href="../courses/microsoft-teams.html">Microsoft Teams</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Semester 2 -->
+    <div class="sem-panel" data-panel="2">
+      <div class="sem-head">
+        <div>
+          <div class="sem-num">Semester 02</div>
+          <h3>Foundations of Data Literacy</h3>
+        </div>
+        <div class="sem-tag">A strong conceptual understanding of data and ethics</div>
+      </div>
+      <div class="modules-grid">
+        <div class="module-card">
+          <h4>Core data concepts</h4>
+          <p>
+            Graduates develop a clear understanding of data types, structures, and key principles that
+            underpin modern business. They learn how data is stored, organized, and applied across
+            everyday workplace tasks.
+          </p>
+          <div class="courses">
+            <a href="../courses/data-literacy.html">Data Literacy</a>
+          </div>
+        </div>
+        <div class="module-card">
+          <h4>Data governance and ethics</h4>
+          <p>
+            Responsible data handling, including security, privacy, and compliance standards. Learners
+            understand how to manage data ethically and protect sensitive information in line with company
+            policies.
+          </p>
+          <div class="courses">
+            <a href="../courses/data-strategy-governance.html">Data Strategy &amp; Governance</a>
+            <a href="../courses/data-ethics-risk.html">Data Ethics &amp; Risk</a>
+            <a href="../courses/data-regulation.html">Data Regulation</a>
+          </div>
+        </div>
+        <div class="module-card">
+          <h4>Analytical thinking</h4>
+          <p>
+            Critical thinking skills to interpret data and make stronger decisions. Graduates practice
+            data-driven storytelling, learning how to turn numbers into clear, actionable insights.
+          </p>
+          <div class="courses">
+            <a href="../courses/strategic-analysis.html">Strategic Analysis</a>
+            <a href="../courses/business-analysis.html">Business Analysis</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Semester 3 -->
+    <div class="sem-panel" data-panel="3">
+      <div class="sem-head">
+        <div>
+          <div class="sem-num">Semester 03</div>
+          <h3>Understanding Basic Strategy and Managing Projects</h3>
+        </div>
+        <div class="sem-tag">Drive success by planning and executing projects effectively</div>
+      </div>
+      <div class="modules-grid">
+        <div class="module-card">
+          <h4>Introduction to business strategy</h4>
+          <p>
+            How internal and external factors influence business performance. Learners explore key
+            strategic concepts that shape decision-making in competitive environments.
+          </p>
+          <div class="courses">
+            <a href="../courses/strategic-analysis.html">Strategic Analysis</a>
+          </div>
+        </div>
+        <div class="module-card">
+          <h4>Doing research</h4>
+          <p>
+            How to conduct research that supports business goals. Learners practice planning research
+            projects, gathering reliable information, and turning findings into actionable insights.
+          </p>
+          <div class="courses">
+            <a href="../courses/business-analysis.html">Business Analysis</a>
+          </div>
+        </div>
+        <div class="module-card">
+          <h4>Report writing and project management</h4>
+          <p>
+            The ability to write clear, credible reports that support business decisions, paired with
+            foundational project management. Learners structure content, present evidence and run a clean
+            project plan.
+          </p>
+          <div class="courses">
+            <a href="../courses/project-management-fundamentals.html">Project Management Fundamentals</a>
+            <a href="../courses/data-presentation-skills.html">Data Presentation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Semester 4 -->
+    <div class="sem-panel" data-panel="4">
+      <div class="sem-head">
+        <div>
+          <div class="sem-num">Semester 04</div>
+          <h3>Basic Business Finance and Statistics</h3>
+        </div>
+        <div class="sem-tag">Commercial awareness to make smart business decisions</div>
+      </div>
+      <div class="modules-grid">
+        <div class="module-card">
+          <h4>Principles of statistics</h4>
+          <p>
+            Core statistical concepts and methods used in everyday business. Learners interpret data,
+            identify trends, and apply statistics to support decision-making.
+          </p>
+          <div class="courses">
+            <a href="../courses/statistical-analysis.html">Statistical Analysis</a>
+          </div>
+        </div>
+        <div class="module-card">
+          <h4>Introduction to business finance</h4>
+          <p>
+            The fundamentals of corporate finance, focusing on financial statements and ratios. Learners
+            understand how finance professionals use these principles to guide business strategy and
+            performance.
+          </p>
+          <div class="courses">
+            <a href="../courses/finance-fundamentals.html">Finance Fundamentals</a>
+          </div>
+        </div>
+        <div class="module-card">
+          <h4>Introduction to financial statements</h4>
+          <p>
+            How to read and interpret income statements, balance sheets, and cash flow statements.
+            Graduates gain the ability to connect financial data with real business outcomes.
+          </p>
+          <div class="courses">
+            <a href="../courses/financial-modeling.html">Financial Modeling</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Semester 5 -->
+    <div class="sem-panel" data-panel="5">
+      <div class="sem-head">
+        <div>
+          <div class="sem-num">Semester 05</div>
+          <h3>Data Analysis and Visualization</h3>
+        </div>
+        <div class="sem-tag">Turn raw data into actionable insights with industry-standard tools</div>
+      </div>
+      <div class="modules-grid">
+        <div class="module-card">
+          <h4>Visualization fundamentals</h4>
+          <p>
+            Principles of visual hierarchy and how to apply them when creating charts and dashboards.
+            Learners understand how design choices influence clarity, accuracy, and impact.
+          </p>
+          <div class="courses">
+            <a href="../courses/visualization-fundamentals.html">Visualization Fundamentals</a>
+          </div>
+        </div>
+        <div class="module-card">
+          <h4>Data presentation</h4>
+          <p>
+            Turning visualizations into compelling stories. Graduates practice presenting charts and
+            graphs in a way that highlights key insights and supports better business decisions.
+          </p>
+          <div class="courses">
+            <a href="../courses/data-presentation-skills.html">Data Presentation</a>
+          </div>
+        </div>
+        <div class="module-card">
+          <h4>Introduction to Power BI or Tableau</h4>
+          <p>
+            A foundational understanding of the leading data visualization tools in business today.
+            Learners build simple dashboards that communicate insights effectively.
+          </p>
+          <div class="courses">
+            <a href="../courses/power-bi.html">Power BI</a>
+            <a href="../courses/tableau.html">Tableau</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================== TESTIMONIAL ============================== -->
+<section class="dark" id="testimonial">
+  <div class="container">
+    <div class="sec-head" style="max-width: 760px;">
+      <div class="eyebrow" style="color: var(--accent);">Learner stories</div>
+      <h2 class="h-xl">Real graduates, <em>real impact.</em></h2>
+      <p class="body-lg">Hear it from the people who lived it. Two recent graduates on how Kubicle changed how they showed up in their first months on the job.</p>
+    </div>
+
+    <div class="test-grid">
+
+      <div class="test-card">
+        <div class="t-video">
+          <iframe
+            src="https://player.mux.com/h00FK3FQp00HOZ1t7z2CED02oxmxuJD9BPH4QOegItJQJA?metadata-video-title=Jack+%E2%80%93+Kubicle+Graduate+Testimonial&primary-color=%230496FF"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="Jack on the Kubicle Graduate Development Program"
+            loading="lazy">
+          </iframe>
+        </div>
+        <div>
+          <p class="t-quote">I came in with the degree but not the workplace skills. The semester structure meant I always knew what to learn next, and the projects gave me real evidence I could point to in reviews.</p>
+          <div class="t-attrib">Jack &middot; Recent Graduate</div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="t-video">
+          <iframe
+            src="https://player.mux.com/Caj4QEkxh5M00IksDoK01Eg7mHDO5ZQ64WYPN029KkYMUU?metadata-video-title=Eric+%E2%80%93+Kubicle+Graduate+Testimonial&primary-color=%230496FF"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="Eric on the Kubicle Graduate Development Program"
+            loading="lazy">
+          </iframe>
+        </div>
+        <div>
+          <p class="t-quote">Kubicle gave me the exact skills the business actually wanted on day one. By the end of my first month I was running my own analysis in Excel and Power BI without supervision.</p>
+          <div class="t-attrib">Eric &middot; Recent Graduate</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CASE STUDIES ============================== -->
+<section class="alice" id="case-studies">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" style="color: var(--accent);">Case studies</div>
+      <h2 class="h-xl">How leading teams have used Kubicle's <em>Graduate Development Program.</em></h2>
+    </div>
+
+    <div class="cs-grid">
+      <a class="cs-card" href="../resources/case-studies.html">
+        <div class="cs-logo"><img src="../img/shared/690e247d418880763cd9f3cd_jotun-logo.svg" alt="Jotun"/></div>
+        <h4>Jotun: scaling data literacy across 50+ countries</h4>
+        <p>How Jotun standardized graduate data fluency in every market without losing local nuance.</p>
+        <div class="cs-stat">Adopted in 50+ countries</div>
+        <span class="cs-cta">Read the case study <span class="arr">&rarr;</span></span>
+      </a>
+      <a class="cs-card" href="../resources/case-studies.html">
+        <div class="cs-logo"><img src="../img/shared/68a31c29651cb5c7de7328a0_heineken-logo-corporate-page-1.png" alt="Heineken"/></div>
+        <h4>Heineken: a sharper graduate onboarding journey</h4>
+        <p>Heineken cut graduate ramp time and lifted retention by anchoring onboarding in Kubicle.</p>
+        <div class="cs-stat">35% faster project work</div>
+        <span class="cs-cta">Read the case study <span class="arr">&rarr;</span></span>
+      </a>
+      <a class="cs-card" href="../resources/case-studies.html">
+        <div class="cs-logo"><img src="../img/shared/690e247d418880763cd9f3ce_adl.svg" alt="Arthur D. Little"/></div>
+        <h4>Arthur D. Little: a baseline for every new consultant</h4>
+        <p>How ADL gave every incoming consultant the same data and finance baseline before client work.</p>
+        <div class="cs-stat">Day-one consistency</div>
+        <span class="cs-cta">Read the case study <span class="arr">&rarr;</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FAQ ============================== -->
+<section id="faqs">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" style="color: var(--accent);">FAQs</div>
+      <h2 class="h-xl">Frequently <em>asked questions.</em></h2>
+      <p class="body-lg">
+        Got a question about our development program for recent graduates? You are in the right place.
+        Whether you are curious about the curriculum, pricing, certifications, or platform features, the
+        common queries are below. If you do not find what you are looking for, our team is here to help.
+      </p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item open">
+        <button class="faq-q">What does the Kubicle Graduate Development Program actually cover? <span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          Kubicle is designed for enterprise teams. The Graduate Program covers Excel, Power BI, SQL,
+          financial modeling, Project Management, AI fundamentals and more across five sequenced
+          semesters. With over 1,000 practical video lessons, real-world projects and bite-sized modules,
+          recent graduates onboard faster, work more efficiently, and deliver strategic insights, with up
+          to 40% improvements in efficiency and learning outcomes up to 10x faster.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can the program scale across mixed-skill graduate cohorts? <span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          Absolutely. Our learning pathways offer structured journeys tailored from beginner through to
+          advanced users. Organizations can mix and match based on role, making it ideal for hybrid
+          cohorts and rotational programs.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What subjects are in the broader Kubicle library? <span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          Our library spans essential business tools and domains: Excel, PowerPoint, Power BI, Tableau,
+          SQL, Python, Alteryx, RPA tools, AI fundamentals and business communication skills, covering
+          both technical and applied soft skills.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How quickly can we roll Kubicle out? <span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          Typical rollouts complete in about a week, and can be as quick as a day. It depends on your
+          urgency. Your newly hired graduates get expert onboarding support and a dedicated customer
+          success manager to ensure smooth setup and ongoing engagement.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Will graduates actually engage with this? <span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          Yes. Kubicle's semesterized, bite-sized format drives strong engagement, with roughly 86%
+          completion rates and high learner satisfaction. Real-world projects, certificates, and
+          recognized credentials (CPE, CPD, NASBA) reinforce motivation and trackable achievement.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Does Kubicle integrate with our LMS? <span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          Kubicle supports integrations with major Learning Management Systems (like Degreed and
+          Cornerstone) and features enterprise capabilities such as bulk user management, SSO, reporting
+          and data tracking.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Are the credentials accredited? <span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          Yes. Every course exam earns certificates accredited by CPD, CPE and NASBA, which learners can
+          share on LinkedIn or use for professional development credits.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is the content kept current? <span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          Kubicle content is regularly refreshed to reflect the latest versions and best practices in
+          tools and analytics. Clients appreciate that learning is always both current and relevant.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What support do we get? <span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          You will be supported end-to-end. Our team provides strategic planning, onboarding, regular
+          check-ins, and tailored curriculum advice based on your team's goals, with options for branded
+          or custom learning pathways.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== RESOURCES ============================== -->
+<section class="alice" id="resources">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" style="color: var(--accent);">Explore more from Kubicle</div>
+      <h2 class="h-xl">Keep reading.</h2>
+    </div>
+    <div class="res-grid">
+      <a class="res-card" href="../blog/how-to-calculate-roi-of-graduate-development-with-a-ready-to-use-calculator.html">
+        <div class="r-thumb">
+          <img src="../blog/img/posts/68dbb1dee660759c65e427c8_roi-calculator.jpg" alt="ROI of graduate development calculator" loading="lazy"/>
+        </div>
+        <div class="r-body">
+          <div class="r-eyebrow">Resource</div>
+          <h4>How to calculate ROI of graduate development with a ready-to-use calculator</h4>
+          <p>Learn how to measure the business impact of your graduate training programs.</p>
+          <span class="r-cta">Learn more <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+      <a class="res-card" href="../academies/index.html">
+        <div class="r-thumb">
+          <img src="../img/academies/academies-hero.webp" alt="The four Kubicle academies" loading="lazy"/>
+        </div>
+        <div class="r-body">
+          <div class="r-eyebrow">Academies</div>
+          <h4>Develop a clear path to success with Kubicle's academies</h4>
+          <p>From data literacy to workplace readiness, Kubicle equips new hires with the skills to deliver impact faster.</p>
+          <span class="r-cta">Learn more <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="final-cta" id="get-started">
+  <div class="container">
+    <div style="max-width: 920px;">
+      <div class="eyebrow">Ready to ramp your next cohort?</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Get your graduates project-ready,<br/>
+        <em>before they finish week one.</em>
+      </h2>
+      <p class="body-lg">
+        Talk to a Kubicle program designer about a tailored Graduate Development rollout, or start a free
+        trial and see the experience for yourself.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="../try-free/business.html">Speak to Sales <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost btn-lg" href="../try-free/index.html">Try for Free <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<div id="site-footer"></div>
+
+<script>
+(function () {
+  // Tabs
+  var tabs = document.querySelectorAll('.sem-tab');
+  var panels = document.querySelectorAll('.sem-panel');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var id = tab.getAttribute('data-tab');
+      tabs.forEach(function (t) { t.classList.remove('active'); });
+      panels.forEach(function (p) { p.classList.remove('active'); });
+      tab.classList.add('active');
+      var target = document.querySelector('.sem-panel[data-panel="' + id + '"]');
+      if (target) target.classList.add('active');
+    });
+  });
+
+  // FAQ accordion
+  var faqs = document.querySelectorAll('.faq-item');
+  faqs.forEach(function (item) {
+    var q = item.querySelector('.faq-q');
+    q.addEventListener('click', function () {
+      item.classList.toggle('open');
+    });
+  });
+
+  // Logo marquee
+  var logos = [
+    { src: '../img/shared/690e247d418880763cd9f3cd_jotun-logo.svg', alt: 'Jotun' },
+    { src: '../img/shared/68c2cad5cf0b314fbcc87474_bain-logo-white.png', alt: 'Bain & Company' },
+    { src: '../img/shared/68c2caef8b6fdbbd84310a36_kpmg-logo-white.png', alt: 'KPMG' },
+    { src: '../img/shared/68c2caefdc26eb4f7dceb524_lek-logo-white.png', alt: 'L.E.K. Consulting' },
+    { src: '../img/shared/68c2caf00a998ed623dbf3d5_oliver-wyman-logo-white.png', alt: 'Oliver Wyman' },
+    { src: '../img/shared/68c2caf09da428eb2dde4f9e_coca-cola-logo-white.png', alt: 'Coca-Cola' },
+    { src: '../img/shared/690e247d418880763cd9f3d1_deloitte.svg', alt: 'Deloitte' },
+    { src: '../img/shared/690e247d418880763cd9f425_british-airways.svg', alt: 'British Airways' },
+    { src: '../img/shared/690e247d418880763cd9f426_amazon.svg', alt: 'Amazon' },
+    { src: '../img/shared/690e247d418880763cd9f423_ford.svg', alt: 'Ford' }
+  ];
+  var track = document.getElementById('marquee-track');
+  if (track) {
+    var setsNeeded = Math.ceil((window.innerWidth * 2) / (logos.length * 200)) + 1;
+    var totalSets = setsNeeded * 2;
+    var html = '';
+    for (var s = 0; s < totalSets; s++) {
+      for (var i = 0; i < logos.length; i++) {
+        var l = logos[i];
+        html += '<span class="logo-chip"><img src="' + l.src + '" alt="' + l.alt + '"/></span>';
+      }
+    }
+    track.innerHTML = html;
+  }
+})();
+</script>
+
+</body>
+</html>

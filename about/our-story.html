@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Our Story | Kubicle</title>
+<meta name="description" content="Kubicle was founded in 2014 to solve the costly problem of data illiteracy. From one Excel course to over 1,000 lessons, this is how we got here, and where we're going next."/>
+<meta name="keywords" content="Kubicle story, our story, Kubicle founders, 2014 Kubicle, data literacy company, Dublin edtech, AI literacy training"/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/about/our-story"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:url" content="https://www.kubicle.com/about/our-story"/>
+<meta property="og:title" content="Our Story | Kubicle"/>
+<meta property="og:description" content="From one Excel course to over 1,000 lessons. The Kubicle story since 2014."/>
+<meta property="og:image" content="https://www.kubicle.com/about/img/team-wak-1.jpg"/>
+<meta property="og:image:alt" content="The Kubicle team gathered at a Christmas dinner."/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@kubicle"/>
+<meta name="twitter:title" content="Our Story | Kubicle"/>
+<meta name="twitter:description" content="From one Excel course to over 1,000 lessons. The Kubicle story since 2014."/>
+<meta name="twitter:image" content="https://www.kubicle.com/about/img/team-wak-1.jpg"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Our Story",
+  "url": "https://www.kubicle.com/about/our-story",
+  "description": "Kubicle was founded in 2014 to solve the costly problem of data illiteracy. The journey from one Excel course to over 1,000 lessons across AI, Data, Finance and Project Management.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "url": "https://www.kubicle.com",
+    "foundingDate": "2014",
+    "logo": "https://www.kubicle.com/img/shared/6929dc95a88edc17d8e3a3e4_LOGO-FILES-LOGO-MARK-WHITE-RGB-1.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dublin",
+      "addressCountry": "Ireland"
+    }
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+
+<style>
+/* ============================== LAYOUT ============================== */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+section { padding: 120px 0; position: relative; overflow: hidden; }
+@media (max-width: 860px) {
+  .container { padding: 0 24px; }
+  section { padding: 88px 0; }
+}
+
+/* ============================== UTIL: doodles ============================== */
+.squiggle {
+  display: inline-block;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12'><path d='M2 6 Q 14 0, 26 6 T 50 6 T 74 6 T 98 6 T 118 6' fill='none' stroke='%23F97316' stroke-width='3' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 0.35em;
+  padding-bottom: 0.18em;
+}
+.squiggle.pink { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12'><path d='M2 6 Q 14 0, 26 6 T 50 6 T 74 6 T 98 6 T 118 6' fill='none' stroke='%23E91E63' stroke-width='3' stroke-linecap='round'/></svg>"); }
+.squiggle.teal { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12'><path d='M2 6 Q 14 0, 26 6 T 50 6 T 74 6 T 98 6 T 118 6' fill='none' stroke='%2300C4CC' stroke-width='3' stroke-linecap='round'/></svg>"); }
+.squiggle.yellow { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12'><path d='M2 6 Q 14 0, 26 6 T 50 6 T 74 6 T 98 6 T 118 6' fill='none' stroke='%23FFC93C' stroke-width='3' stroke-linecap='round'/></svg>"); }
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 96px 0 132px;
+  background:
+    radial-gradient(ellipse 80% 70% at 80% 0%, rgba(255,201,60,0.18), transparent 60%),
+    radial-gradient(ellipse 60% 70% at 10% 100%, rgba(0,196,204,0.18), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(4,150,255,0.10), transparent 70%),
+    var(--prussian);
+  color: #fff;
+  position: relative;
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse at 50% 50%, #000 30%, transparent 75%);
+}
+.hero-inner {
+  position: relative; z-index: 3;
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.hero h1 {
+  font-family: var(--head);
+  font-weight: 600;
+  font-size: clamp(48px, 8vw, 116px);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  color: #fff;
+  margin: 0;
+}
+.hero h1 em { font-style: normal; color: #FFC93C; }
+
+.hero-sub {
+  margin: 32px auto 0;
+  max-width: 720px;
+  font-size: 20px; line-height: 1.55;
+  color: rgba(255,255,255,0.82);
+  letter-spacing: -0.005em;
+}
+.hero-cta-row {
+  display: flex; gap: 14px; justify-content: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+.hero-cta-row .btn-primary {
+  background: #FFC93C; color: var(--prussian);
+  border: 2px solid var(--prussian);
+  box-shadow: 6px 6px 0 var(--prussian);
+}
+.hero-cta-row .btn-primary:hover {
+  background: #FFD862;
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--prussian);
+}
+.hero-cta-row .btn-ghost {
+  border-color: rgba(255,255,255,0.4);
+}
+
+/* Floating Kubicle diamond icons */
+.hero .float {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  display: block;
+  filter: drop-shadow(0 12px 30px rgba(0,0,0,0.35));
+  animation: floatBob 6s ease-in-out infinite;
+}
+.hero .float img { width: 100%; height: auto; display: block; }
+.hero .float.s1 { top: 8%;  left: 6%;  width: 132px; --rot: -12deg; animation-delay: 0s;   }
+.hero .float.s2 { top: 14%; right: 7%; width: 104px; --rot: 14deg;  animation-delay: 1.2s; }
+.hero .float.s3 { bottom: 12%; left: 9%; width: 116px; --rot: -6deg;  animation-delay: 2.4s; }
+.hero .float.s4 { bottom: 16%; right: 11%; width: 90px;  --rot: 18deg;  animation-delay: 3.6s; }
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+  50%      { transform: translateY(-12px) rotate(var(--rot, 0deg)); }
+}
+@media (max-width: 900px) {
+  .hero .float.s1 { width: 88px; }
+  .hero .float.s2 { width: 72px; }
+  .hero .float.s3 { width: 80px; }
+  .hero .float.s4 { width: 64px; }
+}
+@media (max-width: 600px) { .hero .float { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero .float { animation: none; transform: rotate(var(--rot, 0deg)); }
+}
+
+/* ============================== BELIEF (callout) ============================== */
+.belief-section {
+  background: #FFFAEC;
+  position: relative;
+}
+.belief-card {
+  max-width: 920px;
+  margin: 0 auto;
+  background: #fff;
+  border: 2px solid var(--prussian);
+  border-radius: 28px;
+  padding: 56px;
+  box-shadow: 10px 10px 0 var(--prussian);
+  position: relative;
+  text-align: center;
+}
+.belief-card::before {
+  content: "";
+  position: absolute;
+  top: -22px; left: 50%; transform: translateX(-50%) rotate(-2deg);
+  width: 120px; height: 30px;
+  background: rgba(255,201,60,0.85);
+  border: 1.5px dashed rgba(11,27,43,0.30);
+}
+.belief-card .qmark {
+  font-family: var(--head); font-size: 96px; font-weight: 700;
+  color: #FF4F8A;
+  line-height: 0.7; height: 36px;
+  margin-bottom: 12px;
+}
+.belief-card .eyebrow {
+  font-family: var(--head); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--steel);
+  margin-bottom: 14px;
+}
+.belief-card blockquote {
+  margin: 0;
+  font-family: var(--head);
+  font-size: clamp(28px, 3.6vw, 48px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--prussian);
+}
+.belief-card blockquote em { font-style: normal; color: #00A8B0; }
+.belief-card .who {
+  margin-top: 28px;
+  font-size: 13.5px; color: var(--steel);
+  letter-spacing: 0.04em;
+}
+.belief-card .who strong { color: var(--prussian); font-weight: 600; }
+@media (max-width: 700px) {
+  .belief-card { padding: 40px 28px; }
+}
+
+/* ============================== VIDEO ============================== */
+.video-section {
+  background: #fff;
+  padding: 120px 0;
+}
+.video-head {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 48px;
+}
+.video-head .eyebrow {
+  font-family: var(--head); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--pink);
+}
+.video-head h2 {
+  font-family: var(--head);
+  font-size: clamp(36px, 4.5vw, 60px);
+  line-height: 1; letter-spacing: -0.04em;
+  font-weight: 600;
+  color: var(--prussian);
+  margin-top: 14px;
+}
+.video-head p {
+  margin-top: 18px;
+  font-size: 17px; line-height: 1.6;
+  color: var(--steel);
+}
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--prussian);
+  box-shadow: 0 40px 80px -30px rgba(11,27,43,0.35);
+  border: 6px solid var(--prussian);
+  transform: rotate(-0.6deg);
+}
+.video-frame iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0; display: block;
+}
+.video-frame::after {
+  content: ""; position: absolute;
+  top: -16px; right: -16px;
+  width: 80px; height: 80px;
+  background: #FFC93C;
+  border: 3px solid var(--prussian);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* ============================== STORY TIMELINE ============================== */
+.story-section {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--alice) 0,
+      var(--alice) 1px,
+      transparent 1px,
+      transparent 80px),
+    repeating-linear-gradient(
+      0deg,
+      var(--alice) 0,
+      var(--alice) 1px,
+      transparent 1px,
+      transparent 80px),
+    #fff;
+}
+.story-head {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 72px;
+}
+.story-head .eyebrow {
+  font-family: var(--head); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: #00A8B0;
+}
+.story-head h2 {
+  font-family: var(--head);
+  font-size: clamp(40px, 5.6vw, 80px);
+  line-height: 0.95; letter-spacing: -0.045em;
+  font-weight: 600;
+  color: var(--prussian);
+  margin-top: 14px;
+}
+.story-head h2 em { font-style: normal; }
+.story-head p {
+  margin-top: 18px;
+  font-size: 17px; line-height: 1.6;
+  color: var(--steel);
+  max-width: 600px; margin-left: auto; margin-right: auto;
+}
+
+.story-list {
+  display: flex; flex-direction: column;
+  gap: 28px;
+  max-width: 1080px; margin: 0 auto;
+}
+.chapter-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 32px;
+  align-items: start;
+  position: relative;
+}
+.chapter-row::before {
+  content: ""; position: absolute;
+  left: 59px; top: 110px;
+  bottom: -28px; width: 3px;
+  background: linear-gradient(to bottom, var(--c, var(--blue)) 0%, transparent 100%);
+  opacity: 0.45;
+  z-index: 0;
+}
+.chapter-row:last-child::before { display: none; }
+.chapter-num {
+  width: 100px; height: 100px;
+  border-radius: 28px;
+  background: var(--c, var(--blue));
+  color: #fff;
+  font-family: var(--head); font-weight: 700;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  border: 3px solid var(--prussian);
+  box-shadow: 5px 5px 0 var(--prussian);
+  transform: rotate(-3deg);
+  position: relative; z-index: 2;
+  flex-shrink: 0;
+}
+.chapter-num .num {
+  font-size: 32px;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.chapter-num .yr {
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  opacity: 0.92;
+}
+.chapter-row.c1 { --c: #FFC93C; }
+.chapter-row.c2 { --c: #FF4F8A; }
+.chapter-row.c3 { --c: #00C4CC; }
+.chapter-row.c4 { --c: #10B981; }
+.chapter-row.c5 { --c: #F97316; }
+.chapter-row.c6 { --c: #0496FF; }
+.chapter-row.c7 { --c: #FFC93C; }
+.chapter-row.c1 .chapter-num,
+.chapter-row.c7 .chapter-num { color: var(--prussian); }
+
+.chapter-card {
+  background: #fff;
+  border: 2px solid var(--prussian);
+  border-radius: 22px;
+  padding: 32px;
+  box-shadow: 6px 6px 0 var(--prussian);
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.chapter-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--prussian);
+}
+.chapter-card .ttl {
+  font-family: var(--head); font-size: 11.5px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--c, var(--blue));
+}
+.chapter-row.c1 .chapter-card .ttl,
+.chapter-row.c7 .chapter-card .ttl { color: #C2540D; }
+.chapter-card h3 {
+  font-family: var(--head); font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 600; letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--prussian);
+  margin: 8px 0 14px;
+}
+.chapter-card p {
+  font-size: 16px; line-height: 1.65;
+  color: var(--steel);
+  max-width: 720px;
+}
+.chapter-card p + p { margin-top: 12px; }
+
+@media (max-width: 700px) {
+  .chapter-row { grid-template-columns: 80px 1fr; gap: 18px; }
+  .chapter-num { width: 72px; height: 72px; border-radius: 20px; }
+  .chapter-num .num { font-size: 24px; }
+  .chapter-num .yr { font-size: 9px; }
+  .chapter-row::before { left: 41px; top: 80px; bottom: -28px; }
+  .chapter-card { padding: 24px; }
+}
+
+/* ============================== STATS BRAG ============================== */
+.stats-section {
+  background:
+    radial-gradient(ellipse 70% 80% at 0% 0%, rgba(233,30,99,0.18), transparent 60%),
+    radial-gradient(ellipse 70% 80% at 100% 100%, rgba(255,201,60,0.18), transparent 60%),
+    var(--prussian);
+  color: #fff;
+}
+.stats-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 56px;
+}
+.stats-head .eyebrow {
+  font-family: var(--head); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: #FFC93C;
+}
+.stats-head h2 {
+  font-family: var(--head);
+  font-size: clamp(36px, 4.6vw, 64px);
+  line-height: 0.95; letter-spacing: -0.04em;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 14px;
+}
+.stats-head h2 em { font-style: normal; color: #FFC93C; }
+
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+@media (max-width: 1000px) { .stats-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px)  { .stats-grid { grid-template-columns: 1fr 1fr; gap: 12px; } }
+
+.stat-card {
+  background: rgba(255,255,255,0.04);
+  border: 2px solid rgba(255,255,255,0.16);
+  border-radius: 22px;
+  padding: 32px 28px;
+  position: relative;
+  transition: transform 0.18s, background 0.18s, border-color 0.18s;
+}
+.stat-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.08);
+  border-color: var(--c, #FFC93C);
+}
+.stat-card .n {
+  font-family: var(--head);
+  font-size: clamp(56px, 6vw, 84px);
+  font-weight: 700;
+  letter-spacing: -0.05em; line-height: 0.9;
+  color: var(--c, #FFC93C);
+}
+.stat-card .n .pc { font-size: 0.55em; }
+.stat-card .l {
+  font-size: 14px; line-height: 1.5;
+  color: rgba(255,255,255,0.78);
+  margin-top: 14px;
+}
+.stat-card.s1 { --c: #FFC93C; }
+.stat-card.s2 { --c: #FF4F8A; }
+.stat-card.s3 { --c: #59E1FF; }
+.stat-card.s4 { --c: #5AE197; }
+
+/* ============================== HIRING / FINAL CTA ============================== */
+.cta-section {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(255,201,60,0.20), transparent 70%),
+    radial-gradient(ellipse 60% 70% at 10% 90%, rgba(233,30,99,0.20), transparent 70%),
+    var(--prussian);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.cta-inner {
+  position: relative; z-index: 3;
+  text-align: center;
+  max-width: 880px;
+  margin: 0 auto;
+}
+.cta-inner h2 {
+  font-family: var(--head);
+  font-size: clamp(40px, 6vw, 88px);
+  line-height: 0.95; letter-spacing: -0.045em;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+.cta-inner h2 em { font-style: normal; color: #FFC93C; }
+.cta-inner p {
+  margin: 28px auto 0;
+  max-width: 600px;
+  font-size: 17.5px; line-height: 1.6;
+  color: rgba(255,255,255,0.82);
+}
+.cta-inner .btn-row {
+  display: flex; gap: 14px; justify-content: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+.cta-inner .btn-primary {
+  background: #FFC93C; color: var(--prussian);
+  border: 2px solid var(--prussian);
+  box-shadow: 6px 6px 0 var(--prussian);
+}
+.cta-inner .btn-primary:hover {
+  background: #FFD862;
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--prussian);
+}
+.cta-inner .btn-ghost { border-color: rgba(255,255,255,0.5); }
+
+.cta-section .float {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 10px 24px rgba(0,0,0,0.30));
+  opacity: 0.7;
+}
+.cta-section .float img { width: 100%; height: auto; display: block; }
+.cta-section .float.f1 { top: 14%; left: 8%; width: 90px; transform: rotate(-12deg); }
+.cta-section .float.f2 { bottom: 18%; right: 10%; width: 110px; transform: rotate(15deg); }
+@media (max-width: 700px) { .cta-section .float { display: none; } }
+</style>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== NAV ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <span class="float s1" aria-hidden="true"><img src="img/icon-yellow.svg" alt=""/></span>
+  <span class="float s2" aria-hidden="true"><img src="img/icon-purple.svg" alt=""/></span>
+  <span class="float s3" aria-hidden="true"><img src="img/icon-green.svg" alt=""/></span>
+  <span class="float s4" aria-hidden="true"><img src="img/icon-blue.svg" alt=""/></span>
+
+  <div class="container">
+    <div class="hero-inner">
+      <h1>
+        Built to solve.<br/>
+        <em>Evolving to lead</em>.
+      </h1>
+      <p class="hero-sub">
+        Kubicle was founded in 2014 with a big mission: solve the costly problem of data
+        illiteracy, and help people thrive in a world defined by change. From one Excel
+        course to over 1,000 lessons, here's how we got here.
+      </p>
+      <div class="hero-cta-row">
+        <a class="btn btn-primary btn-lg" href="#story">Read the story <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost btn-lg" href="working-at-kubicle.html" style="color:#fff;">Meet the team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== BELIEF (callout) ============================== -->
+<section class="belief-section">
+  <div class="container">
+    <div class="belief-card">
+      <div class="qmark">&ldquo;</div>
+      <div class="eyebrow">The simple belief we started from</div>
+      <blockquote>
+        Critical skills training for professionals should be <em>better</em>: faster to access,
+        easier to absorb, and built around the work people actually do.
+      </blockquote>
+      <p class="who"><strong>Kubicle, founded</strong> &middot; Dublin, 2014</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== VIDEO ============================== -->
+<section class="video-section" id="video">
+  <div class="container">
+    <div class="video-head">
+      <div class="eyebrow">Hear it from the founders</div>
+      <h2>The Kubicle story,<br/>in two&#8209;and&#8209;a&#8209;bit minutes.</h2>
+      <p>The mission, the journey since 2014, and where we're headed.</p>
+    </div>
+
+    <div class="video-frame">
+      <iframe
+        src="https://player.mux.com/aL6chCGDB01Jb2cMXwZgp4t43Cc01R901WwxZLOAn1014BY"
+        title="The Kubicle story"
+        allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== STORY TIMELINE ============================== -->
+<section class="story-section" id="story">
+  <div class="container">
+    <div class="story-head">
+      <div class="eyebrow">The journey, chapter by chapter</div>
+      <h2>One Excel course<br/><em>to <span class="squiggle teal">a thousand</span> lessons.</em></h2>
+      <p>The short version of how Kubicle came to be, and what we're building now.</p>
+    </div>
+
+    <div class="story-list">
+      <!-- Chapter 01 -->
+      <div class="chapter-row c1">
+        <div class="chapter-num">
+          <span class="num">01</span>
+          <span class="yr">The Belief</span>
+        </div>
+        <div class="chapter-card">
+          <div class="ttl">A simple belief</div>
+          <h3>Better learning, designed differently.</h3>
+          <p>
+            The founding belief: critical skills training for professionals should be better.
+            Faster to access, easier to absorb, more aligned with the demands of modern
+            business. Not another library of unused courses.
+          </p>
+        </div>
+      </div>
+
+      <!-- Chapter 02 -->
+      <div class="chapter-row c2">
+        <div class="chapter-num">
+          <span class="num">02</span>
+          <span class="yr">2014</span>
+        </div>
+        <div class="chapter-card">
+          <div class="ttl">It all started with Excel</div>
+          <h3>One course. One belief. Day one.</h3>
+          <p>
+            The journey began in 2014 with a single course on Excel. At the time, professionals
+            used Excel daily but training was slow, outdated and hard to apply at the desk.
+            So we built a different kind of course: practical, flexible, designed for how
+            professionals actually learn.
+          </p>
+        </div>
+      </div>
+
+      <!-- Chapter 03 -->
+      <div class="chapter-row c3">
+        <div class="chapter-num">
+          <span class="num">03</span>
+          <span class="yr">2015 &rarr; 2024</span>
+        </div>
+        <div class="chapter-card">
+          <div class="ttl">Expanding the scope</div>
+          <h3>From one tool to a full library.</h3>
+          <p>
+            That first course set the foundation for something bigger. Over the years, the
+            Kubicle library expanded across data visualisation, financial modelling, AI
+            literacy, project management and problem solving. What started as a small
+            solution for a single tool became the learning library a finance or consulting
+            firm could run a whole upskilling program on.
+          </p>
+        </div>
+      </div>
+
+      <!-- Chapter 04 -->
+      <div class="chapter-row c4">
+        <div class="chapter-num">
+          <span class="num">04</span>
+          <span class="yr">Today</span>
+        </div>
+        <div class="chapter-card">
+          <div class="ttl">Knowledge that moves teams forward</div>
+          <h3>Skills that show up at the desk.</h3>
+          <p>
+            Today, Kubicle helps firms upskill their people on the knowledge that actually
+            matters. Not just the technical skills, but the critical thinking, the analysis
+            and the decision&#8209;making that drive performance across teams.
+          </p>
+        </div>
+      </div>
+
+      <!-- Chapter 05 -->
+      <div class="chapter-row c5">
+        <div class="chapter-num">
+          <span class="num">05</span>
+          <span class="yr">The Why</span>
+        </div>
+        <div class="chapter-card">
+          <div class="ttl">Progress depends on people</div>
+          <h3>Helpful isn't the right word.<br/>Essential is.</h3>
+          <p>
+            In fast&#8209;moving industries, the ability to read information, communicate
+            clearly and make sound decisions under pressure is the difference between
+            progress and stagnation. Critical skills aren't a nice&#8209;to&#8209;have any
+            more. They're the work.
+          </p>
+        </div>
+      </div>
+
+      <!-- Chapter 06 -->
+      <div class="chapter-row c6">
+        <div class="chapter-num">
+          <span class="num">06</span>
+          <span class="yr">The How</span>
+        </div>
+        <div class="chapter-card">
+          <div class="ttl">Equip your team for the future</div>
+          <h3>Over 1,000 lessons. One library. Built for business.</h3>
+          <p>
+            Kubicle is designed to meet the moment. Over 1,000 structured lessons across four
+            academies, an enterprise&#8209;grade learning experience built specifically for
+            business teams, and the customer success engagement to keep the rollout on the
+            rails. Close skill gaps, adapt to change, stay ahead of what's next.
+          </p>
+        </div>
+      </div>
+
+      <!-- Chapter 07 -->
+      <div class="chapter-row c7">
+        <div class="chapter-num">
+          <span class="num">07</span>
+          <span class="yr">What's Next</span>
+        </div>
+        <div class="chapter-card">
+          <div class="ttl">Trusted by the firms our work shows up at</div>
+          <h3>Built for today's work, ready for tomorrow's.</h3>
+          <p>
+            We're trusted by some of the leading firms in finance, consulting and professional
+            services, and backed by a team of global subject&#8209;matter experts. But more
+            importantly, we're driven by a clear mission: prepare people not just for today's
+            work, but for tomorrow's.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== STATS BRAG ============================== -->
+<section class="stats-section" id="stats">
+  <div class="container">
+    <div class="stats-head">
+      <div class="eyebrow">Where we are right now</div>
+      <h2>Ten years on,<br/><em>still small enough to care.</em></h2>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card s1">
+        <div class="n">1,000<span class="pc">+</span></div>
+        <div class="l">structured lessons across AI, Data, Finance and Project Management</div>
+      </div>
+      <div class="stat-card s2">
+        <div class="n">1<span class="pc">M+</span></div>
+        <div class="l">learners trained across enterprise rollouts and individual subscriptions</div>
+      </div>
+      <div class="stat-card s3">
+        <div class="n">300<span class="pc">+</span></div>
+        <div class="l">enterprises served with Kubicle's managed training programs</div>
+      </div>
+      <div class="stat-card s4">
+        <div class="n">10<span class="pc">+</span></div>
+        <div class="l">years in market, refreshed continuously by an in&#8209;house content team</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="cta-section" id="next">
+  <span class="float f1" aria-hidden="true"><img src="img/icon-blue.svg" alt=""/></span>
+  <span class="float f2" aria-hidden="true"><img src="img/icon-yellow.svg" alt=""/></span>
+
+  <div class="container">
+    <div class="cta-inner">
+      <h2>
+        We're not done<br/>
+        <em>building it</em>.
+      </h2>
+      <p>
+        Kubicle's next chapter is being written now. Whether you want to learn with us, build
+        with us, or run a managed program with us, the door is open.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary btn-lg" href="../for-business/enterprises.html">Talk to Sales <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost btn-lg" href="working-at-kubicle.html" style="color:#fff;">Working at Kubicle</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<div id="site-footer"></div>
+</body>
+</html>

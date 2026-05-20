@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>AI Use Policy Framework for Companies | Kubicle</title>
+<meta name="description" content="Build a clear, compliant and responsible AI use policy that protects your organisation while enabling innovation. Download the Kubicle AI Adoption Framework."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/resources/guides/ai-use-policy"/>
+
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:title" content="AI Use Policy Framework for Companies"/>
+<meta property="og:description" content="A practical framework, ready-made template and real-world examples to help your organisation build a responsible, compliant AI use policy."/>
+<meta property="og:url" content="https://www.kubicle.com/resources/guides/ai-use-policy"/>
+<meta property="og:image" content="https://www.kubicle.com/img/ai-use-policy/cover.webp"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AI Use Policy Framework for Companies"/>
+<meta name="twitter:description" content="A practical framework, ready-made template and real-world examples for building a responsible, compliant AI use policy."/>
+<meta name="twitter:image" content="https://www.kubicle.com/img/ai-use-policy/cover.webp"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI Use Policy Framework for Companies",
+  "description": "A practical framework, ready-made template and real-world examples to help organisations build a responsible, compliant AI use policy.",
+  "url": "https://www.kubicle.com/resources/guides/ai-use-policy",
+  "image": "https://www.kubicle.com/img/ai-use-policy/cover.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "url": "https://www.kubicle.com",
+    "logo": "https://www.kubicle.com/img/shared/6831119dcb82dac9dd5aea57_logo-white.svg"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Kubicle"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="../../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../../shared/styles/buttons.css"/>
+
+<style>
+/* ============================== RESET ============================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+html { scroll-behavior: smooth; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+body {
+  font-family: var(--body, "Satoshi","Helvetica Neue",Arial,sans-serif);
+  color: var(--prussian);
+  background: #fff;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+section { padding: 96px 0; position: relative; }
+section.alice { background: var(--alice); }
+section.dark { background: var(--prussian); color: #fff; }
+@media (max-width: 700px) { section { padding: 64px 0; } .container { padding: 0 22px; } }
+
+/* ============================== SECTION HEAD ============================== */
+.sec-head { max-width: 760px; }
+.sec-head h2 { margin-top: 16px; }
+.sec-head h2 em { font-style: normal; color: var(--accent); }
+.sec-head .body-lg { margin-top: 22px; color: var(--steel); max-width: 640px; }
+.sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.sec-head.center .body-lg { margin-left: auto; margin-right: auto; }
+.dark .sec-head .body-lg { color: rgba(255,255,255,0.78); }
+.dark .sec-head h2 { color: #fff; }
+
+/* ============================== SECTION CTA ============================== */
+.section-cta {
+  margin-top: 56px;
+  display: flex; justify-content: center;
+}
+.section-cta-inner {
+  display: inline-flex; align-items: center; gap: 18px;
+  padding: 14px 22px 14px 26px;
+  background: #fff;
+  border: 1px solid rgba(11,27,43,0.08);
+  border-radius: 999px;
+  box-shadow: 0 20px 40px -20px rgba(11,27,43,0.18);
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+}
+.section-cta-inner:hover {
+  transform: translateY(-2px);
+  border-color: rgba(4,150,255,0.40);
+  box-shadow: 0 28px 56px -24px rgba(11,27,43,0.28);
+}
+.section-cta-inner .label {
+  font-family: var(--head); font-weight: 500;
+  color: var(--prussian);
+  font-size: 15px;
+  letter-spacing: -0.005em;
+}
+.section-cta-inner .label strong {
+  font-weight: 600;
+  color: var(--accent-d, #0D5F96);
+}
+.section-cta-inner .pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px;
+  background: var(--accent, #0496FF);
+  color: #fff;
+  border-radius: 999px;
+  font-family: var(--head); font-weight: 600; font-size: 13.5px;
+  letter-spacing: 0.005em;
+  transition: background 0.15s, gap 0.15s;
+}
+.section-cta-inner:hover .pill { background: var(--accent-d, #0D5F96); gap: 12px; }
+.section-cta-inner .pill svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 640px) {
+  .section-cta-inner {
+    flex-direction: column; align-items: stretch; text-align: center;
+    padding: 18px 22px;
+    border-radius: 18px;
+  }
+  .section-cta-inner .pill { justify-content: center; }
+}
+
+/* Dark variant for dark sections */
+section.dark .section-cta-inner,
+section.adecco .section-cta-inner {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.16);
+  box-shadow: 0 20px 40px -20px rgba(0,0,0,0.40);
+}
+section.dark .section-cta-inner:hover,
+section.adecco .section-cta-inner:hover {
+  border-color: rgba(4,150,255,0.55);
+  background: rgba(255,255,255,0.10);
+}
+section.dark .section-cta-inner .label,
+section.adecco .section-cta-inner .label { color: rgba(255,255,255,0.88); }
+section.dark .section-cta-inner .label strong,
+section.adecco .section-cta-inner .label strong { color: #fff; }
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 112px 0 80px;
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 30%, rgba(4,150,255,0.12), transparent 70%),
+    linear-gradient(180deg, #FBFCFD 0%, #F4F8FC 100%);
+  color: var(--prussian);
+  position: relative; overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.hero .eyebrow { color: var(--accent); }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub {
+  color: var(--steel);
+  font-size: 19px; line-height: 1.55;
+  letter-spacing: -0.01em;
+  margin-top: 22px;
+  max-width: 560px;
+}
+.hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 32px; }
+.hero-visual {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--prussian);
+  box-shadow: 0 40px 100px -36px rgba(11,27,43,0.40), 0 8px 24px -10px rgba(11,27,43,0.12);
+}
+.hero-visual img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+@media (max-width: 1000px) {
+  .hero { padding: 80px 0 56px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { max-width: 540px; margin: 0 auto; }
+}
+
+/* ============================== ADECCO QUOTE ============================== */
+.adecco {
+  padding: 112px 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 100% 0%, rgba(4,150,255,0.25), transparent 65%),
+    radial-gradient(ellipse 50% 70% at 0% 100%, rgba(0,196,204,0.18), transparent 65%),
+    var(--prussian);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.adecco::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('../../img/ai-use-policy/bg-shapes.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+.adecco .container { position: relative; z-index: 1; }
+.adecco .eyebrow {
+  display: block;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 16px;
+  letter-spacing: 0.14em;
+}
+.adecco-stats {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 32px;
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+@media (max-width: 800px) {
+  .adecco { padding: 80px 0; }
+  .adecco-stats { grid-template-columns: 1fr; gap: 28px; }
+  .adecco-stats .yet { display: none; }
+}
+.adecco-stat { text-align: center; }
+.adecco-stat .figure {
+  font-family: var(--head);
+  font-size: clamp(88px, 10vw, 140px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #fff;
+  display: inline-block;
+  padding: 0 4px;
+}
+.adecco-stat .figure sup {
+  font-size: 0.45em;
+  vertical-align: 0.55em;
+  font-weight: 600;
+  margin-left: 4px;
+  color: var(--accent);
+}
+.adecco-stat .caption {
+  margin-top: 36px;
+  font-family: var(--body);
+  font-size: clamp(19px, 1.8vw, 23px);
+  font-weight: 400; line-height: 1.5;
+  color: rgba(255,255,255,0.88);
+  letter-spacing: -0.005em;
+  max-width: 380px;
+  margin-left: auto; margin-right: auto;
+}
+.adecco-stats .yet {
+  font-family: var(--head);
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 600;
+  font-style: italic;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: -0.01em;
+}
+.adecco-source {
+  margin-top: 56px;
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+}
+.adecco-source .line {
+  height: 1px; width: 48px;
+  background: rgba(255,255,255,0.30);
+}
+.adecco-source .name {
+  font-family: var(--head); font-size: 12.5px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+}
+
+/* ============================== RISK GRID ============================== */
+.risk-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+@media (max-width: 1000px) { .risk-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 700px)  { .risk-grid { grid-template-columns: 1fr; } }
+.risk-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 28px;
+  display: flex; flex-direction: column;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.risk-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(4,150,255,0.30);
+  box-shadow: 0 24px 60px -28px rgba(11,27,43,0.18);
+}
+.risk-card .r-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: var(--alice);
+  color: var(--accent-d, #0D5F96);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+}
+.risk-card .r-icon svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.risk-card h3 {
+  font-family: var(--head); font-size: 18px; font-weight: 600;
+  color: var(--prussian); letter-spacing: -0.01em;
+}
+.risk-card p {
+  margin-top: 10px; font-size: 14px; line-height: 1.55; color: var(--steel);
+}
+
+/* ============================== INSIDE FRAMEWORK ============================== */
+.inside-split {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 0.95fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 1000px) { .inside-split { grid-template-columns: 1fr; gap: 40px; } }
+.inside-peek {
+  position: relative;
+}
+.inside-peek .peek-card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px -30px rgba(11,27,43,0.30), 0 8px 24px -10px rgba(11,27,43,0.10);
+  background: #fff;
+  border: 1px solid var(--alice);
+}
+.inside-peek .peek-card img { width: 100%; display: block; }
+.inside-peek .peek-1 {
+  position: absolute;
+  top: 0; left: 0;
+  width: 70%;
+  transform: rotate(-3deg);
+  z-index: 1;
+}
+.inside-peek .peek-2 {
+  position: relative;
+  margin-left: 26%;
+  width: 74%;
+  transform: rotate(2deg);
+  z-index: 2;
+}
+.inside-content .feat-row {
+  display: grid; grid-template-columns: 56px 1fr; gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--alice);
+}
+.inside-content .feat-row:last-child { border-bottom: 0; }
+.inside-content .feat-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: var(--accent-soft, #D6EEFF);
+  color: var(--accent-d, #0D5F96);
+  display: flex; align-items: center; justify-content: center;
+}
+.inside-content .feat-icon svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.inside-content h3 {
+  font-family: var(--head); font-size: 19px; font-weight: 600;
+  color: var(--prussian); letter-spacing: -0.01em;
+}
+.inside-content p { margin-top: 8px; font-size: 14.5px; line-height: 1.55; color: var(--steel); }
+
+/* ============================== REAL-WORLD EXAMPLES ============================== */
+.examples-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 900px) { .examples-grid { grid-template-columns: 1fr; } }
+.example-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 22px;
+  padding: 32px;
+  transition: transform 0.18s, border-color 0.18s, background 0.18s;
+}
+.example-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(4,150,255,0.40);
+  background: rgba(255,255,255,0.06);
+}
+.example-card .ex-co {
+  font-family: var(--head); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent);
+}
+.example-card h4 {
+  margin-top: 10px;
+  font-family: var(--head); font-size: 22px; font-weight: 600;
+  color: #fff; letter-spacing: -0.015em; line-height: 1.25;
+}
+.example-card p {
+  margin-top: 14px; font-size: 14.5px; line-height: 1.6;
+  color: rgba(255,255,255,0.80);
+}
+
+/* ============================== TRAINING SECTION ============================== */
+.training-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 1000px) { .training-grid { grid-template-columns: 1fr; gap: 40px; } }
+.training-visual {
+  background: linear-gradient(180deg, #FBFCFD 0%, #F4F8FC 100%);
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 32px;
+}
+.training-visual h4 {
+  font-family: var(--head); font-size: 18px; font-weight: 600;
+  color: var(--prussian);
+  letter-spacing: -0.005em;
+  margin-bottom: 18px;
+}
+.training-visual .stack-list { display: grid; gap: 10px; }
+.training-visual .stack-list .row {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: start;
+  padding: 14px 16px;
+  background: #fff;
+  border-radius: 12px;
+  border-left: 4px solid var(--c, var(--accent));
+  font-size: 14px;
+}
+.training-visual .stack-list .row .row-body { min-width: 0; }
+.training-visual .stack-list .row .row-title {
+  font-family: var(--head); font-weight: 600; color: var(--prussian);
+  font-size: 14.5px;
+}
+.training-visual .stack-list .row .row-desc {
+  margin-top: 4px;
+  font-size: 13px; line-height: 1.45; color: var(--steel);
+}
+.training-visual .stack-list .row .p-tier {
+  display: inline-flex; gap: 3px; align-items: center;
+  flex-shrink: 0;
+  padding-top: 6px;
+}
+.training-visual .stack-list .row .p-seg {
+  width: 14px; height: 5px;
+  border-radius: 2px;
+  background: rgba(11,27,43,0.12);
+}
+.training-visual .stack-list .row .p-seg.on { background: var(--c, var(--accent)); }
+.training-visual .stack-list .row.ai { --c: #00C4CC; }
+.training-visual .stack-list .row .dot {
+  width: 10px; height: 10px; border-radius: 999px; background: var(--c);
+  margin-top: 6px;
+}
+.training-visual .ai-subjects {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(11,27,43,0.08);
+}
+.training-visual .ai-sub-label {
+  font-family: var(--body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--steel);
+}
+.training-visual .ai-sub-pills {
+  margin-top: 10px;
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.training-visual .ai-sub-pills a {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #fff;
+  border: 1px solid rgba(0,196,204,0.30);
+  border-radius: 999px;
+  font-family: var(--head); font-size: 12.5px; font-weight: 600;
+  color: #008B91;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.training-visual .ai-sub-pills a:hover {
+  background: #00C4CC;
+  color: #fff;
+  border-color: #00C4CC;
+}
+
+/* ============================== FINAL CTA ============================== */
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+  position: relative; overflow: hidden;
+}
+.final-cta .eyebrow { color: var(--accent); }
+.final-cta h2 { color: #fff; }
+.final-cta h2 em { font-style: normal; color: var(--accent); }
+.final-cta .body-lg { color: rgba(255,255,255,0.82); max-width: 760px; margin-top: 22px; }
+.final-cta .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+</style>
+
+<script src="../../shared/nav.js" defer></script>
+<script src="../../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== NAV ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">AI Adoption Framework</div>
+        <h1 class="h-display" style="margin-top: 14px;">
+          AI Use Policy framework <em>for companies.</em>
+        </h1>
+        <p class="hero-sub">
+          Build a clear, compliant and responsible AI use policy that protects your organisation while
+          enabling innovation. A practical step-by-step framework, ready-made template, and real-world
+          examples in one downloadable PDF.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary btn-lg" href="../../Case_Study_pdfs/689ca04497172f8f88659553_ai-use-policy-compressed.pdf" download>
+            Download the AI Adoption Framework <span class="arr">&rarr;</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="../../img/hero-home.jpg" alt="A modern workplace scene representing enterprise AI adoption" loading="eager"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ADECCO QUOTE ============================== -->
+<section class="adecco">
+  <div class="container">
+    <div class="eyebrow">The Gap, in Numbers</div>
+    <div class="adecco-stats">
+      <div class="adecco-stat">
+        <div class="figure">60<sup>%</sup></div>
+        <div class="caption">of leaders expect employees to update their skills for AI</div>
+      </div>
+      <div class="yet">yet</div>
+      <div class="adecco-stat">
+        <div class="figure">34<sup>%</sup></div>
+        <div class="caption">of companies have no policy for using AI at work</div>
+      </div>
+    </div>
+    <div class="adecco-source">
+      <span class="line"></span>
+      <span class="name">The Adecco Group</span>
+      <span class="line"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== WHY YOU NEED ONE ============================== -->
+<section id="why">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" style="color: var(--accent);">Why your company needs one</div>
+      <h2 class="h-xl">Organisations adopting AI without a structured approach <em>face real risks.</em></h2>
+      <p class="body-lg">
+        Without an AI use policy in place, even well-intentioned employees can expose the organisation to
+        data leaks, compliance violations, and reputational damage. Here are the five risks the framework
+        helps you control.
+      </p>
+    </div>
+
+    <div class="risk-grid">
+      <div class="risk-card">
+        <div class="r-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 8v5"/><circle cx="12" cy="16.5" r="0.6" fill="currentColor"/></svg>
+        </div>
+        <h3>Reputation at risk</h3>
+        <p>
+          A single misuse of public AI can become a headline. Without clear guardrails, a single
+          employee's prompt can damage years of brand trust.
+        </p>
+      </div>
+      <div class="risk-card">
+        <div class="r-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3>Data leaks and fines</h3>
+        <p>
+          Employees pasting confidential code or customer data into public AI tools have already cost
+          Amazon and Samsung major incidents. Without rules, your data is one prompt away from leaving.
+        </p>
+      </div>
+      <div class="risk-card">
+        <div class="r-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        </div>
+        <h3>Weak control</h3>
+        <p>
+          Without an AI governance policy in place, leaders have no oversight of which tools teams are
+          using, what they are feeding them or whether outputs are trustworthy.
+        </p>
+      </div>
+      <div class="risk-card">
+        <div class="r-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s-7-4-7-12a7 7 0 0 1 14 0c0 8-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </div>
+        <h3>Misuse and bias</h3>
+        <p>
+          Unchecked AI models can amplify bias and discrimination, with legal and ethical consequences.
+          A policy mandates bias review and human-in-the-loop for high-stakes decisions.
+        </p>
+      </div>
+      <div class="risk-card">
+        <div class="r-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 13h6M9 17h4"/></svg>
+        </div>
+        <h3>Regulatory pressure</h3>
+        <p>
+          The EU AI Act, GDPR and emerging US state laws demand documented AI governance and "sufficient
+          AI literacy" inside organisations. A policy is the foundation for compliance.
+        </p>
+      </div>
+      <div class="risk-card">
+        <div class="r-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
+        </div>
+        <h3>Wasted investment</h3>
+        <p>
+          Without standards, every team adopts different tools at different paces. Budgets bleed,
+          outcomes diverge and the ROI of AI adoption never lands.
+        </p>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a class="section-cta-inner" href="../../Case_Study_pdfs/689ca04497172f8f88659553_ai-use-policy-compressed.pdf" download>
+        <span class="label">See how each risk is controlled. <strong>Get the framework.</strong></span>
+        <span class="pill">Download <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== INSIDE THE FRAMEWORK ============================== -->
+<section class="alice" id="inside">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" style="color: var(--accent);">Inside the framework</div>
+      <h2 class="h-xl">The responsible AI policy <em>playbook, in one PDF.</em></h2>
+      <p class="body-lg">
+        This free guide provides the structure and clarity you need to create or refine your AI policy.
+        Built from real enterprise rollouts, including what to copy and what to avoid.
+      </p>
+    </div>
+
+    <div class="inside-split">
+      <div class="inside-peek">
+        <div class="peek-card peek-1"><img src="../../img/ai-use-policy/peek-1.webp" alt="Preview of the AI Use Policy framework, key reasons page"/></div>
+        <div class="peek-card peek-2"><img src="../../img/ai-use-policy/peek-2.webp" alt="Preview of the AI Use Policy framework, permitted uses page"/></div>
+      </div>
+      <div class="inside-content">
+        <div class="feat-row">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </div>
+          <div>
+            <h3>Step-by-step framework</h3>
+            <p>A structured AI adoption framework that walks your organisation through each stage of creating and implementing an AI use policy, from initial audit to ongoing review.</p>
+          </div>
+        </div>
+        <div class="feat-row">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div>
+            <h3>Ready-made template</h3>
+            <p>A company AI policy template that spells out permitted uses ("green lights") and prohibited uses ("red lines"), giving teams clear rules they can follow with confidence.</p>
+          </div>
+        </div>
+        <div class="feat-row">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20z"/></svg>
+          </div>
+          <div>
+            <h3>Compliance made simple</h3>
+            <p>Develop a responsible AI policy that enables innovation while ensuring your business stays compliant with GDPR, the EU AI Act, and sector-specific regulations.</p>
+          </div>
+        </div>
+        <div class="feat-row">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div>
+            <h3>Real-world examples</h3>
+            <p>Practical cases (Amazon, Samsung and more) of how an AI governance policy would have prevented data leaks, supported safe scaling and built trust across the enterprise.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a class="section-cta-inner" href="../../Case_Study_pdfs/689ca04497172f8f88659553_ai-use-policy-compressed.pdf" download>
+        <span class="label">Read the full <strong>19-page framework</strong> with template and examples.</span>
+        <span class="pill">Download <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== REAL-WORLD INCIDENTS ============================== -->
+<section class="dark" id="incidents">
+  <div class="container">
+    <div class="sec-head" style="max-width: 800px;">
+      <div class="eyebrow" style="color: var(--accent);">Lessons from the wake-up calls</div>
+      <h2 class="h-xl">Two incidents that made every CISO update <em>their AI rules.</em></h2>
+      <p class="body-lg">
+        These are the kind of stories the framework helps you prevent. Both happened to organisations
+        with mature security programs. Neither happened with malice.
+      </p>
+    </div>
+
+    <div class="examples-grid">
+      <div class="example-card">
+        <div class="ex-co">Amazon &middot; ChatGPT</div>
+        <h4>Proprietary code leaked into a public AI prompt</h4>
+        <p>
+          Amazon employees pasted proprietary source code into ChatGPT to debug it. ChatGPT later
+          produced outputs containing Amazon's internal data, raising a serious concern that
+          confidential information could surface in another user's results.
+        </p>
+      </div>
+      <div class="example-card">
+        <div class="ex-co">Samsung &middot; ChatGPT</div>
+        <h4>Confidential chip design fed into an external chatbot</h4>
+        <p>
+          Samsung engineers input confidential chip design code into a public AI chatbot. The data was
+          stored on external servers outside company control, triggering an immediate internal ban on
+          generative AI tools and a rewrite of their AI policy.
+        </p>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a class="section-cta-inner" href="../../Case_Study_pdfs/689ca04497172f8f88659553_ai-use-policy-compressed.pdf" download>
+        <span class="label">Don't be next. <strong>Get the policy that prevents these incidents.</strong></span>
+        <span class="pill">Download <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== BEYOND THE POLICY: TRAINING ============================== -->
+<section id="training">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" style="color: var(--accent);">Beyond the policy</div>
+      <h2 class="h-xl">A policy is the rulebook. <em>Training is the muscle memory.</em></h2>
+      <p class="body-lg">
+        Building a strong AI use policy is the first step. The next is equipping every employee with the
+        skills to apply it. Kubicle delivers enterprise AI literacy training trusted by Fortune 500
+        companies, professional service firms and government bodies.
+      </p>
+    </div>
+
+    <div class="training-grid">
+      <div class="inside-content">
+        <div class="feat-row">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7-5.5-4h7z"/></svg>
+          </div>
+          <div>
+            <h3>AI literacy for the workforce</h3>
+            <p>Four-tier AI Literacy Academy: AI Apprentice, Navigator, Architect and Strategist. Every employee from intern to executive lands on the right pathway.</p>
+          </div>
+        </div>
+        <div class="feat-row">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div>
+            <h3>Accredited credentials</h3>
+            <p>Course exams earn CPD, CPE and NASBA accreditation, so your training also delivers proof of literacy required by the EU AI Act.</p>
+          </div>
+        </div>
+        <div class="feat-row">
+          <div class="feat-icon">
+            <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M3 22v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3a4 4 0 0 1 0 8M21 22v-2a4 4 0 0 0-3-3.87"/></svg>
+          </div>
+          <div>
+            <h3>Tailored to your roles</h3>
+            <p>Persona-mapped pathways for every level: the intern and graduate, the early-career hire, the data-fluent project lead, the senior leader.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="training-visual">
+        <h4>The AI Literacy Academy, tier by tier</h4>
+        <div class="stack-list">
+          <div class="row ai">
+            <span class="dot"></span>
+            <div class="row-body">
+              <div class="row-title">AI Apprentice</div>
+              <div class="row-desc">Day-one safe use of AI tools. What AI is, what it is not, and the policy red lines every employee must know.</div>
+            </div>
+            <span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span>
+          </div>
+          <div class="row ai">
+            <span class="dot"></span>
+            <div class="row-body">
+              <div class="row-title">AI Navigator</div>
+              <div class="row-desc">Practical prompt engineering, data handling and AI ethics for analysts and operators.</div>
+            </div>
+            <span class="p-tier" aria-label="Tier 2 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span>
+          </div>
+          <div class="row ai">
+            <span class="dot"></span>
+            <div class="row-body">
+              <div class="row-title">AI Architect</div>
+              <div class="row-desc">Technical AI for builders. Model selection, machine learning in Python, and secure deployment.</div>
+            </div>
+            <span class="p-tier" aria-label="Tier 3 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span></span>
+          </div>
+          <div class="row ai">
+            <span class="dot"></span>
+            <div class="row-body">
+              <div class="row-title">AI Strategist</div>
+              <div class="row-desc">Governance, EU AI Act compliance and the executive decisions behind enterprise AI adoption.</div>
+            </div>
+            <span class="p-tier" aria-label="Tier 4 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span></span>
+          </div>
+        </div>
+        <div class="ai-subjects">
+          <div class="ai-sub-label">Anchored in Kubicle subjects</div>
+          <div class="ai-sub-pills">
+            <a href="../../courses/ai-fundamentals.html">AI Fundamentals</a>
+            <a href="../../courses/machine-learning-python.html">Machine Learning with Python</a>
+            <a href="../../courses/data-ethics-risk.html">Data Ethics &amp; Risk</a>
+            <a href="../../courses/data-regulation.html">Data Regulation</a>
+          </div>
+        </div>
+        <p style="margin-top: 18px; font-size: 13px; color: var(--steel); line-height: 1.5;">
+          See the full pathway on the <a href="../../academies/ai/index.html" style="color: var(--accent-d, #0D5F96); border-bottom: 1px solid rgba(13,95,150,0.30);">AI Literacy Academy page</a>.
+        </p>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a class="section-cta-inner" href="../../Case_Study_pdfs/689ca04497172f8f88659553_ai-use-policy-compressed.pdf" download>
+        <span class="label">Start with the rulebook. <strong>Get the framework.</strong></span>
+        <span class="pill">Download <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="final-cta" id="get-it">
+  <div class="container">
+    <div style="max-width: 920px;">
+      <div class="eyebrow">Get the framework</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Need help implementing your AI policy <em>across teams?</em>
+      </h2>
+      <p class="body-lg">
+        Download the framework, then talk to a Kubicle program designer about
+        rolling AI literacy across your workforce in days, not quarters.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="../../Case_Study_pdfs/689ca04497172f8f88659553_ai-use-policy-compressed.pdf" download>
+          Download the framework <span class="arr">&rarr;</span>
+        </a>
+        <a class="btn btn-ghost btn-lg" href="../../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<div id="site-footer"></div>
+
+</body>
+</html>

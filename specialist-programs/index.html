@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<title>Specialist Programs | Kubicle</title>
+<meta name="description" content="Kubicle's specialist programs target specific workforce moments. The Graduate Development Program accelerates work-readiness for recent graduates and early-career hires."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/specialist-programs"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:title" content="Kubicle Specialist Programs"/>
+<meta property="og:description" content="Targeted training programs for specific workforce moments. Graduates, early-career hires and more."/>
+<meta property="og:url" content="https://www.kubicle.com/specialist-programs"/>
+<meta property="og:image" content="https://www.kubicle.com/img/grad-program/hero-graphic.png"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Kubicle Specialist Programs"/>
+<meta name="twitter:description" content="Targeted training programs for specific workforce moments."/>
+<meta name="twitter:image" content="https://www.kubicle.com/img/grad-program/hero-graphic.png"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Kubicle Specialist Programs",
+  "description": "Targeted Kubicle training programs for specific workforce moments.",
+  "url": "https://www.kubicle.com/specialist-programs",
+  "isPartOf": { "@type": "WebSite", "name": "Kubicle", "url": "https://www.kubicle.com" }
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+body { font-family: var(--body, "Satoshi","Helvetica Neue",Arial,sans-serif); color: var(--prussian); background: #fff; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+section { padding: 96px 0; position: relative; }
+@media (max-width: 700px) { section { padding: 64px 0; } .container { padding: 0 22px; } }
+
+.sec-head { max-width: 760px; }
+.sec-head h2 { margin-top: 16px; }
+.sec-head h2 em { font-style: normal; color: var(--accent); }
+.sec-head .body-lg { margin-top: 22px; color: var(--steel); max-width: 640px; }
+
+.hero {
+  padding: 112px 0 80px;
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 30%, rgba(4,150,255,0.10), transparent 70%),
+    linear-gradient(180deg, #FBFCFD 0%, #F4F8FC 100%);
+}
+.hero .eyebrow { color: var(--accent); }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { color: var(--steel); font-size: 19px; line-height: 1.55; margin-top: 22px; max-width: 640px; }
+
+.program-grid {
+  margin-top: 56px;
+  display: grid; grid-template-columns: 1fr; gap: 24px;
+}
+.program-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 32px;
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px;
+  align-items: center;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+@media (max-width: 800px) { .program-card { grid-template-columns: 1fr; } }
+.program-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(4,150,255,0.30);
+  box-shadow: 0 24px 60px -28px rgba(11,27,43,0.18);
+}
+.program-card .p-num {
+  font-family: var(--body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent-d, #0D5F96);
+}
+.program-card h3 {
+  margin-top: 10px;
+  font-family: var(--head); font-size: 28px; font-weight: 600;
+  color: var(--prussian); letter-spacing: -0.02em;
+}
+.program-card p { margin-top: 14px; font-size: 15.5px; line-height: 1.6; color: var(--steel); }
+.program-card .p-stat-row {
+  margin-top: 22px;
+  display: flex; gap: 24px; flex-wrap: wrap;
+}
+.program-card .stat strong {
+  font-family: var(--head); font-size: 22px; font-weight: 600;
+  color: var(--prussian); letter-spacing: -0.02em; display: block;
+}
+.program-card .stat span { font-size: 12px; color: var(--steel); letter-spacing: 0.05em; }
+.program-card .p-cta {
+  margin-top: 28px;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--head); font-weight: 600; font-size: 14.5px;
+  color: var(--accent-d, #0D5F96);
+}
+.program-card .p-visual {
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--alice);
+  aspect-ratio: 4 / 3;
+}
+.program-card .p-visual img { width: 100%; height: 100%; object-fit: cover; }
+
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+}
+.final-cta .eyebrow { color: var(--accent); }
+.final-cta h2 { color: #fff; }
+.final-cta h2 em { font-style: normal; color: var(--accent); }
+.final-cta .body-lg { color: rgba(255,255,255,0.82); max-width: 760px; margin-top: 22px; }
+.final-cta .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+</style>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<div id="site-nav"></div>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Specialist Programs</div>
+    <h1 class="h-display" style="margin-top: 14px;">Programs for <em>specific workforce moments.</em></h1>
+    <p class="hero-sub">
+      Beyond the core academies, Kubicle runs targeted programs for the moments that matter most. Today
+      that's the Graduate Development Program; more cohort-specific programs are on the way.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="program-grid">
+
+      <a class="program-card" href="graduate-program.html">
+        <div>
+          <div class="p-num">Program 01</div>
+          <h3>Graduate Development Program</h3>
+          <p>
+            A five-semester program that accelerates work-readiness for recent graduates. Real skills,
+            practical tools and guided projects calibrated to the intern, graduate and early-career hire.
+          </p>
+          <div class="p-stat-row">
+            <div class="stat"><strong>35%</strong><span>FASTER TIME TO FIRST PROJECT</span></div>
+            <div class="stat"><strong>86%</strong><span>COURSE COMPLETION</span></div>
+            <div class="stat"><strong>5</strong><span>SEMESTERS</span></div>
+          </div>
+          <span class="p-cta">Explore the program &rarr;</span>
+        </div>
+        <div class="p-visual">
+          <img src="../img/grad-program/hero-graphic.png" alt="Graduate cohort working through Kubicle pathways"/>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <div style="max-width: 920px;">
+      <div class="eyebrow">Need something tailored?</div>
+      <h2 class="h-xl" style="margin-top: 16px;">Talk to us about <em>a custom cohort.</em></h2>
+      <p class="body-lg">
+        Specialist programs are how we package Kubicle for specific workforce moments. If you have a
+        cohort with a unique need (early careers, leadership, lateral hires) we can shape a program around
+        them.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost btn-lg" href="../for-business/custom-learning-design.html">Custom Learning Design <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+</body>
+</html>

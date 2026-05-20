@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>How To Project Cash Flows After a Leveraged Buyout | Kubicle Blog</title>
+<meta name="description" content="Cash flows after a leveraged buyout can suffer as a result of taking on debt, the standard practice in the leveraged buyout (LBO) process. For the LBO to work, it’s essential that..."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/blog/how-to-project-cash-flows-after-a-leveraged-buyout"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:url" content="https://www.kubicle.com/blog/how-to-project-cash-flows-after-a-leveraged-buyout"/>
+<meta property="og:title" content="How To Project Cash Flows After a Leveraged Buyout"/>
+<meta property="og:description" content="Cash flows after a leveraged buyout can suffer as a result of taking on debt, the standard practice in the leveraged buyout (LBO) process. For the LBO to work, it’s essential that..."/>
+<meta property="og:image" content="img/posts/690e247d418880763cd9f8ff_47.jpg"/>
+<meta property="article:published_time" content="2018-07-23"/>
+<meta property="article:section" content="Financial Modeling"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@kubicle"/>
+<meta name="twitter:title" content="How To Project Cash Flows After a Leveraged Buyout"/>
+<meta name="twitter:description" content="Cash flows after a leveraged buyout can suffer as a result of taking on debt, the standard practice in the leveraged buyout (LBO) process. For the LBO to work, it’s essential that..."/>
+<meta name="twitter:image" content="img/posts/690e247d418880763cd9f8ff_47.jpg"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How To Project Cash Flows After a Leveraged Buyout",
+  "image": "img/posts/690e247d418880763cd9f8ff_47.jpg",
+  "datePublished": "2018-07-23",
+  "author": { "@type": "Organization", "name": "Kubicle", "url": "https://www.kubicle.com" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "logo": { "@type": "ImageObject", "url": "img/posts/6929dc95a88edc17d8e3a3e4_LOGO-FILES-LOGO-MARK-WHITE-RGB-1.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.kubicle.com/blog/how-to-project-cash-flows-after-a-leveraged-buyout" },
+  "articleSection": "Financial Modeling"
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+<link rel="stylesheet" href="blog.css"/>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<div id="site-nav"></div>
+
+<!-- POST HEAD -->
+<section class="post-head">
+  <div class="container">
+    <div class="inner">
+      <div class="text">
+        <div class="crumb">
+          <a href="../index.html">Resources</a>
+          <span class="sep">/</span>
+          <a href="index.html">Blog</a>
+          <span class="sep">/</span>
+          <a href="topic/financial-modeling.html" class="now">Financial Modeling</a>
+        </div>
+        <h1>How To Project Cash Flows After a Leveraged Buyout</h1>
+        <div class="meta">
+          <a href="topic/financial-modeling.html" class="type-chip">Financial Modeling</a>
+          <span>23 Jul 2018</span>
+          <span class="dot"></span>
+          <span>4 min read</span>
+        </div>
+      </div>
+      <div class="cover-frame">
+        <img src="img/posts/690e247d418880763cd9f8ff_47.jpg" alt="How To Project Cash Flows After a Leveraged Buyout" loading="eager" decoding="async"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY + STICKY ASIDE -->
+<section class="post-body-section">
+  <div class="container">
+    <div class="post-body-layout">
+      <article class="post-body">
+<p>Cash flows after a leveraged buyout can suffer as a result of taking on debt, the standard practice in the leveraged buyout (LBO) process. For the LBO to work, it’s essential that the acquired company can afford the debt repayments that arise as a result of the transaction. This requires the company to have sufficient cash available to meet these debt repayments. As a result, studying the impact of a debt schedule on cash flow is an important part of the LBO modeling process.</p><p>In this post, we are modeling an LBO involving a company called MarkerCo, which is being acquired by a private equity firm, PrivEq. In this post, we’ll see examine MarkerCo cash flows after a leveraged buyout.</p><p>Our focus in this blog post is not on preparing cash flow projections into the future. We are assuming these have already been prepared. We are focusing on the impact of newly acquired debt on these cash flow projections. We will focus on preparing the following cash flow analysis. Note that our transaction takes place in 2016, so we are making a 5-year projection here, running from 2016 to 2020.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Cash flow statement snapshot" src="img/posts/690e247d418880763cd9f903_683ed71b94d80e282c7df0cf_image-85.jpg" width="auto" height="auto" loading="auto"></div></figure><h2>Cash available for Debt Repayment</h2><p>The amount of cash available for debt repayment determines whether the new debt is likely to be sustainable or not. To calculate the amount of cash available in a given year, we start by identifying the beginning cash for the year. For 2016, this can be found in the statement of cash flows. For other years, the beginning cash will be the ending cash for the previous year. We’ll see how this is calculated soon. We then add free cash flows, which refers to the net increase or decrease in cash for the year. Free cash flows are obtained from the cash flow statement.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Cash flow statement snapshot (2)" src="img/posts/690e247d418880763cd9f901_683ed71b74fc38c815643c3b_image-86.jpg" width="auto" height="auto" loading="auto"></div></figure><p>Finally, we need to consider the minimum cash balance. This is the amount of cash the company wants to retain on hand at all times. As this cash is not available for debt payments, we subtract it to find the cash available for debt repayment. The minimum cash balance is defined in the LBO model as a transaction assumption. To learn more about transaction assumptions, <a href="https://kubicle.com/how-to-create-transaction-assumptions-for-leveraged-buyouts">read this post</a>.</p><p>In the case of MarkerCo, the amount of cash available for debt repayment falls dramatically over time. We can see that the beginning cash declines sharply each year. As we will soon see, this is because free cash flows are not generating enough cash to fund debt payments. The high minimum cash balance also proves to be a problem.</p><h2>Cash used in Debt Repayment</h2><p>Once we have established how much cash is available for debt repayment, we must calculate how much cash will actually be used to for debt repayments.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Cash used in debt repayment snapshot" src="img/posts/690e247d418880763cd9f902_683ed71b51c824411f75d370_image-87.jpg" width="auto" height="auto" loading="auto"></div></figure><p>This section adds up the total principal repayments, either mandatory or optional, that are incurred every year. We can find the relevant figures in <a href="https://kubicle.com/how-to-build-the-debt-schedule-for-a-leveraged-buyout">the debt schedule</a>. (Read this post to learn more about the debt schedule for this transaction). In this case, there are two debt instruments: Senior Notes and Subordinated Notes. Only the Senior Notes require the principal to be repaid in the next five years, at a constant rate of 20% per year. As a result, the repayments, and the cash used to make them, are the same in each year from 2016 to 2020.</p><h2>Cash Flow Positions</h2><p>Once we have determined how much cash is spent on debt repayments, we can track the projected cash flow position of MarkerCo over the five years to 2020. The beginning cash for 2016 is obtained from the statement of cash flows. The net change in cash is calculated as the free cash flows (found in the cash flow statement or the section on Cash available for Debt Repayment) minus the cash spent on debt repayments. As we can see, the ending cash for one year then becomes the beginning cash for the next year.</p><figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image" data-rt-align="center"><div><img alt="Cash flow position statement snapshot" src="img/posts/690e247d418880763cd9f8fe_683ed71bd505ce2d88764de2_image-88.jpg" width="auto" height="auto" loading="auto"></div></figure><p>In this case, the net change in cash is negative every year. This is because the free cash flows are not large enough to cover the debt repayments. In fact, the business loses so much cash that we can see they run out of cash completely by the end of 2020. In its current form, this LBO transaction is not viable, and changes would have to be made to make the transaction work.</p><h2>Conclusion</h2><p>As we have seen, debt repayments can have a big impact on the cash flow position of a company. You should be creating projected cash flow statements as part of your analysis of a complex financial transaction, but you should always expect that debt will have an impact on those statements. A deal that looks good before debt is considered could become unviable afterwards. For this reason, make sure to calculate debt effects when you model financial transactions.</p>
+      </article>
+
+      <aside class="post-aside">
+        <div class="aside-card">
+          <h3>Try it yourself.</h3>
+          <p>30+ certified Kubicle courses, free. No credit card.</p>
+          <a class="btn btn-md" href="../try-free/">Try for Free <span class="arr">&rarr;</span></a>
+          <p class="aside-proof">Used by 1M+ professionals.</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="post-foot">
+      <a class="back" href="index.html">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="M11 6l-6 6 6 6"/></svg>
+        Back to all posts
+      </a>
+      <div class="share">
+        <span>Share</span>
+        <a class="btn-share" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kubicle.com/blog/how-to-project-cash-flows-after-a-leveraged-buyout" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="11" x2="8" y2="17"/><circle cx="8" cy="7.5" r="1"/><path d="M12 17v-3.5a2.5 2.5 0 0 1 5 0V17"/><line x1="12" y1="11" x2="12" y2="17"/></svg>
+        </a>
+        <a class="btn-share" href="mailto:?subject=How%20To%20Project%20Cash%20Flows%20After%20a%20Leveraged%20Buyout&body=Read%20this%20on%20Kubicle:%20https://www.kubicle.com/blog/how-to-project-cash-flows-after-a-leveraged-buyout" aria-label="Share by email">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-section">
+  <div class="container">
+    <div class="related-head">
+      <div>
+        <div class="eyebrow">Keep reading</div>
+        <h2>More from the Kubicle blog.</h2>
+      </div>
+      <a href="index.html">All posts <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="posts-grid">
+      <a class="post-card type-ai" href="beyond-one-size-fits-all-a-persona-based-blueprint-for-enterprise-ai-literacy.html">
+        <div class="cover">
+          <span class="type-chip">AI</span>
+          <img src="img/posts/690e247d418880763cd9fbc3_ChatGPT-Image-Oct-29-2025-11_44_03-AM.jpg" alt="Beyond “One-Size-Fits-All”: A Persona-Based Blueprint for Enterprise AI Literacy" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="date">29 Oct 2025</span>
+            <span class="dot"></span>
+            <span>5 min read</span>
+          </div>
+          <h3>Beyond “One-Size-Fits-All”: A Persona-Based Blueprint for Enterprise AI Literacy</h3>
+          <p>This post explores why so many enterprise AI initiatives fail, and how a human-centered, persona-based approach can turn that failure into success. It unpacks the real reasons...</p>
+          <span class="read-more">Read article <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a class="post-card type-learning" href="how-to-calculate-roi-of-graduate-development-with-a-ready-to-use-calculator.html">
+        <div class="cover">
+          <span class="type-chip">Learning</span>
+          <img src="img/posts/690e247d418880763cd9fbc2_roi-calculator.jpg" alt="How to Calculate ROI of Graduate Development with a Ready-to-Use Calculator" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="date">30 Sep 2025</span>
+            <span class="dot"></span>
+            <span>5 min read</span>
+          </div>
+          <h3>How to Calculate ROI of Graduate Development with a Ready-to-Use Calculator</h3>
+          <p>Did you know that the average graduate takes over four months of training to reach full productivity? This costs firms hundreds of thousands (or more!) every year. Graduate...</p>
+          <span class="read-more">Read article <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a class="post-card type-news" href="fall-2025-celebrating-our-latest-g2-awards.html">
+        <div class="cover">
+          <span class="type-chip">News</span>
+          <img src="img/posts/690e247d418880763cd9fbc0_g2-fall-blog.jpg" alt="Fall 2025 | Celebrating Our Latest G2 Awards" loading="lazy"/>
+        </div>
+        <div class="body">
+          <div class="meta-row">
+            <span class="date">17 Sep 2025</span>
+            <span class="dot"></span>
+            <span>4 min read</span>
+          </div>
+          <h3>Fall 2025 | Celebrating Our Latest G2 Awards</h3>
+          <p>We’re thrilled to share that Kubicle has once again been recognized by G2, earning a fresh set of badges that highlight the impact we’re making with learners and enterprises...</p>
+          <span class="read-more">Read article <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div id="site-footer"></div>
+
+<script>
+</script>
+</body>
+</html>

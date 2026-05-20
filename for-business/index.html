@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<title>Kubicle for Business | Enterprise Training for AI, Data, Project Management and Finance</title>
+<meta name="description" content="The Kubicle business product suite: managed training for teams and enterprises, a customisable platform, integrations with major LMSs, and custom learning design for the roles you're upskilling."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/for-business"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:title" content="Kubicle for Business"/>
+<meta property="og:description" content="Managed training for teams and enterprises. Platform, integrations and custom learning design built for finance and consulting workforces."/>
+<meta property="og:url" content="https://www.kubicle.com/for-business"/>
+<meta property="og:image" content="https://www.kubicle.com/for-business/img/hero-teams.webp"/>
+<meta property="og:image:width" content="1717"/>
+<meta property="og:image:height" content="916"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Kubicle for Business"/>
+<meta name="twitter:description" content="Managed training for finance and consulting teams."/>
+<meta name="twitter:image" content="https://www.kubicle.com/for-business/img/hero-teams.webp"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Kubicle for Business",
+  "description": "The Kubicle business suite: Teams, Enterprises, Platform, Integrations and Custom Learning Design.",
+  "url": "https://www.kubicle.com/for-business",
+  "isPartOf": { "@type": "WebSite", "name": "Kubicle", "url": "https://www.kubicle.com" }
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+body { font-family: var(--body, "Satoshi","Helvetica Neue",Arial,sans-serif); color: var(--prussian); background: #fff; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+section { padding: 96px 0; position: relative; }
+section.alice { background: var(--alice); }
+@media (max-width: 700px) { section { padding: 64px 0; } .container { padding: 0 22px; } }
+
+.sec-head { max-width: 760px; }
+.sec-head h2 { margin-top: 16px; }
+.sec-head h2 em { font-style: normal; color: var(--accent); }
+.sec-head .body-lg { margin-top: 22px; color: var(--steel); max-width: 640px; }
+
+.hero {
+  padding: 112px 0 80px;
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 30%, rgba(4,150,255,0.10), transparent 70%),
+    linear-gradient(180deg, #FBFCFD 0%, #F4F8FC 100%);
+}
+.hero .eyebrow { color: var(--accent); }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { color: var(--steel); font-size: 19px; line-height: 1.55; margin-top: 22px; max-width: 640px; }
+.hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+
+.product-grid {
+  margin-top: 56px;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+}
+@media (max-width: 900px) { .product-grid { grid-template-columns: 1fr; } }
+.product-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 32px;
+  display: flex; flex-direction: column;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.product-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(4,150,255,0.30);
+  box-shadow: 0 24px 60px -28px rgba(11,27,43,0.18);
+}
+.product-card .p-num {
+  font-family: var(--body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent-d, #0D5F96);
+}
+.product-card h3 {
+  margin-top: 10px;
+  font-family: var(--head); font-size: 24px; font-weight: 600;
+  color: var(--prussian); letter-spacing: -0.015em;
+}
+.product-card p { margin-top: 12px; font-size: 14.5px; line-height: 1.6; color: var(--steel); }
+.product-card .p-cta {
+  margin-top: auto; padding-top: 22px;
+  font-family: var(--head); font-size: 13.5px; font-weight: 600;
+  color: var(--accent-d, #0D5F96);
+}
+
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+}
+.final-cta .eyebrow { color: var(--accent); }
+.final-cta h2 { color: #fff; }
+.final-cta h2 em { font-style: normal; color: var(--accent); }
+.final-cta .body-lg { color: rgba(255,255,255,0.82); max-width: 760px; margin-top: 22px; }
+.final-cta .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+</style>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<div id="site-nav"></div>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">For Business</div>
+    <h1 class="h-display" style="margin-top: 14px;">Kubicle for <em>business teams.</em></h1>
+    <p class="hero-sub">
+      The managed training stack for finance and consulting workforces. Five products that work together
+      to land role-mapped pathways across your organisation: ready-built, custom-designed, and
+      LMS-integrated.
+    </p>
+    <div class="hero-cta-row">
+      <a class="btn btn-primary btn-lg" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+      <a class="btn btn-outline-dark btn-lg" href="../catalog.html">Download Catalog <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="alice">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" style="color: var(--accent);">Five products</div>
+      <h2 class="h-xl">The full <em>Kubicle for Business</em> suite.</h2>
+      <p class="body-lg">
+        Each product is sold independently and works together. Pick what you need, scale when you're ready.
+      </p>
+    </div>
+
+    <div class="product-grid">
+      <a class="product-card" href="teams.html">
+        <div class="p-num">Product 01</div>
+        <h3>Teams</h3>
+        <p>A managed training program for finance and consulting teams. Four academies stacked by role, persona benchmarked rollout, live in seven days.</p>
+        <span class="p-cta">Learn more &rarr;</span>
+      </a>
+      <a class="product-card" href="enterprises.html">
+        <div class="p-num">Product 02</div>
+        <h3>Enterprises</h3>
+        <p>The dedicated training partner to 300+ global enterprises. AI, Data, Finance and Project Management as a single managed program with a named success team in every region.</p>
+        <span class="p-cta">Learn more &rarr;</span>
+      </a>
+      <a class="product-card" href="platform.html">
+        <div class="p-num">Product 03</div>
+        <h3>Platform</h3>
+        <p>The Kubicle learning platform: persona-mapped paths, accredited courses, live admin dashboards and certifications your learners can put on LinkedIn.</p>
+        <span class="p-cta">Learn more &rarr;</span>
+      </a>
+      <a class="product-card" href="custom-learning-design.html">
+        <div class="p-num">Product 04</div>
+        <h3>Custom Learning Design</h3>
+        <p>White-glove curriculum design for the unique skills your team needs. We build the pathway, you ship the outcome.</p>
+        <span class="p-cta">Learn more &rarr;</span>
+      </a>
+      <a class="product-card" href="integrations.html">
+        <div class="p-num">Product 05</div>
+        <h3>Integrations</h3>
+        <p>SSO, LMS connectivity (Degreed, Cornerstone and more), reporting, and the enterprise plumbing your IT and L&amp;D teams expect.</p>
+        <span class="p-cta">Learn more &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <div style="max-width: 920px;">
+      <div class="eyebrow">Ready to roll out?</div>
+      <h2 class="h-xl" style="margin-top: 16px;">Talk to a Kubicle <em>program designer.</em></h2>
+      <p class="body-lg">
+        Twenty minutes with one of our program designers and you'll have a persona benchmark, a custom
+        path outline and a candid view of what success looks like for your team.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost btn-lg" href="../catalog.html">Download Catalog <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+</body>
+</html>

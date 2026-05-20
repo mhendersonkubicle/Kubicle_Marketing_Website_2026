@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="img/shared/favicon-32x32.png"/>
+<title>Pricing | Kubicle</title>
+<meta name="description" content="Transparent, volume-friendly pricing for Kubicle. Per-academy plans from $175 per learner per year with marginal volume discounts, or unlock all four academies with All Access."/>
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system: tokens, typography, buttons (pricing overrides type scale and button sizing inline below) -->
+<link rel="stylesheet" href="shared/styles/tokens.css"/>
+<link rel="stylesheet" href="shared/styles/typography.css"/>
+<link rel="stylesheet" href="shared/styles/buttons.css"/>
+
+<style>
+/* ============================== PAGE-LOCAL TOKENS ============================== */
+:root {
+  /* Academy colors used in pricing cards */
+  --academy-ai:      #00C4CC;
+  --academy-data:    #E91E63;
+  --academy-pm:      #F97316;
+  --academy-finance: #10B981;
+  --academy-ai-d:      #00A8B0;
+  --academy-data-d:    #C2185B;
+  --academy-pm-d:      #C2540D;
+  --academy-finance-d: #047857;
+}
+
+/* ============================== TYPOGRAPHY OVERRIDES ============================== */
+/* Pricing uses a slightly tighter scale than the rest of the site. */
+.h-display { font-size: clamp(48px, 6.4vw, 84px); line-height: 0.96; letter-spacing: -0.045em; }
+.h-xl      { font-size: clamp(36px, 4.4vw, 56px); line-height: 1.04; letter-spacing: -0.04em; }
+.h-lg      { font-size: clamp(26px, 3vw, 40px); line-height: 1.06; }
+
+/* ============================== LAYOUT ============================== */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+section { padding: 96px 0; position: relative; overflow: hidden; }
+@media (max-width: 860px) {
+  .container { padding: 0 24px; }
+  section { padding: 64px 0; }
+}
+
+/* ============================== BUTTON OVERRIDES ============================== */
+/* Pricing uses a slightly smaller button radius and md size. */
+.btn    { border-radius: 18px; text-decoration: none; }
+.btn-md { height: 50px; padding: 0 22px; font-size: 15px; }
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 96px 0 96px;
+  background:
+    radial-gradient(ellipse 50% 60% at 80% 15%, rgba(4,150,255,0.20), transparent 60%),
+    radial-gradient(ellipse 35% 50% at 20% 80%, rgba(0,196,204,0.10), transparent 60%),
+    var(--prussian);
+  color: #fff;
+  position: relative;
+}
+.hero h1 { color: #fff; max-width: 900px; }
+.hero h1 em { font-style: normal; color: var(--blue); }
+.hero-sub {
+  margin-top: 24px;
+  color: rgba(255,255,255,0.82);
+  max-width: 640px;
+  font-size: 19px; line-height: 1.55;
+}
+
+/* ============================== PRICING CONTROLS ============================== */
+.pricing-controls-bar {
+  background: #fff;
+  padding: 32px 0 0;
+}
+.pricing-controls {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  background: var(--alice);
+  border: 1px solid #e5ebf0;
+  border-radius: 18px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.pricing-controls .ctrl-label {
+  font-family: var(--head);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--steel);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.pricing-controls .ctrl-divider {
+  width: 1px; height: 28px;
+  background: #d8dee4;
+  flex-shrink: 0;
+}
+.currency-toggle {
+  display: inline-flex;
+  background: #fff;
+  border: 1px solid #e5ebf0;
+  border-radius: 999px;
+  padding: 3px;
+  flex-shrink: 0;
+}
+.currency-toggle button {
+  appearance: none; background: transparent; border: 0;
+  color: var(--steel);
+  font-family: var(--head);
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.currency-toggle button:hover { color: var(--prussian); }
+.currency-toggle button.active {
+  background: var(--prussian); color: #fff;
+}
+
+/* Slider sits inline inside the same config card (no nested card) */
+.volume-slider-wrap {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 240px;
+}
+.volume-slider-wrap label { display: none; }
+.volume-slider { flex: 1; }
+@media (max-width: 760px) {
+  .pricing-controls { gap: 12px; }
+  .pricing-controls .ctrl-divider { display: none; }
+  .pricing-controls .ctrl-label { display: none; }
+  .volume-slider-wrap { width: 100%; flex-basis: 100%; }
+}
+.volume-slider {
+  -webkit-appearance: none; appearance: none;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--academy-ai) 100%);
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+}
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--blue);
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(4,150,255,0.4);
+}
+.volume-slider::-moz-range-thumb {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--blue);
+  cursor: pointer;
+}
+.volume-display {
+  font-family: var(--head);
+  font-size: 16px; font-weight: 600;
+  color: var(--prussian);
+  white-space: nowrap;
+  min-width: 96px;
+  text-align: right;
+}
+.discount-badge {
+  font-family: var(--head);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  background: var(--blue);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+@media (max-width: 720px) {
+  .volume-slider-wrap { grid-template-columns: 1fr; gap: 12px; }
+  .volume-display { text-align: left; }
+}
+
+/* ============================== PRICING CARDS ============================== */
+.pricing-cards-wrap {
+  padding: 48px 0 96px;
+  background: #fff;
+  position: relative;
+}
+.academy-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+@media (max-width: 1080px) { .academy-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px)  { .academy-grid { grid-template-columns: 1fr; } }
+
+.acad-price-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  display: flex; flex-direction: column;
+  gap: 14px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-top: 5px solid var(--c, var(--blue));
+  box-shadow: 0 12px 30px -16px rgba(11,27,43,0.18);
+  text-decoration: none;
+  color: var(--prussian);
+}
+.acad-price-card:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -20px rgba(11,27,43,0.30); }
+.acad-price-card.ai      { --c: var(--academy-ai); }
+.acad-price-card.data    { --c: var(--academy-data); }
+.acad-price-card.pm      { --c: var(--academy-pm); }
+.acad-price-card.finance { --c: var(--academy-finance); }
+
+.acad-price-card .acad-num {
+  font-family: var(--head);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--c);
+}
+.acad-price-card h3 { font-size: 22px; }
+.acad-price-card p {
+  font-size: 14px;
+  color: var(--steel);
+  line-height: 1.5;
+  min-height: 60px;
+}
+.acad-price-card .price-amount {
+  font-family: var(--head);
+  font-size: 44px; font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--prussian);
+}
+.acad-price-card .price-amount .currency { font-size: 22px; vertical-align: super; }
+.acad-price-card .price-amount .period {
+  display: block;
+  font-size: 13px; font-weight: 400;
+  color: var(--steel);
+  letter-spacing: normal;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+.acad-price-card .original-price {
+  font-size: 14px;
+  color: var(--steel);
+  text-decoration: line-through;
+  margin-top: 4px;
+}
+.acad-price-card .acad-cta {
+  margin-top: auto;
+  font-family: var(--head);
+  font-size: 14px; font-weight: 600;
+  color: var(--c);
+  display: inline-flex; align-items: center; gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--alice);
+}
+.acad-price-card .acad-cta .arr { transition: transform 0.2s; }
+.acad-price-card:hover .acad-cta .arr { transform: translateX(4px); }
+
+/* All Access featured card */
+.all-access-card {
+  margin-top: 32px;
+  background: var(--prussian);
+  color: #fff;
+  border-radius: 24px;
+  padding: 40px 48px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+.all-access-card::before {
+  content: ""; position: absolute;
+  top: -120px; right: -120px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(4,150,255,0.30) 0%, transparent 70%);
+  pointer-events: none;
+}
+.all-access-card .tag {
+  display: inline-flex; align-self: flex-start;
+  background: var(--blue); color: #fff;
+  padding: 6px 14px; border-radius: 999px;
+  font-family: var(--head);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.all-access-card h3 { font-size: 36px; color: #fff; margin-top: 12px; }
+.all-access-card .aa-lede {
+  margin-top: 12px;
+  color: rgba(255,255,255,0.78);
+  font-size: 16px; line-height: 1.55;
+  max-width: 460px;
+}
+.all-access-card .aa-bullets {
+  margin-top: 18px;
+  list-style: none; padding: 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px;
+}
+.all-access-card .aa-bullets li {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.85);
+  position: relative;
+  padding-left: 22px;
+}
+.all-access-card .aa-bullets li::before {
+  content: "";
+  position: absolute; left: 0; top: 4px;
+  width: 14px; height: 14px;
+  background: var(--emerald);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
+}
+.all-access-card .aa-priceblock {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  padding: 28px;
+}
+.all-access-card .price-amount {
+  font-family: var(--head);
+  font-size: 64px; font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #fff;
+}
+.all-access-card .price-amount .currency { font-size: 30px; vertical-align: super; }
+.all-access-card .price-amount .period {
+  display: block;
+  font-size: 14px; font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: normal;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+.all-access-card .original-price {
+  margin-top: 6px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: line-through;
+}
+.all-access-card .btn {
+  margin-top: 20px;
+  width: 100%;
+}
+@media (max-width: 880px) {
+  .all-access-card { grid-template-columns: 1fr; padding: 32px; }
+  .all-access-card .aa-bullets { grid-template-columns: 1fr; }
+}
+
+/* ============================== COMPARISON TABLE ============================== */
+.compare-wrap {
+  margin-top: 56px;
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px -20px rgba(11,27,43,0.10);
+}
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.compare-table th, .compare-table td {
+  padding: 16px 20px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--alice);
+}
+.compare-table thead th {
+  background: var(--alice);
+  font-family: var(--head);
+  font-size: 13px; font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--prussian);
+  border-bottom: 2px solid #fff;
+  text-align: center;
+  vertical-align: bottom;
+}
+.compare-table thead th:first-child {
+  text-align: left;
+  background: var(--alice);
+}
+.compare-table thead .col-academy { font-size: 14px; }
+.compare-table thead .col-academy .acad-tag {
+  display: block;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  margin-bottom: 4px;
+  color: var(--c);
+}
+.compare-table thead .col-aa { background: var(--prussian); color: #fff; }
+.compare-table thead .col-aa .acad-tag { color: var(--blue); }
+.compare-table tbody td {
+  text-align: center;
+  color: var(--prussian);
+  font-weight: 500;
+}
+.compare-table tbody td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: var(--prussian);
+}
+.compare-table tbody td.col-aa-cell { background: rgba(4,150,255,0.04); }
+.compare-table tbody tr:last-child td { border-bottom: 0; }
+.compare-table .check {
+  display: inline-block;
+  width: 18px; height: 18px;
+  background: var(--emerald);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
+}
+.compare-table .cross {
+  display: inline-block;
+  width: 14px; height: 14px;
+  color: var(--steel);
+  opacity: 0.5;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><line x1='6' y1='6' x2='18' y2='18'/><line x1='6' y1='18' x2='18' y2='6'/></svg>") center/contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><line x1='6' y1='6' x2='18' y2='18'/><line x1='6' y1='18' x2='18' y2='6'/></svg>") center/contain no-repeat;
+}
+.compare-table .ai      { --c: var(--academy-ai); }
+.compare-table .data    { --c: var(--academy-data); }
+.compare-table .pm      { --c: var(--academy-pm); }
+.compare-table .finance { --c: var(--academy-finance); }
+
+.compare-table tr.section-row td {
+  background: linear-gradient(180deg, var(--alice) 0%, #fff 100%);
+  font-family: var(--head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--honolulu);
+  padding: 14px 20px 10px;
+  text-align: left;
+}
+.compare-table tr.section-row td.col-aa-cell {
+  background: linear-gradient(180deg, rgba(4,150,255,0.10) 0%, rgba(4,150,255,0.04) 100%);
+}
+
+.compare-table .extra-tag {
+  display: inline-block;
+  font-family: var(--head);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--honolulu);
+  background: var(--columbia);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+@media (max-width: 880px) {
+  .compare-wrap { overflow-x: auto; }
+  .compare-table { min-width: 880px; }
+}
+
+/* ============================== FAQ ============================== */
+.faq-list { margin-top: 32px; border-top: 1px solid var(--alice); }
+.faq-item { border-bottom: 1px solid var(--alice); }
+.faq-q {
+  padding: 22px 0;
+  display: flex; align-items: center; justify-content: space-between;
+  cursor: pointer;
+  font-family: var(--head);
+  font-size: 18px; font-weight: 600;
+  color: var(--prussian);
+  list-style: none;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q .plus { font-size: 24px; line-height: 1; color: var(--blue); transition: transform 0.2s; }
+.faq-item[open] .faq-q .plus { transform: rotate(45deg); }
+.faq-a {
+  padding: 0 0 22px;
+  font-size: 15px; line-height: 1.6;
+  color: var(--steel);
+  max-width: 780px;
+}
+
+/* CTA strip */
+.cta-strip {
+  background: linear-gradient(135deg, var(--prussian) 0%, var(--indigo) 100%);
+  color: #fff;
+  text-align: center;
+}
+.cta-strip h2 { color: #fff; }
+.cta-strip p {
+  margin: 16px auto 28px;
+  max-width: 580px;
+  color: rgba(255,255,255,0.75);
+  font-size: 17px;
+  line-height: 1.55;
+}
+.cta-strip .btn-row { display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.cta-strip .btn-outline-dark {
+  border-color: rgba(255,255,255,0.6);
+  color: #fff;
+}
+.cta-strip .btn-outline-dark:hover { background: #fff; color: var(--prussian); }
+
+/* ============================== AUDIENCE TABS ============================== */
+.audience-tabs-bar {
+  background: #fff;
+  padding: 32px 0 0;
+  position: relative;
+  z-index: 5;
+}
+.audience-tabs {
+  display: inline-flex;
+  background: var(--alice);
+  border: 1px solid #e5ebf0;
+  border-radius: 999px;
+  padding: 5px;
+  margin: 0 auto;
+}
+.audience-tabs-bar .container { text-align: center; }
+.audience-tab {
+  appearance: none; background: transparent; border: 0;
+  font-family: var(--head);
+  font-size: 14px; font-weight: 600;
+  letter-spacing: -0.005em;
+  padding: 12px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--steel);
+  transition: background 0.15s, color 0.15s;
+}
+.audience-tab:hover { color: var(--prussian); }
+.audience-tab.active {
+  background: var(--prussian); color: #fff;
+}
+.audience-panel { display: none; }
+.audience-panel.active { display: block; }
+
+/* ============================== INDIVIDUAL PRICING ============================== */
+.indiv-section {
+  background: #fff;
+  padding: 48px 0 96px;
+}
+.indiv-controls {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;
+  margin-bottom: 40px;
+}
+.toggle-group {
+  display: inline-flex;
+  background: var(--alice);
+  border: 1px solid #e5ebf0;
+  border-radius: 999px;
+  padding: 4px;
+}
+.toggle-group button {
+  appearance: none; background: transparent; border: 0;
+  color: var(--steel);
+  font-family: var(--head);
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.toggle-group button:hover { color: var(--prussian); }
+.toggle-group button.active {
+  background: var(--prussian); color: #fff;
+}
+.toggle-group .save-pill {
+  display: inline-block;
+  margin-left: 6px;
+  background: var(--emerald);
+  color: #fff;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+.indiv-pair {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 24px; align-items: stretch;
+}
+@media (max-width: 900px) { .indiv-pair { grid-template-columns: 1fr; } }
+
+.free-tier-card,
+.indiv-aa-card {
+  border-radius: 24px;
+  padding: 36px;
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+  color: #fff;
+}
+.free-tier-card { background: linear-gradient(135deg, #0D5F96 0%, #0B1B2B 100%); }
+.indiv-aa-card  { background: var(--prussian); }
+.free-tier-card::before {
+  content: ""; position: absolute;
+  top: -120px; right: -120px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(4,150,255,0.30) 0%, transparent 70%);
+  pointer-events: none;
+}
+.indiv-aa-card::before {
+  content: ""; position: absolute;
+  top: -120px; right: -120px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(4,150,255,0.30) 0%, transparent 70%);
+  pointer-events: none;
+}
+.free-tier-card .tag,
+.indiv-aa-card .tag {
+  display: inline-flex; align-self: flex-start;
+  padding: 6px 14px; border-radius: 999px;
+  font-family: var(--head);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  position: relative; z-index: 2;
+}
+.free-tier-card .tag { background: var(--blue); color: #fff; }
+.indiv-aa-card .tag  { background: var(--blue); color: #fff; }
+.free-tier-card h3,
+.indiv-aa-card h3 {
+  font-size: 32px; color: #fff; margin-top: 14px;
+  font-family: var(--head); font-weight: 600;
+  position: relative; z-index: 2;
+}
+.free-tier-card .lede,
+.indiv-aa-card .lede {
+  margin-top: 12px;
+  color: rgba(255,255,255,0.78);
+  font-size: 15.5px; line-height: 1.55;
+  position: relative; z-index: 2;
+}
+.free-tier-card ul,
+.indiv-aa-card ul {
+  margin: 18px 0 0; padding: 0;
+  list-style: none;
+  display: grid; gap: 8px;
+  position: relative; z-index: 2;
+}
+.free-tier-card li,
+.indiv-aa-card li {
+  font-size: 14px; color: rgba(255,255,255,0.85);
+  padding-left: 22px; position: relative;
+}
+.free-tier-card li::before,
+.indiv-aa-card li::before {
+  content: ""; position: absolute; left: 0; top: 4px;
+  width: 14px; height: 14px;
+  background: var(--emerald);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center/contain no-repeat;
+}
+.indiv-priceblock {
+  margin-top: auto;
+  padding-top: 24px;
+  position: relative; z-index: 2;
+}
+.indiv-priceblock .price-amount {
+  font-family: var(--head);
+  font-size: 56px; font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #fff;
+}
+.indiv-priceblock .price-amount .currency { font-size: 26px; vertical-align: super; }
+.indiv-priceblock .price-amount .period {
+  display: block;
+  font-size: 13px; font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: normal;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+.indiv-priceblock .price-note {
+  margin-top: 6px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+}
+.indiv-priceblock .btn { margin-top: 18px; width: 100%; }
+.free-tier-card .btn {
+  background: var(--blue); color: #fff;
+  box-shadow: 0 2px 0 rgba(11,27,43,0.3), 0 10px 24px -8px rgba(4,150,255,0.5);
+}
+.free-tier-card .btn:hover { background: #0387e6; }
+
+/* Individual comparison table; reuse compare-table styles, with two-column layout */
+.indiv-compare-section {
+  background: var(--alice);
+  padding: 80px 0 96px;
+}
+.indiv-compare-section .compare-table thead .col-free {
+  background: linear-gradient(135deg, #0D5F96 0%, #0B1B2B 100%);
+  color: #fff;
+}
+.indiv-compare-section .compare-table thead .col-free .acad-tag { color: var(--emerald); }
+.indiv-compare-section .compare-table tbody td.col-free-cell { background: rgba(13,95,150,0.05); }
+.indiv-compare-section .compare-table tr.section-row td.col-free-cell {
+  background: linear-gradient(180deg, rgba(13,95,150,0.10) 0%, rgba(13,95,150,0.04) 100%);
+}
+.num-tag {
+  font-family: var(--head); font-weight: 700;
+  color: var(--prussian); font-size: 14px;
+}
+</style>
+<script src="shared/pricing.js" defer></script>
+<script src="shared/nav.js" defer></script>
+<script src="shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Pricing</div>
+    <h1 class="h-display" style="margin-top: 16px;">
+      Transparent pricing.<br/>
+      <em>For every learner.</em>
+    </h1>
+    <p class="hero-sub">
+      One library, two paths to access. Pick the option that fits how your team or you personally want to learn.
+    </p>
+  </div>
+</section>
+
+<!-- ============================== AUDIENCE TABS ============================== -->
+<div class="audience-tabs-bar">
+  <div class="container">
+    <div class="audience-tabs" role="tablist">
+      <button class="audience-tab active" data-audience="business" role="tab" aria-selected="true">For Business</button>
+      <button class="audience-tab" data-audience="individual" role="tab" aria-selected="false">For Individuals</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== BUSINESS PANEL ============================== -->
+<div class="audience-panel active" data-audience-panel="business">
+
+<!-- ============================== PRICING CONTROLS ============================== -->
+<div class="pricing-controls-bar">
+  <div class="container">
+    <div class="pricing-controls">
+      <span class="ctrl-label">Currency</span>
+      <div class="currency-toggle" id="currency-toggle">
+        <button class="active" data-currency="USD">USD $</button>
+        <button data-currency="EUR">EUR &euro;</button>
+        <button data-currency="GBP">GBP &pound;</button>
+      </div>
+      <div class="ctrl-divider"></div>
+      <span class="ctrl-label">Licenses</span>
+      <div class="volume-slider-wrap">
+        <label for="vol-slider">Licenses</label>
+        <input type="range" id="vol-slider" data-volume-slider class="volume-slider" min="0" max="9" step="1" value="0"/>
+        <span class="volume-display" data-volume-display>1 &ndash; 20</span>
+        <span class="discount-badge" data-discount-badge style="visibility: hidden;">0% off</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== PRICING CARDS ============================== -->
+<section class="pricing-cards-wrap">
+  <div class="container">
+
+    <!-- Per-academy cards -->
+    <div class="academy-grid">
+      <a class="acad-price-card ai" href="academies/ai/index.html">
+        <div class="acad-num">Academy 01</div>
+        <h3>AI Literacy</h3>
+        <p>Copilot, ChatGPT, Power Automate and AI strategy. Ladder from Apprentice to Strategist.</p>
+        <div class="price-amount" data-price="single_academy">
+          <span class="currency" data-price-symbol>$</span><span data-price-value>175</span>
+          <span class="period" data-price-period="period_short">per learner per year</span>
+          <div class="original-price" data-price-original style="display:none;"></div>
+        </div>
+        <span class="acad-cta">Visit AI Academy <span class="arr">&rarr;</span></span>
+      </a>
+
+      <a class="acad-price-card data" href="academies/data-literacy/index.html">
+        <div class="acad-num">Academy 02</div>
+        <h3>Data Literacy</h3>
+        <p>From data citizenship to advanced Python, ML and statistical analysis. Four credentialed personas.</p>
+        <div class="price-amount" data-price="single_academy">
+          <span class="currency" data-price-symbol>$</span><span data-price-value>175</span>
+          <span class="period" data-price-period="period_short">per learner per year</span>
+          <div class="original-price" data-price-original style="display:none;"></div>
+        </div>
+        <span class="acad-cta">Visit Data Academy <span class="arr">&rarr;</span></span>
+      </a>
+
+      <a class="acad-price-card pm" href="academies/project-management/index.html">
+        <div class="acad-num">Academy 03</div>
+        <h3>Project Management</h3>
+        <p>From project member to CAPM-ready professional. PMI-aligned with the 23-hour prerequisite covered.</p>
+        <div class="price-amount" data-price="single_academy">
+          <span class="currency" data-price-symbol>$</span><span data-price-value>175</span>
+          <span class="period" data-price-period="period_short">per learner per year</span>
+          <div class="original-price" data-price-original style="display:none;"></div>
+        </div>
+        <span class="acad-cta">Visit PM Academy <span class="arr">&rarr;</span></span>
+      </a>
+
+      <a class="acad-price-card finance" href="academies/finance/index.html">
+        <div class="acad-num">Academy 04</div>
+        <h3>Finance</h3>
+        <p>Excel-literate to FMVA-grade modeller. Anchored to MOS, PL-300, Tableau Specialist and FMVA.</p>
+        <div class="price-amount" data-price="single_academy">
+          <span class="currency" data-price-symbol>$</span><span data-price-value>175</span>
+          <span class="period" data-price-period="period_short">per learner per year</span>
+          <div class="original-price" data-price-original style="display:none;"></div>
+        </div>
+        <span class="acad-cta">Visit Finance Academy <span class="arr">&rarr;</span></span>
+      </a>
+    </div>
+
+    <!-- All Access featured card -->
+    <div class="all-access-card">
+      <div>
+        <span class="tag">Recommended &middot; All four academies</span>
+        <h3>Kubicle All Access</h3>
+        <p class="aa-lede">
+          Unlock every academy, every persona pathway, and 300+ courses. Built for teams whose roles span more
+          than one discipline.
+        </p>
+        <ul class="aa-bullets">
+          <li>All four academies</li>
+          <li>14 credentialed personas</li>
+          <li>300+ courses &amp; projects</li>
+          <li>AI-assessed projects</li>
+          <li>CPE / CPD / NASBA certification</li>
+          <li>Full platform access</li>
+        </ul>
+      </div>
+      <div class="aa-priceblock">
+        <div class="price-amount" data-price="all_access">
+          <span class="currency" data-price-symbol>$</span><span data-price-value>499</span>
+          <span class="period" data-price-period="period_short">per learner per year</span>
+          <div class="original-price" data-price-original style="display:none;"></div>
+        </div>
+        <a class="btn btn-primary btn-lg" href="try-free/index.html" style="width:100%; justify-content:center;">Try for Free <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================== COMPARISON TABLE ============================== -->
+<section class="alice" style="padding-top: 80px;">
+  <div class="container">
+    <div style="max-width: 760px;">
+      <div class="eyebrow">What's included</div>
+      <h2 class="h-xl" style="margin-top: 14px;">Compare the academies and All Access.</h2>
+      <p class="body-lg" style="margin-top: 16px; color: var(--steel); max-width: 620px;">
+        Each academy is a complete proposition with its own personas, credentials and pathways. All Access bundles
+        all four together at a single discounted price.
+      </p>
+    </div>
+
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="col-academy ai" style="--c: var(--academy-ai);"><span class="acad-tag">Academy 01</span>AI Literacy</th>
+            <th class="col-academy data" style="--c: var(--academy-data);"><span class="acad-tag">Academy 02</span>Data Literacy</th>
+            <th class="col-academy pm" style="--c: var(--academy-pm);"><span class="acad-tag">Academy 03</span>Project Mgmt</th>
+            <th class="col-academy finance" style="--c: var(--academy-finance);"><span class="acad-tag">Academy 04</span>Finance</th>
+            <th class="col-aa col-academy"><span class="acad-tag">Bundle</span>All Access</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="section-row">
+            <td colspan="5">Library &amp; content</td>
+            <td class="col-aa-cell"></td>
+          </tr>
+          <tr>
+            <td>Certified courses, exercises &amp; exams</td>
+            <td>60+</td>
+            <td>110+</td>
+            <td>40+</td>
+            <td>90+</td>
+            <td class="col-aa-cell">400+</td>
+          </tr>
+          <tr>
+            <td>CPE, CPD &amp; NASBA certifications</td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>Data sandbox projects</td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>AI-assessed projects (BETA)</td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>Pre-built eLearning academies</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td class="col-aa-cell">4</td>
+          </tr>
+
+          <tr class="section-row">
+            <td colspan="5">Personas &amp; pathways</td>
+            <td class="col-aa-cell"></td>
+          </tr>
+          <tr>
+            <td>Persona pathways</td>
+            <td>4</td>
+            <td>4</td>
+            <td>3</td>
+            <td>3</td>
+            <td class="col-aa-cell">14</td>
+          </tr>
+          <tr>
+            <td>External credential alignment</td>
+            <td>AI Literacy</td>
+            <td>PL-300, Tableau</td>
+            <td>CAPM</td>
+            <td>FMVA, MOS</td>
+            <td class="col-aa-cell">All four</td>
+          </tr>
+          <tr>
+            <td>Cross-discipline coverage</td>
+            <td><span class="cross"></span></td>
+            <td><span class="cross"></span></td>
+            <td><span class="cross"></span></td>
+            <td><span class="cross"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+
+          <tr class="section-row">
+            <td colspan="5">Experience delivery platform</td>
+            <td class="col-aa-cell"></td>
+          </tr>
+          <tr>
+            <td>Organizational admin licenses</td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>Learning group admin licenses</td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>Learning group management</td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>Custom semester design</td>
+            <td><span class="cross"></span></td>
+            <td><span class="cross"></span></td>
+            <td><span class="cross"></span></td>
+            <td><span class="cross"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>Learner check-ins</td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>LMS integration</td>
+            <td><span class="extra-tag">Extra</span></td>
+            <td><span class="extra-tag">Extra</span></td>
+            <td><span class="extra-tag">Extra</span></td>
+            <td><span class="extra-tag">Extra</span></td>
+            <td class="col-aa-cell"><span class="extra-tag">Extra</span></td>
+          </tr>
+          <tr>
+            <td>SSO</td>
+            <td><span class="extra-tag">Extra</span></td>
+            <td><span class="extra-tag">Extra</span></td>
+            <td><span class="extra-tag">Extra</span></td>
+            <td><span class="extra-tag">Extra</span></td>
+            <td class="col-aa-cell"><span class="extra-tag">Extra</span></td>
+          </tr>
+
+          <tr class="section-row">
+            <td colspan="5">Support &amp; services</td>
+            <td class="col-aa-cell"></td>
+          </tr>
+          <tr>
+            <td>Standard online support</td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>Premium support</td>
+            <td><span class="cross"></span></td>
+            <td><span class="cross"></span></td>
+            <td><span class="cross"></span></td>
+            <td><span class="cross"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>Learning delivery partner</td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>eLearning academies</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td class="col-aa-cell">All four</td>
+          </tr>
+          <tr>
+            <td>Blended experiences</td>
+            <td><span class="cross"></span></td>
+            <td><span class="cross"></span></td>
+            <td><span class="cross"></span></td>
+            <td><span class="cross"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+
+          <tr class="section-row">
+            <td colspan="5">Pricing</td>
+            <td class="col-aa-cell"></td>
+          </tr>
+          <tr>
+            <td>Volume discounts apply</td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td><span class="check"></span></td>
+            <td class="col-aa-cell"><span class="check"></span></td>
+          </tr>
+          <tr>
+            <td>Starting price (USD)</td>
+            <td>$175</td>
+            <td>$175</td>
+            <td>$175</td>
+            <td>$175</td>
+            <td class="col-aa-cell"><strong>$499</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+</div><!-- /audience-panel business -->
+
+<!-- ============================== INDIVIDUAL PANEL ============================== -->
+<div class="audience-panel" data-audience-panel="individual">
+
+<section class="indiv-section">
+  <div class="container">
+    <div style="max-width: 760px; margin: 0 auto 8px; text-align: center;">
+      <div class="eyebrow" style="text-align: center; display: block;">For Individuals</div>
+      <h2 class="h-xl" style="margin-top: 14px;">Start free. <em style="font-style: normal; color: var(--blue);">Upgrade when you&rsquo;re ready.</em></h2>
+      <p class="body-lg" style="margin-top: 16px; color: var(--steel); max-width: 580px; margin-left: auto; margin-right: auto;">
+        Begin with the Free Tier, no credit card, 30+ certified courses. Or unlock the full library with All Access.
+      </p>
+    </div>
+
+    <div class="indiv-controls">
+      <div class="toggle-group" id="indiv-currency-toggle" role="tablist" aria-label="Currency">
+        <button data-indiv-currency="USD">USD $</button>
+        <button class="active" data-indiv-currency="EUR">EUR &euro;</button>
+        <button data-indiv-currency="GBP">GBP &pound;</button>
+      </div>
+      <div class="toggle-group" id="indiv-billing-toggle" role="tablist" aria-label="Billing">
+        <button data-indiv-billing="monthly">Monthly</button>
+        <button class="active" data-indiv-billing="annual">Annual <span class="save-pill">Save 13%</span></button>
+      </div>
+    </div>
+
+    <div class="indiv-pair">
+      <!-- Free Tier card -->
+      <div class="free-tier-card">
+        <span class="tag">Free Tier</span>
+        <h3>Join Kubicle for Free</h3>
+        <p class="lede">
+          Build practical, job-ready skills today. The first course in every learning path is free.
+        </p>
+        <ul>
+          <li>30+ certified free courses</li>
+          <li>First course in every learning path</li>
+          <li>Earn CPE / CPD / NASBA certifications</li>
+          <li>Skill-gap diagnostic assessments</li>
+          <li>Browse the full library, free</li>
+          <li>Upgrade anytime</li>
+        </ul>
+        <div class="indiv-priceblock">
+          <div class="price-amount">
+            <span class="currency" data-indiv-symbol>&euro;</span><span data-indiv-free>0</span>
+            <span class="period">forever, per learner</span>
+          </div>
+          <p class="price-note">No credit card required.</p>
+          <a class="btn btn-md" href="try-free/">Try for Free <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+
+      <!-- All Access card -->
+      <div class="indiv-aa-card">
+        <span class="tag">Upgrade &middot; All Access</span>
+        <h3>Kubicle All Access</h3>
+        <p class="lede">
+          Unlock every academy, every persona pathway, and the full 400+ course library. Cancel anytime.
+        </p>
+        <ul>
+          <li>All four academies (AI, Data, PM, Finance)</li>
+          <li>14 credentialed personas</li>
+          <li>400+ courses &amp; projects</li>
+          <li>AI-assessed projects (BETA)</li>
+          <li>CPE / CPD / NASBA certifications</li>
+          <li>Full platform access</li>
+        </ul>
+        <div class="indiv-priceblock">
+          <div class="price-amount">
+            <span class="currency" data-indiv-symbol>&euro;</span><span data-indiv-aa-price>408</span>
+            <span class="period" data-indiv-aa-period>per learner per year</span>
+          </div>
+          <p class="price-note" data-indiv-aa-note>Cancel anytime &middot; billed annually</p>
+          <a class="btn btn-primary btn-md" href="try-free/">Try for Free <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="indiv-compare-section">
+  <div class="container">
+    <div style="max-width: 760px;">
+      <div class="eyebrow">What&rsquo;s included</div>
+      <h2 class="h-xl" style="margin-top: 14px;">Compare Free Tier vs. All Access.</h2>
+      <p class="body-lg" style="margin-top: 16px; color: var(--steel); max-width: 620px;">
+        Start with the Free Tier and upgrade to All Access whenever you outgrow it.
+      </p>
+    </div>
+
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="col-academy col-free"><span class="acad-tag">For Individuals</span>Free Tier</th>
+            <th class="col-academy col-aa"><span class="acad-tag">Upgrade</span>All Access</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="section-row"><td>Library &amp; content</td><td class="col-free-cell"></td><td class="col-aa-cell"></td></tr>
+          <tr><td>Certified courses, exercises &amp; exams</td><td class="col-free-cell"><span class="num-tag">30+</span></td><td class="col-aa-cell"><span class="num-tag">400+</span></td></tr>
+          <tr><td>First course in every learning path</td><td class="col-free-cell"><span class="check"></span></td><td class="col-aa-cell"><span class="check"></span></td></tr>
+          <tr><td>Browse full library &amp; preview lessons</td><td class="col-free-cell"><span class="check"></span></td><td class="col-aa-cell"><span class="check"></span></td></tr>
+          <tr><td>CPE, CPD &amp; NASBA certifications</td><td class="col-free-cell"><span class="check"></span></td><td class="col-aa-cell"><span class="check"></span></td></tr>
+          <tr><td>Data sandbox projects</td><td class="col-free-cell"><span class="cross"></span></td><td class="col-aa-cell"><span class="check"></span></td></tr>
+          <tr><td>AI-assessed projects (BETA)</td><td class="col-free-cell"><span class="cross"></span></td><td class="col-aa-cell"><span class="check"></span></td></tr>
+          <tr><td>Pre-built eLearning academies</td><td class="col-free-cell">&ndash;</td><td class="col-aa-cell"><span class="num-tag">4</span></td></tr>
+
+          <tr class="section-row"><td>Personas &amp; pathways</td><td class="col-free-cell"></td><td class="col-aa-cell"></td></tr>
+          <tr><td>Persona pathways (full access)</td><td class="col-free-cell"><span class="cross"></span></td><td class="col-aa-cell"><span class="num-tag">14</span></td></tr>
+          <tr><td>External credential alignment</td><td class="col-free-cell">&ndash;</td><td class="col-aa-cell">All four academies</td></tr>
+          <tr><td>Cross-discipline coverage</td><td class="col-free-cell"><span class="cross"></span></td><td class="col-aa-cell"><span class="check"></span></td></tr>
+
+          <tr class="section-row"><td>Experience &amp; delivery</td><td class="col-free-cell"></td><td class="col-aa-cell"></td></tr>
+          <tr><td>Skill-gap diagnostic assessments</td><td class="col-free-cell"><span class="check"></span></td><td class="col-aa-cell"><span class="check"></span></td></tr>
+          <tr><td>Learner check-ins</td><td class="col-free-cell"><span class="cross"></span></td><td class="col-aa-cell"><span class="check"></span></td></tr>
+          <tr><td>Standard online support</td><td class="col-free-cell"><span class="check"></span></td><td class="col-aa-cell"><span class="check"></span></td></tr>
+          <tr><td>Premium support</td><td class="col-free-cell"><span class="cross"></span></td><td class="col-aa-cell"><span class="check"></span></td></tr>
+
+          <tr class="section-row"><td>Pricing</td><td class="col-free-cell"></td><td class="col-aa-cell"></td></tr>
+          <tr><td>Monthly billing &middot; cancel anytime</td><td class="col-free-cell">&ndash;</td><td class="col-aa-cell"><span class="check"></span></td></tr>
+          <tr><td>Annual billing (save 13%)</td><td class="col-free-cell">&ndash;</td><td class="col-aa-cell"><span class="check"></span></td></tr>
+          <tr><td>Starting price</td><td class="col-free-cell"><strong><span data-indiv-symbol>&euro;</span><span data-indiv-free>0</span></strong> forever</td><td class="col-aa-cell"><strong><span data-indiv-symbol>&euro;</span><span data-indiv-aa-table-price>408</span></strong> <span data-indiv-aa-table-period>per year</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+</div><!-- /audience-panel individual -->
+
+<!-- ============================== FAQ ============================== -->
+<section>
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px;" class="faq-grid">
+      <div>
+        <div class="eyebrow">Frequently asked</div>
+        <h2 class="h-xl" style="margin-top: 14px;">Pricing questions, answered.</h2>
+        <p class="body" style="margin-top: 18px; color: var(--steel); max-width: 360px;">
+          Still curious? Talk to one of our learning designers and we'll tailor a quote to your team size,
+          industry and rollout timeline.
+        </p>
+        <a class="btn btn-outline-dark btn-md" style="margin-top: 24px;" href="try-free/index.html">Try for Free <span class="arr">&rarr;</span></a>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary class="faq-q">What's the difference between a single academy and All Access? <span class="plus">+</span></summary>
+          <p class="faq-a">A single academy gives your team focused training on one discipline (AI, Data, Project Management, or Finance) at $175 per learner per year. All Access bundles all four academies plus 300+ courses for $499 per learner per year. It is the right choice when roles span more than one discipline.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How do volume discounts work? <span class="plus">+</span></summary>
+          <p class="faq-a">Discounts apply automatically based on the number of licenses you buy. The slider above shows the discount tier for any team size from 20 to 10,000+. Discounts are the same for single-academy and All Access plans.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Can we mix academies across teams? <span class="plus">+</span></summary>
+          <p class="faq-a">Yes. You can buy different academies for different teams, or combine single-academy plans with All Access licenses. We'll structure the contract to match how your organization is set up.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">What about 10,000+ licenses or enterprise rollouts? <span class="plus">+</span></summary>
+          <p class="faq-a">For 10,000+ licenses we move to a custom contract with bespoke pricing, dedicated success management, and a phased deployment plan. Drag the slider to the top tier and we'll be in touch.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Do you offer monthly billing? <span class="plus">+</span></summary>
+          <p class="faq-a">All plans are 12-month licenses billed annually. Multi-year agreements are available for enterprise customers and unlock additional discounts.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Is there a free trial? <span class="plus">+</span></summary>
+          <p class="faq-a">Individuals can join for free at any time. For business teams we offer a guided pilot. Talk to us and we'll set you up with a sample cohort.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CTA STRIP ============================== -->
+<section class="cta-strip">
+  <div class="container">
+    <h2 class="h-xl">Ready to roll out?</h2>
+    <p>Talk to a learning designer for a tailored quote, or jump straight in with our free starter.</p>
+    <div class="btn-row">
+      <a class="btn btn-outline-dark btn-md" href="try-free/index.html">Try for Free <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<style>
+@media (max-width: 760px) {
+  .faq-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+}
+</style>
+
+<script>
+// ============================== AUDIENCE TABS ==============================
+(function () {
+  var tabs = document.querySelectorAll('.audience-tab');
+  var panels = document.querySelectorAll('.audience-panel');
+  if (!tabs.length || !panels.length) return;
+
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      var key = t.getAttribute('data-audience');
+      tabs.forEach(function (x) {
+        var active = x === t;
+        x.classList.toggle('active', active);
+        x.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      panels.forEach(function (p) {
+        p.classList.toggle('active', p.getAttribute('data-audience-panel') === key);
+      });
+      // Scroll back up to the tab bar so the user sees the swap
+      var bar = document.querySelector('.audience-tabs-bar');
+      if (bar) {
+        var top = bar.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+})();
+
+// ============================== INDIVIDUAL CURRENCY + BILLING TOGGLES ==============================
+(function () {
+  var PRICES = {
+    USD: { annual: 445, monthly: 42, symbol: '$' },
+    EUR: { annual: 408, monthly: 39, symbol: '€' },
+    GBP: { annual: 349, monthly: 33, symbol: '£' }
+  };
+
+  var state = { currency: 'EUR', billing: 'annual' };
+
+  function render() {
+    var p = PRICES[state.currency];
+    document.querySelectorAll('[data-indiv-symbol]').forEach(function (el) { el.textContent = p.symbol; });
+
+    var price = document.querySelector('[data-indiv-aa-price]');
+    var period = document.querySelector('[data-indiv-aa-period]');
+    var note = document.querySelector('[data-indiv-aa-note]');
+    if (price) price.textContent = state.billing === 'annual' ? p.annual : p.monthly;
+    if (period) period.textContent = state.billing === 'annual' ? 'per learner per year' : 'per learner per month';
+    if (note) note.textContent = state.billing === 'annual'
+      ? 'Cancel anytime · billed annually'
+      : 'Cancel anytime · billed monthly';
+
+    var tablePrice = document.querySelector('[data-indiv-aa-table-price]');
+    var tablePeriod = document.querySelector('[data-indiv-aa-table-period]');
+    if (tablePrice) tablePrice.textContent = state.billing === 'annual' ? p.annual : p.monthly;
+    if (tablePeriod) tablePeriod.textContent = state.billing === 'annual' ? 'per year' : 'per month';
+  }
+
+  document.querySelectorAll('#indiv-currency-toggle button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      state.currency = b.getAttribute('data-indiv-currency');
+      document.querySelectorAll('#indiv-currency-toggle button').forEach(function (x) {
+        x.classList.toggle('active', x === b);
+      });
+      render();
+    });
+  });
+
+  document.querySelectorAll('#indiv-billing-toggle button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      state.billing = b.getAttribute('data-indiv-billing');
+      document.querySelectorAll('#indiv-billing-toggle button').forEach(function (x) {
+        x.classList.toggle('active', x === b);
+      });
+      render();
+    });
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Banking &middot; Data and AI Training for Banks | Kubicle</title>
+<meta name="description" content="Build the data and AI capability your retail, commercial and investment banking teams actually need. Risk modelling, BI, automation and storytelling, calibrated for analysts, RMs and credit officers."/>
+<meta name="keywords" content="Kubicle banking, data training for banks, AI training for banks, risk modelling, credit analytics, banking BI, banking RPA, NASBA, CPD, CPE, banking upskilling"/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/industries/banking"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:url" content="https://www.kubicle.com/industries/banking"/>
+<meta property="og:title" content="Data and AI Training for the Banking Industry | Kubicle"/>
+<meta property="og:description" content="Role&#8209;calibrated data and AI training for retail, commercial and investment banks. Built around the work, not a course catalogue."/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Data and AI Training for Banks | Kubicle"/>
+<meta name="twitter:description" content="Role&#8209;calibrated training for analysts, RMs, credit officers and risk teams."/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Data and AI Training for Banks",
+  "provider": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "url": "https://www.kubicle.com",
+    "logo": "https://www.kubicle.com/img/shared/6929dc95a88edc17d8e3a3e4_LOGO-FILES-LOGO-MARK-WHITE-RGB-1.png",
+    "address": { "@type": "PostalAddress", "addressLocality": "Dublin", "addressCountry": "Ireland" }
+  },
+  "areaServed": "Worldwide",
+  "name": "Banking Industry Upskilling",
+  "url": "https://www.kubicle.com/industries/banking",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Retail, Commercial and Investment Banking"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+
+<style>
+/* ============================== LAYOUT ============================== */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+section { padding: 112px 0; position: relative; overflow: hidden; }
+section.compact { padding: 72px 0; }
+@media (max-width: 860px) {
+  .container { padding: 0 24px; }
+  section { padding: 80px 0; }
+}
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 96px 0 120px;
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 25%, rgba(4,150,255,0.32), transparent 70%),
+    radial-gradient(ellipse 80% 60% at 10% 90%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+  color: #fff;
+  position: relative;
+}
+.hero-content {
+  position: relative; z-index: 3;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.hero-content h1 em { font-style: normal; color: var(--accent); }
+.hero-sub {
+  color: rgba(255,255,255,0.85);
+  max-width: 560px;
+  font-size: 19px; line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+.hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; align-items: center; }
+.hero-rating {
+  display: inline-flex; align-items: center; gap: 12px;
+  margin-top: 28px;
+  color: rgba(255,255,255,0.75);
+  font-size: 13.5px;
+}
+.hero-rating .stars {
+  display: inline-flex; gap: 2px;
+}
+.hero-rating .stars svg { width: 16px; height: 16px; fill: #FDE74C; stroke: none; }
+.hero-rating strong { color: #fff; font-family: var(--head); font-weight: 600; }
+.hero-graphic {
+  position: relative; z-index: 2;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px -24px rgba(0,0,0,0.45);
+  aspect-ratio: 4/5;
+  max-width: 480px;
+  margin-left: auto;
+}
+.hero-graphic img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 1000px) {
+  .hero-content { grid-template-columns: 1fr; gap: 48px; }
+  .hero-graphic { max-width: 420px; margin: 0 auto; aspect-ratio: 16/10; }
+}
+
+/* ============================== TRUST BAR ============================== */
+.trust {
+  padding: 32px 0 28px;
+  background: var(--prussian);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+.trust-label {
+  color: rgba(255,255,255,0.45);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.marquee-track {
+  display: flex; width: max-content;
+  animation: marquee 60s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.logo-chip {
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  padding: 0 48px;
+}
+@media (max-width: 700px) { .logo-chip { padding: 0 32px; } }
+.logo-chip img {
+  height: 28px; width: auto; object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.logo-chip img.white-native { filter: brightness(1); opacity: 0.7; }
+.logo-chip:hover img { opacity: 1; }
+
+/* ============================== SECTION HEAD ============================== */
+.sec-head { max-width: 760px; }
+.sec-head h2 { margin-top: 16px; }
+.sec-head h2 em { font-style: normal; color: var(--accent); }
+.sec-head .body-lg { margin-top: 24px; color: var(--steel); max-width: 640px; }
+.sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.sec-head.center .body-lg { margin-left: auto; margin-right: auto; }
+.dark .sec-head .body-lg { color: rgba(255,255,255,0.78); }
+
+/* ============================== USE CASES (4) ============================== */
+#use-cases { background: #fff; }
+
+.use-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 56px;
+}
+.use-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 36px;
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: 24px; align-items: start;
+  transition: border 0.18s, transform 0.18s, box-shadow 0.18s;
+}
+.use-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 24px 48px -28px rgba(var(--accent-rgb), 0.30);
+}
+.use-card .ui {
+  width: 80px; height: 80px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--accent-soft);
+  border-radius: 18px;
+}
+.use-card .ui img { width: 56px; height: 56px; }
+.use-card h3 {
+  font-family: var(--head); font-size: 22px; font-weight: 600;
+  letter-spacing: -0.025em; line-height: 1.15;
+}
+.use-card p { font-size: 15px; color: var(--steel); line-height: 1.55; margin-top: 10px; }
+.use-card .stack {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-top: 14px;
+}
+.use-card .stack span {
+  background: var(--alice);
+  color: var(--prussian);
+  font-size: 11.5px; font-weight: 600;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+@media (max-width: 900px) { .use-grid { grid-template-columns: 1fr; } .use-card { padding: 28px; grid-template-columns: 64px 1fr; gap: 18px; } .use-card .ui { width: 64px; height: 64px; } .use-card .ui img { width: 44px; height: 44px; } }
+
+/* ============================== PARTNER (4 columns) ============================== */
+#partner { background: var(--alice); }
+
+/* ============================== CURRICULUM (dark) ============================== */
+#curriculum { background: var(--prussian); }
+#curriculum .subjects-head .eyebrow { color: var(--accent); }
+#curriculum .subjects-head h2 { color: #fff; }
+#curriculum .subjects-head .body { color: rgba(255,255,255,0.78); }
+#curriculum .subjects-nav .scroll-btn {
+  border-color: rgba(255,255,255,0.32);
+  background: transparent;
+  color: #fff;
+}
+#curriculum .subjects-nav .scroll-btn:hover {
+  background: #fff;
+  color: var(--prussian);
+  border-color: #fff;
+}
+#curriculum .subjects-nav .scroll-btn:disabled:hover {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255,255,255,0.32);
+}
+
+.partner-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 56px;
+}
+.partner-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 32px 28px;
+  display: flex; flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: border 0.18s, transform 0.18s, box-shadow 0.18s;
+}
+.partner-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.30;
+  pointer-events: none;
+  z-index: -1;
+}
+.partner-card.bg-blue::before   { background-image: url('../for-business/img/banking/684980e9cadfc5dc37d144b0_light-blue-bg-tab-with-kubicle.svg'); }
+.partner-card.bg-green::before  { background-image: url('../for-business/img/banking/green-bg-tab-with-kubicle.svg'); }
+.partner-card.bg-purple::before { background-image: url('../for-business/img/banking/6849581eff29fcfa5890203e_purple-bg-tab-with-kubicle.svg'); }
+.partner-card.bg-yellow::before { background-image: url('../for-business/img/banking/68496600e4999a5a256c4579_yellow-bg-tab-with-kubicle.svg'); }
+.partner-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 22px 44px -24px rgba(var(--accent-rgb), 0.25); }
+.partner-card .pi {
+  width: 64px; height: 64px;
+  display: flex; align-items: center; justify-content: center;
+}
+.partner-card .pi img { width: 64px; height: 64px; object-fit: contain; }
+.partner-card h3 {
+  font-family: var(--head); font-size: 19px; font-weight: 600;
+  letter-spacing: -0.022em; line-height: 1.2;
+}
+.partner-card p { font-size: 14.5px; color: var(--steel); line-height: 1.55; }
+.partner-card a.learn {
+  margin-top: auto; padding-top: 8px;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--head); font-size: 14px; font-weight: 600;
+  color: var(--accent-d);
+}
+.partner-card a.learn:hover { color: var(--prussian); }
+.partner-card a.learn .arr { transition: transform 0.15s; }
+.partner-card a.learn:hover .arr { transform: translateX(3px); }
+@media (max-width: 1000px) { .partner-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .partner-grid { grid-template-columns: 1fr; } }
+
+/* ============================== TSB SPOTLIGHT ============================== */
+#tsb-spotlight { background: #fff; }
+#tsb-spotlight .sec-head { position: relative; z-index: 1; }
+#tsb-spotlight .spotlight-grid { position: relative; z-index: 1; }
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
+  margin-top: 16px;
+  align-items: start;
+}
+.spot-text {
+  position: sticky;
+  top: 96px;
+  display: flex; flex-direction: column;
+  gap: 22px;
+}
+.spot-tsb { display: inline-flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.spot-tsb img.mark { height: 44px; width: auto; display: block; }
+.spot-tsb .role {
+  font-size: 11.5px; color: var(--steel);
+  text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600;
+}
+.spot-meta {
+  display: flex; flex-wrap: wrap; gap: 10px 22px;
+  font-size: 13.5px; color: var(--steel);
+  font-weight: 500;
+}
+.spot-meta span { display: inline-flex; align-items: center; gap: 8px; }
+.spot-meta .ic {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  background: rgba(var(--accent-rgb), 0.10);
+  color: var(--accent-d);
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.spot-meta .ic svg {
+  width: 15px; height: 15px;
+  fill: none; stroke: currentColor;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.spot-summary {
+  font-family: var(--head);
+  font-size: 22px; font-weight: 500;
+  line-height: 1.3; letter-spacing: -0.022em;
+  color: var(--prussian);
+}
+.spot-summary em {
+  font-style: normal; color: var(--accent-d); font-weight: 600;
+}
+.spot-quote {
+  margin: 0; padding: 4px 0 4px 22px;
+  border-left: 3px solid var(--accent);
+  font-size: 15px; line-height: 1.55;
+  color: var(--steel);
+}
+.spot-quote .who {
+  display: block;
+  font-family: var(--head); font-weight: 600;
+  font-size: 13px; color: var(--prussian);
+  margin-top: 10px; letter-spacing: 0.02em;
+}
+.spot-quote .who-role { font-weight: 400; color: var(--steel); letter-spacing: 0; }
+.spot-actions { display: flex; flex-direction: column; gap: 14px; margin-top: 4px; align-items: flex-start; }
+
+/* Cards carousel */
+.spot-cards-wrap { position: relative; }
+.spot-cards-scroll {
+  display: flex; gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 4px 18px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.spot-cards-scroll::-webkit-scrollbar { display: none; }
+.r-card {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative; overflow: hidden;
+  isolation: isolate;
+  border-radius: 24px;
+  padding: 56px 56px 48px;
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+  min-height: 420px;
+  background: #fff;
+  border: 1px solid rgba(11,27,43,0.12);
+  box-shadow: inset 0 0 26px rgba(11,27,43,0.06);
+}
+.r-card::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: -1;
+}
+.r-card.bg-blue::before   { background-image: url('../for-business/img/banking/684980e9cadfc5dc37d144b0_light-blue-bg-tab-with-kubicle.svg'); }
+.r-card.bg-pink::before   { background-image: url('../for-business/img/banking/684981947dd80bcd4c581372_light-pink-bg-tab-with-kubicle.svg'); }
+.r-card.bg-yellow::before { background-image: url('../for-business/img/banking/68496600e4999a5a256c4579_yellow-bg-tab-with-kubicle.svg'); }
+.r-card.bg-green::before  { background-image: url('../for-business/img/banking/green-bg-tab-with-kubicle.svg'); }
+.r-card.bg-purple::before { background-image: url('../for-business/img/banking/6849581eff29fcfa5890203e_purple-bg-tab-with-kubicle.svg'); }
+.r-card.bg-grey::before   { background-image: url('../for-business/img/banking/68484edfcc1acb2f94555d4c_grey-bg-tab-with-kubicle.svg'); }
+
+.r-card .num {
+  font-family: var(--head); font-weight: 700;
+  font-size: clamp(96px, 11vw, 144px);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  position: relative; z-index: 1;
+}
+.r-card .num small {
+  font-size: 0.5em; font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.r-card.bg-blue   .num { color: #1478D9; }
+.r-card.bg-pink   .num { color: #C2185B; }
+.r-card.bg-yellow .num { color: #B47A04; }
+.r-card.bg-green  .num { color: #047857; }
+.r-card.bg-purple .num { color: #7B45BB; }
+.r-card.bg-grey   .num { color: var(--prussian); }
+
+.r-card .label {
+  font-family: var(--head); font-size: 26px; font-weight: 600;
+  letter-spacing: -0.025em; line-height: 1.2;
+  color: var(--prussian);
+  margin-top: 28px;
+  max-width: 520px;
+  position: relative; z-index: 1;
+}
+.r-card .desc {
+  font-size: 16px; line-height: 1.55;
+  color: var(--prussian); opacity: 0.72;
+  margin-top: 12px;
+  max-width: 540px;
+  position: relative; z-index: 1;
+}
+
+/* Nav (arrows + counter) */
+.spot-nav {
+  display: flex; align-items: center; gap: 14px;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+.spot-nav .scroll-btn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(11,27,43,0.16);
+  background: #fff;
+  color: var(--prussian);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, opacity 0.15s;
+  flex-shrink: 0;
+}
+.spot-nav .scroll-btn svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.spot-nav .scroll-btn:hover { background: var(--prussian); color: #fff; border-color: var(--prussian); }
+.spot-nav .scroll-btn:disabled { opacity: 0.3; cursor: default; }
+.spot-nav .scroll-btn:disabled:hover { background: #fff; color: var(--prussian); border-color: rgba(11,27,43,0.16); }
+
+/* Counter floating top-right of card area */
+.spot-counter {
+  position: absolute;
+  top: 18px; right: 18px;
+  z-index: 2;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(11,27,43,0.10);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-family: var(--head);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--prussian);
+  pointer-events: none;
+}
+.spot-counter strong { color: var(--accent-d); font-weight: 700; }
+
+@media (max-width: 1000px) {
+  .spotlight-grid { grid-template-columns: 1fr; gap: 40px; }
+  .spot-text { position: static; }
+}
+
+/* ============================== PARTNERSHIP REEL (single-card horizontal carousel) ============================== */
+#partnership {
+  background: var(--prussian);
+  position: relative;
+  overflow: hidden;
+}
+#partnership::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(4,150,255,0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(4,150,255,0.14) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+}
+#partnership .container { position: relative; z-index: 1; }
+#partnership h2 { color: #fff; }
+#partnership h2 em { color: var(--accent); }
+#partnership .body-lg { color: rgba(255,255,255,0.82); }
+#partnership .eyebrow { color: var(--accent); }
+.partnership-wrap {
+  margin-top: 56px;
+  position: relative;
+}
+.partnership-list {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border-radius: 28px;
+}
+.partnership-list::-webkit-scrollbar { display: none; }
+.p-card {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 0;
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 28px;
+  overflow: hidden;
+}
+.p-img {
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  padding: 36px 40px;
+  min-height: 420px;
+}
+.p-img::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.20;
+  pointer-events: none;
+  z-index: 0;
+}
+.p-card.bg-scalable   .p-img::before { background-image: url('../for-business/img/banking/685947943414dce17d12bd75_scalable-training-organization-wide-bg.svg'); }
+.p-card.bg-accredited .p-img::before { background-image: url('../for-business/img/banking/685947f44b9a666229a0292d_accredited-courses-bg.svg'); }
+.p-card.bg-custom     .p-img::before { background-image: url('../for-business/img/banking/685947f455ef722be90666b4_custom-learning-paths-bg.svg'); }
+.p-card.bg-pink       .p-img::before { background-image: url('../for-business/img/banking/684981947dd80bcd4c581372_light-pink-bg-tab-with-kubicle.svg'); }
+.p-img img {
+  position: relative; z-index: 1;
+  max-width: 100%; max-height: 380px;
+  width: auto; height: auto;
+  object-fit: contain;
+}
+.p-body {
+  padding: 56px 96px 56px 48px;
+  display: flex; flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+.p-body .eyebrow { color: var(--accent-d); }
+.p-body h3 {
+  font-family: var(--head); font-size: clamp(26px, 2.6vw, 36px);
+  font-weight: 600;
+  letter-spacing: -0.025em; line-height: 1.08;
+  color: var(--prussian);
+}
+.p-body p {
+  font-size: 16px; color: var(--steel);
+  line-height: 1.6;
+  max-width: 540px;
+}
+.p-body a.learn {
+  margin-top: 8px;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--head); font-size: 14px; font-weight: 600;
+  color: var(--accent-d);
+  align-self: flex-start;
+}
+.p-body a.learn:hover { color: var(--prussian); }
+.p-body a.learn .arr { transition: transform 0.15s; }
+.p-body a.learn:hover .arr { transform: translateX(4px); }
+
+/* Dots */
+.partnership-dots {
+  display: flex; gap: 10px; justify-content: center;
+  margin-top: 28px;
+}
+.p-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.22);
+  border: 0; padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, width 0.2s, border-radius 0.2s;
+}
+.p-dot:hover { background: rgba(255,255,255,0.45); }
+.p-dot.active {
+  background: var(--accent);
+  width: 32px;
+  border-radius: 5px;
+}
+
+/* Side arrows */
+.partnership-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid rgba(11,27,43,0.10);
+  color: var(--prussian);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 10px 24px -10px rgba(11,27,43,0.32);
+  transition: opacity 0.2s, transform 0.2s, background 0.15s, color 0.15s, border-color 0.15s;
+}
+.partnership-arrow svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.partnership-arrow.prev { left: 16px; }
+.partnership-arrow.next { right: 16px; }
+.partnership-arrow:hover {
+  background: var(--prussian);
+  color: #fff;
+  border-color: var(--prussian);
+  transform: translateY(-50%) scale(1.06);
+}
+.partnership-arrow.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.85);
+}
+@media (max-width: 700px) {
+  .partnership-arrow { width: 40px; height: 40px; }
+  .partnership-arrow.prev { left: 8px; }
+  .partnership-arrow.next { right: 8px; }
+}
+
+@media (max-width: 900px) {
+  .p-card { grid-template-columns: 1fr; }
+  .p-img { min-height: 280px; padding: 32px; }
+  .p-img img { max-height: 240px; }
+  .p-body { padding: 36px 32px; }
+}
+
+/* ============================== ACADEMIES x PERSONAS (gradient cards) ============================== */
+#academies {
+  background:
+    radial-gradient(circle at 1.5px 1.5px, rgba(11,27,43,0.08) 1.4px, transparent 0),
+    #fff;
+  background-size: 26px 26px, auto;
+}
+.acad-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+@media (max-width: 800px) { .acad-grid { grid-template-columns: 1fr; } }
+
+.acad-card {
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  border-radius: 24px;
+  padding: 40px;
+  color: #fff;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 380px;
+}
+.acad-card::before {
+  content: "";
+  position: absolute; top: -60px; right: -60px;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.10);
+  pointer-events: none;
+}
+.acad-card::after {
+  content: "";
+  position: absolute; bottom: -50px; left: -50px;
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.18);
+  pointer-events: none;
+}
+.acad-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -20px rgba(0,0,0,0.4); }
+.acad-card.a-data    { background: linear-gradient(135deg, #E91E63 0%, #C2185B 100%); }
+.acad-card.a-ai      { background: linear-gradient(135deg, #00C4CC 0%, #00A8B0 100%); }
+.acad-card.a-finance { background: linear-gradient(135deg, #10B981 0%, #047857 100%); }
+.acad-card.a-pm      { background: linear-gradient(135deg, #F97316 0%, #C2540D 100%); }
+
+.acad-card .academy-num {
+  font-family: var(--head); font-size: 14px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  opacity: 0.85;
+  position: relative; z-index: 2;
+}
+.acad-card h3 {
+  font-family: var(--head); font-weight: 600;
+  font-size: 38px; margin-top: 10px;
+  color: #fff;
+  letter-spacing: -0.025em; line-height: 1.05;
+  position: relative; z-index: 2;
+}
+.acad-card p.academy-sub {
+  margin-top: 16px;
+  font-size: 15px; line-height: 1.5;
+  color: rgba(255,255,255,0.92);
+  max-width: 460px;
+  position: relative; z-index: 2;
+}
+.acad-card .personas-row {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 24px;
+  position: relative; z-index: 2;
+}
+.acad-card .persona-chip {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.18);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  display: inline-flex; align-items: center;
+  gap: 8px;
+  color: #fff;
+}
+.acad-card .persona-chip .p-tier {
+  display: inline-flex; gap: 3px; align-items: center;
+}
+.acad-card .persona-chip .p-seg {
+  width: 14px; height: 5px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.30);
+}
+.acad-card .persona-chip .p-seg.on { background: #fff; }
+.acad-card .academy-foot {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  position: relative; z-index: 2;
+  flex-wrap: wrap; gap: 12px;
+}
+.acad-card .academy-foot .meta {
+  font-size: 12.5px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  opacity: 0.85;
+}
+.acad-card .academy-foot .go {
+  font-family: var(--head);
+  font-size: 15px; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.acad-card .academy-foot .go span { transition: transform 0.15s; }
+.acad-card:hover .academy-foot .go span { transform: translateX(4px); }
+
+/* ============================== SUBJECTS SCROLLER (full-bleed) ============================== */
+.subjects-head { max-width: 760px; }
+.subjects-fullbleed { margin-top: 40px; width: 100%; }
+.subjects-scroll {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-padding-left: max(48px, calc((100vw - 1280px) / 2 + 48px));
+  padding: 4px max(48px, calc((100vw - 1280px) / 2 + 48px)) 8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.subjects-scroll::-webkit-scrollbar { display: none; }
+@media (max-width: 860px) {
+  .subjects-scroll {
+    scroll-padding-left: 24px;
+    padding: 4px 24px 8px;
+  }
+}
+.subject-tile {
+  flex: 0 0 200px;
+  scroll-snap-align: start;
+  display: flex; flex-direction: column; gap: 14px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--prussian);
+  transition: border 0.18s, transform 0.18s, box-shadow 0.18s;
+}
+.subject-tile:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 30px -18px rgba(var(--accent-rgb), 0.30);
+}
+.subject-icn {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: rgba(var(--accent-rgb), 0.08);
+  color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.18s, color 0.18s;
+}
+.subject-tile:hover .subject-icn { background: var(--accent); color: #fff; }
+.subject-icn svg {
+  width: 22px; height: 22px;
+  fill: none; stroke: currentColor;
+  stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+}
+.subject-name {
+  font-family: var(--head);
+  font-size: 15px; font-weight: 600;
+  line-height: 1.2; letter-spacing: -0.01em;
+}
+.subjects-nav {
+  display: flex; gap: 12px;
+  margin-top: 24px;
+  justify-content: flex-end;
+}
+.subjects-nav .scroll-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--prussian);
+  background: transparent;
+  color: var(--prussian);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s, color 0.15s, opacity 0.15s;
+}
+.subjects-nav .scroll-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.subjects-nav .scroll-btn:hover { background: var(--prussian); color: #fff; }
+.subjects-nav .scroll-btn:disabled { opacity: 0.3; cursor: default; }
+.subjects-nav .scroll-btn:disabled:hover { background: transparent; color: var(--prussian); }
+
+/* ============================== CASE STUDIES ============================== */
+.cs-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 56px;
+}
+.cs-card {
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04);
+}
+.cs-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 28px 50px -22px rgba(0,0,0,0.45),
+    0 8px 18px -6px rgba(0,0,0,0.20);
+}
+.cs-logo-well {
+  height: 220px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 36px 40px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 50%, #fff 0%, #F4F6F8 100%);
+  border-bottom: 1px solid var(--alice);
+}
+.cs-logo-well::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(4,150,255,0.08), transparent 65%);
+  pointer-events: none;
+}
+.cs-logo-well img {
+  position: relative; z-index: 1;
+  max-height: 90px; max-width: 80%;
+  width: auto; height: auto;
+  object-fit: contain;
+  /* No filter: keep original brand colours */
+}
+.cs-card .cs-body {
+  padding: 28px 28px 26px;
+  display: flex; flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.cs-card h4 {
+  font-family: var(--head); font-size: 18px; font-weight: 600;
+  letter-spacing: -0.02em; line-height: 1.25;
+  color: var(--prussian);
+}
+.cs-card p {
+  font-size: 14px; color: var(--steel);
+  line-height: 1.55;
+}
+.cs-card .cs-link {
+  margin-top: auto; padding-top: 6px;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--head); font-size: 13.5px; font-weight: 600;
+  color: var(--accent-d);
+}
+.cs-card .cs-link .arr { transition: transform 0.15s; }
+.cs-card:hover .cs-link .arr { transform: translateX(4px); }
+@media (max-width: 900px) {
+  .cs-grid { grid-template-columns: 1fr; }
+  .cs-logo-well { height: 180px; }
+}
+
+/* ============================== FAQ ============================== */
+.faq-list {
+  margin-top: 48px;
+  border-top: 1px solid var(--alice);
+}
+.faq-item { border-bottom: 1px solid var(--alice); }
+.faq-q {
+  padding: 22px 0;
+  display: flex; align-items: center; justify-content: space-between;
+  cursor: pointer;
+  font-family: var(--head); font-size: 19px; font-weight: 500;
+  color: var(--prussian);
+  user-select: none; list-style: none;
+  letter-spacing: -0.015em;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q .plus {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--alice); color: var(--accent-d);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 400;
+  transition: transform 0.25s, background 0.2s, color 0.2s;
+  flex-shrink: 0; margin-left: 16px;
+}
+.faq-item[open] .faq-q .plus { transform: rotate(45deg); background: var(--accent); color: #fff; }
+.faq-a { padding-bottom: 22px; color: var(--steel); font-size: 15px; line-height: 1.6; max-width: 800px; }
+
+/* ============================== FINAL CTA ============================== */
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+  position: relative;
+  overflow: hidden;
+}
+.final-cta h2 { max-width: 900px; color: #fff; }
+.final-cta h2 em { font-style: normal; color: var(--accent); }
+.final-cta .body-lg { max-width: 640px; color: rgba(255,255,255,0.82); }
+.final-cta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 40px; }
+.final-cta .contact-row {
+  display: flex; gap: 48px; margin-top: 56px; flex-wrap: wrap;
+  padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.12);
+}
+.final-cta .contact-row .item .eyebrow { color: rgba(255,255,255,0.5); }
+.final-cta .contact-row .item .val { font-family: var(--head); font-size: 18px; margin-top: 4px; color: #fff; }
+
+/* ============================== FLOATING CTA ============================== */
+.float-cta {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  z-index: 90;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(20px);
+  box-shadow: 0 20px 50px -10px rgba(4,150,255,0.5);
+}
+.float-cta.on { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+.center { text-align: center; }
+</style>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== NAV (shared/nav.js) ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-content">
+      <div>
+        <div class="eyebrow" style="color: var(--accent);">Industries &middot; Banking</div>
+        <h1 class="h-display" style="margin-top: 18px;">
+          Data and AI skills for<br/>
+          the <em>banking industry.</em>
+        </h1>
+        <p class="hero-sub" style="margin-top: 24px;">
+          Calibrated training for retail, commercial and investment banking teams. Built around credit work, risk modelling, branch BI and compliance, not a 10,000&#8209;course catalogue.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary btn-lg" href="../catalog.html">Download Catalog <span class="arr">&rarr;</span></a>
+          <a class="btn btn-ghost btn-lg" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+        </div>
+        <div class="hero-rating">
+          <span class="stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+          </span>
+          <span><strong>4.7<span class="rating-of">/5</span></strong> across 200+ G2 reviews</span>
+        </div>
+      </div>
+      <div class="hero-graphic">
+        <img src="../for-business/img/banking/hero-banking.jpg" alt="Kubicle data and AI training for banking teams"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TRUST BAR ============================== -->
+<div class="trust">
+  <div class="trust-label">Trusted by leading institutions</div>
+  <div class="marquee-track" id="marquee-track"></div>
+</div>
+
+<!-- ============================== USE CASES ============================== -->
+<section id="use-cases">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Where Banks Use Kubicle</div>
+      <h2 class="h-xl">
+        Four jobs your teams<br/>
+        already <em>need to do well.</em>
+      </h2>
+      <p class="body-lg">
+        Real bank workflows, not generic data theory. Each track is built around the deliverables analysts, risk officers and BI managers ship every week.
+      </p>
+    </div>
+
+    <div class="use-grid">
+      <div class="use-card">
+        <div class="ui"><img src="../for-business/img/banking/icon-1.svg" alt="Risk modelling and predictive analytics icon"/></div>
+        <div>
+          <h3>Risk modelling and predictive analytics</h3>
+          <p>Build classification and regression models for credit scoring, churn and fraud detection. Calibrate, validate, defend in model risk reviews.</p>
+          <div class="stack"><span>Python</span><span>SQL</span><span>Statistical Analysis</span><span>ML</span></div>
+        </div>
+      </div>
+      <div class="use-card">
+        <div class="ui"><img src="../for-business/img/banking/icon-2.svg" alt="Data integration and process automation icon"/></div>
+        <div>
+          <h3>Data integration and process automation</h3>
+          <p>Clean, blend and automate transaction, CRM and compliance pipelines so reporting cycles compress and reconciliation breaks fall.</p>
+          <div class="stack"><span>SQL</span><span>Alteryx</span><span>Power Automate</span><span>UiPath</span></div>
+        </div>
+      </div>
+      <div class="use-card">
+        <div class="ui"><img src="../for-business/img/banking/icon-5.svg" alt="Business intelligence and visualisation icon"/></div>
+        <div>
+          <h3>Business intelligence and visualisation</h3>
+          <p>Design Power BI and Tableau dashboards that track customer behaviour, product KPIs and branch performance, refreshed daily and trusted by the front line.</p>
+          <div class="stack"><span>Power BI</span><span>Tableau</span><span>Excel</span><span>DAX</span></div>
+        </div>
+      </div>
+      <div class="use-card">
+        <div class="ui"><img src="../for-business/img/banking/icon-6.svg" alt="Strategic communication and storytelling icon"/></div>
+        <div>
+          <h3>Strategic communication and storytelling</h3>
+          <p>Turn risk trends and branch variance into board packs and credit memos that land. Less &ldquo;here are the numbers&rdquo;, more &ldquo;here is the recommendation&rdquo;.</p>
+          <div class="stack"><span>PowerPoint</span><span>Word</span><span>Data Storytelling</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ACADEMIES x PERSONAS ============================== -->
+<section id="academies">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Academies &times; Personas</div>
+      <h2 class="h-xl">
+        Four academies.<br/>
+        <em>Every banking role calibrated.</em>
+      </h2>
+      <p class="body-lg">
+        The bank doesn't have one type of learner. Kubicle's four academies map to the personas in your firm, with depth pitched to the role. From board director to credit analyst, no Python for the CFO, no &ldquo;what is data&rdquo; 101 for the quant.
+      </p>
+    </div>
+
+    <div class="acad-grid">
+      <a class="acad-card a-ai" href="../academies/ai/index.html">
+        <div>
+          <div class="academy-num">Academy 01</div>
+          <h3>AI</h3>
+          <p class="academy-sub">From AI fluency for the front office to applied builders behind the scenes. Calibrated to the AI work each role actually owns.</p>
+        </div>
+        <div>
+          <div class="personas-row">
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span>Apprentice</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 2 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span>Navigator</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 3 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span></span>Architect</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 4 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span></span>Strategist</span>
+          </div>
+          <div class="academy-foot">
+            <div class="meta">Product &middot; COO &middot; AI Engineering &middot; 2nd&#8209;Line Risk</div>
+            <div class="go">Visit AI Academy <span>&rarr;</span></div>
+          </div>
+        </div>
+      </a>
+
+      <a class="acad-card a-data" href="../academies/data-literacy/index.html">
+        <div>
+          <div class="academy-num">Academy 02</div>
+          <h3>Data Literacy</h3>
+          <p class="academy-sub">The biggest cohort in the bank. The whole workforce reads dashboards and acts on data; the analysts run the models.</p>
+        </div>
+        <div>
+          <div class="personas-row">
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 1 of 4"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span></span>Citizen</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 2 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span>Associate</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 3 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span></span>Wrangler</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 4 of 4"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span></span>Analyst</span>
+          </div>
+          <div class="academy-foot">
+            <div class="meta">Branch &middot; RMs &middot; BI &middot; Credit &middot; Model Risk</div>
+            <div class="go">Visit Data Academy <span>&rarr;</span></div>
+          </div>
+        </div>
+      </a>
+
+      <a class="acad-card a-pm" href="../academies/project-management/index.html">
+        <div>
+          <div class="academy-num">Academy 03</div>
+          <h3>Project Management</h3>
+          <p class="academy-sub">The change function the bank actually runs on. CAPM&#8209;mapped fundamentals through to adaptive delivery for the transformation office.</p>
+        </div>
+        <div>
+          <div class="personas-row">
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 1 of 3"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span>Project Member</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 2 of 3"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span></span>PM Candidate</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 3 of 3"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span></span>Project Champion</span>
+          </div>
+          <div class="academy-foot">
+            <div class="meta">PMOs &middot; Change &middot; Transformation &middot; BAs</div>
+            <div class="go">Visit PM Academy <span>&rarr;</span></div>
+          </div>
+        </div>
+      </a>
+
+      <a class="acad-card a-finance" href="../academies/finance/index.html">
+        <div>
+          <div class="academy-num">Academy 04</div>
+          <h3>Finance</h3>
+          <p class="academy-sub">Modelling, valuation and finance fundamentals at the bar credit, treasury and FP&amp;A teams need to defend in a committee review.</p>
+        </div>
+        <div>
+          <div class="personas-row">
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 1 of 3"><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span></span>Apprentice</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 2 of 3"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span></span>Analyst</span>
+            <span class="persona-chip"><span class="p-tier" aria-label="Tier 3 of 3"><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span></span>Modeler</span>
+          </div>
+          <div class="academy-foot">
+            <div class="meta">Credit &middot; Treasury &middot; FP&amp;A &middot; M&amp;A &middot; Equity Research</div>
+            <div class="go">Visit Finance Academy <span>&rarr;</span></div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SUBJECTS SCROLLER ============================== -->
+<section class="alice compact" id="curriculum">
+  <div class="container">
+    <div class="subjects-head">
+      <div class="eyebrow">Curriculum for Banking</div>
+      <h2 class="h-lg" style="margin-top: 14px;">
+        The subjects banking teams pull from most.
+      </h2>
+      <p class="body" style="margin-top: 16px; color: var(--steel); max-width: 560px;">
+        Every persona pathway draws from this library. Calibrated cohort by cohort, never &ldquo;here is the catalogue, good luck&rdquo;.
+      </p>
+    </div>
+  </div>
+
+  <!-- Full-bleed scroller (sits outside .container so it can run to the screen edge) -->
+  <div class="subjects-fullbleed">
+    <div class="subjects-scroll" id="subjects-scroll">
+      <a class="subject-tile" href="../courses/excel.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+        <div class="subject-name">Excel</div>
+      </a>
+      <a class="subject-tile" href="../courses/sql.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div>
+        <div class="subject-name">SQL</div>
+      </a>
+      <a class="subject-tile" href="../courses/python-fundamentals.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/><path d="M14 4l-4 16"/></svg></div>
+        <div class="subject-name">Python Fundamentals</div>
+      </a>
+      <a class="subject-tile" href="../courses/power-bi.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M2 20h20"/></svg></div>
+        <div class="subject-name">Power BI</div>
+      </a>
+      <a class="subject-tile" href="../courses/tableau.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M2 20h20"/></svg></div>
+        <div class="subject-name">Tableau</div>
+      </a>
+      <a class="subject-tile" href="../courses/alteryx.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 6h3a3 3 0 0 1 3 3"/></svg></div>
+        <div class="subject-name">Alteryx</div>
+      </a>
+      <a class="subject-tile" href="../courses/financial-modeling.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 8h16M9 3v18"/><path d="M13 12h4M13 16h4"/></svg></div>
+        <div class="subject-name">Financial Modeling</div>
+      </a>
+      <a class="subject-tile" href="../courses/statistical-analysis.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><path d="M6 4h12l-7 8 7 8H6"/></svg></div>
+        <div class="subject-name">Statistical Analysis</div>
+      </a>
+      <a class="subject-tile" href="../courses/machine-learning-python.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><path d="M12 4a3 3 0 0 0-3 3v1a3 3 0 0 0-3 3v1a3 3 0 0 0 3 3v1a3 3 0 0 0 3 3"/><path d="M12 4a3 3 0 0 1 3 3v1a3 3 0 0 1 3 3v1a3 3 0 0 1-3 3v1a3 3 0 0 1-3 3"/><path d="M12 4v15"/></svg></div>
+        <div class="subject-name">Machine Learning</div>
+      </a>
+      <a class="subject-tile" href="../courses/data-ethics-risk.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></svg></div>
+        <div class="subject-name">Data Ethics &amp; Risk</div>
+      </a>
+      <a class="subject-tile" href="../courses/data-regulation.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-3 3-6-6 3-3z"/><path d="M11 7L4 14l3 3 7-7"/><path d="M3 21h12"/></svg></div>
+        <div class="subject-name">Data Regulation</div>
+      </a>
+      <a class="subject-tile" href="../courses/data-presentation-skills.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 20l5-4 5 4"/><path d="M12 16v4"/></svg></div>
+        <div class="subject-name">Data Storytelling</div>
+      </a>
+      <a class="subject-tile" href="../courses/data-security.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+        <div class="subject-name">Data Security</div>
+      </a>
+      <a class="subject-tile" href="../courses/strategic-analysis.html">
+        <div class="subject-icn"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="subject-name">Strategic Analysis</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="subjects-nav">
+      <button class="scroll-btn" id="subjects-prev" aria-label="Previous subjects" disabled>
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="scroll-btn" id="subjects-next" aria-label="Next subjects">
+        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PROGRAMS FOR BANKING TEAMS ============================== -->
+<section class="alice" id="partner">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Programs for Banking Teams</div>
+      <h2 class="h-xl">
+        Four programs,<br/>
+        <em>one capability ladder.</em>
+      </h2>
+      <p class="body-lg">
+        From baseline literacy to deep technical reskill. Plug the right program in for the right cohort. Combine them when the rollout calls for it.
+      </p>
+    </div>
+
+    <div class="partner-grid">
+      <div class="partner-card bg-blue">
+        <div class="pi"><img src="../for-business/img/banking/sp-blue.svg" alt="Data and AI literacy program icon"/></div>
+        <h3>Data &amp; AI literacy at scale</h3>
+        <p>The decisions that move a bank are made across every floor, not just by the analytics team. Give the whole workforce the language to read, question and act on data.</p>
+        <a class="learn" href="../academies/data-literacy/index.html">Learn more <span class="arr">&rarr;</span></a>
+      </div>
+      <div class="partner-card bg-green">
+        <div class="pi"><img src="../for-business/img/banking/sp-green.svg" alt="Skills transformation program icon"/></div>
+        <h3>Skills transformation programs</h3>
+        <p>Reskill cohorts into the roles the bank actually needs next: BI analysts, automation engineers, credit data scientists. Calibrated paths, fixed deadlines, measurable outputs.</p>
+        <a class="learn" href="../for-business/custom-learning-design.html">Learn more <span class="arr">&rarr;</span></a>
+      </div>
+      <div class="partner-card bg-purple">
+        <div class="pi"><img src="../for-business/img/banking/sp-purple.svg" alt="Early career onboarding program icon"/></div>
+        <h3>Early career onboarding</h3>
+        <p>New hires productive in weeks, not months. Graduate academies pre&#8209;built for analyst, RM and operations tracks, mapped to the tools the desk uses on day one.</p>
+        <a class="learn" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+      </div>
+      <div class="partner-card bg-yellow">
+        <div class="pi"><img src="../for-business/img/banking/sp-yellow.svg" alt="Tech stack optimisation program icon"/></div>
+        <h3>Get more from your tech stack</h3>
+        <p>The bank already paid for the licences. Kubicle teaches the people behind them so Power BI, Alteryx, Python and the rest start returning the investment they were sold on.</p>
+        <a class="learn" href="../for-business/integrations.html">Learn more <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== HOW BANKING ORGS PARTNER WITH KUBICLE ============================== -->
+<section class="dark" id="partnership">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Why Banks Partner with Kubicle</div>
+      <h2 class="h-xl">
+        How banking organisations<br/>
+        <em>partner with Kubicle.</em>
+      </h2>
+      <p class="body-lg">
+        Helping financial institutions build data and AI skills at scale.
+      </p>
+    </div>
+
+    <div class="partnership-wrap">
+    <button class="partnership-arrow prev hidden" id="partnership-prev" type="button" aria-label="Previous card">
+      <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="partnership-arrow next" id="partnership-next" type="button" aria-label="Next card">
+      <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <div class="partnership-list" id="partnership-scroll">
+      <article class="p-card bg-custom">
+        <div class="p-img">
+          <img src="../for-business/img/banking/banking-customizable-learning-paths-illustration.svg" alt="Customisable learning paths tailored to banking roles"/>
+        </div>
+        <div class="p-body">
+          <div class="eyebrow">Tailored to Fit</div>
+          <h3>Customisable learning paths for every role.</h3>
+          <p>
+            Pathways designed with your L&amp;D and BI leaders. The credit team's path is not the operations team's path. Both ladder to the same outcomes, both report to the same engagement and skill&#8209;gain dashboard.
+          </p>
+          <a class="learn" href="../for-business/custom-learning-design.html">Learn more <span class="arr">&rarr;</span></a>
+        </div>
+      </article>
+
+      <article class="p-card bg-scalable">
+        <div class="p-img">
+          <img src="../for-business/img/banking/banking-scalable-training-illustration.svg" alt="Scalable banking training rolled out across global teams"/>
+        </div>
+        <div class="p-body">
+          <div class="eyebrow">Enterprise&#8209;Ready Training</div>
+          <h3>Scalable training, organisation&#8209;wide.</h3>
+          <p>
+            Bulk user setup, SCIM, SSO, group hierarchies and reporting that work for ten learners or ten thousand. Multilingual content, multi&#8209;region data residency, consistent dashboards from the call centre to the CFO's office.
+          </p>
+          <a class="learn" href="../for-business/enterprises.html">Learn more <span class="arr">&rarr;</span></a>
+        </div>
+      </article>
+
+      <article class="p-card bg-accredited">
+        <div class="p-img">
+          <img src="../for-business/img/banking/banking-accredited-courses-illustration.svg" alt="CPD, CPE and NASBA accredited courses for banking professionals"/>
+        </div>
+        <div class="p-body">
+          <div class="eyebrow">Earn While You Learn</div>
+          <h3>Accredited courses, recognised credentials.</h3>
+          <p>
+            CPD, CPE and NASBA accredited courses. Every module your teams complete contributes credits toward continuing professional education, recognised in the regions banks actually operate in. Certificates ship straight to LinkedIn.
+          </p>
+          <a class="learn" href="../academies/data-literacy/index.html#impact">Learn more <span class="arr">&rarr;</span></a>
+        </div>
+      </article>
+
+      <article class="p-card bg-pink">
+        <div class="p-img">
+          <img src="../for-business/img/banking/banking-continuously-updated-content-illustration.svg" alt="Continuously updated banking learning content covering AI, data and regulation"/>
+        </div>
+        <div class="p-body">
+          <div class="eyebrow">Always Current</div>
+          <h3>Content that tracks the regulators and the tools.</h3>
+          <p>
+            AI moves fast and regulators move faster. New modules ship monthly, the curriculum tracks both, and the skills your teams earned last quarter don't go stale by the next reporting cycle.
+          </p>
+          <a class="learn" href="../blog/topic/ai-literacy.html">Learn more <span class="arr">&rarr;</span></a>
+        </div>
+      </article>
+    </div>
+
+    <div class="partnership-dots" role="tablist" aria-label="Partnership cards">
+      <button class="p-dot active" type="button" data-target="0" aria-label="Card 1: Tailored to Fit"></button>
+      <button class="p-dot"        type="button" data-target="1" aria-label="Card 2: Enterprise-Ready Training"></button>
+      <button class="p-dot"        type="button" data-target="2" aria-label="Card 3: Earn While You Learn"></button>
+      <button class="p-dot"        type="button" data-target="3" aria-label="Card 4: Always Current"></button>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TSB SPOTLIGHT ============================== -->
+<section id="tsb-spotlight">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Customer Spotlight</div>
+      <h2 class="h-xl">
+        How TSB built a<br/>
+        <em>data&#8209;fluent workforce.</em>
+      </h2>
+      <p class="body-lg">
+        500+ colleagues, 60 co&#8209;designed learning pathways, almost 2,700 hours of active learning. A live banking rollout that turned a sector&#8209;wide skills gap into measurable capability.
+      </p>
+    </div>
+
+    <div class="spotlight-grid">
+      <!-- LEFT: floating text -->
+      <div class="spot-text">
+        <div class="spot-tsb">
+          <img class="mark" src="../for-business/img/banking/TSB_logo_2013.svg.png" alt="TSB"/>
+          <span class="role">UK Retail Bank</span>
+        </div>
+
+        <div class="spot-meta">
+          <span><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/><path d="M9 8h2m-2 4h2m-2 4h2m4-8h2m-2 4h2m-2 4h2"/><path d="M3 21h18"/></svg></span>Banking</span>
+          <span><span class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15 16a4.5 4.5 0 0 1 7 2.5"/></svg></span>500+ learners</span>
+          <span><span class="ic"><svg viewBox="0 0 24 24"><path d="M9 4l-6 2v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg></span>60 pathways</span>
+        </div>
+
+        <p class="spot-summary">
+          A three&#8209;year skills strategy, designed bottom&#8209;up around a sector&#8209;wide gap in data, AI and digital. Kubicle was selected, co&#8209;designed and embedded as a partner, not a vendor. <em>Skill proficiency lifted 40&ndash;79% across critical areas.</em>
+        </p>
+
+        <blockquote class="spot-quote">
+          &ldquo;We needed a partner that could meet us at the scale and complexity of the upskilling challenge ahead. Kubicle's modular content, segmented pathways and reporting let us tailor the rollout to roles and track impact in a way our LMS never could.&rdquo;
+          <span class="who">TSB Skills &amp; Capability team<span class="who-role"> &middot; on the partnership</span></span>
+        </blockquote>
+
+        <div class="spot-actions">
+          <a class="btn btn-primary btn-md" href="../Case_Study_pdfs/tsb-learning-technologies-awards-2025.pdf" target="_blank" rel="noopener">
+            Read case study <span class="arr">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: scrollable results carousel -->
+      <div class="spot-cards-wrap">
+        <div class="spot-counter"><strong id="tsb-count">1</strong> / 14</div>
+        <div class="spot-cards-scroll" id="tsb-scroll">
+
+          <div class="r-card bg-blue">
+            <div class="num">+79<small>%</small></div>
+            <div>
+              <div class="label">Data Security proficiency</div>
+              <div class="desc">Pre&#8209; and post&#8209;learning fluency uplift across the cohort.</div>
+            </div>
+          </div>
+
+          <div class="r-card bg-pink">
+            <div class="num">+78<small>%</small></div>
+            <div>
+              <div class="label">Data Literacy proficiency</div>
+              <div class="desc">Across the workforce, not just analytics teams.</div>
+            </div>
+          </div>
+
+          <div class="r-card bg-yellow">
+            <div class="num">+63<small>%</small></div>
+            <div>
+              <div class="label">Statistical Analysis proficiency</div>
+              <div class="desc">Post&#8209;learning skill assessments vs. baseline.</div>
+            </div>
+          </div>
+
+          <div class="r-card bg-green">
+            <div class="num">+40<small>%</small></div>
+            <div>
+              <div class="label">Coding languages proficiency</div>
+              <div class="desc">Python, SQL and DAX, measured against pre&#8209;learning baselines.</div>
+            </div>
+          </div>
+
+          <div class="r-card bg-purple">
+            <div class="num">2,600<small>+</small></div>
+            <div>
+              <div class="label">Courses completed</div>
+              <div class="desc">Across 60 co&#8209;designed pathways, 500+ active learners.</div>
+            </div>
+          </div>
+
+          <div class="r-card bg-blue">
+            <div class="num">2,700<small>+</small></div>
+            <div>
+              <div class="label">Hours of active learning</div>
+              <div class="desc">Tracked centrally, monitored via in&#8209;product analytics.</div>
+            </div>
+          </div>
+
+          <div class="r-card bg-pink">
+            <div class="num">70<small>%</small></div>
+            <div>
+              <div class="label">Sustained weekly engagement</div>
+              <div class="desc">Of all enrolled learners, week on week.</div>
+            </div>
+          </div>
+
+          <div class="r-card bg-yellow">
+            <div class="num">85.5</div>
+            <div>
+              <div class="label">Pilot Net Promoter Score</div>
+              <div class="desc">50&#8209;learner pilot before scaling to the full cohort.</div>
+            </div>
+          </div>
+
+          <div class="r-card bg-green">
+            <div class="num">&minus;75<small>%</small></div>
+            <div>
+              <div class="label">Process time reduction</div>
+              <div class="desc">Power Automate and DAX use case replacing a VBA Excel model.</div>
+            </div>
+          </div>
+
+          <div class="r-card bg-purple">
+            <div class="num">1</div>
+            <div>
+              <div class="label">FTE freed per week</div>
+              <div class="desc">Single&#8209;learner output from the same automation use case.</div>
+            </div>
+          </div>
+
+          <div class="r-card bg-blue">
+            <div class="num">70<small>%</small></div>
+            <div>
+              <div class="label">Earned a digital badge</div>
+              <div class="desc">Of the active learners on the program.</div>
+            </div>
+          </div>
+
+          <div class="r-card bg-pink">
+            <div class="num">60<small>%</small></div>
+            <div>
+              <div class="label">Passed a formal exam</div>
+              <div class="desc">Recognised assessment alongside in&#8209;course badging.</div>
+            </div>
+          </div>
+
+          <div class="r-card bg-yellow">
+            <div class="num">+15<small>ppt</small></div>
+            <div>
+              <div class="label">&ldquo;Learn and grow&rdquo; lift</div>
+              <div class="desc">Kubicle users vs. non&#8209;users on the bank's engagement survey.</div>
+            </div>
+          </div>
+
+          <div class="r-card bg-green">
+            <div class="num">18<small>%</small></div>
+            <div>
+              <div class="label">Completed ahead of schedule</div>
+              <div class="desc">Of learners finishing their semester before the deadline.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="spot-nav">
+          <button class="scroll-btn" id="tsb-prev" aria-label="Previous result" disabled>
+            <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="scroll-btn" id="tsb-next" aria-label="Next result">
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CASE STUDIES ============================== -->
+<section class="dark" id="cases">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" style="color: var(--accent);">How Leading Teams Use Kubicle</div>
+      <h2 class="h-xl" style="color: #fff;">
+        Don't take our word for it.<br/>
+        <em>Read theirs.</em>
+      </h2>
+      <p class="body-lg">
+        Three customer stories from finance, manufacturing and consulting. Each one is a different rollout shape, all of them ladder to the same engagement and skill&#8209;gain numbers.
+      </p>
+    </div>
+
+    <div class="cs-grid">
+      <a class="cs-card" href="../Case_Study_pdfs/68405fa91b15fa21731a1d7b_jotun.pdf" target="_blank" rel="noopener">
+        <div class="cs-logo-well"><img src="../for-business/img/banking/Jotun_logo.svg.png" alt="Jotun"/></div>
+        <div class="cs-body">
+          <h4>Elevating data&#8209;driven decision making</h4>
+          <p>How Jotun rolled out Kubicle across eight markets and built a data&#8209;literate finance team in under a year.</p>
+          <span class="cs-link">Read the case study <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+      <a class="cs-card" href="../Case_Study_pdfs/687cd4f809767a8b8a4c7395_heineken.pdf" target="_blank" rel="noopener">
+        <div class="cs-logo-well"><img src="../for-business/img/banking/Heineken_Logo.svg.png" alt="Heineken"/></div>
+        <div class="cs-body">
+          <h4>Streamlining skill development post&#8209;merger</h4>
+          <p>HEINEKEN Beverages used tailored Kubicle paths to unify the skills of a newly merged team across regions.</p>
+          <span class="cs-link">Read the case study <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+      <a class="cs-card" href="../Case_Study_pdfs/68405f6be50890a598f4d6c2_adl.pdf" target="_blank" rel="noopener">
+        <div class="cs-logo-well"><img src="../for-business/img/banking/Arthur-D.-Little-New-Logo.png" alt="Arthur D. Little"/></div>
+        <div class="cs-body">
+          <h4>Elevating consulting proficiency</h4>
+          <p>Arthur D. Little leveraged Kubicle to standardise skills and lift global workforce productivity.</p>
+          <span class="cs-link">Read the case study <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+    </div>
+
+    <div class="center" style="margin-top: 56px;">
+      <a class="btn btn-ghost btn-md" href="../resources/case-studies.html">All customer stories <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FAQ ============================== -->
+<section id="faq">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start;">
+      <div>
+        <div class="eyebrow">Frequently Asked</div>
+        <h2 class="h-xl" style="margin-top: 16px;">
+          Answers for the questions<br/>
+          banking buyers ask.
+        </h2>
+        <p class="body" style="margin-top: 20px; color: var(--steel); max-width: 360px;">
+          Still have one? Book a 30&#8209;minute call with a Kubicle program designer.
+        </p>
+        <a class="btn btn-outline-dark btn-md" style="margin-top: 24px;" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary class="faq-q">What enterprise features ship by default for large banks? <span class="plus">+</span></summary>
+          <p class="faq-a">Bulk user provisioning via CSV or SCIM, SSO across SAML and OIDC, MFA on every administrator account, group hierarchies, role&#8209;based access, white&#8209;label branding and a Reporting API. Audit reports available under NDA.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Can Kubicle integrate with our existing LMS and tech stack? <span class="plus">+</span></summary>
+          <p class="faq-a">Yes. Off&#8209;the&#8209;shelf integrations with Cornerstone, Degreed, EdCast and Workday Learning, plus xAPI, an OData feed and a Reporting API for anything else. Custom integrations are built by our engineering team when the bank needs something bespoke.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How do we track learning impact across the bank? <span class="plus">+</span></summary>
+          <p class="faq-a">Engagement, completion and skill&#8209;gain dashboards by cohort, persona and individual. Pre&#8209; and post&#8209;program assessments quantify capability change. Scheduled CSV exports go to your data warehouse, or read directly from the Reporting API.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">What support do you provide at scale? <span class="plus">+</span></summary>
+          <p class="faq-a">Each enterprise customer gets a dedicated onboarding specialist for setup and a customer success manager for the lifetime of the contract. Quarterly reviews keep the program calibrated to the next 12 months.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">What content is covered for banking? <span class="plus">+</span></summary>
+          <p class="faq-a">Excel, SQL, Python, Power BI, Tableau, Alteryx, RPA, AI Fundamentals, Machine Learning, Statistical Analysis, Financial Modeling, Data Ethics &amp; Risk, Data Regulation and Storytelling. New courses ship monthly.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Are credentials externally recognised? <span class="plus">+</span></summary>
+          <p class="faq-a">Yes. CPD, CPE and NASBA accredited. Every course completion contributes credits learners can apply to professional development requirements and post directly to LinkedIn.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Will it scale to global teams and rapid rollouts? <span class="plus">+</span></summary>
+          <p class="faq-a">From ten learners to ten thousand without re&#8209;architecting. Multilingual content, multi&#8209;region data residency available, SSO and SCIM mean adding a region is a configuration change, not a project.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How does it adapt to different teams and roles? <span class="plus">+</span></summary>
+          <p class="faq-a">Through Kubicle Paths. Build role&#8209;calibrated journeys for analysts, RMs, BI managers, credit officers and leadership cohorts. Save them as templates, clone for the next intake, version as the role evolves.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">How quickly can we deploy? <span class="plus">+</span></summary>
+          <p class="faq-a">About a week for most banks. Sometimes a single day for teams with SSO and clean user data ready to go. Our customer success team handles the heavy lifting end&#8209;to&#8209;end.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="final-cta">
+  <div class="container">
+    <div class="eyebrow" style="color: rgba(255,255,255,0.6);">Get Started</div>
+    <h2 class="h-display" style="margin-top: 16px;">
+      Benchmark the bank's<br/>
+      <em>capability in 30 minutes.</em>
+    </h2>
+    <p class="body-lg" style="margin-top: 28px;">
+      A 30&#8209;minute consultation gives you a baseline persona mix, a tailored program outline and a candid view of what success looks like for your team.
+    </p>
+    <div class="final-cta-row">
+      <a class="btn btn-primary btn-lg" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+      <a class="btn btn-ghost btn-lg" href="../for-business/platform.html">See the tech stack</a>
+    </div>
+
+    <div class="contact-row">
+      <div class="item">
+        <div class="eyebrow">Visit</div>
+        <div class="val">kubicle.com</div>
+      </div>
+      <div class="item">
+        <div class="eyebrow">Email</div>
+        <div class="val">sales@kubicle.com</div>
+      </div>
+      <div class="item">
+        <div class="eyebrow">Offices</div>
+        <div class="val">Dublin, Ireland</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER (shared/footer.js) ============================== -->
+<div id="site-footer"></div>
+
+<!-- ============================== FLOATING CTA ============================== -->
+<a class="btn btn-primary btn-md float-cta" id="float-cta" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+
+
+<!-- ============================== SCRIPTS ============================== -->
+<script>
+// ============================== FLOATING CTA ==============================
+(function () {
+  var floatBtn = document.getElementById('float-cta');
+  var hero = document.getElementById('top');
+  if (!floatBtn || !hero) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting && e.boundingClientRect.top < 0) floatBtn.classList.add('on');
+      else if (e.isIntersecting) floatBtn.classList.remove('on');
+    });
+  }, { threshold: 0, rootMargin: '-100px 0px 0px 0px' });
+  io.observe(hero);
+
+  var finalCta = document.querySelector('.final-cta');
+  if (finalCta) {
+    var io2 = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) floatBtn.classList.remove('on'); });
+    }, { threshold: 0.2 });
+    io2.observe(finalCta);
+  }
+})();
+
+// ============================== PARTNERSHIP REEL ==============================
+(function () {
+  var scroller = document.getElementById('partnership-scroll');
+  var dots = document.querySelectorAll('.partnership-dots .p-dot');
+  var prev = document.getElementById('partnership-prev');
+  var next = document.getElementById('partnership-next');
+  if (!scroller || !dots.length) return;
+
+  function step() {
+    var card = scroller.querySelector('.p-card');
+    if (!card) return scroller.clientWidth;
+    var gap = parseFloat(getComputedStyle(scroller).gap) || 0;
+    return card.offsetWidth + gap;
+  }
+  function update() {
+    var current = Math.round(scroller.scrollLeft / step());
+    if (current < 0) current = 0;
+    if (current >= dots.length) current = dots.length - 1;
+    dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+
+    var max = scroller.scrollWidth - scroller.clientWidth - 1;
+    if (prev) prev.classList.toggle('hidden', scroller.scrollLeft <= 1);
+    if (next) next.classList.toggle('hidden', scroller.scrollLeft >= max);
+  }
+  dots.forEach(function (d, i) {
+    d.addEventListener('click', function () {
+      scroller.scrollTo({ left: step() * i, behavior: 'smooth' });
+    });
+  });
+  if (prev) prev.addEventListener('click', function () { scroller.scrollBy({ left: -step(), behavior: 'smooth' }); });
+  if (next) next.addEventListener('click', function () { scroller.scrollBy({ left: step(), behavior: 'smooth' }); });
+  scroller.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+// ============================== TSB SPOTLIGHT CAROUSEL ==============================
+(function () {
+  var scroller = document.getElementById('tsb-scroll');
+  var prev = document.getElementById('tsb-prev');
+  var next = document.getElementById('tsb-next');
+  var count = document.getElementById('tsb-count');
+  if (!scroller || !prev || !next) return;
+
+  var total = scroller.querySelectorAll('.r-card').length;
+
+  function step() {
+    var card = scroller.querySelector('.r-card');
+    if (!card) return scroller.clientWidth;
+    var gap = parseFloat(getComputedStyle(scroller).gap) || 0;
+    return card.offsetWidth + gap;
+  }
+  function update() {
+    var max = scroller.scrollWidth - scroller.clientWidth;
+    var current = Math.round(scroller.scrollLeft / step()) + 1;
+    if (current < 1) current = 1;
+    if (current > total) current = total;
+    if (count) count.textContent = current;
+    prev.disabled = scroller.scrollLeft <= 1;
+    next.disabled = scroller.scrollLeft >= max - 1;
+  }
+  prev.addEventListener('click', function () { scroller.scrollBy({ left: -step(), behavior: 'smooth' }); });
+  next.addEventListener('click', function () { scroller.scrollBy({ left: step(), behavior: 'smooth' }); });
+  scroller.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+// ============================== SUBJECTS SCROLLER ==============================
+(function () {
+  var scroller = document.getElementById('subjects-scroll');
+  var prev = document.getElementById('subjects-prev');
+  var next = document.getElementById('subjects-next');
+  if (!scroller || !prev || !next) return;
+
+  function step() {
+    var card = scroller.querySelector('.subject-tile');
+    if (!card) return scroller.clientWidth * 0.8;
+    var gap = parseFloat(getComputedStyle(scroller).gap) || 14;
+    return (card.offsetWidth + gap) * 3;
+  }
+  function updateArrows() {
+    var max = scroller.scrollWidth - scroller.clientWidth - 1;
+    prev.disabled = scroller.scrollLeft <= 0;
+    next.disabled = scroller.scrollLeft >= max;
+  }
+  prev.addEventListener('click', function () { scroller.scrollBy({ left: -step(), behavior: 'smooth' }); });
+  next.addEventListener('click', function () { scroller.scrollBy({ left: step(), behavior: 'smooth' }); });
+  scroller.addEventListener('scroll', updateArrows, { passive: true });
+  window.addEventListener('resize', updateArrows);
+  updateArrows();
+})();
+
+// ============================== MARQUEE ==============================
+(function () {
+  var logos = [
+    { src: '../img/shared/68c2caf09da428eb2dde4f9e_coca-cola-logo-white.png', alt: 'Coca-Cola', native: true },
+    { src: '../img/shared/67c0476eb0f8c4d3c435428c_6a6f1a51a10add6f2749c42cc0df7035_image-9.png', alt: 'Amazon', native: false },
+    { src: '../img/shared/68c2cad5cf0b314fbcc87474_bain-logo-white.png', alt: 'Bain & Company', native: true },
+    { src: '../img/shared/67c0476eb0f8c4d3c4354276_71a2cf3f7a67da45ac2c620241f37138_image-19.png', alt: 'Ford', native: false },
+    { src: '../img/shared/68a31c29651cb5c7de7328a0_heineken-logo-corporate-page-1.png', alt: 'Heineken', native: false },
+    { src: '../img/shared/67c0476eb0f8c4d3c4354287_2dbbe09d3f0f9a37d68ccb9f9ba677aa_image-21.png', alt: 'Jotun', native: false },
+    { src: '../img/shared/68c2caef8b6fdbbd84310a36_kpmg-logo-white.png', alt: 'KPMG', native: true },
+    { src: '../img/shared/68c2caefdc26eb4f7dceb524_lek-logo-white.png', alt: 'L.E.K. Consulting', native: true },
+    { src: '../img/shared/68c2caf00a998ed623dbf3d5_oliver-wyman-logo-white.png', alt: 'Oliver Wyman', native: true },
+    { src: '../img/shared/67c0476eb0f8c4d3c4354272_ab4654fe9cf282ba2459391b57d412b7_image-11.png', alt: 'PwC', native: false },
+    { src: '../img/shared/totalenergies-logo.png', alt: 'TotalEnergies', native: false }
+  ];
+  var track = document.getElementById('marquee-track');
+  if (!track) return;
+  var setsNeeded = Math.ceil((window.innerWidth * 2) / (logos.length * 180)) + 1;
+  var totalSets = setsNeeded * 2;
+  var html = '';
+  for (var s = 0; s < totalSets; s++) {
+    for (var i = 0; i < logos.length; i++) {
+      var l = logos[i];
+      html += '<span class="logo-chip"><img ' + (l.native ? 'class="white-native" ' : '') +
+        'src="' + l.src + '" alt="' + l.alt + '" style="height:28px;"/></span>';
+    }
+  }
+  track.innerHTML = html;
+})();
+</script>
+</body>
+</html>

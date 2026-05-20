@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Data Literacy Assessment | Kubicle</title>
+<meta name="description" content="Discover your data literacy profile with Kubicle's free assessment. Identify your persona across the four pillars of data literacy and uncover the skills to grow."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/resources/assessments/data-literacy"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:title" content="Data Literacy Assessment | Kubicle"/>
+<meta property="og:description" content="Measure your data literacy across four personas and four pillars. Get a personalised profile and clear next steps."/>
+<meta property="og:url" content="https://www.kubicle.com/resources/assessments/data-literacy"/>
+<meta property="og:image" content="https://www.kubicle.com/img/dl-assessment/about-graphic.svg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Data Literacy Assessment | Kubicle"/>
+<meta name="twitter:description" content="Measure your data literacy and uncover your next step."/>
+<meta name="twitter:image" content="https://www.kubicle.com/img/dl-assessment/about-graphic.svg"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "Kubicle Data Literacy Assessment",
+  "description": "A quick diagnostic that places professionals on one of four data literacy personas (Data Citizen, Data Associate, Data Wrangler, Data Analyst) and recommends next steps.",
+  "url": "https://www.kubicle.com/resources/assessments/data-literacy",
+  "educationalAlignment": {
+    "@type": "AlignmentObject",
+    "alignmentType": "assesses",
+    "targetName": "Data Literacy"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "sameAs": "https://www.kubicle.com"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="../../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../../shared/styles/buttons.css"/>
+
+<style>
+/* ============================== PAGE-LOCAL TOKEN ============================== */
+:root {
+  --dl-pink:   #E91E63;
+  --dl-pink-d: #C2185B;
+  --dl-pink-soft: #FFE3EE;
+}
+
+/* ============================== RESET ============================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+html { scroll-behavior: smooth; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+body {
+  font-family: var(--body, "Satoshi","Helvetica Neue",Arial,sans-serif);
+  color: var(--prussian);
+  background: #fff;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+section { padding: 96px 0; position: relative; }
+section.alice { background: var(--alice); }
+section.dark { background: var(--prussian); color: #fff; }
+@media (max-width: 700px) { section { padding: 64px 0; } .container { padding: 0 22px; } }
+
+/* ============================== SECTION HEAD ============================== */
+.sec-head { max-width: 760px; }
+.sec-head h2 { margin-top: 16px; }
+.sec-head h2 em { font-style: normal; color: var(--dl-pink); }
+.sec-head .body-lg { margin-top: 22px; color: var(--steel); max-width: 640px; }
+.sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.sec-head.center .body-lg { margin-left: auto; margin-right: auto; }
+.dark .sec-head .body-lg { color: rgba(255,255,255,0.78); }
+.dark .sec-head h2 { color: #fff; }
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 112px 0 96px;
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 30%, rgba(233,30,99,0.10), transparent 70%),
+    linear-gradient(180deg, #FBFCFD 0%, #FFF5F8 100%);
+  color: var(--prussian);
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: url('../../img/dl-assessment/shapes.svg');
+  background-size: cover; background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+.hero .container { position: relative; z-index: 1; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.hero .eyebrow { color: var(--dl-pink); }
+.hero h1 em { font-style: normal; color: var(--dl-pink); }
+.hero-sub {
+  color: var(--steel);
+  font-size: 19px; line-height: 1.55;
+  letter-spacing: -0.01em;
+  margin-top: 22px;
+  max-width: 560px;
+}
+.hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 32px; }
+.hero-meta {
+  margin-top: 28px;
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--steel);
+}
+.hero-meta svg { width: 18px; height: 18px; color: var(--dl-pink); }
+.hero-visual {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--alice);
+  box-shadow: 0 40px 100px -36px rgba(11,27,43,0.25), 0 8px 24px -10px rgba(11,27,43,0.10);
+}
+.hero-visual img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+@media (max-width: 1000px) {
+  .hero { padding: 80px 0 64px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { max-width: 480px; margin: 0 auto; }
+}
+
+/* ============================== INTRO SECTION ============================== */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 1000px) { .intro-grid { grid-template-columns: 1fr; gap: 40px; } }
+.intro-visual { display: flex; align-items: center; justify-content: center; }
+.intro-visual img { max-width: 100%; height: auto; }
+
+/* ============================== PERSONAS ============================== */
+.persona-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+@media (max-width: 900px) { .persona-grid { grid-template-columns: 1fr; } }
+.persona-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 32px;
+  display: flex; flex-direction: column;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+  position: relative;
+  border-top: 4px solid var(--dl-pink);
+}
+.persona-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(233,30,99,0.30);
+  border-top-color: var(--dl-pink);
+  box-shadow: 0 24px 60px -28px rgba(11,27,43,0.18);
+}
+.persona-card .p-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  margin-bottom: 6px;
+}
+.persona-card .p-num {
+  font-family: var(--body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--dl-pink-d);
+}
+.persona-card .p-tier {
+  display: inline-flex; gap: 3px; align-items: center;
+  flex-shrink: 0;
+}
+.persona-card .p-seg {
+  width: 14px; height: 5px;
+  border-radius: 2px;
+  background: rgba(11,27,43,0.12);
+}
+.persona-card .p-seg.on { background: var(--dl-pink); }
+.persona-card h3 {
+  font-family: var(--head); font-size: 24px; font-weight: 600;
+  letter-spacing: -0.015em; color: var(--prussian);
+  margin-top: 8px;
+}
+.persona-card .who {
+  margin-top: 14px;
+  font-size: 14.5px; line-height: 1.6; color: var(--steel);
+}
+.persona-card .p-cta {
+  margin-top: auto; padding-top: 22px;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--head); font-size: 13.5px; font-weight: 600;
+  color: var(--dl-pink-d);
+}
+.persona-card .p-cta:hover { gap: 10px; }
+
+/* ============================== PILLARS ============================== */
+.pillars-section {
+  background:
+    radial-gradient(ellipse 60% 70% at 100% 0%, rgba(233,30,99,0.08), transparent 70%),
+    var(--alice);
+}
+.pillar-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+@media (max-width: 1000px) { .pillar-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px)  { .pillar-grid { grid-template-columns: 1fr; } }
+.pillar-card {
+  background: #fff;
+  border: 1px solid #E5EBF1;
+  border-radius: 22px;
+  padding: 28px;
+  display: flex; flex-direction: column;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.pillar-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(233,30,99,0.30);
+  box-shadow: 0 24px 60px -28px rgba(11,27,43,0.18);
+}
+.pillar-card .p-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: var(--dl-pink-soft);
+  color: var(--dl-pink-d);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+}
+.pillar-card .p-icon svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.pillar-card .p-num {
+  font-family: var(--body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--dl-pink-d);
+}
+.pillar-card h3 {
+  margin-top: 6px;
+  font-family: var(--head); font-size: 20px; font-weight: 600;
+  letter-spacing: -0.01em; color: var(--prussian);
+}
+.pillar-card p { margin-top: 12px; font-size: 14px; line-height: 1.55; color: var(--steel); }
+
+/* ============================== RESULTS VISUAL ============================== */
+.results-section { background: #fff; }
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 1000px) { .results-grid { grid-template-columns: 1fr; gap: 40px; } }
+.results-visual { display: flex; align-items: center; justify-content: center; }
+.results-visual img { max-width: 100%; height: auto; }
+
+/* ============================== SECTION CTA ============================== */
+.section-cta {
+  margin-top: 56px;
+  display: flex; justify-content: center;
+}
+.section-cta-inner {
+  display: inline-flex; align-items: center; gap: 18px;
+  padding: 14px 22px 14px 26px;
+  background: #fff;
+  border: 1px solid rgba(11,27,43,0.08);
+  border-radius: 999px;
+  box-shadow: 0 20px 40px -20px rgba(11,27,43,0.18);
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+}
+.section-cta-inner:hover {
+  transform: translateY(-2px);
+  border-color: rgba(233,30,99,0.40);
+  box-shadow: 0 28px 56px -24px rgba(11,27,43,0.28);
+}
+.section-cta-inner .label {
+  font-family: var(--head); font-weight: 500;
+  color: var(--prussian);
+  font-size: 15px;
+  letter-spacing: -0.005em;
+}
+.section-cta-inner .label strong {
+  font-weight: 600;
+  color: var(--dl-pink-d);
+}
+.section-cta-inner .pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px;
+  background: var(--dl-pink);
+  color: #fff;
+  border-radius: 999px;
+  font-family: var(--head); font-weight: 600; font-size: 13.5px;
+  transition: background 0.15s, gap 0.15s;
+}
+.section-cta-inner:hover .pill { background: var(--dl-pink-d); gap: 12px; }
+.section-cta-inner .pill svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 640px) {
+  .section-cta-inner {
+    flex-direction: column; align-items: stretch; text-align: center;
+    padding: 18px 22px;
+    border-radius: 18px;
+  }
+  .section-cta-inner .pill { justify-content: center; }
+}
+section.alice .section-cta-inner,
+section.dark .section-cta-inner { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.16); }
+section.alice .section-cta-inner { background: #fff; border-color: rgba(11,27,43,0.08); }
+
+/* DL-pink override for the buttons */
+.btn-dl {
+  background: var(--dl-pink); color: #fff;
+}
+.btn-dl:hover { background: var(--dl-pink-d); }
+
+/* ============================== FINAL CTA ============================== */
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(233,30,99,0.22), transparent 70%),
+    var(--prussian);
+  position: relative; overflow: hidden;
+}
+.final-cta .eyebrow { color: var(--dl-pink); }
+.final-cta h2 { color: #fff; }
+.final-cta h2 em { font-style: normal; color: var(--dl-pink); }
+.final-cta .body-lg { color: rgba(255,255,255,0.82); max-width: 760px; margin-top: 22px; }
+.final-cta .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+.final-cta .btn-primary { background: var(--dl-pink); color: #fff; }
+.final-cta .btn-primary:hover { background: var(--dl-pink-d); }
+</style>
+
+<script src="../../shared/nav.js" defer></script>
+<script src="../../shared/footer.js" defer></script>
+</head>
+<body class="theme-pink">
+
+<!-- ============================== NAV ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Data Literacy Assessment</div>
+        <h1 class="h-display" style="margin-top: 14px;">
+          Discover your data literacy <em>profile.</em>
+        </h1>
+        <p class="hero-sub">
+          Data skills are now the language of modern business. Find out where you stand across the four
+          Kubicle personas: Data Citizen, Data Associate, Data Wrangler and Data Analyst. Uncover the
+          skills to grow, and take the next step toward becoming truly data fluent.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn btn-lg btn-dl" href="https://s.pointerpro.com/kubicle-assessment1" target="_blank" rel="noopener">
+            Start the Assessment <span class="arr">&rarr;</span>
+          </a>
+          <a class="btn btn-outline-dark btn-lg" href="../../academies/index.html">See the academies <span class="arr">&rarr;</span></a>
+        </div>
+        <div class="hero-meta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
+          Takes 5 minutes &middot; personalised profile delivered instantly
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="../../academies/data-literacy/img/hero-image.webp" alt="A professional analysing data on a laptop, representing the Kubicle Data Literacy Assessment journey" loading="eager"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== INTRO ============================== -->
+<section id="intro">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <div class="eyebrow">Measure Your Data Literacy Skills</div>
+        <h2 class="h-xl" style="margin-top: 14px;">
+          A quick diagnostic, a clear <em>next step.</em>
+        </h2>
+        <p class="body-lg" style="margin-top: 22px;">
+          Take Kubicle's Data Literacy Assessment to understand your current capabilities and uncover
+          practical ways to improve. This quick and insightful diagnostic helps you discover your strengths
+          across the four key pillars of data literacy. In just a few minutes, you will receive a
+          personalised profile and clear recommendations for your next steps in data upskilling.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn btn-lg btn-dl" href="https://s.pointerpro.com/kubicle-assessment1" target="_blank" rel="noopener">
+            Start the Assessment <span class="arr">&rarr;</span>
+          </a>
+        </div>
+      </div>
+      <div class="intro-visual">
+        <img src="../../img/dl-assessment/about-graphic.svg" alt="Illustration of a learner working with data on a laptop" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PERSONAS ============================== -->
+<section class="alice" id="personas">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" style="color: var(--dl-pink);">Discover your data profile</div>
+      <h2 class="h-xl">Kubicle's assessment will help you find <em>your data persona.</em></h2>
+      <p class="body-lg">
+        Every professional sits somewhere on the data literacy ladder. The assessment places you on one of
+        four personas, each with a clear definition of what they can do today and the skills they need to
+        grow next.
+      </p>
+    </div>
+
+    <div class="persona-grid">
+
+      <!-- Persona 1: Data Citizen -->
+      <div class="persona-card">
+        <div class="p-head">
+          <span class="p-num">Persona 01</span>
+          <span class="p-tier" aria-label="Tier 1 of 4">
+            <span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span><span class="p-seg"></span>
+          </span>
+        </div>
+        <h3>Data Citizen</h3>
+        <p class="who">
+          A Data and Digital Citizen understands the underlying concepts and theory associated with digital
+          tools, data and the building of data projects. Data citizens may not be able to lead complex data
+          projects, but they understand the key principles and can contribute to intermediate data project
+          discourse. This level allows business leaders to participate in data and tech discussions without
+          needing the execution skills of an analyst.
+        </p>
+        <a class="p-cta" href="https://s.pointerpro.com/kubicle-assessment1" target="_blank" rel="noopener">Start the Assessment <span class="arr">&rarr;</span></a>
+      </div>
+
+      <!-- Persona 2: Data Associate -->
+      <div class="persona-card">
+        <div class="p-head">
+          <span class="p-num">Persona 02</span>
+          <span class="p-tier" aria-label="Tier 2 of 4">
+            <span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span>
+          </span>
+        </div>
+        <h3>Data Associate</h3>
+        <p class="who">
+          A Data Associate is at the start of their data analysis journey with a core set of technical and
+          analytical skills focused on no-code tools and basic data theory. They are proficient in spreadsheet
+          and presentation tools, can perform simple database queries, and have a foundational understanding
+          of statistics. They can transform raw data into actionable insights using accessible tools and
+          critical thinking.
+        </p>
+        <a class="p-cta" href="https://s.pointerpro.com/kubicle-assessment1" target="_blank" rel="noopener">Start the Assessment <span class="arr">&rarr;</span></a>
+      </div>
+
+      <!-- Persona 3: Data Wrangler -->
+      <div class="persona-card">
+        <div class="p-head">
+          <span class="p-num">Persona 03</span>
+          <span class="p-tier" aria-label="Tier 3 of 4">
+            <span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span>
+          </span>
+        </div>
+        <h3>Data Wrangler</h3>
+        <p class="who">
+          The Data Wrangler can execute more complex data projects and is equipped to lead parts of a data
+          project program. With high confidence, they clean, organise and transform raw data for analysts.
+          While they have deep capabilities in core data technology, they are also building peripheral
+          capabilities in other professional analyst tools.
+        </p>
+        <a class="p-cta" href="https://s.pointerpro.com/kubicle-assessment1" target="_blank" rel="noopener">Start the Assessment <span class="arr">&rarr;</span></a>
+      </div>
+
+      <!-- Persona 4: Data Analyst -->
+      <div class="persona-card">
+        <div class="p-head">
+          <span class="p-num">Persona 04</span>
+          <span class="p-tier" aria-label="Tier 4 of 4">
+            <span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span>
+          </span>
+        </div>
+        <h3>Data Analyst</h3>
+        <p class="who">
+          A Kubicle Data Analyst is proficient in collecting, organising and interpreting information to make
+          it useful to a range of businesses. They excel in complex data analysis, storytelling and
+          championing data projects. The Data Analyst deep-dives into advanced techniques and tools:
+          Statistical Analysis, Python Fundamentals, Machine Learning, Data Prep with SQL and Alteryx.
+        </p>
+        <a class="p-cta" href="https://s.pointerpro.com/kubicle-assessment1" target="_blank" rel="noopener">Start the Assessment <span class="arr">&rarr;</span></a>
+      </div>
+
+    </div>
+
+    <div class="section-cta">
+      <a class="section-cta-inner" href="https://s.pointerpro.com/kubicle-assessment1" target="_blank" rel="noopener">
+        <span class="label">Not sure which persona you are? <strong>Take the assessment.</strong></span>
+        <span class="pill">Start <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PILLARS / RESULTS ============================== -->
+<section class="pillars-section" id="pillars">
+  <div class="container">
+    <div class="results-grid" style="margin-bottom: 64px;">
+      <div>
+        <div class="eyebrow" style="color: var(--dl-pink);">See where you stand</div>
+        <h2 class="h-xl" style="margin-top: 14px;">
+          What the assessment <em>actually measures.</em>
+        </h2>
+        <p class="body-lg" style="margin-top: 22px;">
+          Kubicle's data literacy framework focuses on the four essential skills every modern professional
+          needs to work confidently with data. The assessment tests you across all four and shows you
+          exactly where to focus next.
+        </p>
+      </div>
+      <div class="results-visual">
+        <img src="../../img/dl-assessment/our-results.svg" alt="A radar diagram showing the four pillars of data literacy" loading="lazy"/>
+      </div>
+    </div>
+
+    <div class="pillar-grid">
+      <div class="pillar-card">
+        <div class="p-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div class="p-num">Pillar 01</div>
+        <h3>Read Data</h3>
+        <p>
+          Recognise different types of data, where to find them, and how to evaluate their quality. Covers
+          data access, data culture, and the legal and ethical responsibilities of using data.
+        </p>
+      </div>
+      <div class="pillar-card">
+        <div class="p-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/></svg>
+        </div>
+        <div class="p-num">Pillar 02</div>
+        <h3>Work with Data</h3>
+        <p>
+          Practical skills to collect, clean, store and manage data: spreadsheets, tools, secure dataset
+          handling and the internal data policies that keep teams compliant.
+        </p>
+      </div>
+      <div class="pillar-card">
+        <div class="p-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <div class="p-num">Pillar 03</div>
+        <h3>Argue with Data</h3>
+        <p>
+          Explain insights clearly and persuasively. Assesses how well you communicate with visuals, build
+          simple data stories and adapt your message to different audiences.
+        </p>
+      </div>
+      <div class="pillar-card">
+        <div class="p-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="13" width="3" height="5"/><rect x="12" y="9" width="3" height="9"/><rect x="17" y="5" width="3" height="13"/></svg>
+        </div>
+        <div class="p-num">Pillar 04</div>
+        <h3>Analyze Data</h3>
+        <p>
+          Use analytical techniques to interpret data and make decisions. Applies basic statistics, builds
+          models and solves real business problems with data.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-cta">
+      <a class="section-cta-inner" href="https://s.pointerpro.com/kubicle-assessment1" target="_blank" rel="noopener">
+        <span class="label">Find out where you score on all four. <strong>Start the assessment.</strong></span>
+        <span class="pill">Start <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="final-cta" id="get-started">
+  <div class="container">
+    <div style="max-width: 920px;">
+      <div class="eyebrow">Ready to find your level?</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Five minutes from now,<br/>
+        you'll know <em>exactly where you stand.</em>
+      </h2>
+      <p class="body-lg">
+        Take the assessment, get your personalised data literacy profile and a clear next step on the
+        ladder. Then explore the Kubicle academies to get there.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="https://s.pointerpro.com/kubicle-assessment1" target="_blank" rel="noopener">
+          Start the Assessment <span class="arr">&rarr;</span>
+        </a>
+        <a class="btn btn-ghost btn-lg" href="../../academies/data-literacy/index.html">Explore the Data Literacy Academy <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<div id="site-footer"></div>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<title>Resources | Kubicle</title>
+<meta name="description" content="The Kubicle resource library: blog posts, customer case studies, recorded webinars, downloadable guides like the AI Use Policy framework, and free assessments for measuring your team's data and AI fluency."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/resources"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:title" content="Kubicle Resources"/>
+<meta property="og:description" content="Blog posts, case studies, webinars, guides and free assessments. All Kubicle's learning content in one place."/>
+<meta property="og:url" content="https://www.kubicle.com/resources"/>
+<meta property="og:image" content="https://www.kubicle.com/img/hero-home.jpg"/>
+<meta property="og:image:width" content="1920"/>
+<meta property="og:image:height" content="1080"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Kubicle Resources"/>
+<meta name="twitter:description" content="Blog, case studies, webinars, guides and assessments."/>
+<meta name="twitter:image" content="https://www.kubicle.com/img/hero-home.jpg"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Kubicle Resources",
+  "description": "The Kubicle resource library: blog, case studies, webinars, guides and assessments.",
+  "url": "https://www.kubicle.com/resources",
+  "isPartOf": { "@type": "WebSite", "name": "Kubicle", "url": "https://www.kubicle.com" }
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+body { font-family: var(--body, "Satoshi","Helvetica Neue",Arial,sans-serif); color: var(--prussian); background: #fff; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+section { padding: 96px 0; position: relative; }
+section.alice { background: var(--alice); }
+@media (max-width: 700px) { section { padding: 64px 0; } .container { padding: 0 22px; } }
+
+.sec-head { max-width: 760px; }
+.sec-head h2 { margin-top: 16px; }
+.sec-head h2 em { font-style: normal; color: var(--accent); }
+.sec-head .body-lg { margin-top: 22px; color: var(--steel); max-width: 640px; }
+
+.hero {
+  padding: 112px 0 80px;
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 30%, rgba(4,150,255,0.10), transparent 70%),
+    linear-gradient(180deg, #FBFCFD 0%, #F4F8FC 100%);
+}
+.hero .eyebrow { color: var(--accent); }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { color: var(--steel); font-size: 19px; line-height: 1.55; margin-top: 22px; max-width: 640px; }
+
+.res-grid {
+  margin-top: 56px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+}
+@media (max-width: 1000px) { .res-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px)  { .res-grid { grid-template-columns: 1fr; } }
+.res-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 28px;
+  display: flex; flex-direction: column;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.res-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(4,150,255,0.30);
+  box-shadow: 0 24px 60px -28px rgba(11,27,43,0.18);
+}
+.res-card .r-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: var(--alice);
+  color: var(--accent-d, #0D5F96);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+}
+.res-card .r-icon svg { width: 26px; height: 26px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.res-card .r-eyebrow {
+  font-family: var(--body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent-d, #0D5F96);
+}
+.res-card h3 {
+  margin-top: 8px;
+  font-family: var(--head); font-size: 22px; font-weight: 600;
+  color: var(--prussian); letter-spacing: -0.015em; line-height: 1.25;
+}
+.res-card p { margin-top: 12px; font-size: 14.5px; line-height: 1.55; color: var(--steel); }
+.res-card .r-cta {
+  margin-top: auto; padding-top: 20px;
+  font-family: var(--head); font-size: 13.5px; font-weight: 600;
+  color: var(--accent-d, #0D5F96);
+}
+
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+}
+.final-cta .eyebrow { color: var(--accent); }
+.final-cta h2 { color: #fff; }
+.final-cta h2 em { font-style: normal; color: var(--accent); }
+.final-cta .body-lg { color: rgba(255,255,255,0.82); max-width: 760px; margin-top: 22px; }
+.final-cta .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+</style>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<div id="site-nav"></div>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Resources</div>
+    <h1 class="h-display" style="margin-top: 14px;">The Kubicle <em>resource library.</em></h1>
+    <p class="hero-sub">
+      Practical thinking, customer stories, free downloadable guides and assessments. Everything we
+      publish on AI fluency, data literacy, finance and project delivery for the modern workforce.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="res-grid">
+
+      <a class="res-card" href="../blog/index.html">
+        <div class="r-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <div class="r-eyebrow">Blog</div>
+        <h3>The Kubicle Blog</h3>
+        <p>Practical thinking on AI literacy, data fluency, financial modelling and project delivery. Product news and customer stories.</p>
+        <span class="r-cta">Read the blog &rarr;</span>
+      </a>
+
+      <a class="res-card" href="case-studies.html">
+        <div class="r-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 13h6M9 17h4"/></svg>
+        </div>
+        <div class="r-eyebrow">Case Studies</div>
+        <h3>Customer Case Studies &amp; White Papers</h3>
+        <p>How Jotun, Heineken, Onafriq, Arthur D. Little and others have rolled out Kubicle to thousands of learners.</p>
+        <span class="r-cta">Read the stories &rarr;</span>
+      </a>
+
+      <a class="res-card" href="webinars.html">
+        <div class="r-icon">
+          <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        </div>
+        <div class="r-eyebrow">Webinars</div>
+        <h3>Recorded Webinars</h3>
+        <p>Industry sessions on AI policy, data literacy in financial services, graduate readiness and more.</p>
+        <span class="r-cta">Watch webinars &rarr;</span>
+      </a>
+
+      <a class="res-card" href="guides/ai-use-policy.html">
+        <div class="r-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s-7-4-7-12a7 7 0 0 1 14 0c0 8-7 12-7 12z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="r-eyebrow">Guide</div>
+        <h3>AI Use Policy Framework</h3>
+        <p>A free, step-by-step framework for building a clear, compliant and responsible AI use policy for your organisation.</p>
+        <span class="r-cta">Get the framework &rarr;</span>
+      </a>
+
+      <a class="res-card" href="assessments/data-literacy.html">
+        <div class="r-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div class="r-eyebrow">Assessment</div>
+        <h3>Data Literacy Assessment</h3>
+        <p>Discover your data literacy persona in 5 minutes. A free diagnostic with a personalised result and clear next step.</p>
+        <span class="r-cta">Take the assessment &rarr;</span>
+      </a>
+
+      <a class="res-card" href="../catalog.html">
+        <div class="r-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/><path d="M8 6h8M8 10h8M8 14h5"/></svg>
+        </div>
+        <div class="r-eyebrow">Download</div>
+        <h3>The Kubicle Catalog</h3>
+        <p>Every academy, every persona pathway, every course in one downloadable PDF. Built for L&amp;D, IT and budget owners.</p>
+        <span class="r-cta">Download the catalog &rarr;</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <div style="max-width: 920px;">
+      <div class="eyebrow">Want updates?</div>
+      <h2 class="h-xl" style="margin-top: 16px;">Talk to a <em>program designer.</em></h2>
+      <p class="body-lg">
+        Resources will take you a long way. For a tailored recommendation, twenty minutes with one of our
+        learning consultants will take you the rest of it.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost btn-lg" href="../academies/index.html">See the Academies <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+</body>
+</html>

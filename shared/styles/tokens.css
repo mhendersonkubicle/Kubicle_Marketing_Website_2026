@@ -1,0 +1,126 @@
+/* =========================================================================
+   Kubicle Design Tokens
+   Universal palette + per-page accent themes.
+   Apply a theme by adding a class to <body>: theme-pm, theme-ai, theme-data,
+   theme-finance, or theme-blue (default). The accent set drives every
+   primary-color reference: buttons, eyebrows, hero accents, geo shapes.
+   ========================================================================= */
+
+:root {
+  /* --- Brand foundation (universal, do not theme) --- */
+  --prussian:   #0B1B2B;
+  --indigo:     #0B446B;
+  --dodger:     #1A8CFF;
+  --alice:      #F4F6F8;
+  --honolulu:   #1176BB;
+  --lapis:      #0D5F96;
+  --columbia:   #D6EEFF;
+  --steel:      #8C9BAA;
+  --emerald:    #23CE6B;
+  --soft-black: #333333;
+  --silver:     #CCCCCC;
+
+  /* --- Type families --- */
+  --head: "Clash Grotesk","Helvetica Neue",Arial,sans-serif;
+  --body: "Satoshi","Helvetica Neue",Arial,sans-serif;
+
+  /* --- Accent (default = blue, used by home / pricing / try-free) --- */
+  --accent:      #0496FF;
+  --accent-d:    #0D5F96;
+  --accent-rgb:  4, 150, 255;
+  --accent-soft: #D6EEFF;
+}
+
+/* ===== Per-page accent themes ============================================ */
+
+body.theme-pm {
+  --accent:      #F97316;
+  --accent-d:    #C2540D;
+  --accent-rgb:  249, 115, 22;
+  --accent-soft: #FFEDD5;
+
+  /* Legacy alias. Existing inline CSS still uses var(--orange).
+     Remove once all pages have been migrated to var(--accent). */
+  --orange:      var(--accent);
+  --orange-d:    var(--accent-d);
+  --orange-soft: var(--accent-soft);
+}
+
+body.theme-ai {
+  --accent:      #00C4CC;
+  --accent-d:    #00A8B0;
+  --accent-rgb:  0, 196, 204;
+  --accent-soft: #CCF5F7;
+
+  --teal:        var(--accent);
+  --teal-d:      var(--accent-d);
+  --teal-soft:   var(--accent-soft);
+}
+
+body.theme-data {
+  --accent:      #E91E63;
+  --accent-d:    #C2185B;
+  --accent-rgb:  233, 30, 99;
+  --accent-soft: #FCE4EC;
+
+  --pink:        var(--accent);
+  --pink-d:      var(--accent-d);
+  --pink-soft:   var(--accent-soft);
+}
+
+body.theme-finance {
+  --accent:      #10B981;
+  --accent-d:    #047857;
+  --accent-rgb:  16, 185, 129;
+  --accent-soft: #D1FAE5;
+
+  --green:       var(--accent);
+  --green-d:     var(--accent-d);
+  --green-soft:  var(--accent-soft);
+}
+
+body.theme-blue {
+  --accent:      #0496FF;
+  --accent-d:    #0D5F96;
+  --accent-rgb:  4, 150, 255;
+  --accent-soft: #D6EEFF;
+
+  --blue:        var(--accent);
+  --blue-d:      var(--accent-d);
+  --blue-soft:   var(--accent-soft);
+}
+
+/* =========================================================================
+   Global mobile rule: hide hero imagery on small viewports.
+   Applies site-wide regardless of which hero pattern the page uses.
+   ========================================================================= */
+@media (max-width: 760px) {
+  /* Image-based hero visuals (covers most named patterns across the site) */
+  .hero-photo,
+  .hero-graphic,
+  .hero-illustration,
+  .hero-visual,
+  .hero-rail,
+  .hero-qr,
+  .hero-img,
+  .hero-image,
+  .hero-asset,
+  .hero-art {
+    display: none !important;
+  }
+
+  /* Direct img tags placed inside the hero or its grid wrapper */
+  section.hero > img,
+  .hero-grid > img,
+  .hero-content > img,
+  .hero-inner > img {
+    display: none !important;
+  }
+
+  /* CSS background-image hero patterns (For Business / Industries / etc.) —
+     collapse to flat prussian. Page-local gradients are dropped on mobile
+     since the image they overlay is gone. */
+  section.hero {
+    background: var(--prussian) !important;
+  }
+}

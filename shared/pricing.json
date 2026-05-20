@@ -1,0 +1,48 @@
+{
+  "_comment": "Single source of truth for pricing. Volume tiers are MARGINAL: discount applies only to licences within each band, not to the whole order. Calculation: sum across bands of (licences_in_band × base_price × (1 - discount)).",
+  "default_currency": "USD",
+  "currencies": {
+    "USD": { "symbol": "$", "rate": 1.0,  "label": "USD $" },
+    "EUR": { "symbol": "€", "rate": 0.88, "label": "EUR €" },
+    "GBP": { "symbol": "£", "rate": 0.75, "label": "GBP £" }
+  },
+  "products": {
+    "single_academy": {
+      "USD": 175,
+      "period_short": "per learner per year",
+      "period_long":  "per learner per year · one academy only · volume discounts apply"
+    },
+    "all_access": {
+      "USD": 499,
+      "period_short": "per learner per year",
+      "period_long":  "per learner per year · all four academies · volume discounts apply"
+    },
+    "individual_all_access": {
+      "USD": 445,
+      "period_short": "per learner per year",
+      "period_long":  "per learner per year · billed annually · cancel anytime"
+    },
+    "individual_all_access_monthly": {
+      "USD": 42,
+      "period_short": "per learner per month",
+      "period_long":  "per learner per month · billed monthly · cancel anytime"
+    },
+    "individual_free": {
+      "USD": 0,
+      "period_short": "forever, per learner",
+      "period_long":  "forever · no credit card required"
+    }
+  },
+  "volume_tiers": [
+    [1, 20, 0],
+    [21, 50, 15],
+    [51, 100, 30],
+    [101, 200, 45],
+    [201, 500, 55],
+    [501, 1000, 65],
+    [1001, 2000, 75],
+    [2001, 5000, 82],
+    [5001, 10000, 85],
+    [10001, null, -1]
+  ]
+}

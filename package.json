@@ -1,0 +1,12 @@
+{
+  "name": "kubicle-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kubicle marketing site. Source lives at the repo root; running `npm run build` produces a /dist with the shared nav and footer baked into each HTML page for SEO.",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.1"
+  }
+}

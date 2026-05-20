@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Custom Learning Design for Finance &amp; Consulting Teams | Kubicle</title>
+<meta name="description" content="Tailored upskilling programs for finance and consulting teams. Self&#8209;directed eLearning, eCoaching, capstone projects and program management, designed around your roles, your data and your tools."/>
+<meta name="keywords" content="custom learning design, bespoke training, tailored upskilling program, eLearning, eCoaching, virtual classrooms, capstone projects, hackathons, program management, learning consultants, finance training, consulting training, persona benchmarking, NASBA accredited, CPD, CPE"/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/for-business/custom-learning-design"/>
+
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:url" content="https://www.kubicle.com/for-business/custom-learning-design"/>
+<meta property="og:title" content="Custom Learning Design for Finance &amp; Consulting Teams | Kubicle"/>
+<meta property="og:description" content="Tailored upskilling programs for finance and consulting teams. Self&#8209;directed eLearning, eCoaching, capstone projects and program management, designed around your roles."/>
+<meta property="og:image" content="https://www.kubicle.com/for-business/img/hero-custom-learning.webp"/>
+<meta property="og:image:alt" content="A Kubicle learning consultant designing a tailored upskilling program for a finance and consulting team."/>
+<meta property="og:image:width" content="1717"/>
+<meta property="og:image:height" content="916"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@kubicle"/>
+<meta name="twitter:title" content="Custom Learning Design for Finance &amp; Consulting Teams | Kubicle"/>
+<meta name="twitter:description" content="Tailored upskilling programs designed around your roles, your data and your tools."/>
+<meta name="twitter:image" content="https://www.kubicle.com/for-business/img/hero-custom-learning.webp"/>
+
+<!-- Theme color (mobile browser chrome) -->
+<meta name="theme-color" content="#0B1B2B"/>
+
+<!-- Structured data: Service offering -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Custom Workforce Training Design",
+  "provider": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "url": "https://www.kubicle.com",
+    "logo": "https://www.kubicle.com/img/shared/6929dc95a88edc17d8e3a3e4_LOGO-FILES-LOGO-MARK-WHITE-RGB-1.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dublin",
+      "addressCountry": "Ireland"
+    }
+  },
+  "areaServed": "Worldwide",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Finance, consulting and professional services teams"
+  },
+  "name": "Kubicle Custom Learning Design",
+  "description": "Tailored upskilling programs combining self-directed eLearning, eCoaching, capstone projects and managed program delivery.",
+  "url": "https://www.kubicle.com/for-business/custom-learning-design",
+  "image": "https://www.kubicle.com/for-business/img/hero-custom-learning.webp",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Custom learning components",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Self-Directed eLearning" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "eCoaching and Virtual Classrooms" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Capstone Assignments, Hackathons and Custom Projects" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Managed Program Delivery" } }
+    ]
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+
+<style>
+/* ============================== LAYOUT ============================== */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+section { padding: 112px 0; position: relative; overflow: hidden; }
+@media (max-width: 860px) {
+  .container { padding: 0 24px; }
+  section { padding: 80px 0; }
+}
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 112px 0 132px;
+  background:
+    linear-gradient(to right, rgba(11,27,43,0.94) 0%, rgba(11,27,43,0.80) 35%, rgba(11,27,43,0.40) 65%, rgba(11,27,43,0.15) 100%),
+    url('img/hero-custom-learning.webp') center right / cover no-repeat,
+    var(--prussian);
+  color: #fff;
+  position: relative;
+}
+.hero-content {
+  position: relative; z-index: 3;
+  max-width: 880px;
+}
+.hero .subject-crumb {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--body); font-size: 13px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 18px;
+}
+.hero .subject-crumb a { color: rgba(255,255,255,0.55); }
+.hero .subject-crumb a:hover { color: #fff; }
+.hero .subject-crumb .sep { opacity: 0.6; }
+.hero .subject-crumb .now { color: var(--blue); }
+.hero h1 em { font-style: normal; color: var(--blue); }
+.hero-sub {
+  color: rgba(255,255,255,0.85);
+  max-width: 640px;
+  font-size: 20px; line-height: 1.5;
+  letter-spacing: -0.01em;
+  margin-top: 28px;
+}
+.hero-cta-row {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  align-items: center;
+  margin-top: 36px;
+}
+
+/* ============================== INTRO ROW (3-up at top) ============================== */
+.intro-row {
+  display: grid; grid-template-columns: 1.4fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.intro-row .intro-stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.intro-stat {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 18px;
+  padding: 24px;
+}
+.intro-stat .n {
+  font-family: var(--head); font-size: 38px; font-weight: 600;
+  letter-spacing: -0.04em; color: var(--blue);
+  line-height: 0.95;
+}
+.intro-stat .l {
+  font-size: 13px; color: var(--steel);
+  line-height: 1.5; margin-top: 10px;
+}
+@media (max-width: 1000px) {
+  .intro-row { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ============================== PILLARS ============================== */
+.pillars-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 56px;
+}
+.pillar-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 0;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.pillar-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--c, var(--blue));
+  box-shadow: 0 24px 50px -30px rgba(11,27,43,0.18);
+}
+.pillar-card .top { height: 6px; background: var(--c, var(--blue)); }
+.pillar-card .body {
+  padding: 28px;
+  display: flex; flex-direction: column; gap: 14px; flex: 1;
+}
+.pillar-card .icn {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--c, var(--blue)) 12%, #fff);
+  color: var(--c, var(--blue));
+  display: flex; align-items: center; justify-content: center;
+}
+.pillar-card .icn svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.pillar-card .cat {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--c, var(--blue));
+}
+.pillar-card h3 {
+  font-family: var(--head); font-size: 20px; font-weight: 600;
+  letter-spacing: -0.025em; line-height: 1.2; color: var(--prussian);
+}
+.pillar-card p {
+  font-size: 14.5px; color: var(--steel); line-height: 1.55;
+}
+.pillar-card.p1 { --c: var(--blue); }
+.pillar-card.p2 { --c: #00A8B0; }
+.pillar-card.p3 { --c: #C2185B; }
+.pillar-card.p4 { --c: #047857; }
+
+@media (max-width: 1100px) { .pillars-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px)  { .pillars-grid { grid-template-columns: 1fr; } }
+
+/* ============================== MID CTA ============================== */
+.mid-cta {
+  background:
+    radial-gradient(ellipse 50% 80% at 80% 50%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+  color: #fff;
+  border-radius: 28px;
+  padding: 56px;
+  display: grid; grid-template-columns: 1.3fr auto;
+  gap: 48px; align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 16px;
+}
+.mid-cta::before {
+  content: ""; position: absolute;
+  right: -100px; bottom: -100px;
+  width: 320px; height: 320px;
+  border: 28px solid var(--blue);
+  border-radius: 50%;
+  opacity: 0.10;
+}
+.mid-cta h2 {
+  font-family: var(--head);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 600; letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #fff;
+  position: relative; z-index: 2;
+}
+.mid-cta p {
+  margin-top: 14px;
+  color: rgba(255,255,255,0.78);
+  font-size: 16px; line-height: 1.6;
+  max-width: 560px;
+  position: relative; z-index: 2;
+}
+.mid-cta .actions {
+  position: relative; z-index: 2;
+  display: flex; gap: 12px; align-items: center;
+}
+@media (max-width: 900px) {
+  .mid-cta { grid-template-columns: 1fr; gap: 32px; padding: 40px; }
+}
+
+/* ============================== STEPS ============================== */
+.steps-list {
+  display: flex; flex-direction: column; gap: 24px;
+  margin-top: 56px;
+  position: relative;
+}
+.step-row {
+  display: grid; grid-template-columns: 96px 1fr;
+  gap: 32px;
+  align-items: stretch;
+  position: relative;
+}
+.step-row::before {
+  content: ""; position: absolute;
+  left: 47px; top: 96px;
+  bottom: -24px; width: 2px;
+  background: linear-gradient(to bottom, var(--blue-soft) 0%, transparent 100%);
+  z-index: 0;
+}
+.step-row:last-child::before { display: none; }
+.step-row .num-wrap {
+  display: flex; flex-direction: column; align-items: center;
+  position: relative; z-index: 2;
+}
+.step-row .num {
+  width: 96px; height: 96px;
+  border-radius: 24px;
+  background: var(--prussian); color: #fff;
+  font-family: var(--head); font-size: 36px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  position: relative;
+}
+.step-row .num::after {
+  content: ""; position: absolute;
+  inset: -4px;
+  border-radius: 28px;
+  border: 2px solid var(--blue-soft);
+  pointer-events: none;
+}
+.step-row .step-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 32px;
+}
+.step-row .step-eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--blue);
+}
+.step-row h3 {
+  font-family: var(--head); font-size: 26px; font-weight: 600;
+  letter-spacing: -0.025em; line-height: 1.1;
+  color: var(--prussian);
+  margin-top: 6px;
+}
+.step-row p {
+  font-size: 15.5px; color: var(--steel); line-height: 1.6;
+  margin-top: 14px;
+  max-width: 720px;
+}
+.step-row .solutions {
+  margin-top: 22px; padding-top: 22px;
+  border-top: 1px solid var(--alice);
+}
+.step-row .solutions-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--steel);
+  margin-bottom: 12px;
+}
+.step-row .solutions-pills {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.step-row .pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 14px;
+  background: var(--blue-soft);
+  color: var(--blue-d);
+  border-radius: 999px;
+  font-family: var(--head); font-size: 13px; font-weight: 600;
+  letter-spacing: -0.005em;
+}
+.step-row .pill svg {
+  width: 13px; height: 13px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round;
+}
+@media (max-width: 700px) {
+  .step-row { grid-template-columns: 64px 1fr; gap: 18px; }
+  .step-row .num { width: 64px; height: 64px; font-size: 24px; border-radius: 18px; }
+  .step-row::before { left: 31px; top: 64px; }
+  .step-row .step-card { padding: 24px; }
+  .step-row h3 { font-size: 22px; }
+}
+
+/* ============================== HOW-IT-WORKS HEADER ============================== */
+.how-head {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 64px; align-items: end;
+}
+.how-head .right p {
+  color: var(--steel);
+  font-size: 16px; line-height: 1.6;
+  max-width: 420px;
+  margin: 0 0 0 auto;
+  text-align: left;
+}
+@media (max-width: 900px) { .how-head { grid-template-columns: 1fr; gap: 24px; } }
+
+/* ============================== FAQ ============================== */
+.faq-list {
+  margin-top: 16px;
+  border-top: 1px solid var(--alice);
+}
+.faq-item { border-bottom: 1px solid var(--alice); }
+.faq-q {
+  padding: 24px 0;
+  display: flex; align-items: center; justify-content: space-between;
+  cursor: pointer;
+  font-family: var(--head);
+  font-size: 22px; font-weight: 500;
+  color: var(--prussian);
+  user-select: none;
+  list-style: none;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q .plus {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--alice); color: var(--blue-d);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 400;
+  transition: transform 0.25s, background 0.2s;
+  flex-shrink: 0; margin-left: 16px;
+}
+.faq-item[open] .faq-q .plus {
+  transform: rotate(45deg);
+  background: var(--blue); color: #fff;
+}
+.faq-a {
+  padding-bottom: 24px;
+  color: var(--steel);
+  font-size: 15.5px; line-height: 1.65;
+  max-width: 800px;
+}
+
+/* ============================== FINAL CTA ============================== */
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+  position: relative; overflow: hidden;
+}
+.final-cta-grid {
+  display: block;
+  max-width: 920px;
+}
+.final-cta h2 { color: #fff; }
+.final-cta .body-lg { color: rgba(255,255,255,0.82); max-width: 760px; }
+.final-cta .cta-row { margin-top: 32px; }
+.final-cta .assurance-list { display: grid; gap: 12px; margin-top: 28px; }
+.final-cta .assurance-list span {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; color: rgba(255,255,255,0.85);
+}
+.final-cta .assurance-list svg.tick {
+  width: 16px; height: 16px;
+  stroke: var(--blue); fill: none;
+  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+/* ============================== FLOATING CTA ============================== */
+.float-cta {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  z-index: 90;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(20px);
+  box-shadow: 0 20px 50px -10px rgba(4,150,255,0.5);
+}
+.float-cta.on { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+/* Geometric accents */
+.geo-arch {
+  position: absolute; pointer-events: none;
+  border: clamp(28px, 4vw, 48px) solid var(--blue);
+  border-radius: 50%;
+  border-bottom-color: transparent;
+}
+.geo-ring {
+  position: absolute; pointer-events: none;
+  border: clamp(16px, 2.5vw, 28px) solid var(--blue);
+  border-radius: 50%;
+}
+</style>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== NAV ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top" aria-label="Kubicle Custom Learning Design hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="subject-crumb">
+        <a href="enterprises.html">For Business</a>
+        <span class="sep">/</span>
+        <span class="now">Custom Learning Design</span>
+      </div>
+      <h1 class="h-display">
+        Learning experiences<br/>
+        <em>built for your team.</em>
+      </h1>
+      <p class="hero-sub">
+        Tailored upskilling programs for finance and consulting teams. Kubicle's library,
+        learning experts and SME network combined into one bespoke engagement, designed around
+        your roles, your data and your tools.
+      </p>
+      <div class="hero-cta-row">
+        <a class="btn btn-primary btn-lg" href="../catalog.html">Download Catalog <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost btn-lg" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== INTRO + STATS ============================== -->
+<section class="alice" id="intro">
+  <div class="geo-arch" style="width: 360px; height: 360px; top: -100px; right: -80px; opacity: 0.08; transform: rotate(30deg);"></div>
+  <div class="geo-ring" style="width: 200px; height: 200px; bottom: -50px; left: -60px; opacity: 0.06;"></div>
+  <div class="container">
+    <div class="intro-row">
+      <div>
+        <div class="eyebrow">Custom Programs Built to Size</div>
+        <h2 class="h-xl" style="margin-top: 16px;">
+          Learning experiences built<br/>
+          <span style="color: var(--blue);">for the specific needs of your firm.</span>
+        </h2>
+        <p class="body-lg" style="margin-top: 24px; color: var(--steel); max-width: 560px;">
+          Off&#8209;the&#8209;shelf training stops where the engagement starts. We design around
+          the roles, the deliverables and the tools your team actually uses, blending Kubicle's
+          library with custom content from a curated SME network. One contract, one learning
+          consultant, one program built around your firm.
+        </p>
+      </div>
+
+      <div class="intro-stats">
+        <div class="intro-stat">
+          <div class="n">4</div>
+          <div class="l">delivery components: eLearning, eCoaching, applied projects and managed program delivery</div>
+        </div>
+        <div class="intro-stat">
+          <div class="n">5</div>
+          <div class="l">phases of design, from discovery diagnostics through to evaluation and renewal</div>
+        </div>
+        <div class="intro-stat">
+          <div class="n">300<span style="font-size: 0.55em;">+</span></div>
+          <div class="l">enterprise rollouts delivered as the foundation under every custom program</div>
+        </div>
+        <div class="intro-stat">
+          <div class="n">7<span style="font-size: 0.55em;">d</span></div>
+          <div class="l">standard time from kickoff to live, persona&#8209;benchmarked rollout</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOUR PILLARS ============================== -->
+<section id="pillars">
+  <div class="container">
+    <div style="max-width: 840px;">
+      <div class="eyebrow">Four Components, One Bespoke Program</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        The pieces a custom program<br/>
+        <span style="color: var(--blue);">is built from.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 20px; color: var(--steel); max-width: 600px;">
+        Pick what your team needs. Most custom engagements blend all four, in ratios calibrated
+        to the role, the timeline and the maturity of your existing capability.
+      </p>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="pillar-card p1">
+        <div class="top"></div>
+        <div class="body">
+          <div class="icn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2V5z"/><path d="M19 18v3H6a2 2 0 0 1-2-2"/></svg></div>
+          <span class="cat">Self&#8209;Directed Learning</span>
+          <h3>eLearning</h3>
+          <p>Independent, flexible learning at the learner's own pace, drawn from Kubicle's 300+ course library across AI, Data, Finance and Project Management.</p>
+        </div>
+      </div>
+
+      <div class="pillar-card p2">
+        <div class="top"></div>
+        <div class="body">
+          <div class="icn"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15 16a4.5 4.5 0 0 1 7 2.5"/></svg></div>
+          <span class="cat">Guided Support</span>
+          <h3>eCoaching &amp; Virtual Classrooms</h3>
+          <p>One&#8209;on&#8209;one or group&#8209;based support with a Kubicle SME, sized to deepen understanding and unblock the application gap that self&#8209;directed learning leaves behind.</p>
+        </div>
+      </div>
+
+      <div class="pillar-card p3">
+        <div class="top"></div>
+        <div class="body">
+          <div class="icn"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-3 3-6-6 3-3z"/><path d="M11 7L4 14l3 3 7-7"/></svg></div>
+          <span class="cat">Applied Learning</span>
+          <h3>Capstone Projects &amp; Hackathons</h3>
+          <p>Real client&#8209;style scenarios built on your data, your tools and the deliverables your team actually ships, so capability lands at the desk, not in a certificate.</p>
+        </div>
+      </div>
+
+      <div class="pillar-card p4">
+        <div class="top"></div>
+        <div class="body">
+          <div class="icn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 3v18"/></svg></div>
+          <span class="cat">Program Enablement</span>
+          <h3>Managed Program Delivery</h3>
+          <p>Tools and a named team that keep the program on the rails: persona benchmarking, manager dashboards, engagement nudges and quarterly business reviews against the metrics you set.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== MID-PAGE CTA ============================== -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="mid-cta">
+      <div>
+        <h2>Speak to a learning consultant.</h2>
+        <p>
+          Tell us about your team and the deliverables you're trying to lift. A learning
+          consultant will scope the right blend of components and come back with a tailored
+          recommendation within one business day.
+        </p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary btn-lg" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== HOW IT WORKS (5 STEPS) ============================== -->
+<section class="alice" id="how-it-works">
+  <div class="geo-ring" style="width: 220px; height: 220px; top: -60px; right: 4%; opacity: 0.05;"></div>
+  <div class="container">
+    <div class="how-head">
+      <div>
+        <div class="eyebrow">How It Works</div>
+        <h2 class="h-xl" style="margin-top: 16px;">
+          Five phases, one bespoke<br/>
+          <span style="color: var(--blue);">learning engagement.</span>
+        </h2>
+      </div>
+      <div class="right">
+        <p>
+          The process is the product. Every custom program runs through the same five phases,
+          calibrated to the size and complexity of the engagement.
+        </p>
+      </div>
+    </div>
+
+    <div class="steps-list">
+      <!-- Step 1: Analysis -->
+      <div class="step-row">
+        <div class="num-wrap">
+          <div class="num">01</div>
+        </div>
+        <div class="step-card">
+          <div class="step-eyebrow">Phase 01</div>
+          <h3>Analysis</h3>
+          <p>
+            We start by understanding your team's current skill level through diagnostics and
+            stakeholder consultation. The output: a confirmed list of skill gaps, the business
+            objectives the program has to lift, and the success metrics we'll measure against
+            at evaluation.
+          </p>
+          <div class="solutions">
+            <div class="solutions-label">Solutions Applied</div>
+            <div class="solutions-pills">
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Diagnostic Assessments</span>
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Stakeholder Interviews</span>
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Skills Benchmarking</span>
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Data Gap Analysis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Design -->
+      <div class="step-row">
+        <div class="num-wrap">
+          <div class="num">02</div>
+        </div>
+        <div class="step-card">
+          <div class="step-eyebrow">Phase 02</div>
+          <h3>Design</h3>
+          <p>
+            Based on the analysis, we design a tailored learning journey using Kubicle's
+            library. Courses are selected and sequenced to align with team roles, project
+            goals and the business outcomes the program has to deliver.
+          </p>
+          <div class="solutions">
+            <div class="solutions-label">Solutions Applied</div>
+            <div class="solutions-pills">
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Personalised Learning Plans</span>
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Role&#8209;Based Course Mapping</span>
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Upskilling Strategy Framework</span>
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Kubicle Content Library</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Development -->
+      <div class="step-row">
+        <div class="num-wrap">
+          <div class="num">03</div>
+        </div>
+        <div class="step-card">
+          <div class="step-eyebrow">Phase 03</div>
+          <h3>Development</h3>
+          <p>
+            Kubicle's content team develops or curates the right material, whether that's data
+            literacy, AI fluency or industry&#8209;specific modules. Interactive lessons,
+            real&#8209;world examples and skills assessments are integrated into the learner
+            experience.
+          </p>
+          <div class="solutions">
+            <div class="solutions-label">Solutions Applied</div>
+            <div class="solutions-pills">
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Scenario&#8209;Based Lessons</span>
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Interactive Assessments</span>
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>AI &amp; Data Skills Modules</span>
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Industry&#8209;Specific Content</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: Implementation -->
+      <div class="step-row">
+        <div class="num-wrap">
+          <div class="num">04</div>
+        </div>
+        <div class="step-card">
+          <div class="step-eyebrow">Phase 04</div>
+          <h3>Implementation</h3>
+          <p>
+            The learning path goes live. Team members get guided access to lessons, quizzes and
+            applied exercises. Progress is tracked end&#8209;to&#8209;end, and managers receive
+            regular updates with the engagement and skill&#8209;gain numbers they need.
+          </p>
+          <div class="solutions">
+            <div class="solutions-label">Solutions Applied</div>
+            <div class="solutions-pills">
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Guided Learning Paths</span>
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Team Progress Dashboards</span>
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Engagement Nudges</span>
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Manager Insights</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5: Evaluation -->
+      <div class="step-row">
+        <div class="num-wrap">
+          <div class="num">05</div>
+        </div>
+        <div class="step-card">
+          <div class="step-eyebrow">Phase 05</div>
+          <h3>Evaluation</h3>
+          <p>
+            We measure impact using assessments, feedback and performance data. Recommendations
+            are made to refine the learning journey and ensure capability keeps building across
+            your firm at renewal time, not just at launch.
+          </p>
+          <div class="solutions">
+            <div class="solutions-label">Solutions Applied</div>
+            <div class="solutions-pills">
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Performance Reporting</span>
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Feedback Surveys</span>
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Skill Improvement Tracking</span>
+              <span class="pill"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Renewal Recommendations</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FAQ ============================== -->
+<section id="faq">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px;">
+      <div>
+        <div class="eyebrow">Custom Programs FAQ</div>
+        <h2 class="h-xl" style="margin-top: 16px;">
+          Answers for the questions<br/>
+          we hear at scoping.
+        </h2>
+        <p class="body" style="margin-top: 20px; color: var(--steel); max-width: 320px;">
+          Have one we haven't answered? Bring it to the consultation and we'll cover it on the call.
+        </p>
+        <a class="btn btn-outline-dark btn-md" style="margin-top: 24px;" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary class="faq-q">How is a custom program different from your off&#8209;the&#8209;shelf academies? <span class="plus">+</span></summary>
+          <p class="faq-a">The academies are a pre&#8209;built curriculum across AI, Data, Finance and Project Management. A custom program starts with diagnostics on your team, then sequences the academy content alongside bespoke modules, applied projects on your data, and live coaching where it's needed. Same library underneath, designed around your roles on top.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">How long does a custom program take to design? <span class="plus">+</span></summary>
+          <p class="faq-a">Discovery and diagnostics typically take two to three weeks. Design and development run another three to four. Most engagements go live within six to eight weeks of contract sign, with a phased rollout from there. We've delivered tighter timelines for crisis upskilling work, so if you're under pressure, ask.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Can the program use our data and our tools? <span class="plus">+</span></summary>
+          <p class="faq-a">Yes. Capstone projects, applied assignments and scenario&#8209;based lessons can be built on anonymised samples of your data, against the deliverables your team actually ships. Tools we've built around: Excel, Power BI, Tableau, SQL, Python, Copilot, Claude, ChatGPT, your firm's internal model templates and proprietary frameworks.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Who runs the program once it's live? <span class="plus">+</span></summary>
+          <p class="faq-a">A named Kubicle learning consultant owns delivery end to end. Your team's job is to nominate learners, confirm role mappings, and sit on quarterly business reviews. The consultant owns the rest: rollout, manager enablement, content refresh, engagement and renewal review.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">How is the program priced? <span class="plus">+</span></summary>
+          <p class="faq-a">Two components. A per&#8209;learner license that covers Kubicle's library and the technology rails, scaled to seat count. A separate fixed fee for the design, development and managed customer success work, scoped to the program. Both line items appear on a single statement of work and a single invoice.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Are the credentials accredited? <span class="plus">+</span></summary>
+          <p class="faq-a">Yes. Every Kubicle module that goes into a custom program carries CPD, CPE and NASBA accreditation, so the credentials your team earns count toward continuing professional development. Bespoke modules that include assessment can be accredited on request as part of the design phase.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Can we pilot one cohort before committing across the firm? <span class="plus">+</span></summary>
+          <p class="faq-a">Absolutely, and we'd usually recommend it for firms with more than 1,000 learners. A typical pilot runs 90 days with one role or one practice, with the same diagnostics, dashboards and QBR cadence as the full rollout. Pilot fees are credited against the global agreement when you scale out.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="final-cta" id="consult">
+  <div style="position:absolute; inset:0; pointer-events:none; overflow:hidden;">
+    <div class="geo-arch" style="width: 560px; height: 560px; right: -10%; top: -20%; opacity: 0.10; transform: rotate(-10deg);"></div>
+    <div class="geo-ring" style="width: 280px; height: 280px; left: -6%; bottom: -8%; opacity: 0.07;"></div>
+  </div>
+  <div class="container" style="position: relative; z-index: 2;">
+    <div class="final-cta-grid">
+      <div class="eyebrow">Free Consultation</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Tell us what your team<br/>
+        <span style="color: var(--blue);">needs to be able to do.</span>
+      </h2>
+      <p class="body-lg" style="margin-top: 24px;">
+        One short conversation. A learning consultant will come back within one business day
+        with a benchmarked diagnostic, a sketch of the four&#8209;component blend we'd
+        recommend, and a fixed&#8209;fee proposal you can take to budget.
+      </p>
+
+      <div class="assurance-list">
+        <span><svg class="tick" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg> Diagnostic preview for one of your roles</span>
+        <span><svg class="tick" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg> Recommended blend of eLearning, eCoaching and applied projects</span>
+        <span><svg class="tick" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg> Fixed&#8209;fee proposal, no obligation</span>
+        <span><svg class="tick" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg> Reply within one business day</span>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-ghost btn-lg" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<div id="site-footer"></div>
+
+<!-- ============================== FLOATING CTA ============================== -->
+<a class="btn btn-primary btn-md float-cta" id="float-cta" href="../try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+
+
+<!-- ============================== SCRIPTS ============================== -->
+<script>
+// Floating CTA
+(function () {
+  var floatBtn = document.getElementById('float-cta');
+  var consult = document.getElementById('consult');
+  if (!floatBtn || !consult) return;
+  var hero = document.querySelector('.hero');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting && e.boundingClientRect.top < 0) {
+        floatBtn.classList.add('on');
+      } else if (e.isIntersecting) {
+        floatBtn.classList.remove('on');
+      }
+    });
+  }, { threshold: 0, rootMargin: '-200px 0px 0px 0px' });
+  if (hero) io.observe(hero);
+  io.observe(consult);
+})();
+
+// Consultation form submission
+</script>
+</body>
+</html>

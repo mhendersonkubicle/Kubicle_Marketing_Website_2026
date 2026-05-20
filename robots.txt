@@ -1,0 +1,33 @@
+# Kubicle.com robots.txt
+# Updated alongside the migration cutover.
+
+# Default rules for all crawlers
+User-agent: *
+Allow: /
+
+# Don't crawl resources that exist only as build artefacts, internal previews,
+# or gated PDFs. Each line is a path prefix; trailing slash matters.
+Disallow: /Case_Study_pdfs/
+Disallow: /node_modules/
+Disallow: /.netlify/
+Disallow: /shared/nav.js
+Disallow: /shared/footer.js
+Disallow: /shared/styles/
+Disallow: /build.js
+Disallow: /package.json
+Disallow: /package-lock.json
+
+# Don't index the 404 page or the brochure / business-trial gated assets.
+Disallow: /404
+Disallow: /404.html
+Disallow: /academies/ai/brochure
+Disallow: /academies/data-literacy/brochure
+Disallow: /academies/finance/brochure
+Disallow: /academies/project-management/brochure
+Disallow: /try-free/business
+
+# Crawl budget: politely throttle aggressive bots without blocking them.
+Crawl-delay: 1
+
+# Master sitemap. Resubmit in Search Console / Bing Webmaster Tools after cutover.
+Sitemap: https://www.kubicle.com/sitemap.xml

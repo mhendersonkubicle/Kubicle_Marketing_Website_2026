@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+<title>Try Kubicle for Free</title>
+<meta name="description" content="Get started with Kubicle. Choose the path that fits you: business team or individual learner."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@500,600,700&f[]=satoshi@400,500,700&display=swap"/>
+
+<!-- Shared design system: tokens (try-free uses bespoke layout/buttons inline below) -->
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+
+<style>
+/* ============================== PAGE-LOCAL TOKENS ============================== */
+:root {
+  --academy-finance: #10B981;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+body {
+  font-family: var(--body);
+  color: var(--prussian);
+  background: linear-gradient(180deg, #0A2238 0%, #052438 60%, #03101A 100%);
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+main {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center;
+  padding: 80px 24px;
+}
+.chooser {
+  width: 100%;
+  max-width: 980px;
+  text-align: center;
+}
+.eyebrow {
+  font-family: var(--head);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 18px;
+}
+h1 {
+  font-family: var(--head);
+  font-size: clamp(34px, 5vw, 54px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #fff;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.lede {
+  margin: 18px auto 0;
+  max-width: 540px;
+  font-size: 17px; line-height: 1.55;
+  color: rgba(255,255,255,0.7);
+}
+
+.cards {
+  margin-top: 56px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+}
+.card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 40px 36px;
+  text-align: left;
+  display: flex; flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.4);
+}
+.card-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-bottom: 24px;
+}
+.card-icon svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.card.business .card-icon { background: rgba(4,150,255,0.10); color: var(--blue); }
+.card.individual .card-icon { background: rgba(16,185,129,0.10); color: var(--academy-finance); }
+
+.card h2 {
+  font-family: var(--head);
+  font-size: 26px; font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--prussian);
+  margin-bottom: 10px;
+}
+.card p {
+  font-size: 15px; line-height: 1.55;
+  color: var(--steel);
+  margin-bottom: 28px;
+}
+.card ul {
+  list-style: none; padding: 0; margin: 0 0 32px;
+  display: grid; gap: 10px;
+}
+.card li {
+  font-size: 14px; color: var(--prussian);
+  display: flex; align-items: flex-start; gap: 10px;
+  line-height: 1.45;
+}
+.card li::before {
+  content: ""; flex-shrink: 0;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--alice);
+  margin-top: 1px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%230B1B2B' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 6.5l2 2 4-4.5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px 14px;
+}
+
+.card .btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 10px;
+  font-family: var(--head);
+  font-weight: 600; font-size: 15px;
+  letter-spacing: -0.005em;
+  height: 52px; padding: 0 26px;
+  border-radius: 16px;
+  margin-top: auto;
+  transition: background 0.15s, transform 0.15s;
+}
+.card.business .btn { background: var(--blue); color: #fff; }
+.card.business .btn:hover { background: var(--blue-d); transform: translateY(-1px); }
+.card.individual .btn { background: var(--academy-finance); color: #fff; }
+.card.individual .btn:hover { background: #0e9d6e; transform: translateY(-1px); }
+.card .btn .arr { display: inline-block; transition: transform 0.15s; }
+.card .btn:hover .arr { transform: translateX(3px); }
+
+.back-link {
+  margin-top: 40px;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.55);
+}
+.back-link a { color: rgba(255,255,255,0.8); border-bottom: 1px solid rgba(255,255,255,0.25); padding-bottom: 1px; }
+.back-link a:hover { color: #fff; border-color: #fff; }
+
+.minimal-header {
+  padding: 22px 32px;
+  display: flex; align-items: center;
+}
+.minimal-header img { height: 30px; }
+
+@media (max-width: 720px) {
+  .cards { grid-template-columns: 1fr; gap: 16px; }
+  .card { padding: 32px 28px; }
+  main { padding: 48px 20px; }
+}
+</style>
+</head>
+<body class="theme-blue">
+
+<header class="minimal-header">
+  <a href="../index.html" aria-label="Kubicle home">
+    <img src="../img/shared/6831119dcb82dac9dd5aea57_logo-white.svg" alt="Kubicle"/>
+  </a>
+</header>
+
+<main>
+  <div class="chooser">
+    <div class="eyebrow">Get Started</div>
+    <h1>Which best describes you?</h1>
+    <p class="lede">Choose your path and we&rsquo;ll point you to the right place.</p>
+
+    <div class="cards">
+      <a class="card business" href="../try-free/business.html">
+        <span class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21V12h6v9"/></svg>
+        </span>
+        <h2>I&rsquo;m a business</h2>
+        <p>Trial Kubicle with your team and see the impact before you commit.</p>
+        <ul>
+          <li>14-day All Access trial</li>
+          <li>Customized onboarding for your team</li>
+          <li>Up to 10 trial participants</li>
+          <li>Full admin dashboard access</li>
+          <li>Course certificates included</li>
+        </ul>
+        <span class="btn">Free Team Trial <span class="arr">&rarr;</span></span>
+      </a>
+
+      <a class="card individual" href="../free-tier-sign-up.html">
+        <span class="card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+        </span>
+        <h2>I&rsquo;m an individual</h2>
+        <p>Start learning today with the free tier. No credit card required.</p>
+        <ul>
+          <li>Access to 30 free courses</li>
+          <li>Free course certificates</li>
+          <li>First lesson of every course, plus skill checks</li>
+          <li>Upgrade to All Access anytime</li>
+        </ul>
+        <span class="btn">Start Free <span class="arr">&rarr;</span></span>
+      </a>
+    </div>
+
+    <p class="back-link"><a href="../index.html">&larr; Back to Kubicle</a></p>
+  </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Contact Us | Kubicle</title>
+<meta name="description" content="Get in touch with the Kubicle team. Talk to sales, email us at sales@kubicle.com, or visit our office in Dublin, Ireland."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/contact"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:title" content="Contact Kubicle"/>
+<meta property="og:description" content="Email sales@kubicle.com or talk to a Kubicle program designer. We reply within one business day."/>
+<meta property="og:url" content="https://www.kubicle.com/contact"/>
+<meta property="og:image" content="https://www.kubicle.com/img/hero-home.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Contact Kubicle"/>
+<meta name="twitter:description" content="Email sales@kubicle.com or talk to a Kubicle program designer. We reply within one business day."/>
+<meta name="twitter:image" content="https://www.kubicle.com/img/hero-home.jpg"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<!-- Structured data for the business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Kubicle",
+  "url": "https://www.kubicle.com",
+  "email": "sales@kubicle.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dublin",
+    "addressCountry": "Ireland"
+  },
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "sales@kubicle.com",
+    "areaServed": "Worldwide",
+    "availableLanguage": ["English"]
+  }]
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="shared/styles/tokens.css"/>
+<link rel="stylesheet" href="shared/styles/typography.css"/>
+<link rel="stylesheet" href="shared/styles/buttons.css"/>
+
+<style>
+/* ============================== RESET ============================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+body {
+  font-family: var(--body, "Satoshi","Helvetica Neue",Arial,sans-serif);
+  color: var(--prussian);
+  background: #fff;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+section { padding: 96px 0; position: relative; }
+section#ways-to-reach { padding-top: 32px; }
+section.alice { background: var(--alice); }
+section.dark { background: var(--prussian); color: #fff; }
+@media (max-width: 700px) { section { padding: 64px 0; } .container { padding: 0 22px; } }
+
+/* ============================== SECTION HEAD ============================== */
+.sec-head { max-width: 760px; }
+.sec-head h2 { margin-top: 16px; }
+.sec-head h2 em { font-style: normal; color: var(--accent); }
+.sec-head .body-lg { margin-top: 24px; color: var(--steel); max-width: 640px; }
+.sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.sec-head.center .body-lg { margin-left: auto; margin-right: auto; }
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 112px 0 32px;
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 30%, rgba(4,150,255,0.10), transparent 70%),
+    linear-gradient(180deg, #FBFCFD 0%, #F4F8FC 100%);
+  color: var(--prussian);
+  position: relative;
+  overflow: hidden;
+}
+.hero .eyebrow { color: var(--accent); }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub {
+  color: var(--steel);
+  font-size: 19px; line-height: 1.55;
+  letter-spacing: -0.01em;
+  margin-top: 22px;
+  max-width: 560px;
+}
+
+/* ============================== CONTACT METHODS ============================== */
+.contact-grid {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+
+/* Address box (separate) */
+.address-box {
+  margin-top: 24px;
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 28px 32px;
+  display: flex; align-items: center; gap: 22px;
+  flex-wrap: wrap;
+}
+.address-box .a-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--accent-soft, #D6EEFF);
+  color: var(--accent-d, #0D5F96);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.address-box .a-icon svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.address-box .a-text { display: flex; flex-direction: column; gap: 2px; }
+.address-box .a-label {
+  font-family: var(--body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--steel);
+}
+.address-box .a-value {
+  font-family: var(--head); font-size: 17px; font-weight: 500;
+  color: var(--prussian);
+  letter-spacing: -0.005em;
+}
+.address-box .a-cta {
+  margin-left: auto;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--head); font-size: 13.5px; font-weight: 600;
+  color: var(--accent-d, #0D5F96);
+}
+.address-box .a-cta:hover { gap: 10px; }
+@media (max-width: 640px) {
+  .address-box .a-cta { margin-left: 0; margin-top: 6px; }
+}
+
+.contact-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 32px;
+  display: flex; flex-direction: column;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.contact-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(4,150,255,0.30);
+  box-shadow: 0 24px 60px -28px rgba(11,27,43,0.18);
+}
+.contact-card .c-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: var(--accent-soft, #D6EEFF);
+  color: var(--accent-d, #0D5F96);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+}
+.contact-card .c-icon svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.contact-card .c-label {
+  font-family: var(--body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--steel);
+}
+.contact-card h3 {
+  font-family: var(--head); font-size: 22px; font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--prussian);
+  margin-top: 6px;
+}
+.contact-card .c-value {
+  margin-top: 8px;
+  font-family: var(--head); font-size: 18px; font-weight: 500;
+  color: var(--prussian);
+  letter-spacing: -0.01em;
+  word-break: break-word;
+}
+.contact-card .c-value a { color: var(--accent-d, #0D5F96); }
+.contact-card .c-value a:hover { color: var(--prussian); }
+.contact-card .c-sub {
+  margin-top: 12px;
+  font-size: 14px; line-height: 1.55; color: var(--steel);
+}
+.contact-card .c-cta {
+  margin-top: auto; padding-top: 22px;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--head); font-size: 13.5px; font-weight: 600;
+  color: var(--accent-d, #0D5F96);
+  letter-spacing: -0.005em;
+}
+.contact-card .c-cta:hover { gap: 10px; }
+
+/* ============================== FINAL CTA ============================== */
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+  position: relative; overflow: hidden;
+}
+.final-cta-grid { display: block; max-width: 920px; }
+.final-cta .eyebrow { color: var(--accent); }
+.final-cta h2 { color: #fff; }
+.final-cta h2 em { font-style: normal; color: var(--accent); }
+.final-cta .body-lg { color: rgba(255,255,255,0.82); max-width: 760px; margin-top: 22px; }
+.final-cta .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+</style>
+
+<script src="shared/nav.js" defer></script>
+<script src="shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== NAV ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <div class="container">
+    <div>
+      <div class="eyebrow">Contact</div>
+      <h1 class="h-display" style="margin-top: 14px;">
+        Get in <em>touch.</em>
+      </h1>
+      <p class="hero-sub">
+        Whether you are scoping a program, comparing platforms or just curious how Kubicle could fit
+        your team, we would love to hear from you. We reply to every enquiry within one business day.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CONTACT METHODS ============================== -->
+<section id="ways-to-reach">
+  <div class="container">
+
+    <div class="contact-grid">
+
+      <!-- Email -->
+      <div class="contact-card">
+        <div class="c-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </div>
+        <div class="c-label">Email</div>
+        <h3>Send us a note</h3>
+        <div class="c-value"><a href="mailto:sales@kubicle.com">sales@kubicle.com</a></div>
+        <p class="c-sub">
+          Email the sales team directly with a question, an RFP, or a request for a tailored
+          recommendation.
+        </p>
+        <a class="c-cta" href="mailto:sales@kubicle.com">Compose email <span class="arr">&rarr;</span></a>
+      </div>
+
+      <!-- Book a Call -->
+      <div class="contact-card">
+        <div class="c-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="c-label">Talk to Sales</div>
+        <h3>Book a call</h3>
+        <div class="c-value">Program designer chat</div>
+        <p class="c-sub">
+          Drop your details and a Kubicle program designer will tailor a free trial or a focused
+          demo to the roles you are upskilling.
+        </p>
+        <a class="c-cta" href="try-free/business.html">Book a call <span class="arr">&rarr;</span></a>
+      </div>
+
+    </div>
+
+    <!-- Address (separate box) -->
+    <div class="address-box">
+      <div class="a-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="a-text">
+        <span class="a-label">Office</span>
+        <span class="a-value">Dublin, Ireland</span>
+      </div>
+      <a class="a-cta" href="https://share.google/BgGNRJzT4Nb2D7C48" target="_blank" rel="noopener">View on Google <span class="arr">&rarr;</span></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="final-cta" id="get-catalog">
+  <div class="container">
+    <div class="final-cta-grid">
+      <div class="eyebrow">Or start with the catalog</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Want the full picture first?<br/>
+        <em>Download the Kubicle catalog.</em>
+      </h2>
+      <p class="body-lg">
+        Every academy, every persona pathway and every course in one PDF. Send it to L&amp;D, IT or
+        budget owners so they can see the scope at a glance.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="catalog.html">Download Catalog <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost btn-lg" href="try-free/business.html">Talk to Sales <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<div id="site-footer"></div>
+
+</body>
+</html>

@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Kubicle vs Pluralsight &middot; Data Literacy Training Compared | Kubicle</title>
+<meta name="description" content="Compare Kubicle and Pluralsight across library focus, content production, exams, accreditation, customer success and admin tooling. See why finance, consulting and corporate teams choose Kubicle for data literacy."/>
+<meta name="keywords" content="Kubicle vs Pluralsight, data literacy platform comparison, online data training, finance training platform, NASBA accredited, CPE CPD"/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/vs/kubicle-vs-pluralsight"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:url" content="https://www.kubicle.com/vs/kubicle-vs-pluralsight"/>
+<meta property="og:title" content="Kubicle vs Pluralsight | Kubicle"/>
+<meta property="og:description" content="Side-by-side comparison of Kubicle and Pluralsight across library focus, exams, accreditation and admin tooling."/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Kubicle vs Pluralsight | Kubicle"/>
+<meta name="twitter:description" content="See how Kubicle compares to Pluralsight for data literacy training."/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Kubicle vs Pluralsight",
+  "description": "Side-by-side comparison of Kubicle and Pluralsight for data literacy training.",
+  "author": { "@type": "Organization", "name": "Kubicle" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "logo": { "@type": "ImageObject", "url": "https://www.kubicle.com/img/shared/6929dc95a88edc17d8e3a3e4_LOGO-FILES-LOGO-MARK-WHITE-RGB-1.png" }
+  },
+  "url": "https://www.kubicle.com/vs/kubicle-vs-pluralsight"
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../shared/styles/buttons.css"/>
+
+<style>
+/* ============================== LAYOUT ============================== */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+section { padding: 112px 0; position: relative; overflow: hidden; }
+section.compact { padding: 72px 0; }
+@media (max-width: 860px) {
+  .container { padding: 0 24px; }
+  section { padding: 80px 0; }
+}
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 96px 0 120px;
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 25%, rgba(4,150,255,0.32), transparent 70%),
+    radial-gradient(ellipse 80% 60% at 10% 90%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+  color: #fff;
+  position: relative;
+}
+.hero-content {
+  position: relative; z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.hero-content h1 em { font-style: normal; color: var(--accent); }
+.hero-sub {
+  color: rgba(255,255,255,0.85);
+  max-width: 560px;
+  font-size: 18px; line-height: 1.55;
+  letter-spacing: -0.01em;
+}
+.hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; align-items: center; }
+.hero-rating {
+  display: inline-flex; align-items: center; gap: 12px;
+  margin-top: 28px;
+  color: rgba(255,255,255,0.75);
+  font-size: 13.5px;
+}
+.hero-rating .stars { display: inline-flex; gap: 2px; }
+.hero-rating .stars svg { width: 16px; height: 16px; fill: #FDE74C; stroke: none; }
+.hero-rating strong { color: #fff; font-family: var(--head); font-weight: 600; }
+.hero-graphic {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-graphic img {
+  width: 100%; height: auto;
+  max-width: 560px;
+  display: block;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.35));
+}
+@media (max-width: 1000px) {
+  .hero-content { grid-template-columns: 1fr; gap: 48px; }
+  .hero-graphic img { max-width: 460px; margin: 0 auto; }
+}
+
+/* ============================== INTRO ============================== */
+.intro { background: #fff; padding: 96px 0 64px; }
+.intro-wrap {
+  display: grid; grid-template-columns: 1fr 1.5fr;
+  gap: 80px; align-items: start;
+}
+.intro-wrap .eyebrow { color: var(--accent-d); }
+.intro-wrap h2 {
+  font-family: var(--head);
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--prussian);
+  margin-top: 14px;
+}
+.intro-wrap p {
+  font-size: 16.5px; color: var(--steel); line-height: 1.65;
+}
+@media (max-width: 900px) { .intro-wrap { grid-template-columns: 1fr; gap: 32px; } }
+
+/* ============================== COMPARISON TABLE ============================== */
+.cmp { background: #fff; padding-top: 32px; }
+.cmp-table-wrap {
+  margin-top: 56px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--alice);
+  box-shadow: 0 30px 60px -32px rgba(11,27,43,0.20);
+}
+.cmp-table { width: 100%; border-collapse: collapse; background: #fff; }
+.cmp-table thead th {
+  background: var(--prussian);
+  color: #fff;
+  text-align: left;
+  padding: 28px 28px;
+  font-family: var(--head);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.cmp-table thead th:first-child {
+  background: linear-gradient(135deg, #1A8CFF 0%, #0496FF 100%);
+  width: 22%;
+}
+.cmp-table thead th.cmp-kubicle {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-d) 100%);
+  text-align: center;
+  width: 26%;
+}
+.cmp-table thead th.cmp-rival {
+  background: #1F2D3D;
+  text-align: center;
+  width: 26%;
+}
+.cmp-table thead th .col-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+.cmp-table tbody td {
+  padding: 24px 28px;
+  font-size: 14.5px;
+  color: var(--steel);
+  line-height: 1.55;
+  vertical-align: top;
+  border-top: 1px solid var(--alice);
+}
+.cmp-table tbody tr:nth-child(even) td { background: #F8FAFC; }
+.cmp-table tbody td.feat {
+  font-family: var(--head);
+  font-weight: 600;
+  color: var(--prussian);
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+.cmp-table tbody td.cmp-cell { text-align: left; }
+.cmp-table tbody td.bool {
+  text-align: center;
+  font-size: 22px;
+  vertical-align: middle;
+}
+.cmp-check {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-d);
+}
+.cmp-check svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.cmp-cross {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(11,27,43,0.06);
+  color: var(--steel);
+  font-size: 18px;
+}
+.cmp-cross svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Mobile collapse: stack as cards */
+@media (max-width: 800px) {
+  .cmp-table thead { display: none; }
+  .cmp-table tbody tr {
+    display: block;
+    padding: 20px;
+    border-top: 1px solid var(--alice);
+  }
+  .cmp-table tbody tr:nth-child(even) { background: #F8FAFC; }
+  .cmp-table tbody td {
+    display: block;
+    padding: 8px 0;
+    border: 0;
+    background: transparent !important;
+  }
+  .cmp-table tbody td.feat { font-size: 16px; padding-bottom: 10px; }
+  .cmp-table tbody td.cmp-cell::before,
+  .cmp-table tbody td.bool::before {
+    content: attr(data-label);
+    display: block;
+    font-family: var(--head);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent-d);
+    margin-bottom: 4px;
+  }
+  .cmp-table tbody td.cmp-rival-cell::before { color: var(--steel); }
+  .cmp-table tbody td.bool { text-align: left; }
+}
+
+/* ============================== FEATURE BLOCKS ============================== */
+.fblock {
+  padding: 96px 0;
+  background: #fff;
+}
+.fblock.alt { background: var(--alice); }
+.fblock-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.fblock-wrap.reverse .fblock-text { order: 2; }
+.fblock-wrap.reverse .fblock-image { order: 1; }
+.fblock-image {
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--alice);
+  box-shadow: 0 30px 60px -32px rgba(11,27,43,0.18);
+  display: flex; align-items: center; justify-content: center;
+  padding: 32px;
+  min-height: 380px;
+}
+.fblock.alt .fblock-image { background: #fff; }
+.fblock-image img {
+  width: 100%; height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  display: block;
+}
+.fblock-text .eyebrow { color: var(--accent-d); }
+.fblock-text h2 {
+  font-family: var(--head);
+  font-size: clamp(28px, 3.4vw, 38px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: var(--prussian);
+  margin-top: 14px;
+}
+.fblock-text p {
+  font-size: 16px; color: var(--steel); line-height: 1.65;
+  margin-top: 18px;
+  max-width: 540px;
+}
+@media (max-width: 900px) {
+  .fblock-wrap { grid-template-columns: 1fr; gap: 40px; }
+  .fblock-wrap.reverse .fblock-text { order: initial; }
+  .fblock-wrap.reverse .fblock-image { order: initial; }
+  .fblock-image { padding: 24px; min-height: 280px; }
+}
+
+/* ============================== G2 BADGES ============================== */
+.badges {
+  background: #fff;
+  padding: 80px 0;
+  text-align: center;
+  border-top: 1px solid var(--alice);
+}
+.badges-row {
+  display: flex; gap: 32px; justify-content: center; align-items: center;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+.badges-row img {
+  height: 140px; width: auto;
+}
+.badges-label {
+  font-family: var(--head);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--steel);
+}
+@media (max-width: 600px) {
+  .badges-row img { height: 110px; }
+}
+
+/* ============================== TESTIMONIALS ============================== */
+.testimonials {
+  background: var(--prussian);
+  padding: 112px 0;
+  position: relative;
+  overflow: hidden;
+}
+.testimonials::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(4,150,255,0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(4,150,255,0.10) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+}
+.testimonials .container { position: relative; z-index: 1; }
+.testimonials .sec-head .eyebrow { color: var(--accent); }
+.testimonials .sec-head h2 { color: #fff; margin-top: 14px; }
+.testimonials .sec-head h2 em { font-style: normal; color: var(--accent); }
+.testimonials .sec-head p {
+  margin-top: 18px;
+  color: rgba(255,255,255,0.78);
+  font-size: 17px; line-height: 1.55;
+  max-width: 640px;
+}
+.testimonial-stats {
+  display: flex; gap: 48px; flex-wrap: wrap;
+  margin-top: 24px;
+}
+.testimonial-stats .ts-item {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.testimonial-stats .ts-num {
+  font-family: var(--head);
+  font-size: 28px; font-weight: 600;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+.testimonial-stats .ts-label {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.04em;
+}
+
+.tcards-wrap {
+  margin-top: 56px;
+  position: relative;
+}
+.tcards {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 8px 4px 16px;
+}
+.tcards::-webkit-scrollbar { display: none; }
+.tcard {
+  flex: 0 0 380px;
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: 22px;
+  padding: 32px;
+  display: flex; flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 22px 48px -28px rgba(0,0,0,0.5);
+}
+.tcard .tperson {
+  display: flex; align-items: center; gap: 14px;
+}
+.tcard .tperson img {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.tcard .tperson .tname {
+  font-family: var(--head); font-size: 16px; font-weight: 600;
+  color: var(--prussian);
+  letter-spacing: -0.01em;
+}
+.tcard .tperson .ttitle {
+  font-size: 12.5px; color: var(--steel); margin-top: 2px;
+}
+.tcard .ttier {
+  display: inline-flex;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--accent-d);
+  background: var(--accent-soft);
+  padding: 4px 10px;
+  border-radius: 999px;
+  align-self: flex-start;
+}
+.tcard p {
+  font-size: 14.5px; color: var(--soft-black); line-height: 1.6;
+  flex: 1;
+}
+.tcard .tdate {
+  font-size: 12px; color: var(--steel);
+  border-top: 1px solid var(--alice);
+  padding-top: 14px;
+}
+.tcard-stars {
+  display: flex; gap: 2px;
+}
+.tcard-stars svg { width: 14px; height: 14px; fill: #FDE74C; stroke: none; }
+
+.tcards-nav {
+  display: flex; gap: 12px; justify-content: flex-end;
+  margin-top: 24px;
+}
+.tcards-nav button {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.32);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s, color 0.15s, opacity 0.15s, border 0.15s;
+}
+.tcards-nav button:hover { background: #fff; color: var(--prussian); border-color: #fff; }
+.tcards-nav button:disabled { opacity: 0.3; cursor: default; }
+.tcards-nav button:disabled:hover { background: transparent; color: #fff; border-color: rgba(255,255,255,0.32); }
+.tcards-nav button svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ============================== FINAL CTA ============================== */
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(4,150,255,0.18), transparent 70%),
+    var(--prussian);
+  position: relative;
+  overflow: hidden;
+}
+.final-cta h2 { max-width: 900px; color: #fff; }
+.final-cta h2 em { font-style: normal; color: var(--accent); }
+.final-cta .body-lg { max-width: 640px; color: rgba(255,255,255,0.82); }
+.final-cta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 40px; }
+
+/* ============================== SECTION HEAD ============================== */
+.sec-head { max-width: 760px; }
+.sec-head h2 { margin-top: 16px; }
+.sec-head h2 em { font-style: normal; color: var(--accent); }
+.sec-head .body-lg { margin-top: 24px; color: var(--steel); max-width: 640px; }
+
+.center { text-align: center; }
+</style>
+
+<script src="../shared/nav.js" defer></script>
+<script src="../shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== NAV (shared/nav.js) ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-content">
+      <div>
+        <div class="eyebrow" style="color: var(--accent);">Compare Kubicle</div>
+        <h1 class="h-display" style="margin-top: 18px;">
+          Kubicle <em>vs</em><br/>
+          Pluralsight.
+        </h1>
+        <p class="hero-sub" style="margin-top: 24px;">
+          When it comes to mastering data literacy, choosing the right online training platform is crucial. Here is how Kubicle stacks up against some of the top&#8209;rated data literacy platforms available online.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary btn-lg" href="../try-free/">Try for Free <span class="arr">&rarr;</span></a>
+          <a class="btn btn-ghost btn-lg" href="#comparison">See full comparison</a>
+        </div>
+        <div class="hero-rating">
+          <span class="stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+          </span>
+          <span><strong>4.7<span class="rating-of">/5</span></strong> across 200+ G2 reviews</span>
+        </div>
+      </div>
+      <div class="hero-graphic">
+        <img src="img/6853e8309a4411ddf51eec14_kubicle-vs-pluralsight.svg" alt="Kubicle vs Pluralsight"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== INTRO ============================== -->
+<section class="intro">
+  <div class="container">
+    <div class="intro-wrap">
+      <div>
+        <div class="eyebrow">Compare Kubicle</div>
+        <h2>Kubicle <em style="font-style:normal; color: var(--accent);">vs</em> Pluralsight.</h2>
+      </div>
+      <div>
+        <p>
+          Kubicle and Pluralsight both provide online learning platforms that enable businesses and individuals to acquire key skills. The first key difference is that Kubicle's library is highly focused on data and analytics subjects that prepare people for the future of work, in particular data subjects that do not require any coding. Pluralsight's courses focus on more advanced technical subjects of interest to specific small niches. The second main difference is that Kubicle provides more tools to assist admins in managing training programs, such as semesters and version control.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== COMPARISON TABLE ============================== -->
+<section class="cmp" id="comparison">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Side&#8209;by&#8209;side</div>
+      <h2 class="h-xl">Comparison.</h2>
+      <p class="body-lg">A clear view of how the two platforms differ across the things that decide a rollout.</p>
+    </div>
+
+    <div class="cmp-table-wrap">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>Comparison</th>
+            <th class="cmp-kubicle"><span class="col-eyebrow">Recommended</span>Kubicle</th>
+            <th class="cmp-rival">Pluralsight</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feat">Library focus</td>
+            <td class="cmp-cell" data-label="Kubicle">Broad, accessible courses on data and analytics. Detailed courses on relevant software applications.</td>
+            <td class="cmp-cell cmp-rival-cell" data-label="Pluralsight">Many courses deal in advanced topics (e.g. coding) of interest to specific small niches.</td>
+          </tr>
+          <tr>
+            <td class="feat">Content production</td>
+            <td class="cmp-cell" data-label="Kubicle">In&#8209;house content developed by subject experts.</td>
+            <td class="cmp-cell cmp-rival-cell" data-label="Pluralsight">In&#8209;house content developed by subject experts.</td>
+          </tr>
+          <tr>
+            <td class="feat">Instructional format</td>
+            <td class="cmp-cell" data-label="Kubicle">Guided video with real dataset files (where applicable) and supplementary text summaries.</td>
+            <td class="cmp-cell cmp-rival-cell" data-label="Pluralsight">Text&#8209;based instructions with simulated software experience; limited video support.</td>
+          </tr>
+          <tr>
+            <td class="feat">Diagnostic skill checks</td>
+            <td class="cmp-cell" data-label="Kubicle">Used to gauge proficiency and generate focused course recommendations.</td>
+            <td class="cmp-cell cmp-rival-cell" data-label="Pluralsight">Used to gauge proficiency and generate focused course recommendations.</td>
+          </tr>
+          <tr>
+            <td class="feat">Exercises &amp; lesson files</td>
+            <td class="cmp-cell" data-label="Kubicle">Exercises in every software course; relevant lessons include before and after files.</td>
+            <td class="cmp-cell cmp-rival-cell" data-label="Pluralsight">All relevant courses have exercises with files. Regular lessons do not appear to have files.</td>
+          </tr>
+          <tr>
+            <td class="feat">End&#8209;of&#8209;course exams</td>
+            <td class="cmp-cell" data-label="Kubicle">Every course has a cheat&#8209;proof exam with multiple choice and dataset questions. Passing awards the certificate.</td>
+            <td class="cmp-cell cmp-rival-cell" data-label="Pluralsight">All courses contain learning checks, optional multiple choice quizzes. Certificates are awarded for watching all the videos in a course.</td>
+          </tr>
+          <tr>
+            <td class="feat">CPE/CPD accredited certificates</td>
+            <td class="bool" data-label="Kubicle"><span class="cmp-check"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></span></td>
+            <td class="bool" data-label="Pluralsight"><span style="font-size:13px; color: var(--steel); font-style: italic;">Available for video-based courses</span></td>
+          </tr>
+          <tr>
+            <td class="feat">Customer success</td>
+            <td class="bool" data-label="Kubicle"><span class="cmp-check"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></span></td>
+            <td class="bool" data-label="Pluralsight"><span class="cmp-cross"><svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="feat">Custom content</td>
+            <td class="bool" data-label="Kubicle"><span class="cmp-check"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></span></td>
+            <td class="bool" data-label="Pluralsight"><span class="cmp-cross"><svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="feat">Divide courses into semesters</td>
+            <td class="bool" data-label="Kubicle"><span class="cmp-check"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></span></td>
+            <td class="bool" data-label="Pluralsight"><span class="cmp-cross"><svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="feat">Version control</td>
+            <td class="bool" data-label="Kubicle"><span class="cmp-check"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></span></td>
+            <td class="bool" data-label="Pluralsight"><span class="cmp-cross"><svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="feat">Pacing recommendations</td>
+            <td class="bool" data-label="Kubicle"><span class="cmp-check"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></span></td>
+            <td class="bool" data-label="Pluralsight"><span class="cmp-cross"><svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="feat">Reports &amp; analytics</td>
+            <td class="bool" data-label="Kubicle"><span class="cmp-check"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></span></td>
+            <td class="bool" data-label="Pluralsight"><span class="cmp-cross"><svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="feat">Compliance with ISO 27001 &amp; GDPR</td>
+            <td class="bool" data-label="Kubicle"><span class="cmp-check"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></span></td>
+            <td class="bool" data-label="Pluralsight"><span class="cmp-cross"><svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="feat">API access</td>
+            <td class="bool" data-label="Kubicle"><span class="cmp-check"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></span></td>
+            <td class="bool" data-label="Pluralsight"><span class="cmp-cross"><svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span></td>
+          </tr>
+          <tr>
+            <td class="feat">SSO</td>
+            <td class="bool" data-label="Kubicle"><span class="cmp-check"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></span></td>
+            <td class="bool" data-label="Pluralsight"><span class="cmp-cross"><svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== LIBRARY FOCUS ============================== -->
+<section class="fblock alt">
+  <div class="container">
+    <div class="fblock-wrap">
+      <div class="fblock-text">
+        <div class="eyebrow">Library Focus</div>
+        <h2>Built for data, not for everything.</h2>
+        <p>
+          Kubicle is trusted by people from the world's biggest and best&#8209;known companies. The reason is focus. Our library is concentrated on the specific subjects in data analytics that help companies and individuals prepare for the future of work. Pluralsight's offering takes a different shape, as covered above.
+        </p>
+      </div>
+      <div class="fblock-image">
+        <img src="img/6853e1b8d9a01fd2b6a2dfca_library-focus.svg" alt="Kubicle library focus on data analytics"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== LIBRARY STRUCTURE ============================== -->
+<section class="fblock">
+  <div class="container">
+    <div class="fblock-wrap reverse">
+      <div class="fblock-text">
+        <div class="eyebrow">Library Structure</div>
+        <h2>Skill checks first, recommendations second.</h2>
+        <p>
+          Our platform starts with a questionnaire that identifies skill gaps and recommends the courses that will fill them effectively. Beyond that, our customer success team can build a semester for you, a series of courses to be completed over a defined period. All of our content is produced in&#8209;house by subject experts based on real&#8209;world experience.
+        </p>
+      </div>
+      <div class="fblock-image">
+        <img src="img/6853e1b8ea9d711510c7e075_library-structure.png" alt="Kubicle library structure with diagnostic skill checks"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CUSTOM CONTENT ============================== -->
+<section class="fblock alt">
+  <div class="container">
+    <div class="fblock-wrap">
+      <div class="fblock-text">
+        <div class="eyebrow">Custom Content Consultation</div>
+        <h2>Content built around your team.</h2>
+        <p>
+          If our existing library does not meet your specific needs, we can discuss and develop content requirements just for you. Pluralsight does not generally engage in such processes. For organisations with niche workflows or proprietary tools, that difference is the difference between a generic rollout and a program your people actually use.
+        </p>
+      </div>
+      <div class="fblock-image">
+        <img src="img/6853e1b91d6c5851ad5bb983_custom-content.png" alt="Kubicle custom content consultation"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== LEARNING EXPERIENCE ============================== -->
+<section class="fblock">
+  <div class="container">
+    <div class="fblock-wrap reverse">
+      <div class="fblock-text">
+        <div class="eyebrow">Learning Experience</div>
+        <h2>Earn the certificate, don't just watch the videos.</h2>
+        <p>
+          We identify appropriate courses for each learner using our diagnostic skill check, which surfaces gaps and recommends the courses that close them. Pluralsight relies primarily on automated recommendations or self&#8209;selection. On top of that, every Kubicle course has a substantive exam that must be passed to earn the certificate; this is not consistent across Pluralsight.
+        </p>
+      </div>
+      <div class="fblock-image">
+        <img src="img/6853e1b8dfe2c905641ebed5_learning-experience.png" alt="Kubicle learning experience with diagnostic skill checks and exams"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ADMIN EXPERIENCE ============================== -->
+<section class="fblock alt">
+  <div class="container">
+    <div class="fblock-wrap">
+      <div class="fblock-text">
+        <div class="eyebrow">Administration Experience</div>
+        <h2>Tooling admins can actually run a program with.</h2>
+        <p>
+          We give administrators the tools to help learners complete their courses. Admins can divide learners into groups and split courses into semesters, building a realistic plan to follow. They can also control which version of a software application learners use, since we support multiple versions of common applications, the kind of detail that matters when half your team is on Excel 365 and the other half is on a corporate&#8209;managed older release.
+        </p>
+      </div>
+      <div class="fblock-image">
+        <img src="img/6853e6c08ab265ce6e18feb9_admin-experience.png" alt="Kubicle administration experience for learning groups and semesters"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== G2 BADGES ============================== -->
+<section class="badges">
+  <div class="container">
+    <div class="badges-label">G2 recognition</div>
+    <div class="badges-row">
+      <img src="../img/shared/684ff04b360b30a1bde1a946_OnlineCourseProviders_BestEstimatedROI_Enterprise_Roi.svg" alt="G2 Best Estimated ROI Enterprise"/>
+      <img src="../img/shared/684ff05abbf6c48ca006117d_OnlineCourseProviders_HighPerformer_Enterprise_HighPerformer.svg" alt="G2 High Performer Enterprise"/>
+      <img src="../img/shared/685077d15806e6684dd62bc7_OnlineCourseProviders_FastestImplementation_Enterprise_GoLiveTime.svg" alt="G2 Fastest Implementation Enterprise"/>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TESTIMONIALS ============================== -->
+<section class="testimonials">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">Testimonials</div>
+      <h2 class="h-xl">
+        See what our customers<br/>
+        <em>have to say.</em>
+      </h2>
+      <div class="testimonial-stats">
+        <div class="ts-item">
+          <div class="ts-num">1M+</div>
+          <div class="ts-label">Employees using Kubicle</div>
+        </div>
+        <div class="ts-item">
+          <div class="ts-num">4.7/5</div>
+          <div class="ts-label">G2 rating across 200+ reviews</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tcards-wrap">
+      <div class="tcards" id="tcards">
+        <article class="tcard">
+          <span class="ttier">Enterprise</span>
+          <div class="tperson">
+            <img src="../img/shared/68516a03d14f17c847851e9a_george-n.webp" alt="George N"/>
+            <div>
+              <div class="tname">George N</div>
+              <div class="ttitle">Co&#8209;Owner</div>
+            </div>
+          </div>
+          <span class="tcard-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+          </span>
+          <p>The fact that everything is extremely detailed and makes sense. It is not a case of needing assistance constantly. It is clear to understand and gives enough information to ensure success.</p>
+          <div class="tdate">Jun 12, 2025</div>
+        </article>
+
+        <article class="tcard">
+          <span class="ttier">Enterprise</span>
+          <div class="tperson">
+            <img src="../img/shared/68516b3f6ed65be4c849bb43_rodney-d.jpg" alt="Rodney D"/>
+            <div>
+              <div class="tname">Rodney D</div>
+              <div class="ttitle">Customer Engineer</div>
+            </div>
+          </div>
+          <span class="tcard-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+          </span>
+          <p>My experience with Kubicle has been highly positive and intellectually rewarding. The learning modules are well&#8209;structured, concise and easy to follow. I appreciated the practical approach, focused on real&#8209;world applications rather than theoretical concepts. Each lesson is accompanied by interactive quizzes that reinforce understanding and track progress.</p>
+          <div class="tdate">Jun 14, 2025</div>
+        </article>
+
+        <article class="tcard">
+          <span class="ttier">Mid&#8209;Market</span>
+          <div class="tperson">
+            <img src="../img/shared/68516c491249a58bccd7618b_aleksandra-r.webp" alt="Aleksandra R"/>
+            <div>
+              <div class="tname">Aleksandra R</div>
+              <div class="ttitle">Manager of Human Resources</div>
+            </div>
+          </div>
+          <span class="tcard-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+          </span>
+          <p>We have had the pleasure of working with Kubicle for several years, and their support and professionalism have consistently been exceptional. We look forward to continuing this valuable partnership. The ever&#8209;evolving Kubicle platform has been a tremendous resource in enhancing our employees' knowledge and skills.</p>
+          <div class="tdate">Nov 15, 2024</div>
+        </article>
+
+        <article class="tcard">
+          <span class="ttier">Small&#8209;Business</span>
+          <div class="tperson">
+            <img src="../img/shared/68516d585220369beac3c33e_harrison-s.jpg" alt="Harrison S"/>
+            <div>
+              <div class="tname">Harrison S</div>
+              <div class="ttitle">Business Planning Analyst</div>
+            </div>
+          </div>
+          <span class="tcard-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+          </span>
+          <p>Kubicle allows me to build my fluency in data, the variety of courses really helped to enrich my existing knowledge pool. Whilst also building in new skills, it helped me keep my old skills sharpened. As a business analyst this was really useful for me.</p>
+          <div class="tdate">Nov 21, 2024</div>
+        </article>
+
+        <article class="tcard">
+          <span class="ttier">Enterprise</span>
+          <div class="tperson">
+            <img src="../img/shared/68516cc6204b7abe7a70c5b5_fernando-p.webp" alt="Fernando P"/>
+            <div>
+              <div class="tname">Fernando P</div>
+              <div class="ttitle">Principal Consultant</div>
+            </div>
+          </div>
+          <span class="tcard-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+          </span>
+          <p>Through Kubicle, I am able to accommodate a diverse group of student skills. Students can replay or slow down videos when they need to solidify knowledge, just as much as they can skip concepts they have mastered. The examples are practical and the learning works. My classes are more robust and my students are ready to join the workforce at a competitive level.</p>
+          <div class="tdate">Jun 24, 2024</div>
+        </article>
+
+        <article class="tcard">
+          <span class="ttier">Small&#8209;Business</span>
+          <div class="tperson">
+            <img src="../img/shared/6851687428ec98b7efe14f86_ronan-k.jpg" alt="Ronan K"/>
+            <div>
+              <div class="tname">Ronan K</div>
+              <div class="ttitle">Customer Success Manager</div>
+            </div>
+          </div>
+          <span class="tcard-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 10 17 15 18 22 12 18 6 22 7 15 2 10 9 9"/></svg>
+          </span>
+          <p>I really like how interactive and easy to use the Kubicle UI is. Ease of use and training are key to high adoption rates with any software, and Kubicle excels in both. A vast library of NASBA and CPE/CPD accredited content, an easy UI and a truly dedicated Customer Success team. The implementation was quick and effective, and all integrations work excellently.</p>
+          <div class="tdate">Nov 20, 2024</div>
+        </article>
+      </div>
+
+      <div class="tcards-nav">
+        <button id="tcards-prev" type="button" aria-label="Previous testimonial">
+          <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button id="tcards-next" type="button" aria-label="Next testimonial">
+          <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="final-cta">
+  <div class="container">
+    <div class="eyebrow" style="color: rgba(255,255,255,0.6);">Get started</div>
+    <h2 class="h-display" style="margin-top: 16px;">
+      See Kubicle<br/>
+      <em>side&#8209;by&#8209;side, in your stack.</em>
+    </h2>
+    <p class="body-lg" style="margin-top: 28px;">
+      Book a 30&#8209;minute walkthrough with a Kubicle program designer. We will run the same comparison against the platform you are using today, with your data and your team's roles.
+    </p>
+    <div class="final-cta-row">
+      <a class="btn btn-primary btn-lg" href="../try-free/">Try for Free <span class="arr">&rarr;</span></a>
+      <a class="btn btn-ghost btn-lg" href="../for-business/platform.html">See the platform</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER (shared/footer.js) ============================== -->
+<div id="site-footer"></div>
+
+<!-- ============================== SCRIPTS ============================== -->
+<script>
+// ============================== TESTIMONIAL CAROUSEL ==============================
+(function () {
+  var scroller = document.getElementById('tcards');
+  var prev = document.getElementById('tcards-prev');
+  var next = document.getElementById('tcards-next');
+  if (!scroller || !prev || !next) return;
+
+  function step() {
+    var card = scroller.querySelector('.tcard');
+    if (!card) return scroller.clientWidth * 0.8;
+    var gap = parseFloat(getComputedStyle(scroller).gap) || 20;
+    return card.offsetWidth + gap;
+  }
+  function update() {
+    var max = scroller.scrollWidth - scroller.clientWidth - 1;
+    prev.disabled = scroller.scrollLeft <= 0;
+    next.disabled = scroller.scrollLeft >= max;
+  }
+  prev.addEventListener('click', function () { scroller.scrollBy({ left: -step(), behavior: 'smooth' }); });
+  next.addEventListener('click', function () { scroller.scrollBy({ left: step(), behavior: 'smooth' }); });
+  scroller.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+</body>
+</html>

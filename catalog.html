@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Download the Kubicle Catalog | Kubicle</title>
+<meta name="description" content="Download the full Kubicle catalog. Explore every academy, every subject and every course Kubicle offers in one PDF brochure."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/catalog"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:title" content="Download the Kubicle Catalog"/>
+<meta property="og:description" content="Every academy, every subject, every course Kubicle offers, in one downloadable PDF."/>
+<meta property="og:url" content="https://www.kubicle.com/catalog"/>
+<meta property="og:image" content="https://www.kubicle.com/img/catalog-cover.webp"/>
+<meta property="og:image:width" content="1054"/>
+<meta property="og:image:height" content="1492"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Download the Kubicle Catalog"/>
+<meta name="twitter:description" content="Every academy, every subject, every course Kubicle offers, in one downloadable PDF."/>
+<meta name="twitter:image" content="https://www.kubicle.com/img/catalog-cover.webp"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design tokens only — layout is bespoke for this conversion page -->
+<link rel="stylesheet" href="shared/styles/tokens.css"/>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+body {
+  font-family: var(--body, "Satoshi","Helvetica Neue",Arial,sans-serif);
+  color: var(--prussian);
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(4,150,255,0.10), transparent 70%),
+    linear-gradient(180deg, #F4F8FC 0%, #EDF3F8 100%);
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+}
+
+/* ============================== HEADER ============================== */
+.cl-header {
+  padding: 22px 0;
+  background: var(--prussian);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.cl-header-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 32px;
+  display: flex; justify-content: space-between; align-items: center; gap: 24px;
+}
+.cl-header img { height: 30px; width: auto; }
+.cl-header .util {
+  font-size: 13.5px; color: rgba(255,255,255,0.7);
+  display: inline-flex; align-items: center; gap: 14px;
+}
+.cl-header .util a {
+  color: #fff;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-weight: 600;
+  border-bottom: 1.5px solid transparent;
+  padding-bottom: 1px;
+  transition: border-color 0.15s;
+}
+.cl-header .util a:hover { border-color: var(--accent, #0496FF); }
+@media (max-width: 720px) {
+  .cl-header-inner { padding: 0 20px; }
+  .cl-header .util .lab { display: none; }
+  .cl-header img { height: 26px; }
+}
+
+/* ============================== MAIN CARD ============================== */
+.cl-main {
+  display: flex; align-items: center; justify-content: center;
+  padding: 64px 24px;
+}
+.cl-card {
+  width: 100%;
+  max-width: 1040px;
+  background: #fff;
+  border-radius: 28px;
+  box-shadow: 0 40px 100px -36px rgba(11,27,43,0.30), 0 8px 24px -10px rgba(11,27,43,0.10);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 0.95fr 1fr;
+}
+@media (max-width: 880px) {
+  .cl-main { padding: 32px 16px; }
+  .cl-card { grid-template-columns: 1fr; max-width: 560px; }
+}
+
+/* ============================== LEFT: COVER ============================== */
+.cl-cover {
+  position: relative;
+  background: #0B1B2B;
+  border-right: 1px solid rgba(11,27,43,0.06);
+  min-height: 520px;
+  overflow: hidden;
+}
+.cl-cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+@media (max-width: 880px) {
+  .cl-cover {
+    border-right: 0;
+    border-bottom: 1px solid rgba(11,27,43,0.06);
+    min-height: 360px;
+    aspect-ratio: 4 / 5;
+  }
+}
+
+/* ============================== RIGHT: FORM ============================== */
+.cl-form-side {
+  padding: 56px 48px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+@media (max-width: 880px) { .cl-form-side { padding: 32px; } }
+.cl-eyebrow {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 11.5px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--accent-d, #0D5F96);
+}
+.cl-h1 {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--prussian);
+  margin-top: 12px;
+}
+.cl-h1 em { font-style: normal; color: var(--accent, #0496FF); }
+.cl-sub {
+  margin-top: 16px;
+  font-size: 15.5px; line-height: 1.55;
+  color: var(--steel);
+  max-width: 440px;
+}
+.cl-form-wrap { margin-top: 22px; }
+
+/* ============================== FORM ============================== */
+.cl-form { display: grid; gap: 12px; }
+.cl-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.cl-form label {
+  display: block;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--steel);
+  margin-bottom: 6px;
+}
+.cl-form input, .cl-form select, .cl-form textarea {
+  width: 100%;
+  font-family: var(--body, "Satoshi",sans-serif); font-size: 14.5px;
+  color: var(--prussian);
+  padding: 11px 14px;
+  background: #F4F8FC;
+  border: 1.5px solid transparent;
+  border-radius: 11px; outline: none;
+  transition: border 0.15s, background 0.15s;
+}
+.cl-form input::placeholder { color: rgba(11,27,43,0.4); }
+.cl-form input:focus, .cl-form select:focus, .cl-form textarea:focus {
+  background: #fff; border-color: var(--accent, #0496FF);
+}
+.cl-submit {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 10px;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-weight: 600; font-size: 15px;
+  letter-spacing: -0.005em;
+  height: 52px;
+  width: 100%;
+  margin-top: 6px;
+  border: 0;
+  background: var(--prussian);
+  color: #fff;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+.cl-submit:hover { background: var(--accent-d, #0D5F96); transform: translateY(-1px); }
+.cl-submit .arr { transition: transform 0.15s; }
+.cl-submit:hover .arr { transform: translateX(4px); }
+.cl-submit:disabled { opacity: 0.7; cursor: default; transform: none; }
+.cl-fineprint {
+  margin-top: 10px;
+  font-size: 11.5px; color: var(--steel);
+  line-height: 1.5; text-align: center;
+}
+.cl-fineprint a { color: var(--accent-d, #0D5F96); text-decoration: underline; }
+
+/* Secondary: book a demo directly */
+.cl-divider {
+  display: flex; align-items: center; gap: 14px;
+  margin: 24px 0 16px;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--steel);
+}
+.cl-divider::before,
+.cl-divider::after {
+  content: ""; flex: 1; height: 1px;
+  background: rgba(11,27,43,0.10);
+}
+.cl-book {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%;
+  padding: 13px 18px;
+  background: #fff;
+  border: 1.5px solid var(--prussian);
+  border-radius: 14px;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-weight: 600; font-size: 15px;
+  color: var(--prussian);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+}
+.cl-book:hover {
+  background: var(--prussian); color: #fff;
+  transform: translateY(-1px);
+}
+.cl-book svg {
+  width: 18px; height: 18px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+.cl-book .arr { transition: transform 0.15s; }
+.cl-book:hover .arr { transform: translateX(3px); }
+
+/* Success state */
+.cl-success { text-align: center; padding: 32px 0 12px; }
+.cl-success .ok {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--accent-soft, #D6EEFF);
+  color: var(--accent-d, #0D5F96);
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+}
+.cl-success .ok svg { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.cl-success .h {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 24px; font-weight: 600;
+  color: var(--prussian);
+  letter-spacing: -0.015em;
+}
+.cl-success .p {
+  margin-top: 10px;
+  color: var(--steel);
+  font-size: 14.5px; line-height: 1.55;
+  max-width: 320px;
+  margin-left: auto; margin-right: auto;
+}
+.cl-success .dl-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+  height: 48px; padding: 0 22px;
+  background: var(--accent, #0496FF);
+  color: #fff;
+  border-radius: 12px;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-weight: 600; font-size: 14.5px;
+}
+.cl-success .dl-btn:hover { background: var(--accent-d, #0D5F96); }
+
+/* ============================== TRUST STRIP ============================== */
+.cl-trust {
+  padding: 48px 0 32px;
+  border-top: 1px solid rgba(11,27,43,0.05);
+}
+.cl-trust-label {
+  text-align: center;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--steel);
+  margin-bottom: 20px;
+}
+.cl-marquee {
+  overflow: hidden;
+  width: 100%;
+}
+.cl-marquee-track {
+  display: flex; width: max-content;
+  animation: clmarquee 60s linear infinite;
+}
+.cl-marquee-track:hover { animation-play-state: paused; }
+@keyframes clmarquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.cl-logo-chip {
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  padding: 0 40px;
+}
+.cl-logo-chip img {
+  height: 26px; width: auto;
+  object-fit: contain;
+  filter: brightness(0);
+  opacity: 0.40;
+  transition: opacity 0.2s;
+}
+.cl-logo-chip:hover img { opacity: 0.75; }
+
+/* ============================== G2 BADGES ============================== */
+.cl-g2 {
+  padding: 56px 24px 56px;
+  text-align: center;
+}
+.cl-g2-eyebrow {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--accent-d, #0D5F96);
+  margin-bottom: 10px;
+}
+.cl-g2-title {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--prussian);
+  line-height: 1.15;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.cl-g2-title em { font-style: normal; color: var(--accent, #0496FF); }
+.cl-g2-sub {
+  margin-top: 14px;
+  font-size: 15px; color: var(--steel);
+  line-height: 1.55;
+  max-width: 540px;
+  margin-left: auto; margin-right: auto;
+}
+.cl-g2-featured {
+  margin-top: 40px;
+  display: flex; gap: 24px;
+  justify-content: center; align-items: center;
+  flex-wrap: wrap;
+  max-width: 920px;
+  margin-left: auto; margin-right: auto;
+}
+.cl-g2-featured img {
+  height: 130px; width: auto;
+  transition: transform 0.2s;
+}
+.cl-g2-featured img:hover { transform: translateY(-3px) scale(1.04); }
+@media (max-width: 600px) {
+  .cl-g2-featured img { height: 100px; }
+  .cl-g2-featured { gap: 16px; }
+}
+
+/* ============================== FOOTER ============================== */
+.cl-foot {
+  background: var(--prussian);
+  padding: 32px 0;
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+}
+.cl-foot-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 32px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.cl-foot a {
+  color: rgba(255,255,255,0.65);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.cl-foot a:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+.cl-foot .links { display: inline-flex; gap: 22px; flex-wrap: wrap; }
+@media (max-width: 600px) {
+  .cl-foot-inner { padding: 0 20px; }
+}
+</style>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== HEADER ============================== -->
+<header class="cl-header">
+  <div class="cl-header-inner">
+    <a href="index.html" aria-label="Kubicle home">
+      <img src="img/shared/6831119dcb82dac9dd5aea57_logo-white.svg" alt="Kubicle"/>
+    </a>
+    <div class="util">
+      <span class="lab">Already a customer?</span>
+      <a href="https://app.kubicle.com/sign-in" target="_blank" rel="noopener">Log in</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== MAIN ============================== -->
+<main class="cl-main">
+  <section class="cl-card" aria-label="Download the Kubicle catalog">
+
+    <div class="cl-cover">
+      <img src="img/catalog-cover.webp" alt="Kubicle Content Library catalog brochure cover"/>
+    </div>
+
+    <div class="cl-form-side">
+      <div class="cl-eyebrow">Free Download</div>
+      <h1 class="cl-h1">
+        Explore the full<br/>
+        Kubicle <em>catalog.</em>
+      </h1>
+      <p class="cl-sub">
+        Get the complete Kubicle catalog in a single PDF. Every academy, every subject and every course, in one place. Send it to L&amp;D, IT or budget owners so they can see the scope at a glance.
+      </p>
+
+      <div class="cl-form-wrap">
+        <form class="cl-form" id="cl-form" onsubmit="submitCatalog(event)" novalidate>
+          <div class="row">
+            <div>
+              <label for="c-firstname">First name</label>
+              <input id="c-firstname" type="text" required autocomplete="given-name" placeholder="Jane"/>
+            </div>
+            <div>
+              <label for="c-lastname">Last name</label>
+              <input id="c-lastname" type="text" required autocomplete="family-name" placeholder="Doyle"/>
+            </div>
+          </div>
+          <div>
+            <label for="c-email">Company email</label>
+            <input id="c-email" type="email" required autocomplete="email" placeholder="jane@firm.com"/>
+          </div>
+          <button class="cl-submit" type="submit" id="cl-submit-btn">
+            Download the catalog <span class="arr">&rarr;</span>
+          </button>
+          <p class="cl-fineprint">
+            By submitting, you agree to our <a href="privacy-policy.html">privacy policy</a>.
+          </p>
+        </form>
+
+        <div class="cl-divider">Or</div>
+        <a class="cl-book" href="https://meetings.hubspot.com/callkubicle/b2b-book-a-demo" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
+          Book a demo directly <span class="arr">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<!-- ============================== TRUST STRIP ============================== -->
+<section class="cl-trust">
+  <div class="cl-trust-label">Trusted by teams at</div>
+  <div class="cl-marquee">
+    <div class="cl-marquee-track" id="cl-marquee-track"></div>
+  </div>
+</section>
+
+<!-- ============================== G2 BADGES ============================== -->
+<section class="cl-g2">
+  <div class="cl-g2-eyebrow">G2 Recognition</div>
+  <h2 class="cl-g2-title">Recognised by learners and buyers <em>worldwide.</em></h2>
+  <p class="cl-g2-sub">Awarded across multiple G2 product categories, regions and customer segments, from Enterprise to Small Business, EMEA to Asia Pacific.</p>
+
+  <div class="cl-g2-featured">
+    <img src="for-business/img/g2-badges/OnlineLearningPlatform_Leader_EMEA_Leader.png" alt="G2 Leader EMEA, Online Learning Platform"/>
+    <img src="for-business/img/g2-badges/OnlineLearningPlatform_MomentumLeader_Leader.png" alt="G2 Momentum Leader, Online Learning Platform"/>
+    <img src="for-business/img/g2-badges/TechnicalSkillsDevelopment_BestSupport_Small-Business_QualityOfSupport.png" alt="G2 Best Support Small-Business, Technical Skills Development"/>
+  </div>
+</section>
+
+<!-- ============================== MINIMAL FOOTER ============================== -->
+<footer class="cl-foot">
+  <div class="cl-foot-inner">
+    <span>&copy; <span id="cl-year"></span> Kubicle. All Rights Reserved.</span>
+    <div class="links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================== SCRIPTS ============================== -->
+<script>
+  document.getElementById('cl-year').textContent = new Date().getFullYear();
+
+  // Trust-strip logo marquee
+  (function () {
+    var logos = [
+      { src: 'img/shared/68c2caf09da428eb2dde4f9e_coca-cola-logo-white.png', alt: 'Coca-Cola' },
+      { src: 'img/shared/67c0476eb0f8c4d3c435428c_6a6f1a51a10add6f2749c42cc0df7035_image-9.png', alt: 'Amazon' },
+      { src: 'img/shared/68c2cad5cf0b314fbcc87474_bain-logo-white.png', alt: 'Bain & Company' },
+      { src: 'img/shared/67c0476eb0f8c4d3c4354276_71a2cf3f7a67da45ac2c620241f37138_image-19.png', alt: 'Ford' },
+      { src: 'img/shared/68a31c29651cb5c7de7328a0_heineken-logo-corporate-page-1.png', alt: 'Heineken' },
+      { src: 'img/shared/67c0476eb0f8c4d3c4354287_2dbbe09d3f0f9a37d68ccb9f9ba677aa_image-21.png', alt: 'Jotun' },
+      { src: 'img/shared/68c2caef8b6fdbbd84310a36_kpmg-logo-white.png', alt: 'KPMG' },
+      { src: 'img/shared/68c2caefdc26eb4f7dceb524_lek-logo-white.png', alt: 'L.E.K. Consulting' },
+      { src: 'img/shared/68c2caf00a998ed623dbf3d5_oliver-wyman-logo-white.png', alt: 'Oliver Wyman' },
+      { src: 'img/shared/67c0476eb0f8c4d3c4354272_ab4654fe9cf282ba2459391b57d412b7_image-11.png', alt: 'PwC' }
+    ];
+    var track = document.getElementById('cl-marquee-track');
+    if (!track) return;
+    var setsNeeded = Math.ceil((window.innerWidth * 2) / (logos.length * 160)) + 1;
+    var totalSets = setsNeeded * 2;
+    var html = '';
+    for (var s = 0; s < totalSets; s++) {
+      for (var i = 0; i < logos.length; i++) {
+        var l = logos[i];
+        html += '<span class="cl-logo-chip"><img src="' + l.src + '" alt="' + l.alt + '"/></span>';
+      }
+    }
+    track.innerHTML = html;
+  })();
+</script>
+
+<!-- Direct HubSpot Forms API submission (full styling control) -->
+<script>
+var FREE_EMAIL_DOMAINS = [
+  'gmail.com','googlemail.com',
+  'yahoo.com','yahoo.co.uk','yahoo.ie','yahoo.fr','yahoo.de','yahoo.es','yahoo.it','yahoo.ca','yahoo.com.au','ymail.com','rocketmail.com',
+  'hotmail.com','hotmail.co.uk','hotmail.ie','hotmail.fr','hotmail.de','hotmail.es','hotmail.it',
+  'outlook.com','outlook.ie','outlook.co.uk','outlook.fr','outlook.de','outlook.es','outlook.it',
+  'live.com','live.ie','live.co.uk','live.fr','live.de','msn.com','windowslive.com','passport.com',
+  'aol.com','aim.com',
+  'icloud.com','me.com','mac.com',
+  'proton.me','protonmail.com','protonmail.ch','pm.me',
+  'gmx.com','gmx.net','gmx.de','gmx.us','mail.com','email.com','inbox.com',
+  'zoho.com','zohomail.com',
+  'yandex.com','yandex.ru',
+  'tutanota.com','tutanota.de','tuta.io',
+  'fastmail.com','fastmail.fm','hey.com','duck.com',
+  'qq.com','163.com','126.com','sina.com','sina.cn','foxmail.com','yeah.net'
+];
+
+function isFreeEmailDomain(email) {
+  var at = email.lastIndexOf('@');
+  if (at < 0) return false;
+  var domain = email.slice(at + 1).toLowerCase();
+  return FREE_EMAIL_DOMAINS.indexOf(domain) !== -1;
+}
+
+function showFormError(form, msg) {
+  var err = form.querySelector('.form-error');
+  if (!err) {
+    err = document.createElement('p');
+    err.className = 'form-error';
+    err.style.cssText = 'color:#D32F2F;font-size:13px;text-align:center;margin-top:8px;';
+    form.appendChild(err);
+  }
+  err.textContent = msg;
+}
+
+function submitCatalog(e) {
+  e.preventDefault();
+  var form = document.getElementById('cl-form');
+  var btn  = document.getElementById('cl-submit-btn');
+  var emailInput = document.getElementById('c-email');
+  var emailValue = emailInput.value.trim();
+
+  if (isFreeEmailDomain(emailValue)) {
+    showFormError(form, 'Please use your work email. We can only accept business email addresses, not personal accounts like Gmail, Yahoo or Outlook.');
+    emailInput.focus();
+    return;
+  }
+
+  var fields = [
+    { name: 'firstname', value: document.getElementById('c-firstname').value.trim() },
+    { name: 'lastname',  value: document.getElementById('c-lastname').value.trim() },
+    { name: 'email',     value: emailValue }
+  ];
+
+  var existingErr = form.querySelector('.form-error');
+  if (existingErr) existingErr.remove();
+
+  btn.disabled = true;
+  btn.innerHTML = 'Submitting&hellip;';
+
+  var payload = {
+    fields: fields,
+    context: { pageUri: window.location.href, pageName: document.title }
+  };
+
+  fetch('https://api.hsforms.com/submissions/v3/integration/submit/3294554/a837dd64-55a0-4aef-8088-e745870aee61', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function (res) {
+    if (res.ok) return null;
+    return res.json().then(function (body) {
+      var hubspotErr = new Error('HubSpot ' + res.status);
+      hubspotErr.body = body;
+      throw hubspotErr;
+    }, function () {
+      throw new Error('HubSpot ' + res.status);
+    });
+  })
+  .then(function () {
+    form.innerHTML = '<div class="cl-success">'
+      + '<div class="ok"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></div>'
+      + '<div class="h">Catalog on its way.</div>'
+      + '<p class="p">Check your inbox for the Kubicle Content Library PDF. If it doesn&rsquo;t arrive in the next few minutes, drop a note to sales@kubicle.com.</p>'
+      + '</div>';
+  })
+  .catch(function (hubspotErr) {
+    btn.disabled = false;
+    btn.innerHTML = 'Download the catalog <span class="arr">&rarr;</span>';
+
+    var emailRejected = false;
+    var body = hubspotErr && hubspotErr.body;
+    if (body && Array.isArray(body.errors)) {
+      for (var i = 0; i < body.errors.length; i++) {
+        var e = body.errors[i];
+        var errType = (e && e.errorType) || '';
+        var errMsg  = ((e && e.message) || '').toLowerCase();
+        if (errType === 'INVALID_EMAIL' || errType === 'BLOCKED_EMAIL') { emailRejected = true; break; }
+        if (errMsg.indexOf('business email') !== -1 || errMsg.indexOf('work email') !== -1 || errMsg.indexOf('free email') !== -1) { emailRejected = true; break; }
+      }
+    }
+
+    if (emailRejected) {
+      showFormError(form, 'Please use your work email. We can only accept business email addresses, not personal accounts like Gmail, Yahoo or Outlook.');
+      emailInput.focus();
+    } else {
+      showFormError(form, 'Something went wrong. Please try again or email sales@kubicle.com.');
+    }
+  });
+}
+</script>
+
+</body>
+</html>

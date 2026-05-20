@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Start free &middot; Find the right Kubicle learning path | Kubicle</title>
+<meta name="description" content="Answer 4 quick questions and start learning with Kubicle for free. No credit card required. Over 30 free certified courses."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/free-tier-sign-up"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Sign up for the Kubicle free tier"/>
+<meta property="og:description" content="Answer 4 quick questions to cut through 400+ courses and find what pathway fits you best. No credit card required."/>
+<meta property="og:url" content="https://www.kubicle.com/free-tier-sign-up"/>
+
+<meta name="theme-color" content="#FAFAFA"/>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<link rel="stylesheet" href="shared/styles/tokens.css"/>
+
+<style>
+/* ============================== RESET ============================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+a { color: inherit; text-decoration: none; }
+img, svg { max-width: 100%; display: block; }
+
+:root {
+  /* Local palette derived from the Webflow design + provided assets */
+  --ftsu-bg:            #FAFAFA;
+  --ftsu-sidebar-bg:    #EAF2FB;
+  --ftsu-panel-bg:      #F4F5F2;
+  --ftsu-text:          #052438;
+  --ftsu-text-muted:    #547AA0;
+  --ftsu-accent:        #0496FF;
+  --ftsu-accent-d:      #0B7DD7;
+  --ftsu-done-green:    #157A3F;
+  --ftsu-card-border:   #E1E6EC;
+  /* Skill pill palette */
+  --pill-purple-bg:     #ECDDFD;
+  --pill-purple-fg:     #5B3FAA;
+  --pill-green-bg:      #D9F3DE;
+  --pill-green-fg:      #1F7B3F;
+  --pill-pink-bg:       #FFD8E6;
+  --pill-pink-fg:       #B0265E;
+  --pill-yellow-bg:     #FFF1B0;
+  --pill-yellow-fg:     #876B12;
+  --pill-salmon-bg:     #FFD8CC;
+  --pill-salmon-fg:     #B14D2A;
+}
+
+body {
+  font-family: var(--body, "Satoshi","Helvetica Neue",Arial,sans-serif);
+  color: var(--ftsu-text);
+  background: var(--ftsu-bg);
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+}
+
+/* ============================== STEP CONTAINERS ============================== */
+.step {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 520ms ease, transform 520ms ease;
+  will-change: opacity, transform;
+}
+.step.is-visible { opacity: 1; transform: translateY(0); }
+.step.is-exiting { opacity: 0; transform: translateY(0); }
+
+/* ============================== INTRO STEP (full-bleed, no header) ============================== */
+.intro-step {
+  flex: 1;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+  padding: 40px 24px 60px;
+  background:
+    url("img/free-tier-sign-up/bg-image.webp") center top / cover no-repeat,
+    var(--ftsu-bg);
+  min-height: 100vh;
+}
+/* <a> is inline by default — make it a sized block so the inner <img>
+   doesn't fall back to the flex container's height. `margin: 0 auto`
+   centers it horizontally (the engine forces .intro-step to display:block
+   at runtime, defeating any align-items rule). */
+.intro-logo {
+  display: block;
+  width: 56px; height: 56px;
+  margin: 0 auto 72px;
+  flex-shrink: 0;
+}
+.intro-logo img { display: block; width: 56px; height: 56px; }
+
+.intro-pill {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: #fff;
+  border: 1px solid var(--ftsu-card-border);
+  border-radius: 999px;
+  padding: 6px 22px 6px 8px;
+  box-shadow: 0 4px 16px -6px rgba(11,27,43,0.08);
+  margin-bottom: 36px;
+}
+.intro-pill img { width: 96px; height: 32px; border-radius: 999px; }
+.intro-pill span {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--ftsu-accent);
+  letter-spacing: -0.005em;
+}
+
+.intro-h {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.028em;
+  line-height: 1.02;
+  color: var(--ftsu-text);
+  max-width: 880px;
+  margin: 0 auto 24px;
+}
+.intro-sub {
+  font-size: clamp(17px, 1.6vw, 22px);
+  line-height: 1.45;
+  color: var(--ftsu-text);
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+.intro-sub em { font-style: normal; color: var(--ftsu-accent); font-weight: 700; }
+
+/* Important: .btn-go must reset width / min-height / padding because it can
+   appear on a <button> that also carries the .quiz-option class (the intro
+   CTA needs .quiz-option for the engine's click handler). Without these
+   resets the CTA inherits the full-width answer-card styling. */
+.btn-go {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 10px;
+  width: auto;
+  min-height: 0;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-weight: 700; font-size: 17px;
+  letter-spacing: -0.005em;
+  height: 58px;
+  padding: 0 44px;
+  border: 0;
+  background: var(--ftsu-accent);
+  color: #fff;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px -8px rgba(4,150,255,0.55);
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+.btn-go:hover {
+  background: var(--ftsu-accent-d);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px -8px rgba(4,150,255,0.65);
+  border-color: transparent;
+}
+
+.intro-fineprint {
+  margin-top: 56px;
+  font-family: var(--body);
+  font-size: 13px; font-weight: 600;
+  color: var(--ftsu-accent);
+  letter-spacing: 0.01em;
+}
+.intro-skip {
+  display: inline-block;
+  margin-top: 28px;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 14px; font-weight: 600;
+  color: var(--ftsu-text);
+  border-bottom: 1.5px solid var(--ftsu-text);
+  padding-bottom: 1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.intro-skip:hover { color: var(--ftsu-accent); border-color: var(--ftsu-accent); }
+
+@media (max-width: 720px) {
+  .intro-step { padding: 32px 20px 48px; }
+  .intro-logo { margin-bottom: 48px; }
+  .intro-pill span { font-size: 14px; }
+  .intro-fineprint { font-size: 12px; padding: 0 16px; }
+}
+
+/* ============================== QUIZ SHELL ============================== */
+.quiz-shell {
+  display: none;
+  grid-template-columns: 38% 62%;
+  flex: 1;
+  min-height: 100vh;
+}
+.quiz-shell.is-active { display: grid; }
+@media (max-width: 880px) {
+  .quiz-shell.is-active { display: block; }
+}
+
+/* ============================== SIDEBAR ============================== */
+.quiz-sidebar {
+  background: var(--ftsu-sidebar-bg);
+  padding: 36px 48px 48px;
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+@media (max-width: 880px) { .quiz-sidebar { display: none; } }
+
+.sidebar-logo { width: 50px; height: 50px; }
+.sidebar-logo img { width: 100%; height: 100%; }
+
+.sb-block { max-width: 360px; }
+.sb-heading {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ftsu-text-muted);
+  margin-bottom: 24px;
+}
+.sb-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 22px; }
+.sb-item {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.sb-icon { width: 36px; height: 36px; flex-shrink: 0; }
+.sb-icon .ic-pending { width: 100%; height: 100%; display: block; }
+.sb-icon .ic-done    { width: 100%; height: 100%; display: none; }
+.sb-item.is-done .sb-icon .ic-pending { display: none; }
+.sb-item.is-done .sb-icon .ic-done    { display: block; }
+
+/* Animate the loader-shaped pending icon */
+.sb-item:not(.is-done) .ic-pending { animation: sbSpin 6s linear infinite; }
+@keyframes sbSpin { to { transform: rotate(360deg); } }
+
+.sb-title {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 17px; font-weight: 700;
+  letter-spacing: -0.012em;
+  color: var(--ftsu-text);
+  margin-bottom: 4px;
+}
+.sb-sub {
+  font-size: 14px; line-height: 1.45;
+  color: var(--ftsu-text-muted);
+}
+.sb-item .done-text { display: none; }
+.sb-item.is-done .pending-text { display: none; }
+.sb-item.is-done .done-text   { display: block; }
+.sb-item.is-done .sb-title    { color: var(--ftsu-done-green); }
+
+/* ============================== MAIN PANEL ============================== */
+.quiz-main {
+  background: var(--ftsu-panel-bg);
+  padding: 36px 56px 56px;
+  display: flex; flex-direction: column;
+  min-height: 100vh;
+}
+@media (max-width: 720px) { .quiz-main { padding: 28px 24px; } }
+
+.back-row { margin-bottom: 60px; }
+.quiz-back {
+  display: inline-flex; align-items: center;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 16px; font-weight: 600;
+  color: var(--ftsu-accent);
+  background: transparent; border: 0; padding: 0;
+  cursor: pointer;
+  letter-spacing: -0.005em;
+}
+.quiz-back:hover { color: var(--ftsu-accent-d); }
+
+.step-h {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.022em;
+  line-height: 1.15;
+  color: var(--ftsu-text);
+  margin-bottom: 14px;
+  max-width: 720px;
+}
+.step-sub {
+  font-size: 17px; line-height: 1.5;
+  color: var(--ftsu-text-muted);
+  margin-bottom: 36px;
+  max-width: 640px;
+}
+.step-sub em { font-style: normal; color: var(--ftsu-accent); font-weight: 700; }
+.step-sub strong { color: var(--ftsu-text); font-weight: 700; }
+
+/* ============================== QUIZ OPTIONS (cards) ============================== */
+.quiz-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  max-width: 880px;
+}
+@media (max-width: 640px) { .quiz-options { grid-template-columns: 1fr; } }
+
+.quiz-option {
+  display: flex; align-items: center; gap: 18px;
+  text-align: left;
+  font-family: var(--body, "Satoshi",sans-serif);
+  font-size: 14.5px;
+  color: var(--ftsu-text);
+  background: #fff;
+  border: 1.5px solid var(--ftsu-card-border);
+  border-radius: 16px;
+  padding: 18px 22px;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  min-height: 88px;
+  width: 100%;
+}
+/* When the intro CTA reuses .quiz-option for its click handler, the
+   answer-card styling above must NOT apply. Higher specificity overrides.
+   The engine forces .intro-step to display:block at runtime, so flex-based
+   alignment is gone; centering is via display:block + margin:auto.
+   We also redeclare color / font-family / font-size / text-align because
+   .quiz-option (declared later in source order) overrides the .btn-go
+   defaults for those properties. */
+.quiz-option.btn-go {
+  display: block;
+  width: max-content;
+  min-height: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--ftsu-accent);
+  color: #fff;
+  border: 0;
+  border-radius: 14px;
+  padding: 0 44px;
+  /* Re-establish vertical centering for the button label. */
+  line-height: 58px;
+  font-family: var(--head, "Clash Grotesk", sans-serif);
+  font-weight: 700;
+  font-size: 17px;
+  text-align: center;
+  letter-spacing: -0.005em;
+}
+.quiz-option:hover {
+  border-color: var(--ftsu-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px -16px rgba(4,150,255,0.45);
+}
+
+.quiz-option .qo-ico {
+  width: 56px; height: 56px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  overflow: hidden;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--ftsu-accent);
+}
+.quiz-option .qo-ico img,
+.quiz-option .qo-ico svg { width: 100%; height: 100%; display: block; }
+
+.qo-body { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+.qo-label {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-weight: 700; font-size: 17px;
+  color: var(--ftsu-text);
+  letter-spacing: -0.012em;
+}
+.qo-hint {
+  font-size: 14px;
+  color: var(--ftsu-text-muted);
+  line-height: 1.45;
+}
+.qo-hint em { font-style: normal; color: var(--ftsu-accent); font-weight: 600; }
+
+/* ============================== SKILL PILLS ============================== */
+/* Left-aligned with the step title/sub above. No max-width so pills can flow
+   across the panel width naturally. */
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-start;
+  max-width: 880px;
+}
+.skill-pill {
+  /* Override the .quiz-option full-width + min-height defaults so pills
+     size to their content and wrap in flowing rows. */
+  display: inline-flex; align-items: center;
+  width: auto;
+  min-height: 0;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-weight: 600; font-size: 17px;
+  letter-spacing: -0.005em;
+  padding: 14px 26px;
+  border: 0;
+  border-radius: 12px;
+  background-clip: padding-box;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
+}
+.skill-pill:hover { border-color: transparent; }
+.skill-pill:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.97);
+  box-shadow: 0 10px 24px -12px rgba(11,27,43,0.25);
+}
+.sp-purple { background: var(--pill-purple-bg); color: var(--pill-purple-fg); }
+.sp-green  { background: var(--pill-green-bg);  color: var(--pill-green-fg);  }
+.sp-pink   { background: var(--pill-pink-bg);   color: var(--pill-pink-fg);   }
+.sp-yellow { background: var(--pill-yellow-bg); color: var(--pill-yellow-fg); }
+.sp-salmon { background: var(--pill-salmon-bg); color: var(--pill-salmon-fg); }
+
+/* ============================== LOADING STEP ============================== */
+/* The engine forces .step to display:block at runtime, so we centre via a
+   nested flex wrapper the engine doesn't touch. Order: headline, sub, spinner. */
+.loading-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+}
+.load-h {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 700;
+  color: var(--ftsu-text);
+  letter-spacing: -0.022em;
+  line-height: 1.1;
+  margin: 0 0 14px;
+  max-width: 720px;
+}
+.load-sub {
+  font-family: var(--body, "Satoshi",sans-serif);
+  font-size: 18px;
+  color: var(--ftsu-text-muted);
+  margin: 0 0 40px;
+}
+.loading-spinner {
+  width: 80px;
+  height: 80px;
+  border: 3px solid #E6ECF2;
+  border-top-color: var(--ftsu-accent);
+  border-radius: 50%;
+  animation: kubicleSpin 1.1s linear infinite;
+}
+@keyframes kubicleSpin { to { transform: rotate(360deg); } }
+
+/* ============================== SIGNUP GATE ============================== */
+/* Layout: Back top-left, then centered stack of (title, sub, CTA, hero image).
+   Image sits BELOW the CTA per the latest spec. */
+#step-signup-gate { padding-bottom: 32px; }
+.gate-content {
+  text-align: center;
+  max-width: 720px;
+  margin: 24px auto 0;
+}
+.gate-h {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.024em;
+  line-height: 1.1;
+  color: var(--ftsu-text);
+  margin-bottom: 18px;
+}
+.gate-sub {
+  color: var(--ftsu-text-muted);
+  font-size: 18px; line-height: 1.5;
+  max-width: 640px;
+  margin: 0 auto 28px;
+}
+.gate-sub strong { color: var(--ftsu-text); font-weight: 700; }
+.btn-join {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 10px;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-weight: 700; font-size: 17px;
+  letter-spacing: -0.005em;
+  height: 58px;
+  padding: 0 48px;
+  border: 0;
+  background: var(--ftsu-accent);
+  color: #fff;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px -8px rgba(4,150,255,0.55);
+  transition: background 0.15s, transform 0.15s;
+}
+.btn-join:hover { background: var(--ftsu-accent-d); transform: translateY(-1px); }
+.gate-hero {
+  display: block;
+  width: 320px; max-width: 70%;
+  height: auto;
+  margin: 36px auto 0;
+}
+.gate-fineprint {
+  margin-top: 32px;
+  font-size: 12px; color: var(--ftsu-text-muted);
+  line-height: 1.5;
+  max-width: 400px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.gate-fineprint a { color: var(--ftsu-accent); text-decoration: underline; }
+
+/* ============================== MINIMAL FOOTER ============================== */
+/* Desktop: floats at the bottom of the viewport, transparent (the wide
+   sidebar + main panel layout leaves room for an unobtrusive overlay).
+   Mobile: drops into normal flow at the end of the page so it doesn't
+   collide with the cookie banner or chat widget. */
+.fts-foot {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  text-align: center;
+  padding: 12px;
+  font-size: 11.5px;
+  color: var(--ftsu-text-muted);
+  pointer-events: none;
+}
+.fts-foot a {
+  color: var(--ftsu-text-muted);
+  border-bottom: 1px solid transparent;
+  pointer-events: auto;
+  margin: 0 8px;
+}
+.fts-foot a:hover { color: var(--ftsu-text); border-color: var(--ftsu-text-muted); }
+@media (max-width: 880px) {
+  .fts-foot {
+    position: static;
+    padding: 28px 16px 24px;
+    background: var(--ftsu-bg);
+    border-top: 1px solid rgba(11,27,43,0.06);
+  }
+  .fts-foot a { pointer-events: auto; }
+}
+
+/* ============================== MOBILE PROGRESS BAR ============================== */
+.mobile-progress-bar { display: none; }
+@media screen and (max-width: 880px) {
+  .mobile-progress-bar {
+    display: block;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 6px;
+    background: #E6ECF2;
+    z-index: 9999;
+  }
+  .mobile-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--ftsu-accent);
+    transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  body { padding-top: 6px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================== MOBILE PROGRESS BAR ============================== -->
+<div class="mobile-progress-bar">
+  <div class="mobile-progress-fill" id="mobile-progress-fill"></div>
+</div>
+
+<!-- ============================== STEP 1: INTRO (full-bleed, no header) ============================== -->
+<div class="step intro-step" id="step-intro">
+  <!-- Relative href so it works whether the file is served from a web root
+       (resolves to /index.html) or opened directly via file:// (resolves
+       to index.html in the same directory). `href="/"` would resolve to the
+       file-system root (e.g. C:\) when opened locally. -->
+  <a href="index.html" class="intro-logo" aria-label="Kubicle home">
+    <img src="img/free-tier-sign-up/off-white-filled-bm.svg" alt="Kubicle"/>
+  </a>
+
+  <div class="intro-pill">
+    <img src="img/free-tier-sign-up/1m-users-graphic.webp" alt="" aria-hidden="true"/>
+    <span>Join 1M+ Professionals</span>
+  </div>
+
+  <h1 class="intro-h">Your perfect learning experience starts here</h1>
+
+  <p class="intro-sub">
+    Answer <em>4 quick questions</em> to cut through 400+ courses and find what pathway fits you best.
+  </p>
+
+  <!-- Let's Go: uses .quiz-option so the engine's click handler advances
+       the step. .btn-go overrides the answer-card styling .quiz-option sets. -->
+  <button class="quiz-option btn-go" type="button" data-next="step-role">
+    Let&rsquo;s Go
+  </button>
+
+  <p class="intro-fineprint">
+    *No Credit Card Required &nbsp; | &nbsp; *Over 30+ Free Certified Courses to Choose From
+  </p>
+
+  <a class="intro-skip" href="https://app.kubicle.com/free-tier/signup" target="_blank" rel="noopener">Skip &amp; Explore Library</a>
+</div>
+
+<!-- ============================== QUIZ SHELL (sidebar + main) ============================== -->
+<div class="quiz-shell" id="quiz-shell">
+
+  <!-- ====== SIDEBAR ====== -->
+  <aside class="quiz-sidebar" aria-label="Progress">
+    <a href="index.html" class="sidebar-logo" aria-label="Kubicle home">
+      <img src="img/free-tier-sign-up/off-white-filled-bm.svg" alt="Kubicle"/>
+    </a>
+
+    <div class="sb-block">
+      <div class="sb-heading">Complete These Steps</div>
+      <ol class="sb-list">
+        <li class="sb-item" data-sb-step="role">
+          <span class="sb-icon" aria-hidden="true">
+            <img class="ic-pending" src="img/free-tier-sign-up/loader.svg" alt=""/>
+            <img class="ic-done"    src="img/free-tier-sign-up/complete.svg" alt=""/>
+          </span>
+          <div>
+            <div class="sb-title pending-text">Who are you?</div>
+            <div class="sb-sub   pending-text">Help us personalize your journey</div>
+            <div class="sb-title done-text">Profile set</div>
+            <div class="sb-sub   done-text">Join 1M+ learners building practical skills</div>
+          </div>
+        </li>
+        <li class="sb-item" data-sb-step="industry">
+          <span class="sb-icon" aria-hidden="true">
+            <img class="ic-pending" src="img/free-tier-sign-up/loader.svg" alt=""/>
+            <img class="ic-done"    src="img/free-tier-sign-up/complete.svg" alt=""/>
+          </span>
+          <div>
+            <div class="sb-title pending-text">Your industry</div>
+            <div class="sb-sub   pending-text">Where you work</div>
+            <div class="sb-title done-text">Industry selected</div>
+            <div class="sb-sub   done-text">Trusted by 400+ global enterprises</div>
+          </div>
+        </li>
+        <li class="sb-item" data-sb-step="skill">
+          <span class="sb-icon" aria-hidden="true">
+            <img class="ic-pending" src="img/free-tier-sign-up/loader.svg" alt=""/>
+            <img class="ic-done"    src="img/free-tier-sign-up/complete.svg" alt=""/>
+          </span>
+          <div>
+            <div class="sb-title pending-text">Skills you&rsquo;re interested in</div>
+            <div class="sb-sub   pending-text">Topics you&rsquo;d like to explore</div>
+            <div class="sb-title done-text">Skills selected</div>
+            <div class="sb-sub   done-text">Level up in tech, data, AI &amp; more</div>
+          </div>
+        </li>
+        <li class="sb-item" data-sb-step="level">
+          <span class="sb-icon" aria-hidden="true">
+            <img class="ic-pending" src="img/free-tier-sign-up/loader.svg" alt=""/>
+            <img class="ic-done"    src="img/free-tier-sign-up/complete.svg" alt=""/>
+          </span>
+          <div>
+            <div class="sb-title pending-text">Your experience level</div>
+            <div class="sb-sub   pending-text">Your familiarity with these skills</div>
+            <div class="sb-title done-text">Experience set</div>
+            <div class="sb-sub   done-text">CPE, CPD &amp; NASBA certified</div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </aside>
+
+  <!-- ====== MAIN PANEL ====== -->
+  <div class="quiz-main">
+
+    <!-- ============================== STEP 2: ROLE ============================== -->
+    <div class="step" id="step-role">
+      <div class="back-row">
+        <button class="quiz-back" type="button" data-back="step-intro">Back</button>
+      </div>
+      <h2 class="step-h">What describes you best?</h2>
+      <p class="step-sub">This helps us tailor your learning experience.</p>
+
+      <div class="quiz-options">
+        <button class="quiz-option" type="button" data-question="role" data-value="Student / Early career" data-next="step-industry">
+          <span class="qo-ico"><img src="img/free-tier-sign-up/student.svg" alt=""/></span>
+          <span class="qo-body">
+            <span class="qo-label">Student / Early career</span>
+            <span class="qo-hint"><em>0-2 years experience</em> | Learning the fundamentals</span>
+          </span>
+        </button>
+        <button class="quiz-option" type="button" data-question="role" data-value="Professional" data-next="step-industry">
+          <span class="qo-ico"><img src="img/free-tier-sign-up/professional.svg" alt=""/></span>
+          <span class="qo-body">
+            <span class="qo-label">Professional</span>
+            <span class="qo-hint"><em>2-5 years experience</em> | Applying skills in real work</span>
+          </span>
+        </button>
+        <button class="quiz-option" type="button" data-question="role" data-value="Senior professional" data-next="step-industry">
+          <span class="qo-ico"><img src="img/free-tier-sign-up/senior-professional.svg" alt=""/></span>
+          <span class="qo-body">
+            <span class="qo-label">Senior professional</span>
+            <span class="qo-hint"><em>5+ years experience</em> | Handling complex projects</span>
+          </span>
+        </button>
+        <button class="quiz-option" type="button" data-question="role" data-value="Manager / Team lead" data-next="step-industry">
+          <span class="qo-ico"><img src="img/free-tier-sign-up/manager.svg" alt=""/></span>
+          <span class="qo-body">
+            <span class="qo-label">Manager / Team lead</span>
+            <span class="qo-hint">Leading teams or <em>managing</em> workflows</span>
+          </span>
+        </button>
+        <button class="quiz-option" type="button" data-question="role" data-value="Director / Executive" data-next="step-industry">
+          <span class="qo-ico"><img src="img/free-tier-sign-up/director.svg" alt=""/></span>
+          <span class="qo-body">
+            <span class="qo-label">Director / Executive</span>
+            <span class="qo-hint">Setting <em>strategy</em> and business direction</span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ============================== STEP 3: INDUSTRY ============================== -->
+    <div class="step" id="step-industry">
+      <div class="back-row">
+        <button class="quiz-back" type="button" data-back="step-role">Back</button>
+      </div>
+      <h2 class="step-h">What industry do you work in?</h2>
+      <p class="step-sub">We&rsquo;ll recommend courses relevant to your field.</p>
+
+      <div class="quiz-options">
+        <button class="quiz-option" type="button" data-question="industry" data-value="Consulting" data-next="step-skill">
+          <span class="qo-ico"><img src="img/free-tier-sign-up/consulting.svg" alt=""/></span>
+          <span class="qo-body"><span class="qo-label">Consulting</span></span>
+        </button>
+        <button class="quiz-option" type="button" data-question="industry" data-value="Financial Services" data-next="step-skill">
+          <span class="qo-ico"><img src="img/free-tier-sign-up/financial-services.svg" alt=""/></span>
+          <span class="qo-body"><span class="qo-label">Financial Services</span></span>
+        </button>
+        <button class="quiz-option" type="button" data-question="industry" data-value="Corporate Finance" data-next="step-skill">
+          <span class="qo-ico"><img src="img/free-tier-sign-up/corporate-finance.svg" alt=""/></span>
+          <span class="qo-body"><span class="qo-label">Corporate Finance</span></span>
+        </button>
+        <button class="quiz-option" type="button" data-question="industry" data-value="Banking" data-next="step-skill">
+          <span class="qo-ico"><img src="img/free-tier-sign-up/banking.svg" alt=""/></span>
+          <span class="qo-body"><span class="qo-label">Banking</span></span>
+        </button>
+        <button class="quiz-option" type="button" data-question="industry" data-value="Other" data-next="step-skill">
+          <span class="qo-ico"><img src="img/free-tier-sign-up/other.svg" alt=""/></span>
+          <span class="qo-body"><span class="qo-label">Other</span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ============================== STEP 4: SKILL (colored pills) ============================== -->
+    <!-- data-value MUST match keys in the PATHS object in the script below. -->
+    <div class="step" id="step-skill">
+      <div class="back-row">
+        <button class="quiz-back" type="button" data-back="step-industry">Back</button>
+      </div>
+      <h2 class="step-h">What skill do you want to level up first?</h2>
+      <p class="step-sub"><strong>Pick one to start.</strong> We&rsquo;ll help you explore the rest later.</p>
+
+      <div class="skill-pills">
+        <button class="quiz-option skill-pill sp-purple" type="button" data-question="website-mapping" data-value="AI"                            data-next="step-level">AI</button>
+        <button class="quiz-option skill-pill sp-purple" type="button" data-question="website-mapping" data-value="Machine Learning"              data-next="step-level">Machine Learning</button>
+        <button class="quiz-option skill-pill sp-purple" type="button" data-question="website-mapping" data-value="Python"                        data-next="step-level">Python</button>
+        <button class="quiz-option skill-pill sp-purple" type="button" data-question="website-mapping" data-value="Statistics"                    data-next="step-level">Statistics</button>
+        <button class="quiz-option skill-pill sp-green"  type="button" data-question="website-mapping" data-value="Data Literacy"                 data-next="step-level">Data Literacy</button>
+        <button class="quiz-option skill-pill sp-green"  type="button" data-question="website-mapping" data-value="Data Visualization"            data-next="step-level">Data Visualization</button>
+        <button class="quiz-option skill-pill sp-green"  type="button" data-question="website-mapping" data-value="Data Preparation & Automation" data-next="step-level">Data Preparation &amp; Automation</button>
+        <button class="quiz-option skill-pill sp-green"  type="button" data-question="website-mapping" data-value="Excel"                         data-next="step-level">Excel</button>
+        <button class="quiz-option skill-pill sp-pink"   type="button" data-question="website-mapping" data-value="SQL"                           data-next="step-level">SQL</button>
+        <button class="quiz-option skill-pill sp-pink"   type="button" data-question="website-mapping" data-value="Power BI"                      data-next="step-level">Power BI</button>
+        <button class="quiz-option skill-pill sp-pink"   type="button" data-question="website-mapping" data-value="Tableau"                       data-next="step-level">Tableau</button>
+        <button class="quiz-option skill-pill sp-yellow" type="button" data-question="website-mapping" data-value="Financial Modeling"            data-next="step-level">Financial Modeling</button>
+        <button class="quiz-option skill-pill sp-yellow" type="button" data-question="website-mapping" data-value="Introduction to Finance"       data-next="step-level">Introduction to Finance</button>
+        <button class="quiz-option skill-pill sp-salmon" type="button" data-question="website-mapping" data-value="Agile & Scrum"                 data-next="step-level">Agile &amp; Scrum</button>
+        <button class="quiz-option skill-pill sp-salmon" type="button" data-question="website-mapping" data-value="Project Management"            data-next="step-level">Project Management</button>
+        <button class="quiz-option skill-pill sp-salmon" type="button" data-question="website-mapping" data-value="PowerPoint"                    data-next="step-level">PowerPoint</button>
+      </div>
+    </div>
+
+    <!-- ============================== STEP 5: LEVEL ============================== -->
+    <!-- 6 user-facing labels mapped to 3 engine values (data-value) for the PATHS engine.
+         The granular label is captured in data-display-level and stored separately in
+         sessionStorage by the supplementary script for richer GA4 reporting. -->
+    <div class="step" id="step-level">
+      <div class="back-row">
+        <button class="quiz-back" type="button" data-back="step-skill">Back</button>
+      </div>
+      <h2 class="step-h">How well do you know this subject already?</h2>
+      <p class="step-sub">Choose the option that best describes where you&rsquo;re at.</p>
+
+      <div class="quiz-options">
+        <button class="quiz-option" type="button"
+                data-question="difficulty-level" data-value="Beginner"
+                data-display-level="No experience" data-next="step-loading">
+          <span class="qo-ico"><img src="img/free-tier-sign-up/no-experience.svg" alt=""/></span>
+          <span class="qo-body">
+            <span class="qo-label">No experience</span>
+            <span class="qo-hint">I&rsquo;m new to these topics</span>
+          </span>
+        </button>
+        <button class="quiz-option" type="button"
+                data-question="difficulty-level" data-value="Beginner"
+                data-display-level="Beginner" data-next="step-loading">
+          <span class="qo-ico"><img src="img/free-tier-sign-up/beginner.svg" alt=""/></span>
+          <span class="qo-body">
+            <span class="qo-label">Beginner</span>
+            <span class="qo-hint">I understand some of the fundamental topics</span>
+          </span>
+        </button>
+        <button class="quiz-option" type="button"
+                data-question="difficulty-level" data-value="Intermediate"
+                data-display-level="Intermediate" data-next="step-loading">
+          <span class="qo-ico"><img src="img/free-tier-sign-up/intermediate.svg" alt=""/></span>
+          <span class="qo-body">
+            <span class="qo-label">Intermediate</span>
+            <span class="qo-hint">I use these skills often, but want to improve</span>
+          </span>
+        </button>
+        <button class="quiz-option" type="button"
+                data-question="difficulty-level" data-value="Intermediate"
+                data-display-level="Proficient" data-next="step-loading">
+          <span class="qo-ico"><img src="img/free-tier-sign-up/proficent.svg" alt=""/></span>
+          <span class="qo-body">
+            <span class="qo-label">Proficient</span>
+            <span class="qo-hint">I&rsquo;m reasonably proficient</span>
+          </span>
+        </button>
+        <button class="quiz-option" type="button"
+                data-question="difficulty-level" data-value="Advanced"
+                data-display-level="Advanced" data-next="step-loading">
+          <span class="qo-ico"><img src="img/free-tier-sign-up/advanced.svg" alt=""/></span>
+          <span class="qo-body">
+            <span class="qo-label">Advanced</span>
+            <span class="qo-hint">I&rsquo;m advanced in this subject</span>
+          </span>
+        </button>
+        <button class="quiz-option" type="button"
+                data-question="difficulty-level" data-value="Advanced"
+                data-display-level="Expert" data-next="step-loading">
+          <span class="qo-ico"><img src="img/free-tier-sign-up/expert.svg" alt=""/></span>
+          <span class="qo-body">
+            <span class="qo-label">Expert</span>
+            <span class="qo-hint">I&rsquo;m an expert</span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ============================== STEP 6: LOADING ============================== -->
+    <!-- Headline + sub + spinner, vertically centred via .loading-wrap (flex)
+         to bypass the engine's display:block override on .step itself. -->
+    <div class="step" id="step-loading">
+      <div class="loading-wrap">
+        <h2 class="load-h">Finding you the perfect learning pathway</h2>
+        <p class="load-sub">Sorting through our extensive library&hellip;</p>
+        <div class="loading-spinner" aria-label="Loading"></div>
+      </div>
+    </div>
+
+    <!-- ============================== STEP 7: SIGNUP GATE ============================== -->
+    <!-- IMPORTANT: do not display the matched path name here. The user discovers
+         their recommended path inside the app after signup. The path ID is still
+         passed via ?learning_path_id= in the redirect below.
+         Layout: Back top-left, then centered (title, sub, CTA, hero image). -->
+    <div class="step" id="step-signup-gate">
+      <div class="back-row">
+        <button class="quiz-back" type="button" data-back="step-level">Back</button>
+      </div>
+      <div class="gate-content">
+        <h2 class="gate-h">Your perfect learning path is ready</h2>
+        <p class="gate-sub">
+          When we say free, we mean it. <strong>No credit card, no catches,</strong> just sign up and start learning.
+        </p>
+        <button class="btn-join" id="final-continue" type="button">
+          Join for free
+        </button>
+        <img class="gate-hero" src="img/free-tier-sign-up/final-screen-image.png" alt="" aria-hidden="true"/>
+      </div>
+      <p class="gate-fineprint">
+        By continuing, you agree to our <a href="terms-of-service.html">terms of service</a>
+        and <a href="privacy-policy.html">privacy policy</a>.
+      </p>
+    </div>
+
+  </div><!-- /.quiz-main -->
+</div><!-- /.quiz-shell -->
+
+<!-- ============================== MINIMAL FOOTER ============================== -->
+<footer class="fts-foot">
+  <a href="privacy-policy.html">Privacy</a> &middot;
+  <a href="terms-of-service.html">Terms</a> &middot;
+  <a href="cookie-policy.html">Cookies</a>
+</footer>
+
+<!-- ============================== QUIZ ENGINE (provided verbatim by the team) ============================== -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const APP_SIGNUP_URL = "https://app.kubicle.com/free-tier/signup";
+  const TRANSITION_DURATION = 520;
+  const LOADING_DURATION = 2000;
+
+  [
+    "role",
+    "industry",
+    "website-mapping",
+    "difficulty-level",
+    "recommended-path-id",
+    "recommended-path-name",
+    "matched-difficulty-level"
+  ].forEach(key => sessionStorage.removeItem(key));
+
+  const steps = document.querySelectorAll("[id^='step-']");
+
+  function updateMobileProgress(stepId) {
+    const progressFill = document.getElementById("mobile-progress-fill");
+    if (!progressFill) return;
+
+    const progressMap = {
+      "step-intro": 0,
+      "step-role": 25,
+      "step-industry": 50,
+      "step-skill": 75,
+      "step-level": 100,
+      "step-loading": 100,
+      "step-signup-gate": 100
+    };
+
+    const progress = progressMap[stepId] || 0;
+    progressFill.style.width = progress + "%";
+  }
+
+  function hideAllSteps() {
+    steps.forEach(step => {
+      step.style.display = "none";
+      step.classList.remove("is-visible", "is-exiting");
+    });
+  }
+
+  function showInitialStep(stepId) {
+    hideAllSteps();
+    const target = document.getElementById(stepId);
+    if (!target) return;
+
+    target.style.display = "block";
+
+    requestAnimationFrame(() => {
+      target.classList.add("is-visible");
+    });
+
+    updateMobileProgress(stepId);
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }
+
+  function transitionToStep(nextStepId, callback) {
+    const currentStep = Array.from(steps).find(
+      step => window.getComputedStyle(step).display !== "none"
+    );
+    const nextStep = document.getElementById(nextStepId);
+
+    if (!nextStep) return;
+
+    if (!currentStep) {
+      showInitialStep(nextStepId);
+      if (callback) callback();
+      return;
+    }
+
+    currentStep.classList.remove("is-visible");
+    currentStep.classList.add("is-exiting");
+
+    setTimeout(() => {
+      currentStep.style.display = "none";
+      currentStep.classList.remove("is-exiting");
+
+      nextStep.style.display = "block";
+      nextStep.classList.remove("is-visible", "is-exiting");
+
+      requestAnimationFrame(() => {
+        nextStep.classList.add("is-visible");
+      });
+
+      updateMobileProgress(nextStepId);
+      window.scrollTo({ top: 0, behavior: "auto" });
+
+      if (callback) callback();
+    }, TRANSITION_DURATION);
+  }
+
+  function getFallbackOrder(level) {
+    switch (level) {
+      case "Beginner":
+        return ["Beginner", "Intermediate", "Advanced"];
+      case "Intermediate":
+        return ["Intermediate", "Beginner", "Advanced"];
+      case "Advanced":
+        return ["Advanced", "Intermediate", "Beginner"];
+      default:
+        return ["Intermediate", "Beginner", "Advanced"];
+    }
+  }
+
+  const PATHS = {
+    "AI": {
+      "Intermediate": { id: 235, name: "Foundations of Artificial Intelligence" },
+      "Advanced": { id: 340, name: "AI for Business Professionals" }
+    },
+    "Agile & Scrum": {
+      "Intermediate": { id: 365, name: "AGILE Project Management" }
+    },
+    "Data Literacy": {
+      "Beginner": { id: 239, name: "Essential Principles of Data Analysis" },
+      "Advanced": { id: 358, name: "Certified Associate Data Analyst | Academy" }
+    },
+    "Data Preparation & Automation": {
+      "Intermediate": { id: 269, name: "Alteryx Designer Core Certification Preparation" },
+      "Advanced": { id: 267, name: "Predictive Analytics with Alteryx" }
+    },
+    "Data Visualization": {
+      "Beginner": { id: 47, name: "Communicating and Visualizing Data" },
+      "Advanced": { id: 347, name: "Advanced Data Visualisation for Finance | Academy" }
+    },
+    "Excel": {
+      "Intermediate": { id: 243, name: "Data Analysis with Excel: Essentials" },
+      "Advanced": { id: 338, name: "Advanced Excel" }
+    },
+    "Financial Modeling": {
+      "Advanced": { id: 241, name: "Financial Modeling with Excel: Advanced" }
+    },
+    "Introduction to Finance": {
+      "Intermediate": { id: 240, name: "Data for Finance and Accounting | Academy" }
+    },
+    "Machine Learning": {
+      "Intermediate": { id: 250, name: "AI & Predictions and Patterns in Machine Learning" },
+      "Advanced": { id: 43, name: "AI & ML with Python" }
+    },
+    "Power BI": {
+      "Intermediate": { id: 144, name: "Building Dashboards in Power BI" },
+      "Advanced": { id: 335, name: "Advanced Power BI Concepts" }
+    },
+    "PowerPoint": {
+      "Advanced": { id: 339, name: "Microsoft PowerPoint Associate" }
+    },
+    "Project Management": {
+      "Intermediate": { id: 256, name: "Core Project Management Skills" }
+    },
+    "Python": {
+      "Intermediate": { id: 302, name: "Data Preparation with Python" }
+    },
+    "SQL": {
+      "Advanced": { id: 350, name: "Data Preparation with SQL" }
+    },
+    "Statistics": {
+      "Advanced": { id: 42, name: "Finance Modelling and Statistics | Academy" }
+    },
+    "Tableau": {
+      "Intermediate": { id: 44, name: "Preparing Data with Tableau" },
+      "Advanced": { id: 48, name: "Mastering Tableau" }
+    }
+  };
+
+  function getRecommendation(websiteMapping, difficultyLevel) {
+    const subjectPaths = PATHS[websiteMapping];
+    if (!subjectPaths) return null;
+
+    const fallbackOrder = getFallbackOrder(difficultyLevel);
+
+    for (const level of fallbackOrder) {
+      if (subjectPaths[level]) {
+        return {
+          websiteMapping,
+          requestedLevel: difficultyLevel,
+          matchedLevel: level,
+          pathId: subjectPaths[level].id,
+          pathName: subjectPaths[level].name
+        };
+      }
+    }
+
+    return null;
+  }
+
+  function runLoadingStep() {
+    setTimeout(() => {
+      transitionToStep("step-signup-gate");
+    }, LOADING_DURATION);
+  }
+
+  document.querySelectorAll(".quiz-option").forEach(option => {
+    option.addEventListener("click", function () {
+      const question = this.dataset.question;
+      const value = this.dataset.value;
+      const nextStep = this.dataset.next;
+
+      if (question && value) {
+        sessionStorage.setItem(question, value);
+      }
+
+      if (question === "difficulty-level") {
+        const websiteMapping = sessionStorage.getItem("website-mapping");
+        const difficultyLevel = value;
+        const recommendation = getRecommendation(websiteMapping, difficultyLevel);
+
+        if (recommendation) {
+          sessionStorage.setItem("recommended-path-id", String(recommendation.pathId));
+          sessionStorage.setItem("recommended-path-name", recommendation.pathName);
+          sessionStorage.setItem("matched-difficulty-level", recommendation.matchedLevel);
+        }
+      }
+
+      if (nextStep === "step-loading") {
+        transitionToStep("step-loading", runLoadingStep);
+      } else if (nextStep) {
+        transitionToStep(nextStep);
+      }
+    });
+  });
+
+  document.querySelectorAll(".quiz-back").forEach(button => {
+    button.addEventListener("click", function () {
+      const prevStep = this.dataset.back;
+      if (prevStep) {
+        transitionToStep(prevStep);
+      }
+    });
+  });
+
+  const finalBtn = document.getElementById("final-continue");
+  if (finalBtn) {
+    finalBtn.addEventListener("click", function () {
+      const recommendedPathId = sessionStorage.getItem("recommended-path-id");
+
+      if (!recommendedPathId) {
+        window.location.href = APP_SIGNUP_URL;
+        return;
+      }
+
+      window.location.href =
+        APP_SIGNUP_URL + "?learning_path_id=" + encodeURIComponent(recommendedPathId);
+    });
+  }
+
+  showInitialStep("step-intro");
+});
+</script>
+
+<!-- ============================== SUPPLEMENTARY: shell visibility + sidebar + GA4 event ============================== -->
+<script>
+(function () {
+  var QUIZ_SHELL_ID = 'quiz-shell';
+  var STEP_TO_SB = {
+    'step-role':     'role',
+    'step-industry': 'industry',
+    'step-skill':    'skill',
+    'step-level':    'level'
+  };
+  var SB_ORDER = ['role', 'industry', 'skill', 'level'];
+
+  function setShellVisible(visible) {
+    var shell = document.getElementById(QUIZ_SHELL_ID);
+    if (!shell) return;
+    if (visible) shell.classList.add('is-active');
+    else shell.classList.remove('is-active');
+  }
+
+  function updateSidebar(currentStepId) {
+    var items = document.querySelectorAll('.sb-item');
+    if (currentStepId === 'step-loading' || currentStepId === 'step-signup-gate') {
+      items.forEach(function (li) {
+        li.classList.add('is-done');
+      });
+      return;
+    }
+    var currentSb = STEP_TO_SB[currentStepId];
+    if (!currentSb) {
+      items.forEach(function (li) { li.classList.remove('is-done'); });
+      return;
+    }
+    var currentIdx = SB_ORDER.indexOf(currentSb);
+    items.forEach(function (li) {
+      var key = li.getAttribute('data-sb-step');
+      var idx = SB_ORDER.indexOf(key);
+      if (idx < currentIdx) li.classList.add('is-done');
+      else li.classList.remove('is-done');
+    });
+  }
+
+  function wireObservers() {
+    var steps = document.querySelectorAll("[id^='step-']");
+    steps.forEach(function (step) {
+      var obs = new MutationObserver(function () {
+        if (step.classList.contains('is-visible')) {
+          setShellVisible(step.id !== 'step-intro');
+          updateSidebar(step.id);
+        }
+      });
+      obs.observe(step, { attributes: true, attributeFilter: ['class'] });
+    });
+    setShellVisible(false);
+    updateSidebar('step-intro');
+  }
+
+  // Capture the granular experience-level label (data-display-level) into
+  // sessionStorage. The engine value (data-value) is already stored under the
+  // 'difficulty-level' key; this preserves the user-facing label too.
+  function wireGranularLevel() {
+    document.querySelectorAll('[data-display-level]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var display = this.getAttribute('data-display-level');
+        if (display) sessionStorage.setItem('experience-level', display);
+      }, { capture: true });
+    });
+  }
+
+  // GA4 conversion event on final continue.
+  function wireConversionEvent() {
+    var btn = document.getElementById('final-continue');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'free_tier_signup',
+        learning_path_id:   sessionStorage.getItem('recommended-path-id')   || null,
+        learning_path_name: sessionStorage.getItem('recommended-path-name') || null,
+        matched_level:      sessionStorage.getItem('matched-difficulty-level') || null,
+        experience_level:   sessionStorage.getItem('experience-level')      || null,
+        role:               sessionStorage.getItem('role')                  || null,
+        industry:           sessionStorage.getItem('industry')              || null,
+        website_mapping:    sessionStorage.getItem('website-mapping')       || null
+      });
+    }, { capture: true });
+  }
+
+  function init() {
+    wireObservers();
+    wireGranularLevel();
+    wireConversionEvent();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>

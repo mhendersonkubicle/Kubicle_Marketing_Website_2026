@@ -1,0 +1,62 @@
+/* =========================================================================
+   Kubicle Buttons
+   Base + sizes + variants. Primary uses --accent; the colored shadow
+   tints to match via --accent-rgb so themes swap cleanly.
+   Depends on tokens.css.
+   ========================================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--head);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  border-radius: 20px;
+  border: 0;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.15s ease, box-shadow 0.15s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+.btn:active { transform: scale(0.98); }
+
+/* ===== Sizes ============================================================= */
+.btn-lg { height: 64px; padding: 0 32px; font-size: 20px; }
+.btn-md { height: 52px; padding: 0 22px; font-size: 16px; }
+.btn-sm { height: 40px; padding: 0 16px; font-size: 14px; border-radius: 14px; }
+
+/* ===== Variants ========================================================== */
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow:
+    0 2px 0 rgba(11, 27, 43, 0.3),
+    0 10px 24px -8px rgba(var(--accent-rgb), 0.5);
+}
+.btn-primary:hover { background: var(--accent-d); }
+
+.btn-ghost {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+}
+.btn-ghost:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.btn-outline-dark {
+  background: transparent;
+  color: var(--prussian);
+  border: 1.5px solid var(--prussian);
+}
+.btn-outline-dark:hover {
+  background: var(--prussian);
+  color: #fff;
+}
+
+/* ===== Trailing arrow icon (used inside .btn) ============================ */
+.btn .arr { font-size: 1.1em; transition: transform 0.2s; }
+.btn:hover .arr { transform: translateX(3px); }

@@ -1,0 +1,498 @@
+# ============================================================
+# Kubicle.com migration redirects (Netlify _redirects syntax)
+# ============================================================
+# Companion to MIGRATION-PLAN.md (see that doc for the rationale).
+# Order: most-specific first; wildcards / catch-alls last in each section.
+# Status codes: 301 (permanent) for everything except hard kills (404).
+# Keep these rules in place at minimum 12 months after cutover.
+# ============================================================
+
+
+# ============================================================
+# A. B2C / B2B CONSOLIDATION (the biggest single SEO win)
+# Pool authority from /individual/* duplicates onto B2B canonicals.
+# ============================================================
+
+# Individual product surface -> the single new /individuals page
+/individual                                    /individuals/                                301
+/individual/our-product                        /individuals/                                301
+/individual/academies-paths                    /academies/                                  301
+/individual/employer-sponsorship               /individuals/                                301
+/individual/terms-of-service                   /terms-of-service                            301
+/individual/cpe-cpd-training                   /individuals/                                301
+
+# Individual pricing pools onto the single /pricing page
+/individual/pricing                            /pricing                                     301
+
+# Individual blog -> the unified /blog
+/individual/blog                               /blog                                        301
+/individual/blogs/*                            /blog/:splat                                 301
+
+# Individual learning paths -> Academies (the new architecture)
+/individual/paths/advanced-excel                              /academies/data-literacy     301
+/individual/paths/advanced-power-bi-concepts                  /academies/data-literacy     301
+/individual/paths/ai-for-business-professionals               /academies/ai                301
+/individual/paths/building-apps-in-power-apps                 /courses/power-apps          301
+/individual/paths/building-dashboards-in-power-bi             /courses/power-bi            301
+/individual/paths/financial-modelling                         /academies/finance           301
+/individual/paths/introduction-to-financial-models-and-valuation /academies/finance        301
+/individual/paths/mastering-alteryx                           /courses/alteryx             301
+/individual/paths/mastering-excel-for-beginners               /courses/excel               301
+/individual/paths/mastering-tableau                           /courses/tableau             301
+/individual/paths/microsoft-word                              /courses/word                301
+/individual/paths/presentations-in-powerpoint                 /courses/powerpoint          301
+/individual/paths/project-management-fundamentals             /academies/project-management 301
+/individual/paths/rpa-with-power-automate                     /courses/rpa-power-automate  301
+/individual/paths/sql-fundamentals                            /courses/sql                 301
+/individual/paths/the-fundamentals-of-machine-learning-in-python /courses/machine-learning-python 301
+/individual/paths/*                                           /academies/                  301
+
+# Individual academies -> new Academies index (topic-mapped where possible)
+/individual/academy/advanced-data-visualization-for-finance  /academies/finance            301
+/individual/academy/associate-data-analyst                   /academies/data-literacy      301
+/individual/academy/associate-management-consultant          /industries/management-consulting 301
+/individual/academy/data-analyst                             /academies/data-literacy      301
+/individual/academy/data-for-finance-and-accounting          /academies/finance            301
+/individual/academy/data-wrangler                            /academies/data-literacy      301
+/individual/academy/early-career-acceleration                /specialist-programs/graduate-program 301
+/individual/academy/financial-modelling-and-statistics       /academies/finance            301
+/individual/academy/*                                        /academies/                   301
+
+# Catch-all for anything else under /individual/
+/individual/*                                  /individuals/                                301
+
+
+# ============================================================
+# B. SUBJECT -> COURSES (35 pages, 1:1 with slug fixes)
+# ============================================================
+
+/subject/adaptive-project-management           /courses/adaptive-project-management         301
+/subject/ai-fundamentals                       /courses/ai-fundamentals                     301
+/subject/alteryx                               /courses/alteryx                             301
+/subject/alteryx-intelligence-suite            /courses/alteryx-intelligence-suite          301
+/subject/apis                                  /courses/apis                                301
+/subject/app-development-fundamentals          /courses/app-development-fundamentals        301
+/subject/business-analysis                     /courses/business-analysis                   301
+/subject/data-ethics-risk                      /courses/data-ethics-risk                    301
+/subject/data-literacy                         /courses/data-literacy                       301
+/subject/data-presentation-skills              /courses/data-presentation-skills            301
+/subject/data-regulation                       /courses/data-regulation                     301
+/subject/data-security                         /courses/data-security                       301
+/subject/data-strategy-governance              /courses/data-strategy-governance            301
+/subject/data-visualization                    /courses/visualization-fundamentals          301
+/subject/excel                                 /courses/excel                               301
+/subject/finance-fundamentals                  /courses/finance-fundamentals                301
+/subject/financial-modeling                    /courses/financial-modeling                  301
+/subject/machine-learning-with-python          /courses/machine-learning-python             301
+/subject/microsoft-teams                       /courses/microsoft-teams                     301
+/subject/outlook                               /courses/outlook                             301
+/subject/power-apps                            /courses/power-apps                          301
+/subject/power-bi                              /courses/power-bi                            301
+/subject/powerpoint                            /courses/powerpoint                          301
+/subject/project-management-fundamentals       /courses/project-management-fundamentals     301
+/subject/python-fundamentals                   /courses/python-fundamentals                 301
+/subject/rpa-fundamentals                      /courses/rpa-fundamentals                    301
+/subject/rpa-with-power-automate               /courses/rpa-power-automate                  301
+/subject/rpa-with-uipath                       /courses/rpa-uipath                          301
+/subject/sharepoint                            /courses/sharepoint                          301
+/subject/sql                                   /courses/sql                                 301
+/subject/statistical-analysis                  /courses/statistical-analysis                301
+/subject/strategic-analysis                    /courses/strategic-analysis                  301
+/subject/tableau                               /courses/tableau                             301
+/subject/technology-fundamentals               /courses/technology-fundamentals             301
+/subject/word                                  /courses/word                                301
+/subject/*                                     /courses/:splat                              301
+/subject                                       /courses                                     301
+/subjects                                      /courses                                     301
+/subjects-library                              /catalog                                     301
+
+
+# ============================================================
+# C. LONG-TAIL /course/* -> closest subject page
+# Each lesson-group URL maps to the topically-closest new subject.
+# Fallback at the bottom catches anything not listed.
+# ============================================================
+
+# --- Excel cluster ---
+/course/formulas-and-functions                 /courses/excel                               301
+/course/pivot-tables                           /courses/excel                               301
+/course/introduction-to-excel-macros           /courses/excel                               301
+/course/applications-and-macros                /courses/excel                               301
+/course/macros-add-ins-and-mail-merge          /courses/excel                               301
+/course/lookups-and-database-functions         /courses/excel                               301
+/course/text-time-and-dates                    /courses/excel                               301
+/course/finding-and-replacing-data             /courses/excel                               301
+/course/introducing-power-pivot                /courses/excel                               301
+/course/power-query                            /courses/excel                               301
+/course/the-query-editor                       /courses/excel                               301
+/course/finance-functions                      /courses/excel                               301
+
+# --- SQL cluster ---
+/course/understanding-sql-databases            /courses/sql                                 301
+/course/selecting-and-filtering-data-with-sql  /courses/sql                                 301
+/course/joining-data-with-sql                  /courses/sql                                 301
+/course/aggregating-data-with-sql              /courses/sql                                 301
+/course/data-manipulation-with-sql             /courses/sql                                 301
+/course/finance-functions-in-sql               /courses/sql                                 301
+
+# --- Power BI cluster ---
+/course/exploring-power-bi-visualizations      /courses/power-bi                            301
+/course/connecting-to-different-data-sources   /courses/power-bi                            301
+/course/connecting-to-live-data                /courses/power-bi                            301
+/course/the-power-bi-online-service            /courses/power-bi                            301
+/course/power-bi-online-service                /courses/power-bi                            301
+/course/power-bi-case-study                    /courses/power-bi                            301
+/course/build-your-first-dashboard             /courses/power-bi                            301
+/course/building-your-first-dashboard          /courses/power-bi                            301
+/course/introduction-to-dax                    /courses/power-bi                            301
+/course/practical-applications-of-dax          /courses/power-bi                            301
+/course/advanced-dax-functions-and-concepts    /courses/power-bi                            301
+/course/advanced-dax-function-and-concepts     /courses/power-bi                            301
+/course/optimizing-for-performance             /courses/power-bi                            301
+/course/developing-and-visualizing-your-data-model /courses/power-bi                        301
+/course/designing-effective-dashboards         /courses/power-bi                            301
+
+# --- Tableau cluster ---
+/course/introducing-tableau                    /courses/tableau                             301
+/course/creating-visualizations-in-tableau     /courses/tableau                             301
+/course/introduction-to-formulas-in-tableau    /courses/tableau                             301
+/course/further-formulas-in-tableau            /courses/tableau                             301
+/course/filter-groups-and-sets                 /courses/tableau                             301
+/course/level-of-detail-expressions            /courses/tableau                             301
+/course/cleaning-data-with-tableau-prep        /courses/tableau                             301
+/course/reshaping-data-in-tableau-prep         /courses/tableau                             301
+/course/advanced-visualizations-in-tableau     /courses/tableau                             301
+/course/advanced-data-connections              /courses/tableau                             301
+/course/adding-interactivity                   /courses/tableau                             301
+/course/spatial-data-and-mapping               /courses/tableau                             301
+
+# --- Alteryx cluster ---
+/course/alteryx-fundamentals                   /courses/alteryx                             301
+/course/inputting-and-outputting-data          /courses/alteryx                             301
+/course/joining-and-transforming-data          /courses/alteryx                             301
+/course/applying-parsing-and-formula-tools     /courses/alteryx                             301
+/course/data-preparation                       /courses/alteryx                             301
+/course/introduction-to-data-preparation       /courses/alteryx                             301
+/course/computer-vision                        /courses/alteryx-intelligence-suite          301
+/course/text-mining                            /courses/alteryx-intelligence-suite          301
+/course/clustering-and-market-basket-analysis  /courses/alteryx-intelligence-suite          301
+/course/advanced-clustering                    /courses/alteryx-intelligence-suite          301
+/course/advanced-classification                /courses/alteryx-intelligence-suite          301
+/course/classification-models                  /courses/alteryx-intelligence-suite          301
+/course/regression-analysis                    /courses/alteryx-intelligence-suite          301
+/course/advanced-regression                    /courses/alteryx-intelligence-suite          301
+/course/identifying-patterns                   /courses/alteryx-intelligence-suite          301
+/course/time-series-analysis                   /courses/alteryx-intelligence-suite          301
+/course/predicting-future-values               /courses/alteryx-intelligence-suite          301
+/course/predicting-scenarios                   /courses/alteryx-intelligence-suite          301
+
+# --- Python / ML cluster ---
+/course/python-fundamentals                    /courses/python-fundamentals                 301
+/course/functions-conditionality-and-loops     /courses/python-fundamentals                 301
+/course/web-scraping                           /courses/python-fundamentals                 301
+/course/working-with-apis                      /courses/apis                                301
+/course/the-api-economy                        /courses/apis                                301
+/course/regression-analysis-in-python          /courses/machine-learning-python             301
+/course/decision-trees-in-python               /courses/machine-learning-python             301
+/course/k-means-clustering-in-python           /courses/machine-learning-python             301
+/course/feature-engineering                    /courses/machine-learning-python             301
+/course/introduction-to-predictive-modeling    /courses/machine-learning-python             301
+/course/developing-ai-models                   /courses/machine-learning-python             301
+
+# --- AI / GenAI cluster ---
+/course/introduction-to-artificial-intelligence  /courses/ai-fundamentals                   301
+/course/business-applications-of-ai            /courses/ai-fundamentals                     301
+/course/exploring-chatgpt                      /courses/ai-fundamentals                     301
+/course/introduction-to-generative-ai          /courses/ai-fundamentals                     301
+/course/large-language-models                  /courses/ai-fundamentals                     301
+/course/understanding-natural-language         /courses/ai-fundamentals                     301
+/course/introduction-to-prompt-engineering     /courses/ai-fundamentals                     301
+/course/advanced-prompt-concepts               /courses/ai-fundamentals                     301
+/course/introduction-to-retrieval-augmented-generation-rag /courses/ai-fundamentals        301
+/course/using-copilot-in-microsoft-365         /courses/ai-fundamentals                     301
+/course/data-analytics-for-chatgpt-and-copilot /courses/ai-fundamentals                     301
+/course/introduction-to-copilot-studio         /courses/ai-fundamentals                     301
+/course/introduction-to-the-eu-artificial-intelligence-act /courses/data-regulation        301
+/course/generative-ai-and-chatgpt              /courses/ai-fundamentals                     301
+
+# --- RPA cluster ---
+/course/introduction-to-robotic-process-automation /courses/rpa-fundamentals                301
+/course/uipath-basics                          /courses/rpa-uipath                          301
+/course/automating-ui-interactions-with-uipath /courses/rpa-uipath                          301
+/course/advanced-uipath-workflows              /courses/rpa-uipath                          301
+/course/introduction-to-power-automate         /courses/rpa-power-automate                  301
+/course/creating-power-automate-flows          /courses/rpa-power-automate                  301
+/course/advanced-power-automate-flows          /courses/rpa-power-automate                  301
+
+# --- Power Apps cluster ---
+/course/introduction-to-power-apps             /courses/power-apps                          301
+/course/building-a-canvas-app                  /courses/power-apps                          301
+/course/creating-a-model-driven-app            /courses/power-apps                          301
+/course/dataverse-for-power-apps               /courses/power-apps                          301
+
+# --- Financial modeling cluster ---
+/course/introduction-to-finance                /courses/finance-fundamentals                301
+/course/introduction-to-financial-statements   /courses/finance-fundamentals                301
+/course/building-financial-statements          /courses/finance-fundamentals                301
+/course/preparing-financial-statements         /courses/finance-fundamentals                301
+/course/automating-financial-statement-preparation /courses/finance-fundamentals            301
+/course/analyzing-the-income-statement         /courses/finance-fundamentals                301
+/course/analyzing-balance-sheets-and-the-cash-flow-statement /courses/finance-fundamentals  301
+/course/financial-ratios                       /courses/finance-fundamentals                301
+/course/build-your-first-model                 /courses/financial-modeling                  301
+/course/financial-projections                  /courses/financial-modeling                  301
+/course/forward-looking-models                 /courses/financial-modeling                  301
+/course/leveraged-buyouts                      /courses/financial-modeling                  301
+/course/advanced-lbo-modeling-part-1           /courses/financial-modeling                  301
+/course/advanced-lbo-modeling-part-2           /courses/financial-modeling                  301
+/course/introduction-to-valuation              /courses/financial-modeling                  301
+/course/performing-your-first-company-valuation /courses/financial-modeling                 301
+/course/valuing-a-real-estate-investment       /courses/financial-modeling                  301
+/course/modeling-startup-investments           /courses/financial-modeling                  301
+/course/mergers-and-acquisitions               /courses/financial-modeling                  301
+/course/monte-carlo-simulation                 /courses/financial-modeling                  301
+
+# --- Statistics cluster ---
+/course/introducing-statistics                 /courses/statistical-analysis                301
+/course/principles-of-statistics               /courses/statistical-analysis                301
+/course/probability-principles                 /courses/statistical-analysis                301
+/course/probability-distributions              /courses/statistical-analysis                301
+/course/hypothesis-testing                     /courses/statistical-analysis                301
+/course/ab-testing                             /courses/statistical-analysis                301
+
+# --- Data literacy / strategy cluster ---
+/course/introduction-to-data-literacy          /courses/data-literacy                       301
+/course/thinking-and-communicating-with-data   /courses/data-literacy                       301
+/course/communicating-data-effectively         /courses/data-literacy                       301
+/course/visual-data-thinking                   /courses/data-literacy                       301
+/course/applying-visual-data-skills            /courses/data-literacy                       301
+/course/introduction-to-visualizations         /courses/visualization-fundamentals          301
+/course/visualization-in-practice              /courses/visualization-fundamentals          301
+/course/chart-construction                     /courses/visualization-fundamentals          301
+/course/chart-selection                        /courses/visualization-fundamentals          301
+/course/charts-in-depth                        /courses/visualization-fundamentals          301
+/course/improving-your-visualizations          /courses/visualization-fundamentals          301
+/course/dashboard-design                       /courses/data-presentation-skills            301
+/course/presenting-your-data                   /courses/data-presentation-skills            301
+/course/presentation-design                    /courses/data-presentation-skills            301
+/course/presentation-visuals                   /courses/data-presentation-skills            301
+/course/telling-stories-with-data              /courses/data-presentation-skills            301
+/course/building-a-data-driven-culture         /courses/data-strategy-governance            301
+/course/defining-your-data-strategy            /courses/data-strategy-governance            301
+/course/planning-a-data-driven-project         /courses/data-strategy-governance            301
+/course/planning-a-research-project            /courses/strategic-analysis                  301
+/course/research-in-business                   /courses/strategic-analysis                  301
+/course/internal-and-external-analysis         /courses/strategic-analysis                  301
+/course/positioning-and-process-analysis       /courses/strategic-analysis                  301
+/course/applying-ethical-thinking              /courses/data-ethics-risk                    301
+/course/introduction-to-data-ethics            /courses/data-ethics-risk                    301
+/course/introduction-to-gdpr                   /courses/data-regulation                     301
+/course/handling-data-securely-and-responsibly /courses/data-security                       301
+/course/keeping-your-information-safe          /courses/data-security                       301
+
+# --- Word / PowerPoint / Office cluster ---
+/course/typing-and-formatting-text-in-word     /courses/word                                301
+/course/adjusting-the-layout-of-the-document   /courses/word                                301
+/course/adding-bullet-points-and-tables        /courses/word                                301
+/course/adding-references                      /courses/word                                301
+/course/reviewing-sharing                      /courses/word                                301
+/course/template-customization                 /courses/word                                301
+/course/data-manipulation-and-formatting       /courses/word                                301
+/course/powerpoint-fundamentals                /courses/powerpoint                          301
+/course/presenting-in-powerpoint               /courses/powerpoint                          301
+/course/designing-with-shapes-pictures-and-themes /courses/powerpoint                       301
+/course/sending-and-organizing-emails          /courses/outlook                             301
+/course/managing-contacts-calendars-and-tasks  /courses/outlook                             301
+
+# --- Tech fundamentals cluster ---
+/course/foundational-technologies              /courses/technology-fundamentals             301
+/course/established-technologies               /courses/technology-fundamentals             301
+/course/emerging-technologies                  /courses/technology-fundamentals             301
+/course/frontier-technologies                  /courses/technology-fundamentals             301
+/course/app-development-fundamentals           /courses/app-development-fundamentals        301
+/course/storing-transforming-and-visualizing-data /courses/app-development-fundamentals     301
+
+# --- PM cluster ---
+/course/getting-started-with-projects          /courses/project-management-fundamentals     301
+
+# Catch-all for any other /course/* not listed above
+/course/*                                      /courses                                     301
+
+
+# ============================================================
+# D. LONG-TAIL /path/* -> Academies
+# ============================================================
+
+# --- AI Academy ---
+/path/foundations-of-artificial-intelligence   /academies/ai                                301
+/path/foundations-of-generative-ai             /academies/ai                                301
+/path/principles-of-generative-ai              /academies/ai                                301
+/path/ai-fundamentals                          /academies/ai                                301
+/path/getting-started-with-ai                  /academies/ai                                301
+/path/ai-ml-with-python                        /academies/ai                                301
+/path/ai-predictions-and-patterns-in-machine-learning /academies/ai                         301
+
+# --- Data Literacy Academy ---
+/path/essential-principles-of-data-analysis    /academies/data-literacy                     301
+/path/communicating-and-visualizing-data       /academies/data-literacy                     301
+/path/data-analysis-with-excel-essentials      /academies/data-literacy                     301
+/path/data-analysis-with-excel-analysis        /academies/data-literacy                     301
+/path/data-preparation-with-alteryx            /academies/data-literacy                     301
+/path/data-preparation-with-python             /academies/data-literacy                     301
+/path/data-preparation-with-sql                /academies/data-literacy                     301
+/path/getting-started-with-data-in-alteryx     /academies/data-literacy                     301
+/path/preparing-data-with-alteryx              /academies/data-literacy                     301
+/path/preparing-data-with-tableau              /academies/data-literacy                     301
+/path/predictive-analytics-with-alteryx        /academies/data-literacy                     301
+/path/visualizing-data-with-excel              /academies/data-literacy                     301
+/path/visualizing-data-with-power-bi           /courses/power-bi                            301
+/path/visualizing-data-with-power-bi-the-query-editor-and-dax /courses/power-bi             301
+/path/visualizing-data-with-tableau            /courses/tableau                             301
+/path/computer-vision-with-alteryx-intelligence-suite /courses/alteryx-intelligence-suite   301
+
+# --- Finance Academy ---
+/path/financial-modeling-with-excel-essentials /academies/finance                           301
+/path/financial-modeling-with-excel-advanced   /academies/finance                           301
+/path/modeling-for-business                    /academies/finance                           301
+/path/understanding-financial-data-with-excel  /academies/finance                           301
+
+# --- PM Academy ---
+/path/core-project-management-skills           /academies/project-management                301
+
+# --- Cert prep / Office cluster ---
+/path/alteryx-designer-core-certification-preparation /courses/alteryx                      301
+/path/preparing-for-the-alteryx-designer-core-exam /courses/alteryx                         301
+/path/preparing-for-core-micro-credential-data-manipulation-and-transformation /courses/alteryx 301
+/path/preparing-for-core-micro-credential-data-transformation /courses/alteryx              301
+/path/preparing-for-core-micro-credential-general-knowledge /courses/alteryx                301
+/path/preparing-for-the-tableau-desktop-specialist-exam /courses/tableau                    301
+/path/microsoft-excel-associate                /courses/excel                               301
+/path/microsoft-powerpoint-associate           /courses/powerpoint                          301
+/path/microsoft-word-associate                 /courses/word                                301
+/path/applied-excel-tools-macros-vba           /courses/excel                               301
+/path/applied-excel-tools-power-pivot-and-power-query-essentials /courses/excel             301
+/path/presenting-business-data-with-powerpoint /courses/powerpoint                          301
+/path/presenting-data-with-powerpoint          /courses/powerpoint                          301
+/path/presenting-data-with-word                /courses/word                                301
+/path/robotic-process-automation-with-power-automate /courses/rpa-power-automate            301
+/path/robotic-process-automation-with-uipath   /courses/rpa-uipath                          301
+
+# Catch-all
+/path/*                                        /academies/                                  301
+/learning-paths                                /academies/                                  301
+
+
+# ============================================================
+# E. /project/* -> /projects index (single canonical)
+# ============================================================
+/project/*                                     /projects                                    301
+
+
+# ============================================================
+# F. LEGACY ACADEMIES -> new Academies
+# ============================================================
+/academies/ai-for-business-professionals       /academies/ai                                301
+/academies/associate-analyst                   /academies/data-literacy                     301
+/academies/data-citizen                        /academies/data-literacy                     301
+
+
+# ============================================================
+# G. SPECIALIST PROGRAMS cleanup
+# (note: ai-literacy, data-literacy, fmcg-manufacturing are BUILD targets -
+#  comment them OUT once those pages ship)
+# ============================================================
+/specialist-programs/grad-program              /specialist-programs/graduate-program        301
+/grad-program                                  /specialist-programs/graduate-program        301
+/graduate-onboarding-work-readiness            /specialist-programs/graduate-program        301
+/specialist-programs/early-careers             /specialist-programs/graduate-program        301
+/specialist-programs/project-management        /academies/project-management                301
+/specialist-programs/financial-storytelling    /academies/finance                           301
+
+# /specialist-programs/ai-literacy and /specialist-programs/data-literacy
+# now ship as real pages; stand-ins removed.
+
+
+# ============================================================
+# H. INDUSTRIES cleanup
+# ============================================================
+# /industries/fmcg-manufacturing now ships as a real page; stand-in removed.
+/industries/government                         /industries/                                 301
+/finance-teams                                 /industries/corporate-finance                301
+
+
+# ============================================================
+# I. ROOT-LEVEL MISCELLANY -> consolidated homes
+# ============================================================
+
+# Try-free / free-tier consolidation (8000+ organic on /join-for-free alone)
+/join-for-free                                 /try-free/                                   301
+# /free-tier-sign-up is a real page on the new site now (the individual signup
+# quiz). No redirect — let it serve directly.
+# /free-tier-sign-up                             /try-free/                                   301
+/free-tier                                     /try-free/                                   301
+/try-free-business                             /try-free/business                           301
+
+# For-business consolidation
+/teams                                         /for-business/teams                          301
+/enterprise                                    /for-business/enterprises                    301
+/for-business/for-enterprises                  /for-business/enterprises                    301
+/platform                                      /for-business/platform                       301
+/integrations                                  /for-business/integrations                   301
+/custom-programs                               /for-business/custom-learning-design         301
+
+# Resources consolidation
+/case-studies-white-papers                     /resources/case-studies                      301
+/corporate-programs/heineken                   /resources/case-studies                      301
+/corporate-programs/*                          /resources/case-studies                      301
+/webinars                                      /resources/webinars                          301
+/ai-use-policy                                 /resources/guides/ai-use-policy              301
+/data-literacy-assessment                      /resources/assessments/data-literacy         301
+
+# Catalog
+/library                                       /catalog                                     301
+/catalog-download                              /catalog                                     301
+
+# Contact
+/talk-to-sales                                 /contact                                     301
+
+# Orphan blog stub from old site — no article exists, redirect to closest match
+/blog/excel                                    /courses/excel                               301
+
+
+# ============================================================
+# J. HARD KILLS (404 -- Netlify _redirects has no native 410)
+# Tells search engines "this URL is intentionally gone, stop crawling".
+# Better than redirecting closed pilots / expired campaigns to home.
+# ============================================================
+/sandbox                                       /404                                         404
+/sandbox-september-2025                        /404                                         404
+/exclusive-pwc-pilot                           /404                                         404
+/sp                                            /404                                         404
+/black-friday-60-off-all-access                /404                                         404
+/b2b-pricing-calculator-2026                   /pricing                                     301
+/style-guide                                   /404                                         404
+/search                                        /catalog                                     301
+
+
+# ============================================================
+# Operator notes
+# ============================================================
+# 1. Test before cutover:
+#    for url in $(cat OLD_TOP_200.txt); do
+#      curl -sI "https://kubicle-website-preview.netlify.app$url" | head -1
+#    done
+#    Expect "HTTP/2 301" (or 200 for unchanged URLs). Investigate any 404.
+#
+# 2. After cutover, re-run the PostHog organic-landings query monthly for
+#    3 months. Top 25 should hold or grow; if a URL drops, check its 301
+#    chain hasn't been broken.
+#
+# 3. The /404 destination needs to exist as a real page returning 404 status.
+#    Netlify will serve dist/404.html automatically for unmatched URLs;
+#    create one if it's missing.
+#
+# 4. When /ai-training-for-employees, /specialist-programs/ai-literacy,
+#    /specialist-programs/data-literacy, and /industries/fmcg-manufacturing
+#    ship as real pages, REMOVE their stand-in lines from sections G and H
+#    above so the new pages serve at those URLs instead of redirecting.
+# ============================================================

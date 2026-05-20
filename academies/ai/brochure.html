@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/shared/favicon-32x32.png"/>
+<title>Kubicle AI Persona Framework | Brochure</title>
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+<style>
+:root{
+  --prussian:#0B1B2B;
+  --indigo:#0B446B;
+  --teal:#00C4CC;
+  --teal-d:#0A8A8F;
+  --teal-soft:#CFF7F7;
+  --alice:#F4F6F8;
+  --honolulu:#1176BB;
+  --lapis:#0D5F96;
+  --columbia:#D6EEFF;
+  --steel:#8C9BAA;
+  --soft-black:#1A2433;
+  --pa:#23CE6B;     /* Apprentice  - emerald */
+  --pn:#E91E63;     /* Navigator   - pink    */
+  --par:#1A8CFF;    /* Architect   - dodger  */
+  --ps:#8E24AA;     /* Strategist  - purple  */
+  --head:"Clash Grotesk","Helvetica Neue",Arial,sans-serif;
+  --body:"Satoshi","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#5a6471;}
+body{
+  font-family:var(--body);
+  color:var(--soft-black);
+  line-height:1.45;
+  letter-spacing:-0.005em;
+  -webkit-font-smoothing:antialiased;
+}
+
+@page{ size:A4; margin:0; }
+
+/* PAGE FRAME */
+.page{
+  width:210mm;
+  height:297mm;
+  margin:14mm auto;
+  background:#fff;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 12px 40px rgba(0,0,0,0.35);
+  page-break-after:always;
+  break-after:page;
+}
+.page:last-child{ page-break-after:auto; break-after:auto; }
+.page.dark{ background:var(--prussian); color:#fff; }
+.page.alice{ background:#E9EEF3; }
+.page.indigo{ background:var(--indigo); color:#fff; }
+
+.frame{
+  position:absolute; inset:0;
+  padding:18mm 17mm;
+  display:flex; flex-direction:column;
+}
+
+/* HEADER */
+.hdr{
+  display:flex; align-items:center; justify-content:space-between;
+  font-family:var(--body); font-size:11px; font-weight:600;
+  letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--teal-d);
+}
+.dark .hdr{ color:#7DDDE0; }
+.hdr .logo{
+  width:32px; height:32px;
+  display:flex; align-items:center; justify-content:center;
+  position:relative;
+}
+.hdr .logo img{
+  width:32px; height:32px;
+  display:block;
+  filter:invert(1);
+}
+.dark .hdr .logo img{ filter:none; }
+.hdr .logo-row{ display:flex; align-items:center; gap:10px; }
+.hdr .logo-row .word{
+  color:var(--prussian); font-size:11px;
+  font-family:var(--head); font-weight:600;
+  letter-spacing:0.04em;
+}
+.dark .hdr .logo-row .word{ color:#fff; }
+.hdr .pno{ font-variant-numeric:tabular-nums; }
+
+/* FOOTER */
+.ftr{
+  margin-top:auto;
+  display:flex; align-items:center; justify-content:space-between;
+  font-family:var(--body); font-size:10px; font-weight:600;
+  letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--teal-d);
+  padding-top:14mm;
+}
+.dark .ftr{ color:rgba(255,255,255,0.55); }
+
+/* TYPE */
+.eyebrow{
+  font-family:var(--body); font-weight:700;
+  text-transform:uppercase; letter-spacing:0.14em;
+  font-size:11px; color:var(--teal-d);
+}
+.dark .eyebrow{ color:var(--teal); }
+h1,h2,h3,h4{
+  font-family:var(--head); font-weight:600;
+  letter-spacing:-0.045em; line-height:0.95;
+  margin:0; color:var(--prussian);
+}
+.dark h1,.dark h2,.dark h3,.dark h4{ color:#fff; }
+.h-cover{ font-size:64px; line-height:1.0; letter-spacing:-0.05em; }
+.h-page{ font-size:46px; line-height:1.02; letter-spacing:-0.045em; }
+.h-section{ font-size:36px; line-height:1.05; letter-spacing:-0.04em; }
+.h-card{ font-size:22px; line-height:1.1; letter-spacing:-0.025em; }
+.body-lg{ font-size:14px; line-height:1.55; color:var(--soft-black); }
+.body{ font-size:12.5px; line-height:1.55; color:var(--soft-black); }
+.body-sm{ font-size:11px; line-height:1.5; color:var(--soft-black); }
+.dark .body-lg,.dark .body{ color:rgba(255,255,255,0.78); }
+.dark .body-sm{ color:rgba(255,255,255,0.7); }
+
+/* GEO SHAPES */
+.geo-arch{
+  position:absolute; pointer-events:none;
+  border:24px solid currentColor;
+  border-radius:50%; border-bottom-color:transparent;
+  color:rgba(0,196,204,0.16);
+}
+.dark .geo-arch{ color:rgba(0,196,204,0.18); }
+.geo-ring{
+  position:absolute; pointer-events:none;
+  border:14px solid currentColor;
+  border-radius:50%;
+  color:rgba(0,196,204,0.10);
+}
+.dot-teal{
+  position:absolute; width:6px; height:6px;
+  background:var(--teal); border-radius:50%;
+}
+.dot-pink{
+  position:absolute; width:6px; height:6px;
+  background:var(--pn); border-radius:50%;
+}
+
+/* ============ PAGE 1 - COVER ============ */
+.cover-bg{
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 70% 80% at 80% 18%, rgba(0,196,204,0.22), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 12% 90%, rgba(0,196,204,0.10), transparent 60%),
+    var(--prussian);
+}
+.cover-shapes{
+  position:absolute; inset:0; overflow:hidden;
+}
+.cover-shapes::before{
+  content:""; position:absolute;
+  width:340px; height:560px;
+  right:14%; top:-40px;
+  background:rgba(0,196,204,0.08);
+  border-radius:80px 80px 60px 60px;
+  transform:rotate(-12deg);
+}
+.cover-shapes::after{
+  content:""; position:absolute;
+  width:200px; height:380px;
+  right:-2%; top:30%;
+  background:rgba(0,196,204,0.06);
+  border-radius:60px 60px 60px 60px;
+  transform:rotate(8deg);
+}
+.cover-h1{
+  font-size:60px;
+  line-height:1.0;
+  letter-spacing:-0.05em;
+  color:#fff;
+}
+.cover-h1 .accent{ color:var(--teal); }
+.cover-sub{
+  margin-top:18px;
+  font-size:13.5px;
+  line-height:1.55;
+  color:rgba(255,255,255,0.78);
+  max-width:420px;
+}
+.cover-personas-strip{
+  display:flex; gap:28px; flex-wrap:wrap;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,0.18);
+}
+.cps-item{
+  display:flex; align-items:center; gap:8px;
+  font-family:var(--body); font-size:12px; font-weight:600;
+  color:rgba(255,255,255,0.85);
+}
+.cps-dot{
+  width:8px; height:8px; border-radius:50%;
+}
+
+/* ============ PAGE 2 - WHY PERSONAS (4-up) ============ */
+.two-col{
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:36px;
+}
+.persona-thumb-grid{
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:auto;
+  padding-top:18px;
+  border-top:1px solid #D7DEE5;
+}
+.pt-card{
+  background:transparent;
+  border-radius:16px;
+}
+.pt-tile{
+  width:100%; aspect-ratio:1/1;
+  border-radius:14px;
+  position:relative; overflow:hidden;
+  margin-bottom:12px;
+}
+.pt-photo{
+  position:absolute; inset:0;
+  background-size:cover; background-position:center;
+}
+.pt-overlay{
+  position:absolute; inset:0;
+  mix-blend-mode:multiply;
+}
+.pt-tile.apprentice .pt-overlay{ background:linear-gradient(135deg, rgba(35,206,107,0.55),  rgba(11,110,58,0.35)); }
+.pt-tile.navigator  .pt-overlay{ background:linear-gradient(135deg, rgba(233,30,99,0.55),    rgba(136,14,57,0.35)); }
+.pt-tile.architect  .pt-overlay{ background:linear-gradient(135deg, rgba(26,140,255,0.55),   rgba(11,68,107,0.35)); }
+.pt-tile.strategist .pt-overlay{ background:linear-gradient(135deg, rgba(142,36,170,0.55),   rgba(74,20,90,0.40)); }
+.pt-eyebrow{
+  font-family:var(--body); font-weight:700;
+  text-transform:uppercase; letter-spacing:0.08em;
+  font-size:9px;
+}
+.pt-eyebrow.app{ color:#16A34A; }
+.pt-eyebrow.nav{ color:var(--pn); }
+.pt-eyebrow.arc{ color:var(--par); }
+.pt-eyebrow.str{ color:var(--ps); }
+.pt-name{
+  font-family:var(--head); font-weight:600;
+  font-size:16px; letter-spacing:-0.03em;
+  margin-top:4px; line-height:1.05;
+  color:var(--prussian);
+}
+.pt-desc{
+  margin-top:6px;
+  font-size:10px; line-height:1.4;
+  color:#5d6b7a;
+}
+
+/* ============ PAGE 3 - MIX ============ */
+.mix-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:24px;
+  padding:24px 26px;
+  margin-top:30px;
+}
+.mix-bar{
+  display:flex; gap:6px;
+  margin-top:14px;
+  border-radius:8px;
+  overflow:hidden;
+}
+.mix-seg{
+  height:62px;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:0 14px;
+  color:#fff;
+  min-width:88px;
+}
+.mix-seg .pct{
+  font-family:var(--head); font-weight:600;
+  font-size:22px; letter-spacing:-0.03em;
+  line-height:1;
+}
+.mix-seg .lbl{
+  font-family:var(--body); font-weight:700;
+  text-transform:uppercase; letter-spacing:0.1em;
+  font-size:9.5px;
+  color:rgba(255,255,255,0.92);
+  margin-top:4px;
+}
+.three-col{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-top:36px;
+}
+.three-col h4{
+  font-family:var(--body); font-weight:700;
+  text-transform:uppercase; letter-spacing:0.12em;
+  font-size:10px; color:var(--teal);
+  margin-bottom:6px;
+}
+.three-col p{
+  font-size:11.5px; line-height:1.5;
+  color:rgba(255,255,255,0.78);
+}
+
+/* ============ PAGE 4 - COMPETENCIES ============ */
+.comp-grid{
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:24px;
+}
+.comp-card{
+  background:#fff;
+  border-radius:24px;
+  padding:22px 22px;
+  display:flex; flex-direction:column;
+  min-height:155px;
+}
+.comp-num{
+  width:46px; height:46px;
+  border-radius:12px;
+  background:var(--prussian);
+  color:#fff;
+  font-family:var(--head); font-weight:600;
+  font-size:18px; letter-spacing:-0.02em;
+  display:flex; align-items:center; justify-content:center;
+}
+.comp-num.b1{ background:#0B1B2B; }
+.comp-num.b2{ background:#0A8A8F; }
+.comp-num.b3{ background:#00C4CC; color:#0B1B2B; }
+.comp-num.b4{ background:#7DDDE0; color:#0B1B2B; }
+.comp-head{
+  display:flex; align-items:flex-start; gap:14px;
+  margin-bottom:12px;
+}
+.comp-head h4{
+  font-family:var(--head); font-weight:500;
+  font-size:22px; letter-spacing:-0.02em;
+  line-height:1.05;
+  color:var(--prussian);
+  padding-top:4px;
+  flex:1;
+}
+.comp-card p{
+  font-size:11.5px; line-height:1.5;
+  color:#3d4956;
+}
+.comp-pct{
+  display:inline-block;
+  margin-left:auto;
+  font-family:var(--head); font-weight:600;
+  font-size:12px;
+  color:var(--teal-d);
+  background:#CFF7F7;
+  padding:4px 10px;
+  border-radius:999px;
+  letter-spacing:-0.01em;
+  white-space:nowrap;
+}
+.shared-banner{
+  margin-top:20px;
+  background:var(--prussian);
+  border-radius:24px;
+  padding:22px 26px;
+  position:relative;
+  color:#fff;
+}
+.shared-banner::before{
+  content:""; position:absolute;
+  left:18px; top:18px; bottom:18px;
+  width:3px; border-radius:3px;
+  background:var(--teal);
+}
+.shared-banner .eyebrow{ color:var(--teal); }
+.shared-banner p{
+  margin-top:6px;
+  font-size:12px; line-height:1.55;
+  color:rgba(255,255,255,0.85);
+  padding-left:20px;
+}
+.shared-banner .eyebrow{ padding-left:20px; }
+
+/* ============ PAGE 5 - PROCESS ============ */
+.proc-row{
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-top:30px;
+  position:relative;
+}
+.proc-row::before{
+  content:""; position:absolute;
+  top:22px; left:5%; right:5%;
+  height:1.5px;
+  background:repeating-linear-gradient(to right,#C7D1DC 0 6px,transparent 6px 12px);
+  z-index:0;
+}
+.proc-cell{ position:relative; z-index:1; }
+.proc-circle{
+  width:44px; height:44px; border-radius:50%;
+  background:#fff;
+  border:2px solid var(--prussian);
+  color:var(--prussian);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--head); font-weight:600;
+  font-size:18px; margin-bottom:14px;
+}
+.proc-cell .eyebrow{ color:var(--teal-d); font-size:10px; }
+.proc-cell h4{
+  font-family:var(--head); font-weight:500;
+  font-size:18px; letter-spacing:-0.025em;
+  line-height:1.1; margin-top:6px; color:var(--prussian);
+}
+.proc-cell p{
+  font-size:10.5px; line-height:1.5;
+  margin-top:8px; color:#3d4956;
+}
+.quote-block{
+  margin-top:auto;
+  padding-top:30px;
+  border-top:1px solid #D7DEE5;
+}
+.quote-block .q{
+  font-family:var(--head); font-weight:500;
+  font-size:22px; letter-spacing:-0.025em;
+  line-height:1.25;
+  color:var(--prussian);
+  max-width:600px;
+}
+.quote-block .who{
+  margin-top:14px;
+  font-family:var(--body); font-size:11px;
+  color:#5d6b7a;
+}
+
+/* ============ PERSONA DETAIL PAGES ============ */
+.persona-head{
+  display:grid; grid-template-columns:1.4fr 1fr;
+  gap:30px;
+  align-items:flex-start;
+}
+.persona-h{
+  font-size:56px; line-height:0.95;
+  letter-spacing:-0.05em;
+  color:var(--prussian);
+}
+.share-card{
+  background:var(--prussian);
+  border-radius:22px;
+  padding:22px 24px;
+  position:relative;
+  color:#fff;
+  overflow:hidden;
+  min-height:170px;
+}
+.share-card .ribbon{
+  position:absolute; top:0; right:0;
+  width:80px; height:62px;
+  clip-path:polygon(0 0,100% 0,100% 100%,30% 100%);
+}
+.share-card .ribbon::after{
+  content:""; position:absolute; right:0; top:0;
+  width:18px; height:18px; background:rgba(0,0,0,0.4);
+  clip-path:polygon(0 0,100% 0,0 100%);
+}
+.share-card .typical{
+  font-family:var(--body); font-weight:700;
+  text-transform:uppercase; letter-spacing:0.14em;
+  font-size:11px;
+}
+.share-card .pct{
+  font-family:var(--head); font-weight:600;
+  font-size:64px; line-height:1;
+  letter-spacing:-0.05em;
+  color:#fff;
+  margin-top:14px;
+}
+.share-card .pct .pp{ font-size:0.55em; vertical-align:top; }
+.share-card .of{
+  margin-top:10px;
+  font-size:11.5px;
+  color:rgba(255,255,255,0.8);
+}
+.persona-desc{
+  margin-top:18px;
+  font-size:13px; line-height:1.55;
+  color:#3d4956;
+}
+.persona-grid{
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:22px;
+}
+.pg-card{
+  background:#fff;
+  border-radius:22px;
+  padding:22px 22px;
+}
+.pg-card .eyebrow{ font-size:10px; }
+.comp-list{ margin-top:18px; }
+.comp-row{
+  display:grid; grid-template-columns:100px 1fr 30px;
+  align-items:center;
+  gap:10px;
+  margin-bottom:11px;
+}
+.comp-row .cl-label{
+  font-family:var(--body); font-weight:700;
+  text-transform:uppercase; letter-spacing:0.06em;
+  font-size:9.5px;
+  color:var(--prussian);
+}
+.comp-row .cl-bar{
+  height:9px; border-radius:5px;
+  background:#E2E7EC;
+  overflow:hidden;
+}
+.comp-row .cl-fill{ height:100%; border-radius:5px; }
+.comp-row .cl-val{
+  font-family:var(--body); font-weight:700;
+  font-size:11px; color:#5d6b7a;
+  text-align:right;
+}
+.milestone-grid{
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:18px;
+}
+.ml{
+  background:#F4F7FA;
+  border-radius:12px;
+  padding:14px 14px;
+  font-family:var(--head); font-weight:500;
+  font-size:13px; letter-spacing:-0.01em;
+  line-height:1.2;
+  color:var(--prussian);
+}
+.ml.full{ grid-column:1 / -1; }
+.samples{
+  margin-top:auto;
+  background:#fff;
+  border-radius:22px;
+  padding:18px 22px;
+}
+.samples-tags{
+  display:flex; flex-wrap:wrap; gap:8px;
+  margin-top:12px;
+}
+.tag-chip{
+  padding:7px 13px; border-radius:999px;
+  background:#E5EDF4;
+  color:var(--prussian);
+  font-family:var(--body); font-weight:700;
+  text-transform:uppercase; letter-spacing:0.06em;
+  font-size:9.5px;
+}
+
+/* persona color variations */
+.persona-page.app{ background:#E9F4EF; }
+.persona-page.app .pg-card{ background:#fff; }
+.persona-page.app .eyebrow{ color:#16A34A; }
+.persona-page.app .share-card{ background:#0E2A1B; }
+.persona-page.app .share-card .ribbon{ background:var(--pa); }
+.persona-page.app .share-card .typical{ color:var(--pa); }
+.persona-page.app .ml{ background:#E8F7EE; }
+.persona-page.app .samples{ background:#D6EFDF; }
+.persona-page.app .tag-chip{ background:#fff; color:#0E5126; }
+
+.persona-page.nav{ background:#FCE4EC; }
+.persona-page.nav .pg-card{ background:#fff; }
+.persona-page.nav .eyebrow{ color:#AD1457; }
+.persona-page.nav .share-card{ background:#2B0E1A; }
+.persona-page.nav .share-card .ribbon{ background:var(--pn); }
+.persona-page.nav .share-card .typical{ color:#F8BBD0; }
+.persona-page.nav .ml{ background:#FCE4EC; }
+.persona-page.nav .samples{ background:#F8BBD0; }
+.persona-page.nav .tag-chip{ background:#fff; color:#AD1457; }
+
+.persona-page.arc{ background:#E5F1FB; }
+.persona-page.arc .pg-card{ background:#fff; }
+.persona-page.arc .eyebrow{ color:var(--lapis); }
+.persona-page.arc .share-card{ background:#0B1B2B; }
+.persona-page.arc .share-card .ribbon{ background:var(--par); }
+.persona-page.arc .share-card .typical{ color:var(--par); }
+.persona-page.arc .ml{ background:#E5F1FB; }
+.persona-page.arc .samples{ background:#CFE5F8; }
+.persona-page.arc .tag-chip{ background:#fff; color:#0D5F96; }
+
+.persona-page.str{ background:#F3E5F5; }
+.persona-page.str .pg-card{ background:#fff; }
+.persona-page.str .eyebrow{ color:#6A1B9A; }
+.persona-page.str .share-card{ background:#1F0E2B; }
+.persona-page.str .share-card .ribbon{ background:var(--ps); }
+.persona-page.str .share-card .typical{ color:#E1BEE7; }
+.persona-page.str .ml{ background:#F3E5F5; }
+.persona-page.str .samples{ background:#E1BEE7; }
+.persona-page.str .tag-chip{ background:#fff; color:#6A1B9A; }
+
+/* ============ FINAL CTA ============ */
+.cta-buttons{
+  display:flex; gap:14px; margin-top:36px;
+}
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--head); font-weight:500;
+  font-size:16px; letter-spacing:-0.01em;
+  border-radius:18px;
+  padding:16px 26px;
+  text-decoration:none;
+}
+.btn-primary{
+  background:var(--teal);
+  color:var(--prussian);
+}
+.btn-outline{
+  border:1.5px solid var(--prussian);
+  color:var(--prussian);
+}
+.contact-row{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:36px;
+  margin-top:36px;
+  padding-top:24px;
+  border-top:1px solid #D7DEE5;
+}
+.contact-row .ce{ font-size:11px; }
+.contact-row .cv{
+  font-family:var(--head); font-weight:500;
+  font-size:16px; letter-spacing:-0.02em;
+  margin-top:6px; color:var(--prussian);
+}
+.tag-card{
+  margin-top:auto;
+  background:var(--prussian);
+  border-radius:22px;
+  padding:30px 32px;
+  position:relative;
+  color:#fff;
+  overflow:hidden;
+}
+.tag-card .eyebrow{ color:var(--teal); }
+.tag-card h2{
+  font-family:var(--head); font-weight:500;
+  font-size:34px; letter-spacing:-0.04em;
+  line-height:1.05;
+  margin-top:10px;
+  color:#fff;
+}
+.tag-card .deco{
+  position:absolute; right:0; top:0; bottom:0;
+  width:280px; pointer-events:none;
+}
+.tag-card .deco .b1{
+  position:absolute; right:130px; top:30px;
+  width:80px; height:160px;
+  background:rgba(0,196,204,0.7);
+  border-radius:18px 18px 18px 18px;
+  transform:skewX(-10deg);
+}
+.tag-card .deco .b2{
+  position:absolute; right:50px; top:18px;
+  width:90px; height:180px;
+  background:rgba(142,36,170,0.85);
+  border-radius:18px;
+  transform:skewX(-10deg);
+}
+.tag-card .deco .b3{
+  position:absolute; right:8px; top:50px;
+  width:60px; height:30px;
+  background:rgba(233,30,99,0.5);
+  border-radius:8px;
+  transform:skewX(-10deg);
+}
+
+/* PRINT */
+@media print{
+  html,body{ background:#fff; }
+  .page{ margin:0; box-shadow:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ====================== PAGE 1 - COVER ====================== -->
+<section class="page dark">
+  <div class="cover-bg"></div>
+  <div class="cover-shapes"></div>
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo">
+          <img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/>
+        </div>
+      </div>
+      <div>AI TRAINING FRAMEWORK</div>
+    </div>
+
+    <div style="margin-top:55mm;">
+      <div class="eyebrow" style="color:#fff; opacity:0.9;">BUILDING AI FLUENCY WITH KUBICLE</div>
+      <h1 class="cover-h1" style="margin-top:20px;">
+        Build AI fluency<br/>through a proven<br/>
+        <span class="accent">persona<br/>framework.</span>
+      </h1>
+      <p class="cover-sub">
+        Four complementary personas. Four core AI competencies. One role&#8209;calibrated
+        pathway from everyday tool use to organizational AI strategy and governance.
+      </p>
+    </div>
+
+    <div class="cover-personas-strip" style="margin-top:auto;">
+      <div class="cps-item"><span class="cps-dot" style="background:var(--pa);"></span>AI Apprentice</div>
+      <div class="cps-item"><span class="cps-dot" style="background:var(--pn);"></span>AI Navigator</div>
+      <div class="cps-item"><span class="cps-dot" style="background:var(--par);"></span>AI Architect</div>
+      <div class="cps-item"><span class="cps-dot" style="background:var(--ps);"></span>AI Strategist</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 2 - WHY PERSONAS ====================== -->
+<section class="page">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/></div>
+      </div>
+      <div class="pno">02 / 10</div>
+    </div>
+
+    <div style="margin-top:18mm;">
+      <div class="eyebrow">WHY A PERSONA APPROACH?</div>
+      <h2 class="h-page" style="margin-top:14px;">
+        AI training isn&rsquo;t<br/>one&#8209;size&#8209;fits&#8209;all.<br/>
+        <span style="color:var(--teal-d);">Calibration is.</span>
+      </h2>
+    </div>
+
+    <div class="two-col" style="margin-top:24px;">
+      <p class="body">
+        Most AI programs teach a single tool to a mixed audience and hope it sticks.
+        It rarely does. AI work spans everyday users, applied operators, technical
+        builders, and organizational leaders, each with different decisions to own
+        and different gaps to close.
+      </p>
+      <p class="body">
+        What matters is the right depth at the right tier. Our four
+        personas make that depth designable, so you teach foundational fluency to an
+        Apprentice, applied productivity to a Navigator, build craft to an Architect,
+        and strategic leadership to a Strategist, in one connected pathway.
+      </p>
+    </div>
+
+    <div class="persona-thumb-grid">
+      <div class="pt-card">
+        <div class="pt-tile apprentice">
+          <div class="pt-photo" style="background-image:url('../../img/Character_profiles/portraits/female_05.a.png');"></div>
+        </div>
+        <div class="pt-eyebrow app">PERSONA 01 &middot; FOUNDATION</div>
+        <div class="pt-name">AI Apprentice</div>
+        <p class="pt-desc">Foundational fluency. Confident with ChatGPT and Copilot from day one.</p>
+      </div>
+      <div class="pt-card">
+        <div class="pt-tile navigator">
+          <div class="pt-photo" style="background-image:url('../../img/Character_profiles/portraits/male_09.a.png');"></div>
+        </div>
+        <div class="pt-eyebrow nav">PERSONA 02 &middot; OPERATOR</div>
+        <div class="pt-name">AI Navigator</div>
+        <p class="pt-desc">Applied productivity. Integrates AI into real workflows and agents.</p>
+      </div>
+      <div class="pt-card">
+        <div class="pt-tile architect">
+          <div class="pt-photo" style="background-image:url('../../img/Character_profiles/portraits/male_06.a.png');"></div>
+        </div>
+        <div class="pt-eyebrow arc">PERSONA 03 &middot; BUILDER</div>
+        <div class="pt-name">AI Architect</div>
+        <p class="pt-desc">Technical builder. Designs and deploys custom AI systems and agents.</p>
+      </div>
+      <div class="pt-card">
+        <div class="pt-tile strategist">
+          <div class="pt-photo" style="background-image:url('../../img/Character_profiles/portraits/female_09.a.png');"></div>
+        </div>
+        <div class="pt-eyebrow str">PERSONA 04 &middot; LEADER</div>
+        <div class="pt-name">AI Strategist</div>
+        <p class="pt-desc">Sets AI direction. Strategy, governance and long-term vision.</p>
+      </div>
+    </div>
+
+    <div class="ftr">
+      <div>KUBICLE &middot; AI FRAMEWORK</div>
+      <div>WHY A PERSONA APPROACH</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 3 - MIX ====================== -->
+<section class="page dark">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="var(--prussian)"><rect x="6" y="3" width="14" height="18" rx="2" stroke-width="2"/></svg></div>
+        <div class="word">KUBICLE</div>
+      </div>
+      <div class="pno">03 / 10</div>
+    </div>
+    <div class="geo-arch" style="width:300px; height:300px; right:-60px; top:-30px;"></div>
+    <div class="geo-ring" style="width:170px; height:170px; right:-50px; top:55%;"></div>
+
+    <div style="margin-top:18mm; max-width:520px;">
+      <div class="eyebrow">BALANCE, NOT PROGRESSION</div>
+      <h2 class="h-page" style="margin-top:14px; color:#fff;">
+        A fluent AI org<br/>needs <span style="color:var(--teal);">all four</span><br/>in the right<br/>proportions.
+      </h2>
+      <p class="body" style="margin-top:18px; color:rgba(255,255,255,0.78); max-width:560px;">
+        These aren&rsquo;t levels to climb; they&rsquo;re tiers to combine. Most
+        organizations need many Apprentices, a strong layer of Navigators, a small
+        cohort of technical Architects, and a handful of Strategists at the top. The
+        right mix depends on your AI ambition.
+      </p>
+    </div>
+
+    <div class="mix-card">
+      <div class="eyebrow" style="color:rgba(255,255,255,0.6);">ILLUSTRATIVE CAPABILITY MIX &middot; 200&#8209;PERSON SMB</div>
+      <div class="mix-bar">
+        <div class="mix-seg" style="flex:55; background:var(--pa);">
+          <div class="pct">55%</div>
+          <div class="lbl">Apprentice</div>
+        </div>
+        <div class="mix-seg" style="flex:30; background:var(--pn);">
+          <div class="pct">30%</div>
+          <div class="lbl">Navigator</div>
+        </div>
+        <div class="mix-seg" style="flex:10; background:var(--par);">
+          <div class="pct">10%</div>
+          <div class="lbl">Architect</div>
+        </div>
+        <div class="mix-seg" style="flex:5; background:var(--ps);">
+          <div class="pct">5%</div>
+          <div class="lbl">Strategist</div>
+        </div>
+      </div>
+      <p style="margin-top:12px; color:rgba(255,255,255,0.65); font-size:10.5px; line-height:1.5;">
+        Typical starting mix for a services firm. Proportions shift as your AI
+        program matures, build capability deepens, and governance expectations grow.
+      </p>
+    </div>
+
+    <div class="three-col">
+      <div>
+        <h4>CALIBRATED</h4>
+        <p>Each persona has a distinct competency signature, different not superior, tuned to the role, not the resume.</p>
+      </div>
+      <div>
+        <h4>CUSTOMIZABLE</h4>
+        <p>We design your mix to match your AI ambition, role structure, and governance posture.</p>
+      </div>
+      <div>
+        <h4>MEASURABLE</h4>
+        <p>Progress is tracked per persona, making AI uplift visible to leadership at every stage.</p>
+      </div>
+    </div>
+
+    <div class="ftr">
+      <div>KUBICLE &middot; AI FRAMEWORK</div>
+      <div>BALANCE, NOT PROGRESSION</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 4 - COMPETENCIES ====================== -->
+<section class="page alice">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/></div>
+      </div>
+      <div class="pno">04 / 10</div>
+    </div>
+
+    <div class="geo-arch" style="width:300px; height:300px; right:-60px; top:30px; color:rgba(0,138,143,0.10);"></div>
+    <div class="geo-ring" style="width:120px; height:120px; left:-30px; bottom:30%; color:rgba(0,138,143,0.08);"></div>
+
+    <div style="margin-top:14mm;">
+      <div class="eyebrow">UNDERSTANDING COMPETENCY CALIBRATION</div>
+      <h2 class="h-page" style="margin-top:14px;">
+        Four core competencies.<br/>
+        Every persona, a different mix.
+      </h2>
+      <p class="body" style="margin-top:14px; max-width:600px;">
+        We benchmark every learner against the four competencies a serious AI
+        capability demands, from foundational theory through to the strategy and
+        governance work that keeps AI safe and aligned.
+      </p>
+    </div>
+
+    <div class="comp-grid">
+      <div class="comp-card">
+        <div class="comp-head">
+          <div class="comp-num b1">01</div>
+          <h4>AI Theory &amp; Foundations</h4>
+        </div>
+        <p>Core concepts, terminology, generative AI, model behavior, and the principles every AI&#8209;literate professional should share.</p>
+      </div>
+      <div class="comp-card">
+        <div class="comp-head">
+          <div class="comp-num b2">02</div>
+          <h4>Tools &amp; Platforms</h4>
+        </div>
+        <p>ChatGPT, Copilot, agent platforms, prompt craft, workflow integration, and everyday productivity uplift across the team.</p>
+      </div>
+      <div class="comp-card">
+        <div class="comp-head">
+          <div class="comp-num b3">03</div>
+          <h4>Architecture &amp; Engineering</h4>
+        </div>
+        <p>Custom AI components, agentic workflows, system integration, data plumbing, and production deployment of AI solutions.</p>
+      </div>
+      <div class="comp-card">
+        <div class="comp-head">
+          <div class="comp-num b4">04</div>
+          <h4>Strategy &amp; Governance</h4>
+        </div>
+        <p>AI strategy, adoption management, ethics, regulatory landscape, risk and the governance posture that keeps deployment safe.</p>
+      </div>
+    </div>
+
+    <div class="shared-banner">
+      <div class="eyebrow" style="color:var(--teal);">SHARED COMPETENCIES, DIFFERENT DEPTHS</div>
+      <p>Every persona is measured against the same four competencies. What differs is the depth across each, and that signature is what makes a persona fit for purpose.</p>
+    </div>
+
+    <div class="ftr">
+      <div>KUBICLE &middot; AI FRAMEWORK</div>
+      <div>COMPETENCY CALIBRATION</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 5 - PROCESS ====================== -->
+<section class="page">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/></div>
+      </div>
+      <div class="pno">05 / 10</div>
+    </div>
+
+    <div style="margin-top:18mm;">
+      <div class="eyebrow">HOW WE DESIGN YOUR PROGRAM</div>
+      <h2 class="h-page" style="margin-top:14px;">
+        A consultative process,<br/>
+        not a catalog.<br/>
+        <span style="color:var(--teal-d);">In four steps.</span>
+      </h2>
+    </div>
+
+    <div class="proc-row">
+      <div class="proc-cell">
+        <div class="proc-circle">1</div>
+        <div class="eyebrow">DISCOVERY</div>
+        <h4>Understand desired outcomes</h4>
+        <p>We work with your stakeholders to clarify goals, define success metrics and align the program with your strategy.</p>
+      </div>
+      <div class="proc-cell">
+        <div class="proc-circle">2</div>
+        <div class="eyebrow">ASSESSMENT</div>
+        <h4>Benchmark your team</h4>
+        <p>We map your team&rsquo;s current AI skills against the four personas to surface real gaps, strengths and opportunities.</p>
+      </div>
+      <div class="proc-cell">
+        <div class="proc-circle">3</div>
+        <div class="eyebrow">PROGRAM DESIGN</div>
+        <h4>Configure pathways</h4>
+        <p>We tailor a persona&#8209;calibrated learning pathway with practical, role&#8209;relevant content your team can apply immediately.</p>
+      </div>
+      <div class="proc-cell">
+        <div class="proc-circle">4</div>
+        <div class="eyebrow">CUSTOMIZATION</div>
+        <h4>Refine to your context</h4>
+        <p>We adapt the program to your specific workflows, tools and use cases, then deploy, track and iterate with you.</p>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <div class="q">&ldquo;I appreciate how easy it was to set up Kubicle. My learners were quickly engaged with all learning materials upon gaining access. It has effectively addressed the skill gap, especially with tools like Excel and data processing. The real&#8209;time progress tracking, leaderboard and certifications strongly influence my decision to continue using Kubicle. I would definitely recommend it.&rdquo;</div>
+      <div class="who">Validated Reviewer, TotalEnergies &middot; G2 Review, 4.7 / 5</div>
+    </div>
+
+    <div class="ftr">
+      <div>KUBICLE &middot; AI FRAMEWORK</div>
+      <div>PROGRAM DESIGN</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 6 - APPRENTICE ====================== -->
+<section class="page persona-page app">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/></div>
+      </div>
+      <div class="pno">06 / 10</div>
+    </div>
+
+    <div class="geo-arch" style="width:240px; height:240px; left:-50px; top:35%; color:rgba(35,206,107,0.18);"></div>
+    <div class="geo-ring" style="width:140px; height:140px; right:-30px; bottom:20%; color:rgba(35,206,107,0.12);"></div>
+
+    <div style="margin-top:14mm;">
+      <div class="eyebrow">PERSONA 01 &middot; THE FOUNDATION</div>
+      <div class="persona-head" style="margin-top:14px;">
+        <h2 class="persona-h">The AI<br/>Apprentice.</h2>
+        <div class="share-card">
+          <div class="ribbon"></div>
+          <div class="typical">TYPICAL SHARE</div>
+          <div class="pct">40&ndash;60<span class="pp">%</span></div>
+          <div class="of">of an AI&#8209;fluent workforce</div>
+        </div>
+      </div>
+      <p class="persona-desc">
+        AI Apprentices are beginning their journey into AI, focusing on foundational
+        concepts and practical skills. They gain comfort with the essential building
+        blocks of AI: how it works, where it can be applied, and how to interact with
+        AI systems effectively. They engage confidently with AI tools, understand key
+        terminology, and identify opportunities for AI use in business contexts.
+      </p>
+    </div>
+
+    <div class="persona-grid">
+      <div class="pg-card">
+        <div class="eyebrow">COMPETENCY SIGNATURE</div>
+        <div class="comp-list">
+          <div class="comp-row">
+            <div class="cl-label">AI THEORY</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:20%; background:var(--pa);"></div></div>
+            <div class="cl-val">1 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">TOOLS &amp; PLATFORMS</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:40%; background:var(--pa);"></div></div>
+            <div class="cl-val">2 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">ARCHITECT &amp; ENG.</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:20%; background:var(--pa);"></div></div>
+            <div class="cl-val">1 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">STRATEGY &amp; GOV.</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:40%; background:var(--pa);"></div></div>
+            <div class="cl-val">2 / 5</div>
+          </div>
+        </div>
+      </div>
+      <div class="pg-card">
+        <div class="eyebrow">LEARNING MILESTONES</div>
+        <div class="milestone-grid">
+          <div class="ml">Principles<br/>of AI</div>
+          <div class="ml">Generative<br/>AI</div>
+          <div class="ml">Mastering<br/>Tools</div>
+          <div class="ml">AI &amp;<br/>Society</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="samples">
+      <div class="eyebrow">SAMPLE COURSES &amp; PROJECTS</div>
+      <div class="samples-tags">
+        <span class="tag-chip">PRINCIPLES OF AI</span>
+        <span class="tag-chip">GENERATIVE AI</span>
+        <span class="tag-chip">MASTERING CHATGPT</span>
+        <span class="tag-chip">USING COPILOT</span>
+        <span class="tag-chip">PROMPT BASICS</span>
+        <span class="tag-chip">AI &amp; SOCIETY</span>
+        <span class="tag-chip">&hellip;AND MORE</span>
+      </div>
+    </div>
+
+    <div class="ftr">
+      <div>KUBICLE &middot; AI FRAMEWORK</div>
+      <div>PERSONA 01, APPRENTICE</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 7 - NAVIGATOR ====================== -->
+<section class="page persona-page nav">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/></div>
+      </div>
+      <div class="pno">07 / 10</div>
+    </div>
+
+    <div class="geo-arch" style="width:220px; height:220px; left:-40px; top:30%; color:rgba(233,30,99,0.18);"></div>
+    <div class="geo-ring" style="width:150px; height:150px; right:-40px; bottom:18%; color:rgba(233,30,99,0.12);"></div>
+
+    <div style="margin-top:14mm;">
+      <div class="eyebrow">PERSONA 02 &middot; THE OPERATOR</div>
+      <div class="persona-head" style="margin-top:14px;">
+        <h2 class="persona-h">The AI<br/>Navigator.</h2>
+        <div class="share-card">
+          <div class="ribbon"></div>
+          <div class="typical">TYPICAL SHARE</div>
+          <div class="pct">25&ndash;35<span class="pp">%</span></div>
+          <div class="of">of an AI&#8209;fluent workforce</div>
+        </div>
+      </div>
+      <p class="persona-desc">
+        AI Navigators apply AI to unlock productivity and efficiency, guiding teams
+        toward greater AI effectiveness. Skilled in leveraging AI to streamline
+        workflows, enhance collaboration, and support decision&#8209;making. They
+        actively drive AI adoption in the workplace, ensuring teams use AI effectively
+        and responsibly. The persona that turns AI from a tool into a habit.
+      </p>
+    </div>
+
+    <div class="persona-grid">
+      <div class="pg-card">
+        <div class="eyebrow">COMPETENCY SIGNATURE</div>
+        <div class="comp-list">
+          <div class="comp-row">
+            <div class="cl-label">AI THEORY</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:40%; background:var(--pn);"></div></div>
+            <div class="cl-val">2 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">TOOLS &amp; PLATFORMS</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:100%; background:var(--pn);"></div></div>
+            <div class="cl-val">5 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">ARCHITECT &amp; ENG.</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:20%; background:var(--pn);"></div></div>
+            <div class="cl-val">1 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">STRATEGY &amp; GOV.</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:40%; background:var(--pn);"></div></div>
+            <div class="cl-val">2 / 5</div>
+          </div>
+        </div>
+      </div>
+      <div class="pg-card">
+        <div class="eyebrow">LEARNING MILESTONES</div>
+        <div class="milestone-grid">
+          <div class="ml">Advanced<br/>AI Concepts</div>
+          <div class="ml">Mastering<br/>AI Tools</div>
+          <div class="ml">Workflow<br/>Integration</div>
+          <div class="ml">Designing<br/>&amp; Building<br/>Agents</div>
+          <div class="ml full">Governance &amp; Responsible Use</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="samples">
+      <div class="eyebrow">SAMPLE COURSES &amp; PROJECTS</div>
+      <div class="samples-tags">
+        <span class="tag-chip">ADVANCED AI CONCEPTS</span>
+        <span class="tag-chip">MASTERING AI TOOLS</span>
+        <span class="tag-chip">WORKFLOW INTEGRATION</span>
+        <span class="tag-chip">DESIGNING AGENTS</span>
+        <span class="tag-chip">BUILDING AGENTS</span>
+        <span class="tag-chip">RESPONSIBLE USE</span>
+        <span class="tag-chip">&hellip;AND MORE</span>
+      </div>
+    </div>
+
+    <div class="ftr">
+      <div>KUBICLE &middot; AI FRAMEWORK</div>
+      <div>PERSONA 02, NAVIGATOR</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 8 - ARCHITECT ====================== -->
+<section class="page persona-page arc">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/></div>
+      </div>
+      <div class="pno">08 / 10</div>
+    </div>
+
+    <div class="geo-arch" style="width:240px; height:240px; right:-60px; top:36%; color:rgba(26,140,255,0.20);"></div>
+    <div class="geo-ring" style="width:140px; height:140px; left:-30px; bottom:22%; color:rgba(26,140,255,0.12);"></div>
+
+    <div style="margin-top:14mm;">
+      <div class="eyebrow">PERSONA 03 &middot; THE BUILDER</div>
+      <div class="persona-head" style="margin-top:14px;">
+        <h2 class="persona-h">The AI<br/>Architect.</h2>
+        <div class="share-card">
+          <div class="ribbon"></div>
+          <div class="typical">TYPICAL SHARE</div>
+          <div class="pct">5&ndash;15<span class="pp">%</span></div>
+          <div class="of">of an AI&#8209;fluent workforce</div>
+        </div>
+      </div>
+      <p class="persona-desc">
+        AI Architects focus on building custom AI solutions and leading AI implementation
+        across the organization. They move beyond applying existing tools to designing
+        and configuring systems that integrate AI into business processes. They
+        understand the technical principles required to construct scalable solutions,
+        connect data sources, and orchestrate agentic workflows that move into
+        production.
+      </p>
+    </div>
+
+    <div class="persona-grid">
+      <div class="pg-card">
+        <div class="eyebrow">COMPETENCY SIGNATURE</div>
+        <div class="comp-list">
+          <div class="comp-row">
+            <div class="cl-label">AI THEORY</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:100%; background:var(--par);"></div></div>
+            <div class="cl-val">5 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">TOOLS &amp; PLATFORMS</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:100%; background:var(--par);"></div></div>
+            <div class="cl-val">5 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">ARCHITECT &amp; ENG.</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:100%; background:var(--par);"></div></div>
+            <div class="cl-val">5 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">STRATEGY &amp; GOV.</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:40%; background:var(--par);"></div></div>
+            <div class="cl-val">2 / 5</div>
+          </div>
+        </div>
+      </div>
+      <div class="pg-card">
+        <div class="eyebrow">LEARNING MILESTONES</div>
+        <div class="milestone-grid">
+          <div class="ml full">Custom AI Components</div>
+          <div class="ml full">Building &amp; Deploying Agentic Workflows</div>
+          <div class="ml full">Solution Handover &amp; Implementation</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="samples">
+      <div class="eyebrow">SAMPLE COURSES &amp; PROJECTS</div>
+      <div class="samples-tags">
+        <span class="tag-chip">CUSTOM AI COMPONENTS</span>
+        <span class="tag-chip">AGENTIC WORKFLOWS</span>
+        <span class="tag-chip">DEPLOYING AGENTS</span>
+        <span class="tag-chip">SOLUTION HANDOVER</span>
+        <span class="tag-chip">SYSTEM INTEGRATION</span>
+        <span class="tag-chip">DATA PIPELINES</span>
+        <span class="tag-chip">&hellip;AND MORE</span>
+      </div>
+    </div>
+
+    <div class="ftr">
+      <div>KUBICLE &middot; AI FRAMEWORK</div>
+      <div>PERSONA 03, ARCHITECT</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 9 - STRATEGIST ====================== -->
+<section class="page persona-page str">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/></div>
+      </div>
+      <div class="pno">09 / 10</div>
+    </div>
+
+    <div class="geo-arch" style="width:240px; height:240px; left:-60px; top:35%; color:rgba(142,36,170,0.22);"></div>
+    <div class="geo-ring" style="width:150px; height:150px; right:-40px; bottom:20%; color:rgba(142,36,170,0.14);"></div>
+
+    <div style="margin-top:14mm;">
+      <div class="eyebrow">PERSONA 04 &middot; THE LEADER</div>
+      <div class="persona-head" style="margin-top:14px;">
+        <h2 class="persona-h">The AI<br/>Strategist.</h2>
+        <div class="share-card">
+          <div class="ribbon"></div>
+          <div class="typical">TYPICAL SHARE</div>
+          <div class="pct">2&ndash;8<span class="pp">%</span></div>
+          <div class="of">of an AI&#8209;fluent workforce</div>
+        </div>
+      </div>
+      <p class="persona-desc">
+        AI Strategists set organizational AI strategy, manage adoption at scale, and
+        ensure robust and safe AI governance. They combine technical awareness with
+        leadership skills to define AI priorities, oversee responsible deployment, and
+        align AI initiatives with business goals. They navigate the regulatory and
+        ethical landscape, balancing innovation with compliance and risk management.
+      </p>
+    </div>
+
+    <div class="persona-grid">
+      <div class="pg-card">
+        <div class="eyebrow">COMPETENCY SIGNATURE</div>
+        <div class="comp-list">
+          <div class="comp-row">
+            <div class="cl-label">AI THEORY</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:80%; background:var(--ps);"></div></div>
+            <div class="cl-val">4 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">TOOLS &amp; PLATFORMS</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:80%; background:var(--ps);"></div></div>
+            <div class="cl-val">4 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">ARCHITECT &amp; ENG.</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:40%; background:var(--ps);"></div></div>
+            <div class="cl-val">2 / 5</div>
+          </div>
+          <div class="comp-row">
+            <div class="cl-label">STRATEGY &amp; GOV.</div>
+            <div class="cl-bar"><div class="cl-fill" style="width:100%; background:var(--ps);"></div></div>
+            <div class="cl-val">5 / 5</div>
+          </div>
+        </div>
+      </div>
+      <div class="pg-card">
+        <div class="eyebrow">LEARNING MILESTONES</div>
+        <div class="milestone-grid">
+          <div class="ml">AI Literacy<br/>for Leaders</div>
+          <div class="ml">Formulating<br/>AI Strategy</div>
+          <div class="ml">Managing<br/>AI Adoption</div>
+          <div class="ml">Governance,<br/>Risk &amp; Law</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="samples">
+      <div class="eyebrow">SAMPLE COURSES &amp; PROJECTS</div>
+      <div class="samples-tags">
+        <span class="tag-chip">AI LITERACY FOR LEADERS</span>
+        <span class="tag-chip">AI STRATEGY</span>
+        <span class="tag-chip">ADOPTION &amp; READINESS</span>
+        <span class="tag-chip">AI GOVERNANCE</span>
+        <span class="tag-chip">RISK &amp; LAW</span>
+        <span class="tag-chip">RESPONSIBLE DEPLOYMENT</span>
+        <span class="tag-chip">&hellip;AND MORE</span>
+      </div>
+    </div>
+
+    <div class="ftr">
+      <div>KUBICLE &middot; AI FRAMEWORK</div>
+      <div>PERSONA 04, STRATEGIST</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 10 - FINAL CTA ====================== -->
+<section class="page">
+  <div class="frame">
+    <div class="hdr">
+      <div class="logo-row">
+        <div class="logo"><img src="../../academies/project-management/img/kubicle-logo-white.png" alt="Kubicle"/></div>
+      </div>
+      <div class="pno">10 / 10</div>
+    </div>
+
+    <div class="geo-arch" style="width:240px; height:240px; left:-60px; top:25%; color:rgba(0,138,143,0.10);"></div>
+    <div class="dot-pink" style="right:60mm; top:38mm;"></div>
+
+    <div style="margin-top:18mm;">
+      <div class="eyebrow">YOUR NEXT STEP</div>
+      <h2 class="h-page" style="margin-top:14px;">
+        Let&rsquo;s calibrate<br/>your mix.
+      </h2>
+      <p class="body" style="margin-top:18px; max-width:520px;">
+        Every organization&rsquo;s AI capability mix looks different. We&rsquo;ll
+        benchmark your team against the four personas, design the right mix, and build
+        the program: customized, outcomes&#8209;focused, and ready to deploy.
+      </p>
+    </div>
+
+    <div class="cta-buttons">
+      <a class="btn btn-primary" href="../../try-free/business.html">Talk to Sales &rarr;</a>
+    </div>
+
+    <div class="contact-row">
+      <div>
+        <div class="eyebrow ce">VISIT</div>
+        <div class="cv">kubicle.com</div>
+      </div>
+      <div>
+        <div class="eyebrow ce">EMAIL</div>
+        <div class="cv">sales@kubicle.com</div>
+      </div>
+      <div>
+        <div class="eyebrow ce">OFFICES</div>
+        <div class="cv">Dublin, Ireland</div>
+      </div>
+    </div>
+
+    <div class="tag-card">
+      <div class="deco"><div class="b1"></div><div class="b2"></div><div class="b3"></div></div>
+      <div class="eyebrow">KUBICLE &middot; AI FRAMEWORK</div>
+      <h2>Scalable.<br/>Customizable.<br/>Outcomes&#8209;focused.</h2>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
