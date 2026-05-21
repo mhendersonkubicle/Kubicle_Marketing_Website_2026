@@ -216,5 +216,28 @@ h1 {
   </div>
 </main>
 
+<!-- ============================== CONVERSION TRACKING ==============================
+     Push a dataLayer event when the visitor picks a path on /try-free/. GTM picks
+     it up and forwards to GA4 / PostHog / etc. The two CTA cards are <a> elements,
+     so the event fires on navigation click; same-tab nav means the page is still
+     here when the dataLayer push completes. ============================== -->
+<script>
+(function () {
+  function trackPath(label, href) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'try_free_select',
+      path: label,
+      link_location: 'try-free',
+      link_url: href
+    });
+  }
+  var business   = document.querySelector('a.card.business');
+  var individual = document.querySelector('a.card.individual');
+  if (business)   business.addEventListener('click',   function () { trackPath('business',   business.href); });
+  if (individual) individual.addEventListener('click', function () { trackPath('individual', individual.href); });
+})();
+</script>
+
 </body>
 </html>

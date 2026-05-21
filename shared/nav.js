@@ -675,6 +675,75 @@
     populateLibrary();
     initMobileMenu();
     injectFloatCta();
+    initTryFreeFunnelTracking();
+  }
+
+  // ---- Try for Free funnel tracking ---------------------------------------
+  // One delegated click listener catches every Try for Free / free-tier CTA
+  // on every page (~150 buttons site-wide) and pushes a single dataLayer event
+  // GTM can fan out to GA4, PostHog, etc. Captures derived location context
+  // (nav, hero, pricing card, float CTA, etc.) automatically from the DOM
+  // ancestry, so any new CTAs are tracked the moment they're added.
+  function initTryFreeFunnelTracking() {
+    if (window.__kbcFunnelTracking) return;   // idempotent
+    window.__kbcFunnelTracking = true;
+
+    // URL patterns that count as "Try for Free" entry-points.
+    var TRY_FREE_RE = /\/(try-free\/?|free-tier-sign-up|join-for-free)(?:[/?#]|$)/;
+
+    // Ancestor classes that map to a friendly location label. First match wins.
+    var LOCATION_RULES = [
+      ['.nav, .nav-utility',                'nav'              ],
+      ['.shared-float-cta, #float-cta',     'float_cta'        ],
+      ['.cta-strip',                        'cta_strip'        ],
+      ['.hero, .hero-cta-row',              'hero'             ],
+      ['.acad-price-card, .price-card, ' +
+       '.all-access-card, .free-tier-card', 'pricing_card'     ],
+      ['.impact-card, .impact-grid',        'impact_tile'      ],
+      ['.compare-section, .compare-table',  'comparison_table' ],
+      ['.faq-grid, .faq-section',           'faq_section'      ],
+      ['.indiv-priceblock, .aa-priceblock', 'individual_price' ],
+      ['.subjects-scroller, .acad-grid',    'subject_grid'     ],
+      ['footer.site-footer',                'footer'           ]
+    ];
+
+    function deriveLocation(a) {
+      // Explicit override always wins
+      var explicit = a.getAttribute('data-cta-location');
+      if (explicit) return explicit;
+      for (var i = 0; i < LOCATION_RULES.length; i++) {
+        if (a.closest(LOCATION_RULES[i][0])) return LOCATION_RULES[i][1];
+      }
+      return 'page';
+    }
+
+    function destinationLabel(href) {
+      // Normalise the destination so reports group cleanly
+      if (/free-tier-sign-up/.test(href)) return 'free_tier_signup_quiz';
+      if (/try-free\/business/.test(href)) return 'try_free_business';
+      if (/try-free/.test(href))           return 'try_free_landing';
+      if (/join-for-free/.test(href))      return 'legacy_join_for_free';
+      return 'unknown';
+    }
+
+    document.addEventListener('click', function (e) {
+      // Find the nearest <a> the click landed on (covers clicks on inner
+      // <span>s like the arrow glyph). Match against the resolved .href
+      // (absolute URL) so relative links like "try-free/index.html" match too.
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      if (!TRY_FREE_RE.test(a.href || '')) return;
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event:         'try_free_cta_click',
+        cta_text:      (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80),
+        link_url:      a.href,
+        link_dest:     destinationLabel(a.href),
+        link_location: deriveLocation(a),
+        source_page:   window.location.pathname
+      });
+    }, { capture: true });
   }
 
   // ---- Dropdown behavior ---------------------------------------------------
