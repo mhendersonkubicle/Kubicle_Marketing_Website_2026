@@ -615,6 +615,12 @@ function submitCatalog(e) {
     });
   })
   .then(function () {
+    // Conversion tracking: catalog form successfully submitted
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event:     'download_catalog_submit',
+      form_name: 'catalog_download'
+    });
     form.innerHTML = '<div class="cl-success">'
       + '<div class="ok"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></div>'
       + '<div class="h">Catalog on its way.</div>'

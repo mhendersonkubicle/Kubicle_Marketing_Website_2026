@@ -114,6 +114,51 @@ const GSC_HEAD = GSC_VERIFICATION_TOKENS
   .map(t => '<meta name="google-site-verification" content="' + t + '"/>')
   .join('\n');
 
+// Site-wide form_start tracker. Inlined into every page (head, before forms
+// render) because some pages (catalog, free-tier-sign-up, etc.) don't load
+// shared/nav.js. Mirrors GA4's recommended `form_start` event so the GTM tag
+// "Form Start" can be wired without per-page instrumentation.
+// Fires once per form per pageview when the user first focuses an input.
+const FORM_START_HEAD = ''
+  + '<!-- Site-wide form_start tracker -->\n'
+  + '<script>\n'
+  + '(function () {\n'
+  + '  if (window.__kbcFormStartTracking) return;\n'
+  + '  window.__kbcFormStartTracking = true;\n'
+  + '  var NAME_MAP = {\n'
+  + '    "cl-form":      "catalog_download",\n'
+  + '    "tf-form":      "book_demo",\n'
+  + '    "kbcNewsForm":  "newsletter"\n'
+  + '  };\n'
+  + '  var fired = {};\n'
+  + '  function handler(e) {\n'
+  + '    var t = e.target;\n'
+  + '    if (!t || !t.tagName) return;\n'
+  + '    var tag = t.tagName;\n'
+  + '    if (tag !== "INPUT" && tag !== "TEXTAREA" && tag !== "SELECT") return;\n'
+  + '    if (tag === "INPUT") {\n'
+  + '      var ty = (t.type || "").toLowerCase();\n'
+  + '      if (ty === "hidden" || ty === "submit" || ty === "button" || ty === "reset") return;\n'
+  + '    }\n'
+  + '    var form = t.form || (t.closest && t.closest("form"));\n'
+  + '    if (!form) return;\n'
+  + '    var id = form.id || "";\n'
+  + '    if (fired[id]) return;\n'
+  + '    fired[id] = true;\n'
+  + '    var name = NAME_MAP[id] || (id ? id.toLowerCase().replace(/[^a-z0-9_]/g, "_") : "unknown_form");\n'
+  + '    window.dataLayer = window.dataLayer || [];\n'
+  + '    window.dataLayer.push({\n'
+  + '      event: "form_start",\n'
+  + '      form_name: name,\n'
+  + '      form_id: id || null,\n'
+  + '      source_page: window.location.pathname\n'
+  + '    });\n'
+  + '  }\n'
+  + '  document.addEventListener("focus", handler, { capture: true });\n'
+  + '})();\n'
+  + '</script>\n'
+  + '<!-- End form_start tracker -->';
+
 // Read the shared scripts once. Re-eval them in a fresh JSDOM window per page.
 const NAV_JS    = fs.readFileSync(NAV_JS_PATH,    'utf8');
 const FOOTER_JS = fs.readFileSync(FOOTER_JS_PATH, 'utf8');
@@ -360,6 +405,12 @@ function injectGsc(html) {
   return html.replace(/<head(\s[^>]*)?>/i, function (m) { return m + '\n' + GSC_HEAD; });
 }
 
+// Insert the form_start tracker into <head>. Idempotent.
+function injectFormStart(html) {
+  if (html.indexOf('__kbcFormStartTracking') !== -1) return html;
+  return html.replace(/<head(\s[^>]*)?>/i, function (m) { return m + '\n' + FORM_START_HEAD; });
+}
+
 
 // ---------------------------------------------------------------------------
 // Per-page pre-render
@@ -546,6 +597,9 @@ function main() {
       // Google Search Console meta tag; placement within <head> doesn't matter
       // for verification, but goes last so it sits near the top.
       out = injectGsc(out);
+      // Site-wide form_start tracker — must be in <head> so it can register
+      // its focus listener before any form input is interacted with.
+      out = injectFormStart(out);
       // HubSpot loads at the bottom of <body> per HubSpot's instructions.
       out = injectHubspot(out);
       fs.writeFileSync(dst, out);
