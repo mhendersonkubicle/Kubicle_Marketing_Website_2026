@@ -540,6 +540,7 @@
     + '            <a class="dd-link" href="' + BASE + 'blog/index.html"><span class="dd-ico">' + ico('edit') + '</span>Blog</a>'
     + '            <a class="dd-link" href="' + BASE + 'resources/case-studies.html"><span class="dd-ico">' + ico('docText') + '</span>Case Studies</a>'
     + '            <a class="dd-link" href="' + BASE + 'resources/webinars.html"><span class="dd-ico">' + ico('play') + '</span>Webinars</a>'
+    + '            <a class="dd-link" href="' + BASE + 'resources/assessments/index.html"><span class="dd-ico">' + ico('target') + '</span>Assessments</a>'
     + '            <a class="dd-link" href="https://support.kubicle.com/"><span class="dd-ico">' + ico('helpCircle') + '</span>Support</a>'
     + '            <a class="dd-link" href="https://kubicle.onset.io/roadmap"><span class="dd-ico">' + ico('map') + '</span>Roadmap</a>'
     + '            <div class="dd-col-label" style="border-top: 1px solid var(--nav-alice); margin-top: 10px; padding: 12px 8px 6px;">About Us</div>'
@@ -867,6 +868,7 @@
     html +=     '<a class="m-sublink" href="' + BASE + 'blog/index.html"><span class="m-ico">' + ico('edit') + '</span>Blog</a>';
     html +=     '<a class="m-sublink" href="' + BASE + 'resources/case-studies.html"><span class="m-ico">' + ico('docText') + '</span>Case Studies</a>';
     html +=     '<a class="m-sublink" href="' + BASE + 'resources/webinars.html"><span class="m-ico">' + ico('play') + '</span>Webinars</a>';
+    html +=     '<a class="m-sublink" href="' + BASE + 'resources/assessments/index.html"><span class="m-ico">' + ico('target') + '</span>Assessments</a>';
     html +=     '<a class="m-sublink" href="https://support.kubicle.com/"><span class="m-ico">' + ico('helpCircle') + '</span>Support</a>';
     html +=     '<a class="m-sublink" href="https://kubicle.onset.io/roadmap"><span class="m-ico">' + ico('map') + '</span>Roadmap</a>';
     html +=     '<div class="m-group-label">About Us</div>';

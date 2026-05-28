@@ -194,6 +194,7 @@
     + '          <li><a href="https://status.kubicle.com/" target="_blank" rel="noopener">Platform Status</a></li>'
     + '          <li><a href="' + BASE + 'resources/guides/ai-use-policy.html">AI Use Policy</a></li>'
     + '          <li><a href="' + BASE + 'resources/assessments/data-literacy.html">Data Literacy Assessment</a></li>'
+    + '          <li><a href="' + BASE + 'resources/assessments/ai-literacy.html">AI Literacy Assessment</a></li>'
     + '        </ul>'
     + '        <h5 style="margin-top: 20px;">Contact</h5>'
     + '        <ul>'

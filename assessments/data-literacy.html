@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Data Literacy Assessment &middot; Find your data persona | Kubicle</title>
+<meta name="description" content="Take Kubicle's 5-minute Data & Digital Literacy diagnostic. Answer 27 quick questions and discover your data persona across the four pillars of data literacy."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/assessments/data-literacy"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:title" content="Data Literacy Assessment | Kubicle"/>
+<meta property="og:description" content="Answer 27 quick questions and discover your data persona across four pillars: Reading, Working with, Arguing with and Analyzing data."/>
+<meta property="og:url" content="https://www.kubicle.com/assessments/data-literacy"/>
+
+<meta name="theme-color" content="#FAFAFA"/>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<link rel="stylesheet" href="../shared/styles/tokens.css"/>
+
+<style>
+/* ============================== RESET ============================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+a { color: inherit; text-decoration: none; }
+img, svg { max-width: 100%; display: block; }
+
+:root {
+  --as-bg:          #FAFAFA;
+  --as-sidebar-bg:  #FCE4EC;   /* tinted to the data accent */
+  --as-panel-bg:    #F4F5F2;
+  --as-text:        #052438;
+  --as-text-muted:  #7A6470;
+  --as-card-border: #ECE2E7;
+  --as-done-green:  #157A3F;
+}
+
+body {
+  font-family: var(--body, "Satoshi","Helvetica Neue",Arial,sans-serif);
+  color: var(--as-text);
+  background: var(--as-bg);
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+}
+
+/* ============================== STEP CONTAINERS ============================== */
+.step {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 460ms ease, transform 460ms ease;
+  will-change: opacity, transform;
+}
+.step.is-visible { opacity: 1; transform: translateY(0); }
+.step.is-exiting { opacity: 0; transform: translateY(0); }
+
+/* ============================== INTRO STEP ============================== */
+.intro-step {
+  flex: 1;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+  padding: 48px 24px 64px;
+  background:
+    radial-gradient(ellipse 60% 60% at 50% 0%, rgba(var(--accent-rgb),0.10), transparent 70%),
+    var(--as-bg);
+  min-height: 100vh;
+}
+.intro-logo { display: block; width: 56px; height: 56px; margin: 0 auto 48px; flex-shrink: 0; }
+.intro-logo img { display: block; width: 56px; height: 56px; }
+
+.intro-pill {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #fff;
+  border: 1px solid var(--as-card-border);
+  border-radius: 999px;
+  padding: 8px 20px;
+  box-shadow: 0 4px 16px -6px rgba(11,27,43,0.08);
+  margin-bottom: 28px;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-weight: 600; font-size: 14px; color: var(--accent);
+  letter-spacing: 0.005em;
+}
+.intro-pill svg { width: 17px; height: 17px; }
+
+.intro-h {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: clamp(34px, 4.6vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.028em;
+  line-height: 1.04;
+  color: var(--as-text);
+  max-width: 820px;
+  margin: 0 auto 22px;
+}
+.intro-h em { font-style: normal; color: var(--accent); }
+.intro-sub {
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 1.5;
+  color: var(--as-text-muted);
+  max-width: 660px;
+  margin: 0 auto 36px;
+}
+
+/* Intro form */
+.intro-form {
+  width: 100%;
+  max-width: 460px;
+  display: grid;
+  gap: 14px;
+  text-align: left;
+  margin: 0 auto;
+}
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 480px) { .field-row { grid-template-columns: 1fr; } }
+.field label {
+  display: block;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 13px; font-weight: 600;
+  color: var(--as-text-muted);
+  margin-bottom: 6px;
+}
+.field input {
+  width: 100%;
+  font-family: var(--body, "Satoshi",sans-serif);
+  font-size: 16px;
+  color: var(--as-text);
+  background: #fff;
+  border: 1.5px solid var(--as-card-border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.field input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb),0.14);
+}
+.field input.invalid { border-color: #D7263D; }
+.form-error {
+  display: none;
+  font-size: 13px; color: #D7263D;
+  margin-top: -2px;
+}
+.form-error.show { display: block; }
+
+.btn-go {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 10px;
+  width: 100%;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-weight: 700; font-size: 17px;
+  letter-spacing: -0.005em;
+  height: 56px;
+  padding: 0 36px;
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px -8px rgba(var(--accent-rgb),0.55);
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+  margin-top: 6px;
+}
+.btn-go:hover {
+  background: var(--accent-d);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px -8px rgba(var(--accent-rgb),0.65);
+}
+.intro-fineprint {
+  margin-top: auto;        /* pin to the bottom of the full-height intro */
+  padding-top: 40px;
+  text-align: center;
+  font-size: 12.5px; color: var(--as-text-muted);
+  max-width: 460px;
+}
+.intro-fineprint a { color: var(--accent); text-decoration: underline; }
+
+/* ============================== QUIZ SHELL ============================== */
+.quiz-shell {
+  display: none;
+  grid-template-columns: 34% 66%;
+  flex: 1;
+  min-height: 100vh;
+}
+.quiz-shell.is-active { display: grid; }
+@media (max-width: 900px) { .quiz-shell.is-active { display: block; } }
+
+/* ============================== SIDEBAR ============================== */
+.quiz-sidebar {
+  background: var(--as-sidebar-bg);
+  padding: 36px 44px 44px;
+  display: flex; flex-direction: column;
+  gap: 40px;
+  min-height: 100vh;
+}
+@media (max-width: 900px) { .quiz-sidebar { display: none; } }
+
+.sidebar-logo { width: 48px; height: 48px; }
+.sidebar-logo img { width: 100%; height: 100%; }
+
+.sb-block { max-width: 340px; }
+.sb-heading {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--as-text-muted);
+  margin-bottom: 22px;
+}
+.sb-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+.sb-item { display: grid; grid-template-columns: 30px 1fr; gap: 14px; align-items: center; opacity: 0.62; transition: opacity 0.25s; }
+.sb-item.is-active { opacity: 1; }
+.sb-item.is-done   { opacity: 1; }
+.sb-dot {
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 2px solid rgba(var(--accent-rgb),0.4);
+  display: flex; align-items: center; justify-content: center;
+  background: #fff;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-weight: 700; font-size: 13px; color: var(--accent);
+  flex-shrink: 0;
+}
+.sb-item.is-active .sb-dot { background: var(--accent); border-color: var(--accent); color: #fff; }
+.sb-item.is-done .sb-dot { background: var(--accent); border-color: var(--accent); color: #fff; }
+.sb-dot svg { width: 15px; height: 15px; stroke: #fff; fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.sb-title {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 16px; font-weight: 700;
+  letter-spacing: -0.012em; color: var(--as-text);
+}
+.sb-count { font-size: 13px; color: var(--as-text-muted); margin-top: 2px; }
+.sb-item.is-done .sb-title { color: var(--accent-d); }
+
+/* ============================== MAIN PANEL ============================== */
+.quiz-main {
+  background: var(--as-panel-bg);
+  padding: 32px 56px 64px;
+  display: flex; flex-direction: column;
+  min-height: 100vh;
+}
+@media (max-width: 720px) { .quiz-main { padding: 28px 22px 56px; } }
+
+.main-top {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.quiz-back {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 15px; font-weight: 600;
+  color: var(--accent);
+  background: transparent; border: 0; padding: 0;
+  cursor: pointer;
+}
+.quiz-back:hover { color: var(--accent-d); }
+.q-counter {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 13px; font-weight: 600;
+  color: var(--as-text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* progress bar (desktop, top of panel) */
+.q-progress {
+  height: 6px; width: 100%;
+  background: rgba(var(--accent-rgb),0.14);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+.q-progress-fill {
+  height: 100%; width: 0%;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+.q-eyebrow {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.q-text {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  color: var(--as-text);
+  margin-bottom: 32px;
+  max-width: 760px;
+}
+
+/* card area gets a quick fade when the question changes */
+.q-card { transition: opacity 0.22s ease; }
+.q-card.fading { opacity: 0; }
+
+/* ============================== OPTIONS (1-5 scale) ============================== */
+.q-options { display: grid; gap: 12px; max-width: 820px; }
+.q-option {
+  display: flex; align-items: center; gap: 16px;
+  text-align: left;
+  font-family: var(--body, "Satoshi",sans-serif);
+  font-size: 15px; line-height: 1.45;
+  color: var(--as-text);
+  background: #fff;
+  border: 1.5px solid var(--as-card-border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: border-color 0.14s, transform 0.14s, box-shadow 0.14s, background 0.14s;
+  width: 100%;
+}
+.q-option:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px -16px rgba(var(--accent-rgb),0.5);
+}
+.q-option.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.q-num {
+  width: 34px; height: 34px; flex-shrink: 0;
+  border-radius: 9px;
+  background: rgba(var(--accent-rgb),0.12);
+  color: var(--accent-d);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-weight: 700; font-size: 15px;
+}
+.q-option.selected .q-num { background: var(--accent); color: #fff; }
+
+/* ============================== LOADING STEP ============================== */
+.loading-wrap {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 70vh; text-align: center;
+}
+.load-h {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: clamp(26px, 3.2vw, 38px); font-weight: 700;
+  color: var(--as-text); letter-spacing: -0.02em; line-height: 1.1;
+  margin: 0 0 14px; max-width: 720px;
+}
+.load-sub { font-size: 17px; color: var(--as-text-muted); margin: 0 0 38px; }
+.loading-spinner {
+  width: 74px; height: 74px;
+  border: 3px solid rgba(var(--accent-rgb),0.18);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1.05s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ============================== RESULT STEP ============================== */
+.result-wrap {
+  max-width: 1000px; margin: 0 auto; width: 100%;
+}
+.result-head { text-align: center; margin-bottom: 40px; }
+.result-eyebrow {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 14px;
+}
+.result-persona {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: clamp(34px, 5vw, 58px); font-weight: 700;
+  letter-spacing: -0.026em; line-height: 1.02;
+  color: var(--as-text);
+}
+.result-tier {
+  display: inline-flex; gap: 5px; margin-top: 16px;
+}
+.result-tier .seg { width: 28px; height: 7px; border-radius: 3px; background: rgba(11,27,43,0.12); }
+.result-tier .seg.on { background: var(--accent); }
+
+.result-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--as-card-border);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 30px 70px -40px rgba(11,27,43,0.22);
+}
+@media (max-width: 820px) { .result-grid { grid-template-columns: 1fr; gap: 28px; padding: 28px; } }
+.result-desc h3 {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 22px; font-weight: 700; letter-spacing: -0.015em;
+  color: var(--as-text); margin-bottom: 6px;
+}
+.result-score-line { font-size: 14px; color: var(--as-text-muted); margin-bottom: 16px; }
+.result-score-line strong { color: var(--accent-d); font-weight: 700; }
+.result-desc p { font-size: 15.5px; line-height: 1.6; color: var(--as-text); }
+
+.radar-card { display: flex; flex-direction: column; align-items: center; }
+.radar-card svg { width: 100%; max-width: 440px; height: auto; }
+
+/* per-pillar breakdown cards */
+.axis-bars-head {
+  margin: 44px auto 18px;
+  max-width: 1000px;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-weight: 700; font-size: 13px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--as-text-muted);
+}
+.axis-bars { max-width: 1000px; margin-left: auto; margin-right: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 700px) { .axis-bars { grid-template-columns: 1fr; } }
+.axis-card {
+  background: #fff;
+  border: 1px solid var(--as-card-border);
+  border-radius: 16px;
+  padding: 18px 20px;
+}
+.axis-card-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.axis-name { font-family: var(--head, "Clash Grotesk",sans-serif); font-weight: 700; font-size: 16px; letter-spacing: -0.012em; color: var(--as-text); }
+.axis-val { font-family: var(--head, "Clash Grotesk",sans-serif); font-weight: 700; font-size: 14.5px; color: var(--accent-d); white-space: nowrap; }
+.axis-track { display: block; height: 10px; background: rgba(var(--accent-rgb),0.12); border-radius: 999px; overflow: hidden; margin: 13px 0 11px; }
+.axis-fill { display: block; height: 100%; background: var(--accent); border-radius: 999px; width: 0; transition: width 0.8s cubic-bezier(0.4,0,0.2,1); }
+.axis-desc { font-size: 13px; line-height: 1.5; color: var(--as-text-muted); }
+
+.result-cta {
+  margin-top: 44px; text-align: center;
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-weight: 700; font-size: 16px; letter-spacing: -0.005em;
+  height: 56px; padding: 0 32px; border-radius: 14px; cursor: pointer; border: 0;
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+.btn .arr { transition: transform 0.2s; }
+.btn:hover .arr { transform: translateX(3px); }
+.btn-primary { background: var(--accent); color: #fff; box-shadow: 0 8px 22px -8px rgba(var(--accent-rgb),0.55); }
+.btn-primary:hover { background: var(--accent-d); transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--as-text); border: 1.5px solid var(--as-card-border); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent-d); }
+
+/* ============================== MOBILE PROGRESS BAR ============================== */
+.mobile-progress-bar { display: none; }
+@media screen and (max-width: 900px) {
+  .mobile-progress-bar {
+    display: block; position: fixed; top: 0; left: 0;
+    width: 100%; height: 6px; background: rgba(var(--accent-rgb),0.16); z-index: 9999;
+  }
+  .mobile-progress-fill { width: 0%; height: 100%; background: var(--accent); transition: width 0.4s cubic-bezier(0.4,0,0.2,1); }
+  body { padding-top: 6px; }
+  .q-progress { display: none; }
+}
+
+/* ============================== FOOTER ============================== */
+.as-foot {
+  text-align: center; padding: 22px 12px; font-size: 11.5px; color: var(--as-text-muted);
+}
+.as-foot a { color: var(--as-text-muted); margin: 0 8px; }
+.as-foot a:hover { color: var(--as-text); }
+
+/* ============================== PRINT-TO-PDF LINK (result only) ============================== */
+.result-print { margin-top: 24px; text-align: center; }
+.result-print a {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 13px; font-weight: 600;
+  color: var(--as-text-muted);
+  border-bottom: 1px solid var(--as-card-border);
+  padding-bottom: 1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.result-print a:hover { color: var(--accent-d); border-bottom-color: var(--accent); }
+
+/* ============================== PRINT STYLES (report only) ============================== */
+@media print {
+  @page { margin: 14mm; }
+  body { background: #fff !important; }
+  .mobile-progress-bar,
+  .quiz-sidebar,
+  #step-intro, #step-question, #step-loading,
+  .main-top, .q-progress,
+  .result-cta, .result-print,
+  .as-foot { display: none !important; }
+  .quiz-shell { display: block !important; }
+  .quiz-main { padding: 0 !important; background: #fff !important; min-height: 0 !important; }
+  .step { opacity: 1 !important; transform: none !important; }
+  #step-result { display: block !important; }
+  .result-wrap { max-width: 100% !important; }
+  .result-grid { box-shadow: none !important; border: 1px solid #E2E8F0 !important; break-inside: avoid; }
+  .axis-bars, .axis-card { break-inside: avoid; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+}
+</style>
+</head>
+<body class="theme-data">
+
+<!-- ============================== MOBILE PROGRESS ============================== -->
+<div class="mobile-progress-bar"><div class="mobile-progress-fill" id="mobile-progress-fill"></div></div>
+
+<!-- ============================== STEP 1: INTRO ============================== -->
+<div class="step intro-step" id="step-intro">
+  <a href="../index.html" class="intro-logo" aria-label="Kubicle home">
+    <img src="../img/free-tier-sign-up/off-white-filled-bm.svg" alt="Kubicle"/>
+  </a>
+
+  <div class="intro-pill">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
+    Estimated time: 5&ndash;7 minutes
+  </div>
+
+  <h1 class="intro-h">Welcome to Kubicle's Data &amp; Digital Literacy <em>Diagnostic</em></h1>
+
+  <p class="intro-sub">
+    This short assessment evaluates your strengths across four essential data capabilities. You'll answer
+    a series of reflective questions about your skills, confidence and experience with data, then discover
+    which of our four data personas fits you best.
+  </p>
+
+  <form class="intro-form" id="intro-form" novalidate>
+    <div class="field-row">
+      <div class="field">
+        <label for="first-name">First name</label>
+        <input type="text" id="first-name" name="first-name" autocomplete="given-name" required/>
+      </div>
+      <div class="field">
+        <label for="last-name">Last name</label>
+        <input type="text" id="last-name" name="last-name" autocomplete="family-name" required/>
+      </div>
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" autocomplete="email" required/>
+    </div>
+    <p class="form-error" id="form-error">Please enter your name and a valid email to begin.</p>
+    <button class="btn-go" type="submit">Start Diagnostic <span class="arr">&rarr;</span></button>
+  </form>
+
+  <p class="intro-fineprint">
+    By continuing, you agree to our <a href="../terms-of-service.html">terms of service</a>
+    and <a href="../privacy-policy.html">privacy policy</a>.
+  </p>
+</div>
+
+<!-- ============================== QUIZ SHELL ============================== -->
+<div class="quiz-shell" id="quiz-shell">
+
+  <!-- ====== SIDEBAR ====== -->
+  <aside class="quiz-sidebar" aria-label="Progress">
+    <a href="../index.html" class="sidebar-logo" aria-label="Kubicle home">
+      <img src="../img/free-tier-sign-up/off-white-filled-bm.svg" alt="Kubicle"/>
+    </a>
+    <div class="sb-block">
+      <div class="sb-heading">The four data pillars</div>
+      <ol class="sb-list" id="sb-list"><!-- rendered by JS --></ol>
+    </div>
+  </aside>
+
+  <!-- ====== MAIN PANEL ====== -->
+  <div class="quiz-main">
+
+    <!-- QUESTION STEP -->
+    <div class="step" id="step-question">
+      <div class="main-top">
+        <button class="quiz-back" type="button" id="q-back">&larr; Back</button>
+        <span class="q-counter" id="q-counter">Question 1 of 27</span>
+      </div>
+      <div class="q-progress"><div class="q-progress-fill" id="q-progress-fill"></div></div>
+
+      <div class="q-card" id="q-card">
+        <div class="q-eyebrow" id="q-eyebrow"></div>
+        <h2 class="q-text" id="q-text"></h2>
+        <div class="q-options" id="q-options"></div>
+      </div>
+    </div>
+
+    <!-- LOADING STEP -->
+    <div class="step" id="step-loading">
+      <div class="loading-wrap">
+        <h2 class="load-h">Scoring your data literacy profile</h2>
+        <p class="load-sub">Mapping your answers across the four pillars&hellip;</p>
+        <div class="loading-spinner" aria-label="Loading"></div>
+      </div>
+    </div>
+
+    <!-- RESULT STEP -->
+    <div class="step" id="step-result">
+      <div class="result-wrap">
+        <div class="result-head">
+          <div class="result-eyebrow" id="result-eyebrow">Your data persona</div>
+          <div class="result-persona" id="result-persona"></div>
+          <div class="result-tier" id="result-tier" aria-hidden="true"></div>
+        </div>
+
+        <div class="result-grid">
+          <div class="result-desc">
+            <h3 id="result-name"></h3>
+            <p class="result-score-line">Overall data literacy score: <strong id="result-score"></strong> / 5</p>
+            <p id="result-blurb"></p>
+          </div>
+          <div class="radar-card">
+            <div id="radar"></div>
+          </div>
+        </div>
+
+        <div class="axis-bars-head">Your scores across the four pillars</div>
+        <div class="axis-bars" id="axis-bars"></div>
+
+        <div class="result-cta" id="result-cta"></div>
+        <p class="result-print"><a href="#" id="print-report">Save my report as a PDF</a></p>
+      </div>
+    </div>
+
+  </div><!-- /.quiz-main -->
+</div><!-- /.quiz-shell -->
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="as-foot">
+  <a href="../privacy-policy.html">Privacy</a> &middot;
+  <a href="../terms-of-service.html">Terms</a> &middot;
+  <a href="../cookie-policy.html">Cookies</a>
+</footer>
+
+<!-- ============================== ASSESSMENT ENGINE ============================== -->
+<script>
+(function () {
+  "use strict";
+
+  /* =========================================================================
+   * CONFIG  ----  Everything academy-specific lives here. To build the next
+   * academy assessment, copy this file, swap the body theme class, and edit
+   * the three blocks below (axes, questions, personas).
+   * ========================================================================= */
+
+  // Persona bands on the 1-5 overall average. Edit thresholds here.
+  // A person is matched to the LAST persona whose `min` is <= their average.
+  var PERSONAS = [
+    {
+      min: 1.0, tier: 1, name: "Data Citizen",
+      blurb: "You understand the core concepts and theory behind data, digital tools and data projects. " +
+             "You may not lead complex projects yet, but you grasp the key principles and can contribute to " +
+             "data discussions. This is what lets business leaders take part in data and tech conversations " +
+             "without an analyst's execution skills."
+    },
+    {
+      min: 2.0, tier: 2, name: "Data Associate",
+      blurb: "You're at the start of your data analysis journey with a core set of technical and analytical " +
+             "skills built around no-code tools and foundational theory. You're comfortable with spreadsheets " +
+             "and presentation tools, can run simple queries, and use critical thinking to turn raw data into " +
+             "useful insight."
+    },
+    {
+      min: 3.0, tier: 3, name: "Data Wrangler",
+      blurb: "You can execute more complex data projects and lead parts of a data programme. With confidence, " +
+             "you clean, organise and transform raw data for analysts, with deep skills in core data technology " +
+             "and growing capability across other professional analyst tools."
+    },
+    {
+      min: 4.0, tier: 4, name: "Data Analyst",
+      blurb: "You're proficient in collecting, organising and interpreting data to make it useful across a " +
+             "business. You excel at complex analysis, storytelling and championing data projects, working with " +
+             "advanced techniques and tools like statistical analysis, Python, machine learning, and data prep " +
+             "with SQL and Alteryx."
+    }
+  ];
+
+  // Used to tag every analytics event so a single GTM trigger covers all
+  // assessments. When cloning for another persona set, change these two.
+  var ASSESSMENT_ID   = "data-literacy";
+  var ASSESSMENT_NAME = "Data Literacy";
+
+  // HubSpot lead capture (Forms Submissions API, same portal as the rest of the
+  // site). Form: "Assessment Submission". Name + email are submitted on quiz
+  // start so every starter is captured. To also store the persona/result, add
+  // those contact properties to the form and map them in submitToHubSpot().
+  var HUBSPOT_PORTAL_ID = "3294554";
+  var HUBSPOT_FORM_GUID = "a377af9e-f133-4a97-8ba7-6e88dc0de81a";
+
+  var ACADEMY_URL = "../academies/data-literacy/index.html";
+  var SIGNUP_URL  = "https://app.kubicle.com/free-tier/signup";
+
+  var AXES = [
+    { key: "reading",   label: "Reading Data",      blurb: "Recognising data types, judging their quality, and understanding data culture, ethics and access." },
+    { key: "working",   label: "Working with Data", blurb: "Collecting, cleaning, storing and governing data securely and effectively." },
+    { key: "arguing",   label: "Arguing with Data", blurb: "Communicating insights through clear visuals and stories tailored to your audience." },
+    { key: "analyzing", label: "Analyzing Data",    blurb: "Applying statistics and models to interpret data and solve real business problems." }
+  ];
+
+  // 27 questions. Each answer is scored 1-5 (its position in `a`).
+  var QUESTIONS = [
+    { axis:"reading", cat:"Data Concepts & Culture", q:"How confident are you in explaining the role of data in making business decisions?", a:[
+      "Low confidence. It's not something I've encountered in my role.",
+      "Some awareness. I understand that data is important, but I'd struggle to explain how it informs decision-making.",
+      "Growing confidence. I can explain the role of data in straightforward decisions and give basic examples.",
+      "High confidence. I regularly explain the importance of data in business discussions and can provide clear, relevant examples.",
+      "Expert confidence. I actively teach or coach others on how data supports decision-making in different business contexts." ] },
+    { axis:"reading", cat:"Data Concepts & Culture", q:"How often do you promote the use of data in team discussions or decision-making processes?", a:[
+      "Rarely. I don't usually reference data in team discussions or decisions.",
+      "Occasionally. I bring up data now and then, especially when prompted or when it's clearly relevant.",
+      "Regularly. I often encourage the use of data when discussing ideas or deciding on a course of action.",
+      "Proactively. I actively champion the use of data to guide conversations, even when others haven't considered it.",
+      "Consistently and influentially. I lead by example and encourage a culture where data informs decisions across the team." ] },
+    { axis:"reading", cat:"Data Concepts & Culture", q:"Can you identify ethical or legal risks when working with data in your organisation?", a:[
+      "Not yet. I'm not familiar with the ethical or legal risks related to working with data.",
+      "Basic awareness. I've heard of some risks but would need support to identify them in practice.",
+      "Functional understanding. I can recognise common ethical and legal risks in my day-to-day work.",
+      "Confident evaluator. I can identify a range of risks and explain their potential impacts to others.",
+      "Trusted advisor. I guide or support others in recognising and navigating ethical and legal risks with data." ] },
+    { axis:"reading", cat:"Data Concepts & Culture", q:"How confident are you in teaching others about ethical data usage in your role?", a:[
+      "Low confidence. I don't feel equipped to teach others about ethical data usage.",
+      "Some confidence. I understand the basics, but I'd need support to explain them to others.",
+      "Moderate confidence. I can explain ethical data practices to colleagues in straightforward situations.",
+      "High confidence. I frequently guide others on ethical data use and feel comfortable answering their questions.",
+      "Expert confidence. I actively teach, mentor, or lead discussions on ethical data usage within my team or organisation." ] },
+    { axis:"reading", cat:"Data Discovery & Access", q:"How independently can you identify and locate relevant datasets for a business question?", a:[
+      "Not independently. I rely entirely on others to provide the data I need.",
+      "With support. I can identify and locate relevant data when given clear instructions or guidance.",
+      "Some independence. I can usually find the data I need for typical business questions, though I sometimes need help.",
+      "Independent. I regularly identify and source relevant datasets on my own, even across multiple systems.",
+      "Highly independent. I proactively locate and evaluate datasets for diverse business needs, and I support others in doing the same." ] },
+    { axis:"reading", cat:"Data Discovery & Access", q:"Can you assess the trustworthiness of a new dataset before using it?", a:[
+      "No, not confidently. I tend to assume data is trustworthy without verifying it.",
+      "With guidance. I can assess a dataset's reliability when someone explains what to look for.",
+      "Somewhat independently. I know some signs of trustworthy data and use them in basic assessments.",
+      "Confidently. I regularly evaluate the quality, source, and limitations of data before using it.",
+      "Expertly. I assess data critically and help others determine whether a dataset is reliable for business use." ] },
+    { axis:"reading", cat:"Data Discovery & Access", q:"To what extent can you guide others to locate and access data across internal and external systems?", a:[
+      "Not at all. I'm unfamiliar with navigating these systems and cannot guide others.",
+      "With guidance. I can assist colleagues when provided clear instructions on where to look.",
+      "Somewhat independently. I can guide others through common internal systems but may struggle with new or external sources.",
+      "Confidently. I routinely help teammates locate and access data across both our internal repositories and external platforms.",
+      "Expert mentor. I train and empower others to navigate and extract data from diverse systems on their own." ] },
+
+    { axis:"working", cat:"Data Quality & Cleaning", q:"How confident are you in identifying and correcting errors in raw datasets?", a:[
+      "Low confidence. I struggle to spot errors in data and usually rely on others to fix them.",
+      "Developing confidence. I can find some obvious issues, like missing values or duplicates, but need help correcting them.",
+      "Moderate confidence. I can identify and fix common data issues using basic tools and checks.",
+      "High confidence. I regularly clean and correct raw datasets independently, even when issues are subtle or complex.",
+      "Expert level. I lead or support others in identifying and resolving data quality issues across large or messy datasets." ] },
+    { axis:"working", cat:"Data Quality & Cleaning", q:"Can you choose appropriate tools and methods for cleaning messy or incomplete data?", a:[
+      "No, not yet. I don't know which tools or methods to use when faced with messy or incomplete data.",
+      "With support. I can clean data when shown which tool or approach to use.",
+      "Some independence. I can select from a few known methods or tools, especially in familiar scenarios.",
+      "Confidently. I regularly choose the right tools and techniques based on the type and structure of the data I'm working with.",
+      "Strategically. I adapt my approach based on context and coach others on selecting and applying effective cleaning methods." ] },
+    { axis:"working", cat:"Data Quality & Cleaning", q:"Can you coach others on how to clean and validate data before analysis?", a:[
+      "No, not at all. I don't feel equipped to guide others in cleaning or validating data.",
+      "Limited ability. I understand the basics myself but would struggle to explain them to others.",
+      "Some confidence. I can support others in simple data cleaning tasks when asked.",
+      "Confident coach. I regularly help colleagues clean and validate data, offering guidance based on common scenarios.",
+      "Trusted mentor. I proactively coach others in data preparation best practices and can explain how to adapt approaches based on context." ] },
+    { axis:"working", cat:"Data Storage & Organization", q:"Can you effectively store and organise data using the systems provided by your organisation?", a:[
+      "No, not confidently. I'm unsure how to store or organise data using our systems.",
+      "With guidance. I can organise and store data when shown how or when following a set process.",
+      "Independently. I can store and organise data in our systems without help and follow good naming and structuring practices.",
+      "Efficiently. I regularly structure data in a way that makes it easy for others to access and use.",
+      "Systematically. I help define or improve how data should be stored across our systems and guide others in doing the same." ] },
+    { axis:"working", cat:"Data Storage & Organization", q:"How independently can you manage structured data across different tools or repositories?", a:[
+      "Not independently. I find it difficult to work with structured data unless I'm given specific instructions or help.",
+      "With support. I can manage structured data using familiar tools when guided through the steps.",
+      "Some independence. I can work with structured data in most common tools, though I may need assistance when switching between systems.",
+      "Confidently. I independently manage structured data across various repositories and adapt easily to different tools.",
+      "Expertly. I streamline and optimise how structured data is managed across platforms and regularly assist others in doing the same." ] },
+    { axis:"working", cat:"Data Sharing & Metadata", q:"How confident are you in preparing and formatting data for others to use?", a:[
+      "Low confidence. I rarely prepare data for others and wouldn't know how to structure it effectively.",
+      "Some confidence. I can format data for others if I'm given clear requirements or templates.",
+      "Functional confidence. I can independently prepare and format data that others can use with minimal clarification.",
+      "High confidence. I routinely prepare clean, well-structured datasets that are easy for others to understand and use.",
+      "Expert confidence. I lead by example and coach others on how to prepare and present data for a wide range of users." ] },
+    { axis:"working", cat:"Data Sharing & Metadata", q:"Can you create or understand metadata that describes a dataset's structure and contents?", a:[
+      "Not at all. I'm not familiar with what metadata is or how it's used to describe a dataset.",
+      "With guidance. I can understand basic metadata when it's explained to me or when following examples.",
+      "Some independence. I can interpret standard metadata fields and create basic descriptions of a dataset's structure and contents.",
+      "Confidently. I regularly use and create metadata to ensure others can understand and reuse my data effectively.",
+      "Expertly. I define metadata standards or practices in my team and coach others on creating meaningful, consistent documentation." ] },
+    { axis:"working", cat:"Data Sharing & Metadata", q:"Can you advise others on how to share data securely and ethically across platforms?", a:[
+      "Not at all. I'm not confident advising others on data sharing practices and don't fully understand the risks involved.",
+      "With guidance. I understand some secure sharing practices but would need help to explain or apply them.",
+      "Informed. I can advise others on basic secure and ethical data sharing in familiar platforms and scenarios.",
+      "Confident. I regularly help colleagues choose appropriate, compliant sharing methods for different platforms and data types.",
+      "Trusted advisor. I guide teams on ethical and secure data sharing and contribute to best practices or policy discussions." ] },
+    { axis:"working", cat:"Data Governance & Security", q:"How familiar are you with your organisation's data management policies?", a:[
+      "Not at all. I'm unaware of any formal data management policies in my organisation.",
+      "Aware but unclear. I've heard of the policies but don't know the details or where to find them.",
+      "Informed. I understand the key policies and follow them in my day-to-day work.",
+      "Confident. I actively apply data management policies and can explain them to others when needed.",
+      "Advocate. I promote good data management practices across the organisation and support others in following policy." ] },
+    { axis:"working", cat:"Data Governance & Security", q:"Can you apply legal and ethical principles when determining how to share or store data?", a:[
+      "Not yet. I'm not familiar with the legal or ethical considerations involved in sharing or storing data.",
+      "With guidance. I can follow rules and procedures when they're explained to me but wouldn't identify them myself.",
+      "Some confidence. I understand key principles and apply them in typical scenarios.",
+      "High confidence. I regularly apply relevant legal and ethical standards when deciding how to handle data.",
+      "Expert level. I advise others on how to store and share data responsibly, and help ensure compliance with internal and external requirements." ] },
+    { axis:"working", cat:"Data Governance & Security", q:"Can you assess and implement appropriate security practices when handling sensitive data?", a:[
+      "Not yet. I'm not familiar with data security practices or requirements.",
+      "With support. I can follow established procedures when guided but struggle to assess them myself.",
+      "Operational. I understand and apply basic security practices when working with sensitive data.",
+      "Confident. I independently assess risks and apply appropriate data protection measures in line with policies.",
+      "Security advocate. I help define or improve security practices and support others in applying them effectively." ] },
+
+    { axis:"arguing", cat:"Data Storytelling & Communicating Insights", q:"How confident are you in summarising insights from data to non-technical colleagues?", a:[
+      "Low confidence. I struggle to explain data insights in a way that non-technical colleagues can understand.",
+      "Developing confidence. I can share basic insights but often rely on others to help translate the message.",
+      "Moderate confidence. I can clearly summarise most insights and adapt my explanations to different audiences.",
+      "High confidence. I regularly translate complex data into simple, actionable messages for non-technical teams.",
+      "Expert communicator. I teach or coach others on how to effectively communicate data insights to diverse audiences." ] },
+    { axis:"arguing", cat:"Data Storytelling & Communicating Insights", q:"How often do you use visuals (charts, dashboards) to help communicate key data findings?", a:[
+      "Rarely. I don't use visuals when sharing data insights.",
+      "Occasionally. I use charts or dashboards when asked or when a tool provides them automatically.",
+      "Regularly. I choose visual tools to enhance my communication and make insights clearer.",
+      "Proactively. I consistently design and use visuals to highlight key findings and guide decisions.",
+      "Strategically. I help others use visual tools effectively and guide teams on best practices for data communication." ] },
+    { axis:"arguing", cat:"Data Storytelling & Communicating Insights", q:"Can you tailor your communication of data insights to different audiences (e.g., executives vs. technical teams)?", a:[
+      "Not yet. I tend to share insights the same way regardless of who I'm speaking to.",
+      "Limited adaptation. I try to adjust my messaging, but it doesn't always land with the audience.",
+      "Some flexibility. I adjust the level of detail or format depending on the audience's needs.",
+      "Clear and purposeful. I consistently tailor both the message and delivery to suit different stakeholders.",
+      "Highly adaptable. I coach others on how to adjust data storytelling based on audience background, goals, and context." ] },
+    { axis:"arguing", cat:"Data Storytelling & Communicating Insights", q:"How confident are you in training others on how to present data insights effectively?", a:[
+      "Low confidence. I don't feel equipped to train others on presenting data insights.",
+      "Some confidence. I understand what good data presentation looks like but would need help to teach it.",
+      "Moderate confidence. I can guide colleagues informally and offer tips on presenting data clearly.",
+      "High confidence. I regularly help others improve how they present insights through visuals and narrative.",
+      "Expert confidence. I lead training sessions or mentor teams on best practices for data storytelling and communication." ] },
+
+    { axis:"analyzing", cat:"Statistical Thinking", q:"How comfortable are you applying basic statistical techniques to interpret data patterns?", a:[
+      "Not comfortable. I avoid using statistics because I don't feel confident with the methods.",
+      "Somewhat comfortable. I can apply basic techniques like averages or percentages when shown how.",
+      "Comfortable. I use common statistical tools (e.g. mean, median, trend lines) to interpret data in routine tasks.",
+      "Very comfortable. I confidently apply a range of statistical techniques to identify patterns and support decisions.",
+      "Expert level. I teach others or lead discussions on how to use statistics to uncover meaningful insights from data." ] },
+    { axis:"analyzing", cat:"Statistical Thinking", q:"Can you evaluate correlations and causations in datasets using appropriate methods?", a:[
+      "Not yet. I'm unfamiliar with how to distinguish correlation from causation in data.",
+      "Basic understanding. I know the difference in theory but need help applying the right methods.",
+      "Competent. I can use basic techniques (e.g. scatter plots, correlation coefficients) to identify relationships.",
+      "Confident. I evaluate correlation and causation using appropriate methods and explain the implications clearly.",
+      "Expert. I guide others in assessing and interpreting relationships in data, including when correlation is misused." ] },
+    { axis:"analyzing", cat:"Advanced Analytics & Modelling", q:"How skilled are you at developing models to forecast or predict outcomes from data?", a:[
+      "Not skilled. I've never built a predictive model and don't know where to start.",
+      "Basic exposure. I've seen forecasting models used and could build one with step-by-step guidance.",
+      "Practitioner level. I can develop simple models using tools like Excel, Python, or BI platforms.",
+      "Confident modeller. I independently build and refine models to support forecasting or predictions.",
+      "Advanced expert. I design, implement, and improve predictive models and guide others in best practices." ] },
+    { axis:"analyzing", cat:"Advanced Analytics & Modelling", q:"Can you independently choose and apply the right analytical approach to a business problem?", a:[
+      "Not yet. I rely entirely on others to decide how to analyse business problems.",
+      "With support. I can follow a recommended approach but struggle to choose one myself.",
+      "Developing judgment. I can select and apply basic analytical methods in familiar situations.",
+      "Confident. I regularly choose appropriate techniques to solve a range of business problems with data.",
+      "Strategic thinker. I confidently select and adapt analytical approaches and mentor others on choosing the right method." ] },
+    { axis:"analyzing", cat:"Advanced Analytics & Modelling", q:"How confident are you in validating your analysis and challenging flawed interpretations of data?", a:[
+      "Not confident. I usually accept my results or others' interpretations without questioning them.",
+      "Somewhat confident. I can spot potential issues but often rely on others to confirm or challenge findings.",
+      "Reasonably confident. I review my work carefully and occasionally question others' conclusions.",
+      "Very confident. I regularly validate my analysis and speak up when I notice flawed assumptions or logic.",
+      "Expert level. I critically evaluate data interpretations, coach others in quality-checking their analysis, and foster a culture of healthy challenge." ] }
+  ];
+
+  /* =========================================================================
+   * STATE + DOM
+   * ========================================================================= */
+  var state = { idx: 0, answers: new Array(QUESTIONS.length).fill(null), user: {} };
+
+  var els = {
+    steps:        document.querySelectorAll("[id^='step-']"),
+    shell:        document.getElementById("quiz-shell"),
+    introForm:    document.getElementById("intro-form"),
+    formError:    document.getElementById("form-error"),
+    sbList:       document.getElementById("sb-list"),
+    qCard:        document.getElementById("q-card"),
+    qEyebrow:     document.getElementById("q-eyebrow"),
+    qText:        document.getElementById("q-text"),
+    qOptions:     document.getElementById("q-options"),
+    qCounter:     document.getElementById("q-counter"),
+    qProgress:    document.getElementById("q-progress-fill"),
+    mobileProg:   document.getElementById("mobile-progress-fill"),
+    back:         document.getElementById("q-back")
+  };
+
+  function axisIndex(key) { for (var i = 0; i < AXES.length; i++) if (AXES[i].key === key) return i; return -1; }
+  function axisLabel(key) { var i = axisIndex(key); return i >= 0 ? AXES[i].label : key; }
+  function questionsInAxis(key) { return QUESTIONS.filter(function (q) { return q.axis === key; }).length; }
+  function answeredInAxis(key) {
+    var n = 0;
+    for (var i = 0; i < QUESTIONS.length; i++) {
+      if (QUESTIONS[i].axis === key && state.answers[i] !== null) n++;
+    }
+    return n;
+  }
+
+  /* =========================================================================
+   * STEP TRANSITIONS
+   * ========================================================================= */
+  function showStep(id) {
+    els.steps.forEach(function (s) {
+      s.style.display = "none";
+      s.classList.remove("is-visible", "is-exiting");
+    });
+    var target = document.getElementById(id);
+    if (!target) return;
+    // Intro is a flex column (so the fineprint can pin to the bottom); other steps are block.
+    target.style.display = (id === "step-intro") ? "flex" : "block";
+    requestAnimationFrame(function () { target.classList.add("is-visible"); });
+
+    // shell visible for everything except the intro
+    if (id === "step-intro") els.shell.classList.remove("is-active");
+    else els.shell.classList.add("is-active");
+
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }
+
+  /* =========================================================================
+   * SIDEBAR
+   * ========================================================================= */
+  function buildSidebar() {
+    var html = "";
+    for (var i = 0; i < AXES.length; i++) {
+      html +=
+        '<li class="sb-item" data-axis="' + AXES[i].key + '">' +
+          '<span class="sb-dot" data-num="' + (i + 1) + '">' + (i + 1) + '</span>' +
+          '<div>' +
+            '<div class="sb-title">' + AXES[i].label + '</div>' +
+            '<div class="sb-count" data-count></div>' +
+          '</div>' +
+        '</li>';
+    }
+    els.sbList.innerHTML = html;
+  }
+
+  var CHECK_SVG = '<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>';
+
+  function updateSidebar() {
+    var currentAxis = QUESTIONS[state.idx] ? QUESTIONS[state.idx].axis : null;
+    var items = els.sbList.querySelectorAll(".sb-item");
+    items.forEach(function (li) {
+      var key = li.getAttribute("data-axis");
+      var total = questionsInAxis(key);
+      var done = answeredInAxis(key);
+      var countEl = li.querySelector("[data-count]");
+      var dot = li.querySelector(".sb-dot");
+      countEl.textContent = done + " / " + total + " complete";
+
+      li.classList.remove("is-active", "is-done");
+      if (done >= total) {
+        li.classList.add("is-done");
+        dot.innerHTML = CHECK_SVG;
+      } else {
+        dot.textContent = dot.getAttribute("data-num");
+        if (key === currentAxis) li.classList.add("is-active");
+      }
+    });
+  }
+
+  /* =========================================================================
+   * QUESTION RENDER
+   * ========================================================================= */
+  function renderQuestion() {
+    var q = QUESTIONS[state.idx];
+    els.qEyebrow.textContent = axisLabel(q.axis) + "  ·  " + q.cat;
+    els.qText.textContent = q.q;
+
+    var html = "";
+    for (var i = 0; i < q.a.length; i++) {
+      var sel = state.answers[state.idx] === (i + 1) ? " selected" : "";
+      html +=
+        '<button class="q-option' + sel + '" type="button" data-score="' + (i + 1) + '">' +
+          '<span class="q-num">' + (i + 1) + '</span>' +
+          '<span class="q-label">' + q.a[i] + '</span>' +
+        '</button>';
+    }
+    els.qOptions.innerHTML = html;
+
+    els.qCounter.textContent = "Question " + (state.idx + 1) + " of " + QUESTIONS.length;
+    var pct = Math.round((state.idx / QUESTIONS.length) * 100);
+    els.qProgress.style.width = pct + "%";
+    els.mobileProg.style.width = pct + "%";
+
+    updateSidebar();
+  }
+
+  function fadeTo(fn) {
+    els.qCard.classList.add("fading");
+    setTimeout(function () {
+      fn();
+      els.qCard.classList.remove("fading");
+    }, 200);
+  }
+
+  function selectAnswer(score) {
+    state.answers[state.idx] = score;
+    // reflect selection immediately
+    var opts = els.qOptions.querySelectorAll(".q-option");
+    opts.forEach(function (o) {
+      o.classList.toggle("selected", parseInt(o.getAttribute("data-score"), 10) === score);
+    });
+    updateSidebar();
+
+    setTimeout(function () {
+      if (state.idx < QUESTIONS.length - 1) {
+        state.idx++;
+        fadeTo(renderQuestion);
+      } else {
+        finish();
+      }
+    }, 260);
+  }
+
+  function goBack() {
+    if (state.idx === 0) {
+      showStep("step-intro");
+      return;
+    }
+    state.idx--;
+    fadeTo(renderQuestion);
+  }
+
+  /* =========================================================================
+   * SCORING
+   * ========================================================================= */
+  function computeScores() {
+    var sum = 0;
+    var axisSum = {}, axisCount = {};
+    AXES.forEach(function (ax) { axisSum[ax.key] = 0; axisCount[ax.key] = 0; });
+
+    for (var i = 0; i < QUESTIONS.length; i++) {
+      var v = state.answers[i] || 0;
+      sum += v;
+      axisSum[QUESTIONS[i].axis] += v;
+      axisCount[QUESTIONS[i].axis] += 1;
+    }
+    var overall = sum / QUESTIONS.length;
+    var axisAverages = AXES.map(function (ax) {
+      return { key: ax.key, label: ax.label, avg: axisSum[ax.key] / axisCount[ax.key] };
+    });
+    return { overall: overall, axes: axisAverages };
+  }
+
+  function personaFor(overall) {
+    var chosen = PERSONAS[0];
+    for (var i = 0; i < PERSONAS.length; i++) {
+      if (overall >= PERSONAS[i].min) chosen = PERSONAS[i];
+    }
+    return chosen;
+  }
+
+  /* =========================================================================
+   * RADAR CHART (SVG, no dependencies)
+   * ========================================================================= */
+  function buildRadar(axisAverages) {
+    var W = 520, H = 360, cx = 260, cy = 178, maxR = 120, max = 5;
+    // Resolve the themed accent to literal colours (var() is unreliable inside SVG attributes).
+    var cs = getComputedStyle(document.body);
+    var accent  = (cs.getPropertyValue("--accent")   || "#E91E63").trim();
+    var accentD = (cs.getPropertyValue("--accent-d") || "#C2185B").trim();
+    var accentRgb = (cs.getPropertyValue("--accent-rgb") || "233, 30, 99").trim();
+    var ink = "#052438";
+    // 4 axes clockwise from top: Reading, Working, Arguing, Analyzing
+    var dirs = [ {x:0,y:-1}, {x:1,y:0}, {x:0,y:1}, {x:-1,y:0} ];
+    var pt = function (dir, r) { return (cx + dir.x * r) + "," + (cy + dir.y * r); };
+
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Radar chart of your scores across the four data pillars">';
+
+    // Scale rings (5 = outer, 1 = inner) drawn largest-first so each inner band
+    // sits on top, tinting the centre progressively and "colouring in" the scale.
+    for (var v = max; v >= 1; v--) {
+      var r = (v / max) * maxR;
+      var ring = dirs.map(function (d) { return pt(d, r); }).join(" ");
+      svg += '<polygon points="' + ring + '" fill="rgba(' + accentRgb + ',0.07)" ' +
+             'stroke="rgba(' + accentRgb + ',0.22)" stroke-width="1"/>';
+    }
+    // Axis spokes (the four quadrant dividers)
+    dirs.forEach(function (d) {
+      svg += '<line x1="' + cx + '" y1="' + cy + '" x2="' + (cx + d.x * maxR) + '" y2="' + (cy + d.y * maxR) + '" stroke="rgba(' + accentRgb + ',0.28)" stroke-width="1"/>';
+    });
+    // Scale numbers 1-5 along the top spoke
+    for (var s = 1; s <= max; s++) {
+      var sy = cy - (s / max) * maxR;
+      svg += '<text x="' + (cx + 6) + '" y="' + (sy + 3) + '" font-family="Satoshi, sans-serif" font-size="9" fill="rgba(11,27,43,0.40)">' + s + '</text>';
+    }
+    // Data polygon (the filled "volume")
+    var dataPts = axisAverages.map(function (a, i) { return pt(dirs[i], (a.avg / max) * maxR); }).join(" ");
+    svg += '<polygon points="' + dataPts + '" fill="rgba(' + accentRgb + ',0.30)" stroke="' + accent + '" stroke-width="2.5" stroke-linejoin="round"/>';
+    // Data vertices
+    axisAverages.forEach(function (a, i) {
+      var r = (a.avg / max) * maxR;
+      svg += '<circle cx="' + (cx + dirs[i].x * r) + '" cy="' + (cy + dirs[i].y * r) + '" r="4.5" fill="' + accent + '" stroke="#fff" stroke-width="1.5"/>';
+    });
+    // Axis (pillar) labels with the score
+    var lab = [
+      { x: cx,             y: cy - maxR - 26, anchor: "middle" }, // top
+      { x: cx + maxR + 14, y: cy - 2,         anchor: "start"  }, // right
+      { x: cx,             y: cy + maxR + 30, anchor: "middle" }, // bottom
+      { x: cx - maxR - 14, y: cy - 2,         anchor: "end"    }  // left
+    ];
+    axisAverages.forEach(function (a, i) {
+      var L = lab[i];
+      svg += '<text x="' + L.x + '" y="' + L.y + '" text-anchor="' + L.anchor + '" ' +
+             'font-family="Clash Grotesk, sans-serif" font-weight="700" font-size="13.5" fill="' + ink + '">' + a.label + '</text>';
+      svg += '<text x="' + L.x + '" y="' + (L.y + 16) + '" text-anchor="' + L.anchor + '" ' +
+             'font-family="Clash Grotesk, sans-serif" font-weight="700" font-size="12.5" fill="' + accentD + '">' + a.avg.toFixed(1) + ' / 5</text>';
+    });
+    svg += '</svg>';
+    return svg;
+  }
+
+  /* =========================================================================
+   * RESULT RENDER
+   * ========================================================================= */
+  function renderResult(scores, persona) {
+    document.getElementById("result-persona").textContent = persona.name;
+    document.getElementById("result-name").textContent = "You're a " + persona.name;
+    document.getElementById("result-score").textContent = scores.overall.toFixed(1);
+    document.getElementById("result-blurb").textContent = persona.blurb;
+
+    // tier segments
+    var tierHtml = "";
+    for (var t = 1; t <= PERSONAS.length; t++) {
+      tierHtml += '<span class="seg' + (t <= persona.tier ? " on" : "") + '"></span>';
+    }
+    document.getElementById("result-tier").innerHTML = tierHtml;
+
+    // radar
+    document.getElementById("radar").innerHTML = buildRadar(scores.axes);
+
+    // per-pillar breakdown cards (label + filled scale + explanation)
+    var barsHtml = "";
+    scores.axes.forEach(function (a) {
+      var pct = (a.avg / 5) * 100;
+      var meta = AXES[axisIndex(a.key)] || {};
+      barsHtml +=
+        '<div class="axis-card">' +
+          '<div class="axis-card-top">' +
+            '<span class="axis-name">' + a.label + '</span>' +
+            '<span class="axis-val">' + a.avg.toFixed(1) + ' / 5</span>' +
+          '</div>' +
+          '<span class="axis-track"><span class="axis-fill" data-pct="' + pct + '"></span></span>' +
+          '<p class="axis-desc">' + (meta.blurb || "") + '</p>' +
+        '</div>';
+    });
+    document.getElementById("axis-bars").innerHTML = barsHtml;
+
+    // CTAs
+    document.getElementById("result-cta").innerHTML =
+      '<a class="btn btn-primary" href="' + ACADEMY_URL + '">Explore the Data Literacy Academy <span class="arr">&rarr;</span></a>' +
+      '<a class="btn btn-outline" href="' + SIGNUP_URL + '" target="_blank" rel="noopener">Start learning for free <span class="arr">&rarr;</span></a>';
+
+    // animate bars after paint
+    requestAnimationFrame(function () {
+      var fills = document.querySelectorAll(".axis-fill");
+      fills.forEach(function (f) { f.style.width = f.getAttribute("data-pct") + "%"; });
+    });
+  }
+
+  /* =========================================================================
+   * FINISH (loading -> score -> result + analytics)
+   * ========================================================================= */
+  function finish() {
+    els.qProgress.style.width = "100%";
+    els.mobileProg.style.width = "100%";
+    updateSidebar();
+    showStep("step-loading");
+
+    setTimeout(function () {
+      var scores = computeScores();
+      var persona = personaFor(scores.overall);
+      renderResult(scores, persona);
+      showStep("step-result");
+      pushAnalytics(scores, persona);
+    }, 1900);
+  }
+
+  // Every event carries assessment_id + assessment_name so one GTM trigger per
+  // event (assessment_start / assessment_complete) works across all assessments.
+  function pushEvent(obj) {
+    window.dataLayer = window.dataLayer || [];
+    obj.assessment_id = ASSESSMENT_ID;
+    obj.assessment_name = ASSESSMENT_NAME;
+    window.dataLayer.push(obj);
+  }
+
+  function pushStart() {
+    pushEvent({ event: "assessment_start", source_page: window.location.pathname });
+  }
+
+  function pushAnalytics(scores, persona) {
+    // Non-PII completion event for GA4 / GTM.
+    var payload = {
+      event: "assessment_complete",
+      persona: persona.name,
+      persona_tier: persona.tier,
+      overall_score: Number(scores.overall.toFixed(2))
+    };
+    scores.axes.forEach(function (a) { payload["score_" + a.key] = Number(a.avg.toFixed(2)); });
+    pushEvent(payload);
+
+    // Keep the latest result on state (handy if you move the HubSpot submit to
+    // completion to also store persona/scores) and mirror it to sessionStorage.
+    state.result = { assessment: ASSESSMENT_ID, persona: persona.name, persona_tier: persona.tier, overall: scores.overall, axes: scores.axes };
+    try { sessionStorage.setItem("assessment_result", JSON.stringify({ user: state.user, result: state.result })); } catch (e) {}
+  }
+
+  // Read a browser cookie by name (used for HubSpot's hutk visitor token).
+  function getCookie(name) {
+    var parts = ("; " + document.cookie).split("; " + name + "=");
+    return parts.length === 2 ? parts.pop().split(";").shift() : "";
+  }
+
+  // Submit the captured lead to HubSpot via the Forms Submissions API. Mirrors
+  // the pattern used in catalog.html / try-free/business.html. Fire-and-forget:
+  // failures are logged but never block the assessment UX.
+  function submitToHubSpot() {
+    var u = state.user || {};
+    if (!u.email) return;
+
+    var fields = [
+      { name: "firstname", value: u.firstName || "" },
+      { name: "lastname",  value: u.lastName  || "" },
+      { name: "email",     value: u.email }
+      // To store the result on the contact: create these as contact properties,
+      // add them to the "Assessment Submission" form, move this call into the
+      // completion path (finish), then map them here. Sending a field the form
+      // does NOT contain makes HubSpot reject the entire submission.
+      // ,{ name: "<persona_property>", value: state.result ? state.result.persona : "" }
+      // ,{ name: "<score_property>",   value: state.result ? String(state.result.overall.toFixed(2)) : "" }
+    ];
+
+    var context = { pageUri: window.location.href, pageName: document.title };
+    var hutk = getCookie("hubspotutk");
+    if (hutk) context.hutk = hutk;
+
+    fetch("https://api.hsforms.com/submissions/v3/integration/submit/" + HUBSPOT_PORTAL_ID + "/" + HUBSPOT_FORM_GUID, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ fields: fields, context: context })
+    })
+    .then(function (res) {
+      if (res.ok) { pushEvent({ event: "assessment_submit" }); return; }
+      return res.json().then(
+        function (b) { throw { status: res.status, body: b }; },
+        function () { throw { status: res.status }; }
+      );
+    })
+    .catch(function (err) {
+      if (window.console && console.warn) console.warn("HubSpot submission failed:", (err && (err.body || err.status)) || err);
+    });
+  }
+
+  /* =========================================================================
+   * INTRO FORM
+   * ========================================================================= */
+  function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+  els.introForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var first = document.getElementById("first-name");
+    var last  = document.getElementById("last-name");
+    var email = document.getElementById("email");
+    var ok = true;
+
+    [first, last].forEach(function (f) {
+      var bad = !f.value.trim();
+      f.classList.toggle("invalid", bad);
+      if (bad) ok = false;
+    });
+    var emailBad = !validEmail(email.value.trim());
+    email.classList.toggle("invalid", emailBad);
+    if (emailBad) ok = false;
+
+    els.formError.classList.toggle("show", !ok);
+    if (!ok) return;
+
+    state.user = { firstName: first.value.trim(), lastName: last.value.trim(), email: email.value.trim() };
+    state.idx = 0;
+    pushStart();
+    submitToHubSpot();
+    renderQuestion();
+    showStep("step-question");
+  });
+
+  /* =========================================================================
+   * WIRE UP
+   * ========================================================================= */
+  els.qOptions.addEventListener("click", function (e) {
+    var btn = e.target.closest(".q-option");
+    if (!btn) return;
+    selectAnswer(parseInt(btn.getAttribute("data-score"), 10));
+  });
+  els.back.addEventListener("click", goBack);
+
+  // Print-to-PDF: the result screen only. Print CSS hides everything else.
+  var printLink = document.getElementById("print-report");
+  if (printLink) {
+    printLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      var prevTitle = document.title;
+      if (state.result) document.title = "Kubicle " + ASSESSMENT_NAME + " Result - " + state.result.persona;
+      window.addEventListener("afterprint", function restore() {
+        document.title = prevTitle;
+        window.removeEventListener("afterprint", restore);
+      });
+      window.print();
+    });
+  }
+
+  buildSidebar();
+  showStep("step-intro");
+})();
+</script>
+</body>
+</html>
