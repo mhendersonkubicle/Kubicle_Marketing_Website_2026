@@ -235,6 +235,27 @@ section { padding: 112px 0; position: relative; overflow: hidden; }
 .float-cta.on { opacity: 1; pointer-events: auto; transform: translateY(0); }
 
 .center { text-align: center; }
+
+/* ---- Mobile hero fixes (appended) ---- */
+@media (max-width: 760px) {
+  /* Course (light) heroes opt out of the global dark-collapse in tokens.css
+     so the dark hero text (incl. the "Learn" line and meta values) stays visible. */
+  section.hero { background: #fff !important; }
+  /* FAQ section: collapse the 2-col grid to one column so questions arent cramped. */
+  .faq-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+}
+@media (max-width: 1000px) {
+  .hero-top { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 600px) {
+  .hero { padding: 56px 0 64px; }
+  .hero h1 { font-size: clamp(40px, 11vw, 56px); }
+  .hero-sub { font-size: 17px; line-height: 1.5; }
+  .hero-visual { display: none; }
+  .hero-meta { gap: 18px 28px; padding: 20px 0; justify-content: flex-start; }
+  .hero-cta-row { width: 100%; }
+  .hero-cta-row .btn { flex: 1 1 100%; justify-content: center; }
+}
 </style>
 
 <script src="../shared/nav.js" defer></script>
@@ -259,8 +280,8 @@ section { padding: 112px 0; position: relative; overflow: hidden; }
           <span class="now">APIs</span>
         </div>
         <h1 class="h-display" style="margin-top: 4px;">
-          The foundations of<br/>
-          <em>APIs.</em>
+          Learn<br/>
+          <em>APIs</em>
         </h1>
         <p class="hero-sub" style="margin-top: 28px;">
           A focused subject for finance and consulting professionals making sense of the API
@@ -592,7 +613,7 @@ section { padding: 112px 0; position: relative; overflow: hidden; }
   <div class="geo-ring" style="width: 220px; height: 220px; top: -60px; right: 4%; opacity: 0.05;"></div>
   <div class="geo-half" style="width: 140px; height: 70px; bottom: 0; left: -30px; opacity: 0.04;"></div>
   <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px;">
+    <div class="faq-grid" style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px;">
       <div>
         <div class="eyebrow">Frequently Asked</div>
         <h2 class="h-xl" style="margin-top: 16px;">Answers for the questions we hear most.</h2>
