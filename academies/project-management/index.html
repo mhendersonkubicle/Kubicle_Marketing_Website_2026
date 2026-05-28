@@ -869,6 +869,29 @@ section.compact { padding: 72px 0; }
   background: var(--alice); color: var(--prussian);
   font-size: 13px; font-weight: 600;
 }
+
+/* ---- Mobile component fixes (appended) ---- */
+.mix-bars { display: none; }  /* mobile-only proportional bar chart */
+@media (max-width: 760px) {
+  /* Outcomes cards: inline grid-template-columns:repeat(2,1fr) overrides the
+     existing 900px rule, so force a single column on mobile. */
+  .impact-grid { grid-template-columns: 1fr !important; }
+
+  /* FAQ: collapse the 2-col grid to one full-width column. */
+  .faq-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+
+  /* Workforce-distribution: hide the segmented bar (illegible at narrow widths)
+     and show a proportional horizontal bar chart where fill width = the %. */
+  .mix-bar { display: none; }
+  .mix-bars { display: block; }
+  .mb-row { margin-bottom: 16px; }
+  .mb-row:last-child { margin-bottom: 0; }
+  .mb-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 7px; }
+  .mb-name { font-family: var(--head); font-size: 15px; font-weight: 600; color: #fff; }
+  .mb-pct { font-family: var(--head); font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.85); }
+  .mb-track { height: 14px; border-radius: 7px; background: rgba(255,255,255,0.10); overflow: hidden; }
+  .mb-fill { display: block; height: 100%; border-radius: 7px; min-width: 6px; }
+}
 </style>
 <script src="../../shared/pricing.js" defer></script>
 <script src="../../shared/nav.js" defer></script>
@@ -1081,6 +1104,20 @@ section.compact { padding: 72px 0; }
         </div>
         <div class="mix-seg" style="flex: 6; background: var(--persona-associate); color: #fff; border-radius: 2px 8px 8px 2px;">
           <div class="pc">6%</div><div class="lbl">Project Champion</div>
+        </div>
+      </div>
+      <div class="mix-bars" aria-hidden="true">
+        <div class="mb-row">
+          <div class="mb-head"><span class="mb-name">Project Member</span><span class="mb-pct">62%</span></div>
+          <div class="mb-track"><span class="mb-fill" style="width: 62%; background: var(--persona-apprentice);"></span></div>
+        </div>
+        <div class="mb-row">
+          <div class="mb-head"><span class="mb-name">PM Candidate</span><span class="mb-pct">32%</span></div>
+          <div class="mb-track"><span class="mb-fill" style="width: 32%; background: var(--persona-navigator);"></span></div>
+        </div>
+        <div class="mb-row">
+          <div class="mb-head"><span class="mb-name">Project Champion</span><span class="mb-pct">6%</span></div>
+          <div class="mb-track"><span class="mb-fill" style="width: 6%; background: var(--persona-associate);"></span></div>
         </div>
       </div>
       <p class="caption" style="margin-top: 14px; color: rgba(255,255,255,0.6);">
@@ -1439,7 +1476,7 @@ section.compact { padding: 72px 0; }
 <section class="alice" id="faq">
   <div class="geo-ring" style="width: 220px; height: 220px; top: -60px; right: 4%; opacity: 0.05;"></div>
   <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px;">
+    <div class="faq-grid" style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px;">
       <div>
         <div class="eyebrow">Frequently Asked</div>
         <h2 class="h-xl" style="margin-top: 16px;">Answers for the questions we hear most.</h2>

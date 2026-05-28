@@ -832,6 +832,12 @@ section { padding: 112px 0; position: relative; overflow: hidden; }
 
 /* ============================== UTIL ============================== */
 .center { text-align: center; }
+
+/* ---- Mobile hero fix (appended): keep this light hero visible by opting
+   out of the global section.hero dark-collapse in tokens.css. ---- */
+@media (max-width: 760px) {
+  section.hero { background: linear-gradient(180deg, #FBFCFD 0%, #F4F8FC 100%) !important; }
+}
 </style>
 
 <script src="../shared/nav.js" defer></script>

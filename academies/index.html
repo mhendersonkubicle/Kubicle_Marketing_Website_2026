@@ -463,6 +463,18 @@ section.dark { background: var(--prussian); color: #fff; }
 .final-cta h2 em { font-style: normal; color: var(--accent); }
 .final-cta .body-lg { color: rgba(255,255,255,0.82); max-width: 760px; margin-top: 22px; }
 .final-cta .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+/* ---- Mobile hero fix (appended) ---- */
+@media (max-width: 760px) {
+  /* This is a light hero. Opt out of the global section.hero dark-collapse in
+     tokens.css so the dark headline ("Four academies, one") stays visible. The
+     global rule uses the background shorthand with !important, which also wiped
+     the original light background, so restore it explicitly here. */
+  section.hero {
+    background:
+      radial-gradient(ellipse 60% 70% at 80% 30%, rgba(4,150,255,0.10), transparent 70%),
+      linear-gradient(180deg, #FBFCFD 0%, #F4F8FC 100%) !important;
+  }
+}
 </style>
 
 <script src="../shared/nav.js" defer></script>

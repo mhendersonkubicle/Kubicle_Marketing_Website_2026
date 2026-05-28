@@ -234,6 +234,12 @@ section.alice { background: var(--alice); }
 .contact-card strong { font-family: var(--head); font-weight: 600; }
 .contact-card a { color: #fff; border-bottom-color: rgba(255,255,255,0.4); }
 .contact-card a:hover { border-bottom-color: #fff; }
+
+/* ---- Mobile hero fix (appended): keep this light hero visible by opting
+   out of the global section.hero dark-collapse in tokens.css. ---- */
+@media (max-width: 760px) {
+  section.hero { background: radial-gradient(ellipse 60% 70% at 80% 30%, rgba(4,150,255,0.10), transparent 70%), linear-gradient(180deg, #FBFCFD 0%, #F4F8FC 100%) !important; }
+}
 </style>
 
 <script src="shared/nav.js" defer></script>
