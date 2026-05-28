@@ -195,6 +195,8 @@
     + '          <li><a href="' + BASE + 'resources/guides/ai-use-policy.html">AI Use Policy</a></li>'
     + '          <li><a href="' + BASE + 'resources/assessments/data-literacy.html">Data Literacy Assessment</a></li>'
     + '          <li><a href="' + BASE + 'resources/assessments/ai-literacy.html">AI Literacy Assessment</a></li>'
+    + '          <li><a href="' + BASE + 'resources/assessments/finance.html">Finance Skills Assessment</a></li>'
+    + '          <li><a href="' + BASE + 'resources/assessments/project-management.html">Project Management Assessment</a></li>'
     + '        </ul>'
     + '        <h5 style="margin-top: 20px;">Contact</h5>'
     + '        <ul>'

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="../../img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Finance Skills Assessment | Kubicle</title>
+<meta name="description" content="Discover your finance persona with Kubicle's free assessment. See where you stand across four capability axes, from Excel mastery to financial modeling, and uncover the skills to grow."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/resources/assessments/finance"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:title" content="Finance Skills Assessment | Kubicle"/>
+<meta property="og:description" content="Measure your finance skills across three personas and four capability axes. Get a personalised profile and clear next steps."/>
+<meta property="og:url" content="https://www.kubicle.com/resources/assessments/finance"/>
+<meta property="og:image" content="https://www.kubicle.com/img/dl-assessment/about-graphic.svg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Finance Skills Assessment | Kubicle"/>
+<meta name="twitter:description" content="Measure your finance skills and uncover your next step."/>
+<meta name="twitter:image" content="https://www.kubicle.com/img/dl-assessment/about-graphic.svg"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "Kubicle Finance Skills Assessment",
+  "description": "A quick diagnostic that places professionals on one of three finance personas (Finance Apprentice, Finance Analyst, Financial Modeler) and recommends next steps.",
+  "url": "https://www.kubicle.com/resources/assessments/finance",
+  "educationalAlignment": {
+    "@type": "AlignmentObject",
+    "alignmentType": "assesses",
+    "targetName": "Finance"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Kubicle",
+    "sameAs": "https://www.kubicle.com"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="../../shared/styles/tokens.css"/>
+<link rel="stylesheet" href="../../shared/styles/typography.css"/>
+<link rel="stylesheet" href="../../shared/styles/buttons.css"/>
+
+<style>
+/* ============================== PAGE-LOCAL TOKEN ============================== */
+:root {
+  --fin-green:   #10B981;
+  --fin-green-d: #047857;
+  --fin-green-soft: #D1FAE5;
+}
+
+/* ============================== RESET ============================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+html { scroll-behavior: smooth; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+body {
+  font-family: var(--body, "Satoshi","Helvetica Neue",Arial,sans-serif);
+  color: var(--prussian);
+  background: #fff;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+section { padding: 96px 0; position: relative; }
+section.alice { background: var(--alice); }
+section.dark { background: var(--prussian); color: #fff; }
+@media (max-width: 700px) { section { padding: 64px 0; } .container { padding: 0 22px; } }
+
+/* ============================== SECTION HEAD ============================== */
+.sec-head { max-width: 760px; }
+.sec-head h2 { margin-top: 16px; }
+.sec-head h2 em { font-style: normal; color: var(--fin-green); }
+.sec-head .body-lg { margin-top: 22px; color: var(--steel); max-width: 640px; }
+.sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.sec-head.center .body-lg { margin-left: auto; margin-right: auto; }
+.dark .sec-head .body-lg { color: rgba(255,255,255,0.78); }
+.dark .sec-head h2 { color: #fff; }
+
+/* ============================== HERO ============================== */
+.hero {
+  padding: 112px 0 96px;
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 30%, rgba(16,185,129,0.10), transparent 70%),
+    linear-gradient(180deg, #FBFCFD 0%, #ECFDF5 100%);
+  color: var(--prussian);
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: url('../../img/dl-assessment/shapes.svg');
+  background-size: cover; background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+.hero .container { position: relative; z-index: 1; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.hero .eyebrow { color: var(--fin-green); }
+.hero h1 em { font-style: normal; color: var(--fin-green); }
+.hero-sub {
+  color: var(--steel);
+  font-size: 19px; line-height: 1.55;
+  letter-spacing: -0.01em;
+  margin-top: 22px;
+  max-width: 560px;
+}
+.hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 32px; }
+.hero-meta {
+  margin-top: 28px;
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--steel);
+}
+.hero-meta svg { width: 18px; height: 18px; color: var(--fin-green); }
+.hero-visual {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--alice);
+  box-shadow: 0 40px 100px -36px rgba(11,27,43,0.25), 0 8px 24px -10px rgba(11,27,43,0.10);
+}
+.hero-visual img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+@media (max-width: 1000px) {
+  .hero { padding: 80px 0 64px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { max-width: 480px; margin: 0 auto; }
+}
+
+/* ============================== INTRO SECTION ============================== */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 1000px) { .intro-grid { grid-template-columns: 1fr; gap: 40px; } }
+.intro-visual { display: flex; align-items: center; justify-content: center; }
+.intro-visual img { max-width: 100%; height: auto; }
+
+/* ============================== PERSONAS ============================== */
+.persona-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 900px) { .persona-grid { grid-template-columns: 1fr; } }
+.persona-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 22px;
+  padding: 32px;
+  display: flex; flex-direction: column;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+  position: relative;
+  border-top: 4px solid var(--fin-green);
+}
+.persona-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(16,185,129,0.30);
+  border-top-color: var(--fin-green);
+  box-shadow: 0 24px 60px -28px rgba(11,27,43,0.18);
+}
+.persona-card .p-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  margin-bottom: 6px;
+}
+.persona-card .p-num {
+  font-family: var(--body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--fin-green-d);
+}
+.persona-card .p-tier {
+  display: inline-flex; gap: 3px; align-items: center;
+  flex-shrink: 0;
+}
+.persona-card .p-seg {
+  width: 14px; height: 5px;
+  border-radius: 2px;
+  background: rgba(11,27,43,0.12);
+}
+.persona-card .p-seg.on { background: var(--fin-green); }
+.persona-card h3 {
+  font-family: var(--head); font-size: 24px; font-weight: 600;
+  letter-spacing: -0.015em; color: var(--prussian);
+  margin-top: 8px;
+}
+.persona-card .who {
+  margin-top: 14px;
+  font-size: 14.5px; line-height: 1.6; color: var(--steel);
+}
+.persona-card .p-cta {
+  margin-top: auto; padding-top: 22px;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--head); font-size: 13.5px; font-weight: 600;
+  color: var(--fin-green-d);
+}
+.persona-card .p-cta:hover { gap: 10px; }
+
+/* ============================== PILLARS ============================== */
+.pillars-section {
+  background:
+    radial-gradient(ellipse 60% 70% at 100% 0%, rgba(16,185,129,0.08), transparent 70%),
+    var(--alice);
+}
+.pillar-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+@media (max-width: 1000px) { .pillar-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px)  { .pillar-grid { grid-template-columns: 1fr; } }
+.pillar-card {
+  background: #fff;
+  border: 1px solid #E5EBF1;
+  border-radius: 22px;
+  padding: 28px;
+  display: flex; flex-direction: column;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+.pillar-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(16,185,129,0.30);
+  box-shadow: 0 24px 60px -28px rgba(11,27,43,0.18);
+}
+.pillar-card .p-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: var(--fin-green-soft);
+  color: var(--fin-green-d);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+}
+.pillar-card .p-icon svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.pillar-card .p-num {
+  font-family: var(--body); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--fin-green-d);
+}
+.pillar-card h3 {
+  margin-top: 6px;
+  font-family: var(--head); font-size: 20px; font-weight: 600;
+  letter-spacing: -0.01em; color: var(--prussian);
+}
+.pillar-card p { margin-top: 12px; font-size: 14px; line-height: 1.55; color: var(--steel); }
+
+/* ============================== RESULTS VISUAL ============================== */
+.results-section { background: #fff; }
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 1000px) { .results-grid { grid-template-columns: 1fr; gap: 40px; } }
+.results-visual { display: flex; align-items: center; justify-content: center; }
+.results-visual img { max-width: 100%; height: auto; }
+
+/* ============================== SECTION CTA ============================== */
+.section-cta {
+  margin-top: 56px;
+  display: flex; justify-content: center;
+}
+.section-cta-inner {
+  display: inline-flex; align-items: center; gap: 18px;
+  padding: 14px 22px 14px 26px;
+  background: #fff;
+  border: 1px solid rgba(11,27,43,0.08);
+  border-radius: 999px;
+  box-shadow: 0 20px 40px -20px rgba(11,27,43,0.18);
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+}
+.section-cta-inner:hover {
+  transform: translateY(-2px);
+  border-color: rgba(16,185,129,0.40);
+  box-shadow: 0 28px 56px -24px rgba(11,27,43,0.28);
+}
+.section-cta-inner .label {
+  font-family: var(--head); font-weight: 500;
+  color: var(--prussian);
+  font-size: 15px;
+  letter-spacing: -0.005em;
+}
+.section-cta-inner .label strong {
+  font-weight: 600;
+  color: var(--fin-green-d);
+}
+.section-cta-inner .pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px;
+  background: var(--fin-green);
+  color: #fff;
+  border-radius: 999px;
+  font-family: var(--head); font-weight: 600; font-size: 13.5px;
+  transition: background 0.15s, gap 0.15s;
+}
+.section-cta-inner:hover .pill { background: var(--fin-green-d); gap: 12px; }
+.section-cta-inner .pill svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 640px) {
+  .section-cta-inner {
+    flex-direction: column; align-items: stretch; text-align: center;
+    padding: 18px 22px;
+    border-radius: 18px;
+  }
+  .section-cta-inner .pill { justify-content: center; }
+}
+section.alice .section-cta-inner,
+section.dark .section-cta-inner { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.16); }
+section.alice .section-cta-inner { background: #fff; border-color: rgba(11,27,43,0.08); }
+
+/* DL-pink override for the buttons */
+.btn-fin {
+  background: var(--fin-green); color: #fff;
+}
+.btn-fin:hover { background: var(--fin-green-d); }
+
+/* ============================== FINAL CTA ============================== */
+.final-cta {
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 20%, rgba(16,185,129,0.22), transparent 70%),
+    var(--prussian);
+  position: relative; overflow: hidden;
+}
+.final-cta .eyebrow { color: var(--fin-green); }
+.final-cta h2 { color: #fff; }
+.final-cta h2 em { font-style: normal; color: var(--fin-green); }
+.final-cta .body-lg { color: rgba(255,255,255,0.82); max-width: 760px; margin-top: 22px; }
+.final-cta .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+.final-cta .btn-primary { background: var(--fin-green); color: #fff; }
+.final-cta .btn-primary:hover { background: var(--fin-green-d); }
+
+/* ---- Mobile hero fix (appended): keep this light hero visible by opting
+   out of the global section.hero dark-collapse in tokens.css. ---- */
+@media (max-width: 760px) {
+  section.hero { background: radial-gradient(ellipse 60% 70% at 80% 30%, rgba(16,185,129,0.10), transparent 70%), linear-gradient(180deg, #FBFCFD 0%, #ECFDF5 100%) !important; }
+}
+</style>
+
+<script src="../../shared/nav.js" defer></script>
+<script src="../../shared/footer.js" defer></script>
+</head>
+<body class="theme-finance">
+
+<!-- ============================== NAV ============================== -->
+<div id="site-nav"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Finance Skills Assessment</div>
+        <h1 class="h-display" style="margin-top: 14px;">
+          Discover your finance <em>persona.</em>
+        </h1>
+        <p class="hero-sub">
+          Modern finance runs on spreadsheets, statements and models. Find out where you stand across the three
+          Kubicle personas: Finance Apprentice, Finance Analyst and Financial Modeler. Uncover the skills to grow,
+          and take the next step in your finance career.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn btn-lg btn-fin" href="../../assessments/finance.html">
+            Start the Assessment <span class="arr">&rarr;</span>
+          </a>
+          <a class="btn btn-outline-dark btn-lg" href="../../academies/index.html">See the academies <span class="arr">&rarr;</span></a>
+        </div>
+        <div class="hero-meta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
+          Takes 5 minutes &middot; personalised profile delivered instantly
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="../../courses/img/finance-fundamentals-hero.webp" alt="A finance professional working in Excel, representing the Kubicle Finance Skills Assessment" loading="eager"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== INTRO ============================== -->
+<section id="intro">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <div class="eyebrow">Measure Your Finance Skills</div>
+        <h2 class="h-xl" style="margin-top: 14px;">
+          A quick diagnostic, a clear <em>next step.</em>
+        </h2>
+        <p class="body-lg" style="margin-top: 22px;">
+          Take Kubicle's Finance Skills Assessment to understand your current capabilities and uncover practical
+          ways to grow. This quick diagnostic helps you discover your strengths across the four capability axes that
+          define a serious finance career. In just a few minutes, you will receive a personalised profile and clear
+          recommendations for your next steps.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn btn-lg btn-fin" href="../../assessments/finance.html">
+            Start the Assessment <span class="arr">&rarr;</span>
+          </a>
+        </div>
+      </div>
+      <div class="intro-visual">
+        <img src="../../img/dl-assessment/about-graphic.svg" alt="Illustration of a finance professional working with data" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PERSONAS ============================== -->
+<section class="alice" id="personas">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" style="color: var(--fin-green);">Discover your finance profile</div>
+      <h2 class="h-xl">Kubicle's assessment will help you find <em>your finance persona.</em></h2>
+      <p class="body-lg">
+        Every finance professional sits somewhere on the capability ladder. The assessment places you on one of
+        three personas, each with a clear definition of what they can do today and the skills they need to grow next.
+      </p>
+    </div>
+
+    <div class="persona-grid">
+
+      <div class="persona-card">
+        <div class="p-head">
+          <span class="p-num">Persona 01</span>
+          <span class="p-tier" aria-label="Tier 1 of 3">
+            <span class="p-seg on"></span><span class="p-seg"></span><span class="p-seg"></span>
+          </span>
+        </div>
+        <h3>Finance Apprentice</h3>
+        <p class="who">The Finance Apprentice is the Excel-literate finance contributor, confident with formulas, formatting and basic pivot work. They understand the P&amp;L, balance sheet and cash flow conceptually, the foundation every finance team is built on. Anchored to the Microsoft Office Specialist Excel Associate credential.</p>
+        <a class="p-cta" href="../../assessments/finance.html">Start the Assessment <span class="arr">&rarr;</span></a>
+      </div>
+
+      <div class="persona-card">
+        <div class="p-head">
+          <span class="p-num">Persona 02</span>
+          <span class="p-tier" aria-label="Tier 2 of 3">
+            <span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg"></span>
+          </span>
+        </div>
+        <h3>Finance Analyst</h3>
+        <p class="who">The Finance Analyst is the everyday FP&amp;A or finance analyst. They build reports and dashboards, read statements fluently, run scenario analysis, and work confidently across Power Pivot, Power BI and Tableau. Anchored to MOS Excel Expert, Microsoft PL-300 and Tableau Specialist.</p>
+        <a class="p-cta" href="../../assessments/finance.html">Start the Assessment <span class="arr">&rarr;</span></a>
+      </div>
+
+      <div class="persona-card">
+        <div class="p-head">
+          <span class="p-num">Persona 03</span>
+          <span class="p-tier" aria-label="Tier 3 of 3">
+            <span class="p-seg on"></span><span class="p-seg on"></span><span class="p-seg on"></span>
+          </span>
+        </div>
+        <h3>Financial Modeler</h3>
+        <p class="who">The Financial Modeler is the specialist craftsperson, building end-to-end models: DCF, comparables, LBO, M&amp;A and project finance, with deep DAX, statistical methods and model governance. The technical apex of the discipline, calibrated to FMVA-comparable competencies.</p>
+        <a class="p-cta" href="../../assessments/finance.html">Start the Assessment <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+
+    <div class="section-cta">
+      <a class="section-cta-inner" href="../../assessments/finance.html">
+        <span class="label">Not sure which persona you are? <strong>Take the assessment.</strong></span>
+        <span class="pill">Start <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PILLARS / RESULTS ============================== -->
+<section class="pillars-section" id="pillars">
+  <div class="container">
+    <div class="results-grid" style="margin-bottom: 64px;">
+      <div>
+        <div class="eyebrow" style="color: var(--fin-green);">See where you stand</div>
+        <h2 class="h-xl" style="margin-top: 14px;">
+          What the assessment <em>actually measures.</em>
+        </h2>
+        <p class="body-lg" style="margin-top: 22px;">
+          Kubicle's finance framework benchmarks you across the four capabilities a serious finance career demands,
+          each anchored to a market-recognised credential. The assessment tests you across all four and shows you
+          exactly where to focus next.
+        </p>
+      </div>
+      <div class="results-visual">
+        <img src="../../img/dl-assessment/our-results.svg" alt="A radar diagram showing the four pillars of finance capability" loading="lazy"/>
+      </div>
+    </div>
+
+    <div class="pillar-grid">
+      <div class="pillar-card">
+        <div class="p-icon">
+          <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 8h16M9 3v18"/><path d="M13 12h4M13 16h4"/></svg>
+        </div>
+        <div class="p-num">Pillar 01</div>
+        <h3>Finance Fundamentals</h3>
+        <p>
+          Read the P&amp;L, balance sheet and cash flow with confidence, and understand the core concepts behind corporate finance and accounting.
+        </p>
+      </div>
+      <div class="pillar-card">
+        <div class="p-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+        </div>
+        <div class="p-num">Pillar 02</div>
+        <h3>Excel Mastery</h3>
+        <p>
+          Work fluently in Excel, from formulas and pivot tables to Power Pivot and Power Query, the structures that power real finance work.
+        </p>
+      </div>
+      <div class="pillar-card">
+        <div class="p-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 3 5-7 4 4"/><path d="M3 21h18"/></svg>
+        </div>
+        <div class="p-num">Pillar 03</div>
+        <h3>Modeling &amp; Valuation</h3>
+        <p>
+          Build and interpret financial models, DCF, comparables, LBO and M&amp;A, and apply valuation techniques to real decisions.
+        </p>
+      </div>
+      <div class="pillar-card">
+        <div class="p-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="13" width="3" height="5"/><rect x="12" y="9" width="3" height="9"/><rect x="17" y="5" width="3" height="13"/></svg>
+        </div>
+        <div class="p-num">Pillar 04</div>
+        <h3>Data Analysis &amp; Visualization</h3>
+        <p>
+          Turn financial data into insight with analysis and clear, decision-ready dashboards in Power BI and Tableau.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-cta">
+      <a class="section-cta-inner" href="../../assessments/finance.html">
+        <span class="label">Find out where you score on all four. <strong>Start the assessment.</strong></span>
+        <span class="pill">Start <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="final-cta" id="get-started">
+  <div class="container">
+    <div style="max-width: 920px;">
+      <div class="eyebrow">Ready to find your level?</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Five minutes from now,<br/>
+        you'll know <em>exactly where you stand.</em>
+      </h2>
+      <p class="body-lg">
+        Take the assessment, get your personalised finance profile and a clear next step. Then explore the
+        Kubicle Finance Academy to get there.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="../../assessments/finance.html">
+          Start the Assessment <span class="arr">&rarr;</span>
+        </a>
+        <a class="btn btn-ghost btn-lg" href="../../academies/finance/index.html">Explore the Finance Academy <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<div id="site-footer"></div>
+
+</body>
+</html>

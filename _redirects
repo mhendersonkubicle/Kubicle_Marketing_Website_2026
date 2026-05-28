@@ -448,6 +448,8 @@
 /ai-use-policy                                 /resources/guides/ai-use-policy              301
 /data-literacy-assessment                      /resources/assessments/data-literacy         301
 /ai-literacy-assessment                        /resources/assessments/ai-literacy           301
+/finance-assessment                            /resources/assessments/finance               301
+/project-management-assessment                 /resources/assessments/project-management    301
 
 # Catalog
 /library                                       /catalog                                     301

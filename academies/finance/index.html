@@ -1453,6 +1453,112 @@ section.compact { padding: 72px 0; }
   </div>
 </section>
 
+<!-- ============================== RELATED CLUSTER ============================== -->
+<section class="alice" style="padding: 96px 0;">
+  <style>
+    .cluster-reel-head { max-width: 760px; }
+    .cluster-reel-fullbleed { margin-top: 48px; width: 100%; }
+    .cluster-reel-scroll {
+      display: flex; gap: 20px; overflow-x: auto;
+      scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+      scroll-padding-left: max(48px, calc((100vw - 1280px) / 2 + 48px));
+      padding: 4px max(48px, calc((100vw - 1280px) / 2 + 48px)) 8px;
+      scrollbar-width: none; -ms-overflow-style: none;
+    }
+    .cluster-reel-scroll::-webkit-scrollbar { display: none; }
+    @media (max-width: 860px) { .cluster-reel-scroll { scroll-padding-left: 24px; padding: 4px 24px 8px; } }
+    .cluster-card {
+      flex: 0 0 320px; scroll-snap-align: start; background: #fff;
+      border: 1px solid var(--alice); border-radius: 20px; overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      text-decoration: none; color: inherit;
+    }
+    .cluster-card:hover { transform: translateY(-4px); border-color: var(--green); box-shadow: 0 30px 60px -30px rgba(var(--accent-rgb),0.25); }
+    .cluster-card .cc-img { width: 100%; aspect-ratio: 16 / 10; background: var(--alice); position: relative; overflow: hidden; }
+    .cluster-card .cc-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .cluster-card:hover .cc-img img { transform: scale(1.04); }
+    .cluster-card .cc-body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .cluster-card .cc-kicker { font-family: var(--body); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); }
+    .cluster-card h3 { font-family: var(--head); font-size: 19px; font-weight: 600; letter-spacing: -0.02em; color: var(--prussian); line-height: 1.25; }
+    .cluster-card p { font-size: 13.5px; color: var(--steel); line-height: 1.5; }
+    .cluster-card .cc-go { margin-top: auto; padding-top: 8px; font-family: var(--head); font-size: 13px; font-weight: 600; color: var(--green); }
+    .cluster-card .cc-go .arr { transition: transform 0.18s; }
+    .cluster-card:hover .cc-go .arr { transform: translateX(3px); }
+    .cluster-reel-nav { display: flex; gap: 12px; margin-top: 24px; justify-content: flex-end; }
+    .cluster-reel-nav .scroll-btn { width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--prussian); background: #fff; color: var(--prussian); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.15s, color 0.15s, opacity 0.15s; }
+    .cluster-reel-nav .scroll-btn svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .cluster-reel-nav .scroll-btn:hover { background: var(--prussian); color: #fff; }
+    .cluster-reel-nav .scroll-btn:disabled { opacity: 0.3; cursor: default; }
+    .cluster-reel-nav .scroll-btn:disabled:hover { background: #fff; color: var(--prussian); }
+  </style>
+  <div class="container">
+    <div class="cluster-reel-head">
+      <div class="eyebrow" style="color: var(--green);">More in the Finance cluster</div>
+      <h2 class="h-xl" style="margin-top: 16px;">
+        Programs and resources<br/>
+        <em style="color: var(--green); font-style: normal;">that work with this Academy.</em>
+      </h2>
+      <p class="body-lg" style="margin-top: 20px; color: var(--steel); max-width: 720px;">The Finance Academy is the curriculum hub. These programs, resources and assessments sit alongside it to complete the finance capability picture.</p>
+    </div>
+  </div>
+  <div class="cluster-reel-fullbleed">
+    <div class="cluster-reel-scroll" id="cluster-scroll">
+      <a class="cluster-card" href="../../resources/assessments/finance.html">
+        <div class="cc-img"><img src="../../academies/finance/img/hero-image.webp" alt="Finance Skills Assessment" loading="lazy"/></div>
+        <div class="cc-body">
+          <div class="cc-kicker">Assessment</div>
+          <h3>Finance Skills Assessment</h3>
+          <p>Benchmark your finance capability in five minutes and find your persona: Finance Apprentice, Analyst or Modeler.</p>
+          <span class="cc-go">Take the assessment <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+      <a class="cluster-card" href="brochure.html">
+        <div class="cc-img"><img src="../../img/ai-training-for-employees/68dba9ebf9e3377a91047bf7_business-benefits.avif" alt="Finance Persona Framework brochure" loading="lazy"/></div>
+        <div class="cc-body">
+          <div class="cc-kicker">Brochure</div>
+          <h3>Finance Persona Framework brochure</h3>
+          <p>The three-persona model and credential-anchored capability axes, formatted to share with your L&amp;D or finance leadership.</p>
+          <span class="cc-go">Download the brochure <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+      <a class="cluster-card" href="../../specialist-programs/financial-modeling.html">
+        <div class="cc-img"><img src="../../courses/img/financial-modeling-header-graphic-1.png" alt="Financial Modeling" loading="lazy"/></div>
+        <div class="cc-body">
+          <div class="cc-kicker">Specialist program</div>
+          <h3>Financial Modeling</h3>
+          <p>The specialist pathway to FMVA-grade financial modeling: DCF, comparables, LBO and M&amp;A.</p>
+          <span class="cc-go">Visit the page <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+      <a class="cluster-card" href="../../courses/finance-fundamentals.html">
+        <div class="cc-img"><img src="../../courses/img/finance-fundamentals-hero.webp" alt="Finance Fundamentals" loading="lazy"/></div>
+        <div class="cc-body">
+          <div class="cc-kicker">Course</div>
+          <h3>Finance Fundamentals</h3>
+          <p>Read the P&amp;L, balance sheet and cash flow with confidence and master the core concepts of corporate finance.</p>
+          <span class="cc-go">View the subject <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+      <a class="cluster-card" href="../../courses/excel.html">
+        <div class="cc-img"><img src="../../courses/img/excel-hero.webp" alt="Excel" loading="lazy"/></div>
+        <div class="cc-body">
+          <div class="cc-kicker">Course</div>
+          <h3>Excel</h3>
+          <p>From formulas and pivots to Power Pivot and Power Query, the spreadsheet skills every finance role demands.</p>
+          <span class="cc-go">View the subject <span class="arr">&rarr;</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="cluster-reel-nav">
+      <button class="scroll-btn" id="cluster-prev" aria-label="Previous related items" disabled><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="scroll-btn" id="cluster-next" aria-label="Next related items"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+  </div>
+</section>
+
 <!-- ============================== FAQ ============================== -->
 <section class="alice" id="faq">
   <div class="geo-ring" style="width: 220px; height: 220px; top: -60px; right: 4%; opacity: 0.05;"></div>
@@ -1749,6 +1855,23 @@ document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape' && document.getElementById('consult-modal').classList.contains('open')) closeConsultModal();
 });
 
+</script>
+
+<!-- ============================== CLUSTER REEL JS ============================== -->
+<script>
+(function () {
+  var scroller = document.getElementById('cluster-scroll');
+  var prev = document.getElementById('cluster-prev');
+  var next = document.getElementById('cluster-next');
+  if (!scroller || !prev || !next) return;
+  function step() { var card = scroller.querySelector('.cluster-card'); if (!card) return scroller.clientWidth * 0.8; var gap = parseFloat(getComputedStyle(scroller).gap) || 20; return card.offsetWidth + gap; }
+  function updateArrows() { var max = scroller.scrollWidth - scroller.clientWidth - 1; prev.disabled = scroller.scrollLeft <= 0; next.disabled = scroller.scrollLeft >= max; }
+  prev.addEventListener('click', function () { scroller.scrollBy({ left: -step(), behavior: 'smooth' }); });
+  next.addEventListener('click', function () { scroller.scrollBy({ left: step(), behavior: 'smooth' }); });
+  scroller.addEventListener('scroll', updateArrows, { passive: true });
+  window.addEventListener('resize', updateArrows);
+  updateArrows();
+})();
 </script>
 </body>
 </html>
