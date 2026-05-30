@@ -277,6 +277,33 @@ section { padding: 88px 0; position: relative; overflow: hidden; }
 .post-card.type-tech     { --c: var(--blue-d); }
 .post-card.type-learning { --c: #047857; }
 .post-card.type-news     { --c: #C2540D; }
+.post-card.type-pm       { --c: #F97316; }
+
+/* Tables inside post-body (e.g. the persona / certification matrix). */
+.post-body .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.post-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.post-body th,
+.post-body td {
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--alice);
+  vertical-align: top;
+}
+.post-body th {
+  background: var(--alice);
+  font-family: var(--head);
+  font-weight: 600;
+  color: var(--prussian);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.post-body tbody tr:last-child td { border-bottom: 0; }
 
 .post-card.is-hidden { display: none !important; }
 .empty-state {
@@ -545,6 +572,65 @@ a.type-chip:hover { background: rgba(4,150,255,0.30); color: #fff; }
 /* Webflow exports often leave zero-width characters and empty paragraphs.
    Hide empty paragraphs cleanly. */
 .post-body p:empty { display: none; }
+
+/* ============================== POST PAGE: TOP-10 CERT CARDS ============================== */
+/* Each item in a numbered "top 10" list is wrapped in a white rounded box so the
+   sections feel like discrete cards rather than a long run of headings. */
+.post-body .cert-card {
+  background: #fff;
+  border: 1px solid var(--alice);
+  border-radius: 18px;
+  padding: 28px 32px;
+  margin-top: 28px;
+  box-shadow: 0 2px 6px -2px rgba(11, 27, 43, 0.05);
+}
+.post-body .cert-card h3:first-child { margin-top: 0; }
+.post-body .cert-card > * + * { margin-top: 16px; }
+@media (max-width: 600px) {
+  .post-body .cert-card { padding: 22px; border-radius: 14px; }
+}
+
+/* "How Kubicle helps..." callout inside a cert card. Tinted with the page's
+   accent colour so it themes per body class (orange on theme-pm, blue on
+   theme-blue, etc.). */
+.post-body .kubicle-note {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: rgba(var(--accent-rgb), 0.06);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+}
+.post-body .kubicle-note .kn-label {
+  display: block;
+  font-family: var(--head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--accent-d);
+  margin-bottom: 6px;
+}
+.post-body .kubicle-note p {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--soft-black);
+}
+/* Neutral variant used for "Honest note" callouts that disclaim rather than
+   sell — e.g. PRINCE2, where Kubicle is not a training provider. */
+.post-body .kubicle-note--neutral {
+  background: var(--alice);
+  border-left-color: var(--steel);
+}
+.post-body .kubicle-note--neutral .kn-label {
+  color: var(--steel);
+}
+
+/* The base .post-body blockquote rule uses var(--blue), which is only defined
+   under body.theme-blue. On theme-pm pages the border renders invisible, so
+   theme to the page accent instead (matches list markers below). */
+body.theme-pm .post-body blockquote { border-left-color: var(--accent); }
+body.theme-pm .post-body li::marker { color: var(--accent); }
 
 /* ============================== POST PAGE: STICKY ASIDE CTA ============================== */
 .aside-card {
