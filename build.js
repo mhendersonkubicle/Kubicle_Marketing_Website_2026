@@ -15,8 +15,9 @@
  * HTML are never touched. Edit them as usual, then run `npm run build`.
  */
 
-const fs   = require('fs');
-const path = require('path');
+const fs     = require('fs');
+const path   = require('path');
+const crypto = require('crypto');
 const { JSDOM, VirtualConsole } = require('jsdom');
 
 const ROOT   = __dirname;
@@ -162,6 +163,38 @@ const FORM_START_HEAD = ''
 // Read the shared scripts once. Re-eval them in a fresh JSDOM window per page.
 const NAV_JS    = fs.readFileSync(NAV_JS_PATH,    'utf8');
 const FOOTER_JS = fs.readFileSync(FOOTER_JS_PATH, 'utf8');
+
+
+// ---------------------------------------------------------------------------
+// Cache-busting fingerprints
+// ---------------------------------------------------------------------------
+// Cloudflare's edge CDN caches our CSS/JS for max-age=86400 (24h). Without a
+// query-string fingerprint, a fresh deploy still serves the previous file at
+// the same URL until the cache naturally expires. We sidestep that by hashing
+// each local asset's content at build time and rewriting every HTML <link> /
+// <script> reference to "<url>?v=<hash>". When a file changes, its hash
+// changes, the URL is a fresh cache key, and browsers/edge pick up the new
+// content immediately.
+const FINGERPRINT_FILES = [
+  'shared/styles/tokens.css',
+  'shared/styles/typography.css',
+  'shared/styles/buttons.css',
+  'shared/nav.js',
+  'shared/footer.js',
+  'shared/pricing.js',
+  'blog/blog.css',
+  'blog/blog.js',
+];
+
+const FINGERPRINTS = {};
+for (const rel of FINGERPRINT_FILES) {
+  const full = path.join(ROOT, rel);
+  if (fs.existsSync(full)) {
+    const content = fs.readFileSync(full);
+    const hash = crypto.createHash('sha256').update(content).digest('hex').slice(0, 8);
+    FINGERPRINTS[path.basename(rel)] = hash;
+  }
+}
 
 // Sentinel comments wrap each placeholder before parsing so we can find
 // what replaced it (the shared scripts use mount.outerHTML = MARKUP, so the
@@ -418,6 +451,26 @@ function injectFormStart(html) {
 
 // Walk DOM siblings between two comment nodes (exclusive) and concatenate
 // their serialised markup. Returns '' if either marker is missing.
+// Rewrite local CSS/JS href/src refs to include a content-hash query string so
+// the edge CDN treats every change as a fresh URL. Only rewrites references
+// to files we explicitly fingerprint (above) — external URLs (fontshare, GTM,
+// PostHog, etc.) are not touched. Any pre-existing `?v=...` is stripped first.
+function cacheBust(html) {
+  for (const basename in FINGERPRINTS) {
+    const hash = FINGERPRINTS[basename];
+    const esc = basename.replace(/\./g, '\\.');
+    const re = new RegExp(
+      '((?:href|src)=")((?:[^"]*/)?' + esc + ')(\\?[^"]*)?(")',
+      'g'
+    );
+    html = html.replace(re, function (_m, prefix, urlPath, _oldQuery, suffix) {
+      return prefix + urlPath + '?v=' + hash + suffix;
+    });
+  }
+  return html;
+}
+
+
 function collectBetweenSentinels(doc, startText, endText) {
   // Comment nodes are NodeType 8. Find them by walking the tree.
   const walker = doc.createTreeWalker(doc, 0x80 /* NodeFilter.SHOW_COMMENT */);
@@ -602,6 +655,9 @@ function main() {
       out = injectFormStart(out);
       // HubSpot loads at the bottom of <body> per HubSpot's instructions.
       out = injectHubspot(out);
+      // Last step: append content-hash query strings to local CSS/JS refs so
+      // the edge CDN can't serve a stale version after a deploy.
+      out = cacheBust(out);
       fs.writeFileSync(dst, out);
       if (didRender) prerendered++;
       else copied++;
