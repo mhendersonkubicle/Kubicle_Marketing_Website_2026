@@ -431,6 +431,64 @@ function injectHubspot(html) {
   return html + '\n' + HUBSPOT_BODY_END;
 }
 
+// LCP hints. Two cheap, conservative wins that help mobile LCP:
+//
+//   1) preconnect to cdn.fontshare.com.
+//      The site already preconnects to api.fontshare.com (where the CSS
+//      lives), but the actual woff2 font files are served from a separate
+//      origin — cdn.fontshare.com — which needs its own TCP+TLS handshake.
+//      Opening that connection early shaves ~100-200ms off the moment the
+//      browser can render an <h1> in the correct font, which is the LCP
+//      element on text-hero pages like the homepage.
+//
+//   2) For any page whose first <img> uses loading="eager" (course covers,
+//      blog post heroes, etc.), bump it to fetchpriority="high" and add a
+//      matching <link rel="preload" as="image"> in <head>. The browser then
+//      starts fetching the hero image before parsing reaches the <img> tag,
+//      and treats it as the highest-priority network resource. Typically
+//      shaves 150-300ms off LCP on image-hero pages.
+//
+// Idempotent: skipped if the marker is already present.
+var LCP_HINTS_MARKER = 'lcp-hints/v1';
+function injectLcpHints(html) {
+  if (html.indexOf(LCP_HINTS_MARKER) !== -1) return html;
+
+  var hints = [
+    '<!-- ' + LCP_HINTS_MARKER + ' -->',
+    '<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>'
+  ];
+
+  // Find the first <img> whose IMMEDIATE wrapper has one of the established
+  // hero-image container classes (cover-frame for blog posts, hero-visual /
+  // hero-photo / hero-illustration / hero-graphic / hero-asset / hero-art /
+  // hero-image / hero-rail / hero-img for everything else). Targeting the
+  // wrapper rather than the parent <section> avoids false-positives like the
+  // accreditation logo inside .hero-creds on the homepage or the G2 badge
+  // inside the for-business hero. Capturing the FULL <img> tag means we can
+  // rebuild it cleanly regardless of self-closing slash.
+  var heroRe = /<(?:div|figure|picture)\s+class="(?:[^"]*\s)?(?:cover-frame|hero-visual|hero-photo|hero-illustration|hero-graphic|hero-asset|hero-art|hero-image|hero-rail|hero-img)(?:\s[^"]*)?"[^>]*>\s*(<img\s[^>]*>)/i;
+  var imgMatch = html.match(heroRe);
+  if (imgMatch) {
+    var fullImgTag = imgMatch[1];
+    var alreadyDone = fullImgTag.indexOf('fetchpriority') !== -1;
+    var explicitlyLazy = /loading\s*=\s*"lazy"/i.test(fullImgTag);
+    if (!alreadyDone && !explicitlyLazy) {
+      var srcMatch = fullImgTag.match(/src="([^"]+)"/);
+      if (srcMatch) {
+        hints.push('<link rel="preload" as="image" href="' + srcMatch[1] + '" fetchpriority="high">');
+        // Insert fetchpriority as the FIRST attribute (right after `<img`).
+        // Keeps any self-closing slash and the rest of the tag intact.
+        var newImgTag = fullImgTag.replace(/^<img(\s)/i, '<img fetchpriority="high"$1');
+        html = html.replace(fullImgTag, newImgTag);
+      }
+    }
+  }
+
+  var block = hints.join('\n');
+  return html.replace(/<head(\s[^>]*)?>/i, function (m) { return m + '\n' + block; });
+}
+
+
 // Insert the Google Search Console verification meta tags into <head>.
 // Idempotent: skipped if the first token is already present in the source.
 function injectGsc(html) {
@@ -646,6 +704,10 @@ function main() {
       let out = injectGtm(html);
       out = injectGa4(out);
       out = injectPosthog(out);
+      // LCP hints sit just below Termly (which must stay topmost). The
+      // preconnect + image preload still run early enough to win the race
+      // against the source-HTML's stylesheet and <img> tags lower down.
+      out = injectLcpHints(out);
       out = injectTermly(out);
       // Google Search Console meta tag; placement within <head> doesn't matter
       // for verification, but goes last so it sits near the top.
