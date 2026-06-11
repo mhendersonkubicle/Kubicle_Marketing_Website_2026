@@ -792,7 +792,11 @@ const SITE_ORIGIN = 'https://www.kubicle.com';
 const SITEMAP_EXCLUDE = [
   /^\/404$/,
   /\/brochure$/,
-  /^\/try-free\/business$/
+  /^\/try-free\/business$/,
+  // The interactive assessment TOOL pages are noindex (the content-rich
+  // /resources/assessments/* landing pages are the SEO/canonical version).
+  // Keep the tools out of the sitemap so they don't compete in search.
+  /^\/assessments\//
 ];
 
 // Priority + change frequency derived from URL pattern. Most-trafficked /
