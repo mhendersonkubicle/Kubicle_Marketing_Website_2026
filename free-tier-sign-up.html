@@ -1002,60 +1002,84 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const PATHS = {
     "AI": {
+      "Beginner":     { id: 235, name: "Foundations of Artificial Intelligence" },
       "Intermediate": { id: 235, name: "Foundations of Artificial Intelligence" },
-      "Advanced": { id: 340, name: "AI for Business Professionals" }
-    },
-    "Agile & Scrum": {
-      "Intermediate": { id: 365, name: "AGILE Project Management" }
-    },
-    "Data Literacy": {
-      "Beginner": { id: 239, name: "Essential Principles of Data Analysis" },
-      "Advanced": { id: 358, name: "Certified Associate Data Analyst | Academy" }
-    },
-    "Data Preparation & Automation": {
-      "Intermediate": { id: 269, name: "Alteryx Designer Core Certification Preparation" },
-      "Advanced": { id: 267, name: "Predictive Analytics with Alteryx" }
-    },
-    "Data Visualization": {
-      "Beginner": { id: 47, name: "Communicating and Visualizing Data" },
-      "Advanced": { id: 347, name: "Advanced Data Visualisation for Finance | Academy" }
-    },
-    "Excel": {
-      "Intermediate": { id: 243, name: "Data Analysis with Excel: Essentials" },
-      "Advanced": { id: 338, name: "Advanced Excel" }
-    },
-    "Financial Modeling": {
-      "Advanced": { id: 241, name: "Financial Modeling with Excel: Advanced" }
-    },
-    "Introduction to Finance": {
-      "Intermediate": { id: 240, name: "Data for Finance and Accounting | Academy" }
+      "Advanced":     { id: 340, name: "AI for Business Professionals" }
     },
     "Machine Learning": {
+      "Beginner":     { id: 250, name: "AI & Predictions and Patterns in Machine Learning" },
       "Intermediate": { id: 250, name: "AI & Predictions and Patterns in Machine Learning" },
-      "Advanced": { id: 43, name: "AI & ML with Python" }
-    },
-    "Power BI": {
-      "Intermediate": { id: 144, name: "Building Dashboards in Power BI" },
-      "Advanced": { id: 335, name: "Advanced Power BI Concepts" }
-    },
-    "PowerPoint": {
-      "Advanced": { id: 339, name: "Microsoft PowerPoint Associate" }
-    },
-    "Project Management": {
-      "Intermediate": { id: 256, name: "Core Project Management Skills" }
+      "Advanced":     { id: 43,  name: "AI & ML with Python" }
     },
     "Python": {
-      "Intermediate": { id: 302, name: "Data Preparation with Python" }
-    },
-    "SQL": {
-      "Advanced": { id: 350, name: "Data Preparation with SQL" }
+      "Beginner":     { id: 302, name: "Data Preparation with Python" },
+      "Intermediate": { id: 302, name: "Data Preparation with Python" },
+      "Advanced":     { id: 302, name: "Data Preparation with Python" }
     },
     "Statistics": {
-      "Advanced": { id: 42, name: "Finance Modelling and Statistics | Academy" }
+      "Beginner":     { id: 42, name: "Finance Modelling and Statistics | Academy" },
+      "Intermediate": { id: 42, name: "Finance Modelling and Statistics | Academy" },
+      "Advanced":     { id: 42, name: "Finance Modelling and Statistics | Academy" }
+    },
+    "Data Literacy": {
+      "Beginner":     { id: 239, name: "Essential Principles of Data Analysis" },
+      "Intermediate": { id: 239, name: "Essential Principles of Data Analysis" },
+      "Advanced":     { id: 358, name: "Certified Associate Data Analyst | Academy" }
+    },
+    "Data Visualization": {
+      "Beginner":     { id: 47,  name: "Communicating and Visualizing Data" },
+      "Intermediate": { id: 47,  name: "Communicating and Visualizing Data" },
+      "Advanced":     { id: 347, name: "Advanced Data Visualisation for Finance | Academy" }
+    },
+    "Data Preparation & Automation": {
+      "Beginner":     { id: 266, name: "Getting Started with Data in Alteryx" },
+      "Intermediate": { id: 269, name: "Alteryx Designer Core Certification Preparation" },
+      "Advanced":     { id: 345, name: "Mastering Alteryx" }
+    },
+    "Excel": {
+      "Beginner":     { id: 346, name: "Mastering Excel for Beginners" },
+      "Intermediate": { id: 243, name: "Data Analysis with Excel: Essentials" },
+      "Advanced":     { id: 338, name: "Advanced Excel" }
+    },
+    "SQL": {
+      "Beginner":     { id: 350, name: "Data Preparation with SQL" },
+      "Intermediate": { id: 350, name: "Data Preparation with SQL" },
+      "Advanced":     { id: 350, name: "Data Preparation with SQL" }
+    },
+    "Power BI": {
+      "Beginner":     { id: 144, name: "Building Dashboards in Power BI" },
+      "Intermediate": { id: 144, name: "Building Dashboards in Power BI" },
+      "Advanced":     { id: 335, name: "Advanced Power BI Concepts" }
     },
     "Tableau": {
+      "Beginner":     { id: 44, name: "Preparing Data with Tableau" },
       "Intermediate": { id: 44, name: "Preparing Data with Tableau" },
-      "Advanced": { id: 48, name: "Mastering Tableau" }
+      "Advanced":     { id: 48, name: "Mastering Tableau" }
+    },
+    "Financial Modeling": {
+      "Beginner":     { id: 39,  name: "Introduction to Financial Models & Valuation" },
+      "Intermediate": { id: 343, name: "Financial Modeling with Excel: Essentials" },
+      "Advanced":     { id: 241, name: "Financial Modeling with Excel: Advanced" }
+    },
+    "Introduction to Finance": {
+      "Beginner":     { id: 240, name: "Data for Finance and Accounting | Academy" },
+      "Intermediate": { id: 240, name: "Data for Finance and Accounting | Academy" },
+      "Advanced":     { id: 240, name: "Data for Finance and Accounting | Academy" }
+    },
+    "Agile & Scrum": {
+      "Beginner":     { id: 365, name: "AGILE Project Management" },
+      "Intermediate": { id: 365, name: "AGILE Project Management" },
+      "Advanced":     { id: 365, name: "AGILE Project Management" }
+    },
+    "Project Management": {
+      "Beginner":     { id: 256, name: "Core Project Management Skills" },
+      "Intermediate": { id: 255, name: "Project Management Fundamentals" },
+      "Advanced":     { id: 255, name: "Project Management Fundamentals" }
+    },
+    "PowerPoint": {
+      "Beginner":     { id: 339, name: "Microsoft PowerPoint Associate" },
+      "Intermediate": { id: 339, name: "Microsoft PowerPoint Associate" },
+      "Advanced":     { id: 342, name: "Presenting Business Data with PowerPoint" }
     }
   };
 
