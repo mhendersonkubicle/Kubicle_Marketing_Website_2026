@@ -322,6 +322,11 @@ function generateRedirectsFunction(rules) {
 const RULES = ${rulesLiteral};
 
 function findMatch(pathname) {
+  // Normalize a single trailing slash (except the root) so an old URL crawled
+  // as /foo/ still matches a rule written as /foo.
+  if (pathname.length > 1 && pathname.charCodeAt(pathname.length - 1) === 47) {
+    pathname = pathname.slice(0, -1);
+  }
   for (let i = 0; i < RULES.length; i++) {
     const r = RULES[i];
     if (r.exact !== null) {

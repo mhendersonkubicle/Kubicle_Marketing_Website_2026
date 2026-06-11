@@ -499,3 +499,125 @@
 #    ship as real pages, REMOVE their stand-in lines from sections G and H
 #    above so the new pages serve at those URLs instead of redirecting.
 # ============================================================
+
+# ---- Legacy 404 cleanup (added from GSC crawl report) ----
+# Plural /subjects/ mirrors the singular /subject/ rules (old Webflow used plural).
+/subjects/adaptive-project-management                      /courses/adaptive-project-management         301
+/subjects/ai-fundamentals                                  /courses/ai-fundamentals                     301
+/subjects/alteryx                                          /courses/alteryx                             301
+/subjects/alteryx-intelligence-suite                       /courses/alteryx-intelligence-suite          301
+/subjects/apis                                             /courses/apis                                301
+/subjects/app-development-fundamentals                     /courses/app-development-fundamentals        301
+/subjects/business-analysis                                /courses/business-analysis                   301
+/subjects/data-ethics-risk                                 /courses/data-ethics-risk                    301
+/subjects/data-literacy                                    /courses/data-literacy                       301
+/subjects/data-presentation-skills                         /courses/data-presentation-skills            301
+/subjects/data-regulation                                  /courses/data-regulation                     301
+/subjects/data-security                                    /courses/data-security                       301
+/subjects/data-strategy-governance                         /courses/data-strategy-governance            301
+/subjects/data-visualization                               /courses/visualization-fundamentals          301
+/subjects/excel                                            /courses/excel                               301
+/subjects/finance-fundamentals                             /courses/finance-fundamentals                301
+/subjects/financial-modeling                               /courses/financial-modeling                  301
+/subjects/machine-learning-with-python                     /courses/machine-learning-python             301
+/subjects/microsoft-teams                                  /courses/microsoft-teams                     301
+/subjects/outlook                                          /courses/outlook                             301
+/subjects/power-apps                                       /courses/power-apps                          301
+/subjects/power-bi                                         /courses/power-bi                            301
+/subjects/powerpoint                                       /courses/powerpoint                          301
+/subjects/project-management-fundamentals                  /courses/project-management-fundamentals     301
+/subjects/python-fundamentals                              /courses/python-fundamentals                 301
+/subjects/rpa-fundamentals                                 /courses/rpa-fundamentals                    301
+/subjects/rpa-with-power-automate                          /courses/rpa-power-automate                  301
+/subjects/rpa-with-uipath                                  /courses/rpa-uipath                          301
+/subjects/sharepoint                                       /courses/sharepoint                          301
+/subjects/sql                                              /courses/sql                                 301
+/subjects/statistical-analysis                             /courses/statistical-analysis                301
+/subjects/strategic-analysis                               /courses/strategic-analysis                  301
+/subjects/tableau                                          /courses/tableau                             301
+/subjects/technology-fundamentals                          /courses/technology-fundamentals             301
+/subjects/word                                             /courses/word                                301
+/subjects/*                                                /courses/:splat                              301
+/subjects/data-analysis                                    /catalog                                     301
+/subjects/*                                                /courses/:splat                              301
+
+# Old library deep-links and learning-path / b2c subject URLs -> nearest hub.
+/library/*                                                 /catalog                                     301
+/learning-paths/*                                          /academies/                                  301
+/b2c-academies-subjects/*                                  /academies/                                  301
+
+# Old root-level blog posts -> /blog/<slug> (only where the post still exists).
+/2022-its-a-wrap                                           /blog/2022-its-a-wrap                        301
+/3-step-guide-get-us-census-data-into-power-bi             /blog/3-step-guide-get-us-census-data-into-power-bi 301
+/4-steps-for-integrating-us-census-data-with-your-companys-data /blog/4-steps-for-integrating-us-census-data-with-your-companys-data 301
+/4-ways-to-make-the-most-of-online-learning                /blog/4-ways-to-make-the-most-of-online-learning 301
+/5-ways-you-can-maximize-the-impact-of-your-charts         /blog/5-ways-you-can-maximize-the-impact-of-your-charts 301
+/ai-adoption-challenges-in-companies                       /blog/ai-adoption-challenges-in-companies    301
+/ai-code-of-conduct-in-ai-use-policies                     /blog/ai-code-of-conduct-in-ai-use-policies  301
+/ai-employee-training-programs                             /blog/ai-employee-training-programs          301
+/ai-skills-gap-junior-auditors                             /blog/ai-skills-gap-junior-auditors          301
+/an-updated-kubicle-experience-launching-january-26th      /blog/an-updated-kubicle-experience-launching-january-26th 301
+/announcing-a-new-kubicle-learning-format-projects         /blog/announcing-a-new-kubicle-learning-format-projects 301
+/artificial-intelligence-in-the-workplace                  /blog/artificial-intelligence-in-the-workplace 301
+/beyond-one-size-fits-all-a-persona-based-blueprint-for-enterprise-ai-literacy /blog/beyond-one-size-fits-all-a-persona-based-blueprint-for-enterprise-ai-literacy 301
+/capm-vs-apt-which-one-is-right-for-you                    /blog/capm-vs-apt-which-one-is-right-for-you 301
+/countdown-to-compliance-what-the-eu-ai-act-means-for-your-business /blog/countdown-to-compliance-what-the-eu-ai-act-means-for-your-business 301
+/creating-an-ai-use-policy-a-comprehensive-guide-for-enterprises /blog/creating-an-ai-use-policy-a-comprehensive-guide-for-enterprises 301
+/data-literacy-in-the-financial-services-sector            /blog/data-literacy-in-the-financial-services-sector 301
+/essential-key-metrics-from-a-leveraged-buyout             /blog/essential-key-metrics-from-a-leveraged-buyout 301
+/eu-ai-act-summary-requirements-timeline                   /blog/eu-ai-act-summary-requirements-timeline 301
+/excel-function-spotlight                                  /blog/excel-function-spotlight               301
+/expanding-our-ai-tech-library-essential-new-courses       /blog/expanding-our-ai-tech-library-essential-new-courses 301
+/fall-2025-celebrating-our-latest-g2-awards                /blog/fall-2025-celebrating-our-latest-g2-awards 301
+/first-steps-in-alteryx-importing-excel-files              /blog/first-steps-in-alteryx-importing-excel-files 301
+/first-steps-in-alteyrx-how-to-import-your-data            /blog/first-steps-in-alteyrx-how-to-import-your-data 301
+/going-going-gone-what-do-nfts-charlie-bit-my-finger-have-in-common /blog/going-going-gone-what-do-nfts-charlie-bit-my-finger-have-in-common 301
+/how-do-outer-joins-work-in-alteryx                        /blog/how-do-outer-joins-work-in-alteryx     301
+/how-public-data-can-be-valuable-to-your-businesses        /blog/how-public-data-can-be-valuable-to-your-businesses 301
+/how-to-build-the-debt-schedule-for-a-leveraged-buyout     /blog/how-to-build-the-debt-schedule-for-a-leveraged-buyout 301
+/how-to-calculate-roi-of-graduate-development-with-a-ready-to-use-calculator /blog/how-to-calculate-roi-of-graduate-development-with-a-ready-to-use-calculator 301
+/how-to-combine-multiple-tables-horizontally-in-alteryx    /blog/how-to-combine-multiple-tables-horizontally-in-alteryx 301
+/how-to-combine-multiple-tables-vertically-in-alteryx      /blog/how-to-combine-multiple-tables-vertically-in-alteryx 301
+/how-to-create-a-sources-and-uses-table-for-a-leveraged-buyout-transaction /blog/how-to-create-a-sources-and-uses-table-for-a-leveraged-buyout-transaction 301
+/how-to-do-a-vlookup-in-excel                              /blog/how-to-do-a-vlookup-in-excel           301
+/how-to-implement-a-successful-data-literacy-training-initiative /blog/how-to-implement-a-successful-data-literacy-training-initiative 301
+/how-to-make-the-most-of-public-data-for-your-business     /blog/how-to-make-the-most-of-public-data-for-your-business 301
+/how-to-maximize-the-benefits-of-investing-in-early-career-training-programs /blog/how-to-maximize-the-benefits-of-investing-in-early-career-training-programs 301
+/how-to-project-cash-flows-after-a-leveraged-buyout        /blog/how-to-project-cash-flows-after-a-leveraged-buyout 301
+/improve-your-financial-analysis-and-reporting-with-5-powerful-excel-add-ins /blog/improve-your-financial-analysis-and-reporting-with-5-powerful-excel-add-ins 301
+/introducing-a-fresh-brand-and-a-smarter-website           /blog/introducing-a-fresh-brand-and-a-smarter-website 301
+/kubicle-and-rand-mutual-assurance-announce-strategic-partnership-to-drive-digital-maturity-and-enhance-customer-service /blog/kubicle-and-rand-mutual-assurance-announce-strategic-partnership-to-drive-digital-maturity-and-enhance-customer-service 301
+/kubicle-unveils-academies-a-new-era-in-blended-learning-for-business-professionals /blog/kubicle-unveils-academies-a-new-era-in-blended-learning-for-business-professionals 301
+/kubicle-what-are-we-building                              /blog/kubicle-what-are-we-building           301
+/kubicles-accredited-learning-earn-cpd-credits-as-you-enhance-your-data-literacy-skills /blog/kubicles-accredited-learning-earn-cpd-credits-as-you-enhance-your-data-literacy-skills 301
+/kubifest-2023-a-celebration-of-teamwork-culture-and-aspirations /blog/kubifest-2023-a-celebration-of-teamwork-culture-and-aspirations 301
+/lead-the-charge-in-innovation-with-kubicles-new-technology-academy /blog/lead-the-charge-in-innovation-with-kubicles-new-technology-academy 301
+/leveraged-buyouts-how-to-estimate-your-returns            /blog/leveraged-buyouts-how-to-estimate-your-returns 301
+/project-manager-certifications                            /blog/project-manager-certifications         301
+/revolutionizing-corporate-finance-how-ai-empowers-cfos-and-transforms-finance-teams /blog/revolutionizing-corporate-finance-how-ai-empowers-cfos-and-transforms-finance-teams 301
+/tableau-and-power-bi-whats-the-difference                 /blog/tableau-and-power-bi-whats-the-difference 301
+/the-best-publicly-available-data-for-business             /blog/the-best-publicly-available-data-for-business 301
+/the-future-of-corporate-training-why-enterprises-are-embracing-microlearning /blog/the-future-of-corporate-training-why-enterprises-are-embracing-microlearning 301
+/the-future-of-the-management-consultants-tool-stack       /blog/the-future-of-the-management-consultants-tool-stack 301
+/the-good-the-bad-and-the-ugly-of-hr-analytics             /blog/the-good-the-bad-and-the-ugly-of-hr-analytics 301
+/the-key-metrics-you-need-to-evaluate-the-success-of-early-career-training-programs /blog/the-key-metrics-you-need-to-evaluate-the-success-of-early-career-training-programs 301
+/the-prevalence-of-data-analytics-in-sport                 /blog/the-prevalence-of-data-analytics-in-sport 301
+/the-strategic-imperative-for-enterprise-leaders-in-the-age-of-ai /blog/the-strategic-imperative-for-enterprise-leaders-in-the-age-of-ai 301
+/the-transformative-power-of-ai-why-understanding-ai-in-the-workplace-is-essential-for-business-professionals-csuite-executives /blog/the-transformative-power-of-ai-why-understanding-ai-in-the-workplace-is-essential-for-business-professionals-csuite-executives 301
+/using-ides-anaconda-and-jupyter-notebook                  /blog/using-ides-anaconda-and-jupyter-notebook 301
+/what-is-the-difference-between-alteryx-and-tableau        /blog/what-is-the-difference-between-alteryx-and-tableau 301
+/what-is-the-difference-between-excel-and-power-bi         /blog/what-is-the-difference-between-excel-and-power-bi 301
+/when-designing-dashboards-less-is-more                    /blog/when-designing-dashboards-less-is-more 301
+/whitepaper-data-literacy-trends-in-the-financial-services-sector /blog/whitepaper-data-literacy-trends-in-the-financial-services-sector 301
+/why-appetite-and-ability-to-learn-is-the-1-skill-management-consulting-firms-need /blog/why-appetite-and-ability-to-learn-is-the-1-skill-management-consulting-firms-need 301
+/why-do-financiers-struggle-with-no-code-and-low-code-technology-adoption /blog/why-do-financiers-struggle-with-no-code-and-low-code-technology-adoption 301
+/why-organizations-should-embrace-alteryx-for-modern-data-engineering /blog/why-organizations-should-embrace-alteryx-for-modern-data-engineering 301
+/why-the-time-for-a-company-wide-ai-policy-is-now          /blog/why-the-time-for-a-company-wide-ai-policy-is-now 301
+/why-your-organization-should-be-using-alteryx             /blog/why-your-organization-should-be-using-alteryx 301
+
+# Trivial top-level legacy routes.
+/home                                                      /                                            301
+/about                                                     /about/our-story                             301
+/terms                                                     /terms-of-service                            301
+/projects/*                                                /projects                                    301
+/project/*                                                 /projects                                    301
