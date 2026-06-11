@@ -30,7 +30,15 @@ const SKIP_DIRS = new Set(['node_modules', '.netlify', '.claude', '.git', 'dist'
 // deploy artifact this script's output ends up in; if it isn't skipped, each
 // build copies the previous zip into the new dist and the next zip is double
 // the size (and recursive). Add other root-only artifacts here if needed.
-const SKIP_FILES = new Set(['dist.zip']);
+const SKIP_FILES = new Set([
+  'dist.zip',
+  // Build + dev tooling that must never ship to the public site.
+  'build.js', 'build_tag_doc.js', 'extract_image_library.py', 'ivy_test.mjs',
+  'package.json', 'package-lock.json',
+]);
+// Root-level files matching these patterns are dev artifacts (logs, scratch
+// scripts) and are excluded from /dist so they never deploy publicly.
+const SKIP_FILE_PATTERNS = [/\.log$/i, /\.py$/i, /\.mjs$/i, /^ivy_/i, /^\.env/i];
 
 // Google Tag Manager container. Injected into every built HTML page (head +
 // noscript fallback) so the source files stay clean and every page picks it
@@ -226,9 +234,11 @@ function walk(dir, base = '') {
   const out = [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     if (SKIP_DIRS.has(entry.name)) continue;
-    // SKIP_FILES check is only meaningful at the project root (base === '')
-    // so files in sub-trees with the same name aren't accidentally excluded.
+    // SKIP_FILES / SKIP_FILE_PATTERNS checks are only meaningful at the project
+    // root (base === '') so files in sub-trees with the same name (or extension)
+    // aren't accidentally excluded.
     if (base === '' && SKIP_FILES.has(entry.name)) continue;
+    if (base === '' && entry.isFile() && SKIP_FILE_PATTERNS.some(re => re.test(entry.name))) continue;
     const abs = path.join(dir, entry.name);
     const rel = base ? path.join(base, entry.name) : entry.name;
     if (entry.isDirectory()) {
