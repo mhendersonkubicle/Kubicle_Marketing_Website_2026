@@ -796,7 +796,9 @@ const SITEMAP_EXCLUDE = [
   // The interactive assessment TOOL pages are noindex (the content-rich
   // /resources/assessments/* landing pages are the SEO/canonical version).
   // Keep the tools out of the sitemap so they don't compete in search.
-  /^\/assessments\//
+  /^\/assessments\//,
+  // Campaign landing pages under /lp/ are noindex (paid/direct traffic only).
+  /^\/lp\//
 ];
 
 // Priority + change frequency derived from URL pattern. Most-trafficked /
