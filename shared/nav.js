@@ -250,6 +250,28 @@
     + '.dd-narrow .dd-link { font-size: 13.5px; padding: 8px 10px; }'
     + '.dd-narrow .dd-link .dd-ico { width: 26px; height: 26px; border-radius: 7px; }'
     + '.dd-narrow .dd-link .dd-ico svg { width: 15px; height: 15px; }'
+
+    /* Highlighted (featured) dropdown item, used for the AI training page. */
+    + '#dd-business { min-width: 320px; }'
+    + '.dd-link.dd-hot {'
+    + '  flex-direction: column; align-items: stretch; gap: 9px;'
+    + '  padding: 12px 12px 13px; margin-bottom: 2px;'
+    + '  background: color-mix(in oklab, var(--nav-blue) 7%, #fff);'
+    + '  border: 1px solid color-mix(in oklab, var(--nav-blue) 24%, #fff);'
+    + '  color: var(--nav-prussian);'
+    + '}'
+    + '.dd-link.dd-hot:hover { background: color-mix(in oklab, var(--nav-blue) 13%, #fff); color: var(--nav-blue-d, var(--nav-blue)); transform: none; }'
+    + '.dd-hot-chip {'
+    + '  align-self: flex-start;'
+    + '  font-family: var(--head, "Clash Grotesk",sans-serif);'
+    + '  font-size: 9px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;'
+    + '  background: var(--nav-blue); color: #fff;'
+    + '  border-radius: 999px; padding: 4px 9px; line-height: 1;'
+    + '}'
+    + '.dd-hot-main { display: flex; align-items: center; gap: 12px; }'
+    + '.dd-hot-label { font-weight: 700; font-size: 14px; line-height: 1.2; }'
+    + '.dd-link.dd-hot .dd-ico { flex-shrink: 0; background: var(--nav-blue); color: #fff; }'
+    + '.dd-link.dd-hot:hover .dd-ico { background: var(--nav-blue); color: #fff; }'
     + '.dd-submenu.ai      { --c: var(--nav-academy-ai); }'
     + '.dd-submenu.data    { --c: var(--nav-academy-data); }'
     + '.dd-submenu.pm      { --c: var(--nav-academy-pm); }'
@@ -281,7 +303,7 @@
     + '  .nav-links { display: none !important; }'
     + '  .nav-dropdown { display: none; }'
     + '  .nav-hamburger { display: inline-flex !important; }'
-    /* Swap wordmark for brand mark — mobile traffic is heavy and a compact
+    /* Swap wordmark for brand mark; mobile traffic is heavy and a compact
        mark frees up horizontal space for the Try for Free + Log In CTAs. */
     + '  .nav-logo .logo-wordmark { display: none; }'
     + '  .nav-logo .logo-mark { display: block; height: 32px; width: auto; }'
@@ -422,6 +444,8 @@
     + '  background: color-mix(in oklab, var(--c, var(--nav-blue)) 8%, #fff);'
     + '  color: var(--c, var(--nav-blue));'
     + '}'
+    + '.m-sublink.m-hot { flex-direction: column; align-items: stretch; gap: 9px; padding: 12px 14px; margin-bottom: 4px; border: 1px solid color-mix(in oklab, var(--nav-blue) 24%, #fff); background: color-mix(in oklab, var(--nav-blue) 7%, #fff); }'
+    + '.m-sublink.m-hot .m-hot-main { display: flex; align-items: center; gap: 12px; font-weight: 700; }'
     + '.m-sublink .m-ico {'
     + '  width: 28px; height: 28px; border-radius: 7px; flex-shrink: 0;'
     + '  display: inline-flex; align-items: center; justify-content: center;'
@@ -509,6 +533,7 @@
     + '        <div class="nav-dropdown dd-narrow" id="dd-business" role="menu">'
     + '          <div class="dd-simple">'
     + '            <div class="dd-col-label" style="border:0; margin:0; padding: 0 8px 6px;">Training</div>'
+    + '            <a class="dd-link dd-hot" href="' + BASE + 'ai-training-for-employees.html"><span class="dd-hot-chip">Featured</span><span class="dd-hot-main"><span class="dd-ico">' + ico('sparkle') + '</span><span class="dd-hot-label">AI Training for Employees</span></span></a>'
     + '            <a class="dd-link" href="' + BASE + 'for-business/teams.html"><span class="dd-ico">' + ico('users') + '</span>For Teams</a>'
     + '            <a class="dd-link" href="' + BASE + 'for-business/enterprises.html"><span class="dd-ico">' + ico('building') + '</span>For Enterprises</a>'
     + '            <div class="dd-col-label" style="border-top: 1px solid var(--nav-alice); margin-top: 10px; padding: 12px 8px 6px;">Capabilities</div>'
@@ -836,6 +861,7 @@
     html +=   '</button>';
     html +=   '<div class="m-panel"><div class="m-panel-inner">';
     html +=     '<div class="m-group-label">Training</div>';
+    html +=     '<a class="m-sublink m-hot" href="' + BASE + 'ai-training-for-employees.html"><span class="dd-hot-chip">Featured</span><span class="m-hot-main"><span class="m-ico" style="background: var(--nav-blue); color: #fff;">' + ico('sparkle') + '</span>AI Training for Employees</span></a>';
     html +=     '<a class="m-sublink" href="' + BASE + 'for-business/teams.html"><span class="m-ico">' + ico('users') + '</span>For Teams</a>';
     html +=     '<a class="m-sublink" href="' + BASE + 'for-business/enterprises.html"><span class="m-ico">' + ico('building') + '</span>For Enterprises</a>';
     html +=     '<div class="m-group-label">Capabilities</div>';
