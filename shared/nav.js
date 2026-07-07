@@ -272,6 +272,17 @@
     + '.dd-hot-label { font-weight: 700; font-size: 14px; line-height: 1.2; }'
     + '.dd-link.dd-hot .dd-ico { flex-shrink: 0; background: var(--nav-blue); color: #fff; }'
     + '.dd-link.dd-hot:hover .dd-ico { background: var(--nav-blue); color: #fff; }'
+    /* Featured AI item acts as a parent: hovering it reveals a flyout of tool-specific pages. */
+    + '.dd-hot-wrap { position: relative; }'
+    + '.dd-hot-chev { margin-left: auto; width: 13px; height: 13px; color: var(--nav-blue); flex-shrink: 0; transition: transform 0.15s; }'
+    + '.dd-hot-chev svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }'
+    + '.dd-hot-wrap:hover .dd-hot-chev, .dd-hot-wrap:focus-within .dd-hot-chev { transform: translateX(2px); }'
+    + '.dd-hot-wrap:hover > .dd-submenu, .dd-hot-wrap:focus-within > .dd-submenu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(0); }'
+    /* Transparent bridge so the mouse can cross the gap to the flyout without it closing. */
+    + '.dd-hot-wrap > .dd-submenu::before { content: ""; position: absolute; top: 0; bottom: 0; left: -10px; width: 12px; }'
+    /* Brand logos in the AI submenu items, shown on a white chip so they read against the menu. */
+    + '.dd-ico.dd-logo { background: #fff; padding: 3px; overflow: hidden; box-sizing: border-box; }'
+    + '.dd-ico.dd-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }'
     + '.dd-submenu.ai      { --c: var(--nav-academy-ai); }'
     + '.dd-submenu.data    { --c: var(--nav-academy-data); }'
     + '.dd-submenu.pm      { --c: var(--nav-academy-pm); }'
@@ -446,6 +457,12 @@
     + '}'
     + '.m-sublink.m-hot { flex-direction: column; align-items: stretch; gap: 9px; padding: 12px 14px; margin-bottom: 4px; border: 1px solid color-mix(in oklab, var(--nav-blue) 24%, #fff); background: color-mix(in oklab, var(--nav-blue) 7%, #fff); }'
     + '.m-sublink.m-hot .m-hot-main { display: flex; align-items: center; gap: 12px; font-weight: 700; }'
+    /* Tool-specific pages nested under the featured AI item. */
+    + '.m-subtools { margin: 2px 0 6px 15px; padding-left: 11px; border-left: 2px solid color-mix(in oklab, var(--nav-blue) 24%, #fff); display: flex; flex-direction: column; gap: 1px; }'
+    + '.m-subtools-label { font-family: var(--head, "Clash Grotesk",sans-serif); font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--nav-steel); padding: 6px 0 4px; }'
+    + '.m-subtools .m-subtool { font-size: 14px; }'
+    + '.m-ico.m-logo { background: #fff; padding: 3px; overflow: hidden; box-sizing: border-box; }'
+    + '.m-ico.m-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }'
     + '.m-sublink .m-ico {'
     + '  width: 28px; height: 28px; border-radius: 7px; flex-shrink: 0;'
     + '  display: inline-flex; align-items: center; justify-content: center;'
@@ -533,7 +550,18 @@
     + '        <div class="nav-dropdown dd-narrow" id="dd-business" role="menu">'
     + '          <div class="dd-simple">'
     + '            <div class="dd-col-label" style="border:0; margin:0; padding: 0 8px 6px;">Training</div>'
-    + '            <a class="dd-link dd-hot" href="' + BASE + 'ai-training-for-employees.html"><span class="dd-hot-chip">Featured</span><span class="dd-hot-main"><span class="dd-ico">' + ico('sparkle') + '</span><span class="dd-hot-label">AI Training for Employees</span></span></a>'
+    + '            <div class="dd-hot-wrap">'
+    + '              <a class="dd-link dd-hot" href="' + BASE + 'ai-training-for-employees.html"><span class="dd-hot-chip">Featured</span><span class="dd-hot-main"><span class="dd-ico">' + ico('sparkle') + '</span><span class="dd-hot-label">AI Training for Employees</span><span class="dd-hot-chev"><svg viewBox="0 0 12 12"><path d="M4 2l4 4-4 4"/></svg></span></span></a>'
+    + '              <div class="dd-submenu ai" data-submenu="ai-tools">'
+    + '                <a class="dd-submenu-head" href="' + BASE + 'ai-training-for-employees.html"><span class="dd-submenu-title">AI Training for Employees</span><span class="dd-submenu-cta">Program overview <svg viewBox="0 0 12 12"><path d="M3 6h6M6.5 3l3 3-3 3"/></svg></span></a>'
+    + '                <div class="dd-col-label" style="padding: 2px 10px 6px;">Training by tool</div>'
+    + '                <div class="dd-submenu-list">'
+    + '                  <a class="dd-link" href="' + BASE + 'copilot-training-for-business.html"><span class="dd-ico dd-logo"><img src="' + BASE + 'img/shared/tool-logos/copilot.webp" alt="" loading="lazy"/></span>Microsoft Copilot Training</a>'
+    + '                  <a class="dd-link" href="' + BASE + 'chatgpt-training-for-business.html"><span class="dd-ico dd-logo"><img src="' + BASE + 'img/shared/tool-logos/chatgpt.webp" alt="" loading="lazy"/></span>ChatGPT Training</a>'
+    + '                  <a class="dd-link" href="' + BASE + 'claude-training-for-business.html"><span class="dd-ico dd-logo"><img src="' + BASE + 'img/shared/tool-logos/claude.webp" alt="" loading="lazy"/></span>Claude Training</a>'
+    + '                </div>'
+    + '              </div>'
+    + '            </div>'
     + '            <a class="dd-link" href="' + BASE + 'for-business/teams.html"><span class="dd-ico">' + ico('users') + '</span>For Teams</a>'
     + '            <a class="dd-link" href="' + BASE + 'for-business/enterprises.html"><span class="dd-ico">' + ico('building') + '</span>For Enterprises</a>'
     + '            <div class="dd-col-label" style="border-top: 1px solid var(--nav-alice); margin-top: 10px; padding: 12px 8px 6px;">Capabilities</div>'
@@ -862,6 +890,12 @@
     html +=   '<div class="m-panel"><div class="m-panel-inner">';
     html +=     '<div class="m-group-label">Training</div>';
     html +=     '<a class="m-sublink m-hot" href="' + BASE + 'ai-training-for-employees.html"><span class="dd-hot-chip">Featured</span><span class="m-hot-main"><span class="m-ico" style="background: var(--nav-blue); color: #fff;">' + ico('sparkle') + '</span>AI Training for Employees</span></a>';
+    html +=     '<div class="m-subtools">';
+    html +=       '<div class="m-subtools-label">Training by tool</div>';
+    html +=       '<a class="m-sublink m-subtool" href="' + BASE + 'copilot-training-for-business.html"><span class="m-ico m-logo"><img src="' + BASE + 'img/shared/tool-logos/copilot.webp" alt="" loading="lazy"/></span>Microsoft Copilot Training</a>';
+    html +=       '<a class="m-sublink m-subtool" href="' + BASE + 'chatgpt-training-for-business.html"><span class="m-ico m-logo"><img src="' + BASE + 'img/shared/tool-logos/chatgpt.webp" alt="" loading="lazy"/></span>ChatGPT Training</a>';
+    html +=       '<a class="m-sublink m-subtool" href="' + BASE + 'claude-training-for-business.html"><span class="m-ico m-logo"><img src="' + BASE + 'img/shared/tool-logos/claude.webp" alt="" loading="lazy"/></span>Claude Training</a>';
+    html +=     '</div>';
     html +=     '<a class="m-sublink" href="' + BASE + 'for-business/teams.html"><span class="m-ico">' + ico('users') + '</span>For Teams</a>';
     html +=     '<a class="m-sublink" href="' + BASE + 'for-business/enterprises.html"><span class="m-ico">' + ico('building') + '</span>For Enterprises</a>';
     html +=     '<div class="m-group-label">Capabilities</div>';
