@@ -805,6 +805,8 @@ const SITEMAP_EXCLUDE = [
   /^\/book-a-demo-thank-you$/,
   // Catalog form redirects here on success; the PDF is delivered by email.
   /^\/catalog-thank-you$/,
+  // Trial form redirects here on success.
+  /^\/try-free\/business-thank-you$/,
   // The interactive assessment TOOL pages are noindex (the content-rich
   // /resources/assessments/* landing pages are the SEO/canonical version).
   // Keep the tools out of the sitemap so they don't compete in search.

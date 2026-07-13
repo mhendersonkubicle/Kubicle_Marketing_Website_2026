@@ -274,34 +274,6 @@ body {
 .tf-direct-btn .arr { transition: transform 0.15s; }
 .tf-direct-btn:hover .arr { transform: translateX(3px); }
 
-/* Success state */
-.tf-success {
-  text-align: center;
-  padding: 32px 0 12px;
-}
-.tf-success .ok {
-  width: 64px; height: 64px;
-  border-radius: 50%;
-  background: var(--accent-soft, #D6EEFF);
-  color: var(--accent-d, #0D5F96);
-  display: inline-flex; align-items: center; justify-content: center;
-  margin-bottom: 18px;
-}
-.tf-success .ok svg { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-.tf-success .h {
-  font-family: var(--head, "Clash Grotesk",sans-serif);
-  font-size: 24px; font-weight: 600;
-  color: var(--prussian);
-  letter-spacing: -0.015em;
-}
-.tf-success .p {
-  margin-top: 10px;
-  color: var(--steel);
-  font-size: 14.5px; line-height: 1.55;
-  max-width: 320px;
-  margin-left: auto; margin-right: auto;
-}
-
 /* ============================== TRUST STRIP ============================== */
 .tf-trust {
   padding: 48px 0 32px;
@@ -630,11 +602,11 @@ function submitTryFree(e) {
       event: 'book_demo_submit',
       form_name: 'try_free_business'
     });
-    form.innerHTML = '<div class="tf-success">'
-      + '<div class="ok"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></div>'
-      + '<div class="h">Your free trial is on its way.</div>'
-      + '<p class="p">We are preparing your account now. A member of the team will be in touch shortly to tailor the configuration to your business use case.</p>'
-      + '</div>';
+    // Give the GTM tags a beat to dispatch, then hand off to the
+    // thank-you page.
+    setTimeout(function () {
+      window.location.href = 'business-thank-you.html';
+    }, 400);
   })
   .catch(function (hubspotErr) {
     btn.disabled = false;
