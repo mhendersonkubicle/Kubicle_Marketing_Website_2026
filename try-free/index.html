@@ -5,19 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
 <title>Try Kubicle for Free</title>
-<meta name="description" content="Get started with Kubicle. Choose the path that fits you: business team or individual learner."/>
+<meta name="description" content="Start a free Kubicle trial in minutes. Businesses get up to 10 seats, 14 days fully unlocked, and unlimited CPE and CPD certificates. Individual learners can start free too."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@500,600,700&f[]=satoshi@400,500,700&display=swap"/>
 
-<!-- Shared design system: tokens (try-free uses bespoke layout/buttons inline below) -->
+<!-- Shared design system tokens (this page uses a bespoke layout inline below) -->
 <link rel="stylesheet" href="../shared/styles/tokens.css"/>
 
 <style>
-/* ============================== PAGE-LOCAL TOKENS ============================== */
-:root {
-  --academy-finance: #10B981;
-}
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { min-height: 100%; }
 body {
@@ -27,141 +23,125 @@ body {
   min-height: 100vh;
   display: flex; flex-direction: column;
 }
+/* full-page brand grid pattern behind everything */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: url("../img/try-free/bg-pattern.svg") center top / cover no-repeat;
+  opacity: 0.07;
+}
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
+.minimal-header { position: relative; z-index: 1; padding: 22px 32px; display: flex; align-items: center; }
+.minimal-header img { height: 30px; }
+
 main {
+  position: relative; z-index: 1;
   flex: 1;
-  display: flex; align-items: center; justify-content: center;
-  padding: 80px 24px;
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 30px 24px 72px;
 }
-.chooser {
-  width: 100%;
-  max-width: 980px;
+.wrap {
+  width: 100%; max-width: 760px;
   text-align: center;
 }
+
 .eyebrow {
   font-family: var(--head);
   font-size: 12px; font-weight: 600;
   letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--blue);
-  margin-bottom: 18px;
+  color: var(--blue); margin-bottom: 14px;
 }
 h1 {
   font-family: var(--head);
-  font-size: clamp(34px, 5vw, 54px);
-  font-weight: 600;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  color: #fff;
-  max-width: 720px;
-  margin: 0 auto;
+  font-size: clamp(32px, 4.6vw, 48px);
+  font-weight: 600; line-height: 1.06;
+  letter-spacing: -0.02em; color: #fff;
+  max-width: 640px; margin: 0 auto;
 }
 .lede {
-  margin: 18px auto 0;
-  max-width: 540px;
-  font-size: 17px; line-height: 1.55;
-  color: rgba(255,255,255,0.7);
+  margin: 15px auto 0; max-width: 520px;
+  font-size: 17px; line-height: 1.55; color: rgba(255,255,255,0.68);
 }
 
-.cards {
-  margin-top: 56px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+/* ============================== TAB SWITCH (CSS radio + JS active class) ============================== */
+.switch { margin-top: 34px; }
+.opt { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+
+.tabbar {
+  display: inline-flex; gap: 4px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px; padding: 5px; margin-bottom: 26px;
 }
+.tab {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 11px 26px; border-radius: 999px; cursor: pointer;
+  font-family: var(--head); font-weight: 600; font-size: 15px;
+  color: rgba(255,255,255,0.72); white-space: nowrap;
+  transition: color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+.tab:hover { color: #fff; }
+#opt-biz:checked ~ .tabbar label[for="opt-biz"],
+#opt-ind:checked ~ .tabbar label[for="opt-ind"],
+.tab.active {
+  background: #fff; color: var(--prussian);
+  box-shadow: 0 6px 16px -6px rgba(0,0,0,0.35);
+}
+#opt-biz:focus-visible ~ .tabbar label[for="opt-biz"],
+#opt-ind:focus-visible ~ .tabbar label[for="opt-ind"] { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+/* panels */
+.panel { display: none; }
+#opt-biz:checked ~ .panel-biz { display: block; }
+#opt-ind:checked ~ .panel-ind { display: block; }
+
 .card {
-  background: #fff;
-  border-radius: 24px;
-  padding: 40px 36px;
-  text-align: left;
-  display: flex; flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid rgba(255,255,255,0.05);
+  background: #fff; border-radius: 24px;
+  padding: 40px 44px 36px; text-align: left;
+  box-shadow: 0 40px 84px -34px rgba(4,150,255,0.34), 0 26px 52px -24px rgba(0,0,0,0.5);
 }
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.4);
-}
-.card-icon {
-  width: 56px; height: 56px;
-  border-radius: 14px;
-  display: inline-flex; align-items: center; justify-content: center;
-  margin-bottom: 24px;
-}
-.card-icon svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.card.business .card-icon { background: rgba(4,150,255,0.10); color: var(--blue); }
-.card.individual .card-icon { background: rgba(16,185,129,0.10); color: var(--academy-finance); }
-
 .card h2 {
-  font-family: var(--head);
-  font-size: 26px; font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--prussian);
-  margin-bottom: 10px;
+  font-family: var(--head); font-weight: 600;
+  font-size: clamp(23px, 3vw, 28px); line-height: 1.12;
+  letter-spacing: -0.01em; color: var(--blue); margin-bottom: 10px;
 }
-.card p {
-  font-size: 15px; line-height: 1.55;
-  color: var(--steel);
-  margin-bottom: 28px;
-}
-.card ul {
-  list-style: none; padding: 0; margin: 0 0 32px;
-  display: grid; gap: 10px;
-}
-.card li {
-  font-size: 14px; color: var(--prussian);
-  display: flex; align-items: flex-start; gap: 10px;
-  line-height: 1.45;
-}
-.card li::before {
-  content: ""; flex-shrink: 0;
-  width: 18px; height: 18px;
-  border-radius: 50%;
-  background: var(--alice);
-  margin-top: 1px;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%230B1B2B' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 6.5l2 2 4-4.5'/></svg>");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 14px 14px;
-}
+.card .sub { font-size: 15.5px; line-height: 1.55; color: #5A6B7B; margin-bottom: 24px; }
 
-.card .btn {
+/* ---- benefit list: single column, small framed icon + text ---- */
+.benefits { display: flex; flex-direction: column; gap: 13px; margin-bottom: 28px; }
+.ben { display: flex; align-items: center; gap: 14px; }
+/* monochrome chips: the colour accents live in the How It Works rail */
+.ben .bic {
+  width: 38px; height: 38px; flex-shrink: 0;
+  border-radius: 11px;
+  background: rgba(11,27,43,0.07);
   display: inline-flex; align-items: center; justify-content: center;
-  gap: 10px;
-  font-family: var(--head);
-  font-weight: 600; font-size: 15px;
-  letter-spacing: -0.005em;
-  height: 52px; padding: 0 26px;
-  border-radius: 16px;
-  margin-top: auto;
-  transition: background 0.15s, transform 0.15s;
 }
-.card.business .btn { background: var(--blue); color: #fff; }
-.card.business .btn:hover { background: var(--blue-d); transform: translateY(-1px); }
-.card.individual .btn { background: var(--academy-finance); color: #fff; }
-.card.individual .btn:hover { background: #0e9d6e; transform: translateY(-1px); }
-.card .btn .arr { display: inline-block; transition: transform 0.15s; }
-.card .btn:hover .arr { transform: translateX(3px); }
+.ben .bic svg { width: 20px; height: 20px; fill: none; stroke: var(--prussian); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ben span { font-size: 15px; line-height: 1.4; color: var(--prussian); }
+.ben .hl { color: var(--blue); font-weight: 700; }
 
-.back-link {
-  margin-top: 40px;
-  font-size: 13.5px;
-  color: rgba(255,255,255,0.55);
+/* ---- CTA ---- */
+.cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--head); font-weight: 600; letter-spacing: -0.005em;
+  border-radius: 15px; transition: background 0.15s, transform 0.15s;
+  height: 54px; padding: 0 32px; font-size: 15.5px; background: var(--blue); color: #fff;
 }
+.cta .arr { display: inline-block; transition: transform 0.15s; }
+.cta:hover .arr { transform: translateX(3px); }
+.cta:hover { background: var(--blue-d); transform: translateY(-1px); }
+.cta-note { margin-top: 12px; font-size: 12.5px; color: var(--steel); }
+
+.back-link { margin-top: 34px; font-size: 13.5px; color: rgba(255,255,255,0.55); }
 .back-link a { color: rgba(255,255,255,0.8); border-bottom: 1px solid rgba(255,255,255,0.25); padding-bottom: 1px; }
 .back-link a:hover { color: #fff; border-color: #fff; }
 
-.minimal-header {
-  padding: 22px 32px;
-  display: flex; align-items: center;
-}
-.minimal-header img { height: 30px; }
-
-@media (max-width: 720px) {
-  .cards { grid-template-columns: 1fr; gap: 16px; }
-  .card { padding: 32px 28px; }
-  main { padding: 48px 20px; }
+@media (max-width: 680px) {
+  .card { padding: 30px 22px; }
+  main { padding: 24px 18px 56px; }
+  .tab { padding: 10px 18px; font-size: 14px; }
 }
 </style>
 </head>
@@ -174,42 +154,83 @@ h1 {
 </header>
 
 <main>
-  <div class="chooser">
-    <div class="eyebrow">Get Started</div>
-    <h1>Which best describes you?</h1>
-    <p class="lede">Choose your path and we&rsquo;ll point you to the right place.</p>
+  <div class="wrap">
+    <div class="eyebrow">Free Trial</div>
+    <h1>Start free in three quick steps</h1>
+    <p class="lede">Choose business or personal below. The rest is just your details, then you&rsquo;re learning.</p>
 
-    <div class="cards">
-      <a class="card business" href="../try-free/business.html">
-        <span class="card-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21V12h6v9"/></svg>
-        </span>
-        <h2>I&rsquo;m a business</h2>
-        <p>Trial Kubicle with your team and see the impact before you commit.</p>
-        <ul>
-          <li>14-day All Access trial</li>
-          <li>Customized onboarding for your team</li>
-          <li>Up to 10 trial participants</li>
-          <li>Full admin dashboard access</li>
-          <li>Course certificates included</li>
-        </ul>
-        <span class="btn">Free Team Trial <span class="arr">&rarr;</span></span>
-      </a>
+    <div class="switch">
+      <input type="radio" name="path" id="opt-biz" class="opt" checked/>
+      <input type="radio" name="path" id="opt-ind" class="opt"/>
 
-      <a class="card individual" href="../free-tier-sign-up.html">
-        <span class="card-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
-        </span>
-        <h2>I&rsquo;m an individual</h2>
-        <p>Start learning today with the free tier. No credit card required.</p>
-        <ul>
-          <li>Access to 30 free courses</li>
-          <li>Free course certificates</li>
-          <li>First lesson of every course, plus skill checks</li>
-          <li>Upgrade to All Access anytime</li>
-        </ul>
-        <span class="btn">Start Free <span class="arr">&rarr;</span></span>
-      </a>
+      <div class="tabbar" role="tablist">
+        <label for="opt-biz" class="tab">For business</label>
+        <label for="opt-ind" class="tab">Personal</label>
+      </div>
+
+      <!-- ===== BUSINESS (default) ===== -->
+      <div class="panel panel-biz">
+        <div class="card">
+            <h2>Bring Kubicle to your business</h2>
+            <p class="sub">Assessing it for your team, using it in your day-to-day at work, or getting colleagues learning together, the business trial opens everything for 14 days.</p>
+
+            <div class="benefits">
+              <div class="ben">
+                <span class="bic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c0-3 2.5-5.4 5.5-5.4s5.5 2.4 5.5 5.4"/><path d="M16 5.4a2.9 2.9 0 0 1 0 5.5"/><path d="M17.4 14.8c2 .6 3.4 2.4 3.4 4.7"/></svg></span>
+                <span>Assess yourself and add up to 10 colleagues to a single trial</span>
+              </div>
+              <div class="ben">
+                <span class="bic"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2.2"/><path d="M8.5 11V7.2A3.5 3.5 0 0 1 15.4 6"/></svg></span>
+                <span><span class="hl">Unlimited</span> course completions for the full 14 days</span>
+              </div>
+              <div class="ben">
+                <span class="bic"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.2l-1.5 7.8L12 18.2l4.5 2.8L15 13.2"/></svg></span>
+                <span><span class="hl">Unlimited</span> CPE and CPD certificates</span>
+              </div>
+              <div class="ben">
+                <span class="bic"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="1.6"/><rect x="13" y="3.5" width="7.5" height="4.5" rx="1.6"/><rect x="13" y="10.5" width="7.5" height="10" rx="1.6"/><rect x="3.5" y="13.5" width="7.5" height="7" rx="1.6"/></svg></span>
+                <span>Track everyone from one admin dashboard</span>
+              </div>
+            </div>
+
+            <div class="cta-row">
+              <a class="cta" href="../try-free/business.html">Start your free trial <span class="arr">&rarr;</span></a>
+              <p class="cta-note">No credit card. Set up in a couple of minutes.</p>
+            </div>
+        </div>
+      </div>
+
+      <!-- ===== PERSONAL (toggle) ===== -->
+      <div class="panel panel-ind">
+        <div class="card">
+            <h2>Just exploring on your own?</h2>
+            <p class="sub">Learn solo on the free tier. No card, no commitment, and you can upgrade whenever you like.</p>
+
+            <div class="benefits">
+              <div class="ben">
+                <span class="bic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span>
+                <span>One seat, just for you</span>
+              </div>
+              <div class="ben">
+                <span class="bic"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H12v16h5.5a2.5 2.5 0 0 1 2.5 2.5z"/></svg></span>
+                <span>30 free courses from the library</span>
+              </div>
+              <div class="ben">
+                <span class="bic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 9l5 3-5 3z"/></svg></span>
+                <span>Course completions on free courses</span>
+              </div>
+              <div class="ben">
+                <span class="bic"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13l-1.5 8L12 18l4.5 3L15 13"/></svg></span>
+                <span>CPE and CPD certificates on free courses</span>
+              </div>
+            </div>
+
+            <div class="cta-row">
+              <a class="cta" href="../free-tier-sign-up.html">Start free <span class="arr">&rarr;</span></a>
+              <p class="cta-note">No credit card required.</p>
+            </div>
+        </div>
+      </div>
     </div>
 
     <p class="back-link"><a href="../index.html">&larr; Back to Kubicle</a></p>
@@ -217,25 +238,57 @@ h1 {
 </main>
 
 <!-- ============================== CONVERSION TRACKING ==============================
-     Push a dataLayer event when the visitor picks a path on /try-free/. GTM picks
-     it up and forwards to GA4 / PostHog / etc. The two CTA cards are <a> elements,
-     so the event fires on navigation click; same-tab nav means the page is still
-     here when the dataLayer push completes. ============================== -->
+     try_free_tab_view fires when the visitor toggles between business / personal.
+     try_free_select fires when they click a path's CTA. Both feed GTM -> GA4 / PostHog.
+     CTAs are <a> elements (same-tab nav), so the dataLayer push completes before unload. -->
 <script>
 (function () {
-  function trackPath(label, href) {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'try_free_select',
-      path: label,
-      link_location: 'try-free',
-      link_url: href
+  window.dataLayer = window.dataLayer || [];
+  function push(obj) { window.dataLayer.push(obj); }
+
+  // tab toggles: keep the active-tab highlight in sync (JS is the source of
+  // truth so the styling never depends on a descendant-of-sibling selector),
+  // and fire an analytics event when the visitor switches.
+  var biz = document.getElementById('opt-biz');
+  var ind = document.getElementById('opt-ind');
+  var lblBiz = document.querySelector('label[for="opt-biz"]');
+  var lblInd = document.querySelector('label[for="opt-ind"]');
+  function syncTabs() {
+    [[lblBiz, biz], [lblInd, ind]].forEach(function (pair) {
+      var el = pair[0], input = pair[1];
+      if (!el || !input) return;
+      if (input.checked) {
+        el.classList.add('active');
+        el.style.background = '#fff';
+        el.style.color = 'var(--prussian)';
+        el.style.boxShadow = '0 6px 16px -6px rgba(0,0,0,0.35)';
+      } else {
+        el.classList.remove('active');
+        el.style.background = '';
+        el.style.color = '';
+        el.style.boxShadow = '';
+      }
     });
   }
-  var business   = document.querySelector('a.card.business');
-  var individual = document.querySelector('a.card.individual');
-  if (business)   business.addEventListener('click',   function () { trackPath('business',   business.href); });
-  if (individual) individual.addEventListener('click', function () { trackPath('individual', individual.href); });
+  syncTabs();
+  // Re-sync after back/forward navigation: the browser restores the radio
+  // selection without firing change events (pageshow runs after restoration,
+  // for both bfcache restores and normal loads), which otherwise leaves the
+  // load-time highlight AND the restored tab both painted active.
+  window.addEventListener('pageshow', syncTabs);
+  if (biz) biz.addEventListener('change', function () { syncTabs(); if (biz.checked) push({ event: 'try_free_tab_view', tab: 'business', link_location: 'try-free' }); });
+  if (ind) ind.addEventListener('change', function () { syncTabs(); if (ind.checked) push({ event: 'try_free_tab_view', tab: 'individual', link_location: 'try-free' }); });
+
+  // path selection (CTA click)
+  function bindCta(sel, label) {
+    document.querySelectorAll(sel).forEach(function (a) {
+      a.addEventListener('click', function () {
+        push({ event: 'try_free_select', path: label, link_location: 'try-free', link_url: a.href });
+      });
+    });
+  }
+  bindCta('.panel-biz .cta', 'business');
+  bindCta('.panel-ind .cta', 'individual');
 })();
 </script>
 
