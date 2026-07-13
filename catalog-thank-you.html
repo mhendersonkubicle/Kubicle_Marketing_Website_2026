@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="icon" type="image/png" sizes="32x32" href="img/shared/favicon-32x32.png"/>
+
+<!-- Catalog request confirmation page. The /catalog form redirects here on a
+     successful submission; the PDF itself is delivered by email. noindex so
+     it never ranks or pollutes a destination-based conversion. -->
+<title>Catalog On Its Way | Kubicle</title>
+<meta name="description" content="Your Kubicle catalog request is confirmed. The PDF is on its way to your inbox."/>
+<meta name="author" content="Kubicle"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design tokens only; layout is bespoke for this conversion page -->
+<link rel="stylesheet" href="shared/styles/tokens.css"/>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+body {
+  font-family: var(--body, "Satoshi","Helvetica Neue",Arial,sans-serif);
+  color: var(--prussian);
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(4,150,255,0.10), transparent 70%),
+    linear-gradient(180deg, #F4F8FC 0%, #EDF3F8 100%);
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+}
+
+/* ============================== HEADER ============================== */
+.ct-header {
+  padding: 22px 0;
+  background: var(--prussian);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.ct-header-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.ct-header img { height: 30px; width: auto; }
+.ct-header .util {
+  display: flex; align-items: center; gap: 18px;
+  font-size: 13.5px; color: rgba(255,255,255,0.7);
+}
+.ct-header .util a {
+  color: #fff; font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 8px 16px; border-radius: 10px;
+  transition: border-color 0.15s;
+}
+.ct-header .util a:hover { border-color: var(--accent, #0496FF); }
+@media (max-width: 600px) {
+  .ct-header-inner { padding: 0 20px; }
+  .ct-header .util .lab { display: none; }
+  .ct-header img { height: 26px; }
+}
+
+/* ============================== MAIN ============================== */
+.ct-main {
+  flex: 1;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 88px 32px 96px;
+  text-align: center;
+}
+.ct-ok {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--accent-soft, #D6EEFF);
+  color: var(--accent-d, #0D5F96);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 22px;
+}
+.ct-ok svg {
+  width: 30px; height: 30px;
+  fill: none; stroke: currentColor;
+  stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round;
+}
+.ct-h1 {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: clamp(30px, 4.5vw, 44px);
+  font-weight: 600; line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+.ct-h1 em { font-style: normal; color: var(--accent, #0496FF); }
+.ct-sub {
+  margin: 16px auto 0;
+  font-size: 16px; color: var(--steel);
+  line-height: 1.6;
+  max-width: 520px;
+}
+.ct-sub a { color: var(--accent-d, #0D5F96); text-decoration: underline; }
+.ct-home {
+  display: inline-flex; align-items: center; gap: 9px;
+  margin-top: 32px;
+  padding: 12px 20px;
+  background: #fff;
+  border: 1.5px solid var(--prussian);
+  border-radius: 14px;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-weight: 600; font-size: 14.5px;
+  color: var(--prussian);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+}
+.ct-home:hover {
+  background: var(--prussian); color: #fff;
+  transform: translateY(-1px);
+}
+@media (max-width: 600px) {
+  .ct-main { padding: 64px 20px 72px; }
+}
+
+/* ============================== FOOTER ============================== */
+.ct-foot {
+  background: var(--prussian);
+  padding: 32px 0;
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+}
+.ct-foot-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 32px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.ct-foot a {
+  color: rgba(255,255,255,0.65);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.ct-foot a:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+.ct-foot .links { display: inline-flex; gap: 22px; flex-wrap: wrap; }
+@media (max-width: 600px) {
+  .ct-foot-inner { padding: 0 20px; }
+}
+</style>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== HEADER ============================== -->
+<header class="ct-header">
+  <div class="ct-header-inner">
+    <a href="index.html" aria-label="Kubicle home">
+      <img src="img/shared/6831119dcb82dac9dd5aea57_logo-white.svg" alt="Kubicle"/>
+    </a>
+    <div class="util">
+      <span class="lab">Already a customer?</span>
+      <a href="https://app.kubicle.com/sign-in" target="_blank" rel="noopener">Log in</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== MAIN ============================== -->
+<main class="ct-main">
+  <div class="ct-ok" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg>
+  </div>
+  <h1 class="ct-h1">The catalog is <em>on its way.</em></h1>
+  <p class="ct-sub">
+    Check your inbox for the Kubicle Content Library PDF. If it doesn't arrive in the next few minutes, check your spam folder or drop a note to <a href="mailto:sales@kubicle.com">sales@kubicle.com</a>.
+  </p>
+  <a class="ct-home" href="index.html">
+    Back to kubicle.com <span>&rarr;</span>
+  </a>
+</main>
+
+<!-- ============================== MINIMAL FOOTER ============================== -->
+<footer class="ct-foot">
+  <div class="ct-foot-inner">
+    <span>&copy; <span id="ct-year"></span> Kubicle. All Rights Reserved.</span>
+    <div class="links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('ct-year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

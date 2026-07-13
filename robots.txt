@@ -30,9 +30,10 @@ Disallow: /try-free/business
 # /catalog page is the version that should rank).
 Disallow: /downloads/
 
-# Post-booking confirmation page. Reached only via the HubSpot redirect;
-# keeping crawlers off it protects the redirect-based conversion signal.
+# Confirmation pages. Reached only after a booking or form submission;
+# keeping crawlers off them protects destination-based conversion signals.
 Disallow: /book-a-demo-thank-you
+Disallow: /catalog-thank-you
 
 # Crawl budget: politely throttle aggressive bots without blocking them.
 Crawl-delay: 1

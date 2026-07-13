@@ -247,43 +247,6 @@ body {
 .cl-book .arr { transition: transform 0.15s; }
 .cl-book:hover .arr { transform: translateX(3px); }
 
-/* Success state */
-.cl-success { text-align: center; padding: 32px 0 12px; }
-.cl-success .ok {
-  width: 64px; height: 64px;
-  border-radius: 50%;
-  background: var(--accent-soft, #D6EEFF);
-  color: var(--accent-d, #0D5F96);
-  display: inline-flex; align-items: center; justify-content: center;
-  margin-bottom: 18px;
-}
-.cl-success .ok svg { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-.cl-success .h {
-  font-family: var(--head, "Clash Grotesk",sans-serif);
-  font-size: 24px; font-weight: 600;
-  color: var(--prussian);
-  letter-spacing: -0.015em;
-}
-.cl-success .p {
-  margin-top: 10px;
-  color: var(--steel);
-  font-size: 14.5px; line-height: 1.55;
-  max-width: 320px;
-  margin-left: auto; margin-right: auto;
-}
-.cl-success .dl-btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  gap: 10px;
-  margin-top: 22px;
-  height: 48px; padding: 0 22px;
-  background: var(--accent, #0496FF);
-  color: #fff;
-  border-radius: 12px;
-  font-family: var(--head, "Clash Grotesk",sans-serif);
-  font-weight: 600; font-size: 14.5px;
-}
-.cl-success .dl-btn:hover { background: var(--accent-d, #0D5F96); }
-
 /* ============================== TRUST STRIP ============================== */
 .cl-trust {
   padding: 48px 0 32px;
@@ -621,11 +584,11 @@ function submitCatalog(e) {
       event:     'download_catalog_submit',
       form_name: 'catalog_download'
     });
-    form.innerHTML = '<div class="cl-success">'
-      + '<div class="ok"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></div>'
-      + '<div class="h">Catalog on its way.</div>'
-      + '<p class="p">Check your inbox for the Kubicle Content Library PDF. If it doesn&rsquo;t arrive in the next few minutes, drop a note to sales@kubicle.com.</p>'
-      + '</div>';
+    // Give the GTM tags a beat to dispatch, then hand off to the
+    // thank-you page.
+    setTimeout(function () {
+      window.location.href = 'catalog-thank-you.html';
+    }, 400);
   })
   .catch(function (hubspotErr) {
     btn.disabled = false;

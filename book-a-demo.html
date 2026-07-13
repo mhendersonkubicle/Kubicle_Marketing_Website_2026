@@ -114,35 +114,6 @@ body {
 /* Reserve height so the iframe loading in doesn't shift the layout (CLS). */
 .bd-card .meetings-iframe-container { min-height: 680px; }
 
-/* Fallback link inside the container; shown only if the HubSpot embed
-   script fails to load (embed.js replaces the container contents). */
-.bd-fallback {
-  display: flex; align-items: center; justify-content: center; gap: 10px;
-  max-width: 340px;
-  margin: 40px auto;
-  padding: 13px 18px;
-  background: #fff;
-  border: 1.5px solid var(--prussian);
-  border-radius: 14px;
-  font-family: var(--head, "Clash Grotesk",sans-serif);
-  font-weight: 600; font-size: 15px;
-  color: var(--prussian);
-  cursor: pointer;
-  transition: background 0.15s, color 0.15s, transform 0.15s;
-}
-.bd-fallback:hover {
-  background: var(--prussian); color: #fff;
-  transform: translateY(-1px);
-}
-.bd-fallback svg {
-  width: 18px; height: 18px;
-  stroke: currentColor; fill: none;
-  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
-}
-/* The embed script appends its iframe to the container without clearing it,
-   so hide the fallback once the scheduler iframe is in. */
-.meetings-iframe-container:has(iframe) .bd-fallback { display: none; }
-
 @media (max-width: 600px) {
   .bd-main { padding: 40px 16px 56px; }
   .bd-card { padding: 12px 4px; }
@@ -198,15 +169,11 @@ body {
   </p>
 
   <div class="bd-card">
-    <!-- HubSpot Meetings scheduler, embedded. The embed script replaces the
-         container contents on load; the link inside is the fallback if the
-         script fails to load. -->
+    <!-- HubSpot Meetings scheduler, embedded. The embed script (exempt from
+         Termly's autoBlock, so it always loads) renders the scheduler iframe
+         into this container. -->
     <div class="meetings-iframe-container"
          data-src="https://meetings.hubspot.com/callkubicle/b2b-book-a-demo?embed=true">
-      <a class="bd-fallback" href="https://meetings.hubspot.com/callkubicle/b2b-book-a-demo" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
-        Open the scheduler &rarr;
-      </a>
     </div>
     <!-- data-categories="essential" exempts the scheduler from Termly's
          autoBlock so it renders regardless of consent state; booking a demo
