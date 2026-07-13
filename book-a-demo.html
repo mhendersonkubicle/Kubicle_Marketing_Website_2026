@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Book a Demo | Kubicle</title>
+<meta name="description" content="Book a demo with the Kubicle team. Pick a time that suits you and see how Kubicle upskills teams in AI, data and business skills."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/book-a-demo"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:title" content="Book a Demo | Kubicle"/>
+<meta property="og:description" content="Pick a time that suits you and see how Kubicle upskills teams in AI, data and business skills."/>
+<meta property="og:url" content="https://www.kubicle.com/book-a-demo"/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design tokens only; layout is bespoke for this conversion page -->
+<link rel="stylesheet" href="shared/styles/tokens.css"/>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+body {
+  font-family: var(--body, "Satoshi","Helvetica Neue",Arial,sans-serif);
+  color: var(--prussian);
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(4,150,255,0.10), transparent 70%),
+    linear-gradient(180deg, #F4F8FC 0%, #EDF3F8 100%);
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+}
+
+/* ============================== HEADER ============================== */
+.bd-header {
+  padding: 22px 0;
+  background: var(--prussian);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.bd-header-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.bd-header img { height: 30px; width: auto; }
+.bd-header .util {
+  display: flex; align-items: center; gap: 18px;
+  font-size: 13.5px; color: rgba(255,255,255,0.7);
+}
+.bd-header .util a {
+  color: #fff; font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 8px 16px; border-radius: 10px;
+  transition: border-color 0.15s;
+}
+.bd-header .util a:hover { border-color: var(--accent, #0496FF); }
+@media (max-width: 600px) {
+  .bd-header-inner { padding: 0 20px; }
+  .bd-header .util .lab { display: none; }
+  .bd-header img { height: 26px; }
+}
+
+/* ============================== MAIN ============================== */
+.bd-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 56px 32px 72px;
+}
+.bd-eyebrow {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--accent-d, #0D5F96);
+  text-align: center;
+  margin-bottom: 14px;
+}
+.bd-h1 {
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-size: clamp(30px, 4.5vw, 44px);
+  font-weight: 600; line-height: 1.12;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+.bd-h1 em { font-style: normal; color: var(--accent, #0496FF); }
+.bd-sub {
+  margin: 16px auto 0;
+  font-size: 16px; color: var(--steel);
+  line-height: 1.6;
+  max-width: 560px;
+  text-align: center;
+}
+
+/* Scheduler card */
+.bd-card {
+  margin-top: 36px;
+  background: #fff;
+  border: 1px solid rgba(11,27,43,0.08);
+  border-radius: 20px;
+  box-shadow: 0 24px 60px -30px rgba(11,27,43,0.25);
+  padding: 20px 12px;
+}
+/* Reserve height so the iframe loading in doesn't shift the layout (CLS). */
+.bd-card .meetings-iframe-container { min-height: 680px; }
+
+/* Fallback link inside the container; shown only if the HubSpot embed
+   script fails to load (embed.js replaces the container contents). */
+.bd-fallback {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  max-width: 340px;
+  margin: 40px auto;
+  padding: 13px 18px;
+  background: #fff;
+  border: 1.5px solid var(--prussian);
+  border-radius: 14px;
+  font-family: var(--head, "Clash Grotesk",sans-serif);
+  font-weight: 600; font-size: 15px;
+  color: var(--prussian);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+}
+.bd-fallback:hover {
+  background: var(--prussian); color: #fff;
+  transform: translateY(-1px);
+}
+.bd-fallback svg {
+  width: 18px; height: 18px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+/* The embed script appends its iframe to the container without clearing it,
+   so hide the fallback once the scheduler iframe is in. */
+.meetings-iframe-container:has(iframe) .bd-fallback { display: none; }
+
+@media (max-width: 600px) {
+  .bd-main { padding: 40px 16px 56px; }
+  .bd-card { padding: 12px 4px; }
+}
+
+/* ============================== FOOTER ============================== */
+.bd-foot {
+  background: var(--prussian);
+  padding: 32px 0;
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+}
+.bd-foot-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 32px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.bd-foot a {
+  color: rgba(255,255,255,0.65);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.bd-foot a:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+.bd-foot .links { display: inline-flex; gap: 22px; flex-wrap: wrap; }
+@media (max-width: 600px) {
+  .bd-foot-inner { padding: 0 20px; }
+}
+</style>
+</head>
+<body class="theme-blue">
+
+<!-- ============================== HEADER ============================== -->
+<header class="bd-header">
+  <div class="bd-header-inner">
+    <a href="index.html" aria-label="Kubicle home">
+      <img src="img/shared/6831119dcb82dac9dd5aea57_logo-white.svg" alt="Kubicle"/>
+    </a>
+    <div class="util">
+      <span class="lab">Already a customer?</span>
+      <a href="https://app.kubicle.com/sign-in" target="_blank" rel="noopener">Log in</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== MAIN ============================== -->
+<main class="bd-main">
+  <div class="bd-eyebrow">Book a Demo</div>
+  <h1 class="bd-h1">Grab time with <em>our team.</em></h1>
+  <p class="bd-sub">
+    Pick a slot that suits you and we'll walk you through the platform, the content library and how Kubicle rolls out across your team.
+  </p>
+
+  <div class="bd-card">
+    <!-- HubSpot Meetings scheduler, embedded. The embed script replaces the
+         container contents on load; the link inside is the fallback if the
+         script fails to load. -->
+    <div class="meetings-iframe-container"
+         data-src="https://meetings.hubspot.com/callkubicle/b2b-book-a-demo?embed=true">
+      <a class="bd-fallback" href="https://meetings.hubspot.com/callkubicle/b2b-book-a-demo" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
+        Open the scheduler &rarr;
+      </a>
+    </div>
+    <!-- data-categories="essential" exempts the scheduler from Termly's
+         autoBlock so it renders regardless of consent state; booking a demo
+         is the page's core function, not tracking. -->
+    <script type="text/javascript" data-categories="essential" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+  </div>
+</main>
+
+<!-- ============================== MINIMAL FOOTER ============================== -->
+<footer class="bd-foot">
+  <div class="bd-foot-inner">
+    <span>&copy; <span id="bd-year"></span> Kubicle. All Rights Reserved.</span>
+    <div class="links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================== SCRIPTS ============================== -->
+<script>
+  document.getElementById('bd-year').textContent = new Date().getFullYear();
+
+  // ============================== DEMO BOOKING TRACKING ==============================
+  // On a completed booking the HubSpot scheduler iframe posts a message with
+  // meetingBookSucceeded; push a single demo_meeting_booked event to the
+  // dataLayer for GTM. Origin-checked, dedup, attach-once. The sessionStorage
+  // flag is shared with the post-booking thank-you page (HubSpot redirects
+  // there after booking) so the event fires exactly once per session whichever
+  // of the two paths gets there first.
+  (function () {
+    if (window.__hsMeetingListenerAttached) return;
+    window.__hsMeetingListenerAttached = true;
+    window.dataLayer = window.dataLayer || [];
+    var KEY = 'kbcDemoBooked';
+    var booked = false;
+    window.addEventListener('message', function (event) {
+      if (!event.origin || event.origin.indexOf('hubspot.com') === -1) return; // trust HubSpot only
+      var d = event.data;
+      if (d && typeof d === 'object' && d.meetingBookSucceeded && !booked) {
+        booked = true;
+        try { if (sessionStorage.getItem(KEY) === '1') return; } catch (e) {}
+        try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+        window.dataLayer.push({
+          event: 'demo_meeting_booked',
+          booking_source: 'hubspot_meetings_embed',
+          source_page: location.pathname
+        });
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>

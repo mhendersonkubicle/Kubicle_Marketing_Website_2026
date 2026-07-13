@@ -25,7 +25,9 @@ const DIST   = path.join(ROOT, 'dist');
 const NAV_JS_PATH    = path.join(ROOT, 'shared', 'nav.js');
 const FOOTER_JS_PATH = path.join(ROOT, 'shared', 'footer.js');
 
-const SKIP_DIRS = new Set(['node_modules', '.netlify', '.claude', '.git', 'dist']);
+const SKIP_DIRS = new Set(['node_modules', '.netlify', '.claude', '.git', 'dist',
+  // Internal working documents (campaign plans, upload sheets) — never ship.
+  'docs']);
 // Files at the project root we never want bundled into /dist. dist.zip is the
 // deploy artifact this script's output ends up in; if it isn't skipped, each
 // build copies the previous zip into the new dist and the next zip is double
@@ -35,10 +37,13 @@ const SKIP_FILES = new Set([
   // Build + dev tooling that must never ship to the public site.
   'build.js', 'build_tag_doc.js', 'extract_image_library.py', 'ivy_test.mjs',
   'package.json', 'package-lock.json',
+  // Platform config read from the repo root, not the publish dir.
+  'netlify.toml',
 ]);
 // Root-level files matching these patterns are dev artifacts (logs, scratch
-// scripts) and are excluded from /dist so they never deploy publicly.
-const SKIP_FILE_PATTERNS = [/\.log$/i, /\.py$/i, /\.mjs$/i, /^ivy_/i, /^\.env/i];
+// scripts, internal markdown docs) and are excluded from /dist so they never
+// deploy publicly.
+const SKIP_FILE_PATTERNS = [/\.log$/i, /\.py$/i, /\.mjs$/i, /^ivy_/i, /^\.env/i, /\.md$/i];
 
 // Google Tag Manager container. Injected into every built HTML page (head +
 // noscript fallback) so the source files stay clean and every page picks it
@@ -793,6 +798,13 @@ const SITEMAP_EXCLUDE = [
   /^\/404$/,
   /\/brochure$/,
   /^\/try-free\/business$/,
+  // Conversion utility page hosting the embedded HubSpot scheduler; linked
+  // from try-free/business and catalog, no standalone search value. The
+  // thank-you page is the HubSpot post-booking redirect target and is also
+  // noindex; keeping it unreachable from search protects the redirect-based
+  // conversion signal.
+  /^\/book-a-demo$/,
+  /^\/book-a-demo-thank-you$/,
   // The interactive assessment TOOL pages are noindex (the content-rich
   // /resources/assessments/* landing pages are the SEO/canonical version).
   // Keep the tools out of the sitemap so they don't compete in search.

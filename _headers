@@ -93,3 +93,13 @@
 /Case_Study_pdfs/*
   Cache-Control: public, max-age=2592000
   Content-Type: application/pdf
+
+
+# ------------------------------------------------------------
+# Direct-download assets (ungated catalog PDF). noindex so the
+# ungated file never outranks the gated /catalog page.
+# ------------------------------------------------------------
+/downloads/*
+  Cache-Control: public, max-age=2592000
+  Content-Type: application/pdf
+  X-Robots-Tag: noindex

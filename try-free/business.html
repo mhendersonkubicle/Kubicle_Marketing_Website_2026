@@ -6,14 +6,14 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../img/shared/favicon-32x32.png"/>
 
 <!-- ============================== SEO META ============================== -->
-<title>Book a Call &middot; Try Kubicle for Free | Kubicle</title>
-<meta name="description" content="Book a 20-minute call with a Kubicle program designer. We'll assess your team's needs, set up a tailored free trial, and run a focused demo if you want one."/>
+<title>Activate &middot; Free Business Trial | Kubicle</title>
+<meta name="description" content="Activate your free Kubicle business trial. Enter your details and we'll provision your account. Up to 10 seats, 14 days fully unlocked, and CPE and CPD certificates included."/>
 <meta name="author" content="Kubicle"/>
 <link rel="canonical" href="https://www.kubicle.com/try-free/business"/>
 
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="Book a Call &middot; Try Kubicle for Free"/>
-<meta property="og:description" content="Talk to a Kubicle program designer. 20 minutes, no deck."/>
+<meta property="og:title" content="Activate &middot; Free Business Trial"/>
+<meta property="og:description" content="Activate your free Kubicle business trial. Enter your details and we'll provision your account."/>
 
 <meta name="theme-color" content="#0B1B2B"/>
 
@@ -438,10 +438,10 @@ body {
 
     <!-- Left: pitch -->
     <div class="tf-left">
-      <div class="tf-eyebrow">Free Team Trial</div>
-      <h1 class="tf-h1">Let's get you set up for a <em>free trial of Kubicle for teams.</em></h1>
+      <div class="tf-eyebrow">Free Business Trial</div>
+      <h1 class="tf-h1">Activate your <em>free Kubicle business trial.</em></h1>
       <p class="tf-sub">
-        Drop your details and a program designer will be in touch to tailor the trial to the roles you are upskilling.
+        Enter your details and we'll provision your trial account. Up to 10 seats, 14 days fully unlocked, and CPE and CPD certificates included.
       </p>
 
       <div class="tf-rating">
@@ -457,7 +457,7 @@ body {
 
       <div class="tf-direct">
         <p class="lead"><strong>Skip the form?</strong> Grab time directly with our team.</p>
-        <a id="tf-direct-btn" class="tf-direct-btn" href="https://meetings.hubspot.com/callkubicle/b2b-book-a-demo" target="_blank" rel="noopener">
+        <a id="tf-direct-btn" class="tf-direct-btn" href="../book-a-demo.html">
           <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
           Book a demo directly <span class="arr">&rarr;</span>
         </a>
@@ -466,8 +466,8 @@ body {
 
     <!-- Right: the form -->
     <div class="tf-right">
-      <div class="tf-form-head">Tell us about your team</div>
-      <p class="tf-form-sub">A program designer will email a calendar link within one business day.</p>
+      <div class="tf-form-head">Activate your free trial</div>
+      <p class="tf-form-sub">Takes about a minute. Our system will process your details and provision your account shortly.</p>
 
       <form class="tf-form" id="tf-form" onsubmit="submitTryFree(event)">
         <div class="row">
@@ -490,10 +490,10 @@ body {
         </div>
         <div>
           <label for="t-message">Anything else? <span style="text-transform:none; letter-spacing:0; font-weight:400; color: var(--steel);">(optional)</span></label>
-          <textarea id="t-message" rows="3" placeholder="Roles you are upskilling, ideal launch window, anything we should know before the call."></textarea>
+          <textarea id="t-message" rows="3" placeholder="Roles you are upskilling, ideal launch window, anything we should know before we provision your trial."></textarea>
         </div>
         <button class="tf-submit" type="submit" id="tf-submit-btn">
-          Book my call <span class="arr">&rarr;</span>
+          Get Free Trial <span class="arr">&rarr;</span>
         </button>
         <p class="tf-fineprint">
           By submitting, you agree to our <a href="../privacy-policy.html">privacy policy</a>. We never share your email.
@@ -632,13 +632,13 @@ function submitTryFree(e) {
     });
     form.innerHTML = '<div class="tf-success">'
       + '<div class="ok"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></div>'
-      + '<div class="h">You are booked in.</div>'
-      + '<p class="p">A Kubicle program designer will be in touch within one business day with a calendar link for your 20&#8209;minute call.</p>'
+      + '<div class="h">Your free trial is on its way.</div>'
+      + '<p class="p">We are preparing your account now. A member of the team will be in touch shortly to tailor the configuration to your business use case.</p>'
       + '</div>';
   })
   .catch(function (hubspotErr) {
     btn.disabled = false;
-    btn.innerHTML = 'Book my call <span class="arr">&rarr;</span>';
+    btn.innerHTML = 'Get Free Trial <span class="arr">&rarr;</span>';
 
     var emailRejected = false;
     var body = hubspotErr && hubspotErr.body;
@@ -662,9 +662,12 @@ function submitTryFree(e) {
 }
 
 // ============================== DIRECT BOOK-A-DEMO CLICK ==============================
-// Outbound click on the HubSpot Meetings link. Fires before navigation; the
-// link opens in a new tab (target="_blank") so the current page is still here
-// when GTM processes the event.
+// Click on the book-a-demo link. The link now navigates to the on-site
+// /book-a-demo page, which hosts the embedded HubSpot scheduler and fires
+// demo_meeting_booked on a completed booking. The event name is kept as
+// book_demo_outbound_click so the existing GTM trigger and the Google Ads
+// conversion wired to it keep receiving their signal until demo_meeting_booked
+// is promoted to the primary conversion.
 (function () {
   var btn = document.getElementById('tf-direct-btn');
   if (!btn) return;

@@ -26,6 +26,14 @@ Disallow: /academies/finance/brochure
 Disallow: /academies/project-management/brochure
 Disallow: /try-free/business
 
+# Direct-download assets (the ungated catalog PDF lives here; the gated
+# /catalog page is the version that should rank).
+Disallow: /downloads/
+
+# Post-booking confirmation page. Reached only via the HubSpot redirect;
+# keeping crawlers off it protects the redirect-based conversion signal.
+Disallow: /book-a-demo-thank-you
+
 # Crawl budget: politely throttle aggressive bots without blocking them.
 Crawl-delay: 1
 
