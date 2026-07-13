@@ -11,9 +11,8 @@ independently**:
    `kubicle.com` and `www.kubicle.com`) is the live hosting. It only
    updates when you push a build to it directly with wrangler.
 
-Netlify is no longer used. The `netlify.toml` at the repo root is legacy
-config; the `_headers` file is what Cloudflare Pages actually reads for
-response headers.
+Netlify is no longer used. The `_headers` file at the repo root is what
+Cloudflare Pages reads for response headers.
 
 This file is excluded from the built site (root `.md` files are skipped by
 `build.js`), so it is safe to keep operational detail here.
@@ -57,9 +56,9 @@ deploying; do not ship a build with errors.
   wrangler uploads it automatically as the Functions bundle.
 - Excludes internal files from `/dist`: the `docs/` folder, root-level
   `.md` files, dev tooling (`build.js`, `*.py`, `*.mjs`, `ivy_*`, logs),
-  `netlify.toml`, and `package*.json`. If you add internal working files
-  to the repo root, check they match a skip rule in `build.js`
-  (`SKIP_DIRS`, `SKIP_FILES`, `SKIP_FILE_PATTERNS`) so they never deploy.
+  and `package*.json`. If you add internal working files to the repo
+  root, check they match a skip rule in `build.js` (`SKIP_DIRS`,
+  `SKIP_FILES`, `SKIP_FILE_PATTERNS`) so they never deploy.
 
 ### Spot-check the build
 

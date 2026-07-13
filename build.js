@@ -37,8 +37,6 @@ const SKIP_FILES = new Set([
   // Build + dev tooling that must never ship to the public site.
   'build.js', 'build_tag_doc.js', 'extract_image_library.py', 'ivy_test.mjs',
   'package.json', 'package-lock.json',
-  // Platform config read from the repo root, not the publish dir.
-  'netlify.toml',
 ]);
 // Root-level files matching these patterns are dev artifacts (logs, scratch
 // scripts, internal markdown docs) and are excluded from /dist so they never
