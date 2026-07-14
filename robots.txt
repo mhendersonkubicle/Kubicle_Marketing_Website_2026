@@ -26,6 +26,10 @@ Disallow: /academies/finance/brochure
 Disallow: /academies/project-management/brochure
 Disallow: /try-free/business
 
+# Direct-download assets (the ungated catalog PDF lives here; the gated
+# /catalog page is the version that should rank).
+Disallow: /downloads/
+
 # Confirmation pages. Reached only after a booking or form submission;
 # keeping crawlers off them protects destination-based conversion signals.
 Disallow: /book-a-demo-thank-you
