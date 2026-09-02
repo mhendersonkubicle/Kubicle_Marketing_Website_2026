@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Skills Navigator | Kubicle</title>
+<meta name="description" content="Skills Navigator aligns your whole workforce to your strategy. Set the capabilities you need, assess what each individual knows, and route every persona to the right academy and the right starting point, at scale."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/skills-navigator"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:url" content="https://www.kubicle.com/skills-navigator"/>
+<meta property="og:title" content="Skills Navigator | Kubicle"/>
+<meta property="og:description" content="Set the capabilities your strategy needs. Assess every individual. Route each persona to the right academy and the right starting point, across your whole workforce."/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="shared/styles/tokens.css"/>
+<link rel="stylesheet" href="shared/styles/typography.css"/>
+<link rel="stylesheet" href="shared/styles/buttons.css"/>
+
+<style>
+/* ============================== BASE ============================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+img, video { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+.container { max-width: 1240px; margin: 0 auto; padding: 0 48px; }
+section { position: relative; overflow: hidden; }
+@media (max-width: 860px) { .container { padding: 0 22px; } }
+
+body { font-family: var(--body); color: var(--prussian); background: #fff; }
+
+.eyebrow {
+  font-family: var(--head); font-size: 12.5px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent); display: inline-flex; align-items: center; gap: 10px;
+}
+.eyebrow .pin { width: 15px; height: 15px; }
+
+.sec-head { max-width: 760px; }
+.sec-eyebrow {
+  font-family: var(--head); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-d); margin-bottom: 16px;
+}
+.sec-h {
+  font-family: var(--head); font-weight: 600;
+  font-size: clamp(30px, 4vw, 46px); line-height: 1.08; letter-spacing: -0.02em;
+  color: var(--prussian);
+}
+.sec-h em { font-style: normal; color: var(--accent); }
+.sec-sub { margin-top: 18px; font-size: 18px; line-height: 1.6; color: var(--steel); max-width: 620px; }
+
+/* ============================== HERO ============================== */
+.hero {
+  position: relative; overflow: hidden;
+  /* full-bleed image: `cover` fills both width and height on any monitor; `center top`
+     keeps the clean upper area behind the text. The leading gradient is a wash of the
+     original grey ground (#e7ecf1) that fades the image (the alpha is the "transparency"). */
+  background:
+    linear-gradient(rgba(231,236,241,0.42), rgba(231,236,241,0.42)),
+    url("img/skills-navigator/hero-2.webp") center calc((100vh - 83px) * 0.2) / cover no-repeat #f7f9f9;
+  padding: 150px 0 96px; text-align: center;
+  min-height: calc(100vh - 83px); /* fill the viewport below the sticky nav */
+  display: flex; align-items: flex-start; justify-content: center;
+}
+.hero .container { position: relative; z-index: 1; }
+.hero .btn-outline-dark { background: #fff; color: var(--prussian); border-color: var(--prussian); }
+.hero .btn-outline-dark:hover { background: var(--prussian); color: #fff; }
+/* tokens.css forces `section.hero { background: var(--prussian) !important }` on
+   narrow screens (a site-wide mobile fallback). This page keeps its light image at
+   every width, so re-assert it at the same specificity, later in source. */
+section.hero {
+  background:
+    linear-gradient(rgba(231,236,241,0.42), rgba(231,236,241,0.42)),
+    url("img/skills-navigator/hero-2.webp") center calc((100vh - 83px) * 0.2) / cover no-repeat #f7f9f9 !important;
+}
+.hero-copy { max-width: 820px; margin: 0 auto; }
+
+.hero h1 {
+  font-family: var(--head); font-weight: 600;
+  font-size: clamp(44px, 6.4vw, 76px); line-height: 0.98; letter-spacing: -0.04em;
+  margin: 20px auto 0; color: var(--prussian); max-width: 1100px;
+}
+.hero h1 em { font-style: normal; color: #E91E63; }
+.hero-sub {
+  margin: 22px auto 0; font-size: 19px; line-height: 1.6;
+  color: #45566A; max-width: 600px;
+}
+.hero-cta { margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.hero-trust {
+  margin: 30px auto 0; font-size: 14px; color: var(--steel); line-height: 1.55; max-width: 520px;
+}
+
+/* ---- hero responsiveness ---- */
+@media (max-width: 900px) {
+  .hero h1 { font-size: clamp(34px, 6.4vw, 52px); }
+  .hero-cta { justify-content: center; }
+}
+@media (max-width: 760px) {
+  .hero { padding: 104px 20px 60px; }
+  .hero h1 { font-size: 34px; line-height: 1.06; }
+  .hero h1 br { display: none; }
+  .hero-cta {
+    flex-direction: column; align-items: stretch; gap: 12px;
+    max-width: 340px; margin-left: auto; margin-right: auto;
+  }
+  .hero-cta .btn { width: 100%; }
+}
+
+/* ============================== VIDEO PANEL (wide, beneath hero) ============================== */
+.vsec { background: linear-gradient(180deg, #0B1B2B, #08182a); color: #fff; padding: 96px 0 104px; }
+.vsec .container { max-width: 1400px; }
+.vsec-head { text-align: center; max-width: 1100px; margin: 0 auto 48px; }
+.vsec-eyebrow { font-family: var(--head); font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dodger); margin-bottom: 14px; }
+.vsec-h { font-family: var(--head); font-weight: 600; font-size: clamp(44px, 6.4vw, 76px); letter-spacing: -0.04em; line-height: 0.98; }
+.vsec-h em { font-style: normal; color: var(--dodger); }
+@media (max-width: 760px) { .vsec-h { font-size: 36px; line-height: 1.06; } .vsec-h br { display: none; } }
+.vpanel {
+  position: relative; border-radius: 20px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 50px 110px -40px rgba(0,0,0,0.7);
+  background: #0a1626;
+}
+.vpanel video { width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* ---- Navigator stage: the unique device embed ---- */
+.stage { position: relative; perspective: 1600px; }
+.stage-glow {
+  position: absolute; inset: -8% -6% -14% -6%; border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 45%, rgba(4,150,255,0.35), transparent 62%);
+  filter: blur(14px); z-index: 0;
+}
+.device {
+  position: relative; z-index: 2;
+  border-radius: 18px; overflow: hidden;
+  background: #0e2136;
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 40px 90px -30px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04) inset;
+  transform: rotateY(-11deg) rotateX(5deg) rotate(-0.4deg);
+  transform-origin: 60% 50%;
+  transition: transform 0.5s cubic-bezier(0.2,0.7,0.2,1);
+}
+.stage:hover .device { transform: rotateY(-5deg) rotateX(2deg); }
+.device-bar {
+  height: 38px; display: flex; align-items: center; gap: 7px; padding: 0 15px;
+  background: linear-gradient(180deg, #12263d, #0e2036); border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.device-bar i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+.device-bar i:nth-child(1){ background:#ff5f57; } .device-bar i:nth-child(2){ background:#febc2e; } .device-bar i:nth-child(3){ background:#28c840; }
+.device-bar .addr {
+  margin-left: 12px; font-family: var(--body); font-size: 12px; color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.06); border-radius: 7px; padding: 4px 12px; letter-spacing: 0.01em;
+}
+.device-screen { position: relative; background: #0a1626; aspect-ratio: 16 / 9; }
+.device-screen video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.vid-ctrl {
+  position: absolute; right: 14px; bottom: 14px; z-index: 3;
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 40px; padding: 0 16px 0 14px; border: 0; cursor: pointer;
+  background: rgba(9,20,34,0.72); color: #fff; border-radius: 999px;
+  backdrop-filter: blur(6px); font-family: var(--head); font-weight: 600; font-size: 13px;
+  border: 1px solid rgba(255,255,255,0.18); transition: background 0.15s;
+}
+.vid-ctrl:hover { background: rgba(9,20,34,0.9); }
+.vid-ctrl svg { width: 16px; height: 16px; fill: currentColor; }
+
+/* floating academy skill tiles */
+.tile {
+  position: absolute; z-index: 3; width: 62px; height: 62px; border-radius: 15px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 16px 30px -12px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.6);
+  animation: floaty 6s ease-in-out infinite;
+}
+.tile svg { width: 30px; height: 30px; }
+.tile.t-data   { background: #FCE4EC; color: #E91E63; top: -26px; left: -22px; animation-delay: 0s; }
+.tile.t-ai     { background: #CCF5F7; color: #00A8B0; top: 34%; right: -30px; animation-delay: 1.1s; }
+.tile.t-pm     { background: #FFEDD5; color: #F97316; bottom: -24px; left: 12%; animation-delay: 2.1s; }
+.tile.t-fin    { background: #D1FAE5; color: #10B981; bottom: 20%; left: -30px; animation-delay: 1.6s; }
+@keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-11px); } }
+@media (max-width: 1000px) { .tile.t-ai, .tile.t-fin { right: -12px; left: auto; } .tile.t-fin { left: -12px; right: auto; } }
+@media (max-width: 560px) { .tile { display: none; } }
+
+/* ============================== ACADEMIES (the mix) ============================== */
+.mix { padding: 116px 0; background: linear-gradient(180deg, #F7FAFD 0%, #EEF4F9 100%); position: relative; }
+.mix::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: url("img/skills-navigator/bg-light.webp") center / cover no-repeat; opacity: 0.14;
+}
+.mix .container { position: relative; z-index: 1; }
+.aca-grid { margin-top: 54px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+@media (max-width: 980px) { .aca-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .aca-grid { grid-template-columns: 1fr; } }
+.aca {
+  background: #fff; border: 1px solid #E4EAF0; border-radius: 20px; padding: 26px 24px 24px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.aca:hover { transform: translateY(-3px); box-shadow: 0 24px 44px -26px rgba(11,27,43,0.3); }
+.aca .ico { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; }
+.aca .ico svg { width: 27px; height: 27px; }
+.aca .ico.i-data { background: #FCE4EC; color: #E91E63; }
+.aca .ico.i-ai   { background: #CCF5F7; color: #00A8B0; }
+.aca .ico.i-pm   { background: #FFEDD5; color: #F97316; }
+.aca .ico.i-fin  { background: #D1FAE5; color: #10B981; }
+.aca h4 { font-family: var(--head); font-weight: 600; font-size: 19px; letter-spacing: -0.01em; margin: 18px 0 4px; color: var(--prussian); }
+.aca .cnt { font-size: 13.5px; color: var(--steel); font-weight: 500; }
+.mix-note { margin-top: 30px; font-size: 15.5px; color: var(--steel); max-width: 640px; line-height: 1.6; }
+.mix-note b { color: var(--prussian); font-weight: 600; }
+
+/* ============================== OUTCOMES / SCALE ============================== */
+.scale { padding: 116px 0; background: #fff; }
+.scale-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+@media (max-width: 900px) { .scale-grid { grid-template-columns: 1fr; gap: 40px; } }
+.bene { display: grid; gap: 16px; margin-top: 8px; }
+.bene li { list-style: none; display: flex; gap: 15px; align-items: flex-start; }
+.bene .tick { width: 26px; height: 26px; flex: none; border-radius: 8px; background: var(--accent-soft); color: var(--accent-d); display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+.bene .tick svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.bene .bd { font-size: 16.5px; line-height: 1.55; color: var(--prussian); }
+.bene .bd span { color: var(--steel); }
+.persona-card {
+  background: linear-gradient(180deg, #0B1B2B, #0a2036); border-radius: 26px; padding: 40px 36px;
+  color: #fff; position: relative; overflow: hidden;
+}
+.persona-card .plabel { font-family: var(--head); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dodger); }
+.persona-card .ph { font-family: var(--head); font-weight: 600; font-size: 24px; letter-spacing: -0.015em; margin: 12px 0 22px; }
+.prow { display: flex; align-items: center; gap: 14px; padding: 13px 0; border-top: 1px solid rgba(255,255,255,0.09); }
+.prow:first-of-type { border-top: 0; }
+.prow .pchip { width: 40px; height: 40px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; }
+.prow .pchip svg { width: 21px; height: 21px; }
+.prow .pname { font-family: var(--head); font-weight: 600; font-size: 15.5px; }
+.prow .pmeta { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 1px; }
+.prow .pstart { margin-left: auto; font-size: 12px; font-weight: 600; font-family: var(--head); color: #fff; background: rgba(255,255,255,0.1); border-radius: 999px; padding: 5px 12px; white-space: nowrap; }
+
+/* ============================== CTA BAND ============================== */
+.cta {
+  background:
+    radial-gradient(ellipse 60% 80% at 85% 10%, rgba(4,150,255,0.28), transparent 60%),
+    linear-gradient(180deg, #0B1B2B, #071320);
+  color: #fff; padding: 104px 0; text-align: center;
+}
+.cta h2 { font-family: var(--head); font-weight: 600; font-size: clamp(32px, 4.4vw, 52px); letter-spacing: -0.025em; line-height: 1.06; max-width: 760px; margin: 0 auto; }
+.cta p { margin: 20px auto 0; font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.66); max-width: 540px; }
+.cta .hero-cta { justify-content: center; margin-top: 36px; }
+
+/* ============================== STORYTELLING (full-height chapters + step button) ============================== */
+html { scroll-padding-top: 83px; scroll-behavior: smooth; }
+section[data-story]:not(.hero) { min-height: calc(100vh - 83px); display: flex; align-items: center; }
+section[data-story]:not(.hero) > .container { width: 100%; }
+.step-eyebrow { color: var(--accent-d); }
+/* upside-down folder tab: hangs from the seam at the top of a chapter, centred. While the
+   full-height hero is on screen it sits just below the fold, then comes into view on scroll. */
+.sec-tab {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  z-index: 2; white-space: nowrap;
+  background: var(--prussian); color: #FFC93C; /* the fun yellow, on the navy tab */
+  font-family: var(--head); font-size: 12.5px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 13px 32px 14px;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 12px 24px -12px rgba(11,27,43,0.5);
+}
+/* the folder's top edge: a full-width seam line the tab hangs from. Drawn behind the tab
+   (z-index -1 inside the tab's own stacking context) and clipped to the section width. */
+.sec-tab::before {
+  content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 100vw; height: 3px; background: var(--prussian); z-index: -1; /* same navy as the tab */
+}
+
+/* ---- step 2: choose academies (poster wall, modelled on Working at Kubicle's values) ---- */
+.aca-sec {
+  padding: 120px 0;
+  background:
+    repeating-linear-gradient(90deg, var(--alice) 0, var(--alice) 1px, transparent 1px, transparent 80px),
+    repeating-linear-gradient(0deg, var(--alice) 0, var(--alice) 1px, transparent 1px, transparent 80px),
+    #fff;
+}
+/* heading block: eyebrow + big two-line title, paragraph set to the right */
+.ak-head { margin-bottom: 64px; }
+.ak-head .eyebrow { font-family: var(--head); font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #E91E63; display: block; }
+.ak-head h2 {
+  font-family: var(--head); font-size: clamp(40px, 5.6vw, 80px); font-weight: 600;
+  line-height: 0.95; letter-spacing: -0.045em; color: var(--prussian); margin-top: 14px; max-width: 980px;
+}
+.ak-head h2 em { font-style: normal; }
+/* the standfirst: belongs to the headline, shares its left edge, carries a short accent rule */
+.ak-head p { position: relative; margin: 26px 0 0; padding-top: 18px; max-width: 620px; font-size: 18.5px; line-height: 1.6; color: #3B4A5A; }
+.ak-head p::before { content: ""; position: absolute; left: 0; top: 0; width: 56px; height: 4px; border-radius: 2px; background: var(--ak-accent, #E91E63); }
+.aca-sec { --ak-accent: #FFC93C; }
+.rol-sec { --ak-accent: #00C4CC; }
+@media (max-width: 900px) { .ak-head p { font-size: 16.5px; margin-top: 22px; } }
+
+/* the poster wall: four academies across */
+.posters { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+.poster {
+  position: relative; border-radius: 18px; overflow: hidden;
+  background: var(--prussian);
+  box-shadow: 0 30px 60px -30px rgba(11,27,43,0.30);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 0; padding: 0; cursor: pointer; text-align: left; font-family: var(--body);
+  grid-column: span 3; aspect-ratio: 1195 / 1316;
+}
+.poster img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.poster:hover { transform: translateY(-6px) rotate(0deg) !important; box-shadow: 0 40px 80px -30px rgba(11,27,43,0.45); z-index: 5; }
+.poster .ribbon {
+  position: absolute; top: 14px; left: 14px; z-index: 3;
+  font-family: var(--head); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  background: #fff; color: var(--prussian); padding: 6px 12px; border-radius: 999px; border: 2px solid var(--prussian);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.poster.ak-fin  { --c:#10B981; transform: rotate(-1.5deg); }
+.poster.ak-pm   { --c:#F97316; transform: rotate(1deg);    margin-top: 28px; }
+.poster.ak-ai   { --c:#00C4CC; transform: rotate(-1deg);   margin-top: 12px; }
+.poster.ak-data { --c:#E91E63; transform: rotate(1.5deg);  margin-top: 36px; }
+/* caption on a soft scrim so names read over the photos */
+.poster .ak-cap {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+  padding: 44px 18px 16px; color: #fff;
+  background: linear-gradient(180deg, rgba(11,27,43,0) 0%, rgba(11,27,43,0.72) 100%);
+}
+.poster .ak-name { display: block; font-family: var(--head); font-weight: 600; font-size: 20px; letter-spacing: -0.015em; }
+.poster .ak-meta { display: block; font-size: 12.5px; opacity: 0.85; margin-top: 3px; }
+/* the plus button, centred like a play button */
+.poster .ak-plus {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 64px; height: 64px; border-radius: 50%; z-index: 3;
+  background: rgba(255,255,255,0.92); color: var(--prussian);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--head); font-weight: 700; font-size: 34px; line-height: 1;
+  box-shadow: 0 14px 30px -12px rgba(11,27,43,0.6);
+  transition: transform 0.2s, background 0.2s, color 0.2s;
+}
+.poster:hover .ak-plus { transform: translate(-50%, -50%) scale(1.08); }
+.poster .ak-plus .ak-tick { display: none; width: 30px; height: 30px; fill: none; stroke: #fff; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+/* added state: pill turns into a status, plus becomes a tick, card gets its colour ring */
+.poster.added { box-shadow: 0 0 0 4px var(--c), 0 30px 60px -30px rgba(11,27,43,0.30); }
+.poster.added .ribbon { background: var(--c); border-color: var(--c); color: #fff; }
+.poster.added .ak-plus { background: var(--c); color: #fff; }
+.poster.added .ak-plus .ak-sym { display: none; }
+.poster.added .ak-plus .ak-tick { display: block; }
+@media (max-width: 900px) { .poster { grid-column: span 6; } }
+@media (max-width: 520px) {
+  .poster { grid-column: span 12; transform: none !important; margin-top: 0 !important; }
+}
+@media (prefers-reduced-motion: reduce) { .poster, .poster .ak-plus { transition: none; } }
+
+/* ---- step 3: build roles (persona library + role polaroids) ---- */
+.rol-sec { background: var(--alice); padding: 120px 0; }
+.rol-grid { margin-top: 76px; display: grid; grid-template-columns: 0.95fr 1.25fr; gap: 28px; align-items: stretch; }
+.rp-roles { display: flex; flex-direction: column; }
+/* the role polaroid grows to fill the card, so the enrol button sits right under it and the cards match */
+.rp-roles .rp-panel { flex: 1; display: flex; flex-direction: column; }
+.rp-roles .rp-panel[hidden] { display: none; }
+.rp-roles .rp-pol { flex: 1; display: flex; flex-direction: column; }
+.rp-roles .rp-pol-body { flex: 1; }
+@media (max-width: 1000px) { .rol-grid { grid-template-columns: 1fr; } }
+
+/* hard-shadow bordered cards + chunky number badges (the "why join" card style) */
+.rol-card { background: #fff; border: 2px solid var(--prussian); border-radius: 22px; padding: 26px 26px 28px; box-shadow: 6px 6px 0 var(--prussian); position: relative; }
+.rol-card-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.rol-card-head h3 { font-family: var(--head); font-weight: 600; font-size: 22px; letter-spacing: -0.02em; color: var(--prussian); }
+.rp-roles .rol-card-head { padding-bottom: 18px; border-bottom: 1px solid #E6ECF2; margin-bottom: 14px; }
+.rp-explain { font-size: 14px; line-height: 1.55; color: var(--steel); margin: 0 0 18px; max-width: 520px; }
+.num-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--head); font-size: 16.5px; font-weight: 700; letter-spacing: -0.02em;
+  color: var(--prussian); background: var(--c, #FFC93C);
+  padding: 7px 16px; border: 2px solid var(--prussian); border-radius: 12px; box-shadow: 3px 3px 0 var(--prussian);
+}
+
+/* persona library: one group per academy */
+.rp-group { padding: 14px 0 16px; border-top: 1px solid #E6ECF2; }
+.rp-group:first-of-type { border-top: 0; padding-top: 4px; }
+.rp-gh { display: flex; align-items: center; gap: 9px; margin-bottom: 10px; }
+.rp-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 3px var(--c-soft); flex: none; }
+.rp-gname { font-family: var(--head); font-weight: 600; font-size: 15px; color: var(--prussian); }
+.rp-state { margin-left: auto; position: relative; width: 36px; height: 36px; border-radius: 50%; border: 2px solid #D5DEE7; background: #F4F6F8; color: #5B6B7B; display: inline-flex; align-items: center; justify-content: center; padding: 0; cursor: pointer; flex: none; transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s; }
+.rp-state svg { width: 20px; height: 20px; }
+.rp-state .rp-lock-open { display: none; }
+.rp-state:hover { transform: scale(1.08); }
+.rp-group.active .rp-state { background: var(--c-soft); color: var(--c); border-color: transparent; cursor: default; }
+.rp-group.active .rp-state .rp-lock-closed { display: none; }
+.rp-group.active .rp-state .rp-lock-open { display: block; }
+/* the lock's tooltip */
+.rp-state::after { content: attr(data-tip-locked); position: absolute; right: 0; bottom: calc(100% + 9px); background: var(--prussian); color: #fff; font-family: var(--body); font-size: 12px; font-weight: 500; line-height: 1.35; padding: 7px 10px; border-radius: 8px; white-space: nowrap; box-shadow: 0 10px 24px -12px rgba(11,27,43,0.5); opacity: 0; transform: translateY(4px); transition: opacity 0.15s, transform 0.15s; pointer-events: none; z-index: 5; }
+.rp-state::before { content: ""; position: absolute; right: 9px; bottom: calc(100% + 3px); border: 6px solid transparent; border-top-color: var(--prussian); opacity: 0; transition: opacity 0.15s; pointer-events: none; z-index: 5; }
+.rp-group.active .rp-state::after { content: attr(data-tip-open); }
+.rp-state:hover::after, .rp-state:focus-visible::after { opacity: 1; transform: none; }
+.rp-state:hover::before, .rp-state:focus-visible::before { opacity: 1; }
+.rp-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* persona pill: locked = grey, unlocked = coloured and draggable */
+.rp-pill {
+  display: inline-flex; align-items: center; gap: 7px; padding: 7px 12px 7px 10px;
+  border-radius: 999px; border: 1.5px solid #E1E7EE; background: #F4F6F8; color: #8C9BAA;
+  font-family: var(--head); font-size: 13px; font-weight: 600; cursor: not-allowed;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s, color 0.15s, border-color 0.15s, opacity 0.15s;
+}
+.rp-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #C6D2DE; flex: none; }
+.rp-group.active .rp-pill, .rp-pill.on { background: var(--c-soft); color: var(--c); border-color: transparent; cursor: grab; }
+.rp-group.active .rp-pill::before, .rp-pill.on::before { background: var(--c); }
+.rp-group.active .rp-pill:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -12px rgba(11,27,43,0.35); }
+.rp-group.active .rp-pill:active { cursor: grabbing; }
+.rp-pill.dragging { opacity: 0.5; }
+
+/* roles panel: tabs */
+.rp-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.rp-tab {
+  font-family: var(--head); font-weight: 600; font-size: 13.5px; padding: 9px 14px; border-radius: 999px;
+  border: 2px solid var(--prussian); background: #fff; color: var(--prussian); cursor: pointer;
+  box-shadow: 3px 3px 0 var(--prussian); transition: transform 0.12s, box-shadow 0.12s, background 0.12s, color 0.12s;
+}
+.rp-tab.on { background: var(--prussian); color: #FFC93C; }
+.rp-tab:not(.on):hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--prussian); }
+
+/* a role as a polaroid */
+.rp-pol {
+  position: relative; background: #fff; border: 1px solid #E6ECF2;
+  padding: 14px 14px 66px; border-radius: 6px;
+  box-shadow: 0 30px 60px -30px rgba(11,27,43,0.30);
+  transform: rotate(-1.2deg); transition: transform 0.3s ease;
+}
+.rp-pol:hover { transform: rotate(0deg) translateY(-4px); }
+.rp-pol .ribbon {
+  position: absolute; top: 26px; left: 26px; z-index: 3;
+  font-family: var(--head); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  background: #fff; color: var(--prussian); padding: 6px 12px; border-radius: 999px; border: 2px solid var(--prussian);
+}
+.rp-pol-body { min-height: 200px; border-radius: 4px; background: linear-gradient(180deg, #F7FAFD, #EAF1F8); padding: 58px 18px 18px; }
+.rp-pol-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.rp-pol-desc { margin-top: 14px; font-size: 14px; line-height: 1.55; color: var(--steel); }
+.rp-pol .cap {
+  position: absolute; left: 18px; right: 18px; bottom: 18px;
+  font-family: var(--head); font-size: 18px; font-weight: 600; color: var(--prussian); letter-spacing: -0.01em;
+  display: flex; align-items: center; gap: 10px;
+}
+
+/* build your own: the polaroid body is the drop zone */
+.rp-build .rp-drop { border: 2px dashed #CBD5E0; background: #fff; transition: border-color 0.2s, background 0.2s; }
+.rp-build.over .rp-drop { border-color: var(--accent); background: #F5FAFF; }
+.rp-build.has .rp-drop { border-style: solid; border-color: #E6ECF2; background: linear-gradient(180deg, #F7FAFD, #EAF1F8); }
+.rp-drop-empty { display: flex; flex-direction: column; gap: 6px; color: var(--steel); font-size: 14px; }
+.rp-drop-empty b { font-family: var(--head); font-weight: 600; color: var(--prussian); font-size: 16px; }
+.rp-pol-pills .rp-pill.on { cursor: default; padding-right: 8px; }
+.rp-pol-pills .rp-pill.on:hover { transform: none; box-shadow: none; }
+.rp-x { margin-left: 2px; width: 18px; height: 18px; border-radius: 50%; border: 0; background: rgba(11,27,43,0.10); color: inherit; font-size: 13px; line-height: 1; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+.rp-x:hover { background: rgba(11,27,43,0.2); }
+.rp-cap input { flex: 1; min-width: 0; font-family: var(--head); font-weight: 600; font-size: 18px; color: var(--prussian); border: 0; border-bottom: 2px dashed #CBD5E0; background: transparent; padding: 2px 0; outline: none; }
+.rp-cap input::placeholder { color: #A5B2BF; }
+.rp-cap input:focus { border-bottom-color: var(--accent); }
+.rp-clear { font-family: var(--head); font-size: 12.5px; font-weight: 600; color: var(--steel); background: none; border: 0; cursor: pointer; }
+.rp-clear:hover { color: var(--prussian); text-decoration: underline; }
+@media (prefers-reduced-motion: reduce) { .rp-pol, .rp-pill, .rp-tab { transition: none; } .rp-pol { transform: none; } }
+
+/* ---- step one affordance: yellow squiggly arrow to the plus on the first poster ---- */
+.poster-wrap { grid-column: span 3; position: relative; align-self: start; margin-top: 28px; }
+.poster-wrap .poster { display: block; width: 100%; margin-top: 0; }
+.ak-hint { position: absolute; inset: 0; z-index: 6; pointer-events: none; transition: opacity 0.3s; }
+.ak-hint.hide { opacity: 0; }
+.ak-hint > svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.ak-hint-txt {
+  position: absolute; top: -80px; left: 24%;
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--prussian); color: #FFC93C;
+  font-family: var(--head); font-size: 15.5px; font-weight: 700; letter-spacing: 0.04em;
+  padding: 6px 22px 6px 6px; border-radius: 999px; white-space: nowrap;
+  box-shadow: 3px 3px 0 #FFC93C; transform: rotate(-2deg);
+}
+.ak-hint-ico { width: 42px; height: 42px; border-radius: 50%; background: #FFC93C; color: var(--prussian); display: flex; align-items: center; justify-content: center; flex: none; }
+.ak-hint-ico svg { width: 26px; height: 26px; }
+@media (max-width: 900px) { .poster-wrap { grid-column: span 6; } }
+@media (max-width: 520px) { .poster-wrap { grid-column: span 12; margin-top: 0; } .ak-hint { display: none; } }
+/* the two roles hints: build-your-own (in the Roles card head) and add-personas (above the library) */
+.rh-build .ak-hint-txt { top: 14px; right: 18px; left: auto; }
+.rh-lib .ak-hint-txt { top: -68px; right: 0; left: auto; }
+@media (max-width: 600px) { .rh-hint { display: none; } }
+
+/* ---- step 4: the skills assessor (a live replay of a skill check) ---- */
+.asr-sec { background: #fff; padding: 120px 0 128px; text-align: center; }
+.asr-sec .eyebrow { font-family: var(--head); font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #E91E63; }
+.asr-sec h2 {
+  font-family: var(--head); font-weight: 600;
+  font-size: clamp(44px, 6.4vw, 76px); line-height: 0.98; letter-spacing: -0.04em;
+  margin: 18px auto 0; color: var(--prussian); max-width: 1100px;
+}
+.asr-sec h2 em { font-style: normal; color: #00C4CC; }
+.asr-sub { max-width: 640px; margin: 22px auto 0; font-size: 17px; line-height: 1.65; color: var(--steel); }
+.asr-stage { position: relative; max-width: 940px; margin: 56px auto 0; text-align: left; }
+
+/* the panel: a window with a "live replay" badge */
+.sc-panel { background: #fff; border: 1px solid #E1E7EE; border-radius: 18px; box-shadow: 0 40px 80px -40px rgba(11,27,43,0.35); overflow: hidden; }
+.sc-bar { display: flex; align-items: center; gap: 10px; padding: 12px 18px; border-bottom: 1px solid #EEF1F5; font-family: var(--head); font-size: 12.5px; font-weight: 600; color: var(--prussian); }
+.sc-dots { display: inline-flex; gap: 6px; margin-right: 6px; }
+.sc-dots i { width: 10px; height: 10px; border-radius: 50%; background: #E1E7EE; }
+.sc-live { margin-left: auto; display: inline-flex; align-items: center; gap: 7px; color: var(--steel); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; }
+.sc-live::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #E5484D; animation: scPulse 1.4s infinite; }
+@keyframes scPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+/* the thread: cards float up from the bottom, older ones drift up and dim */
+.sc-view { position: relative; height: 560px; overflow: hidden; background: #fff; }
+.sc-view::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 90px; background: linear-gradient(180deg, #fff, rgba(255,255,255,0)); z-index: 2; pointer-events: none; }
+.sc-stack { position: absolute; left: 0; right: 0; bottom: 0; padding: 20px 28px 26px; display: flex; flex-direction: column; gap: 18px; }
+.sc-card { animation: scUp 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both; transition: opacity 0.5s; }
+@keyframes scUp { from { opacity: 0; transform: translateY(42px); } to { opacity: 1; transform: none; } }
+.sc-card.sc-done { opacity: 0.55; }
+
+/* the product's skill-check look */
+.sc-title { font-family: var(--head); font-weight: 700; font-size: 20px; color: #17233a; }
+.sc-sub { font-size: 14px; color: #4a5568; margin: 4px 0 14px; padding-bottom: 12px; border-bottom: 1px solid #EEF1F5; }
+.sc-sub a { color: var(--accent); }
+.sc-row { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; }
+.sc-shield { width: 40px; height: 40px; border: 2px solid var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--accent); background: #fff; }
+.sc-shield svg { width: 20px; height: 20px; }
+.sc-bubble { background: #EEF1F5; border-radius: 12px; padding: 16px 18px; font-size: 14.5px; line-height: 1.5; color: #2d3748; }
+.sc-btn { display: block; width: 100%; text-align: left; font-family: var(--head); font-weight: 600; font-size: 16px; padding: 12px 18px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: #fff; margin-top: 12px; transition: transform 0.12s, filter 0.12s; }
+.sc-btn.sc-ghost { background: #fff; color: var(--accent); border-color: #CBD5E0; }
+.sc-btn.sc-pressed, .sc-submit.sc-pressed { transform: scale(0.985); filter: brightness(0.9); }
+.sc-qhead { font-family: var(--head); font-weight: 700; font-size: 14px; color: #17233a; }
+.sc-progrow { display: flex; align-items: center; gap: 14px; margin: 10px 0 12px; }
+.sc-prog { flex: 1; height: 6px; background: #E1E7EE; border-radius: 999px; overflow: hidden; }
+.sc-prog i { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 999px; transition: width 0.6s ease; }
+.sc-timer { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: #2d3748; white-space: nowrap; }
+.sc-timer svg { width: 16px; height: 16px; }
+.sc-qtext { font-size: 15px; color: #2d3748; }
+.sc-opts { margin-top: 12px; display: grid; gap: 8px; }
+.sc-opt { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border: 1px solid #E1E7EE; border-radius: 8px; background: #fff; font-size: 14.5px; color: #2d3748; transition: border-color 0.2s, background 0.2s; }
+.sc-radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #4a5568; flex: none; position: relative; }
+.sc-opt.sc-picked { border-color: var(--accent); background: #F3F9FF; }
+.sc-opt.sc-picked .sc-radio { border-color: var(--accent); }
+.sc-opt.sc-picked .sc-radio::after { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: var(--accent); }
+.sc-submit { display: inline-block; margin-top: 12px; font-family: var(--head); font-weight: 600; font-size: 15px; padding: 10px 16px; border-radius: 6px; background: var(--accent); color: #fff; border: 0; transition: transform 0.12s, filter 0.12s; }
+
+/* the determination */
+.sc-result .sc-bubble b { font-weight: 700; color: var(--prussian); }
+.sc-ladder { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.sc-ladder .rp-pill { cursor: default; }
+.sc-ladder .rp-pill.sc-you { box-shadow: 0 0 0 2px var(--c); }
+.sc-ladder .rp-pill.sc-you::after { content: "you"; margin-left: 6px; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8; }
+.sc-lessons { margin-top: 12px; display: grid; gap: 6px; }
+.sc-lesson { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #2d3748; }
+.sc-lesson .sc-st { font-family: var(--head); font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; background: #E1E7EE; color: var(--steel); flex: none; }
+.sc-lesson.skip span:last-child { color: #8C9BAA; text-decoration: line-through; }
+.sc-lesson.in .sc-st { background: rgba(0,196,204,0.18); color: #00838a; }
+.sc-path { margin-top: 10px; font-size: 13.5px; color: var(--steel); }
+
+/* the replay cursor */
+.sc-cursor { position: absolute; left: 0; top: 0; width: 18px; height: 18px; border-radius: 50%; background: rgba(11,27,43,0.85); border: 2px solid #fff; box-shadow: 0 6px 16px -6px rgba(0,0,0,0.5); z-index: 5; pointer-events: none; transform: translate(-50%, -50%); transition: left 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), top 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s; opacity: 0; }
+.sc-cursor.sc-on { opacity: 1; }
+.sc-cursor.sc-click { animation: scClick 0.35s ease-out; }
+@keyframes scClick { 0% { box-shadow: 0 0 0 0 rgba(4,150,255,0.6); } 100% { box-shadow: 0 0 0 16px rgba(4,150,255,0); } }
+
+@media (max-width: 760px) {
+  .asr-sec h2 { font-size: 36px; line-height: 1.06; }
+  .asr-sec h2 br { display: none; }
+  .sc-view { height: 520px; }
+  .sc-stack { padding: 16px 14px 18px; }
+  .sc-row { grid-template-columns: 36px 1fr; gap: 10px; }
+  .sc-shield { width: 34px; height: 34px; }
+}
+@media (prefers-reduced-motion: reduce) { .sc-card { animation: none; } .sc-live::before { animation: none; } .sc-cursor { transition: none; } }
+
+/* role polaroid: a person in the corner (portraits from the academies index) */
+.rp-av { position: absolute; top: 20px; right: 24px; z-index: 3; width: 74px; height: 74px; border-radius: 50%; overflow: hidden; border: 3px solid #fff; background: var(--alice); box-shadow: 0 12px 26px -12px rgba(11,27,43,0.55); }
+.rp-av img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.rp-av-add { border: 2px dashed #CBD5E0; background: #fff; box-shadow: none; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center; font-family: var(--head); font-weight: 700; font-size: 30px; line-height: 1; color: var(--steel); transition: border-color 0.15s, color 0.15s, transform 0.15s; }
+.rp-av-add:hover { border-color: var(--accent); color: var(--accent); transform: scale(1.05); }
+.rp-av-add.has { border: 3px solid #fff; box-shadow: 0 12px 26px -12px rgba(11,27,43,0.55); }
+.rp-av-add.has .rp-av-plus { display: none; }
+@media (max-width: 520px) { .rp-av { width: 60px; height: 60px; top: 18px; right: 18px; } }
+
+/* ---- enrol learners to personas (one button under the role builder) ---- */
+#step-personas .container { position: relative; }
+.en-row { margin-top: auto; padding-top: 24px; display: flex; align-items: center; justify-content: flex-end; }
+.en-btn { display: inline-flex; align-items: center; gap: 14px; background: #FFC93C; border: 2px solid var(--prussian); border-radius: 18px; padding: 14px 22px 14px 16px; box-shadow: 6px 6px 0 var(--prussian); color: var(--prussian); text-align: left; cursor: pointer; transition: transform 0.12s, box-shadow 0.12s, background 0.2s, color 0.2s; }
+.en-btn:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--prussian); }
+.en-btn.busy { pointer-events: none; }
+.en-btn.done { background: #10B981; color: #fff; }
+.en-btn-ico { width: 44px; height: 44px; border-radius: 50%; background: var(--prussian); color: #FFC93C; display: flex; align-items: center; justify-content: center; flex: none; }
+.en-btn.done .en-btn-ico { background: #fff; color: #10B981; }
+.en-btn-ico svg { width: 24px; height: 24px; }
+.en-btn-txt { display: flex; flex-direction: column; line-height: 1.15; }
+.en-btn-txt b { font-family: var(--head); font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
+.en-btn-txt small { font-family: var(--body); font-size: 12.5px; opacity: 0.8; margin-top: 3px; }
+.en-fly { position: absolute; inset: 0; pointer-events: none; z-index: 8; }
+.en-av { position: absolute; width: 28px; height: 28px; border-radius: 50%; overflow: hidden; border: 2px solid #fff; box-shadow: 0 4px 10px -4px rgba(0,0,0,0.45); background: var(--alice); transition: transform 0.8s cubic-bezier(0.3, 0.9, 0.3, 1.12); }
+.en-av img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.rp-learners { display: flex; align-items: center; gap: 12px; margin-top: 14px; flex-wrap: wrap; }
+.rp-lstack { display: inline-flex; }
+.rp-lstack .en-av { position: static; margin-left: -13px; transition: none; }
+.rp-lstack .en-av:first-child { margin-left: 0; }
+.rp-lstack .en-av.landed { animation: enPop 0.35s ease-out; }
+@keyframes enPop { 0% { box-shadow: 0 0 0 0 rgba(255,201,60,0.8); } 100% { box-shadow: 0 0 0 10px rgba(255,201,60,0); } }
+.rp-lcount { font-family: var(--head); font-weight: 600; font-size: 13.5px; color: var(--prussian); }
+.rp-pill .rp-n { margin-left: 7px; background: var(--c); color: #fff; font-family: var(--head); font-size: 10.5px; font-weight: 700; padding: 1px 7px; border-radius: 999px; display: inline-block; }
+.rp-n.tick { animation: enTick 0.3s ease-out; }
+@keyframes enTick { 50% { transform: scale(1.3); } }
+@media (prefers-reduced-motion: reduce) { .en-av { transition: none; } .rp-lstack .en-av.landed, .rp-n.tick { animation: none; } }
+
+/* ---- step two: card layout refinements (text sizes as designed) ---- */
+.rol-grid { grid-template-columns: 1.05fr 1.15fr; gap: 24px; }
+.rol-card { padding: 22px 22px 22px; }
+.rol-card-head { margin-bottom: 12px; }
+.rp-roles .rol-card-head { padding-bottom: 12px; margin-bottom: 10px; }
+.rp-tabs { margin-bottom: 14px; }
+.rp-group { padding: 10px 0 12px; }
+.rp-gh { margin-bottom: 8px; }
+.rp-pills { gap: 7px; }
+.rp-pol { padding: 12px 12px 58px; }
+.rp-pol-body { min-height: 150px; padding: 52px 16px 14px; }
+.rp-pol .ribbon { top: 22px; left: 22px; }
+.rp-pol .cap { bottom: 16px; left: 16px; right: 16px; }
+.rp-av { width: 60px; height: 60px; top: 16px; right: 18px; }
+.en-row { padding-top: 16px; }
+
+</style>
+
+<script src="shared/nav.js" defer></script>
+<script src="shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<div id="site-nav"></div>
+
+<!-- ============================== HERO (image bg, centered) ============================== -->
+<section class="hero" data-story>
+  <div class="container">
+    <div class="hero-copy">
+      <div class="eyebrow">
+        <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="9" r="2.6"/></svg>
+        Skills Navigator
+      </div>
+      <h1>Know the skills they have.<br/>Fill the ones they <em>lack</em>.</h1>
+      <div class="hero-cta">
+        <a class="btn btn-lg btn-primary" href="book-a-demo.html">Book a demo <span class="arr">&rarr;</span></a>
+        <a class="btn btn-lg btn-outline-dark" href="#step-academies">See how it works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== STEP 1: CHOOSE ACADEMIES ============================== -->
+<section class="aca-sec" data-story data-cue="Choose your academies" id="step-academies">
+  <div class="sec-tab">Step one</div>
+  <div class="container">
+    <div class="ak-head">
+      <div>
+        <div class="eyebrow">Four critical skill areas</div>
+        <h2>Four academies.<br/><em>One strategic advantage.</em></h2>
+      </div>
+      <p>AI, Data, Finance and Project Management: the four skill areas that decide whether a strategy lands. Delivered in the right mix, they compound into significant gains for the whole organisation.</p>
+    </div>
+
+    <div class="posters ak-wall">
+      <button type="button" class="poster ak-fin" data-academy="fin" data-name="Finance" aria-pressed="false" aria-label="Add the Finance academy">
+        <span class="ribbon">Finance</span>
+        <img src="academies/finance/img/hero-image.webp" alt="The Finance Academy" loading="lazy"/>
+        <span class="ak-cap"><span class="ak-name">Finance</span><span class="ak-meta">11 subjects &middot; 3 persona tiers</span></span>
+        <span class="ak-plus" aria-hidden="true"><span class="ak-sym">+</span><svg class="ak-tick" viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></span>
+      </button>
+      <div class="poster-wrap">
+      <button type="button" class="poster ak-pm" data-academy="pm" data-name="Project Management" aria-pressed="false" aria-label="Add the Project Management academy">
+        <span class="ribbon">Project Management</span>
+        <img src="academies/project-management/img/hero-image.webp" alt="The Project Management Academy" loading="lazy"/>
+        <span class="ak-cap"><span class="ak-name">Project Management</span><span class="ak-meta">11 subjects &middot; 3 persona tiers</span></span>
+        <span class="ak-plus" aria-hidden="true"><span class="ak-sym">+</span><svg class="ak-tick" viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></span>
+      </button>
+        <div class="ak-hint" aria-hidden="true">
+          <svg viewBox="0 0 1195 1316" preserveAspectRatio="xMidYMid meet"><defs><marker id="ak-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M 1.5 1.5 L 8 5 L 1.5 8.5" fill="none" stroke="#FFC93C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><path class="ak-squiggle" d="M 620 -130 C 540 10, 820 90, 740 190 S 560 300, 660 380 S 750 454, 696 526" fill="none" stroke="#FFC93C" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ak-arrow)"/></svg>
+          <span class="ak-hint-txt"><span class="ak-hint-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V4a1.5 1.5 0 0 1 3 0v6"/><path d="M12 10V8.5a1.5 1.5 0 0 1 3 0V11"/><path d="M15 10.5a1.5 1.5 0 0 1 3 0V13"/><path d="M18 12.5a1.5 1.5 0 0 1 3 0V16a7 7 0 0 1-7 7h-1.5a7 7 0 0 1-5.6-2.8L4.2 16.6a1.6 1.6 0 0 1 2.5-2L9 17V11"/></svg></span>Click the plus to add an academy</span>
+        </div>
+      </div>
+      <button type="button" class="poster ak-ai" data-academy="ai" data-name="AI" aria-pressed="false" aria-label="Add the AI academy">
+        <span class="ribbon">AI</span>
+        <img src="academies/ai/img/hero-image.webp" alt="The AI Academy" loading="lazy"/>
+        <span class="ak-cap"><span class="ak-name">AI</span><span class="ak-meta">10 subjects &middot; 4 persona tiers</span></span>
+        <span class="ak-plus" aria-hidden="true"><span class="ak-sym">+</span><svg class="ak-tick" viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></span>
+      </button>
+      <button type="button" class="poster ak-data" data-academy="data" data-name="Data Literacy" aria-pressed="false" aria-label="Add the Data Literacy academy">
+        <span class="ribbon">Data Literacy</span>
+        <img src="academies/data-literacy/img/hero-image.webp" alt="The Data Literacy Academy" loading="lazy"/>
+        <span class="ak-cap"><span class="ak-name">Data Literacy</span><span class="ak-meta">16 subjects &middot; 4 persona tiers</span></span>
+        <span class="ak-plus" aria-hidden="true"><span class="ak-sym">+</span><svg class="ak-tick" viewBox="0 0 24 24"><polyline points="5 12 10 17 20 7"/></svg></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== STEP 2: BUILD PERSONAS ============================== -->
+<section class="rol-sec" data-story data-cue="Build your roles" id="step-personas">
+  <div class="sec-tab">Step two</div>
+  <div class="container">
+    <div class="ak-head">
+      <div>
+        <div class="eyebrow">Design the mix for every team</div>
+        <h2>Every team needs<br/><em>a different mix.</em></h2>
+      </div>
+      <p>A finance team needs one blend of these skills, a cohort of interns another, and your managers and executives another again. Roles let you design that mix for each group, built from the personas and subjects in the academies you chose above.</p>
+    </div>
+
+    <div class="rol-grid">
+      <div class="rol-card rp-lib">
+        <div class="rol-card-head"><span class="num-badge" style="--c:#FFC93C">Persona library</span></div>
+        <div class="ak-hint rh-hint rh-lib hide" id="rh-lib" aria-hidden="true"><svg><defs><marker id="rh-arrow-2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M 1.5 1.5 L 8 5 L 1.5 8.5" fill="none" stroke="#FFC93C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><path class="rh-line" d="" fill="none" stroke="#FFC93C" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#rh-arrow-2)"/></svg><span class="ak-hint-txt"><span class="ak-hint-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V4a1.5 1.5 0 0 1 3 0v6"/><path d="M12 10V8.5a1.5 1.5 0 0 1 3 0V11"/><path d="M15 10.5a1.5 1.5 0 0 1 3 0V13"/><path d="M18 12.5a1.5 1.5 0 0 1 3 0V16a7 7 0 0 1-7 7h-1.5a7 7 0 0 1-5.6-2.8L4.2 16.6a1.6 1.6 0 0 1 2.5-2L9 17V11"/></svg></span>Add personas to create roles</span></div>
+        <div class="rp-group" data-academy="fin" style="--c:#10B981;--c-soft:rgba(16,185,129,0.14)">
+          <div class="rp-gh"><span class="rp-dot"></span><span class="rp-gname">Finance</span><button type="button" class="rp-state" data-tip-locked="Add Finance above in step one to unlock" data-tip-open="Unlocked. Drag or tap a persona to add it to a role." aria-label="Add Finance above in step one to unlock"><svg class="rp-lock-closed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><svg class="rp-lock-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.6-1.8"/></svg></button></div>
+          <div class="rp-pills">
+            <button type="button" class="rp-pill" data-academy="fin" data-persona="Finance Apprentice" draggable="false" aria-disabled="true">Finance Apprentice</button>
+            <button type="button" class="rp-pill" data-academy="fin" data-persona="Finance Analyst" draggable="false" aria-disabled="true">Finance Analyst</button>
+            <button type="button" class="rp-pill" data-academy="fin" data-persona="Financial Modeler" draggable="false" aria-disabled="true">Financial Modeler</button>
+          </div>
+        </div>
+        <div class="rp-group" data-academy="pm" style="--c:#F97316;--c-soft:rgba(249,115,22,0.14)">
+          <div class="rp-gh"><span class="rp-dot"></span><span class="rp-gname">Project Management</span><button type="button" class="rp-state" data-tip-locked="Add Project Management above in step one to unlock" data-tip-open="Unlocked. Drag or tap a persona to add it to a role." aria-label="Add Project Management above in step one to unlock"><svg class="rp-lock-closed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><svg class="rp-lock-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.6-1.8"/></svg></button></div>
+          <div class="rp-pills">
+            <button type="button" class="rp-pill" data-academy="pm" data-persona="Project Member" draggable="false" aria-disabled="true">Project Member</button>
+            <button type="button" class="rp-pill" data-academy="pm" data-persona="PM Candidate" draggable="false" aria-disabled="true">PM Candidate</button>
+            <button type="button" class="rp-pill" data-academy="pm" data-persona="Project Champion" draggable="false" aria-disabled="true">Project Champion</button>
+          </div>
+        </div>
+        <div class="rp-group" data-academy="ai" style="--c:#00C4CC;--c-soft:rgba(0,196,204,0.14)">
+          <div class="rp-gh"><span class="rp-dot"></span><span class="rp-gname">AI</span><button type="button" class="rp-state" data-tip-locked="Add AI above in step one to unlock" data-tip-open="Unlocked. Drag or tap a persona to add it to a role." aria-label="Add AI above in step one to unlock"><svg class="rp-lock-closed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><svg class="rp-lock-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.6-1.8"/></svg></button></div>
+          <div class="rp-pills">
+            <button type="button" class="rp-pill" data-academy="ai" data-persona="AI Apprentice" draggable="false" aria-disabled="true">AI Apprentice</button>
+            <button type="button" class="rp-pill" data-academy="ai" data-persona="AI Navigator" draggable="false" aria-disabled="true">AI Navigator</button>
+            <button type="button" class="rp-pill" data-academy="ai" data-persona="AI Architect" draggable="false" aria-disabled="true">AI Architect</button>
+            <button type="button" class="rp-pill" data-academy="ai" data-persona="AI Strategist" draggable="false" aria-disabled="true">AI Strategist</button>
+          </div>
+        </div>
+        <div class="rp-group" data-academy="data" style="--c:#E91E63;--c-soft:rgba(233,30,99,0.14)">
+          <div class="rp-gh"><span class="rp-dot"></span><span class="rp-gname">Data Literacy</span><button type="button" class="rp-state" data-tip-locked="Add Data Literacy above in step one to unlock" data-tip-open="Unlocked. Drag or tap a persona to add it to a role." aria-label="Add Data Literacy above in step one to unlock"><svg class="rp-lock-closed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><svg class="rp-lock-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.6-1.8"/></svg></button></div>
+          <div class="rp-pills">
+            <button type="button" class="rp-pill" data-academy="data" data-persona="Data Citizen" draggable="false" aria-disabled="true">Data Citizen</button>
+            <button type="button" class="rp-pill" data-academy="data" data-persona="Data Associate" draggable="false" aria-disabled="true">Data Associate</button>
+            <button type="button" class="rp-pill" data-academy="data" data-persona="Data Wrangler" draggable="false" aria-disabled="true">Data Wrangler</button>
+            <button type="button" class="rp-pill" data-academy="data" data-persona="Data Analyst" draggable="false" aria-disabled="true">Data Analyst</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="rol-card rp-roles">
+        <div class="rol-card-head"><span class="num-badge" style="--c:#00C4CC">Roles</span></div>
+        <div class="ak-hint rh-hint rh-build" id="rh-build" aria-hidden="true"><svg><defs><marker id="rh-arrow-1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M 1.5 1.5 L 8 5 L 1.5 8.5" fill="none" stroke="#FFC93C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><path class="rh-line" d="" fill="none" stroke="#FFC93C" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#rh-arrow-1)"/></svg><span class="ak-hint-txt"><span class="ak-hint-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V4a1.5 1.5 0 0 1 3 0v6"/><path d="M12 10V8.5a1.5 1.5 0 0 1 3 0V11"/><path d="M15 10.5a1.5 1.5 0 0 1 3 0V13"/><path d="M18 12.5a1.5 1.5 0 0 1 3 0V16a7 7 0 0 1-7 7h-1.5a7 7 0 0 1-5.6-2.8L4.2 16.6a1.6 1.6 0 0 1 2.5-2L9 17V11"/></svg></span>Build your own roles</span></div>
+        <p class="rp-explain">A role is a pre-configured group of personas for one population of learners: a team, a cohort, a level of seniority.</p>
+        <div class="rp-tabs" role="tablist">
+          <button type="button" class="rp-tab on" data-tab="rp-panel-example" role="tab" aria-selected="true">Example role</button>
+          <button type="button" class="rp-tab" data-tab="rp-panel-build" role="tab" aria-selected="false">Build your own</button>
+        </div>
+        <div class="rp-panel" id="rp-panel-example" role="tabpanel">
+          <div class="rp-pol rp-example">
+            <span class="ribbon">Role</span>
+            <span class="rp-av"><img src="img/Character_profiles/portraits/female_07.a.png" alt=""/></span>
+            <div class="rp-pol-body">
+              <div class="rp-pol-pills">
+                <span class="rp-pill on" style="--c:#10B981;--c-soft:rgba(16,185,129,0.14)">Finance Analyst</span>
+                <span class="rp-pill on" style="--c:#E91E63;--c-soft:rgba(233,30,99,0.14)">Data Associate</span>
+                <span class="rp-pill on" style="--c:#00C4CC;--c-soft:rgba(0,196,204,0.14)">AI Navigator</span>
+              </div>
+              <p class="rp-pol-desc">Turns numbers into decisions: models the business, wrangles the data, and puts AI to work on the analysis.</p>
+              <div class="rp-learners" hidden><span class="rp-lstack"></span><span class="rp-lcount"></span></div>
+            </div>
+            <div class="cap">Commercial Analyst</div>
+          </div>
+        </div>
+        <div class="rp-panel" id="rp-panel-build" role="tabpanel" hidden>
+          <div class="rp-pol rp-build" id="rp-build">
+            <span class="ribbon">Your role</span>
+            <button type="button" class="rp-av rp-av-add" id="rp-av-add" aria-label="Add a picture"><span class="rp-av-plus">+</span></button>
+            <div class="rp-pol-body rp-drop">
+              <div class="rp-drop-empty" id="rp-drop-empty"><b>Drag unlocked personas here.</b><span>Or tap one in the library. Mix academies freely.</span></div>
+              <div class="rp-pol-pills" id="rp-role-pills"></div>
+              <div class="rp-learners" hidden><span class="rp-lstack"></span><span class="rp-lcount"></span></div>
+            </div>
+            <div class="cap rp-cap"><input id="rp-name" type="text" placeholder="Name this role" aria-label="Role name"/><button type="button" class="rp-clear" id="rp-clear" hidden>Clear</button></div>
+          </div>
+        </div>
+        <div class="en-row">
+        <button type="button" class="en-btn" id="en-btn"><span class="en-btn-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5a5 5 0 0 1 6 5"/></svg></span><span class="en-btn-txt"><b>Enrol learners to personas</b><small id="en-sub">24 learners ready</small></span></button>
+        </div>
+      </div>
+    </div>
+    <div class="en-fly" id="en-fly" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ============================== STEP 3: THE SKILLS ASSESSOR ============================== -->
+<section class="asr-sec" data-story data-cue="The skills assessor" id="step-assessor">
+  <div class="sec-tab">Step three</div>
+  <div class="container">
+    <div class="eyebrow">The skills assessor</div>
+    <h2>Assessed against the role.<br/>Assigned only what they <em>need</em>.</h2>
+    <p class="asr-sub">Before any learning commences, each learner is assessed against their role profile. Only what they still need to know is assigned, so learning is effective and every learner starts from the right position. Here it is, exactly as a learner sees it.</p>
+
+    <div class="asr-stage">
+      <div class="sc-panel">
+        <div class="sc-bar"><span class="sc-dots"><i></i><i></i><i></i></span>Skill Check &middot; Commercial Analyst &middot; Evaluating AI<span class="sc-live">Live replay</span></div>
+        <div class="sc-view" id="sc-view"><div class="sc-stack" id="sc-stack"></div><div class="sc-cursor" id="sc-cursor"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== VIDEO PANEL ============================== -->
+<section class="vsec" data-story data-cue="See it in action">
+  <div class="container">
+    <div class="vsec-head">
+      <div class="vsec-eyebrow">See it in motion</div>
+      <h2 class="vsec-h">One assessment.<br/>Everyone <em>pointed the right way.</em></h2>
+    </div>
+    <div class="vpanel">
+      <video id="sn-video" src="img/skills-navigator/skills-navigator.mp4" poster="img/skills-navigator/poster.webp" autoplay muted loop playsinline preload="metadata"></video>
+      <button class="vid-ctrl" id="sn-sound" type="button" aria-label="Unmute video">
+        <svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/></svg>
+        <span id="sn-label">Sound</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CTA ============================== -->
+<section class="cta" data-story data-cue="Book a demo">
+  <div class="container">
+    <h2>See Skills Navigator on your workforce.</h2>
+    <p>Bring us your strategy and a slice of your team. We will show you how everyone lands in the right place.</p>
+    <div class="hero-cta">
+      <a class="btn btn-lg btn-primary" href="book-a-demo.html">Book a demo <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<!-- ============================== VIDEO SOUND TOGGLE ============================== -->
+<script>
+(function () {
+  var v = document.getElementById('sn-video');
+  var btn = document.getElementById('sn-sound');
+  var label = document.getElementById('sn-label');
+  if (!v || !btn) return;
+  btn.addEventListener('click', function () {
+    v.muted = !v.muted;
+    if (!v.muted) { v.play(); label.textContent = 'Mute'; btn.setAttribute('aria-label', 'Mute video'); }
+    else { label.textContent = 'Sound'; btn.setAttribute('aria-label', 'Unmute video'); }
+  });
+  // Play when the panel scrolls into view; pause when it leaves (only while muted,
+  // so we never cut off a viewer who has turned the sound on).
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { v.play().catch(function () {}); }
+        else if (v.muted) { v.pause(); }
+      });
+    }, { threshold: 0.25 });
+    io.observe(v);
+  }
+})();
+</script>
+
+<!-- ============================== ACADEMY TILE SELECTION ============================== -->
+<!-- ============================== ACADEMY POSTERS (add / added) ============================== -->
+<script>
+(function () {
+  function emit() {
+    var added = Array.prototype.map.call(document.querySelectorAll('.poster.added'), function (c) { return c.getAttribute('data-academy'); });
+    document.dispatchEvent(new CustomEvent('sn:academies', { detail: { added: added } }));
+    var hint = document.querySelector('.ak-hint'); if (hint) hint.classList.toggle('hide', added.length > 0);
+  }
+  document.querySelectorAll('.poster[data-academy]').forEach(function (card) {
+    var ribbon = card.querySelector('.ribbon'), name = card.getAttribute('data-name');
+    card.addEventListener('click', function () {
+      var on = card.classList.toggle('added');
+      card.setAttribute('aria-pressed', on ? 'true' : 'false');
+      card.setAttribute('aria-label', (on ? 'Remove the ' : 'Add the ') + name + ' academy');
+      ribbon.textContent = on ? 'Added' : name;
+      emit();
+    });
+  });
+})();
+</script>
+
+<!-- ============================== ROLES (persona library -> role builder) ============================== -->
+<script>
+(function () {
+  var build = document.getElementById('rp-build'), pillsWrap = document.getElementById('rp-role-pills');
+  var empty = document.getElementById('rp-drop-empty'), clearBtn = document.getElementById('rp-clear');
+  if (!build || !pillsWrap) return;
+  var tabs = document.querySelectorAll('.rp-tab'), panels = document.querySelectorAll('.rp-panel');
+  var role = [];
+
+  function showTab(id) {
+    tabs.forEach(function (t) { var on = t.getAttribute('data-tab') === id; t.classList.toggle('on', on); t.setAttribute('aria-selected', on ? 'true' : 'false'); });
+    panels.forEach(function (p) { p.hidden = p.id !== id; });
+  }
+  tabs.forEach(function (t) { t.addEventListener('click', function () { showTab(t.getAttribute('data-tab')); }); });
+
+  function groupOf(key) { return document.querySelector('.rp-group[data-academy="' + key + '"]'); }
+  function isActive(key) { var g = groupOf(key); return !!(g && g.classList.contains('active')); }
+
+  function renderRole() {
+    pillsWrap.innerHTML = '';
+    role.forEach(function (r) {
+      var g = groupOf(r.key), cs = g ? getComputedStyle(g) : null;
+      var el = document.createElement('span');
+      el.className = 'rp-pill on';
+      if (cs) { el.style.setProperty('--c', cs.getPropertyValue('--c').trim()); el.style.setProperty('--c-soft', cs.getPropertyValue('--c-soft').trim()); }
+      el.textContent = r.persona;
+      var x = document.createElement('button'); x.type = 'button'; x.className = 'rp-x'; x.setAttribute('aria-label', 'Remove ' + r.persona); x.innerHTML = '&times;';
+      x.addEventListener('click', function () { removeFromRole(r.persona); });
+      el.appendChild(x);
+      pillsWrap.appendChild(el);
+    });
+    var n = role.length;
+    empty.hidden = n > 0;
+    clearBtn.hidden = n === 0;
+    build.classList.toggle('has', n > 0);
+  }
+  function addToRole(key, persona) {
+    if (!isActive(key)) return;
+    if (role.some(function (r) { return r.persona === persona; })) return;
+    role.push({ key: key, persona: persona });
+    renderRole();
+    showTab('rp-panel-build');
+  }
+  function removeFromRole(persona) { role = role.filter(function (r) { return r.persona !== persona; }); renderRole(); }
+
+  // step one drives which personas are unlocked
+  function applyAcademies(added) {
+    document.querySelectorAll('.rp-group').forEach(function (g) {
+      var k = g.getAttribute('data-academy'), on = added.indexOf(k) > -1;
+      g.classList.toggle('active', on);
+      g.querySelectorAll('.rp-pill').forEach(function (p) { p.setAttribute('draggable', on ? 'true' : 'false'); p.setAttribute('aria-disabled', on ? 'false' : 'true'); });
+      var st = g.querySelector('.rp-state'); if (st) st.setAttribute('aria-label', st.getAttribute(on ? 'data-tip-open' : 'data-tip-locked'));
+    });
+    var before = role.length;
+    role = role.filter(function (r) { return added.indexOf(r.key) > -1; });
+    if (role.length !== before) renderRole();
+  }
+  document.addEventListener('sn:academies', function (e) { applyAcademies(e.detail.added); });
+  document.querySelectorAll('.rp-state').forEach(function (b) {
+    b.addEventListener('click', function () { if (!b.closest('.rp-group').classList.contains('active')) { var sec = document.getElementById('step-academies'); if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' }); } });
+  });
+
+  // library pills: tap adds, drag adds
+  document.querySelectorAll('.rp-group .rp-pill').forEach(function (p) {
+    var key = p.getAttribute('data-academy'), persona = p.getAttribute('data-persona');
+    p.addEventListener('click', function () { addToRole(key, persona); });
+    p.addEventListener('dragstart', function (e) {
+      if (!isActive(key)) { e.preventDefault(); return; }
+      p.classList.add('dragging');
+      try { e.dataTransfer.setData('text/plain', key + '|' + persona); e.dataTransfer.effectAllowed = 'copy'; } catch (err) {}
+    });
+    p.addEventListener('dragend', function () { p.classList.remove('dragging'); });
+  });
+  build.addEventListener('dragover', function (e) { e.preventDefault(); build.classList.add('over'); try { e.dataTransfer.dropEffect = 'copy'; } catch (err) {} });
+  build.addEventListener('dragleave', function (e) { if (!build.contains(e.relatedTarget)) build.classList.remove('over'); });
+  build.addEventListener('drop', function (e) {
+    e.preventDefault(); build.classList.remove('over');
+    var d = ''; try { d = e.dataTransfer.getData('text/plain'); } catch (err) {}
+    var k = d.indexOf('|'); if (k > 0) addToRole(d.slice(0, k), d.slice(k + 1));
+  });
+  clearBtn.addEventListener('click', function () {
+    role = []; renderRole();
+    var av = document.getElementById('rp-av-add'); if (av) { var im = av.querySelector('img'); if (im) im.remove(); av.classList.remove('has'); av.setAttribute('aria-label', 'Add a picture'); av.__i = -1; }
+  });
+  var avBtn = document.getElementById('rp-av-add');
+  if (avBtn) {
+    var pics = ['female_07', 'male_04', 'female_03', 'male_07']; avBtn.__i = -1;
+    avBtn.addEventListener('click', function () {
+      avBtn.__i = (avBtn.__i + 1) % pics.length;
+      var img = avBtn.querySelector('img'); if (!img) { img = document.createElement('img'); img.alt = ''; avBtn.appendChild(img); }
+      img.src = 'img/Character_profiles/portraits/' + pics[avBtn.__i] + '.a.png';
+      avBtn.classList.add('has'); avBtn.setAttribute('aria-label', 'Change picture');
+    });
+  }
+
+  renderRole();
+  showTab('rp-panel-example');
+  applyAcademies(Array.prototype.map.call(document.querySelectorAll('.poster.added'), function (c) { return c.getAttribute('data-academy'); }));
+})();
+</script>
+
+<!-- ============================== ROLES HINTS (build your own -> add personas) ============================== -->
+<script>
+(function () {
+  var hb = document.getElementById('rh-build'), hl = document.getElementById('rh-lib');
+  var buildTab = document.querySelector('.rp-tab[data-tab="rp-panel-build"]'), rolePills = document.getElementById('rp-role-pills');
+  if (!hb || !hl || !buildTab || !rolePills) return;
+  var f = function (p) { return p.x.toFixed(1) + ' ' + p.y.toFixed(1); };
+  function squiggle(path, a, b) {
+    var dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy) || 1, ux = dx / len, uy = dy / len, px = -uy, py = ux;
+    var amp = Math.max(6, Math.min(16, len * 0.1)), h = len / 6;
+    var e1 = { x: a.x + ux * len / 3, y: a.y + uy * len / 3 }, e2 = { x: a.x + ux * 2 * len / 3, y: a.y + uy * 2 * len / 3 };
+    var c1 = { x: a.x + ux * len * 0.12, y: a.y + uy * len * 0.12 };
+    var c2 = { x: e1.x - ux * h + px * amp, y: e1.y - uy * h + py * amp };
+    var c3 = { x: e2.x - ux * h - px * amp, y: e2.y - uy * h - py * amp };
+    var c4 = { x: b.x - ux * h, y: b.y - uy * h };
+    path.setAttribute('d', 'M ' + f(a) + ' C ' + f(c1) + ', ' + f(c2) + ', ' + f(e1) + ' S ' + f(c3) + ', ' + f(e2) + ' S ' + f(c4) + ', ' + f(b));
+  }
+  // from under the pill's left end to just outside the target's edge, aimed at its centre
+  function draw(hint, target, side) {
+    if (!target) return;
+    var card = hint.parentNode, cr = card.getBoundingClientRect();
+    var svg = hint.querySelector('svg'), path = hint.querySelector('.rh-line'), pill = hint.querySelector('.ak-hint-txt');
+    svg.setAttribute('viewBox', '0 0 ' + cr.width + ' ' + cr.height); svg.setAttribute('preserveAspectRatio', 'none');
+    var pr = pill.getBoundingClientRect(), tr = target.getBoundingClientRect();
+    var a = side === 'right'
+      ? { x: pr.right - cr.left - Math.min(56, pr.width * 0.25), y: pr.bottom - cr.top - 16 }
+      : { x: pr.left - cr.left + Math.min(56, pr.width * 0.25), y: pr.bottom - cr.top - 8 };
+    var c = { x: tr.left - cr.left + tr.width / 2, y: tr.top - cr.top + tr.height / 2 };
+    var dx = c.x - a.x, dy = c.y - a.y, len = Math.hypot(dx, dy) || 1, ux = dx / len, uy = dy / len;
+    var tb = Math.min((tr.width / 2) / Math.max(Math.abs(ux), 1e-6), (tr.height / 2) / Math.max(Math.abs(uy), 1e-6));
+    squiggle(path, a, { x: c.x - ux * (tb + 6), y: c.y - uy * (tb + 6) });
+  }
+  var buildDiscovered = false, libDiscovered = false;
+  function update() {
+    var buildOn = buildTab.classList.contains('on'), n = rolePills.children.length;
+    if (buildOn) buildDiscovered = true;
+    if (n > 0) libDiscovered = true;
+    var showBuild = !buildDiscovered, showLib = buildOn && n === 0 && !libDiscovered;
+    hb.classList.toggle('hide', !showBuild); hl.classList.toggle('hide', !showLib);
+    if (showBuild) draw(hb, buildTab);
+    if (showLib) draw(hl, document.querySelector('.rp-group .rp-pill'), 'right');
+  }
+  document.querySelectorAll('.rp-tab').forEach(function (t) { t.addEventListener('click', update); });
+  new MutationObserver(update).observe(rolePills, { childList: true });
+  document.addEventListener('sn:academies', update);
+  window.addEventListener('resize', update);
+  if ('ResizeObserver' in window) { var ro = new ResizeObserver(update); ro.observe(hb.parentNode); ro.observe(hl.parentNode); }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(update);
+  window.addEventListener('load', update);
+  update();
+  window.RolesHints = { update: update };
+})();
+</script>
+
+<!-- ============================== ENROL LEARNERS (avatars fly from the button into the role's personas) ============================== -->
+<script>
+(function () {
+  var btn = document.getElementById('en-btn'), sub = document.getElementById('en-sub'), fly = document.getElementById('en-fly');
+  var rolePills = document.getElementById('rp-role-pills'), buildTab = document.querySelector('.rp-tab[data-tab="rp-panel-build"]'), exampleTab = document.querySelector('.rp-tab[data-tab="rp-panel-example"]');
+  if (!btn || !fly || !rolePills || !buildTab) return;
+  var PICS = ["female_03", "female_05", "female_06", "female_07", "female_09", "female_10", "male_01", "male_02", "male_04", "male_06", "male_07", "male_09"], N = 24, busy = false, done = false, timers = [], target = null;
+  var reduce = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  function av(i) { var a = document.createElement('span'); a.className = 'en-av'; a.innerHTML = '<img src="img/Character_profiles/portraits/' + PICS[i % PICS.length] + '.a.png" alt="" loading="lazy"/>'; return a; }
+  // the role on show: the built one if it has personas, otherwise the example
+  function panelFor() {
+    if (buildTab.classList.contains('on') && rolePills.children.length) return document.querySelector('#rp-panel-build .rp-pol');
+    if (buildTab.classList.contains('on')) exampleTab.click();
+    return document.querySelector('#rp-panel-example .rp-pol');
+  }
+  function enrol() {
+    if (busy || done) return;
+    var pol = panelFor(), pills = Array.prototype.slice.call(pol.querySelectorAll('.rp-pol-pills .rp-pill'));
+    if (!pills.length) return;
+    busy = true; target = pol; btn.classList.add('busy'); sub.textContent = 'Allocating\u2026';
+    var row = pol.querySelector('.rp-learners'), stack = row.querySelector('.rp-lstack'), countEl = row.querySelector('.rp-lcount');
+    row.hidden = false; stack.innerHTML = ''; countEl.textContent = '';
+    var statics = []; for (var i = 0; i < N; i++) { var st = av(i); st.style.visibility = 'hidden'; stack.appendChild(st); statics.push(st); }
+    pills.forEach(function (p) { var b = document.createElement('span'); b.className = 'rp-n'; b.textContent = '0'; p.appendChild(b); });
+    var fr = fly.getBoundingClientRect(), br = btn.getBoundingClientRect(), instant = reduce || document.hidden, landed = 0;
+    statics.forEach(function (st, i) {
+      var f = av(i); f.style.left = (br.left + br.width / 2 - fr.left - 14) + 'px'; f.style.top = (br.top + br.height / 2 - fr.top - 14) + 'px'; fly.appendChild(f);
+      var sr = st.getBoundingClientRect(), tx = (sr.left - fr.left) - parseFloat(f.style.left), ty = (sr.top - fr.top) - parseFloat(f.style.top);
+      var go = function () { f.style.transform = 'translate(' + tx + 'px,' + ty + 'px)'; };
+      var land = function () {
+        st.style.visibility = ''; st.classList.add('landed'); f.remove();
+        pills.forEach(function (p) { var b = p.querySelector('.rp-n'); b.textContent = String((+b.textContent) + 1); b.classList.remove('tick'); void b.offsetWidth; b.classList.add('tick'); });
+        landed++; countEl.textContent = landed + (landed === 1 ? ' learner' : ' learners');
+        if (landed === N) {
+          busy = false; done = true; btn.classList.remove('busy'); btn.classList.add('done'); btn.querySelector('b').textContent = 'Enrolled';
+          sub.textContent = 'Learners successfully enrolled';
+        }
+      };
+      if (instant) { go(); land(); } else timers.push(setTimeout(function () { go(); timers.push(setTimeout(land, 820)); }, i * 70));
+    });
+  }
+  function clear() {
+    timers.forEach(clearTimeout); timers = []; fly.innerHTML = ''; busy = false; done = false; target = null;
+    btn.classList.remove('done', 'busy'); btn.querySelector('b').textContent = 'Enrol learners to personas'; sub.textContent = N + ' learners ready';
+    document.querySelectorAll('.rp-learners').forEach(function (r) { r.hidden = true; r.querySelector('.rp-lstack').innerHTML = ''; r.querySelector('.rp-lcount').textContent = ''; });
+    document.querySelectorAll('.rp-pol .rp-n').forEach(function (b) { b.remove(); });
+  }
+  btn.addEventListener('click', enrol);
+  new MutationObserver(function () { if (target && target.closest('#rp-panel-build')) clear(); }).observe(rolePills, { childList: true });
+  window.EnrolDemo = { enrol: enrol, reset: clear, count: N };
+})();
+</script>
+
+<!-- ============================== SKILL CHECK REPLAY (the assessor, as a learner sees it) ============================== -->
+<script>
+(function () {
+  var sec = document.getElementById('step-assessor'), view = document.getElementById('sc-view');
+  var stack = document.getElementById('sc-stack'), cur = document.getElementById('sc-cursor');
+  if (!sec || !view || !stack || !cur) return;
+  var SHIELD = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/></svg>';
+  var CLOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+  var QS = [
+    { q: 'Does professional experience by itself prevent automation bias?', a: 1 },
+    { q: 'When AI contributes to a piece of work, does responsibility for that work transfer to the tool or its vendor?', a: 1 },
+    { q: 'Should an AI-generated summary be checked against its sources before it is shared?', a: 0 },
+    { q: 'Can a fluent, confident answer from an AI still be wrong?', a: 0 },
+    { q: 'Is testing an AI tool once enough before relying on it for decisions?', a: 2 }
+  ];
+  var OPTS = ['Yes', 'No', 'I don\u2019t know'];
+  var LESSONS = [
+    { t: 'What automation bias looks like', skip: true },
+    { t: 'Who is accountable for AI output', skip: true },
+    { t: 'Checking AI summaries against their sources' },
+    { t: 'Spotting confident but wrong answers' },
+    { t: 'Testing an AI tool before you rely on it' }
+  ];
+  var AI = '--c:#00C4CC;--c-soft:rgba(0,196,204,0.14)';
+  var reduce = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  function el(html) { var d = document.createElement('div'); d.innerHTML = html.trim(); return d.firstChild; }
+  function row(inner) { return '<div class="sc-row"><span class="sc-shield">' + SHIELD + '</span><div>' + inner + '</div></div>'; }
+  function intro() {
+    return el('<div class="sc-card sc-intro"><div class="sc-title">Skill Check: Evaluating AI</div><div class="sc-sub">This quick check will help shape your learning experience. <a>Learn More</a>.</div>' +
+      row('<div class="sc-bubble">Hi Priya \ud83d\udc4b You\u2019ve been enrolled as a Commercial Analyst. Before we begin this course, I can run a quick, low-stakes scenario to see how comfortable you are with the skills in this course.' +
+      '<button type="button" class="sc-btn" data-start tabindex="-1">Start Skill Check \u2192 Evaluate my level</button>' +
+      '<button type="button" class="sc-btn sc-ghost" tabindex="-1">Skip Skill Check \u2192 Include all lessons</button></div>') + '</div>');
+  }
+  function qcard(i) {
+    var q = QS[i];
+    return el('<div class="sc-card sc-q" data-q="' + i + '">' + row(
+      '<div class="sc-bubble"><div class="sc-qhead">Question ' + (i + 1) + ' of ' + QS.length + '</div>' +
+      '<div class="sc-progrow"><div class="sc-prog"><i></i></div><span class="sc-timer">' + CLOCK + '<span data-t>1:00</span></span></div>' +
+      '<div class="sc-qtext">' + q.q + '</div></div>' +
+      '<div class="sc-opts">' + OPTS.map(function (o) { return '<div class="sc-opt"><span class="sc-radio"></span>' + o + '</div>'; }).join('') + '</div>' +
+      '<button type="button" class="sc-submit" tabindex="-1">Submit Answer</button>') + '</div>');
+  }
+  function result() {
+    var tiers = ['AI Apprentice', 'AI Navigator', 'AI Architect', 'AI Strategist'];
+    var ladder = tiers.map(function (t) { return t === 'AI Navigator' ? '<span class="rp-pill on sc-you" style="' + AI + '">' + t + '</span>' : '<span class="rp-pill" style="' + AI + '">' + t + '</span>'; }).join('');
+    return el('<div class="sc-card sc-result">' + row(
+      '<div class="sc-bubble">Skill Check complete. You already know some of this, so you\u2019ll start this course as an <b>AI Navigator</b>, with only the lessons you need.' +
+      '<div class="sc-ladder">' + ladder + '</div>' +
+      '<div class="sc-lessons">' + LESSONS.map(function (l) { return '<div class="sc-lesson ' + (l.skip ? 'skip' : 'in') + '"><span class="sc-st">' + (l.skip ? 'Skipped' : 'Included') + '</span><span>' + l.t + '</span></div>'; }).join('') + '</div>' +
+      '<div class="sc-path">3 lessons you need \u00b7 2 you already know skipped \u00b7 about 45 minutes</div>' +
+      '<button type="button" class="sc-btn" tabindex="-1">Start learning \u2192</button></div>') + '</div>');
+  }
+
+  // append a card so it floats up from the bottom while the thread slides up
+  function add(card) {
+    var h0 = stack.getBoundingClientRect().height;
+    stack.querySelectorAll('.sc-card').forEach(function (c) { c.classList.add('sc-done'); });
+    stack.appendChild(card);
+    if (!reduce) {
+      var d = stack.getBoundingClientRect().height - h0;
+      if (d > 0) {
+        stack.style.transition = 'none'; stack.style.transform = 'translateY(' + d + 'px)';
+        setTimeout(function () { stack.style.transition = 'transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1)'; stack.style.transform = 'translateY(0)'; }, 20);
+      }
+    }
+    return card;
+  }
+  function current() { var qs = stack.querySelectorAll('.sc-q'); return qs[qs.length - 1]; }
+  function cursorTo(target) {
+    if (!target) return;
+    var r = target.getBoundingClientRect(), v = view.getBoundingClientRect();
+    cur.style.left = (r.left - v.left + Math.min(r.width * 0.5, 150)) + 'px';
+    cur.style.top = (r.top - v.top + r.height / 2) + 'px';
+    cur.classList.add('sc-on');
+  }
+  function click() { cur.classList.remove('sc-click'); void cur.offsetWidth; cur.classList.add('sc-click'); }
+  function press(b) { if (!b) return; click(); b.classList.add('sc-pressed'); setTimeout(function () { b.classList.remove('sc-pressed'); }, 220); }
+
+  // the countdown on the active question
+  var tInt = null;
+  function startTimer(card) {
+    stopTimer();
+    var t = 60, out = card.querySelector('[data-t]');
+    tInt = setInterval(function () { t = Math.max(0, t - 1); out.textContent = '0:' + (t < 10 ? '0' : '') + t; if (t === 0) stopTimer(); }, 1000);
+  }
+  function stopTimer() { if (tInt) { clearInterval(tInt); tInt = null; } }
+
+  // the script: [wait ms, then do]
+  var timeline = [];
+  function step(d, fn) { timeline.push([d, fn]); }
+  step(0, function () { stopTimer(); stack.innerHTML = ''; stack.style.transition = 'none'; stack.style.transform = ''; cur.classList.remove('sc-on'); add(intro()); });
+  step(1500, function () { cursorTo(stack.querySelector('[data-start]')); });
+  step(600, function () { press(stack.querySelector('[data-start]')); });
+  QS.forEach(function (q, i) {
+    var quick = i >= 2;
+    step(quick ? 500 : 700, function () { var c = add(qcard(i)); setTimeout(function () { c.querySelector('.sc-prog i').style.width = ((i + 1) / QS.length * 100) + '%'; }, 60); startTimer(c); });
+    step(quick ? 1100 : 1500, function () { cursorTo(current().querySelectorAll('.sc-opt')[q.a]); });
+    step(450, function () { click(); current().querySelectorAll('.sc-opt')[q.a].classList.add('sc-picked'); });
+    step(quick ? 500 : 700, function () { cursorTo(current().querySelector('.sc-submit')); });
+    step(400, function () { press(current().querySelector('.sc-submit')); stopTimer(); });
+  });
+  step(700, function () { cur.classList.remove('sc-on'); add(result()); });
+  step(6500, function () {});
+
+  // the runner: loops, pauses out of view or in a hidden tab
+  var idx = 0, timer = null, playing = false, inView = false;
+  function tick() {
+    if (!playing) return;
+    if (idx >= timeline.length) idx = 0;
+    var st = timeline[idx];
+    timer = setTimeout(function () { timer = null; st[1](); idx++; tick(); }, st[0]);
+  }
+  function play() { if (playing) return; playing = true; tick(); }
+  function pause() { playing = false; if (timer) { clearTimeout(timer); timer = null; } stopTimer(); }
+  function gate() { if (inView && !document.hidden) play(); else pause(); }
+
+  if (reduce) {
+    // no motion: show the end state at once
+    add(intro()); var c = add(qcard(0)); c.querySelector('.sc-prog i').style.width = '20%'; c.querySelectorAll('.sc-opt')[QS[0].a].classList.add('sc-picked'); add(result());
+  } else {
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) { inView = entries[0].isIntersecting; gate(); }, { threshold: 0.2 }).observe(sec);
+    } else { inView = true; gate(); }
+    document.addEventListener('visibilitychange', gate);
+  }
+  // a small handle for scripting the replay (used by the page checks)
+  window.SkillCheckReplay = {
+    play: play, pause: pause,
+    next: function () { pause(); var st = timeline[idx]; st[1](); idx++; if (idx >= timeline.length) idx = 0; return idx; },
+    steps: timeline.length, questions: QS.length
+  };
+})();
+</script>
+
+</body>
+</html>

@@ -137,6 +137,7 @@
     + '        <ul>'
     + '          <li><a href="' + BASE + 'projects.html">Projects</a></li>'
     + '          <li><a href="' + BASE + 'academies/index.html">Academies</a></li>'
+    + '          <li><a href="' + BASE + 'skills-navigator.html">Skills Navigator</a></li>'
     + '          <li><a href="' + BASE + 'for-business/custom-learning-design.html">Custom Learning Design</a></li>'
     + '          <li><a href="' + BASE + 'for-business/platform.html">Platform</a></li>'
     + '          <li><a href="' + BASE + 'for-business/integrations.html">Integrations</a></li>'
@@ -180,7 +181,7 @@
     + '        </ul>'
     + '      </div>'
 
-    // Col 5: Resources + Support + Contact
+    // Col 5: Resources + Support
     + '      <div>'
     + '        <h5>Resources</h5>'
     + '        <ul>'
@@ -198,14 +199,9 @@
     + '          <li><a href="' + BASE + 'resources/assessments/finance.html">Finance Skills Assessment</a></li>'
     + '          <li><a href="' + BASE + 'resources/assessments/project-management.html">Project Management Assessment</a></li>'
     + '        </ul>'
-    + '        <h5 style="margin-top: 20px;">Contact</h5>'
-    + '        <ul>'
-    + '          <li><a href="' + BASE + 'contact.html">Contact Us</a></li>'
-    + '          <li><a href="' + BASE + 'try-free/business.html">Book a Demo</a></li>'
-    + '        </ul>'
     + '      </div>'
 
-    // Col 6: Compare
+    // Col 6: Compare + Contact
     + '      <div>'
     + '        <h5>Compare</h5>'
     + '        <ul>'
@@ -215,6 +211,11 @@
     + '          <li><a href="' + BASE + 'vs/kubicle-vs-datacamp.html">Kubicle vs DataCamp</a></li>'
     + '          <li><a href="' + BASE + 'vs/kubicle-vs-pluralsight.html">Kubicle vs Pluralsight</a></li>'
     + '          <li><a href="' + BASE + 'vs/kubicle-vs-coursera.html">Kubicle vs Coursera</a></li>'
+    + '        </ul>'
+    + '        <h5 style="margin-top: 20px;">Contact</h5>'
+    + '        <ul>'
+    + '          <li><a href="' + BASE + 'contact.html">Contact Us</a></li>'
+    + '          <li><a href="' + BASE + 'try-free/business.html">Book a Demo</a></li>'
     + '        </ul>'
     + '      </div>'
 

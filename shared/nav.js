@@ -565,6 +565,7 @@
     + '            <a class="dd-link" href="' + BASE + 'for-business/teams.html"><span class="dd-ico">' + ico('users') + '</span>For Teams</a>'
     + '            <a class="dd-link" href="' + BASE + 'for-business/enterprises.html"><span class="dd-ico">' + ico('building') + '</span>For Enterprises</a>'
     + '            <div class="dd-col-label" style="border-top: 1px solid var(--nav-alice); margin-top: 10px; padding: 12px 8px 6px;">Capabilities</div>'
+    + '            <a class="dd-link" href="' + BASE + 'skills-navigator.html"><span class="dd-ico">' + ico('compass') + '</span>Skills Navigator</a>'
     + '            <a class="dd-link" href="' + BASE + 'for-business/custom-learning-design.html"><span class="dd-ico">' + ico('wand') + '</span>Custom Learning Design</a>'
     + '            <a class="dd-link" href="' + BASE + 'for-business/integrations.html"><span class="dd-ico">' + ico('plug') + '</span>Integrations</a>'
     + '            <a class="dd-link" href="' + BASE + 'for-business/platform.html"><span class="dd-ico">' + ico('layers') + '</span>Our Platform</a>'
@@ -899,6 +900,7 @@
     html +=     '<a class="m-sublink" href="' + BASE + 'for-business/teams.html"><span class="m-ico">' + ico('users') + '</span>For Teams</a>';
     html +=     '<a class="m-sublink" href="' + BASE + 'for-business/enterprises.html"><span class="m-ico">' + ico('building') + '</span>For Enterprises</a>';
     html +=     '<div class="m-group-label">Capabilities</div>';
+    html +=     '<a class="m-sublink" href="' + BASE + 'skills-navigator.html"><span class="m-ico">' + ico('compass') + '</span>Skills Navigator</a>';
     html +=     '<a class="m-sublink" href="' + BASE + 'for-business/custom-learning-design.html"><span class="m-ico">' + ico('wand') + '</span>Custom Learning Design</a>';
     html +=     '<a class="m-sublink" href="' + BASE + 'for-business/integrations.html"><span class="m-ico">' + ico('plug') + '</span>Integrations</a>';
     html +=     '<a class="m-sublink" href="' + BASE + 'for-business/platform.html"><span class="m-ico">' + ico('layers') + '</span>Our Platform</a>';
