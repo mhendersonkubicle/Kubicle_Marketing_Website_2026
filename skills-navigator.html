@@ -253,7 +253,10 @@ section.hero {
 
 /* ============================== STORYTELLING (full-height chapters + step button) ============================== */
 html { scroll-padding-top: 83px; scroll-behavior: smooth; }
-section[data-story]:not(.hero) { min-height: calc(100vh - 83px); display: flex; align-items: center; }
+@media (min-width: 901px) {
+  section[data-story]:not(.hero) { min-height: calc(100vh - 83px); display: flex; align-items: center; }
+  @supports (height: 100svh) { section[data-story]:not(.hero) { min-height: calc(100svh - 83px); } }
+}
 section[data-story]:not(.hero) > .container { width: 100%; }
 .step-eyebrow { color: var(--accent-d); }
 /* upside-down folder tab: hangs from the seam at the top of a chapter, centred. While the
@@ -296,6 +299,8 @@ section[data-story]:not(.hero) > .container { width: 100%; }
 .ak-head p::before { content: ""; position: absolute; left: 0; top: 0; width: 56px; height: 4px; border-radius: 2px; background: var(--ak-accent, #E91E63); }
 .aca-sec { --ak-accent: #FFC93C; }
 .rol-sec { --ak-accent: #00C4CC; }
+.ak-tapcue { display: none; align-items: center; gap: 8px; margin-top: 14px; font-family: var(--head); font-weight: 700; font-size: 13px; color: var(--prussian); }
+.ak-tapcue::before { content: "+"; width: 22px; height: 22px; border-radius: 50%; background: var(--prussian); color: #FFC93C; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; flex: none; }
 @media (max-width: 900px) { .ak-head p { font-size: 16.5px; margin-top: 22px; } }
 
 /* the poster wall: four academies across */
@@ -348,7 +353,15 @@ section[data-story]:not(.hero) > .container { width: 100%; }
 .poster.added .ak-plus .ak-tick { display: block; }
 @media (max-width: 900px) { .poster { grid-column: span 6; } }
 @media (max-width: 520px) {
-  .poster { grid-column: span 12; transform: none !important; margin-top: 0 !important; }
+  .posters { gap: 14px; }
+  .poster { grid-column: span 6; transform: none !important; margin-top: 0 !important; border-radius: 14px; }
+  .poster .ak-plus { width: 48px; height: 48px; font-size: 26px; }
+  .poster .ak-plus .ak-tick { width: 22px; height: 22px; }
+  .poster .ribbon { font-size: 9.5px; padding: 4px 8px; top: 10px; left: 10px; }
+  .poster .ak-cap { padding: 28px 12px 12px; }
+  .poster .ak-name { font-size: 15px; }
+  .poster .ak-meta { font-size: 11px; }
+  .ak-tapcue { display: flex; }
 }
 @media (prefers-reduced-motion: reduce) { .poster, .poster .ak-plus { transition: none; } }
 
@@ -361,7 +374,11 @@ section[data-story]:not(.hero) > .container { width: 100%; }
 .rp-roles .rp-panel[hidden] { display: none; }
 .rp-roles .rp-pol { flex: 1; display: flex; flex-direction: column; }
 .rp-roles .rp-pol-body { flex: 1; }
-@media (max-width: 1000px) { .rol-grid { grid-template-columns: 1fr; } }
+@media (max-width: 1000px) {
+  .rol-grid { grid-template-columns: 1fr; align-items: start; }
+  .rp-roles .rp-panel, .rp-roles .rp-pol, .rp-roles .rp-pol-body { flex: 0 0 auto; }
+  .en-row { margin-top: 24px; }
+}
 
 /* hard-shadow bordered cards + chunky number badges (the "why join" card style) */
 .rol-card { background: #fff; border: 2px solid var(--prussian); border-radius: 22px; padding: 26px 26px 28px; box-shadow: 6px 6px 0 var(--prussian); position: relative; }
@@ -449,6 +466,8 @@ section[data-story]:not(.hero) > .container { width: 100%; }
 .rp-build.has .rp-drop { border-style: solid; border-color: #E6ECF2; background: linear-gradient(180deg, #F7FAFD, #EAF1F8); }
 .rp-drop-empty { display: flex; flex-direction: column; gap: 6px; color: var(--steel); font-size: 14px; }
 .rp-drop-empty b { font-family: var(--head); font-weight: 600; color: var(--prussian); font-size: 16px; }
+.rp-when-touch { display: none; }
+@media (hover: none) and (pointer: coarse) { .rp-when-hover { display: none; } .rp-when-touch { display: block; } }
 .rp-pol-pills .rp-pill.on { cursor: default; padding-right: 8px; }
 .rp-pol-pills .rp-pill.on:hover { transform: none; box-shadow: none; }
 .rp-x { margin-left: 2px; width: 18px; height: 18px; border-radius: 50%; border: 0; background: rgba(11,27,43,0.10); color: inherit; font-size: 13px; line-height: 1; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
@@ -477,11 +496,11 @@ section[data-story]:not(.hero) > .container { width: 100%; }
 .ak-hint-ico { width: 42px; height: 42px; border-radius: 50%; background: #FFC93C; color: var(--prussian); display: flex; align-items: center; justify-content: center; flex: none; }
 .ak-hint-ico svg { width: 26px; height: 26px; }
 @media (max-width: 900px) { .poster-wrap { grid-column: span 6; } }
-@media (max-width: 520px) { .poster-wrap { grid-column: span 12; margin-top: 0; } .ak-hint { display: none; } }
+@media (max-width: 520px) { .poster-wrap { grid-column: span 6; margin-top: 0; } .ak-hint { display: none; } }
 /* the two roles hints: build-your-own (in the Roles card head) and add-personas (above the library) */
 .rh-build .ak-hint-txt { top: 14px; right: 18px; left: auto; }
 .rh-lib .ak-hint-txt { top: -68px; right: 0; left: auto; }
-@media (max-width: 600px) { .rh-hint { display: none; } }
+@media (max-width: 600px) { .rh-hint { display: none; } .rol-grid { margin-top: 40px; } }
 
 /* ---- step 4: the skills assessor (a live replay of a skill check) ---- */
 .asr-sec { background: #fff; padding: 120px 0 128px; text-align: center; }
@@ -605,7 +624,7 @@ section[data-story]:not(.hero) > .container { width: 100%; }
 @media (prefers-reduced-motion: reduce) { .en-av { transition: none; } .rp-lstack .en-av.landed, .rp-n.tick { animation: none; } }
 
 /* ---- step two: card layout refinements (text sizes as designed) ---- */
-.rol-grid { grid-template-columns: 1.05fr 1.15fr; gap: 24px; }
+@media (min-width: 1001px) { .rol-grid { grid-template-columns: 1.05fr 1.15fr; gap: 24px; } }
 .rol-card { padding: 22px 22px 22px; }
 .rol-card-head { margin-bottom: 12px; }
 .rp-roles .rol-card-head { padding-bottom: 12px; margin-bottom: 10px; }
@@ -619,6 +638,8 @@ section[data-story]:not(.hero) > .container { width: 100%; }
 .rp-pol .cap { bottom: 16px; left: 16px; right: 16px; }
 .rp-av { width: 60px; height: 60px; top: 16px; right: 18px; }
 .en-row { padding-top: 16px; }
+
+@supports (height: 100svh) { .hero { min-height: calc(100svh - 83px); } }
 
 </style>
 
@@ -637,7 +658,7 @@ section[data-story]:not(.hero) > .container { width: 100%; }
         <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="9" r="2.6"/></svg>
         Skills Navigator
       </div>
-      <h1>Know the skills they have.<br/>Fill the ones they <em>lack</em>.</h1>
+      <h1>Know the skills they have. <br/>Fill the ones they <em>lack</em>.</h1>
       <div class="hero-cta">
         <a class="btn btn-lg btn-primary" href="book-a-demo.html">Book a demo <span class="arr">&rarr;</span></a>
         <a class="btn btn-lg btn-outline-dark" href="#step-academies">See how it works</a>
@@ -656,6 +677,7 @@ section[data-story]:not(.hero) > .container { width: 100%; }
         <h2>Four academies.<br/><em>One strategic advantage.</em></h2>
       </div>
       <p>AI, Data, Finance and Project Management: the four skill areas that decide whether a strategy lands. Delivered in the right mix, they compound into significant gains for the whole organisation.</p>
+      <div class="ak-tapcue">Tap the plus on an academy to add it.</div>
     </div>
 
     <div class="posters ak-wall">
@@ -774,7 +796,7 @@ section[data-story]:not(.hero) > .container { width: 100%; }
             <span class="ribbon">Your role</span>
             <button type="button" class="rp-av rp-av-add" id="rp-av-add" aria-label="Add a picture"><span class="rp-av-plus">+</span></button>
             <div class="rp-pol-body rp-drop">
-              <div class="rp-drop-empty" id="rp-drop-empty"><b>Drag unlocked personas here.</b><span>Or tap one in the library. Mix academies freely.</span></div>
+              <div class="rp-drop-empty" id="rp-drop-empty"><b class="rp-when-hover">Drag unlocked personas here.</b><b class="rp-when-touch">Tap unlocked personas in the library.</b><span class="rp-when-hover">Or tap one in the library. Mix academies freely.</span><span class="rp-when-touch">They land here. Mix academies freely.</span></div>
               <div class="rp-pol-pills" id="rp-role-pills"></div>
               <div class="rp-learners" hidden><span class="rp-lstack"></span><span class="rp-lcount"></span></div>
             </div>
@@ -795,7 +817,7 @@ section[data-story]:not(.hero) > .container { width: 100%; }
   <div class="sec-tab">Step three</div>
   <div class="container">
     <div class="eyebrow">The skills assessor</div>
-    <h2>Assessed against the role.<br/>Assigned only what they <em>need</em>.</h2>
+    <h2>Assessed against the role. <br/>Assigned only what they <em>need</em>.</h2>
     <p class="asr-sub">Before any learning commences, each learner is assessed against their role profile. Only what they still need to know is assigned, so learning is effective and every learner starts from the right position. Here it is, exactly as a learner sees it.</p>
 
     <div class="asr-stage">
@@ -812,7 +834,7 @@ section[data-story]:not(.hero) > .container { width: 100%; }
   <div class="container">
     <div class="vsec-head">
       <div class="vsec-eyebrow">See it in motion</div>
-      <h2 class="vsec-h">One assessment.<br/>Everyone <em>pointed the right way.</em></h2>
+      <h2 class="vsec-h">One assessment. <br/>Everyone <em>pointed the right way.</em></h2>
     </div>
     <div class="vpanel">
       <video id="sn-video" src="img/skills-navigator/skills-navigator.mp4" poster="img/skills-navigator/poster.webp" autoplay muted loop playsinline preload="metadata"></video>
