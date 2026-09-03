@@ -25,7 +25,7 @@ const DIST   = path.join(ROOT, 'dist');
 const NAV_JS_PATH    = path.join(ROOT, 'shared', 'nav.js');
 const FOOTER_JS_PATH = path.join(ROOT, 'shared', 'footer.js');
 
-const SKIP_DIRS = new Set(['node_modules', '.netlify', '.claude', '.git', 'dist',
+const SKIP_DIRS = new Set(['drafts', 'node_modules', '.netlify', '.claude', '.git', 'dist',
   // Internal working documents (campaign plans, upload sheets) — never ship.
   'docs']);
 // Files at the project root we never want bundled into /dist. dist.zip is the

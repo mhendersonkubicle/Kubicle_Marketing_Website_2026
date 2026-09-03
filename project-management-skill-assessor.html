@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" sizes="32x32" href="img/shared/favicon-32x32.png"/>
+
+<!-- ============================== SEO META ============================== -->
+<title>Project Skill Assessor | Kubicle</title>
+<meta name="description" content="The Project Skill Assessor places every learner in the right project persona. Assess a whole population at scale, then start each person where the learning is relevant."/>
+<meta name="author" content="Kubicle"/>
+<link rel="canonical" href="https://www.kubicle.com/project-management-skill-assessor"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:site_name" content="Kubicle"/>
+<meta property="og:url" content="https://www.kubicle.com/project-management-skill-assessor"/>
+<meta property="og:title" content="Project Skill Assessor | Kubicle"/>
+<meta property="og:description" content="The Project Skill Assessor places every learner in the right project persona. Assess a whole population at scale, then start each person where the learning is relevant."/>
+
+<meta name="theme-color" content="#0B1B2B"/>
+
+<link rel="preconnect" href="https://api.fontshare.com"/>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap"/>
+
+<!-- Shared design system -->
+<link rel="stylesheet" href="shared/styles/tokens.css"/>
+<link rel="stylesheet" href="shared/styles/typography.css"/>
+<link rel="stylesheet" href="shared/styles/buttons.css"/>
+
+<style>
+/* ============================== BASE ============================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+img, video { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+.container { max-width: 1240px; margin: 0 auto; padding: 0 48px; }
+section { position: relative; overflow: hidden; }
+@media (max-width: 860px) { .container { padding: 0 22px; } }
+
+body { font-family: var(--body); color: var(--prussian); background: #fff; }
+
+.eyebrow {
+  font-family: var(--head); font-size: 12.5px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent); display: inline-flex; align-items: center; gap: 10px;
+}
+.eyebrow .pin { width: 15px; height: 15px; }
+/* hero: the pin as a big badge above the page kicker */
+.hero .eyebrow { display: flex; flex-direction: column; align-items: center; gap: 16px; margin-bottom: 6px; }
+.hero .eyebrow .pin { width: 76px; height: 76px; padding: 11px; box-sizing: border-box; border-radius: 50%; background: #fff; border: 2px solid var(--prussian); box-shadow: 5px 5px 0 var(--prussian); color: #E91E63; }
+@media (max-width: 760px) { .hero .eyebrow .pin { width: 60px; height: 60px; padding: 9px; box-shadow: 4px 4px 0 var(--prussian); } }
+
+.sec-head { max-width: 760px; }
+.sec-eyebrow {
+  font-family: var(--head); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-d); margin-bottom: 16px;
+}
+.sec-h {
+  font-family: var(--head); font-weight: 600;
+  font-size: clamp(30px, 4vw, 46px); line-height: 1.08; letter-spacing: -0.02em;
+  color: var(--prussian);
+}
+.sec-h em { font-style: normal; color: var(--accent); }
+.sec-sub { margin-top: 18px; font-size: 18px; line-height: 1.6; color: var(--steel); max-width: 620px; }
+
+/* ============================== HERO ============================== */
+.hero {
+  position: relative; overflow: hidden;
+  /* full-bleed image: `cover` fills both width and height on any monitor; `center top`
+     keeps the clean upper area behind the text. The leading gradient is a wash of the
+     original grey ground (#e7ecf1) that fades the image (the alpha is the "transparency"). */
+  background:
+    linear-gradient(rgba(231,236,241,0.42), rgba(231,236,241,0.42)),
+    url("img/skills-navigator/hero-2.webp") center calc((100vh - 83px) * 0.2) / cover no-repeat #f7f9f9;
+  padding: 150px 0 96px; text-align: center;
+  min-height: calc(100vh - 83px); /* fill the viewport below the sticky nav */
+  display: flex; align-items: flex-start; justify-content: center;
+}
+.hero .container { position: relative; z-index: 1; }
+.hero .btn-outline-dark { background: #fff; color: var(--prussian); border-color: var(--prussian); }
+.hero .btn-outline-dark:hover { background: var(--prussian); color: #fff; }
+/* tokens.css forces `section.hero { background: var(--prussian) !important }` on
+   narrow screens (a site-wide mobile fallback). This page keeps its light image at
+   every width, so re-assert it at the same specificity, later in source. */
+section.hero {
+  background:
+    linear-gradient(rgba(231,236,241,0.42), rgba(231,236,241,0.42)),
+    url("img/skills-navigator/hero-2.webp") center calc((100vh - 83px) * 0.2) / cover no-repeat #f7f9f9 !important;
+}
+.hero-copy { max-width: 1040px; margin: 0 auto; }
+
+.hero h1 {
+  font-family: var(--head); font-weight: 600;
+  font-size: clamp(33px, 4.6vw, 62px); line-height: 1.06; letter-spacing: -0.032em;
+  margin: 22px auto 0; color: var(--prussian); max-width: 1000px;
+}
+.hero h1 em { font-style: normal; color: #E91E63; }
+.hero h1 .lede { color: var(--steel); }
+.hero-sub {
+  margin: 22px auto 0; font-size: 19px; line-height: 1.6;
+  color: #45566A; max-width: 600px;
+}
+.hero-cta { margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.hero-trust {
+  margin: 30px auto 0; font-size: 14px; color: var(--steel); line-height: 1.55; max-width: 520px;
+}
+
+/* ---- hero responsiveness ---- */
+@media (max-width: 900px) {
+  .hero h1 { font-size: clamp(34px, 6.4vw, 52px); }
+  .hero-cta { justify-content: center; }
+}
+@media (max-width: 760px) {
+  .hero { padding: 104px 20px 60px; }
+  .hero h1 { font-size: 30px; line-height: 1.14; }
+  .hero h1 br { display: none; }
+  .hero-cta {
+    flex-direction: column; align-items: stretch; gap: 12px;
+    max-width: 340px; margin-left: auto; margin-right: auto;
+  }
+  .hero-cta .btn { width: 100%; }
+}
+
+/* ============================== VIDEO PANEL (wide, beneath hero) ============================== */
+.vsec { background: linear-gradient(180deg, #0B1B2B, #08182a); color: #fff; padding: 96px 0 104px; }
+.vsec .container { max-width: 1400px; }
+.vsec-head { text-align: center; max-width: 1100px; margin: 0 auto 48px; }
+.vsec-eyebrow { font-family: var(--head); font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dodger); margin-bottom: 14px; }
+.vsec-h { font-family: var(--head); font-weight: 600; font-size: clamp(44px, 6.4vw, 76px); letter-spacing: -0.04em; line-height: 0.98; }
+.vsec-h em { font-style: normal; color: var(--dodger); }
+@media (max-width: 760px) { .vsec-h { font-size: 36px; line-height: 1.06; } .vsec-h br { display: none; } }
+.vpanel {
+  position: relative; border-radius: 20px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 50px 110px -40px rgba(0,0,0,0.7);
+  background: #0a1626;
+}
+.vpanel video { width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* ---- Navigator stage: the unique device embed ---- */
+.stage { position: relative; perspective: 1600px; }
+.stage-glow {
+  position: absolute; inset: -8% -6% -14% -6%; border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 45%, rgba(4,150,255,0.35), transparent 62%);
+  filter: blur(14px); z-index: 0;
+}
+.device {
+  position: relative; z-index: 2;
+  border-radius: 18px; overflow: hidden;
+  background: #0e2136;
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 40px 90px -30px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04) inset;
+  transform: rotateY(-11deg) rotateX(5deg) rotate(-0.4deg);
+  transform-origin: 60% 50%;
+  transition: transform 0.5s cubic-bezier(0.2,0.7,0.2,1);
+}
+.stage:hover .device { transform: rotateY(-5deg) rotateX(2deg); }
+.device-bar {
+  height: 38px; display: flex; align-items: center; gap: 7px; padding: 0 15px;
+  background: linear-gradient(180deg, #12263d, #0e2036); border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.device-bar i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+.device-bar i:nth-child(1){ background:#ff5f57; } .device-bar i:nth-child(2){ background:#febc2e; } .device-bar i:nth-child(3){ background:#28c840; }
+.device-bar .addr {
+  margin-left: 12px; font-family: var(--body); font-size: 12px; color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.06); border-radius: 7px; padding: 4px 12px; letter-spacing: 0.01em;
+}
+.device-screen { position: relative; background: #0a1626; aspect-ratio: 16 / 9; }
+.device-screen video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.vid-ctrl {
+  position: absolute; right: 14px; bottom: 14px; z-index: 3;
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 40px; padding: 0 16px 0 14px; border: 0; cursor: pointer;
+  background: rgba(9,20,34,0.72); color: #fff; border-radius: 999px;
+  backdrop-filter: blur(6px); font-family: var(--head); font-weight: 600; font-size: 13px;
+  border: 1px solid rgba(255,255,255,0.18); transition: background 0.15s;
+}
+.vid-ctrl:hover { background: rgba(9,20,34,0.9); }
+.vid-ctrl svg { width: 16px; height: 16px; fill: currentColor; }
+
+/* floating academy skill tiles */
+.tile {
+  position: absolute; z-index: 3; width: 62px; height: 62px; border-radius: 15px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 16px 30px -12px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.6);
+  animation: floaty 6s ease-in-out infinite;
+}
+.tile svg { width: 30px; height: 30px; }
+.tile.t-data   { background: #FCE4EC; color: #E91E63; top: -26px; left: -22px; animation-delay: 0s; }
+.tile.t-ai     { background: #CCF5F7; color: #00A8B0; top: 34%; right: -30px; animation-delay: 1.1s; }
+.tile.t-pm     { background: #FFEDD5; color: #F97316; bottom: -24px; left: 12%; animation-delay: 2.1s; }
+.tile.t-fin    { background: #D1FAE5; color: #10B981; bottom: 20%; left: -30px; animation-delay: 1.6s; }
+@keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-11px); } }
+@media (max-width: 1000px) { .tile.t-ai, .tile.t-fin { right: -12px; left: auto; } .tile.t-fin { left: -12px; right: auto; } }
+@media (max-width: 560px) { .tile { display: none; } }
+
+/* ============================== ACADEMIES (the mix) ============================== */
+.mix { padding: 116px 0; background: linear-gradient(180deg, #F7FAFD 0%, #EEF4F9 100%); position: relative; }
+.mix::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: url("img/skills-navigator/bg-light.webp") center / cover no-repeat; opacity: 0.14;
+}
+.mix .container { position: relative; z-index: 1; }
+.aca-grid { margin-top: 54px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+@media (max-width: 980px) { .aca-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .aca-grid { grid-template-columns: 1fr; } }
+.aca {
+  background: #fff; border: 1px solid #E4EAF0; border-radius: 20px; padding: 26px 24px 24px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.aca:hover { transform: translateY(-3px); box-shadow: 0 24px 44px -26px rgba(11,27,43,0.3); }
+.aca .ico { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; }
+.aca .ico svg { width: 27px; height: 27px; }
+.aca .ico.i-data { background: #FCE4EC; color: #E91E63; }
+.aca .ico.i-ai   { background: #CCF5F7; color: #00A8B0; }
+.aca .ico.i-pm   { background: #FFEDD5; color: #F97316; }
+.aca .ico.i-fin  { background: #D1FAE5; color: #10B981; }
+.aca h4 { font-family: var(--head); font-weight: 600; font-size: 19px; letter-spacing: -0.01em; margin: 18px 0 4px; color: var(--prussian); }
+.aca .cnt { font-size: 13.5px; color: var(--steel); font-weight: 500; }
+
+/* ============================== OUTCOMES / SCALE ============================== */
+.scale { padding: 116px 0; background: #fff; }
+.scale-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+@media (max-width: 900px) { .scale-grid { grid-template-columns: 1fr; gap: 40px; } }
+.bene { display: grid; gap: 16px; margin-top: 8px; }
+.bene li { list-style: none; display: flex; gap: 15px; align-items: flex-start; }
+.bene .tick { width: 26px; height: 26px; flex: none; border-radius: 8px; background: var(--accent-soft); color: var(--accent-d); display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+.bene .tick svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.bene .bd { font-size: 16.5px; line-height: 1.55; color: var(--prussian); }
+.bene .bd span { color: var(--steel); }
+.persona-card {
+  background: linear-gradient(180deg, #0B1B2B, #0a2036); border-radius: 26px; padding: 40px 36px;
+  color: #fff; position: relative; overflow: hidden;
+}
+.persona-card .plabel { font-family: var(--head); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dodger); }
+.persona-card .ph { font-family: var(--head); font-weight: 600; font-size: 24px; letter-spacing: -0.015em; margin: 12px 0 22px; }
+.prow { display: flex; align-items: center; gap: 14px; padding: 13px 0; border-top: 1px solid rgba(255,255,255,0.09); }
+.prow:first-of-type { border-top: 0; }
+.prow .pchip { width: 40px; height: 40px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; }
+.prow .pchip svg { width: 21px; height: 21px; }
+.prow .pname { font-family: var(--head); font-weight: 600; font-size: 15.5px; }
+.prow .pmeta { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 1px; }
+.prow .pstart { margin-left: auto; font-size: 12px; font-weight: 600; font-family: var(--head); color: #fff; background: rgba(255,255,255,0.1); border-radius: 999px; padding: 5px 12px; white-space: nowrap; }
+
+/* ============================== CTA BAND ============================== */
+.cta {
+  background:
+    radial-gradient(ellipse 60% 80% at 85% 10%, rgba(4,150,255,0.28), transparent 60%),
+    linear-gradient(180deg, #0B1B2B, #071320);
+  color: #fff; padding: 104px 0; text-align: center;
+}
+.cta h2 { font-family: var(--head); font-weight: 600; font-size: clamp(32px, 4.4vw, 52px); letter-spacing: -0.025em; line-height: 1.06; max-width: 760px; margin: 0 auto; }
+.cta p { margin: 20px auto 0; font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.66); max-width: 540px; }
+.cta .hero-cta { justify-content: center; margin-top: 36px; }
+
+/* ============================== STORYTELLING (full-height chapters + step button) ============================== */
+html { scroll-padding-top: 83px; scroll-behavior: smooth; }
+@media (min-width: 901px) {
+  section[data-story]:not(.hero) { min-height: calc(100vh - 83px); display: flex; align-items: center; }
+  @supports (height: 100svh) { section[data-story]:not(.hero) { min-height: calc(100svh - 83px); } }
+}
+section[data-story]:not(.hero) > .container { width: 100%; }
+.step-eyebrow { color: var(--accent-d); }
+/* upside-down folder tab: hangs from the seam at the top of a chapter, centred. While the
+   full-height hero is on screen it sits just below the fold, then comes into view on scroll. */
+.sec-tab {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  z-index: 2; white-space: nowrap;
+  background: var(--prussian); color: #FFC93C; /* the fun yellow, on the navy tab */
+  font-family: var(--head); font-size: 12.5px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 13px 32px 14px;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 12px 24px -12px rgba(11,27,43,0.5);
+}
+/* the folder's top edge: a full-width seam line the tab hangs from. Drawn behind the tab
+   (z-index -1 inside the tab's own stacking context) and clipped to the section width. */
+.sec-tab::before {
+  content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 100vw; height: 3px; background: var(--prussian); z-index: -1; /* same navy as the tab */
+}
+
+/* ---- step 2: choose academies (poster wall, modelled on Working at Kubicle's values) ---- */
+.aca-sec {
+  padding: 120px 0;
+  background:
+    repeating-linear-gradient(90deg, var(--alice) 0, var(--alice) 1px, transparent 1px, transparent 80px),
+    repeating-linear-gradient(0deg, var(--alice) 0, var(--alice) 1px, transparent 1px, transparent 80px),
+    #fff;
+}
+/* heading block: eyebrow + big two-line title, paragraph set to the right */
+.ak-head { margin-bottom: 64px; }
+.ak-head .eyebrow { font-family: var(--head); font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #E91E63; display: block; }
+.ak-head h2 {
+  font-family: var(--head); font-size: clamp(40px, 5.6vw, 80px); font-weight: 600;
+  line-height: 0.95; letter-spacing: -0.045em; color: var(--prussian); margin-top: 14px; max-width: 980px;
+}
+.ak-head h2 em { font-style: normal; }
+/* the standfirst: belongs to the headline, shares its left edge, carries a short accent rule */
+.ak-head p { position: relative; margin: 26px 0 0; padding-top: 18px; max-width: 620px; font-size: 18.5px; line-height: 1.6; color: #3B4A5A; }
+.ak-head p::before { content: ""; position: absolute; left: 0; top: 0; width: 56px; height: 4px; border-radius: 2px; background: var(--ak-accent, #E91E63); }
+.aca-sec { --ak-accent: #FFC93C; }
+.rol-sec { --ak-accent: #00C4CC; }
+.ak-tapcue { display: none; align-items: center; gap: 8px; margin-top: 14px; font-family: var(--head); font-weight: 700; font-size: 13px; color: var(--prussian); }
+.ak-tapcue::before { content: "+"; width: 22px; height: 22px; border-radius: 50%; background: var(--prussian); color: #FFC93C; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; flex: none; }
+@media (max-width: 900px) { .ak-head p { font-size: 16.5px; margin-top: 22px; } }
+
+/* the poster wall: four academies across */
+.posters { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+.poster {
+  position: relative; border-radius: 18px; overflow: hidden;
+  background: var(--prussian);
+  box-shadow: 0 30px 60px -30px rgba(11,27,43,0.30);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 0; padding: 0; cursor: pointer; text-align: left; font-family: var(--body);
+  grid-column: span 3; aspect-ratio: 1195 / 1316;
+}
+.poster img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.poster:hover { transform: translateY(-6px) rotate(0deg) !important; box-shadow: 0 40px 80px -30px rgba(11,27,43,0.45); z-index: 5; }
+.poster .ribbon {
+  position: absolute; top: 14px; left: 14px; z-index: 3;
+  font-family: var(--head); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  background: #fff; color: var(--prussian); padding: 6px 12px; border-radius: 999px; border: 2px solid var(--prussian);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.poster.ak-fin  { --c:#10B981; transform: rotate(-1.5deg); }
+.poster.ak-pm   { --c:#F97316; transform: rotate(1deg);    margin-top: 28px; }
+.poster.ak-ai   { --c:#00C4CC; transform: rotate(-1deg);   margin-top: 12px; }
+.poster.ak-data { --c:#E91E63; transform: rotate(1.5deg);  margin-top: 36px; }
+/* caption on a soft scrim so names read over the photos */
+.poster .ak-cap {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+  padding: 44px 18px 16px; color: #fff;
+  background: linear-gradient(180deg, rgba(11,27,43,0) 0%, rgba(11,27,43,0.72) 100%);
+}
+.poster .ak-name { display: block; font-family: var(--head); font-weight: 600; font-size: 20px; letter-spacing: -0.015em; }
+.poster .ak-meta { display: block; font-size: 12.5px; opacity: 0.85; margin-top: 3px; }
+/* the plus button, centred like a play button */
+.poster .ak-plus {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 64px; height: 64px; border-radius: 50%; z-index: 3;
+  background: rgba(255,255,255,0.92); color: var(--prussian);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--head); font-weight: 700; font-size: 34px; line-height: 1;
+  box-shadow: 0 14px 30px -12px rgba(11,27,43,0.6);
+  transition: transform 0.2s, background 0.2s, color 0.2s;
+}
+.poster:hover .ak-plus { transform: translate(-50%, -50%) scale(1.08); }
+.poster .ak-plus .ak-tick { display: none; width: 30px; height: 30px; fill: none; stroke: #fff; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+/* added state: pill turns into a status, plus becomes a tick, card gets its colour ring */
+.poster.added { box-shadow: 0 0 0 4px var(--c), 0 30px 60px -30px rgba(11,27,43,0.30); }
+.poster.added .ribbon { background: var(--c); border-color: var(--c); color: #fff; }
+.poster.added .ak-plus { background: var(--c); color: #fff; }
+.poster.added .ak-plus .ak-sym { display: none; }
+.poster.added .ak-plus .ak-tick { display: block; }
+@media (max-width: 1100px) { .poster { grid-column: span 6; } }
+@media (max-width: 520px) {
+  .posters { gap: 14px; }
+  .poster { grid-column: span 6; transform: none !important; margin-top: 0 !important; border-radius: 14px; }
+  .poster .ak-plus { width: 48px; height: 48px; font-size: 26px; }
+  .poster .ak-plus .ak-tick { width: 22px; height: 22px; }
+  .poster .ribbon { font-size: 9.5px; padding: 4px 8px; top: 10px; left: 10px; }
+  .poster .ak-cap { padding: 28px 12px 12px; }
+  .poster .ak-name { font-size: 15px; }
+  .poster .ak-meta { font-size: 11px; }
+  .ak-tapcue { display: flex; }
+}
+@media (prefers-reduced-motion: reduce) { .poster, .poster .ak-plus { transition: none; } }
+
+/* ---- shared bits kept from the retired roles chapter: persona pills (assessor ladder) and the badge (mix box) ---- */
+.rp-pill { display: inline-flex; align-items: center; gap: 7px; padding: 7px 12px 7px 10px; border-radius: 999px; border: 1.5px solid #E1E7EE; background: #F4F6F8; color: #8C9BAA; font-family: var(--head); font-size: 13px; font-weight: 600; }
+.rp-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #C6D2DE; flex: none; }
+.rp-pill.on { background: var(--c-soft); color: var(--c); border-color: transparent; }
+.rp-pill.on::before { background: var(--c); }
+.num-badge { display: inline-flex; align-items: center; justify-content: center; font-family: var(--head); font-size: 16.5px; font-weight: 700; letter-spacing: -0.02em; color: var(--prussian); background: var(--c, #FFC93C); padding: 7px 16px; border: 2px solid var(--prussian); border-radius: 12px; box-shadow: 3px 3px 0 var(--prussian); }
+
+/* ---- step one affordance: yellow squiggly arrow to the plus on the first poster ---- */
+.poster-wrap { grid-column: span 3; position: relative; align-self: start; margin-top: 28px; }
+.poster-wrap .poster { display: block; width: 100%; margin-top: 0; }
+.ak-hint { position: absolute; inset: 0; z-index: 6; pointer-events: none; transition: opacity 0.3s; }
+.ak-hint.hide { opacity: 0; }
+.ak-hint > svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.ak-hint-txt {
+  position: absolute; top: -80px; left: 24%;
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--prussian); color: #FFC93C;
+  font-family: var(--head); font-size: 15.5px; font-weight: 700; letter-spacing: 0.04em;
+  padding: 6px 22px 6px 6px; border-radius: 999px; white-space: nowrap;
+  box-shadow: 3px 3px 0 #FFC93C; transform: rotate(-2deg);
+}
+.ak-hint-ico { width: 42px; height: 42px; border-radius: 50%; background: #FFC93C; color: var(--prussian); display: flex; align-items: center; justify-content: center; flex: none; }
+.ak-hint-ico svg { width: 26px; height: 26px; }
+@media (max-width: 900px) { .poster-wrap { grid-column: span 6; } }
+@media (max-width: 520px) { .poster-wrap { grid-column: span 6; margin-top: 0; } .ak-hint { display: none; } }
+
+
+/* ---- step 4: the skills assessor (a live replay of a skill check) ---- */
+.asr-sec { background: #fff; padding: 120px 0 128px; text-align: center; }
+.asr-sec .eyebrow { font-family: var(--head); font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #E91E63; }
+.asr-sec h2 {
+  font-family: var(--head); font-weight: 600;
+  font-size: clamp(44px, 6.4vw, 76px); line-height: 0.98; letter-spacing: -0.04em;
+  margin: 18px auto 0; color: var(--prussian); max-width: 1100px;
+}
+.asr-sec h2 em { font-style: normal; color: #00C4CC; }
+.asr-sub { max-width: 640px; margin: 22px auto 0; font-size: 17px; line-height: 1.65; color: var(--steel); }
+.asr-stage { position: relative; max-width: 940px; margin: 56px auto 0; text-align: left; }
+
+/* the panel: a window with a "live replay" badge */
+.sc-panel { background: #fff; border: 1px solid #E1E7EE; border-radius: 18px; box-shadow: 0 40px 80px -40px rgba(11,27,43,0.35); overflow: hidden; }
+.sc-bar { display: flex; align-items: center; gap: 10px; padding: 12px 18px; border-bottom: 1px solid #EEF1F5; font-family: var(--head); font-size: 12.5px; font-weight: 600; color: var(--prussian); }
+.sc-dots { display: inline-flex; gap: 6px; margin-right: 6px; }
+.sc-dots i { width: 10px; height: 10px; border-radius: 50%; background: #E1E7EE; }
+.sc-live { margin-left: auto; display: inline-flex; align-items: center; gap: 7px; color: var(--steel); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; }
+.sc-live::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #E5484D; animation: scPulse 1.4s infinite; }
+@keyframes scPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+/* the thread: cards float up from the bottom, older ones drift up and dim */
+.sc-view { position: relative; height: 560px; overflow: hidden; background: #fff; }
+.sc-view::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 90px; background: linear-gradient(180deg, #fff, rgba(255,255,255,0)); z-index: 2; pointer-events: none; }
+.sc-stack { position: absolute; left: 0; right: 0; bottom: 0; padding: 20px 28px 26px; display: flex; flex-direction: column; gap: 18px; }
+.sc-card { animation: scUp 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both; transition: opacity 0.5s; }
+@keyframes scUp { from { opacity: 0; transform: translateY(42px); } to { opacity: 1; transform: none; } }
+.sc-card.sc-done { opacity: 0.55; }
+
+/* the product's skill-check look */
+.sc-title { font-family: var(--head); font-weight: 700; font-size: 20px; color: #17233a; }
+.sc-sub { font-size: 14px; color: #4a5568; margin: 4px 0 14px; padding-bottom: 12px; border-bottom: 1px solid #EEF1F5; }
+.sc-sub a { color: var(--accent); }
+.sc-row { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; }
+.sc-shield { width: 40px; height: 40px; border: 2px solid var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--accent); background: #fff; }
+.sc-shield svg { width: 20px; height: 20px; }
+.sc-bubble { background: #EEF1F5; border-radius: 12px; padding: 16px 18px; font-size: 14.5px; line-height: 1.5; color: #2d3748; }
+.sc-btn { display: block; width: 100%; text-align: left; font-family: var(--head); font-weight: 600; font-size: 16px; padding: 12px 18px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: #fff; margin-top: 12px; transition: transform 0.12s, filter 0.12s; }
+.sc-btn.sc-ghost { background: #fff; color: var(--accent); border-color: #CBD5E0; }
+.sc-btn.sc-pressed, .sc-submit.sc-pressed { transform: scale(0.985); filter: brightness(0.9); }
+.sc-qhead { font-family: var(--head); font-weight: 700; font-size: 14px; color: #17233a; }
+.sc-progrow { display: flex; align-items: center; gap: 14px; margin: 10px 0 12px; }
+.sc-prog { flex: 1; height: 6px; background: #E1E7EE; border-radius: 999px; overflow: hidden; }
+.sc-prog i { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 999px; transition: width 0.6s ease; }
+.sc-timer { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: #2d3748; white-space: nowrap; }
+.sc-timer svg { width: 16px; height: 16px; }
+.sc-qtext { font-size: 15px; color: #2d3748; }
+.sc-opts { margin-top: 12px; display: grid; gap: 8px; }
+.sc-opt { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border: 1px solid #E1E7EE; border-radius: 8px; background: #fff; font-size: 14.5px; color: #2d3748; transition: border-color 0.2s, background 0.2s; }
+.sc-radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #4a5568; flex: none; position: relative; }
+.sc-opt.sc-picked { border-color: var(--accent); background: #F3F9FF; }
+.sc-opt.sc-picked .sc-radio { border-color: var(--accent); }
+.sc-opt.sc-picked .sc-radio::after { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: var(--accent); }
+.sc-submit { display: inline-block; margin-top: 12px; font-family: var(--head); font-weight: 600; font-size: 15px; padding: 10px 16px; border-radius: 6px; background: var(--accent); color: #fff; border: 0; transition: transform 0.12s, filter 0.12s; }
+
+/* the determination */
+.sc-result .sc-bubble b { font-weight: 700; color: var(--prussian); }
+.sc-ladder { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.sc-ladder .rp-pill { cursor: default; }
+.sc-ladder .rp-pill.sc-you { box-shadow: 0 0 0 2px var(--c); }
+.sc-ladder .rp-pill.sc-you::after { content: "you"; margin-left: 6px; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8; }
+.sc-lessons { margin-top: 12px; display: grid; gap: 6px; }
+.sc-lesson { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #2d3748; }
+.sc-lesson .sc-st { font-family: var(--head); font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; background: #E1E7EE; color: var(--steel); flex: none; }
+.sc-lesson.skip span:last-child { color: #8C9BAA; text-decoration: line-through; }
+.sc-lesson.in .sc-st { background: rgba(0,196,204,0.18); color: #00838a; }
+.sc-path { margin-top: 10px; font-size: 13.5px; color: var(--steel); }
+
+/* the replay cursor */
+.sc-cursor { position: absolute; left: 0; top: 0; width: 18px; height: 18px; border-radius: 50%; background: rgba(11,27,43,0.85); border: 2px solid #fff; box-shadow: 0 6px 16px -6px rgba(0,0,0,0.5); z-index: 5; pointer-events: none; transform: translate(-50%, -50%); transition: left 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), top 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s; opacity: 0; }
+.sc-cursor.sc-on { opacity: 1; }
+.sc-cursor.sc-click { animation: scClick 0.35s ease-out; }
+@keyframes scClick { 0% { box-shadow: 0 0 0 0 rgba(4,150,255,0.6); } 100% { box-shadow: 0 0 0 16px rgba(4,150,255,0); } }
+
+@media (max-width: 760px) {
+  .asr-sec h2 { font-size: 36px; line-height: 1.06; }
+  .asr-sec h2 br { display: none; }
+  .sc-view { height: 520px; }
+  .sc-stack { padding: 16px 14px 18px; }
+  .sc-row { grid-template-columns: 36px 1fr; gap: 10px; }
+  .sc-shield { width: 34px; height: 34px; }
+}
+@media (prefers-reduced-motion: reduce) { .sc-card { animation: none; } .sc-live::before { animation: none; } .sc-cursor { transition: none; } }
+
+/* ---- v2: the four AI personas as designed tiles (portraits are small, so no full-bleed photos) ---- */
+.aca-sec .poster { background: linear-gradient(160deg, #fff 0%, var(--c-soft) 100%); border: 2px solid var(--prussian); box-shadow: 4px 4px 0 var(--prussian); }
+.aca-sec .poster:hover { box-shadow: 6px 6px 0 var(--prussian); }
+.aca-sec .poster.added { box-shadow: 0 0 0 4px var(--c), 4px 4px 0 var(--prussian); }
+.poster.ak-p1 { transform: rotate(-1.5deg); }
+.poster.ak-p2 { transform: rotate(1deg); }
+.poster.ak-p3 { transform: rotate(-1deg); margin-top: 12px; }
+.poster.ak-p4 { transform: rotate(1.5deg); margin-top: 36px; }
+.aca-sec .poster .ak-num { position: absolute; right: 14px; top: 42px; font-family: var(--head); font-weight: 700; font-size: 72px; line-height: 1; letter-spacing: -0.05em; color: var(--c); opacity: 0.28; z-index: 1; }
+.aca-sec .poster .ak-cap { top: 0; bottom: auto; padding: 50px 18px 0; background: none; color: var(--prussian); z-index: 2; }
+.aca-sec .poster .ak-eyebrow { display: block; font-family: var(--head); font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--steel); margin-bottom: 4px; }
+.aca-sec .poster .ak-name { font-size: 20px; }
+.aca-sec .poster .ak-meta { font-size: 12.5px; line-height: 1.45; color: #4a5568; opacity: 1; margin-top: 4px; max-width: 200px; }
+.aca-sec .poster .ak-share { position: absolute; left: 18px; bottom: 16px; z-index: 2; font-family: var(--body); font-size: 10.5px; line-height: 1.25; color: var(--steel); max-width: 110px; }
+.aca-sec .poster .ak-share b { display: block; font-family: var(--head); font-weight: 700; font-size: 22px; letter-spacing: -0.02em; color: var(--prussian); margin-bottom: 2px; }
+.aca-sec .poster .ak-por { position: absolute; right: 16px; bottom: 16px; z-index: 2; width: 96px; height: 96px; border-radius: 50%; overflow: hidden; border: 3px solid #fff; box-shadow: 0 10px 24px -10px rgba(11,27,43,0.55); background: var(--alice); }
+.aca-sec .poster .ak-por img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.aca-sec .poster .ak-plus { top: 60%; width: 56px; height: 56px; font-size: 30px; }
+.aca-sec .poster .ak-plus .ak-tick { width: 26px; height: 26px; }
+.aca-sec .poster:hover .ak-plus { transform: translate(-50%, -50%) scale(1.08); }
+@media (max-width: 1100px) { .aca-sec .poster .ak-meta { max-width: none; } }
+@media (max-width: 520px) {
+  .aca-sec .poster .ak-num { display: none; }
+  .aca-sec .poster .ak-cap { padding: 40px 12px 0; }
+  .aca-sec .poster .ak-name { font-size: 15px; }
+  .aca-sec .poster .ak-meta { display: none; }
+  .aca-sec .poster .ak-eyebrow { display: none; }
+  .aca-sec .poster .ak-share { left: 12px; bottom: 12px; font-size: 0; max-width: 64px; }
+  .aca-sec .poster .ak-share b { font-size: 17px; }
+  .aca-sec .poster .ak-por { width: 58px; height: 58px; right: 12px; bottom: 12px; }
+  .aca-sec .poster .ak-plus { top: 54%; width: 48px; height: 48px; font-size: 26px; }
+}
+
+/* ---- v2: persona lightbox (opened from the persona tiles) ---- */
+.plb { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.plb[hidden] { display: none; }
+.plb-backdrop { position: absolute; inset: 0; background: rgba(11,27,43,0.55); backdrop-filter: blur(2px); }
+.plb-card { position: relative; width: min(680px, 100%); max-height: min(90vh, 900px); overflow: auto; background: #fff; border: 2px solid var(--prussian); border-radius: 22px; box-shadow: 8px 8px 0 var(--prussian); animation: plbIn 0.25s cubic-bezier(0.2, 0.8, 0.2, 1); }
+@keyframes plbIn { from { opacity: 0; transform: translateY(16px) scale(0.98); } to { opacity: 1; transform: none; } }
+.plb-x { position: absolute; top: 14px; right: 14px; z-index: 3; width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--prussian); background: #fff; color: var(--prussian); font-size: 24px; line-height: 1; cursor: pointer; box-shadow: 3px 3px 0 var(--prussian); }
+.plb-x:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--prussian); }
+.plb-head { position: relative; overflow: hidden; display: flex; align-items: center; gap: 22px; padding: 30px 30px 26px; background: linear-gradient(160deg, #fff 0%, var(--c-soft) 100%); border-bottom: 2px solid var(--prussian); }
+.plb-num { position: absolute; right: 64px; top: 6px; font-family: var(--head); font-weight: 700; font-size: 120px; line-height: 1; letter-spacing: -0.05em; color: var(--c); opacity: 0.22; pointer-events: none; }
+.plb-por { position: relative; z-index: 1; flex: none; width: 112px; height: 112px; border-radius: 50%; overflow: hidden; border: 3px solid #fff; box-shadow: 0 12px 28px -12px rgba(11,27,43,0.55); background: var(--alice); }
+.plb-por img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.plb-title { position: relative; z-index: 1; }
+.plb-eyebrow { display: block; font-family: var(--head); font-size: 11.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--steel); margin-bottom: 6px; }
+.plb-title h3 { font-family: var(--head); font-weight: 600; font-size: clamp(28px, 3.2vw, 38px); line-height: 1; letter-spacing: -0.03em; color: var(--prussian); }
+.plb-share { display: inline-block; margin-top: 10px; font-family: var(--head); font-weight: 700; font-size: 13px; color: var(--prussian); background: #fff; border: 2px solid var(--prussian); border-radius: 999px; padding: 5px 12px; box-shadow: 3px 3px 0 var(--c); }
+.plb-body { padding: 24px 30px 30px; }
+.plb-desc { font-size: 15.5px; line-height: 1.6; color: #3B4A5A; }
+.plb-sec { margin: 22px 0 10px; font-family: var(--head); font-size: 11.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--steel); }
+.plb-sig { display: grid; gap: 8px; }
+.plb-row { display: grid; grid-template-columns: 200px 1fr auto; gap: 12px; align-items: center; font-family: var(--head); font-size: 13.5px; font-weight: 600; color: var(--prussian); }
+.plb-bar { display: inline-flex; gap: 4px; }
+.plb-bar i { width: 26px; height: 8px; border-radius: 3px; background: #E1E7EE; }
+.plb-bar i.on { background: var(--c); }
+.plb-row .plb-n { font-family: var(--body); font-size: 12px; color: var(--steel); }
+.plb-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.plb-pills span { font-family: var(--head); font-size: 12.5px; font-weight: 600; padding: 6px 11px; border-radius: 999px; background: var(--c-soft); color: var(--prussian); border: 1.5px solid transparent; }
+.plb-pills-soft span { background: #F4F6F8; color: #4a5568; border-color: #E1E7EE; }
+.plb-cta { display: inline-flex; align-items: center; justify-content: center; margin-top: 26px; height: 52px; padding: 0 26px; font-family: var(--head); font-weight: 600; font-size: 16px; line-height: 1; border-radius: 999px; white-space: nowrap; }
+@media (max-width: 600px) {
+  .plb { padding: 12px; }
+  .plb-head { flex-direction: column; align-items: flex-start; gap: 14px; padding: 24px 20px 20px; }
+  .plb-num { font-size: 84px; right: 56px; }
+  .plb-por { width: 84px; height: 84px; }
+  .plb-body { padding: 18px 20px 24px; }
+  .plb-row { grid-template-columns: 1fr; gap: 4px; }
+  .plb-row .plb-n { display: none; }
+  .plb-cta { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .plb-card { animation: none; } }
+
+/* ---- v2 step three: the mix, before and after (two static charts, stamped) ---- */
+.mix-sec { background: #fff; padding: 96px 0; --ak-accent: #0496FF; }
+.mix-box { margin-top: 36px; background: #fff; border: 2px solid var(--prussian); border-radius: 22px; box-shadow: 6px 6px 0 var(--prussian); padding: 18px 22px 20px; }
+.mix-head { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; padding-bottom: 14px; border-bottom: 1px solid #E6ECF2; margin-bottom: 18px; }
+.mix-sub { font-size: 14px; color: var(--steel); }
+.mix-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.mix-panel { position: relative; background: #fff; border: 2px solid var(--prussian); border-radius: 18px; box-shadow: 4px 4px 0 var(--prussian); padding: 20px 14px 16px; }
+.mix-stamp { position: absolute; top: 12px; right: 14px; z-index: 2; transform: rotate(7deg); font-family: var(--head); font-weight: 700; font-size: 22px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); border: 3px solid var(--ink); border-radius: 8px; padding: 4px 12px; outline: 2px solid var(--ink); outline-offset: 3px; background: rgba(255,255,255,0.85); opacity: 0.92; }
+.mix-chart { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 10px; align-items: end; height: 272px; padding: 0; }
+.mix-col { display: flex; flex-direction: column; align-items: center; height: 100%; }
+.mix-plot { flex: 1; min-height: 0; width: 100%; display: flex; align-items: flex-end; justify-content: center; padding-top: 36px; box-sizing: border-box; }
+.mix-val { position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); white-space: nowrap; font-family: var(--head); font-weight: 700; font-size: 19px; letter-spacing: -0.02em; color: var(--prussian); }
+.mix-bar { position: relative; display: block; width: 100%; max-width: 84px; height: var(--h); min-height: 6px; background: var(--c); border: 2px solid var(--prussian); border-radius: 10px 10px 4px 4px; box-shadow: 3px 3px 0 var(--prussian); }
+.mix-lab { margin-top: 10px; font-family: var(--head); font-weight: 600; font-size: 12.5px; color: var(--prussian); text-align: center; line-height: 1.2; height: 38px; }
+.mix-lab small { display: block; font-family: var(--body); font-size: 11px; font-weight: 500; color: var(--steel); margin-top: 2px; }
+.mix-strip { margin-top: 14px; height: 14px; border-radius: 999px; overflow: hidden; display: flex; border: 2px solid var(--prussian); background: #F4F6F8; }
+.mix-strip i { display: block; height: 100%; width: var(--w); background: var(--c); }
+.mix-foot { margin-top: 14px; font-size: 12.5px; color: var(--steel); }
+@media (max-width: 900px) {
+  .mix-duo { grid-template-columns: 1fr; }
+  .mix-chart { height: 220px; gap: 6px; }
+  .mix-bar { max-width: 56px; }
+  .mix-val { font-size: 15px; }
+  .mix-lab { font-size: 11px; height: 40px; }
+  .mix-stamp { font-size: 16px; padding: 3px 9px; }
+}
+
+
+/* ---- v2: the starting point (a population map: uneven AI capability, shadow AI) ---- */
+.pop-sec { background: var(--alice); padding: 120px 0; --ak-accent: #E5484D; }
+.pop-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: center; }
+.pop-copy .eyebrow { font-family: var(--head); font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #E91E63; display: block; }
+.pop-copy h2 { font-family: var(--head); font-size: clamp(40px, 5vw, 68px); font-weight: 600; line-height: 0.96; letter-spacing: -0.045em; color: var(--prussian); margin-top: 14px; }
+.pop-copy h2 em { font-style: normal; color: #E5484D; }
+.pop-lead { position: relative; margin: 24px 0 0; padding-top: 18px; font-size: 18px; line-height: 1.6; color: #3B4A5A; }
+.pop-lead::before { content: ""; position: absolute; left: 0; top: 0; width: 56px; height: 4px; border-radius: 2px; background: var(--ak-accent); }
+/* the map: a static graphic in a framed panel */
+.pop-map { position: relative; background: #fff; border: 2px solid var(--prussian); border-radius: 24px; box-shadow: 8px 8px 0 var(--prussian); overflow: hidden; padding: 12px 12px 14px;
+  background-image: repeating-linear-gradient(90deg, var(--alice) 0, var(--alice) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(0deg, var(--alice) 0, var(--alice) 1px, transparent 1px, transparent 40px); }
+.pop-svg { display: block; width: 100%; height: auto; }
+.pop-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 14px; padding: 10px 6px 0; }
+.pop-legend span { font-family: var(--body); font-size: 11.5px; font-weight: 500; color: var(--steel); display: inline-flex; align-items: center; gap: 6px; }
+.pop-legend span::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+.pop-cap { padding: 8px 6px 0; text-align: center; font-family: var(--head); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--steel); }
+@media (max-width: 1000px) { .pop-grid { grid-template-columns: 1fr; gap: 36px; } .pop-map { max-width: 640px; } }
+@media (max-width: 760px) {
+  .pop-sec { padding: 72px 0; }
+  .pop-copy h2 { font-size: 36px; line-height: 1.06; }
+  .pop-copy h2 br { display: none; }
+  .pop-lead { font-size: 16.5px; }
+  .pop-map { padding: 8px 8px 12px; border-radius: 18px; box-shadow: 5px 5px 0 var(--prussian); }
+  .pop-legend span { font-size: 10.5px; }
+}
+
+/* ---- v2 step three: the product behind it (Kubicle) ---- */
+.prod-sec { background: var(--alice); padding: 120px 0; --ak-accent: #10B981; }
+.prod-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+.prod-shot { margin: 0; border-radius: 24px; overflow: hidden; border: 2px solid var(--prussian); box-shadow: 8px 8px 0 var(--prussian); background: #0B1B2B; }
+.prod-shot img { display: block; width: 100%; height: auto; }
+.prod-copy .eyebrow { font-family: var(--head); font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #E91E63; display: block; }
+.prod-copy h2 { font-family: var(--head); font-size: clamp(40px, 5vw, 68px); font-weight: 600; line-height: 0.96; letter-spacing: -0.045em; color: var(--prussian); margin-top: 14px; }
+.prod-copy h2 em { font-style: normal; color: #10B981; }
+.prod-lead { position: relative; margin: 24px 0 0; padding-top: 18px; font-size: 18px; line-height: 1.6; color: #3B4A5A; }
+.prod-lead::before { content: ""; position: absolute; left: 0; top: 0; width: 56px; height: 4px; border-radius: 2px; background: var(--ak-accent); }
+.prod-chips { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.prod-chips li { font-family: var(--head); font-weight: 600; font-size: 13.5px; color: var(--prussian); background: #fff; border: 2px solid var(--prussian); border-radius: 999px; padding: 8px 14px; box-shadow: 3px 3px 0 var(--prussian); }
+.prod-link { display: inline-block; margin-top: 24px; font-family: var(--head); font-weight: 600; font-size: 15px; color: var(--accent); text-decoration: none; border-bottom: 2px solid currentColor; padding-bottom: 2px; }
+.prod-link:hover { color: var(--prussian); }
+@media (max-width: 1000px) { .prod-grid { grid-template-columns: 1fr; gap: 36px; } .prod-shot { order: 2; max-width: 640px; } }
+@media (max-width: 760px) {
+  .prod-sec { padding: 72px 0; }
+  .prod-copy h2 { font-size: 36px; line-height: 1.06; }
+  .prod-copy h2 br { display: none; }
+  .prod-lead { font-size: 16.5px; }
+  .prod-shot { border-radius: 18px; box-shadow: 5px 5px 0 var(--prussian); }
+}
+
+/* ---- responsive review: persona tiles ---- */
+/* four-up tiles between 1101px and 1240px are 236 to 268px wide: scale the internals */
+@media (min-width: 1101px) { .ak-wall.three .poster { grid-column: span 4; } }
+@media (min-width: 1101px) and (max-width: 1240px) {
+  .aca-sec .poster .ak-num { font-size: 56px; top: 40px; }
+  .aca-sec .poster .ak-cap { padding: 44px 14px 0; }
+  .aca-sec .poster .ak-name { font-size: 17px; }
+  .aca-sec .poster .ak-meta { font-size: 11.5px; max-width: none; }
+  .aca-sec .poster .ak-plus { width: 46px; height: 46px; font-size: 25px; top: 63%; }
+  .aca-sec .poster .ak-por { width: 74px; height: 74px; right: 12px; bottom: 12px; }
+  .aca-sec .poster .ak-share { left: 14px; bottom: 12px; max-width: 92px; font-size: 10px; }
+  .aca-sec .poster .ak-share b { font-size: 18px; }
+}
+/* small phones: one tile per row (this must follow the two-up rule for <=520px) */
+@media (max-width: 380px) { .poster { grid-column: span 12; } }
+
+/* ---- the mix: bars, strips and stamps animate in when the box is reached ---- */
+.mix-duo .mix-panel:nth-child(1) { --pd: 0s; }
+.mix-duo .mix-panel:nth-child(2) { --pd: 0.55s; }
+.mix-col:nth-child(1) { --cd: 0s; }
+.mix-col:nth-child(2) { --cd: 0.07s; }
+.mix-col:nth-child(3) { --cd: 0.14s; }
+.mix-col:nth-child(4) { --cd: 0.21s; }
+.mix-col:nth-child(5) { --cd: 0.28s; }
+.mix-box.in .mix-bar { animation: mixBarGrow 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--pd, 0s) + var(--cd, 0s)); }
+.mix-box.in .mix-val { animation: mixValIn 0.4s ease-out both; animation-delay: calc(var(--pd, 0s) + var(--cd, 0s) + 0.45s); }
+.mix-box.in .mix-strip i { animation: mixStripGrow 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: calc(var(--pd, 0s) + 0.3s); }
+.mix-box.in .mix-stamp { animation: mixStampIn 0.45s cubic-bezier(0.2, 1.3, 0.4, 1) both; animation-delay: calc(var(--pd, 0s) + 0.9s); }
+@keyframes mixBarGrow { from { height: 0; } to { height: var(--h); } }
+@keyframes mixValIn { from { opacity: 0; transform: translate(-50%, 8px); } to { opacity: 1; transform: translate(-50%, 0); } }
+@keyframes mixStripGrow { from { width: 0; } to { width: var(--w); } }
+@keyframes mixStampIn { 0% { opacity: 0; transform: rotate(7deg) scale(1.9); } 70% { opacity: 0.92; } 100% { opacity: 0.92; transform: rotate(7deg) scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .mix-box.in .mix-bar, .mix-box.in .mix-val, .mix-box.in .mix-strip i, .mix-box.in .mix-stamp { animation: none; }
+}
+
+</style>
+
+<script src="shared/nav.js" defer></script>
+<script src="shared/footer.js" defer></script>
+</head>
+<body class="theme-blue">
+
+<div id="site-nav"></div>
+
+<!-- ============================== HERO (image bg, centered) ============================== -->
+<section class="hero" data-story>
+  <div class="container">
+    <div class="hero-copy">
+      <div class="eyebrow">
+        <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="9" r="2.6"/></svg>
+        Project Skill Assessor
+      </div>
+      <h1><span class="lede">Project fluency:</span> <br/>every learner assessed at scale, <br/>placed where it&rsquo;s <em>relevant</em>.</h1>
+      <div class="hero-cta">
+        <a class="btn btn-lg btn-primary" href="book-a-demo.html">Book a demo <span class="arr">&rarr;</span></a>
+        <a class="btn btn-lg btn-outline-dark" href="#step-academies">See how it works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== THE STARTING POINT (populations are uneven) ============================== -->
+<section class="pop-sec" data-story data-cue="Nobody starts from the same place" id="starting-point">
+  <div class="container">
+    <div class="pop-grid">
+      <div class="pop-copy">
+        <div class="eyebrow">The common organisational problem</div>
+        <h2>Nobody starts<br/><em>from the same place.</em></h2>
+        <p class="pop-lead">An organisation is not one skill level. It is hundreds of people delivering work very differently: some who run programmes for a living, some who have never seen a plan, and some quietly tracking projects in private spreadsheets and chat threads. Left unmapped, that unevenness is invisible, and it is where the risk and the wasted spend live.</p>
+      </div>
+      <div class="pop-map">
+        <svg class="pop-svg" viewBox="0 0 600 440" role="img" aria-label="Ninety-six people from one organisation, coloured and sized by their project capability, in no particular order"><defs><pattern id="sn-face-1" patternContentUnits="objectBoundingBox" width="1" height="1"><image href="img/Character_profiles/portraits/male_02.a.png" width="1" height="1" preserveAspectRatio="xMidYMid slice"/></pattern><pattern id="sn-face-2" patternContentUnits="objectBoundingBox" width="1" height="1"><image href="img/Character_profiles/portraits/female_06.a.png" width="1" height="1" preserveAspectRatio="xMidYMid slice"/></pattern><pattern id="sn-face-3" patternContentUnits="objectBoundingBox" width="1" height="1"><image href="img/Character_profiles/portraits/male_08.b.png" width="1" height="1" preserveAspectRatio="xMidYMid slice"/></pattern></defs><circle cx="31.2" cy="31.9" r="9.9" fill="#C6D2DE"/><circle cx="80.5" cy="33.2" r="9.3" fill="#C6D2DE"/><circle cx="128.0" cy="35.8" r="8.6" fill="#C6D2DE"/><circle cx="174.6" cy="33.7" r="16.0" fill="#00C4CC"/><circle cx="227.0" cy="34.4" r="9.6" fill="#E5484D"/><circle cx="275.6" cy="33.2" r="21.1" fill="url(#sn-face-1)" stroke="#E91E63" stroke-width="3.5"/><circle cx="326.6" cy="35.1" r="11.7" fill="#FFC93C"/><circle cx="374.6" cy="31.8" r="10.1" fill="#C6D2DE"/><circle cx="422.7" cy="36.5" r="11.5" fill="#FFC93C"/><circle cx="474.1" cy="35.6" r="8.7" fill="#C6D2DE"/><circle cx="520.1" cy="34.7" r="9.6" fill="#C6D2DE"/><circle cx="572.3" cy="33.9" r="9.5" fill="#C6D2DE"/><circle cx="32.4" cy="79.5" r="12.0" fill="#FFC93C"/><circle cx="76.2" cy="80.3" r="12.6" fill="#FFC93C"/><circle cx="125.4" cy="79.1" r="9.1" fill="#C6D2DE"/><circle cx="178.2" cy="82.5" r="9.5" fill="#C6D2DE"/><circle cx="223.4" cy="79.9" r="9.6" fill="#C6D2DE"/><circle cx="274.7" cy="80.7" r="9.6" fill="#C6D2DE"/><circle cx="327.1" cy="82.0" r="10.0" fill="#E5484D"/><circle cx="375.5" cy="80.2" r="8.8" fill="#C6D2DE"/><circle cx="425.0" cy="82.9" r="15.8" fill="#00C4CC"/><circle cx="472.4" cy="80.5" r="16.8" fill="#00C4CC"/><circle cx="520.4" cy="83.0" r="8.7" fill="#C6D2DE"/><circle cx="568.4" cy="82.6" r="10.4" fill="#C6D2DE"/><circle cx="31.1" cy="129.5" r="16.3" fill="#00C4CC"/><circle cx="77.7" cy="130.3" r="9.7" fill="#E5484D"/><circle cx="131.0" cy="125.8" r="10.4" fill="#C6D2DE"/><circle cx="177.3" cy="125.6" r="12.9" fill="#FFC93C"/><circle cx="228.7" cy="130.4" r="9.8" fill="#C6D2DE"/><circle cx="275.1" cy="126.0" r="10.1" fill="#C6D2DE"/><circle cx="323.8" cy="128.4" r="10.2" fill="#C6D2DE"/><circle cx="375.0" cy="129.6" r="12.5" fill="#FFC93C"/><circle cx="421.1" cy="129.8" r="9.0" fill="#C6D2DE"/><circle cx="473.7" cy="130.6" r="12.1" fill="#FFC93C"/><circle cx="518.5" cy="129.7" r="9.5" fill="#E5484D"/><circle cx="571.0" cy="127.7" r="9.9" fill="#C6D2DE"/><circle cx="28.2" cy="177.6" r="9.5" fill="#C6D2DE"/><circle cx="78.3" cy="175.7" r="11.9" fill="#FFC93C"/><circle cx="129.2" cy="175.9" r="10.5" fill="#C6D2DE"/><circle cx="174.3" cy="174.3" r="20.5" fill="url(#sn-face-2)" stroke="#E91E63" stroke-width="3.5"/><circle cx="225.1" cy="177.7" r="8.6" fill="#C6D2DE"/><circle cx="275.3" cy="176.3" r="15.6" fill="#00C4CC"/><circle cx="321.7" cy="172.5" r="9.1" fill="#C6D2DE"/><circle cx="376.5" cy="176.2" r="10.3" fill="#C6D2DE"/><circle cx="425.1" cy="172.8" r="10.2" fill="#C6D2DE"/><circle cx="472.4" cy="177.5" r="12.1" fill="#FFC93C"/><circle cx="521.1" cy="172.9" r="12.4" fill="#FFC93C"/><circle cx="572.8" cy="177.2" r="9.2" fill="#C6D2DE"/><circle cx="27.4" cy="221.7" r="9.1" fill="#E5484D"/><circle cx="76.9" cy="224.4" r="12.3" fill="#FFC93C"/><circle cx="129.8" cy="222.6" r="11.6" fill="#FFC93C"/><circle cx="176.7" cy="225.0" r="12.2" fill="#FFC93C"/><circle cx="228.2" cy="221.1" r="10.2" fill="#C6D2DE"/><circle cx="277.9" cy="222.4" r="10.0" fill="#C6D2DE"/><circle cx="322.5" cy="224.9" r="9.3" fill="#C6D2DE"/><circle cx="374.6" cy="220.8" r="8.8" fill="#C6D2DE"/><circle cx="423.8" cy="223.3" r="12.9" fill="#FFC93C"/><circle cx="468.9" cy="224.5" r="12.1" fill="#FFC93C"/><circle cx="521.2" cy="222.8" r="8.9" fill="#C6D2DE"/><circle cx="571.2" cy="223.7" r="16.7" fill="#00C4CC"/><circle cx="29.4" cy="269.4" r="12.1" fill="#FFC93C"/><circle cx="77.9" cy="269.1" r="10.1" fill="#C6D2DE"/><circle cx="125.2" cy="269.0" r="10.2" fill="#C6D2DE"/><circle cx="179.7" cy="268.2" r="12.9" fill="#FFC93C"/><circle cx="228.0" cy="266.9" r="12.6" fill="#FFC93C"/><circle cx="273.7" cy="267.5" r="9.7" fill="#C6D2DE"/><circle cx="324.1" cy="271.5" r="10.3" fill="#C6D2DE"/><circle cx="373.1" cy="270.1" r="11.8" fill="#FFC93C"/><circle cx="420.0" cy="270.2" r="16.0" fill="#00C4CC"/><circle cx="469.3" cy="270.0" r="16.4" fill="#00C4CC"/><circle cx="518.2" cy="267.9" r="12.8" fill="#FFC93C"/><circle cx="570.2" cy="268.4" r="9.5" fill="#C6D2DE"/><circle cx="30.1" cy="314.5" r="10.3" fill="#C6D2DE"/><circle cx="78.7" cy="315.0" r="10.4" fill="#C6D2DE"/><circle cx="126.8" cy="317.3" r="9.4" fill="#C6D2DE"/><circle cx="176.1" cy="319.7" r="10.5" fill="#C6D2DE"/><circle cx="225.1" cy="314.5" r="8.9" fill="#C6D2DE"/><circle cx="274.9" cy="314.7" r="21.4" fill="url(#sn-face-3)" stroke="#E91E63" stroke-width="3.5"/><circle cx="326.7" cy="315.8" r="10.4" fill="#C6D2DE"/><circle cx="371.6" cy="313.9" r="9.4" fill="#C6D2DE"/><circle cx="422.9" cy="315.4" r="15.6" fill="#00C4CC"/><circle cx="471.1" cy="317.2" r="9.7" fill="#C6D2DE"/><circle cx="519.2" cy="315.9" r="10.5" fill="#C6D2DE"/><circle cx="571.3" cy="315.1" r="12.8" fill="#FFC93C"/><circle cx="31.1" cy="366.3" r="12.1" fill="#FFC93C"/><circle cx="78.6" cy="366.9" r="10.0" fill="#C6D2DE"/><circle cx="127.5" cy="363.0" r="9.6" fill="#C6D2DE"/><circle cx="178.2" cy="364.3" r="9.9" fill="#E5484D"/><circle cx="226.6" cy="362.7" r="9.6" fill="#C6D2DE"/><circle cx="275.9" cy="365.6" r="9.8" fill="#C6D2DE"/><circle cx="325.7" cy="365.9" r="11.7" fill="#FFC93C"/><circle cx="374.1" cy="361.2" r="9.4" fill="#C6D2DE"/><circle cx="425.5" cy="364.7" r="12.9" fill="#FFC93C"/><circle cx="469.9" cy="364.6" r="10.1" fill="#C6D2DE"/><circle cx="520.6" cy="361.2" r="10.2" fill="#C6D2DE"/><circle cx="567.3" cy="366.8" r="12.2" fill="#FFC93C"/></svg>
+        <div class="pop-legend"><span style="--c:#FFC93C">Project Member</span><span style="--c:#00C4CC">PM Candidate</span><span style="--c:#E91E63">Project Champion</span><span style="--c:#C6D2DE">No project skills yet</span><span style="--c:#E5484D">Off-book tracking</span></div>
+        <div class="pop-cap">One organisation, as it really is.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== STEP 1: CHOOSE ACADEMIES ============================== -->
+<section class="aca-sec" data-story data-cue="Choose your academies" id="step-academies">
+  <div class="sec-tab">Step one</div>
+  <div class="container">
+    <div class="ak-head">
+      <div>
+        <div class="eyebrow">What good looks like</div>
+        <h2>Project fluency is a mix<br/><em>of three personas.</em></h2>
+      </div>
+      <p>Every organisation needs a predetermined distribution of project skills: a broad base of Project Members, a working layer of PM Candidates and a specialist core of Project Champions, in the proportions your strategy demands. The three personas are how you define that target, and what every person is measured against.</p>
+    </div>
+
+    <div class="posters ak-wall three">
+      <button type="button" class="poster ak-p1" data-name="Project Member" aria-label="See the Project Member persona" style="--c:#FFC93C;--c-soft:rgba(255,201,60,0.22)">
+        <span class="ribbon">Project Member</span>
+        <span class="ak-num" aria-hidden="true">01</span>
+        <span class="ak-cap"><span class="ak-eyebrow">Persona 01 &middot; Contributor</span><span class="ak-name">Project Member</span><span class="ak-meta">A Project Member is starting their journey in project work, focused on foundational concepts and</span></span>
+        <span class="ak-share"><b>55 to 70%</b>typical share of an organisation</span>
+        <span class="ak-por"><img src="img/Character_profiles/portraits/female_06.a.png" alt="" loading="lazy"/></span>
+        <span class="ak-plus" aria-hidden="true"><span class="ak-sym">+</span></span>
+      </button>
+      <button type="button" class="poster ak-p2" data-name="PM Candidate" aria-label="See the PM Candidate persona" style="--c:#00C4CC;--c-soft:rgba(0,196,204,0.16)">
+        <span class="ribbon">PM Candidate</span>
+        <span class="ak-num" aria-hidden="true">02</span>
+        <span class="ak-cap"><span class="ak-eyebrow">Persona 02 &middot; Aspiring</span><span class="ak-name">PM Candidate</span><span class="ak-meta">PM Candidates are the hands-on delivery leads.</span></span>
+        <span class="ak-share"><b>20 to 30%</b>typical share of an organisation</span>
+        <span class="ak-por"><img src="img/Character_profiles/portraits/male_02.a.png" alt="" loading="lazy"/></span>
+        <span class="ak-plus" aria-hidden="true"><span class="ak-sym">+</span></span>
+      </button>
+      <button type="button" class="poster ak-p3" data-name="Project Champion" aria-label="See the Project Champion persona" style="--c:#E91E63;--c-soft:rgba(233,30,99,0.14)">
+        <span class="ribbon">Project Champion</span>
+        <span class="ak-num" aria-hidden="true">03</span>
+        <span class="ak-cap"><span class="ak-eyebrow">Persona 03 &middot; Strategic</span><span class="ak-name">Project Champion</span><span class="ak-meta">Project Champions are the CAPM-aligned tier, with comprehensive depth across all four PMI domain</span></span>
+        <span class="ak-share"><b>5 to 15%</b>typical share of an organisation</span>
+        <span class="ak-por"><img src="img/Character_profiles/portraits/male_08.b.png" alt="" loading="lazy"/></span>
+        <span class="ak-plus" aria-hidden="true"><span class="ak-sym">+</span></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== STEP 2: THE SKILLS ASSESSOR (persona-based) ============================== -->
+<section class="asr-sec" data-story data-cue="The skills assessor" id="step-assessor">
+  <div class="sec-tab">Step two</div>
+  <div class="container">
+    <div class="eyebrow">The skills assessor</div>
+    <h2>Assessed against the personas. <br/>Placed in the right <em>one</em>.</h2>
+    <p class="asr-sub">You know where you need people to get to. What you do not know is where each of them starts. Before any learning commences, a short, low-stakes project skill check places every person in the right persona and on the path to the target, with only the lessons they still need. Here it is, exactly as a learner sees it.</p>
+
+    <div class="asr-stage">
+      <div class="sc-panel">
+        <div class="sc-bar"><span class="sc-dots"><i></i><i></i><i></i></span>Skill Check &middot; Project Management Academy &middot; Delivering Projects<span class="sc-live">Live replay</span></div>
+        <div class="sc-view" id="sc-view"><div class="sc-stack" id="sc-stack"></div><div class="sc-cursor" id="sc-cursor"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== STEP 3: THE PRODUCT (Kubicle) ============================== -->
+<section class="prod-sec" data-story data-cue="The product behind it" id="step-product">
+  <div class="sec-tab">Step three</div>
+  <div class="container">
+    <div class="prod-grid">
+      <figure class="prod-shot"><img src="img/skills-navigator/platform.webp" width="1259" height="1035" alt="The Kubicle platform: a learning specialist in chat and a tailored content strategy consultation" loading="lazy"/></figure>
+      <div class="prod-copy">
+        <div class="eyebrow">The product behind it</div>
+        <h2>Learning that<br/><em>actually lands.</em></h2>
+        <p class="prod-lead">Every persona path runs on Kubicle: high-quality learning built for business teams, an integrated learning support team, and customisation that puts your company&rsquo;s own narrative and use cases inside the training. Relevant by design, so engagement holds and the return is measurable.</p>
+        <ul class="prod-chips">
+          <li>High-quality learning material</li>
+          <li>Integrated learning support team</li>
+          <li>Customised to your company&rsquo;s narrative</li>
+          <li>Engagement and ROI, tracked</li>
+        </ul>
+        <a class="prod-link" href="for-business/platform.html">See the platform &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== STEP 4: THE MIX (before and after) ============================== -->
+<section class="mix-sec" data-story data-cue="The mix, before and after" id="step-mix">
+  <div class="sec-tab">Step four</div>
+  <div class="container">
+    <div class="ak-head">
+      <div>
+        <div class="eyebrow">The outcome</div>
+        <h2>Skills redistributed.<br/><em>A company that competes.</em></h2>
+      </div>
+      <p>Assessed, placed and trained, the shape of the organisation moves from where it is today to the mix your strategy needs. That is what competing on delivery actually takes.</p>
+    </div>
+
+    <div class="mix-box">
+      <div class="mix-head"><span class="num-badge" style="--c:#0496FF">Skill distribution</span><span class="mix-sub">The same 200-person organisation, before and after the Project Management Academy</span></div>
+      <div class="mix-duo">
+        <div class="mix-panel" style="--ink:#E5484D">
+        <span class="mix-stamp">Before</span>
+        <div class="mix-chart">
+          <div class="mix-col" style="--c:#CBD5E0;--h:90.8%"><span class="mix-plot"><span class="mix-bar"><span class="mix-val">59%</span></span></span><span class="mix-lab">No project skills yet<small>118 people</small></span></div>
+          <div class="mix-col" style="--c:#FFC93C;--h:38.5%"><span class="mix-plot"><span class="mix-bar"><span class="mix-val">25%</span></span></span><span class="mix-lab">Project Member<small>50 people</small></span></div>
+          <div class="mix-col" style="--c:#00C4CC;--h:13.8%"><span class="mix-plot"><span class="mix-bar"><span class="mix-val">9%</span></span></span><span class="mix-lab">PM Candidate<small>18 people</small></span></div>
+          <div class="mix-col" style="--c:#E91E63;--h:4.6%"><span class="mix-plot"><span class="mix-bar"><span class="mix-val">3%</span></span></span><span class="mix-lab">Project Champion<small>6 people</small></span></div>
+        </div>
+        <div class="mix-strip" aria-hidden="true"><i style="--c:#CBD5E0;--w:59%"></i><i style="--c:#FFC93C;--w:25%"></i><i style="--c:#00C4CC;--w:9%"></i><i style="--c:#E91E63;--w:3%"></i></div>
+        </div>
+        <div class="mix-panel" style="--ink:#10B981">
+        <span class="mix-stamp">After</span>
+        <div class="mix-chart">
+          <div class="mix-col" style="--c:#CBD5E0;--h:0.0%"><span class="mix-plot"><span class="mix-bar"><span class="mix-val">0%</span></span></span><span class="mix-lab">No project skills yet<small>0 people</small></span></div>
+          <div class="mix-col" style="--c:#FFC93C;--h:100.0%"><span class="mix-plot"><span class="mix-bar"><span class="mix-val">65%</span></span></span><span class="mix-lab">Project Member<small>130 people</small></span></div>
+          <div class="mix-col" style="--c:#00C4CC;--h:38.5%"><span class="mix-plot"><span class="mix-bar"><span class="mix-val">25%</span></span></span><span class="mix-lab">PM Candidate<small>50 people</small></span></div>
+          <div class="mix-col" style="--c:#E91E63;--h:15.4%"><span class="mix-plot"><span class="mix-bar"><span class="mix-val">10%</span></span></span><span class="mix-lab">Project Champion<small>20 people</small></span></div>
+        </div>
+        <div class="mix-strip" aria-hidden="true"><i style="--c:#CBD5E0;--w:0%"></i><i style="--c:#FFC93C;--w:65%"></i><i style="--c:#00C4CC;--w:25%"></i><i style="--c:#E91E63;--w:10%"></i></div>
+        </div>
+      </div>
+      <p class="mix-foot">Illustrative mix for a 200-person services organisation. Proportions shift as the delivery program matures.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PERSONA LIGHTBOX ============================== -->
+<div class="plb" id="plb" hidden role="dialog" aria-modal="true" aria-labelledby="plb-name">
+  <div class="plb-backdrop" data-plb-close></div>
+  <div class="plb-card" id="plb-card" tabindex="-1">
+    <button type="button" class="plb-x" data-plb-close aria-label="Close">&times;</button>
+    <div class="plb-head">
+      <span class="plb-num" id="plb-num" aria-hidden="true"></span>
+      <span class="plb-por"><img id="plb-img" src="" alt=""/></span>
+      <div class="plb-title">
+        <span class="plb-eyebrow" id="plb-eyebrow"></span>
+        <h3 id="plb-name"></h3>
+        <span class="plb-share" id="plb-share"></span>
+      </div>
+    </div>
+    <div class="plb-body">
+      <p class="plb-desc" id="plb-desc"></p>
+      <div class="plb-sec">Competency signature</div>
+      <div class="plb-sig" id="plb-sig"></div>
+      <div class="plb-sec">Learning milestones</div>
+      <div class="plb-pills" id="plb-miles"></div>
+      <div class="plb-sec">Sample courses and projects</div>
+      <div class="plb-pills plb-pills-soft" id="plb-courses"></div>
+      <a class="btn btn-primary plb-cta" href="academies/project-management/index.html#personas" target="_blank" rel="noopener">Explore this persona &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== VIDEO PANEL ============================== -->
+<section class="vsec" data-story data-cue="See it in action">
+  <div class="container">
+    <div class="vsec-head">
+      <div class="vsec-eyebrow">See it in motion</div>
+      <h2 class="vsec-h">One assessment. <br/>Everyone <em>pointed the right way.</em></h2>
+    </div>
+    <div class="vpanel">
+      <video id="sn-video" src="img/skills-navigator/skills-navigator.mp4" poster="img/skills-navigator/poster.webp" autoplay muted loop playsinline preload="metadata"></video>
+      <button class="vid-ctrl" id="sn-sound" type="button" aria-label="Unmute video">
+        <svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/></svg>
+        <span id="sn-label">Sound</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CTA ============================== -->
+<section class="cta" data-story data-cue="Book a demo">
+  <div class="container">
+    <h2>See the Project Skill Assessor on your workforce.</h2>
+    <p>Bring us your strategy and a slice of your team. We will show you how everyone lands in the right place.</p>
+    <div class="hero-cta">
+      <a class="btn btn-lg btn-primary" href="book-a-demo.html">Book a demo <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<!-- ============================== VIDEO SOUND TOGGLE ============================== -->
+<script>
+(function () {
+  var v = document.getElementById('sn-video');
+  var btn = document.getElementById('sn-sound');
+  var label = document.getElementById('sn-label');
+  if (!v || !btn) return;
+  btn.addEventListener('click', function () {
+    v.muted = !v.muted;
+    if (!v.muted) { v.play(); label.textContent = 'Mute'; btn.setAttribute('aria-label', 'Mute video'); }
+    else { label.textContent = 'Sound'; btn.setAttribute('aria-label', 'Unmute video'); }
+  });
+  // Play when the panel scrolls into view; pause when it leaves (only while muted,
+  // so we never cut off a viewer who has turned the sound on).
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { v.play().catch(function () {}); }
+        else if (v.muted) { v.pause(); }
+      });
+    }, { threshold: 0.25 });
+    io.observe(v);
+  }
+})();
+</script>
+
+<!-- ============================== ACADEMY TILE SELECTION ============================== -->
+<!-- ============================== THE MIX: animate the charts into view (v2) ============================== -->
+<script>
+(function () {
+  var box = document.querySelector('.mix-box');
+  if (!box) return;
+  var play = function () { box.classList.add('in'); };
+  var reduce = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  if (reduce || !('IntersectionObserver' in window)) { play(); }
+  else {
+    new IntersectionObserver(function (entries, io) {
+      if (!entries[0].isIntersecting) return;
+      io.disconnect(); play();
+    }, { threshold: 0.3 }).observe(box);
+  }
+  window.MixAnim = { play: play, played: function () { return box.classList.contains('in'); } };
+})();
+</script>
+
+<!-- ============================== PERSONA TILES -> LIGHTBOX (v2) ============================== -->
+<script>
+(function () {
+  var COMP = ["PM Fundamentals & Core Concepts", "Predictive Delivery", "Agile & Hybrid Delivery", "Business Analysis"];
+  var P = {
+    p1: { name: 'Project Member', tier: 'Contributor', num: '01', share: '55 to 70% of a project-fluent workforce', c: '#FFC93C', soft: 'rgba(255,201,60,0.22)', pic: 'female_06',
+      desc: 'A Project Member is starting their journey in project work, focused on foundational concepts and practical fluency. They know PM terminology, lifecycles, and roles, and contribute confidently as part of a project team without yet leading projects or holding formal accreditation. Ideal for coordinators, business analysts, interns, and anyone who needs shared language and shared expectations from day one.',
+      sig: [3, 2, 2, 1], miles: ["Getting Started with Projects", "Project Roles & Responsi bilities", "Kanban in Practice", "Scrum & Lean Thinking"],
+      courses: ["Getting Started With Projects", "Project Roles", "Kanban In Practice", "Scrum Methodology", "Lean Thinking", "Report Writing"] },
+    p2: { name: 'PM Candidate', tier: 'Aspiring', num: '02', share: '20 to 30% of a project-fluent workforce', c: '#00C4CC', soft: 'rgba(0,196,204,0.16)', pic: 'male_02',
+      desc: 'PM Candidates are the hands-on delivery leads. They run projects day-to-day across predictive, agile, and hybrid contexts, owning schedule, cost, quality, resources, and stakeholders. Strong execution craft, working toward formal credentials. The persona that gets things shipped, and the one that lifts overall delivery quality across the team.',
+      sig: [4, 5, 5, 2], miles: ["Agile Project Management", "Hybrid Approaches", "Schedule & Cost Management", "Risk & Resource Management"],
+      courses: ["Agile Project Management", "Delivering Agile Projects", "Project Planning", "Schedule Management", "Cost Management", "Risk Management"] },
+    p3: { name: 'Project Champion', tier: 'Strategic', num: '03', share: '5 to 15% of a project-fluent workforce', c: '#E91E63', soft: 'rgba(233,30,99,0.14)', pic: 'male_08.b',
+      desc: 'Project Champions are the CAPM-aligned tier, with comprehensive depth across all four PMI domains: fundamentals, predictive, agile, and business analysis. They sit at the apex of the framework, ready to take the CAPM exam after completing the Kubicle pathway, with PMI\u2019s 23-hour education requirement covered. A small but high-leverage group that elevates the whole organization\u2019s delivery quality.',
+      sig: [5, 5, 5, 5], miles: ["Project Integration", "Project Governance", "Stakeholder Management", "Vendor Management"],
+      courses: ["Project Integration", "Project Governance", "Stakeholder Management", "Vendor Management", "Research In Business", "Capm Exam Prep"] }
+  };
+  var lb = document.getElementById('plb'), card = document.getElementById('plb-card');
+  if (!lb) return;
+  var $ = function (id) { return document.getElementById(id); };
+  var lastFocus = null, current = null;
+  function pills(el, items, cls) { el.innerHTML = items.map(function (t) { return '<span>' + t + '</span>'; }).join(''); }
+  function open(key) {
+    var d = P[key]; if (!d) return;
+    current = key;
+    lb.style.setProperty('--c', d.c); lb.style.setProperty('--c-soft', d.soft);
+    $('plb-num').textContent = d.num;
+    $('plb-img').src = 'img/Character_profiles/portraits/' + d.pic + (d.pic.slice(-2) === '.b' ? '.png' : '.a.png');
+    $('plb-eyebrow').textContent = 'Persona ' + d.num + ' \u00b7 ' + d.tier;
+    $('plb-name').textContent = 'The ' + d.name + '.';
+    $('plb-share').textContent = d.share;
+    $('plb-desc').textContent = d.desc;
+    $('plb-sig').innerHTML = COMP.map(function (c, i) {
+      var n = d.sig[i], bar = ''; for (var k = 1; k <= 5; k++) bar += '<i class="' + (k <= n ? 'on' : '') + '"></i>';
+      return '<div class="plb-row"><span>' + c + '</span><span class="plb-bar">' + bar + '</span><span class="plb-n">' + n + ' of 5</span></div>';
+    }).join('');
+    pills($('plb-miles'), d.miles); pills($('plb-courses'), d.courses);
+    lastFocus = document.activeElement;
+    lb.hidden = false; document.body.style.overflow = 'hidden';
+    card.scrollTop = 0; card.focus();
+  }
+  function close() {
+    if (lb.hidden) return;
+    lb.hidden = true; document.body.style.overflow = ''; current = null;
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  document.querySelectorAll('.poster[data-name]').forEach(function (tile) {
+    var key = (tile.className.match(/ak-(p\d)/) || [])[1];
+    tile.addEventListener('click', function () { open(key); });
+  });
+  lb.querySelectorAll('[data-plb-close]').forEach(function (b) { b.addEventListener('click', close); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  // v2: the AI persona group in the role builder is unlocked from the start
+  window.PersonaLightbox = { open: open, close: close, current: function () { return current; } };
+})();
+</script>
+
+<!-- ============================== SKILL CHECK REPLAY (the assessor, as a learner sees it) ============================== -->
+<script>
+(function () {
+  var sec = document.getElementById('step-assessor'), view = document.getElementById('sc-view');
+  var stack = document.getElementById('sc-stack'), cur = document.getElementById('sc-cursor');
+  if (!sec || !view || !stack || !cur) return;
+  var SHIELD = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/></svg>';
+  var CLOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+  var QS = [
+    { q: 'Does a detailed plan by itself keep a project on track?', a: 1 },
+    { q: 'When a project slips, is the method usually to blame?', a: 1 },
+    { q: 'Should a scope change be re-baselined before the work starts?', a: 0 },
+    { q: 'Can a project be on schedule and still be failing?', a: 0 },
+    { q: 'Is one status update a week enough to manage delivery risk?', a: 2 }
+  ];
+  var OPTS = ['Yes', 'No', 'I don\u2019t know'];
+  var LESSONS = [
+    { t: 'Getting started with projects', skip: true },
+    { t: 'Roles and responsibilities', skip: true },
+    { t: 'Planning, schedule and cost' },
+    { t: 'Running agile and hybrid delivery' },
+    { t: 'Managing risk before it lands' }
+  ];
+  var AI = '--c:#00C4CC;--c-soft:rgba(0,196,204,0.16)';
+  var reduce = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  function el(html) { var d = document.createElement('div'); d.innerHTML = html.trim(); return d.firstChild; }
+  function row(inner) { return '<div class="sc-row"><span class="sc-shield">' + SHIELD + '</span><div>' + inner + '</div></div>'; }
+  function intro() {
+    return el('<div class="sc-card sc-intro"><div class="sc-title">Skill Check: Delivering Projects</div><div class="sc-sub">This quick check will help shape your learning experience. <a>Learn More</a>.</div>' +
+      row('<div class="sc-bubble">Hi Priya \ud83d\udc4b Before we begin the Project Management Academy, I can run a quick, low-stakes scenario to see how comfortable you are with the skills in this course.' +
+      '<button type="button" class="sc-btn" data-start tabindex="-1">Start Skill Check \u2192 Evaluate my level</button>' +
+      '<button type="button" class="sc-btn sc-ghost" tabindex="-1">Skip Skill Check \u2192 Include all lessons</button></div>') + '</div>');
+  }
+  function qcard(i) {
+    var q = QS[i];
+    return el('<div class="sc-card sc-q" data-q="' + i + '">' + row(
+      '<div class="sc-bubble"><div class="sc-qhead">Question ' + (i + 1) + ' of ' + QS.length + '</div>' +
+      '<div class="sc-progrow"><div class="sc-prog"><i></i></div><span class="sc-timer">' + CLOCK + '<span data-t>1:00</span></span></div>' +
+      '<div class="sc-qtext">' + q.q + '</div></div>' +
+      '<div class="sc-opts">' + OPTS.map(function (o) { return '<div class="sc-opt"><span class="sc-radio"></span>' + o + '</div>'; }).join('') + '</div>' +
+      '<button type="button" class="sc-submit" tabindex="-1">Submit Answer</button>') + '</div>');
+  }
+  function result() {
+    var tiers = ["Project Member", "PM Candidate", "Project Champion"];
+    var ladder = tiers.map(function (t) { return t === 'PM Candidate' ? '<span class="rp-pill on sc-you" style="' + AI + '">' + t + '</span>' : '<span class="rp-pill" style="' + AI + '">' + t + '</span>'; }).join('');
+    return el('<div class="sc-card sc-result">' + row(
+      '<div class="sc-bubble">Skill Check complete. Your persona is <b>PM Candidate</b>. You already know some of this, so your path keeps only the lessons you still need.' +
+      '<div class="sc-ladder">' + ladder + '</div>' +
+      '<div class="sc-lessons">' + LESSONS.map(function (l) { return '<div class="sc-lesson ' + (l.skip ? 'skip' : 'in') + '"><span class="sc-st">' + (l.skip ? 'Skipped' : 'Included') + '</span><span>' + l.t + '</span></div>'; }).join('') + '</div>' +
+      '<div class="sc-path">3 lessons you need \u00b7 2 you already know skipped \u00b7 about 45 minutes</div>' +
+      '<button type="button" class="sc-btn" tabindex="-1">Start learning \u2192</button></div>') + '</div>');
+  }
+
+  // append a card so it floats up from the bottom while the thread slides up
+  function add(card) {
+    var h0 = stack.getBoundingClientRect().height;
+    stack.querySelectorAll('.sc-card').forEach(function (c) { c.classList.add('sc-done'); });
+    stack.appendChild(card);
+    if (!reduce) {
+      var d = stack.getBoundingClientRect().height - h0;
+      if (d > 0) {
+        stack.style.transition = 'none'; stack.style.transform = 'translateY(' + d + 'px)';
+        setTimeout(function () { stack.style.transition = 'transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1)'; stack.style.transform = 'translateY(0)'; }, 20);
+      }
+    }
+    return card;
+  }
+  function current() { var qs = stack.querySelectorAll('.sc-q'); return qs[qs.length - 1]; }
+  function cursorTo(target) {
+    if (!target) return;
+    var r = target.getBoundingClientRect(), v = view.getBoundingClientRect();
+    cur.style.left = (r.left - v.left + Math.min(r.width * 0.5, 150)) + 'px';
+    cur.style.top = (r.top - v.top + r.height / 2) + 'px';
+    cur.classList.add('sc-on');
+  }
+  function click() { cur.classList.remove('sc-click'); void cur.offsetWidth; cur.classList.add('sc-click'); }
+  function press(b) { if (!b) return; click(); b.classList.add('sc-pressed'); setTimeout(function () { b.classList.remove('sc-pressed'); }, 220); }
+
+  // the countdown on the active question
+  var tInt = null;
+  function startTimer(card) {
+    stopTimer();
+    var t = 60, out = card.querySelector('[data-t]');
+    tInt = setInterval(function () { t = Math.max(0, t - 1); out.textContent = '0:' + (t < 10 ? '0' : '') + t; if (t === 0) stopTimer(); }, 1000);
+  }
+  function stopTimer() { if (tInt) { clearInterval(tInt); tInt = null; } }
+
+  // the script: [wait ms, then do]
+  var timeline = [];
+  function step(d, fn) { timeline.push([d, fn]); }
+  step(0, function () { stopTimer(); stack.innerHTML = ''; stack.style.transition = 'none'; stack.style.transform = ''; cur.classList.remove('sc-on'); add(intro()); });
+  step(1500, function () { cursorTo(stack.querySelector('[data-start]')); });
+  step(600, function () { press(stack.querySelector('[data-start]')); });
+  QS.forEach(function (q, i) {
+    var quick = i >= 2;
+    step(quick ? 500 : 700, function () { var c = add(qcard(i)); setTimeout(function () { c.querySelector('.sc-prog i').style.width = ((i + 1) / QS.length * 100) + '%'; }, 60); startTimer(c); });
+    step(quick ? 1100 : 1500, function () { cursorTo(current().querySelectorAll('.sc-opt')[q.a]); });
+    step(450, function () { click(); current().querySelectorAll('.sc-opt')[q.a].classList.add('sc-picked'); });
+    step(quick ? 500 : 700, function () { cursorTo(current().querySelector('.sc-submit')); });
+    step(400, function () { press(current().querySelector('.sc-submit')); stopTimer(); });
+  });
+  step(700, function () { cur.classList.remove('sc-on'); add(result()); });
+  step(6500, function () {});
+
+  // the runner: loops, pauses out of view or in a hidden tab
+  var idx = 0, timer = null, playing = false, inView = false;
+  function tick() {
+    if (!playing) return;
+    if (idx >= timeline.length) idx = 0;
+    var st = timeline[idx];
+    timer = setTimeout(function () { timer = null; st[1](); idx++; tick(); }, st[0]);
+  }
+  function play() { if (playing) return; playing = true; tick(); }
+  function pause() { playing = false; if (timer) { clearTimeout(timer); timer = null; } stopTimer(); }
+  function gate() { if (inView && !document.hidden) play(); else pause(); }
+
+  if (reduce) {
+    // no motion: show the end state at once
+    add(intro()); var c = add(qcard(0)); c.querySelector('.sc-prog i').style.width = '20%'; c.querySelectorAll('.sc-opt')[QS[0].a].classList.add('sc-picked'); add(result());
+  } else {
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) { inView = entries[0].isIntersecting; gate(); }, { threshold: 0.2 }).observe(sec);
+    } else { inView = true; gate(); }
+    document.addEventListener('visibilitychange', gate);
+  }
+  // a small handle for scripting the replay (used by the page checks)
+  window.SkillCheckReplay = {
+    play: play, pause: pause,
+    next: function () { pause(); var st = timeline[idx]; st[1](); idx++; if (idx >= timeline.length) idx = 0; return idx; },
+    steps: timeline.length, questions: QS.length
+  };
+})();
+</script>
+
+</body>
+</html>

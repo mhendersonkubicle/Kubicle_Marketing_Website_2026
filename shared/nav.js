@@ -44,6 +44,7 @@
     shield:      '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/>',
     lock:        '<rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
     compass:     '<circle cx="12" cy="12" r="9"/><path d="M16 8l-2 6-6 2 2-6 6-2z"/>',
+    pin:         '<path d="M12 21s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="9" r="2.6"/>',
     gavel:       '<path d="M14 4l6 6-3 3-6-6 3-3z"/><path d="M11 7L4 14l3 3 7-7"/><path d="M3 21h12"/>',
     sigma:       '<path d="M6 4h12l-7 8 7 8H6"/>',
     target:      '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/>',
@@ -214,7 +215,7 @@
     + '}'
     + '.dd-submenu.open { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(0); }'
     + '.dd-submenu-head {'
-    + '  display: block; padding: 8px 10px 12px; margin: -4px -4px 8px;'
+    + '  display: block; padding: 8px 12px 12px; margin: -4px -4px 8px;'
     + '  border-radius: 10px;'
     + '  border-bottom: 1px solid var(--nav-alice);'
     + '  text-decoration: none;'
@@ -227,6 +228,20 @@
     + '.dd-submenu-cta { transition: transform 0.15s; }'
     + '.dd-submenu-cta svg { width: 10px; height: 10px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }'
     + '.dd-submenu-list { display: flex; flex-direction: column; gap: 1px; }'
+    + '.dd-link.dd-assess {'
+    + '  margin: -8px -14px 10px; padding: 11px 22px;'
+    + '  background: color-mix(in oklab, var(--c, var(--nav-blue)) 5%, #fff);'
+    + '  border: 0; border-bottom: 1px solid color-mix(in oklab, var(--c, var(--nav-blue)) 16%, #fff);'
+    + '  border-radius: 0;'
+    + '  color: var(--nav-prussian);'
+    + '}'
+    + '.dd-link.dd-assess:hover { background: color-mix(in oklab, var(--c, var(--nav-blue)) 11%, #fff); color: var(--c, var(--nav-blue)); transform: none; }'
+    + '.dd-assess-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }'
+    + '.dd-assess-label { font-weight: 700; font-size: 13.5px; line-height: 1.15; }'
+    + '.dd-assess-sub { font-size: 11px; font-weight: 500; color: #8C9BAA; line-height: 1.2; }'
+    + '.dd-assess-chev { margin-left: auto; width: 13px; height: 13px; color: var(--c, var(--nav-blue)); flex-shrink: 0; transition: transform 0.15s; }'
+    + '.dd-assess-chev svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }'
+    + '.dd-link.dd-assess:hover .dd-assess-chev { transform: translateX(3px); }'
     + '.dd-link {'
     + '  display: flex; align-items: center; gap: 10px;'
     + '  padding: 8px; border-radius: 8px;'
@@ -255,7 +270,7 @@
     + '#dd-business { min-width: 320px; }'
     + '.dd-link.dd-hot {'
     + '  flex-direction: column; align-items: stretch; gap: 9px;'
-    + '  padding: 12px 12px 13px; margin-bottom: 2px;'
+    + '  padding: 12px 9px 13px; margin-bottom: 2px;'
     + '  background: color-mix(in oklab, var(--nav-blue) 7%, #fff);'
     + '  border: 1px solid color-mix(in oklab, var(--nav-blue) 24%, #fff);'
     + '  color: var(--nav-prussian);'
@@ -463,6 +478,8 @@
     + '.m-subtools .m-subtool { font-size: 14px; }'
     + '.m-ico.m-logo { background: #fff; padding: 3px; overflow: hidden; box-sizing: border-box; }'
     + '.m-ico.m-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }'
+    + '.m-sublink.m-assess { background: color-mix(in oklab, var(--c) 6%, #fff); border: 1px solid color-mix(in oklab, var(--c) 18%, #fff); font-weight: 600; }'
+    + '.m-sublink.m-assess .m-ico { background: color-mix(in oklab, var(--c) 16%, #fff); color: var(--c); }'
     + '.m-sublink .m-ico {'
     + '  width: 28px; height: 28px; border-radius: 7px; flex-shrink: 0;'
     + '  display: inline-flex; align-items: center; justify-content: center;'
@@ -875,9 +892,13 @@
     html +=   '</button>';
     html +=   '<div class="m-panel"><div class="m-panel-inner">';
     html +=     '<a class="m-acad-row data" href="' + BASE + 'academies/data-literacy/index.html"><span class="m-ico">' + ico('chartArea') + '</span>Data Literacy</a>';
+    html +=     '<a class="m-sublink m-assess" href="' + BASE + 'data-literacy-skill-assessor.html" style="--c: var(--nav-academy-data); margin: 3px 0 7px 14px;"><span class="m-ico">' + ico('pin') + '</span>Data Skill Assessor</a>';
     html +=     '<a class="m-acad-row ai" href="' + BASE + 'academies/ai/index.html"><span class="m-ico">' + ico('sparkle') + '</span>AI Literacy</a>';
+    html +=     '<a class="m-sublink m-assess" href="' + BASE + 'ai-skill-assessor.html" style="--c: var(--nav-academy-ai); margin: 3px 0 7px 14px;"><span class="m-ico">' + ico('pin') + '</span>AI Skill Assessor</a>';
     html +=     '<a class="m-acad-row pm" href="' + BASE + 'academies/project-management/index.html"><span class="m-ico">' + ico('clipboard') + '</span>Project Management</a>';
+    html +=     '<a class="m-sublink m-assess" href="' + BASE + 'project-management-skill-assessor.html" style="--c: var(--nav-academy-pm); margin: 3px 0 7px 14px;"><span class="m-ico">' + ico('pin') + '</span>Project Skill Assessor</a>';
     html +=     '<a class="m-acad-row finance" href="' + BASE + 'academies/finance/index.html"><span class="m-ico">' + ico('ledger') + '</span>Finance</a>';
+    html +=     '<a class="m-sublink m-assess" href="' + BASE + 'finance-skill-assessor.html" style="--c: var(--nav-academy-finance); margin: 3px 0 7px 14px;"><span class="m-ico">' + ico('pin') + '</span>Finance Skill Assessor</a>';
     html +=     '<span class="m-acad-row other no-link" role="presentation"><span class="m-ico">' + ico('plus') + '</span>Other Subjects</span>';
     html +=     '<a class="m-sublink" href="' + CATALOG + '" style="margin-top: 6px; font-weight: 600; color: var(--nav-blue);">Request a catalog &rarr;</a>';
     html +=   '</div></div>';
@@ -1028,7 +1049,8 @@
           ['Data Regulation', 'gavel', SP + 'data-regulation.html'],
           ['Strategic Analysis', 'eye', SP + 'strategic-analysis.html'],
           ['APIs', 'plug', SP + 'apis.html']
-        ]
+        ],
+        extra: [['Skill Assessor', 'pin', BASE + 'data-literacy-skill-assessor.html', 'Find your data persona in 2 minutes']]
       },
       {
         key: 'ai', cls: 'ai', num: 'Academy 02', name: 'AI',
@@ -1045,7 +1067,8 @@
           ['Power Apps', 'appWindow', SP + 'power-apps.html'],
           ['Data Ethics & Risk', 'shield', SP + 'data-ethics-risk.html'],
           ['Data Regulation', 'gavel', SP + 'data-regulation.html']
-        ]
+        ],
+        extra: [['Skill Assessor', 'pin', BASE + 'ai-skill-assessor.html', 'Find your AI persona in 2 minutes']]
       },
       {
         key: 'pm', cls: 'pm', num: 'Academy 03', name: 'Project Management',
@@ -1063,7 +1086,8 @@
           ['Microsoft Teams', 'users', SP + 'microsoft-teams.html'],
           ['SharePoint', 'layers', SP + 'sharepoint.html'],
           ['Excel', 'grid', SP + 'excel.html']
-        ]
+        ],
+        extra: [['Skill Assessor', 'pin', BASE + 'project-management-skill-assessor.html', 'Find your project persona in 2 minutes']]
       },
       {
         key: 'finance', cls: 'finance', num: 'Academy 04', name: 'Finance',
@@ -1081,7 +1105,8 @@
           ['Data Presentation Skills', 'presentation', SP + 'data-presentation-skills.html'],
           ['PowerPoint', 'slides', SP + 'powerpoint.html'],
           ['Word', 'docText', SP + 'word.html']
-        ]
+        ],
+        extra: [['Skill Assessor', 'pin', BASE + 'finance-skill-assessor.html', 'Find your finance persona in 2 minutes']]
       },
       {
         key: 'other', cls: 'other', num: 'Plus', name: 'Other Subjects',
@@ -1127,6 +1152,14 @@
         html += '</a>';
       }
       html +=   '<div class="dd-submenu-list">';
+      (a.extra || []).forEach(function (it) {
+        html += '<a class="dd-link dd-assess" href="' + (it[2] || '#') + '">'
+             +    '<span class="dd-ico">' + ico(it[1]) + '</span>'
+             +    '<span class="dd-assess-text"><span class="dd-assess-label">' + it[0] + '</span>'
+             +      (it[3] ? '<span class="dd-assess-sub">' + it[3] + '</span>' : '') + '</span>'
+             +    '<span class="dd-assess-chev"><svg viewBox="0 0 12 12"><path d="M3 6h6M6.5 3l3 3-3 3"/></svg></span>'
+             + '</a>';
+      });
       a.items.forEach(function (it) {
         var href = it[2] || '#';
         html += '<a class="dd-link" href="' + href + '"><span class="dd-ico">' + ico(it[1]) + '</span>' + it[0] + '</a>';
