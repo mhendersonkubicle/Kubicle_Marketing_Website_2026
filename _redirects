@@ -621,3 +621,9 @@
 /terms                                                     /terms-of-service                            301
 /projects/*                                                /projects                                    301
 /project/*                                                 /projects                                    301
+
+# Skills Navigator: the per-academy pages were renamed from 'skill assessor'.
+/ai-skill-assessor                                        /ai-skills-navigator                          301
+/data-literacy-skill-assessor                             /data-literacy-skills-navigator               301
+/finance-skill-assessor                                   /finance-skills-navigator                     301
+/project-management-skill-assessor                        /project-management-skills-navigator          301

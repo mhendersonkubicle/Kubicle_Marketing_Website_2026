@@ -892,13 +892,13 @@
     html +=   '</button>';
     html +=   '<div class="m-panel"><div class="m-panel-inner">';
     html +=     '<a class="m-acad-row data" href="' + BASE + 'academies/data-literacy/index.html"><span class="m-ico">' + ico('chartArea') + '</span>Data Literacy</a>';
-    html +=     '<a class="m-sublink m-assess" href="' + BASE + 'data-literacy-skill-assessor.html" style="--c: var(--nav-academy-data); margin: 3px 0 7px 14px;"><span class="m-ico">' + ico('pin') + '</span>Data Skill Assessor</a>';
+    html +=     '<a class="m-sublink m-assess" href="' + BASE + 'data-literacy-skills-navigator.html" style="--c: var(--nav-academy-data); margin: 3px 0 7px 14px;"><span class="m-ico">' + ico('pin') + '</span>Data Literacy Skills Navigator</a>';
     html +=     '<a class="m-acad-row ai" href="' + BASE + 'academies/ai/index.html"><span class="m-ico">' + ico('sparkle') + '</span>AI Literacy</a>';
-    html +=     '<a class="m-sublink m-assess" href="' + BASE + 'ai-skill-assessor.html" style="--c: var(--nav-academy-ai); margin: 3px 0 7px 14px;"><span class="m-ico">' + ico('pin') + '</span>AI Skill Assessor</a>';
+    html +=     '<a class="m-sublink m-assess" href="' + BASE + 'ai-skills-navigator.html" style="--c: var(--nav-academy-ai); margin: 3px 0 7px 14px;"><span class="m-ico">' + ico('pin') + '</span>AI Skills Navigator</a>';
     html +=     '<a class="m-acad-row pm" href="' + BASE + 'academies/project-management/index.html"><span class="m-ico">' + ico('clipboard') + '</span>Project Management</a>';
-    html +=     '<a class="m-sublink m-assess" href="' + BASE + 'project-management-skill-assessor.html" style="--c: var(--nav-academy-pm); margin: 3px 0 7px 14px;"><span class="m-ico">' + ico('pin') + '</span>Project Skill Assessor</a>';
+    html +=     '<a class="m-sublink m-assess" href="' + BASE + 'project-management-skills-navigator.html" style="--c: var(--nav-academy-pm); margin: 3px 0 7px 14px;"><span class="m-ico">' + ico('pin') + '</span>Project Management Skills Navigator</a>';
     html +=     '<a class="m-acad-row finance" href="' + BASE + 'academies/finance/index.html"><span class="m-ico">' + ico('ledger') + '</span>Finance</a>';
-    html +=     '<a class="m-sublink m-assess" href="' + BASE + 'finance-skill-assessor.html" style="--c: var(--nav-academy-finance); margin: 3px 0 7px 14px;"><span class="m-ico">' + ico('pin') + '</span>Finance Skill Assessor</a>';
+    html +=     '<a class="m-sublink m-assess" href="' + BASE + 'finance-skills-navigator.html" style="--c: var(--nav-academy-finance); margin: 3px 0 7px 14px;"><span class="m-ico">' + ico('pin') + '</span>Finance Skills Navigator</a>';
     html +=     '<span class="m-acad-row other no-link" role="presentation"><span class="m-ico">' + ico('plus') + '</span>Other Subjects</span>';
     html +=     '<a class="m-sublink" href="' + CATALOG + '" style="margin-top: 6px; font-weight: 600; color: var(--nav-blue);">Request a catalog &rarr;</a>';
     html +=   '</div></div>';
@@ -1050,7 +1050,7 @@
           ['Strategic Analysis', 'eye', SP + 'strategic-analysis.html'],
           ['APIs', 'plug', SP + 'apis.html']
         ],
-        extra: [['Skill Assessor', 'pin', BASE + 'data-literacy-skill-assessor.html', 'Find your data persona in 2 minutes']]
+        extra: [['Skills Navigator', 'pin', BASE + 'data-literacy-skills-navigator.html', 'Find your data persona in 2 minutes']]
       },
       {
         key: 'ai', cls: 'ai', num: 'Academy 02', name: 'AI',
@@ -1068,7 +1068,7 @@
           ['Data Ethics & Risk', 'shield', SP + 'data-ethics-risk.html'],
           ['Data Regulation', 'gavel', SP + 'data-regulation.html']
         ],
-        extra: [['Skill Assessor', 'pin', BASE + 'ai-skill-assessor.html', 'Find your AI persona in 2 minutes']]
+        extra: [['Skills Navigator', 'pin', BASE + 'ai-skills-navigator.html', 'Find your AI persona in 2 minutes']]
       },
       {
         key: 'pm', cls: 'pm', num: 'Academy 03', name: 'Project Management',
@@ -1087,7 +1087,7 @@
           ['SharePoint', 'layers', SP + 'sharepoint.html'],
           ['Excel', 'grid', SP + 'excel.html']
         ],
-        extra: [['Skill Assessor', 'pin', BASE + 'project-management-skill-assessor.html', 'Find your project persona in 2 minutes']]
+        extra: [['Skills Navigator', 'pin', BASE + 'project-management-skills-navigator.html', 'Find your project persona in 2 minutes']]
       },
       {
         key: 'finance', cls: 'finance', num: 'Academy 04', name: 'Finance',
@@ -1106,7 +1106,7 @@
           ['PowerPoint', 'slides', SP + 'powerpoint.html'],
           ['Word', 'docText', SP + 'word.html']
         ],
-        extra: [['Skill Assessor', 'pin', BASE + 'finance-skill-assessor.html', 'Find your finance persona in 2 minutes']]
+        extra: [['Skills Navigator', 'pin', BASE + 'finance-skills-navigator.html', 'Find your finance persona in 2 minutes']]
       },
       {
         key: 'other', cls: 'other', num: 'Plus', name: 'Other Subjects',
